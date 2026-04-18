@@ -1,0 +1,78 @@
+/* src/styles/App.css */
+:root {
+  --neon: #00f2ff;
+  --bg: #050505;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+.main-container {
+  max-width: 1400px; /* Geniş ekran dengesi */
+  margin: 0 auto;
+  padding: 40px;
+}
+
+/* 700px Bölgesi: Akıllı Tarif Paneli */
+.recipe-dashboard {
+  width: 100%;
+  max-width: 700px;
+  height: 700px;
+  margin: 0 auto 50px auto;
+  background: rgba(0, 242, 255, 0.03);
+  border: 2px solid var(--neon);
+  border-radius: 30px;
+  padding: 30px;
+  box-shadow: 0 0 50px rgba(0, 242, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.scroll-area {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 15px;
+}
+
+/* Kaydırma çubuğu tasarımı */
+.scroll-area::-webkit-scrollbar { width: 6px; }
+.scroll-area::-webkit-scrollbar-thumb { background: var(--neon); border-radius: 10px; }
+
+/* 700px Bölgesi: Malzeme Grid Yapısı */
+.ingredients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+/* Anti-Gravity Kartlar */
+.floating-card {
+  width: 130px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  animation: float 4s ease-in-out infinite;
+}
+
+.floating-card:hover {
+  border-color: var(--neon);
+  box-shadow: 0 0 20px var(--neon);
+  transform: scale(1.05);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
