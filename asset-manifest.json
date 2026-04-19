@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/bakinin-mutfagi/static/css/main.a5682ad8.css",
+    "main.js": "/bakinin-mutfagi/static/js/main.586497e2.js",
+    "index.html": "/bakinin-mutfagi/index.html",
+    "main.a5682ad8.css.map": "/bakinin-mutfagi/static/css/main.a5682ad8.css.map",
+    "main.586497e2.js.map": "/bakinin-mutfagi/static/js/main.586497e2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a5682ad8.css",
+    "static/js/main.586497e2.js"
+  ]
+}
