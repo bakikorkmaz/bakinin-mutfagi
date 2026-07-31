@@ -495,19 +495,19 @@ export default function SocialFlow({ activeUser, setActiveUser }) {
                    })}
                </div>
            ) : (
-               <div style={{overflowY: 'scroll', scrollSnapType: 'y mandatory', margin: '0 -15px', background: 'black', flex: 1}}>
+               <div style={{overflowY: 'scroll', scrollSnapType: 'y mandatory', margin: '0 -15px', background: 'black', flex: 1, paddingBottom: '70px'}}>
                    {visiblePosts.length === 0 ? (
                        <div style={{textAlign: 'center', margin: '30px 20px', color: '#64748B', display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%'}}>Henüz hiçbir gönderi paylaşılmamış. İlk paylaşan şef sen ol!</div>
                    ) : (
                        visiblePosts.map(post => {
                            const isLikedByMe = post.likes?.includes(activeUser.uid);
                            return (
-                               <div key={post.id} style={{scrollSnapAlign: 'start', height: '100%', width: '100%', position: 'relative', overflow: 'hidden'}}>
+                               <div key={post.id} style={{scrollSnapAlign: 'start', height: 'calc(100vh - 130px)', width: '100%', position: 'relative', overflow: 'hidden'}}>
                             {post.images && post.images.length > 0 ? (
                                  <div style={{display: 'flex', width: '100%', height: '100%', overflowX: 'auto', scrollSnapType: 'x mandatory'}}>
                                      {post.images.map((imgUrl, i) => (
                                          <div key={i} style={{minWidth: '100vw', height: '100%', scrollSnapAlign: 'center', position: 'relative'}}>
-                                             <img src={imgUrl} alt="post" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+                                             <img src={imgUrl} alt="post" style={{width: '100%', height: '100%', objectFit: 'contain', background: 'black'}} />
                                              <div style={{position: 'absolute', top: '20px', right: '20px', background: 'rgba(0,0,0,0.5)', color: 'white', padding: '8px 15px', borderRadius: '15px', fontSize: '14px', fontWeight: 900}}>
                                                  {i + 1} / {post.images.length}
                                              </div>
@@ -523,7 +523,7 @@ export default function SocialFlow({ activeUser, setActiveUser }) {
                                  />
                              )}
                             
-                            <div style={{position: 'absolute', bottom: '20px', left: '15px', right: '70px', color: 'white', textShadow: '0 1px 3px rgba(0,0,0,0.8)'}}>
+                            <div style={{position: 'absolute', bottom: '25px', left: '15px', right: '70px', color: 'white', textShadow: '0 1px 3px rgba(0,0,0,0.8)', zIndex: 5}}>
                                 <div style={{fontWeight: 900, fontSize: '18px', display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap'}}>
                                     <div onClick={() => {
                                          const pOwner = allUsers.find(u => u.id === post.userId) || {id: post.userId, username: post.username, name: post.userName, photoURL: post.userPhoto};
@@ -548,7 +548,7 @@ export default function SocialFlow({ activeUser, setActiveUser }) {
                                 <div style={{fontSize: '14px', marginTop: '10px', lineHeight: '1.4'}}>{post.caption}</div>
                             </div>
 
-                            <div style={{position: 'absolute', bottom: '30px', right: '15px', display: 'flex', flexDirection: 'column', gap: '20px', alignItems: 'center'}}>
+                            <div style={{position: 'absolute', bottom: '35px', right: '15px', display: 'flex', flexDirection: 'column', gap: '20px', alignItems: 'center', zIndex: 5}}>
                                 <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', cursor: 'pointer'}} onClick={async () => {
                                       const pRef = doc(db, 'posts', post.id);
                                       if (isLikedByMe) {
@@ -1072,3 +1072,4 @@ export default function SocialFlow({ activeUser, setActiveUser }) {
         </div>
     );
 }
+
