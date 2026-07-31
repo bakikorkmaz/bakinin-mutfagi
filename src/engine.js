@@ -567,7 +567,7 @@ export const getDishDetails = (dish) => {
   };
 };
 
-export const generateShoppingList = (menuObj) => {
+export const generateShoppingList = (menuObj, ownedItems = []) => {
   let allIngredients = [];
   if (menuObj.soup && menuObj.soup.ingredients) allIngredients.push(...menuObj.soup.ingredients);
   if (menuObj.main && menuObj.main.ingredients) allIngredients.push(...menuObj.main.ingredients);
@@ -578,6 +578,19 @@ export const generateShoppingList = (menuObj) => {
   if (menuObj.ingredients && !menuObj.main) allIngredients.push(...menuObj.ingredients);
 
   allIngredients = [...new Set(allIngredients)]; // Remove duplicates
+
+  if (ownedItems && ownedItems.length > 0) {
+      const ownedLower = ownedItems.map(i => typeof i === 'string' ? i.toLowerCase().trim() : '');
+      allIngredients = allIngredients.filter(ing => {
+          const check = typeof ing === 'string' ? ing.toLowerCase().trim() : '';
+          return !ownedLower.some(ow => {
+              if (!ow) return false;
+              // Sadece tam kelime eşleşmesi (Örn: "et", "baget" ile karışmamalı)
+              const regex = new RegExp(`\\b${ow}\\b(?:s|ler|lar)?`, 'i');
+              return regex.test(check);
+          });
+      });
+  }
 
   const categories = {
     "🥩 Kasap & Şarküteri": [],

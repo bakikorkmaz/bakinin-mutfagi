@@ -790,7 +790,10 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
   };
   
   const openShopping = (menuObj) => {
-     setShoppingCart(generateShoppingList(menuObj));
+     let ownedItems = [...fridgeIngs];
+     Object.keys(userChecklist).forEach(k => { if (userChecklist[k]) ownedItems.push(k); });
+     Object.keys(weeklyUserChecklist).forEach(k => { if (weeklyUserChecklist[k]) ownedItems.push(k); });
+     setShoppingCart(generateShoppingList(menuObj, ownedItems));
   };
 
   const renderHub = () => (
