@@ -698,7 +698,7 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
          let checks = {};
          winner.ingredients.forEach(i => checks[i] = false);
          setUserChecklist(checks);
-         setTimeout(() => wheelResultRef.current?.scrollIntoView({ behavior: 'smooth' }), 100);
+         setTimeout(() => wheelResultRef.current?.scrollIntoView({ behavior: 'auto' }), 10);
      }, 3000); 
   };
 
@@ -712,7 +712,7 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
      const res = generateCrossMenu(crossInput);
      if(res) {
         setCrossResult(res);
-        setTimeout(() => healthResultRef.current?.scrollIntoView({ behavior: 'smooth' }), 100);
+        setTimeout(() => healthResultRef.current?.scrollIntoView({ behavior: 'auto' }), 10);
      }
      else alert("Buna uygun çapraz bir tarif bulamadım (Örn: kıyma, tavuk, makarna vb. deneyebilirsiniz).");
   };
@@ -737,7 +737,7 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
      if(res.length === 0) {
          alert("Bu malzemeler (ve mutfak) kombinasyonuyla doğrudan bir ana yemek sınıflandırılamadı. Miktarı artırın veya Filtreyi Tümü yapın.");
      } else {
-         setTimeout(() => fridgeResultsRef.current?.scrollIntoView({ behavior: 'smooth' }), 100);
+         setTimeout(() => fridgeResultsRef.current?.scrollIntoView({ behavior: 'auto' }), 10);
      }
   };
 
@@ -1162,7 +1162,7 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
                      let checks = {};
                      uniqueIngs.forEach(i => checks[i] = false);
                      setWeeklyUserChecklist(checks);
-                     setTimeout(() => weeklyResultRef.current?.scrollIntoView({ behavior: 'smooth' }), 100);
+                     setTimeout(() => weeklyResultRef.current?.scrollIntoView({ behavior: 'auto' }), 10);
                 }} style={{width: '100%', padding: '18px', background: '#8B5CF6', color: 'white', border: 'none', borderRadius: '12px', fontSize: '16px', fontWeight: 800, cursor: 'pointer', boxShadow: '0 4px 6px rgba(139, 92, 246, 0.2)'}}>
                    🚀 PLANI OTOMATİK OLUŞTUR
                 </button>
@@ -1758,7 +1758,7 @@ function RecycleFlow({ handleTitleClick, setShoppingCart }) {
     const output = processLeftovers(input);
     setResults(output);
     setHasSearched(true);
-    setTimeout(() => recycleResultRef.current?.scrollIntoView({ behavior: 'smooth' }), 100);
+    setTimeout(() => recycleResultRef.current?.scrollIntoView({ behavior: 'auto' }), 10);
   };
 
   return (
