@@ -109,14 +109,14 @@ body { background-color: var(--bg); color: var(--text-dark); font-size: 16px; ov
 .recipe-meta-badge { background: #EEF2FF; color: #4F46E5; padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: 600; }
 
 /* --- DASHBOARD HUB --- */
-.dashboard-grid-hub { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 0 20px; margin-bottom: 30px; }
-.hub-card { background: white; border: 2px solid var(--border); padding: 25px 15px; border-radius: 20px; text-align: center; cursor: pointer; transition: none; box-shadow: 0 8px 15px rgba(0,0,0,0.02); display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.dashboard-grid-hub { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 0 10px; margin-bottom: 15px; }
+.hub-card { background: white; border: 2px solid var(--border); padding: 15px 10px; border-radius: 12px; text-align: center; cursor: pointer; transition: none; box-shadow: 0 8px 15px rgba(0,0,0,0.02); display: flex; flex-direction: column; align-items: center; gap: 5px; }
 .hub-card:active { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0,0,0,0.06); border-color: var(--gold); }
-.hub-icon { font-size: 38px; }
-.hub-title { font-size: 15px; font-weight: 700; color: var(--text-dark); line-height: 1.3; }
-.hub-desc { font-size: 12px; color: var(--text-light); line-height: 1.5; font-weight: 500; }
+.hub-icon { font-size: 32px; }
+.hub-title { font-size: 14px; font-weight: 700; color: var(--text-dark); line-height: 1.2; }
+.hub-desc { font-size: 11px; color: var(--text-light); line-height: 1.3; font-weight: 500; }
 
-.gamification-banner { margin: 0 20px 25px; padding: 25px 20px; background: linear-gradient(135deg, #10B981, #047857); color: white; border-radius: 20px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; box-shadow: 0 10px 25px rgba(16, 185, 129, 0.25); position: relative; overflow: hidden; }
+.gamification-banner { margin: 0 10px 15px; padding: 15px 15px; background: linear-gradient(135deg, #10B981, #047857); color: white; border-radius: 15px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; box-shadow: 0 10px 25px rgba(16, 185, 129, 0.25); position: relative; overflow: hidden; }
 .gamification-banner::after { content: '🏆'; font-size: 80px; position: absolute; right: -10px; bottom: -20px; opacity: 0.2; }
 .gami-val { font-size: 32px; font-weight: 800; display: block; margin-top: 5px; }
 
