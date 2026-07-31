@@ -7,6 +7,7 @@ import { signInWithPopup, signInAnonymously } from 'firebase/auth';
 import { doc, setDoc, getDoc, updateDoc, collection, query, where, getDocs, onSnapshot, deleteDoc } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import SocialFlow from './SocialFlow';
+import { REWARDS } from './rewardsDb';
 const TRANSLATIONS = {
   tr: { nav_social: "Eğlence Serüveni", nav_smart: "Akıllı Menü", nav_chat: "YZ Sohbet", nav_recycle: "Dönüşüm", nav_settings: "Ayarlar", hub_welcome: "Hoş Geldin", hub_desc: "Gurme Yapay Zeka Kapınızda", fridge: "Dolabımdakiler", wheel: "Şans Çarkı (Ne Yesek?)", health: "Evin Sağlık Karnesi", weekly: "Haftalık Zeki Program", theme: "Tema ve Görünüm", dark_mode: "Karanlık Moda Geç", lang: "Arayüz Dili", favs: "Favorilerim", logout: "Oturumu Kapat" },
   en: { nav_social: "Adventure", nav_smart: "Smart Menu", nav_chat: "AI Chat", nav_recycle: "Recycle", nav_settings: "Settings", hub_welcome: "Welcome", hub_desc: "Gourmet AI at your Doorstep", fridge: "In My Fridge", wheel: "Lucky Wheel", health: "Family Health", weekly: "Smart Weekly", theme: "Theme & Display", dark_mode: "Enable Dark Mode", lang: "Interface Language", favs: "My Favorites", logout: "Sign Out" },
@@ -77,7 +78,7 @@ function App() {
      return () => adSub();
   }, []);
 
-  // BAN SHIELD
+  // BAN & DELETION SHIELD
   useEffect(() => {
      if (activeUser?.uid) {
          const uns = onSnapshot(doc(db, 'users', activeUser.uid), (dsnap) => {
@@ -90,6 +91,13 @@ function App() {
                      setView('AUTH');
                      try { auth.signOut(); } catch(e){}
                  }
+             } else {
+                 // Belge silinmişse (Kademeli hesap temizliği) kullanıcıyı at
+                 alert("Sistem Bildirimi: Mevcut hesabınız sistemden kalıcı olarak silinmiştir. Çıkış yapılıyor.");
+                 localStorage.removeItem('baki_active_user');
+                 setActiveUser(null);
+                 setView('AUTH');
+                 try { auth.signOut(); } catch(e){}
              }
          });
          return () => uns();
@@ -230,11 +238,15 @@ function App() {
   const handleTitleClick = () => {
     tapCount.current += 1;
     if (tapCount.current === 3) {
-      const pswd = prompt("Admin Şifresi:");
-      if (pswd === "Ysf.") {
-        setView('ADMIN');
+      if (!activeUser) {
+         alert("Sistem Bildirimi: Bu alana erişmek için Google ile giriş yapmalısınız.");
       } else {
-        alert("Hatalı Parola!");
+         const pswd = prompt("Geliştirici Güvenlik Protokolü Şifresi:");
+         if (pswd === "Baki.Admin.44!") {
+           setView('ADMIN');
+         } else {
+           if(pswd !== null) alert("Güvenlik İhlali! Hatalı Parola.");
+         }
       }
       tapCount.current = 0;
     }
@@ -362,7 +374,15 @@ function App() {
              setActiveUser(newActiveUser);
              setView('APP');
          } catch (err) {
-             alert("Bağlantı hatası: " + err.message);
+             if (err.code === 'not-found' || err.message.includes('No document to update')) {
+                 alert("Sistem Bildirimi: Mevcut hesabınız sistemden kalıcı olarak silinmiştir. Çıkış yapılıyor.");
+                 localStorage.removeItem('baki_active_user');
+                 setActiveUser(null);
+                 setView('AUTH');
+                 try { auth.signOut(); } catch(e){}
+             } else {
+                 alert("Bağlantı hatası: " + err.message);
+             }
          }
      };
 
@@ -412,7 +432,7 @@ function App() {
       )}
 
       {activeTab === 'RECYCLE' && (
-        <RecycleFlow handleTitleClick={handleTitleClick} />
+        <RecycleFlow handleTitleClick={handleTitleClick} setShoppingCart={setShoppingCart} />
       )}
 
       {activeTab === 'SETTINGS' && (
@@ -420,7 +440,7 @@ function App() {
       )}
       
       {activeTab === 'SOCIAL' && (
-        <SocialFlow activeUser={activeUser} />
+        <SocialFlow activeUser={activeUser} setActiveUser={setActiveUser} />
       )}
 
       {/* BOTTOM NAV */}
@@ -476,11 +496,60 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
     return Number(localStorage.getItem(gamiKey)) || 0;
   });
 
+  const weekKey = activeUser ? `baki_week_track_${activeUser?.email}` : 'baki_week_track';
+  const [showWeeklyModal, setShowWeeklyModal] = useState(false);
+  const [lastWeekSavings, setLastWeekSavings] = useState(0);
+
+  const cookHistoryKey = activeUser ? `baki_history_${activeUser?.email}` : 'baki_history';
+  const [showHistoryModal, setShowHistoryModal] = useState(false);
+  const [rewardSeed, setRewardSeed] = useState(Math.floor(Math.random() * 500));
+
+  const wheelResultRef = React.useRef(null);
+  const healthResultRef = React.useRef(null);
+  const weeklyResultRef = React.useRef(null);
+
+  const getCookHistory = () => JSON.parse(localStorage.getItem(cookHistoryKey) || '[]');
+  
+  const currentReward = React.useMemo(() => {
+      const validRewards = REWARDS.filter(r => moneySaved >= r.min && moneySaved <= r.max);
+      if(validRewards.length === 0) return null;
+      return validRewards[rewardSeed % validRewards.length];
+  }, [moneySaved, rewardSeed]);
+
+  const getIsoWeek = () => {
+    const today = new Date();
+    const firstDayOfYear = new Date(today.getFullYear(), 0, 1);
+    const pastDaysOfYear = (today - firstDayOfYear) / 86400000;
+    return Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
+  };
+
+  useEffect(() => {
+     const currentWeek = `${new Date().getFullYear()}-W${getIsoWeek()}`;
+     const storedWeek = localStorage.getItem(weekKey);
+     
+     if (storedWeek && storedWeek !== currentWeek) {
+         const savings = Number(localStorage.getItem(gamiKey)) || 0;
+         if (savings > 0) {
+             setLastWeekSavings(savings);
+             setShowWeeklyModal(true);
+             setShowConfetti(true);
+             setTimeout(() => setShowConfetti(false), 5000);
+         }
+         
+         setMoneySaved(0);
+         localStorage.setItem(gamiKey, 0);
+     }
+     if (storedWeek !== currentWeek) {
+         localStorage.setItem(weekKey, currentWeek);
+     }
+  }, [activeUser, weekKey, gamiKey]);
+
   // Modal States
   const [selectedDish, setSelectedDish] = useState(null);
   const [shoppingCart, setShoppingCart] = useState(null);
 
   const [fridgeMains, setFridgeMains] = useState([]);
+  const fridgeResultsRef = React.useRef(null);
   const [fridgeFilter, setFridgeFilter] = useState('ALL');
   const [fridgeMaxTime, setFridgeMaxTime] = useState(999);
   const [fridgeMaxCost, setFridgeMaxCost] = useState(9999);
@@ -629,6 +698,7 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
          let checks = {};
          winner.ingredients.forEach(i => checks[i] = false);
          setUserChecklist(checks);
+         setTimeout(() => wheelResultRef.current?.scrollIntoView({ behavior: 'smooth' }), 100);
      }, 3000); 
   };
 
@@ -642,6 +712,7 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
      const res = generateCrossMenu(crossInput);
      if(res) {
         setCrossResult(res);
+        setTimeout(() => healthResultRef.current?.scrollIntoView({ behavior: 'smooth' }), 100);
      }
      else alert("Buna uygun çapraz bir tarif bulamadım (Örn: kıyma, tavuk, makarna vb. deneyebilirsiniz).");
   };
@@ -663,7 +734,11 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
      
      const res = generateFridgeMains(combinedIngs, fridgeFilter, fridgeMaxTime, fridgeMaxCost);
      setFridgeMains(res);
-     if(res.length === 0) alert("Bu malzemeler (ve mutfak) kombinasyonuyla doğrudan bir ana yemek sınıflandırılamadı. Miktarı artırın veya Filtreyi Tümü yapın.");
+     if(res.length === 0) {
+         alert("Bu malzemeler (ve mutfak) kombinasyonuyla doğrudan bir ana yemek sınıflandırılamadı. Miktarı artırın veya Filtreyi Tümü yapın.");
+     } else {
+         setTimeout(() => fridgeResultsRef.current?.scrollIntoView({ behavior: 'smooth' }), 100);
+     }
   };
 
   const selectMainForMenu = (mainDish) => {
@@ -686,6 +761,11 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
      });
   };
 
+  const triggerConfetti = () => {
+    setShowConfetti(true);
+    setTimeout(() => setShowConfetti(false), 5000);
+  };
+
   const acceptMenuAction = (cost) => {
      // Abartı silindi: Ev yemeği yapıldığında net maliyetin ortalama %30'u tasarruf edilir. 
      // Örneğin 100 TL harcadıysanız, dışarıda bu 130 TL'dir. 30 TL cebinizde kalır.
@@ -693,9 +773,14 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
      const updated = moneySaved + saving;
      setMoneySaved(updated);
      localStorage.setItem(gamiKey, updated);
+     
+     const hist = getCookHistory();
+     hist.push({ name: selectedDish.originalDish?.name || selectedDish.name, date: Date.now(), saving: saving });
+     if (hist.length > 50) hist.shift();
+     localStorage.setItem(cookHistoryKey, JSON.stringify(hist));
+
      triggerConfetti();
-     alert(`Tebrikler! Yemeğiniz hazır olunca cebinizde dışarı fiyatına oranla ${saving} TL net tasarruf kalacak ve panele işlendi!`);
-     setSelectedDish(null);
+     setSelectedDish(prev => ({ ...prev, isAccepted: true, acceptedSaving: saving }));
   };
 
   const openRecipe = (dishObj) => {
@@ -710,7 +795,8 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
 
   const renderHub = () => (
     <>
-      <div className="gamification-banner">
+      <div className="gamification-banner" onClick={() => setShowHistoryModal(true)} style={{cursor: 'pointer', position: 'relative'}}>
+        <div style={{position: 'absolute', top: '15px', right: '15px', background: 'rgba(255,255,255,0.2)', padding: '6px 12px', borderRadius: '15px', fontSize: '11px', fontWeight: 800, backdropFilter: 'blur(10px)'}}>Geçmişi Gör 🔍</div>
         <div>
           {activeUser && <div style={{display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px'}}>
              {activeUser.photoURL ? (
@@ -727,14 +813,38 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
           </div>}
           <div style={{fontSize: '14px', opacity: 0.9, marginBottom: '5px'}}>Kümülatif Tasarruf Raporunuz</div>
           {moneySaved === 0 ? (
-            <span className="gami-val" style={{fontSize: '24px'}}>0 ₺ (Yemek Üretimi Bekleniyor)</span>
+            <>
+              <span className="gami-val" style={{fontSize: '28px'}}>₺0</span>
+              <div style={{fontSize: '13px', marginTop: '15px', background: 'rgba(255,255,255,0.1)', padding: '15px', borderRadius: '12px', lineHeight: '1.5', border: '1px dashed rgba(255,255,255,0.3)', color: '#E2E8F0'}}>
+                  <strong style={{color: 'white'}}>🍳 Henüz bir tarif oluşturmadınız!</strong><br/><br/>
+                  <b>Tasarruf Raporu Nedir?</b><br/>
+                  Uygulama, dışarıdan söylemek yerine evde kendi mutfağınızdaki malzemelerle yemek yaptığınızda ne kadar parayı cebinizde tuttuğunuzu (Tasarruf Miktarını) matematiksel olarak hesaplar.<br/><br/>
+                  Hemen aşağıdan bir moda (Şans Çarkı, Dolabımdakiler vb.) tıklayıp kendinize bir tarif çıkartın ve tarifin altında çıkan <b>"Yapmaya Karar Verdim"</b> tuşuna basarak cebinize kalan miktarı görün!
+              </div>
+            </>
           ) : (
             <>
               <span className="gami-val">₺{moneySaved}</span>
-              <div style={{fontSize: '13px', marginTop: '8px', opacity: 0.9}}>Aylık Dışarıdan Söyleme Masrafını Kurtardınız!</div>
+              <div style={{fontSize: '13px', marginTop: '8px', opacity: 0.9}}>Bu Hafta Dışarıya Kıyasla Kurtardığınız Tutar!</div>
+              <div style={{fontSize: '11px', marginTop: '8px', padding: '6px', backgroundColor: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '6px', color: '#FCD34D', fontWeight: 600}}>
+                  ⚠️ Tasarruf sayacınız, dışarıdan yemek yeme alışkanlığınızı haftalık olarak ölçebilmeniz ve yönetebilmeniz için her hafta başı sıfırlanır.
+              </div>
             </>
           )}
         </div>
+
+        {currentReward && moneySaved > 0 && (
+           <div onClick={(e) => { e.stopPropagation(); setRewardSeed(s => s + 1); }} style={{marginTop: '25px', background: 'rgba(255,255,255,0.95)', padding: '15px', borderRadius: '15px', color: '#1E293B', display: 'flex', alignItems: 'center', gap: '15px', boxShadow: '0 4px 15px rgba(0,0,0,0.1)', cursor: 'pointer', transition: '0.2s'}}>
+              <div style={{fontSize: '32px'}}>💡</div>
+              <div style={{flex: 1}}>
+                 <div style={{fontSize: '11px', color: '#3B82F6', textTransform: 'uppercase', fontWeight: 900, marginBottom: '2px'}}>Şefin Şımartma Tavsiyesi</div>
+                 <div style={{fontSize: '14px', fontWeight: 700, color: '#334155'}}>{currentReward.text}</div>
+              </div>
+              <button onClick={(e) => { e.stopPropagation(); setRewardSeed(s => s + 1); }} style={{background: '#EFF6FF', color: '#2563EB', border: 'none', width: '40px', minWidth: '40px', height: '40px', borderRadius: '50%', cursor: 'pointer', fontSize: '18px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                 🔄
+              </button>
+           </div>
+        )}
       </div>
       
 
@@ -898,7 +1008,7 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
           <button className="budget-calc-btn" style={{backgroundColor: '#10B981'}} onClick={handleFridgeGen}>Tam Uyumlu Ana Yemekleri Bul ✨</button>
 
           {fridgeMains.length > 0 && dashboardView === 'FRIDGE' && (
-            <div className="results-container" style={{marginTop: '25px', padding: 0}}>
+            <div className="results-container" ref={fridgeResultsRef} style={{marginTop: '25px', padding: 0}}>
               <h4 style={{fontSize: '16px', color: '#10B981', marginBottom: '15px'}}>Dolabınıza Uyan Ana Yemekler:</h4>
               <div style={{display: 'flex', gap: '10px', flexWrap: 'wrap'}}>
                   {fridgeMains.map((mainItem, idx) => (
@@ -920,7 +1030,7 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
                           )}
 
                           <div style={{display: 'flex', gap: '5px', marginTop: '10px'}}>
-                            <button onClick={(e) => { e.stopPropagation(); selectMainForMenu(mainItem); }} style={{flex: 1, padding: '8px', background: '#F1F5F9', border: '1px solid #CBD5E1', borderRadius: '6px', fontSize: '11px', cursor: 'pointer', color: '#334155', fontWeight: 600}}>🍽️ Tarife Bak</button>
+                            <button onClick={(e) => { e.stopPropagation(); openRecipe(mainItem); }} style={{flex: 1, padding: '8px', background: '#F1F5F9', border: '1px solid #CBD5E1', borderRadius: '6px', fontSize: '11px', cursor: 'pointer', color: '#334155', fontWeight: 600}}>🍽️ Tarife Bak</button>
                             {mainItem.missingIngs && mainItem.missingIngs.length > 0 && (
                               <button onClick={(e) => { e.stopPropagation(); setShoppingCart(generateMissingShoppingList(mainItem.missingIngs)); }} style={{flex: 1, padding: '8px', background: '#FEE2E2', border: '1px solid #FCA5A5', borderRadius: '6px', fontSize: '11px', cursor: 'pointer', color: '#B91C1C', fontWeight: 600}}>🛒 Eksikleri Al</button>
                             )}
@@ -1052,13 +1162,14 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
                      let checks = {};
                      uniqueIngs.forEach(i => checks[i] = false);
                      setWeeklyUserChecklist(checks);
+                     setTimeout(() => weeklyResultRef.current?.scrollIntoView({ behavior: 'smooth' }), 100);
                 }} style={{width: '100%', padding: '18px', background: '#8B5CF6', color: 'white', border: 'none', borderRadius: '12px', fontSize: '16px', fontWeight: 800, cursor: 'pointer', boxShadow: '0 4px 6px rgba(139, 92, 246, 0.2)'}}>
                    🚀 PLANI OTOMATİK OLUŞTUR
                 </button>
              </>
            ) : (
              <>
-                <div style={{display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '20px'}}>
+                <div ref={weeklyResultRef} style={{display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '20px'}}>
                    {weeklyPlan.map(dayItem => (
                       <div key={dayItem.day} style={{border: '1px solid #E2E8F0', padding: '15px', borderRadius: '12px', background: 'white', display: 'flex', alignItems: 'center', gap: '15px'}}>
                          <div style={{background: '#EDE9FE', color: '#6D28D9', padding: '10px', borderRadius: '10px', fontWeight: 800, width: '90px', textAlign: 'center'}}>{dayItem.day}</div>
@@ -1086,7 +1197,23 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
                         else setShoppingCart(generateMissingShoppingList(missingList));
                     }} style={{width: '100%', padding: '12px', background: '#8B5CF6', color: 'white', borderRadius: '10px', fontWeight: 800, border: 'none', cursor: 'pointer', fontSize: '14px'}}>🛒 Sadece Eksikler İçin Liste Ve Enflasyonlu Pazar Masrafı Çıkar</button>
                 </div>
-                <button onClick={() => setWeeklyPlan(null)} style={{width: '100%', padding: '15px', background: '#F1F5F9', color: '#475569', border: 'none', borderRadius: '12px', fontSize: '15px', fontWeight: 700, cursor: 'pointer'}}>Tazele / Farklı Plan Üret</button>
+                <div style={{display: 'flex', gap: '10px'}}>
+                   <button onClick={() => {
+                        let plan = generateWeeklyPlan(weeklyDays, weeklyStrategy, weeklyProfile, weeklyCuisine, weeklyMaxTime, weeklyMaxCost);
+                        setWeeklyPlan(plan);
+                        let allIngs = [];
+                        plan.forEach(p => { if (p.dish && p.dish.ingredients) allIngs.push(...p.dish.ingredients); });
+                        let uniqueIngs = [...new Set(allIngs)];
+                        let checks = {};
+                        uniqueIngs.forEach(i => checks[i] = false);
+                        setWeeklyUserChecklist(checks);
+                   }} style={{flex: 1, padding: '15px', background: '#F1F5F9', color: '#475569', border: '1px solid #CBD5E1', borderRadius: '12px', fontSize: '14px', fontWeight: 700, cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px'}}>
+                       <span>YENİ VARYASYONLARI ÜRET 🔄</span>
+                   </button>
+                   <button onClick={() => setWeeklyPlan(null)} style={{padding: '15px', background: '#FEE2E2', color: '#EF4444', border: '1px solid #FCA5A5', borderRadius: '12px', fontSize: '14px', fontWeight: 700, cursor: 'pointer'}}>
+                       Ayarları Değiştir
+                   </button>
+                </div>
              </>
            )}
         </div>
@@ -1118,18 +1245,29 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
              ))}
           </div>
           {crossResult && (
-            <div style={{marginTop: '15px', display: 'flex', gap: '15px', flexWrap: 'wrap'}}>
+            <div ref={healthResultRef} style={{marginTop: '15px', display: 'flex', gap: '15px', flexWrap: 'wrap'}}>
               <div style={{flex: '1 1 250px', background: '#F8FAFC', padding: '15px', borderRadius: '8px', border: '1px solid #E2E8F0', display: 'flex', flexDirection: 'column'}}>
                   <div style={{color: '#047857', fontWeight: 700, marginBottom: '5px', fontSize: '13px'}}>🥗 Diyet / Sağlıklı</div>
                   <div style={{fontWeight: 800, fontSize: '15px', marginBottom: '8px', color: '#1E293B'}}>{crossResult.diet.name}</div>
                   <div style={{fontSize: '12px', color: '#64748B', flex: 1}}>{crossResult.diet.desc}</div>
-                  <button onClick={() => openRecipe(crossResult.diet.dishObj)} style={{marginTop: '12px', padding: '8px', background: '#10B981', color: 'white', borderRadius: '6px', border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '12px', width: '100%'}}>Tarifi İncele</button>
+                  <div style={{display: 'flex', gap: '8px', marginTop: '12px'}}>
+                      <button onClick={() => openRecipe(crossResult.diet.dishObj)} style={{flex: 1, padding: '8px', background: '#10B981', color: 'white', borderRadius: '6px', border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '12px'}}>Tarifi İncele</button>
+                      <button onClick={() => { if(typeof setShoppingCart === 'function') setShoppingCart(generateMissingShoppingList(crossResult.diet.dishObj.ingredients)); }} style={{flex: 1, padding: '8px', background: '#059669', color: 'white', borderRadius: '6px', border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '12px'}}>🛒 Liste</button>
+                  </div>
               </div>
               <div style={{flex: '1 1 250px', background: '#FFFBEB', padding: '15px', borderRadius: '8px', border: '1px solid #FDE68A', display: 'flex', flexDirection: 'column'}}>
                   <div style={{color: '#B45309', fontWeight: 700, marginBottom: '5px', fontSize: '13px'}}>👧👦 Çocuk / Sporcu</div>
                   <div style={{fontWeight: 800, fontSize: '15px', marginBottom: '8px', color: '#1E293B'}}>{crossResult.kid.name}</div>
                   <div style={{fontSize: '12px', color: '#64748B', flex: 1}}>{crossResult.kid.desc}</div>
-                  <button onClick={() => openRecipe(crossResult.kid.dishObj)} style={{marginTop: '12px', padding: '8px', background: '#F59E0B', color: 'white', borderRadius: '6px', border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '12px', width: '100%'}}>Tarifi İncele</button>
+                  <div style={{display: 'flex', gap: '8px', marginTop: '12px'}}>
+                      <button onClick={() => openRecipe(crossResult.kid.dishObj)} style={{flex: 1, padding: '8px', background: '#F59E0B', color: 'white', borderRadius: '6px', border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '12px'}}>Tarifi İncele</button>
+                      <button onClick={() => { if(typeof setShoppingCart === 'function') setShoppingCart(generateMissingShoppingList(crossResult.kid.dishObj.ingredients)); }} style={{flex: 1, padding: '8px', background: '#D97706', color: 'white', borderRadius: '6px', border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '12px'}}>🛒 Liste</button>
+                  </div>
+              </div>
+              <div style={{width: '100%', marginTop: '15px'}}>
+                <button onClick={handleCrossMenu} style={{width: '100%', padding: '12px', background: '#F1F5F9', color: '#475569', border: '1px solid #CBD5E1', borderRadius: '8px', fontWeight: 700, cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px', transition: '0.2s'}}>
+                    <span>YENİ VARYASYONLARI ÜRET 🔄</span>
+                </button>
               </div>
             </div>
           )}
@@ -1267,7 +1405,7 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
           )}
 
           {winningDish && (
-              <div style={{width: '100%', background: '#FDF2F8', padding: '20px', borderRadius: '20px', textAlign: 'center'}}>
+              <div ref={wheelResultRef} style={{width: '100%', background: '#FDF2F8', padding: '20px', borderRadius: '20px', textAlign: 'center'}}>
                  <div style={{fontSize:'30px', fontWeight:900, color:'#BE185D', marginBottom: '10px'}}>🎯 {winningDish.name}</div>
                  <div style={{display: 'flex', gap: '5px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '15px'}}>
                     <span style={{background: '#EEF2FF', color: '#4338CA', padding: '5px 12px', borderRadius: '6px', fontSize: '13px', fontWeight: 700}}>🔥 {winningDish.calories}</span>
@@ -1353,13 +1491,19 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
                  {selectedDish.recipe}
               </div>
 
-              {selectedDish.isMenu && selectedDish.totalCost && (
+              {selectedDish.totalCost && !selectedDish.isAccepted && (
                  <div style={{borderTop: '2px dashed #E2E8F0', margin: '20px 0', paddingTop: '20px'}}>
                     <p style={{fontSize: '15px', color: '#1E293B', fontWeight: 800, marginBottom: '10px', textAlign: 'center'}}>Bu kusursuz yemeği yapmaya karar verdiniz mi?</p>
                     <button onClick={() => acceptMenuAction(selectedDish.totalCost)} style={{width: '100%', padding: '16px', background: '#10B981', color: 'white', border: 'none', borderRadius: '12px', fontSize: '16px', fontWeight: 800, cursor: 'pointer', boxShadow: '0 4px 6px rgba(16, 185, 129, 0.2)'}}>
                        🎯 EVET, YAPMAYA KARAR VERDİM!
                     </button>
                     <p style={{textAlign: 'center', fontSize: '11px', color: '#64748B', marginTop: '10px'}}>Onayladığınızda dışarıdan sipariş yerine cebinizde kalan miktar panelinize eklenecektir.</p>
+                 </div>
+              )}
+              {selectedDish.isAccepted && (
+                 <div style={{background: '#DCFCE7', color: '#166534', padding: '15px', borderRadius: '8px', borderLeft: '4px solid #22C55E', margin: '20px 0', textAlign: 'center'}}>
+                    <strong style={{fontSize: '16px'}}>🎉 Karar Verildi!</strong><br/>
+                    <span style={{fontSize: '14px', display: 'inline-block', marginTop: '5px'}}>Dışarı fiyatına kıyasla net <b>{selectedDish.acceptedSaving} ₺</b> tasarruf ettiniz ve bu rakam panelinize işlendi! Tebrikler, şimdi aşağıdaki mutfak zekası tarifini uygulayarak harikalar yaratma zamanı.</span>
                  </div>
               )}
            </div>
@@ -1392,6 +1536,100 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
                  <span style={{fontWeight: 700, color: '#475569'}}>Yaklaşık Dolap Dışı Maliyet:</span>
                  <span style={{fontSize: '20px', fontWeight: 800, color: '#10B981'}}>~₺{shoppingCart.estimatedCost}</span>
               </div>
+              
+              {(() => {
+                  const partner = typeof window !== 'undefined' ? (localStorage.getItem('GLOBAL_MARKET_PARTNER') || 'BAKI_DEFAULT') : 'BAKI_DEFAULT';
+                  let brandName = "Baki'nin Mutfağı (Otomatik Tasarruf)";
+                  let brandColor = "#10B981";
+                  let brandAction = "Listeyi Onayla ve Kapat";
+
+                  if (partner === 'MIGROS') { brandName = "Migros Sanal Market"; brandColor = "#F97316"; brandAction = `${brandName} İle Siparişi Tamamla`; }
+                  else if (partner === 'GETIR') { brandName = "Getir"; brandColor = "#8B5CF6"; brandAction = `${brandName} İle Siparişi Tamamla`; }
+                  else if (partner === 'TRENDYOL') { brandName = "Trendyol Go"; brandColor = "#F59E0B"; brandAction = `${brandName} İle Siparişi Tamamla`; }
+                  else if (partner === 'YEMEKSEPETI') { brandName = "Yemeksepeti Mahalle"; brandColor = "#EF4444"; brandAction = `${brandName} İle Siparişi Tamamla`; }
+                  else if (partner === 'SOK') { brandName = "Şok Cepte Şok"; brandColor = "#FCD34D"; brandAction = `${brandName} İle Siparişi Tamamla`; }
+                  else if (partner === 'A101') { brandName = "A101 Kapıda"; brandColor = "#06B6D4"; brandAction = `${brandName} İle Siparişi Tamamla`; }
+                  else if (partner === 'ISTEGELSIN') { brandName = "İsteGelsin"; brandColor = "#3B82F6"; brandAction = `${brandName} İle Siparişi Tamamla`; }
+
+                  return (
+                      <div style={{marginTop: '25px'}}>
+                          {partner !== 'BAKI_DEFAULT' && (
+                              <div style={{fontSize: '11px', color: '#64748B', textAlign: 'center', marginBottom: '10px'}}>📦 Fiyatlandırma ve sepet listesi <b>Baki'nin Mutfağı</b> partner ortaklığında <b>{brandName}</b> stoklarına ait güncel bölge limitleri ve enflasyon üzerinden hesaplanmıştır.</div>
+                          )}
+                          <button onClick={() => {
+                              if (partner !== 'BAKI_DEFAULT') alert(`${brandName} API'sine bağlanıyor... Komisyon takip ID başarıyla aktarıldı: REF_BAKI_2026. Bizi tercih ettiğiniz için teşekkürler! (Demo)`);
+                              setShoppingCart(null);
+                          }} style={{width: '100%', padding: '16px', background: brandColor, color: (partner === 'SOK' ? '#1E293B' : 'white'), borderRadius: '12px', fontWeight: 900, border: 'none', cursor: 'pointer', fontSize: '15px', boxShadow: `0 4px 12px ${brandColor}50`}}>
+                             🛒 {brandAction}
+                          </button>
+                      </div>
+                  )
+              })()}
+           </div>
+        </div>
+      )}
+      {showWeeklyModal && (
+        <div className="modal-overlay" onClick={() => setShowWeeklyModal(false)}>
+           <div className="modal-content" onClick={e => e.stopPropagation()}>
+              <button className="modal-close" onClick={() => setShowWeeklyModal(false)}>✕</button>
+              <h2 className="modal-title" style={{color: '#10B981'}}>Haftalık Raporunuz 🏆</h2>
+              <div style={{textAlign: 'center', margin: '20px 0'}}>
+                 <div style={{fontSize: '48px', marginBottom: '10px'}}>🎉</div>
+                 <h3 style={{fontSize: '20px', color: '#1E293B'}}>Harika Bir İş Çıkardınız!</h3>
+                 <p style={{fontSize: '15px', color: '#475569', marginTop: '10px'}}>
+                   Geçtiğimiz hafta boyunca dışarıdan sipariş vermek yerine kendi mutfağınıza girerek büyük bir tasarruf sağladınız. 
+                 </p>
+                 <div style={{background: '#DCFCE7', padding: '20px', borderRadius: '12px', marginTop: '20px'}}>
+                    <div style={{fontSize: '14px', color: '#166534', fontWeight: 700}}>Geçen Hafta Gerçek Tasarrufunuz:</div>
+                    <div style={{fontSize: '32px', color: '#15803D', fontWeight: 900}}>₺{lastWeekSavings}</div>
+                 </div>
+                 
+                 <div style={{background: '#FFFBEB', padding: '15px', borderRadius: '12px', marginTop: '15px', borderLeft: '4px solid #F59E0B', textAlign: 'left'}}>
+                    <div style={{fontSize: '14px', color: '#B45309', fontWeight: 800, marginBottom: '5px'}}>💡 Şefin Tavsiyesi</div>
+                    <div style={{fontSize: '13px', color: '#92400E', fontWeight: 500}}>
+                       {lastWeekSavings < 150 ? "Bu hafta yaptığınız ufak tasarrufla dışarıdan kendinize güzel bir büyük boy filtre kahve ısmarlayabilir veya en sevdiğiniz tatlı ile ufak bir mola verebilirsiniz ☕🍩"
+                      : lastWeekSavings < 500 ? "Bu muhteşem tasarrufla hafta sonu kendinizi şımartıp güzel bir hediye alabilir veya sinemada harika bir filme gidebilirsiniz 🎬🎁"
+                      : lastWeekSavings < 1500 ? "Mükemmel! Çok ciddi bir tasarruf. Biriktirdiğiniz bu tutarla favori mağazanızda güzel bir alışveriş yapıp kendinizi ödüllendirmenin tam vakti 👗🛍️"
+                      : "İnanılmaz! Bu hafta resmen küçük bir servet cebinizde kaldı. Kendinizi şımartmak için lüks bir spa/masaj ayarlayabilir ya da uzun süredir ertelediğiniz hobinize ekipman alabilirsiniz 💆‍♀️💰"}
+                    </div>
+                 </div>
+
+                 <p style={{fontSize: '12px', color: '#64748B', marginTop: '15px'}}>Süpermarket sebze/bakkal ve kasap maliyetiniz ile standart bir restorandaki maliyet farkı üzerinden "gerçek verilerle" hesaplanmıştır. Yeni hafta rekorunuz için sayaç sıfırlanmıştır!</p>
+              </div>
+              <button onClick={() => setShowWeeklyModal(false)} style={{width: '100%', padding: '15px', background: '#3B82F6', color: 'white', borderRadius: '12px', fontWeight: 800, border: 'none', cursor: 'pointer', fontSize: '16px'}}>Yeni Haftaya Başla 🚀</button>
+           </div>
+        </div>
+      )}
+
+      {showHistoryModal && (
+        <div className="modal-overlay" onClick={() => setShowHistoryModal(false)}>
+           <div className="modal-content" onClick={e => e.stopPropagation()}>
+              <button className="modal-close" onClick={() => setShowHistoryModal(false)}>✕</button>
+              <h2 className="modal-title" style={{color: '#10B981'}}>Tasarruf Tarihçeniz 📜</h2>
+              
+              <div style={{marginTop: '20px', maxHeight: '60vh', overflowY: 'auto'}}>
+                 {getCookHistory().length === 0 ? (
+                    <div style={{padding: '20px', textAlign: 'center', background: '#F8FAFC', borderRadius: '12px', border: '1px solid #E2E8F0'}}>
+                       <div style={{fontSize: '40px', marginBottom: '15px'}}>🤔</div>
+                       <h3 style={{fontSize: '16px', color: '#1E293B', marginBottom: '10px'}}>Bu Rapor Ne İşe Yarıyor?</h3>
+                       <p style={{fontSize: '14px', color: '#64748B', lineHeight: '1.6'}}>
+                         Henüz hiçbir yemek yapmadınız! "Kümülatif Tasarruf Raporu", siz dışarıdan sağlıksız ve pahalı yemek satın almak yerine evde kendi mutfağınıza girdiğinizde, restoranların koyduğu absürt kar marjlarını cebinize nakit tasarruf olarak bıraktığınız tutarı temsil eder.
+                         <br/><br/>
+                         Sistemin tasarrufunuzu hesaplaması için herhangi bir modülden (Şans Çarkı, Dolabımdakiler vb.) bir tarif açın ve en alttaki <br/><b style={{color:'#10B981', display: 'inline-block', marginTop: '10px'}}>"🎯 EVET, YAPMAYA KARAR VERDİM!"</b><br/>butonuna tıklayın!
+                       </p>
+                    </div>
+                 ) : (
+                    getCookHistory().slice().reverse().map((h, i) => (
+                       <div key={i} style={{padding: '15px', background: '#F8FAFC', borderRadius: '12px', marginBottom: '10px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', border: '1px solid #E2E8F0'}}>
+                          <div>
+                             <div style={{fontSize: '15px', fontWeight: 800, color: '#334155'}}>{h.name}</div>
+                             <div style={{fontSize: '11px', color: '#94A3B8', marginTop: '5px'}}>{new Date(h.date).toLocaleString('tr-TR')}</div>
+                          </div>
+                          <div style={{fontSize: '16px', fontWeight: 900, color: '#10B981'}}>+₺{h.saving}</div>
+                       </div>
+                    ))
+                 )}
+              </div>
            </div>
         </div>
       )}
@@ -1404,7 +1642,7 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
 // ========================
 function ChatbotFlow({ handleTitleClick }) {
   const welcomeMessage1 = "Merhaba ben Baki'nin mutfağı özel şefi Demet Şef. 👩‍🍳 Burası sizin sıradan bir yemek kitabınız değil, kişiselleştirilmiş gastronomi asistanınız! Önümüzde harika özellikler var, sizin gibi mutfak tutkunları (veya sadece hızlıca doymak isteyenler) için tasarlanan özelliklerimiz şunlar:";
-  const welcomeMessage2 = "🛒 Dolabımdakiler: Evdeki kısıtlı malzemelerle mucizeler yaratmak isteyen pratik aşçılar içindir.\n\n📅 Haftalık Zeki Program: Bütçesini haftalık tasarlamak isteyenler içindir.\n\n👨‍👩‍👧‍👦 Evin Sağlık Karnesi: Diyet ve çocuk menüsünü tek malzemede birleştirir.\n\n🎡 Şans Çarkı: Ne pişirsem stresinden bıkan spontane ruhlar içindir.\n\n🎬 Eğlence Serüveni: Yemek videoları kaydırabileceğiniz, kendi videolarınızı çekebileceğiniz ve diğer şeflerle takipleşip mesajlaşabileceğiniz interaktif sosyal gurme ağınızdır. (Hemen Ayarlar sekmesinden şef profil fotoğrafınızı yükleyebilirsiniz!)\n\nEğer bana doğrudan 'kıyma var ne yapayım' veya 'Karnıyarık nasıl yapılır' diye sorarsanız da tarifinizi anında dökerim. Bugün nasıl bir ruh halindesiniz? 😊";
+  const welcomeMessage2 = "🛒 Dolabımdakiler: Evdeki kısıtlı malzemelerle mucizeler yaratmak isteyen pratik aşçılar içindir.\n\n📅 Haftalık Zeki Program: Bütçesini haftalık tasarlamak isteyenler içindir.\n\n👨‍👩‍👧‍👦 Evin Sağlık Karnesi: Diyet ve çocuk menüsünü tek malzemede birleştirir.\n\n🎡 Şans Çarkı: Ne pişirsem stresinden bıkan spontane ruhlar içindir.\n\n🎬 Eğlence Serüveni: Yemek videoları kaydırabileceğiniz, kendi videolarınızı çekebileceğiniz ve diğer şeflerle takipleşip mesajlaşabileceğiniz interaktif sosyal gurme ağınızdır. (Eğlence Serüveni içerisindeki Profil sekmesinden şef profil fotoğrafınızı yükleyip hesabınızı kişiselleştirmeyi unutmayın!)\n\nEğer bana doğrudan 'kıyma var ne yapayım' veya 'Karnıyarık nasıl yapılır' diye sorarsanız da tarifinizi anında dökerim. Bugün nasıl bir ruh halindesiniz? 😊";
 
   const [messages, setMessages] = useState([
     { text: welcomeMessage1, sender: 'bot' },
@@ -1509,16 +1747,18 @@ function ChatbotFlow({ handleTitleClick }) {
 // ========================
 // ARTAN YEMEK (GERİ DÖNÜŞÜM) MODÜLÜ
 // ========================
-function RecycleFlow({ handleTitleClick }) {
+function RecycleFlow({ handleTitleClick, setShoppingCart }) {
   const [input, setInput] = useState("");
   const [results, setResults] = useState([]);
   const [hasSearched, setHasSearched] = useState(false);
+  const recycleResultRef = React.useRef(null);
 
   const handleSearch = () => {
     if (!input.trim()) return;
     const output = processLeftovers(input);
     setResults(output);
     setHasSearched(true);
+    setTimeout(() => recycleResultRef.current?.scrollIntoView({ behavior: 'smooth' }), 100);
   };
 
   return (
@@ -1549,7 +1789,7 @@ function RecycleFlow({ handleTitleClick }) {
         </div>
       </div>
 
-      <div className="results-container">
+      <div className="results-container" ref={recycleResultRef}>
         {hasSearched && results.length === 0 && (
            <div className="ai-advice-box" style={{backgroundColor: '#FFFBEB', color: '#B45309', borderLeft: '4px solid #F59E0B'}}>
               Buna uygun özel bir geri dönüşüm tarifi bulamadım. Ancak "Mutfak YZ Sohbet" bölümünden detaylı tarif isteyebilirsiniz! Veya "makarna", "pilav", "tavuk" gibi anahtar kelimeler girmeyi deneyin.
@@ -1567,9 +1807,12 @@ function RecycleFlow({ handleTitleClick }) {
                     <div style={{fontWeight: '700', color: '#1E293B', marginBottom: '5px', display: 'flex', alignItems: 'center', gap: '8px'}}>
                       <span>🍲</span> {recipe.name}
                     </div>
-                    <div style={{fontSize: '13px', color: '#64748B', lineHeight: '1.5'}}>
+                    <div style={{fontSize: '13px', color: '#64748B', lineHeight: '1.5', marginBottom: '10px'}}>
                       {recipe.desc}
                     </div>
+                    {typeof setShoppingCart === 'function' && (
+                       <button onClick={() => setShoppingCart(generateMissingShoppingList([`${recipe.name} Ekstra Malzemeleri`]))} style={{width: '100%', padding: '10px', background: '#10B981', color: 'white', borderRadius: '6px', border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: '13px'}}>🛒 Pazar Listesi Çıkar</button>
+                    )}
                  </div>
               ))}
             </div>
@@ -1579,6 +1822,11 @@ function RecycleFlow({ handleTitleClick }) {
             </div>
           </div>
         ))}
+        {hasSearched && results.length > 0 && (
+           <button onClick={handleSearch} style={{display: 'block', width: '100%', padding: '12px', background: '#10B981', color: 'white', borderRadius: '10px', fontSize: '15px', fontWeight: 800, border: 'none', cursor: 'pointer', marginTop: '5px', marginBottom: '10px', boxShadow: '0 4px 6px rgba(16, 185, 129, 0.2)'}}>
+              🔄 YENİ DÖNÜŞÜM VARYASYONLARI ÜRET
+           </button>
+        )}
         <div style={{height: '60px'}}></div>
       </div>
     </>
@@ -1664,37 +1912,7 @@ function SettingsFlow({ setDarkMode, darkMode, appLang, setAppLang, activeUser, 
            </select>
         </div>
 
-        <div style={{marginTop: '25px', paddingBottom: '15px', paddingTop: '15px', borderTop: '1px solid #E2E8F0', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-           <div>
-               <div style={{fontWeight: 600, color: '#334155', marginBottom: '3px'}}>Şef Kimliği (Profil & Avatar)</div>
-               <div style={{fontSize: '12px', color: '#64748B'}}>Eğlence Serüveni'nde maskeniz: <span style={{fontWeight: 800, color: '#8B5CF6'}}>@{activeUser?.username || "anonim"}</span></div>
-               <div style={{fontSize: '12px', color: '#64748B'}}>Buradan profil fotoğrafınızı güncelleyebilirsiniz.</div>
-           </div>
-           <div>
-               <label style={{background: '#10B981', color: 'white', padding: '8px 15px', borderRadius: '8px', cursor: 'pointer', fontSize: '13px', fontWeight: 600}}>
-                   Yükle
-                   <input type="file" accept="image/*" style={{display: 'none'}} onChange={handleAvatarUpload} />
-               </label>
-           </div>
-        </div>
 
-        <div style={{marginTop: '15px', paddingBottom: '15px', paddingTop: '15px', borderTop: '1px dashed #E2E8F0'}}>
-            <label style={{display: 'flex', alignItems: 'center', cursor: 'pointer'}}>
-                <input type="checkbox" checked={activeUser?.isPrivate || false} onChange={async (e) => {
-                    const isChecked = e.target.checked;
-                    if (activeUser?.uid) {
-                        await updateDoc(doc(db, 'users', activeUser.uid), { isPrivate: isChecked });
-                        const updatedUser = {...activeUser, isPrivate: isChecked};
-                        setActiveUser(updatedUser);
-                        localStorage.setItem('baki_active_user', JSON.stringify(updatedUser)); // Persistent update
-                    }
-                }} style={{width: '24px', height: '24px', accentColor: '#8B5CF6', flexShrink: 0}} />
-                <div style={{marginLeft: '15px'}}>
-                   <div style={{fontWeight: 700, color: '#334155'}}>🔒 Gizli Profil (Private)</div>
-                   <div style={{fontSize: '12px', color: '#64748B', marginTop: '3px'}}>Eğer açıksa videolarınızı ve profilinizi sadece onayladığınız takipçiler görebilir. Sizi takip etmek isteyenler "Bildirim" havuzuna düşer ve siz onaylayana kadar sizi takip edemezler.</div>
-                </div>
-            </label>
-        </div>
 
         <div style={{marginTop: '25px', paddingTop: '15px', borderTop: '1px solid #E2E8F0', paddingBottom: '15px'}}>
            <div style={{fontWeight: 600, color: '#334155', marginBottom: '5px'}}>Kiler (Demirbaş Hafızası)</div>
@@ -1783,6 +2001,27 @@ function AdminDashboard({ setView, activeUser }) {
     const [adText, setAdText] = useState("");
     const [adImage, setAdImage] = useState("");
     const [globalNotif, setGlobalNotif] = useState("");
+    
+    const [inspectingUser, setInspectingUser] = useState(null);
+    const [inspectPosts, setInspectPosts] = useState([]);
+    const [marketPartner, setMarketPartner] = useState(localStorage.getItem('GLOBAL_MARKET_PARTNER') || 'BAKI_DEFAULT');
+
+    const PARTNERS = [
+       { code: 'BAKI_DEFAULT', name: "Baki'nin Mutfağı (Zemin / Varsayılan Fiyat)", bg: '#10B981', color: 'white', desc: "Standart fiyatlandırma. (Fiyat=1.0x)" },
+       { code: 'MIGROS', name: "Migros Sanal Market", bg: '#F97316', color: 'white', desc: "Premium Market (%10 Artış)" },
+       { code: 'GETIR', name: "Getir / GetirBüyük", bg: '#8B5CF6', color: 'white', desc: "Hızlı depo satışı (Komisyon: %25 Artış)" },
+       { code: 'TRENDYOL', name: "Trendyol Go Market", bg: '#F59E0B', color: 'white', desc: "Mahalle marketi (%12 Artış)" },
+       { code: 'YEMEKSEPETI', name: "Yemeksepeti Mahalle", bg: '#EF4444', color: 'white', desc: "Esnaf komisyonu (%15 Artış)" },
+       { code: 'SOK', name: "Şok Cepte Şok", bg: '#FCD34D', color: '#1E293B', desc: "Ulusal Market (-%10 İndirimli)" },
+       { code: 'A101', name: "A101 Kapıda", bg: '#06B6D4', color: 'white', desc: "Hard Discount (-%15 En Ucuz)" },
+       { code: 'ISTEGELSIN', name: "İsteGelsin", bg: '#3B82F6', color: 'white', desc: "Süpermarket (%5 Artış)" }
+    ];
+
+    const changePartner = (code) => {
+        setMarketPartner(code);
+        localStorage.setItem('GLOBAL_MARKET_PARTNER', code);
+        alert(`B2B Affiliate Değişimi: Uygulamadaki tüm pazar/maliyet fiyatları artık ${code} oranlarına göre canlı hesaplanacaktır! Komisyon bağlantısı alışveriş listelerinde aktifleştirildi.`);
+    };
 
     useEffect(() => {
         const uSub = onSnapshot(query(collection(db, 'users')), (snap) => {
@@ -1801,6 +2040,22 @@ function AdminDashboard({ setView, activeUser }) {
         return () => { uSub(); adSub(); };
     }, []);
 
+    const openInspector = async (uObj) => {
+        setInspectingUser(uObj);
+        const q = query(collection(db, 'posts'), where('userId', '==', uObj.id));
+        const snap = await getDocs(q);
+        const arr = [];
+        snap.forEach(d => arr.push({id: d.id, ...d.data()}));
+        setInspectPosts(arr.sort((a,b) => b.timestamp - a.timestamp));
+    };
+
+    const deletePost = async (postId) => {
+        if(window.confirm("Dikkat: Bu paylaşımı platformdan TAMAMEN silmek üzeresiniz. Emin misiniz?")) {
+            await deleteDoc(doc(db, 'posts', postId));
+            setInspectPosts(prev => prev.filter(p => p.id !== postId));
+        }
+    };
+
     const toggleBan = async (uid, isCurrentlyBanned) => {
         if(uid === activeUser?.uid) return alert("Kendinizi yasaklayamazsınız!");
         if(window.confirm(isCurrentlyBanned ? "Kullanıcının engelini kaldırmak istediğinize emin misiniz?" : "Bu kullanıcıyı kalıcı olarak BAN'lamak istediğinize emin misiniz? (Anında platformdan düşecek)")) {
@@ -1810,30 +2065,49 @@ function AdminDashboard({ setView, activeUser }) {
 
     const removeAccount = async (uid) => {
         if(uid === activeUser?.uid) return alert("Kendi hesabınızı bu panelden silemezsiniz!");
-        const confirmVal = window.prompt("DİKKAT: Kullanıcının tüm veritabanı kaydı SİLİNECEK. İşlemi onaylamak için büyük harflerle 'SİL' yazın:");
+        const confirmVal = window.prompt("DİKKAT: Kullanıcının tüm veritabanı kaydı, paylaştığı her şey ve yazışmaları (kademeli olarak) SİLİNECEK. Onaylamak için büyük harflerle 'SİL' yazın:");
         if (confirmVal === 'SİL') {
-            await deleteDoc(doc(db, 'users', uid));
-            alert("Hesap veritabanından kalıcı olarak temizlendi.");
+            try {
+                const deletePromises = [];
+                // 1) Kullanıcının kendi gönderilerini (posts) sil
+                const postsQ = query(collection(db, 'posts'), where('userId', '==', uid));
+                const pSnap = await getDocs(postsQ);
+                pSnap.forEach(d => { deletePromises.push(deleteDoc(doc(db, 'posts', d.id))); });
+                
+                // 2) Diğer gönderilerdeki Like ve Yorumlarını temizle
+                const allPostsSnap = await getDocs(collection(db, 'posts'));
+                allPostsSnap.forEach(d => {
+                    const pData = d.data();
+                    let changed = false;
+                    let newLikes = pData.likes || [];
+                    if (newLikes.includes(uid)) { newLikes = newLikes.filter(l => l !== uid); changed = true; }
+                    let newComments = pData.comments || [];
+                    if (newComments.some(c => c.userId === uid)) { newComments = newComments.filter(c => c.userId !== uid); changed = true; }
+                    if (changed) { deletePromises.push(updateDoc(doc(db, 'posts', d.id), { likes: newLikes, comments: newComments })); }
+                });
+
+                // 3) Diğer kullanıcılarla olan tüm Chat odalarındaki mesajları temizle
+                for (const u of usersList) {
+                    if (u.id === uid) continue;
+                    const chatId = [uid, u.id].sort().join('_');
+                    const mSnap = await getDocs(collection(db, 'chats', chatId, 'messages'));
+                    mSnap.forEach(mDoc => { deletePromises.push(deleteDoc(doc(db, 'chats', chatId, 'messages', mDoc.id))); });
+                }
+                
+                await Promise.all(deletePromises);
+                
+                // 4) En son hesabı sil
+                await deleteDoc(doc(db, 'users', uid));
+                alert("Hesap ve tüm ilişkili verileri (gönderiler, mesajlar) kalıcı olarak temizlendi.");
+            } catch (err) {
+                alert("Silme sırasında hata: " + err.message);
+            }
         }
     };
     
     const saveAd = async () => {
         await setDoc(doc(db, 'system', 'adConfig'), { text: adText, image: adImage });
         alert("Global Reklam/Duyuru anında tüm ekranlara canlı olarak yansıtıldı!");
-    };
-    
-    const seedIrem = async () => {
-        const uid = "iremdnr02_uid";
-        await setDoc(doc(db, 'users', uid), { uid: uid, email: "irem0e@gmail.com", name: "İrem", username: "iremdnr02", password: "irem02", photoURL: "https://i.pravatar.cc/150?u=iremdnr02", followers: [], follows: [], createdAt: new Date().toISOString() });
-        await setDoc(doc(db, 'posts', 'post_kek_1'), { userId: uid, username: "iremdnr02", userName: "İrem", userPhoto: "https://i.pravatar.cc/150?u=iremdnr02", caption: "Bugün mutfakta harikalar yarattım! Islak kekin bu kadar güzel olabileceğini düşünmemiştim 🍫✨ #ıslakkek #çikolata", images: ["/images/kek_1_1785368720998.png"], likes: [], comments: [], timestamp: Date.now() });
-        await setDoc(doc(db, 'posts', 'post_pogaca_1'), { userId: uid, username: "iremdnr02", userName: "İrem", userPhoto: "https://i.pravatar.cc/150?u=iremdnr02", caption: "Sabah kahvaltısının vazgeçilmezi fırından yeni çıkmış sıcacık peynirli poğaçalarım! (Yana kaydırmalı ->) 🥐😋 #poğaça", images: ["/images/pogaca_1_1785368730596.png", "/images/pogaca_2_1785368741491.png", "/images/pogaca_3_1785368750520.png", "/images/pogaca_4_1785368761616.png"], likes: [], comments: [], timestamp: Date.now() + 1 });
-        await setDoc(doc(db, 'posts', 'post_sarma_1'), { userId: uid, username: "iremdnr02", userName: "İrem", userPhoto: "https://i.pravatar.cc/150?u=iremdnr02", caption: "Anne eli değmiş gibi incecik kalem yaprak sarmalarım hazır. İnce ince sarmak biraz zahmetli ama buna değer! Limon dilimleriyle harika oldu. (Yana kaydır ->) 🍋🍃 #yapraksarma", images: ["/images/sarma_1_1785368771028.png", "/images/sarma_2_1785368779816.png", "/images/sarma_3_1785368790883.png", "/images/sarma_4_1785368802655.png", "/images/sarma_5_1785368812233.png"], likes: [], comments: [], timestamp: Date.now() + 2 });
-        const dbUsers = JSON.parse(localStorage.getItem('baki_users_db') || "[]");
-        if(!dbUsers.find(u => u.email === "irem0e@gmail.com")) {
-            dbUsers.push({uid: uid, email: "irem0e@gmail.com", password: "irem02", fullName: "İrem"});
-            localStorage.setItem('baki_users_db', JSON.stringify(dbUsers));
-        }
-        alert("İrem hesabı ve 3 Yana Kaydırmalı Gönderisi eklendi!");
     };
     
     const sendGlobalNotif = async () => {
@@ -1851,13 +2125,58 @@ function AdminDashboard({ setView, activeUser }) {
     };
 
     return (
-        <div className="App admin-container" style={{overflowY: 'auto', background: '#F8FAFC', height: '100vh', display: 'block', minHeight: '100vh'}}>
+        <div className="App admin-container" style={{overflowY: 'auto', background: '#F8FAFC', height: '100vh', display: 'block', minHeight: '100vh', position: 'relative'}}>
+            {/* AUDIT MODAL */}
+            {inspectingUser && (
+                <div style={{position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.8)', zIndex: 100, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                    <div style={{background: 'white', padding: '20px', borderRadius: '15px', width: '90%', maxWidth: '600px', maxHeight: '80vh', overflowY: 'auto', position: 'relative'}}>
+                        <button onClick={() => setInspectingUser(null)} style={{position: 'absolute', top: '15px', right: '15px', background: '#EF4444', color: 'white', border: 'none', padding: '5px 10px', borderRadius: '8px', cursor: 'pointer', fontWeight: 800}}>Kapat</button>
+                        <h3 style={{marginTop: 0, marginBottom: '20px', color: '#1E293B'}}>@{inspectingUser.username || inspectingUser.name} - Paylaşımları ({inspectPosts.length})</h3>
+                        {inspectPosts.length === 0 && <p style={{color: '#64748B'}}>Bu kullanıcının henüz bir paylaşımı yok.</p>}
+                        
+                        <div style={{display: 'flex', flexDirection: 'column', gap: '15px'}}>
+                            {inspectPosts.map(p => (
+                                <div key={p.id} style={{border: '1px solid #E2E8F0', borderRadius: '10px', padding: '15px', display: 'flex', gap: '15px', alignItems: 'center'}}>
+                                    <div style={{width: '100px', flexShrink: 0}}>
+                                        {p.images ? (
+                                            <img src={p.images[0]} style={{width: '100%', borderRadius: '8px', objectFit: 'cover'}} />
+                                        ) : (
+                                            <video src={p.videoURL} style={{width: '100%', borderRadius: '8px'}} muted />
+                                        )}
+                                    </div>
+                                    <div style={{flex: 1}}>
+                                        <div style={{fontSize: '12px', color: '#64748B'}}>{new Date(p.timestamp).toLocaleString()}</div>
+                                        <div style={{fontSize: '14px', fontWeight: 600, color: '#334155', marginTop: '5px'}}>{p.caption || "Açıklama yok"}</div>
+                                        <div style={{fontSize: '12px', color: '#10B981', marginTop: '5px'}}>Beğeni: {p.likes?.length||0} | Yorum: {p.comments?.length||0}</div>
+                                    </div>
+                                    <button onClick={() => deletePost(p.id)} style={{background: '#EF4444', color: 'white', border: 'none', padding: '8px 15px', borderRadius: '8px', fontWeight: 800, cursor: 'pointer'}}>SİL</button>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            )}
+
             <div className="admin-header" style={{position: 'sticky', top: 0, zIndex: 10, background: '#1E293B', padding: '15px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
                 <h2 style={{color: 'white', margin: 0, fontSize: '18px'}}>🛡️ Yetkili Kontrol Merkezi</h2>
                 <button onClick={() => setView('APP')} style={{background: 'rgba(255,255,255,0.2)', color: 'white', border: 'none', padding: '8px 15px', borderRadius: '8px', cursor: 'pointer', fontWeight: 800}}>Kapat</button>
             </div>
             
             <div style={{padding: '20px'}}>
+                <div style={{background: 'white', padding: '20px', borderRadius: '16px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', marginBottom: '20px'}}>
+                    <h3 style={{fontSize: '16px', color: '#1E293B', marginBottom: '10px'}}>🛒 B2B Market Affiliate / Ortaklık Yapılandırması (Canlı)</h3>
+                    <p style={{fontSize: '13px', color: '#64748B', marginBottom: '15px'}}>Seçtiğiniz partner marka anında tüm algoritmik maliyet fiyatlarını gerçek zamanlı komisyon / pazar oranına göre uygulamadaki herkeste yeniden biçimlendirir.</p>
+                    <div style={{display: 'flex', flexWrap: 'wrap', gap: '10px'}}>
+                        {PARTNERS.map(p => (
+                            <button key={p.code} onClick={() => changePartner(p.code)} style={{flex: '1 1 150px', padding: '15px', borderRadius: '12px', background: marketPartner === p.code ? p.bg : '#F1F5F9', color: marketPartner === p.code ? p.color : '#475569', border: marketPartner === p.code ? '3px solid #0F172A' : '1px solid #CBD5E1', cursor: 'pointer', display: 'flex', flexDirection: 'column', gap: '5px', alignItems: 'center', transition: '0.2s', boxShadow: marketPartner === p.code ? '0 5px 15px rgba(0,0,0,0.2)' : 'none'}}>
+                                <div style={{fontWeight: 800, fontSize: '14px', textAlign: 'center'}}>{p.name}</div>
+                                <div style={{fontSize: '11px', opacity: 0.9, textAlign: 'center'}}>{p.desc}</div>
+                                {marketPartner === p.code && <div style={{marginTop: '5px', fontSize: '10px', background: 'rgba(0,0,0,0.2)', padding: '2px 8px', borderRadius: '6px'}}>Aktif Sistem Partneri</div>}
+                            </button>
+                        ))}
+                    </div>
+                </div>
+
                 <div style={{background: 'white', padding: '20px', borderRadius: '16px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', marginBottom: '20px'}}>
                     <h3 style={{fontSize: '16px', color: '#1E293B', marginBottom: '10px'}}>📢 Global Reklam & Duyuru Yönetimi</h3>
                     <p style={{fontSize: '13px', color: '#64748B', marginBottom: '15px'}}>Buraya girdiğiniz görsel linki ve duyuru yazısı anında uygulamanın tepesinde (Sponsor Banner) belirecek.</p>
@@ -1882,7 +2201,6 @@ function AdminDashboard({ setView, activeUser }) {
                 <div style={{background: 'white', padding: '20px', borderRadius: '16px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', paddingBottom: '40px'}}>
                     <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px'}}>
                         <h3 style={{fontSize: '18px', color: '#1E293B', margin: 0}}>👥 Platform Kullanıcıları ({usersList.length} Kişi)</h3>
-                        <button onClick={seedIrem} style={{background: '#8B5CF6', color: 'white', border: 'none', padding: '8px 15px', borderRadius: '8px', cursor: 'pointer', fontWeight: 800}}>🔥 İrem Demo Data Yükle</button>
                     </div>
                     <div style={{overflowX: 'auto'}}>
                         <table style={{width: '100%', minWidth: '600px', borderCollapse: 'collapse', fontSize: '14px', textAlign: 'left'}}>
@@ -1925,10 +2243,13 @@ function AdminDashboard({ setView, activeUser }) {
                                             {u.isBanned ? <span style={{background:'#FEE2E2',color:'#EF4444',padding:'4px 8px',borderRadius:'4px',fontWeight:700,fontSize:'11px'}}>YASAKLI</span> : <span style={{background:'#DCFCE7',color:'#10B981',padding:'4px 8px',borderRadius:'4px',fontWeight:700,fontSize:'11px'}}>GÜVENLİ</span>}
                                         </td>
                                         <td style={{padding: '12px 10px', display: 'flex', gap: '5px'}}>
-                                            <button onClick={()=>toggleBan(u.id, u.isBanned)} style={{background: u.isBanned ? '#94A3B8' : '#EF4444', color: 'white', border: 'none', padding: '6px 15px', borderRadius: '6px', fontWeight: 800, cursor: 'pointer', transition: '0.2s', boxShadow: '0 2px 4px rgba(0,0,0,0.1)'}}>
-                                                {u.isBanned ? 'Kaldır' : 'YASAKLA'}
+                                            <button onClick={()=>openInspector(u)} style={{background: '#3B82F6', color: 'white', border: 'none', padding: '6px 10px', borderRadius: '6px', fontWeight: 800, cursor: 'pointer', transition: '0.2s', boxShadow: '0 2px 4px rgba(0,0,0,0.1)'}}>
+                                                İNCELE
                                             </button>
-                                            <button onClick={()=>removeAccount(u.id)} style={{background: 'black', color: 'white', border: 'none', padding: '6px 15px', borderRadius: '6px', fontWeight: 800, cursor: 'pointer', transition: '0.2s', boxShadow: '0 2px 4px rgba(0,0,0,0.1)'}}>
+                                            <button onClick={()=>toggleBan(u.id, u.isBanned)} style={{background: u.isBanned ? '#94A3B8' : '#EF4444', color: 'white', border: 'none', padding: '6px 10px', borderRadius: '6px', fontWeight: 800, cursor: 'pointer', transition: '0.2s', boxShadow: '0 2px 4px rgba(0,0,0,0.1)'}}>
+                                                {u.isBanned ? 'KALDIR' : 'BANLA'}
+                                            </button>
+                                            <button onClick={()=>removeAccount(u.id)} style={{background: 'black', color: 'white', border: 'none', padding: '6px 10px', borderRadius: '6px', fontWeight: 800, cursor: 'pointer', transition: '0.2s', boxShadow: '0 2px 4px rgba(0,0,0,0.1)'}}>
                                                 SİL
                                             </button>
                                         </td>

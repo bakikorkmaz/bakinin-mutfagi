@@ -4,6 +4,8 @@
   "private": true,
   "homepage": "https://bakikorkmaz.github.io/bakinin-mutfagi",
   "dependencies": {
+    "@tensorflow-models/mobilenet": "^2.1.1",
+    "@tensorflow/tfjs": "^4.22.0",
     "firebase": "^12.16.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

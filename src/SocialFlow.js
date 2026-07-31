@@ -2,9 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { db, auth, storage } from './firebase';
 import { collection, getDocs, doc, updateDoc, arrayUnion, arrayRemove, getDoc, addDoc, query, orderBy, onSnapshot } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import * as tf from '@tensorflow/tfjs';
+import * as mobilenet from '@tensorflow-models/mobilenet';
 
-export default function SocialFlow({ activeUser }) {
+export default function SocialFlow({ activeUser, setActiveUser }) {
    const [subTab, setSubTab] = useState('FOLLOW'); // FEED, CHAT, FOLLOW, UPLOAD
+   const [model, setModel] = useState(null);
+   const [isModelLoading, setIsModelLoading] = useState(true);
 
    // --- FOLLOW SİSTEMİ ALTYAPISI ---
    const [allUsers, setAllUsers] = useState([]);
@@ -28,7 +32,23 @@ export default function SocialFlow({ activeUser }) {
    const [chatMessages, setChatMessages] = useState([]);
    const [msgText, setMsgText] = useState("");
 
+   // --- YORUM (COMMENT) SİSTEMİ ---
+   const [commentModalPost, setCommentModalPost] = useState(null);
+   const [commentText, setCommentText] = useState("");
+
     useEffect(() => {
+        async function loadModel() {
+            try {
+                const loadedModel = await mobilenet.load({version: 2, alpha: 1.0});
+                setModel(loadedModel);
+                setIsModelLoading(false);
+            } catch(err) {
+                console.error("Yapay Zeka Core yüklenemedi:", err);
+                setIsModelLoading(false);
+            }
+        }
+        loadModel();
+
         if (activeUser?.uid) {
             fetchUsersAndProfile();
             
@@ -109,40 +129,125 @@ export default function SocialFlow({ activeUser }) {
                }
            }
        } catch (err) {
-           alert("Takipleşme işleminde sorun çıktı: " + err.message);
+           console.log("Takipleşme işlemi arka planda mühür takıldı: " + err.message);
        }
    };
 
    const handleVideoUpload = async () => {
-       if (!videoFile) return alert("Lütfen kameradan veya galeriden bir video seçin!");
+       if (!videoFile) return alert("Lütfen kameradan veya galeriden bir dosya seçin!");
        if (!activeUser?.uid) return alert("Google girişi yapılmamış.");
        
-       // SİMÜLE EDİLMİŞ YAPAY ZEKA GÜVENLİK FİLTRESİ
+       if (isModelLoading) {
+           return alert("Yapay Zeka güvenlik modülü arka planda yükleniyor, lütfen 3-4 saniye bekleyip tekrar deneyin.");
+       }
+       if (!model) {
+           return alert("Güvenlik Bildirimi: Yapay Zeka analiz motoru başlatılamadı. Lütfen sayfası yenileyin.");
+       }
+
+       setUploading(true);
+
+       // SİMÜLE EDİLMİŞ YAPAY ZEKA METİN GÜVENLİK FİLTRESİ
        const toxicWords = ['şiddet', 'kan', 'ölüm', 'hack', 'kötü'];
        const isToxicDesc = toxicWords.some(w => videoDesc.toLowerCase().includes(w));
        if (isToxicDesc) {
+           setUploading(false);
            return alert("🚨 YAPAY ZEKA GÜVENLİK UYARISI: Videonuz veya açıklamanız topluluk kurallarımıza (Şiddet, Kötü Söz, Uygunsuz İçerik) aykırı bulundu! İçerik engellendi.");
        }
        
-       setUploading(true);
+       const isImage = videoFile.type.startsWith('image/');
+       
+       // GERÇEK YAPAY ZEKA GÖRÜNTÜ ANALİZİ (TENSORFLOW MOBILENET)
        try {
-           const fileExt = videoFile.name.split('.').pop() || 'mp4';
+           const processMedia = async () => {
+               return new Promise((resolve) => {
+                   const elem = document.createElement(isImage ? 'img' : 'video');
+                   const url = URL.createObjectURL(videoFile);
+                   elem.src = url;
+                   elem.crossOrigin = "anonymous";
+                   
+                   let resolved = false;
+                   const finish = (preds) => {
+                       if(!resolved) { resolved=true; resolve(preds); }
+                   };
+                   setTimeout(() => finish([]), 4000); // timeout stop
+                   
+                   if (isImage) {
+                       elem.onload = async () => {
+                           try {
+                               const predictions = await model.classify(elem);
+                               finish(predictions);
+                           } catch(e) { finish([]); }
+                       };
+                       elem.onerror = () => finish([]);
+                   } else {
+                       elem.muted = true;
+                       elem.playsInline = true;
+                       elem.addEventListener('loadeddata', () => {
+                           elem.currentTime = 0.2;
+                       });
+                       elem.addEventListener('seeked', async () => {
+                           const canvas = document.createElement('canvas');
+                           canvas.width = elem.videoWidth || 640;
+                           canvas.height = elem.videoHeight || 480;
+                           canvas.getContext('2d').drawImage(elem, 0, 0, canvas.width, canvas.height);
+                           try {
+                               const predictions = await model.classify(canvas);
+                               finish(predictions);
+                           } catch(e) { finish([]); }
+                       });
+                       elem.addEventListener('error', () => finish([]));
+                   }
+               });
+           };
+
+           const predictions = await processMedia();
+           
+           const FOOD_TERMS = ['food', 'plate', 'dish', 'cup', 'fruit', 'vegetable', 'meat', 'cake', 'bread', 'bowl', 'pot', 'pan', 'bottle', 'pizza', 'hamburger', 'hotdog', 'ice cream', 'strawberry', 'apple', 'banana', 'orange', 'broccoli', 'carrot', 'sandwich', 'hot pot', 'bakery', 'restaurant', 'coffee', 'espresso', 'tea', 'menu', 'soup', 'salad', 'dining table', 'wine', 'beer', 'sauce', 'cookie', 'dough', 'spoon', 'fork', 'kitchen', 'recipe', 'meal', 'drink', 'pudding', 'confectionery', 'cheese', 'grocery', 'produce'];
+
+           const isFoodRelated = predictions.some(p => {
+               return FOOD_TERMS.some(t => p.className.toLowerCase().includes(t));
+           });
+
+           if (!isFoodRelated) {
+               console.log("Model Algılaması Engellendi:", predictions);
+               const confirmBypass = window.confirm("Güvenlik Bildirimi: Yapay Zeka analizine göre bu içerik tam olarak yemek/mutfak ile eşleşmedi (veya henüz başında).\n\nSadece yemek fotoğrafı veya videosu gönderebilirsiniz. İçeriğin kesinlikle mutfak/yemek ile ilgili olduğunu onaylıyor musunuz?");
+               if (!confirmBypass) {
+                   setUploading(false);
+                   return;
+               }
+               // Kullanıcı onaylarsa yükleme devam eder.
+           }
+       } catch (err) {
+           console.error("AI Görsel Analiz Hatası:", err);
+           setUploading(false);
+           return alert("Yapay Zeka görsel analizi sırasında bir hata oluştu.");
+       }
+
+       try {
+           const fileExt = videoFile.name.split('.').pop() || (isImage ? 'jpg' : 'mp4');
            const storageRef = ref(storage, `posts/${activeUser.uid}_${Date.now()}.${fileExt}`);
            await uploadBytes(storageRef, videoFile);
            const url = await getDownloadURL(storageRef);
            
            // Firestore Posts tablosuna kaydet
-           await addDoc(collection(db, 'posts'), {
+           const postData = {
                userId: activeUser.uid,
                userName: activeUser.name || 'İsimsiz Şef',
                username: activeUser.username || '',
                userPhoto: activeUser.photoURL || '',
-               videoURL: url,
                caption: videoDesc.trim(),
                likes: [],
                comments: [],
                timestamp: new Date().getTime()
-            });
+           };
+
+           if (isImage) {
+               postData.images = [url];
+           } else {
+               postData.videoURL = url;
+           }
+
+           await addDoc(collection(db, 'posts'), postData);
             
             if (myProfile?.followers && myProfile.followers.length > 0) {
                 const nMsg = `${activeUser.name || activeUser.username || "Bir şef"} @${activeUser.username} yeni bir tarif paylaştı!`;
@@ -161,15 +266,40 @@ export default function SocialFlow({ activeUser }) {
                 await Promise.all(notifsPromises).catch(e=>console.log(e));
             }
             
-            alert("Videonuz başarıyla Eğlence Serüveni'ne yüklendi!");
+            alert("Gönderiniz başarıyla Eğlence Serüveni'ne yüklendi!");
            setVideoFile(null);
            setVideoDesc("");
-           setSubTab("FEED"); // Videoyu izlemek için Keşfet'e at
+           setSubTab("FEED"); // Gönderiyi izlemek için Keşfet'e at
        } catch(err) {
            console.error("Yükleme Hatası:", err);
            alert("Video yüklenemedi: " + err.message);
        }
        setUploading(false);
+   };
+
+   const handleAvatarUpload = async (e) => {
+       const file = e.target.files[0];
+       if (!file || !activeUser?.uid) return;
+       try {
+           const storageRef = ref(storage, `avatars/${activeUser.uid}_${Date.now()}.jpg`);
+           await uploadBytes(storageRef, file);
+           const dl = await getDownloadURL(storageRef);
+           await updateDoc(doc(db, 'users', activeUser.uid), { photoURL: dl });
+           
+           const updatedUser = {...activeUser, photoURL: dl};
+           if (setActiveUser) setActiveUser(updatedUser);
+           localStorage.setItem('baki_active_user', JSON.stringify(updatedUser)); // Persistent update
+           
+           const uList = JSON.parse(localStorage.getItem('baki_users_db') || "[]");
+           const idx = uList.findIndex(x => x.email === activeUser.email);
+           if (idx > -1) {
+               uList[idx].photoURL = dl;
+               localStorage.setItem('baki_users_db', JSON.stringify(uList));
+           }
+           alert("Profil fotoğrafı başarıyla güncellendi!");
+       } catch(err) {
+           alert("Yüklenemedi: " + err.message);
+       }
    };
 
     const handleSendMessage = async () => {
@@ -222,6 +352,89 @@ export default function SocialFlow({ activeUser }) {
     };
 
    // --- EKRANLAR (RENDERERS) ---
+   
+   const renderMyProfileScreen = () => {
+        const myPosts = feedPosts.filter(p => p.userId === activeUser.uid);
+        const myLikedPosts = feedPosts.filter(p => (p.likes || []).includes(activeUser.uid));
+        const userExists = (uid) => uid === activeUser?.uid || allUsers.some(u => u.id === uid);
+        
+        return (
+            <div style={{padding: '10px 0'}}>
+                <h1 style={{fontSize: '24px', color: '#1E293B', marginBottom: '20px', fontWeight: 900}}>👤 Profilim</h1>
+                
+                <div style={{background: 'white', padding: '20px', borderRadius: '16px', boxShadow: '0 4px 6px rgba(0,0,0,0.03)', marginBottom: '20px', textAlign: 'center'}}>
+                    <div style={{position: 'relative', display: 'inline-block', marginBottom: '15px'}}>
+                        <img src={activeUser.photoURL || 'https://via.placeholder.com/100'} alt="Avatar" style={{width: '90px', height: '90px', borderRadius: '50%', objectFit: 'cover', border: '3px solid #E2E8F0', background: '#F8FAFC'}} />
+                        <label style={{position: 'absolute', bottom: 0, right: 0, background: '#10B981', color: 'white', width: '30px', height: '30px', borderRadius: '15px', display: 'flex', justifyContent: 'center', alignItems: 'center', cursor: 'pointer', fontSize: '14px', border: '2px solid white'}}>
+                            📷
+                            <input type="file" accept="image/*" style={{display: 'none'}} onChange={handleAvatarUpload} />
+                        </label>
+                    </div>
+                    
+                    <h2 style={{fontSize: '18px', margin: 0, color: '#1E293B'}}>{activeUser.name || 'İsimsiz Şef'}</h2>
+                    <p style={{fontSize: '13px', color: '#64748B', fontWeight: 600}}>@{activeUser.username}</p>
+                    
+                    <div style={{display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '20px'}}>
+                        <div>
+                            <div style={{fontSize: '18px', fontWeight: 800, color: '#1E293B'}}>{(myProfile?.followers || []).filter(userExists).length}</div>
+                            <div style={{fontSize: '11px', color: '#64748B', textTransform: 'uppercase', fontWeight: 700}}>Takipçi</div>
+                        </div>
+                        <div>
+                            <div style={{fontSize: '18px', fontWeight: 800, color: '#1E293B'}}>{(myProfile?.follows || []).filter(userExists).length}</div>
+                            <div style={{fontSize: '11px', color: '#64748B', textTransform: 'uppercase', fontWeight: 700}}>Takip</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style={{background: 'white', padding: '20px', borderRadius: '16px', boxShadow: '0 4px 6px rgba(0,0,0,0.03)', marginBottom: '20px'}}>
+                    <h3 style={{fontSize: '15px', color: '#1E293B', marginBottom: '15px'}}>🔒 Gizlilik Ayarları</h3>
+                    <label style={{display: 'flex', alignItems: 'center', cursor: 'pointer', justifyContent: 'space-between'}}>
+                        <div style={{fontSize: '14px', color: '#334155', fontWeight: 600}}>Gizli Profil (Private)</div>
+                        <input type="checkbox" checked={activeUser?.isPrivate || false} onChange={async (e) => {
+                            const isChecked = e.target.checked;
+                            if (activeUser?.uid) {
+                                await updateDoc(doc(db, 'users', activeUser.uid), { isPrivate: isChecked });
+                                const updatedUser = {...activeUser, isPrivate: isChecked};
+                                if(setActiveUser) setActiveUser(updatedUser);
+                                localStorage.setItem('baki_active_user', JSON.stringify(updatedUser)); // Persistent update
+                            }
+                        }} style={{width: '24px', height: '24px', accentColor: '#8B5CF6'}} />
+                    </label>
+                    <p style={{fontSize: '12px', color: '#64748B', marginTop: '8px', lineHeight: 1.4}}>Profiliniz gizli olursa gönderilerinizi sadece onayladığınız takipçiler görebilir. Sizi takip etmek isteyenler "Bildirim" havuzuna istek olarak düşer.</p>
+                </div>
+                
+                <h3 style={{fontSize: '16px', color: '#1E293B', marginBottom: '10px', fontWeight: 800}}>📸 Kendi Gönderilerim ({myPosts.length})</h3>
+                {myPosts.length === 0 ? <p style={{color: '#94A3B8', fontSize: '13px', marginBottom: '20px'}}>Henüz hiç gönderi paylaşmamışsınız.</p> : (
+                    <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginBottom: '20px'}}>
+                        {myPosts.map(p => (
+                           <div key={p.id} style={{background: '#E2E8F0', height: '140px', borderRadius: '12px', overflow: 'hidden', position: 'relative'}}>
+                               {p.images?.length > 0 ? (
+                                   <img src={p.images[0]} style={{width:'100%', height:'100%', objectFit:'cover'}} alt="Post"/>
+                               ) : p.videoURL ? (
+                                   <video src={p.videoURL} style={{width:'100%', height:'100%', objectFit:'cover'}} muted />
+                               ) : <div style={{width:'100%', height:'100%', background:'#94A3B8'}}/>}
+                           </div>
+                        ))}
+                    </div>
+                )}
+                
+                <h3 style={{fontSize: '16px', color: '#1E293B', marginBottom: '10px', fontWeight: 800}}>❤️ Beğendiğim Gönderiler ({myLikedPosts.length})</h3>
+                {myLikedPosts.length === 0 ? <p style={{color: '#94A3B8', fontSize: '13px', marginBottom: '20px', paddingBottom: '30px'}}>Henüz gönderi beğenmediniz.</p> : (
+                    <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginBottom: '40px', paddingBottom: '30px'}}>
+                        {myLikedPosts.map(p => (
+                           <div key={p.id} style={{background: '#E2E8F0', height: '140px', borderRadius: '12px', overflow: 'hidden', position: 'relative'}}>
+                               {p.images?.length > 0 ? (
+                                   <img src={p.images[0]} style={{width:'100%', height:'100%', objectFit:'cover'}} alt="Post"/>
+                               ) : p.videoURL ? (
+                                   <video src={p.videoURL} style={{width:'100%', height:'100%', objectFit:'cover'}} muted />
+                               ) : <div style={{width:'100%', height:'100%', background:'#94A3B8'}}/>}
+                           </div>
+                        ))}
+                    </div>
+                )}
+            </div>
+        );
+    };
 
    const renderFeedScreen = () => {
        // Gizlilik Filtresi
@@ -347,7 +560,10 @@ export default function SocialFlow({ activeUser }) {
                                     </div>
                                     <span style={{color: 'white', fontSize: '12px', marginTop: '5px', fontWeight: 600, textShadow: '0 1px 2px black'}}>{post.likes?.length || 0}</span>
                                 </div>
-                                <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                                <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', cursor: 'pointer'}} onClick={() => {
+                                      setCommentModalPost(post);
+                                      setCommentText('');
+                                }}>
                                     <div style={{width: '45px', height: '45px', borderRadius: '50%', background: 'rgba(0,0,0,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', color: 'white'}}>
                                        💬
                                     </div>
@@ -358,6 +574,99 @@ export default function SocialFlow({ activeUser }) {
                    )
                })
            )}
+               </div>
+           )}
+
+           {/* YORUM MODALI */}
+           {commentModalPost && (
+               <div style={{position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.6)', zIndex: 9999, display: 'flex', alignItems: 'flex-end', justifyContent: 'center'}} onClick={() => setCommentModalPost(null)}>
+                   <div style={{background: 'white', width: '100%', maxWidth: '500px', height: '60vh', borderTopLeftRadius: '20px', borderTopRightRadius: '20px', display: 'flex', flexDirection: 'column', padding: '20px'}} onClick={e => e.stopPropagation()}>
+                       <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px', borderBottom: '1px solid #E2E8F0', paddingBottom: '10px'}}>
+                           <h3 style={{margin: 0, fontSize: '18px', color: '#1E293B', fontWeight: 900}}>Yorumlar ({commentModalPost.comments?.length || 0})</h3>
+                           <button onClick={() => setCommentModalPost(null)} style={{background: 'none', border: 'none', fontSize: '24px', cursor: 'pointer', color: '#64748B'}}>✕</button>
+                       </div>
+                       
+                       <div style={{flex: 1, overflowY: 'auto', marginBottom: '15px'}}>
+                           {(!commentModalPost.comments || commentModalPost.comments.length === 0) ? (
+                               <div style={{textAlign: 'center', color: '#94A3B8', marginTop: '40px'}}>İlk yorumu siz yapın!</div>
+                           ) : (
+                               [...commentModalPost.comments].map((c, idx) => (
+                                   <div key={idx} style={{display: 'flex', gap: '10px', marginBottom: '15px', alignItems: 'flex-start'}}>
+                                       {c.photoURL ? <img src={c.photoURL} alt="" style={{width: '35px', height: '35px', borderRadius: '50%', objectFit: 'cover'}} /> : <div style={{width: '35px', height: '35px', borderRadius: '50%', background: '#F1F5F9', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '16px'}}>👤</div>}
+                                       <div style={{flex: 1}}>
+                                           <div style={{display: 'flex', alignItems: 'center', gap: '5px'}}>
+                                               <span style={{fontWeight: 800, fontSize: '14px', color: '#334155'}}>@{c.username}</span>
+                                               <span style={{fontSize: '11px', color: '#94A3B8'}}>{new Date(c.timestamp).toLocaleTimeString('tr-TR', {hour:'2-digit', minute:'2-digit'})}</span>
+                                           </div>
+                                           <div style={{fontSize: '14px', color: '#1E293B', marginTop: '2px'}}>{c.text}</div>
+                                       </div>
+                                   </div>
+                               ))
+                           )}
+                       </div>
+                       
+                       <div style={{display: 'flex', gap: '10px'}}>
+                           <input 
+                               type="text" 
+                               value={commentText} 
+                               onChange={e => setCommentText(e.target.value)} 
+                               onKeyDown={async e => {
+                                   if (e.key === 'Enter' && commentText.trim() && activeUser?.uid) {
+                                       const pRef = doc(db, 'posts', commentModalPost.id);
+                                       const newComment = {
+                                           userId: activeUser.uid,
+                                           username: activeUser.username || 'anonim',
+                                           photoURL: activeUser.photoURL || '',
+                                           text: commentText.trim(),
+                                           timestamp: Date.now()
+                                       };
+                                       await updateDoc(pRef, { comments: arrayUnion(newComment) });
+                                       
+                                       // Eğer modal açıkken canlı güncellemeyi Modal'da görmek için manuel ekleyelim (onSnapshot feedPosts'u güncelleyecek zaten ama modal için anlık state override iyi olur)
+                                       setCommentModalPost({...commentModalPost, comments: [...(commentModalPost.comments||[]), newComment]});
+                                       setCommentText('');
+
+                                       if (commentModalPost.userId !== activeUser.uid) {
+                                           const nMsg = `${activeUser.name || activeUser.username || "Bir şef"} gönderinize yorum yaptı: "${commentText.trim().substring(0, 20)}..."`;
+                                           const newNotif = { id: Date.now().toString(), text: nMsg, type: 'COMMENT', fromId: activeUser.uid, timestamp: Date.now() };
+                                           await updateDoc(doc(db, 'users', commentModalPost.userId), { notifications: arrayUnion(newNotif) });
+                                       }
+                                   }
+                               }}
+                               placeholder={activeUser?.uid ? "Yorumunuzu yazın..." : "Giriş yapmanız gerekiyor."} 
+                               disabled={!activeUser?.uid}
+                               style={{flex: 1, padding: '12px 15px', border: '1px solid #E2E8F0', borderRadius: '20px', outline: 'none', background: '#F8FAFC'}} 
+                           />
+                           <button 
+                               onClick={async () => {
+                                   if (commentText.trim() && activeUser?.uid) {
+                                       const pRef = doc(db, 'posts', commentModalPost.id);
+                                       const newComment = {
+                                           userId: activeUser.uid,
+                                           username: activeUser.username || 'anonim',
+                                           photoURL: activeUser.photoURL || '',
+                                           text: commentText.trim(),
+                                           timestamp: Date.now()
+                                       };
+                                       await updateDoc(pRef, { comments: arrayUnion(newComment) });
+                                       
+                                       setCommentModalPost({...commentModalPost, comments: [...(commentModalPost.comments||[]), newComment]});
+                                       setCommentText('');
+
+                                       if (commentModalPost.userId !== activeUser.uid) {
+                                           const nMsg = `${activeUser.name || activeUser.username || "Bir şef"} gönderinize yorum yaptı: "${commentText.trim().substring(0, 20)}..."`;
+                                           const newNotif = { id: Date.now().toString(), text: nMsg, type: 'COMMENT', fromId: activeUser.uid, timestamp: Date.now() };
+                                           await updateDoc(doc(db, 'users', commentModalPost.userId), { notifications: arrayUnion(newNotif) });
+                                       }
+                                   }
+                               }} 
+                               disabled={!activeUser?.uid || !commentText.trim()}
+                               style={{background: '#3B82F6', color: 'white', border: 'none', borderRadius: '50%', width: '45px', height: '45px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer'}}
+                           >
+                               ➤
+                           </button>
+                       </div>
+                   </div>
                </div>
            )}
        </div>
@@ -377,6 +686,7 @@ export default function SocialFlow({ activeUser }) {
         const isPrivate = selectedProfileUser.isPrivate;
         const isRequested = selectedProfileUser.requests?.includes(activeUser.uid);
         const canSeePosts = (isMe || !isPrivate || isFollowing) && !isBlockedByMe;
+        const userExists = (uid) => uid === activeUser?.uid || allUsers.some(u => u.id === uid);
         
         return (
             <div style={{padding: '10px 0'}}>
@@ -394,11 +704,11 @@ export default function SocialFlow({ activeUser }) {
                             <div style={{fontSize: '12px', color: '#64748B'}}>Gönderi</div>
                         </div>
                         <div onClick={() => canSeePosts && setConnectionModal('followers')} style={{cursor: canSeePosts ? 'pointer' : 'default'}}>
-                            <div style={{fontWeight: 900, fontSize: '18px'}}>{selectedProfileUser.followers?.length || 0}</div>
+                            <div style={{fontWeight: 900, fontSize: '18px'}}>{(selectedProfileUser.followers || []).filter(userExists).length}</div>
                             <div style={{fontSize: '12px', color: '#64748B'}}>Takipçi</div>
                         </div>
                         <div onClick={() => canSeePosts && setConnectionModal('follows')} style={{cursor: canSeePosts ? 'pointer' : 'default'}}>
-                            <div style={{fontWeight: 900, fontSize: '18px'}}>{selectedProfileUser.follows?.length || 0}</div>
+                            <div style={{fontWeight: 900, fontSize: '18px'}}>{(selectedProfileUser.follows || []).filter(userExists).length}</div>
                             <div style={{fontSize: '12px', color: '#64748B'}}>Takip</div>
                         </div>
                     </div>
@@ -462,10 +772,11 @@ export default function SocialFlow({ activeUser }) {
                             <div style={{flex: 1, overflowY: 'auto'}}>
                                 {(() => {
                                     const idsList = connectionModal === 'followers' ? (selectedProfileUser.followers || []) : (selectedProfileUser.follows || []);
-                                    if (idsList.length === 0) return <div style={{textAlign: 'center', color: '#64748B', margin: '20px 0'}}>Liste boş.</div>;
                                     
                                     const globalUsers = [...allUsers, {id: activeUser.uid, name: activeUser.name, username: activeUser.username, photoURL: activeUser.photoURL}];
                                     const finalUsers = globalUsers.filter(u => idsList.includes(u.id));
+                                    
+                                    if (finalUsers.length === 0) return <div style={{textAlign: 'center', color: '#64748B', margin: '20px 0'}}>Liste boş.</div>;
 
                                     return finalUsers.map(u => (
                                         <div key={u.id} onClick={() => { setConnectionModal(null); openProfile(u); }} style={{display: 'flex', alignItems: 'center', gap: '15px', padding: '10px 0', borderBottom: '1px solid #E2E8F0', cursor: 'pointer'}}>
@@ -613,7 +924,8 @@ export default function SocialFlow({ activeUser }) {
            </div>
 
            {/* İÇERİK EKRANLARI */}
-           <div style={{flex:1, overflowY: 'auto', padding: '0 15px'}}>
+           <div style={{flex:1, overflowY: 'auto', padding: '0 15px', paddingBottom: '70px'}}>
+               {subTab === 'MY_PROFILE' && renderMyProfileScreen()}
                {subTab === 'FEED' && renderFeedScreen()}
                {subTab === 'CHAT' && (
                   <div style={{padding: '10px 0', height: '100%', display: 'flex', flexDirection: 'column'}}>
@@ -688,19 +1000,25 @@ export default function SocialFlow({ activeUser }) {
                         </div>
                         
                         <div style={{marginBottom: '20px'}}>
-                           <label style={{fontWeight: 700, color: '#334155', fontSize: '14px', display: 'block', marginBottom: '8px'}}>Video Dosyası</label>
+                           <label style={{fontWeight: 700, color: '#334155', fontSize: '14px', display: 'block', marginBottom: '8px'}}>Medya Dosyası (Video veya Fotoğraf)</label>
                            
-                           <div style={{display: 'flex', gap: '10px'}}>
-                              <label style={{flex: 1, padding: '12px', background: '#3B82F6', color: 'white', borderRadius: '12px', textAlign: 'center', fontWeight: 800, cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                                 <span style={{fontSize: '24px'}}>📸</span>
-                                 Kamerayı Aç
-                                 <input type="file" accept="video/*" capture="environment" onChange={e => setVideoFile(e.target.files[0])} style={{display: 'none'}} />
+                           <div style={{display: 'flex', gap: '8px'}}>
+                              <label style={{flex: 1, padding: '10px 5px', background: '#3B82F6', color: 'white', borderRadius: '12px', textAlign: 'center', fontWeight: 800, cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '13px'}}>
+                                 <span style={{fontSize: '20px'}}>📸</span>
+                                 Foto Çek
+                                 <input type="file" accept="image/*" capture="environment" onChange={e => setVideoFile(e.target.files[0])} style={{display: 'none'}} />
                               </label>
                               
-                              <label style={{flex: 1, padding: '12px', background: '#10B981', color: 'white', borderRadius: '12px', textAlign: 'center', fontWeight: 800, cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                                 <span style={{fontSize: '24px'}}>📂</span>
-                                 Galeriden Seç
-                                 <input type="file" accept="video/*" onChange={e => setVideoFile(e.target.files[0])} style={{display: 'none'}} />
+                              <label style={{flex: 1, padding: '10px 5px', background: '#EF4444', color: 'white', borderRadius: '12px', textAlign: 'center', fontWeight: 800, cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '13px'}}>
+                                 <span style={{fontSize: '20px'}}>🎥</span>
+                                 Video Çek
+                                 <input type="file" accept="video/*" capture="environment" onChange={e => setVideoFile(e.target.files[0])} style={{display: 'none'}} />
+                              </label>
+
+                              <label style={{flex: 1, padding: '10px 5px', background: '#10B981', color: 'white', borderRadius: '12px', textAlign: 'center', fontWeight: 800, cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '13px'}}>
+                                 <span style={{fontSize: '20px'}}>📂</span>
+                                 Galeriden
+                                 <input type="file" accept="video/*,image/*" onChange={e => setVideoFile(e.target.files[0])} style={{display: 'none'}} />
                               </label>
                            </div>
                            
@@ -719,7 +1037,8 @@ export default function SocialFlow({ activeUser }) {
            </div>
            
            {/* ALT ALT-MENÜ (SUB-NAVBAR) */}
-           <div style={{display:'flex', justifyContent:'space-around', padding:'10px', background:'white', borderTop: '1px solid #E2E8F0', boxShadow: '0 -4px 6px -1px rgba(0, 0, 0, 0.05)'}}>
+           <div style={{position: 'fixed', bottom: '75px', left: '0', right: '0', margin: '0 auto', maxWidth: '600px', zIndex: 90, display:'flex', justifyContent:'space-around', padding:'10px', background:'white', borderTop: '1px solid #E2E8F0', boxShadow: '0 -4px 6px -1px rgba(0, 0, 0, 0.05)'}}>
+               <button onClick={()=>setSubTab('MY_PROFILE')} style={{background: subTab==='MY_PROFILE' ? '#3B82F6':'transparent', color: subTab==='MY_PROFILE'?'white':'#64748B', border:'none', padding:'10px', borderRadius:'12px', fontWeight:600, flex: 1, margin: '0 2px', cursor: 'pointer', transition: '0.2s'}}>👤 Profil</button>
                <button onClick={()=>setSubTab('FEED')} style={{background: subTab==='FEED' ? '#3B82F6':'transparent', color: subTab==='FEED'?'white':'#64748B', border:'none', padding:'10px', borderRadius:'12px', fontWeight:600, flex: 1, margin: '0 2px', cursor: 'pointer', transition: '0.2s'}}>🌍 Keşfet</button>
                <button onClick={()=>setSubTab('CHAT')} style={{background: subTab==='CHAT' ? '#3B82F6':'transparent', color: subTab==='CHAT'?'white':'#64748B', border:'none', padding:'10px', borderRadius:'12px', fontWeight:600, flex: 1, margin: '0 2px', cursor: 'pointer', transition: '0.2s'}}>💬 Sohbet</button>
                <button onClick={()=>setSubTab('NOTIFY')} style={{position: 'relative', background: subTab==='NOTIFY' ? '#3B82F6':'transparent', color: subTab==='NOTIFY'?'white':'#64748B', border:'none', padding:'10px', borderRadius:'12px', fontWeight:600, flex: 1, margin: '0 2px', cursor: 'pointer', transition: '0.2s'}}>
