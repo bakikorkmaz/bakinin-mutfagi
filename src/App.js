@@ -249,17 +249,25 @@ function App() {
      return () => window.removeEventListener('click', clickHandler);
   }, []);
 
-  const handleTitleClick = () => {
+  const handleTitleClick = async () => {
     tapCount.current += 1;
     if (tapCount.current === 3) {
       if (!activeUser) {
          alert("Sistem Bildirimi: Bu alana erişmek için Google ile giriş yapmalısınız.");
       } else {
          const pswd = prompt("Geliştirici Güvenlik Protokolü Şifresi:");
-         if (pswd === "Baki.Admin.44!") {
-           setView('ADMIN');
-         } else {
-           if(pswd !== null) alert("Güvenlik İhlali! Hatalı Parola.");
+         if (pswd) {
+            try {
+                const buffer = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(pswd));
+                const hash = Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+                if (hash === "43486c2c4d0561769b675b50459ae3c0a6fc3311d1f30bd54e5eccb16f2ad6e2") {
+                  setView('ADMIN');
+                } else {
+                  alert("Güvenlik İhlali! Hatalı Parola.");
+                }
+            } catch (err) {
+                alert("Güvenlik sistemi başlatılamadı. Lütfen güvenli bağlantı (HTTPS) kullanın.");
+            }
          }
       }
       tapCount.current = 0;
