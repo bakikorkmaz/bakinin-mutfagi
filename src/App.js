@@ -709,7 +709,10 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
   };
 
   const startWheelSpin = () => {
-     if (wheelItems.length === 0) return;
+     if (wheelItems.length === 0) {
+        alert('⚠️ Seçili filtreler hiç yemek bulamadı! Daha az filtre seçin veya "Tümü" seçeneğini deneyin.');
+        return;
+     }
      setIsSpinning(true);
      setWinningDish(null);
      setUserChecklist({});
@@ -1062,8 +1065,9 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
                             <div style={{fontSize: '11px', color: '#EF4444', marginBottom: '10px'}}><strong>Eksikler:</strong> {mainItem.missingIngs.join(", ")}</div>
                           )}
 
-                          <div style={{display: 'flex', gap: '5px', marginTop: '10px'}}>
+                          <div style={{display: 'flex', gap: '5px', marginTop: '10px', flexWrap: 'wrap'}}>
                             <button onClick={(e) => { e.stopPropagation(); openRecipe(mainItem); }} style={{flex: 1, padding: '8px', background: '#F1F5F9', border: '1px solid #CBD5E1', borderRadius: '6px', fontSize: '11px', cursor: 'pointer', color: '#334155', fontWeight: 600}}>🍽️ Tarife Bak</button>
+                            <button onClick={(e) => { e.stopPropagation(); const key = 'baki_favs_v2'; const existing = JSON.parse(localStorage.getItem(key) || '[]'); const alreadyFav = existing.some(f => f.name === mainItem.name); if (alreadyFav) { alert('Bu tarif zaten favorilerinizde!'); return; } existing.push({name: mainItem.name, calories: mainItem.calories, prepTime: mainItem.prepTime, totalCost: mainItem.totalCost}); localStorage.setItem(key, JSON.stringify(existing)); alert('❤️ Favorilere eklendi!'); }} style={{padding: '8px 10px', background: '#FFF1F2', border: '1px solid #FDA4AF', borderRadius: '6px', fontSize: '11px', cursor: 'pointer', color: '#BE123C', fontWeight: 700}}>❤️</button>
                             {mainItem.missingIngs && mainItem.missingIngs.length > 0 && (
                               <button onClick={(e) => { e.stopPropagation(); setShoppingCart(generateMissingShoppingList(mainItem.missingIngs)); }} style={{flex: 1, padding: '8px', background: '#FEE2E2', border: '1px solid #FCA5A5', borderRadius: '6px', fontSize: '11px', cursor: 'pointer', color: '#B91C1C', fontWeight: 600}}>🛒 Eksikleri Al</button>
                             )}

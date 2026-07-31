@@ -140,8 +140,8 @@ export default function SocialFlow({ activeUser, setActiveUser }) {
        if (!videoFile) return alert("Lütfen kameradan veya galeriden bir dosya seçin!");
        if (!activeUser?.uid) return alert("Google girişi yapılmamış.");
        
-       if (!videoDesc || videoDesc.trim().length < 4) {
-           return alert("Lütfen video için açıklayıcı bir metin girin.");
+       if (!videoDesc || videoDesc.trim().length < 10) {
+           return alert("🚫 Açıklama en az 10 karakter olmalı! Boş veya çok kısa içerikler yayınlanamaz.");
        }
 
        if (isModelLoading) {
