@@ -46,7 +46,6 @@ function App() {
      } catch (e) { return null; }
   });
   const [view, setView] = useState(() => {
-      // Yalnızca kullanıcı adı varsa doğrudan APP'ye gir
       return (activeUser && activeUser.username) ? 'APP' : (activeUser ? 'USERNAME_SETUP' : 'AUTH');
   }); // AUTH, APP, USERNAME_SETUP, ADMIN
   const [activeTab, setActiveTab] = useState('APP'); 
@@ -58,6 +57,13 @@ function App() {
        return saved ? JSON.parse(saved) : ['tuz', 'karabiber', 'sıvı yağ', 'zeytinyağı'];
      } catch (e) { return ['tuz', 'karabiber', 'sıvı yağ', 'zeytinyağı']; }
   });
+  
+  const welcomeMessage1 = "Merhaba ben Baki'nin mutfağı özel şefi Demet Şef. 👩‍🍳 Burası sizin sıradan bir yemek kitabınız değil, kişiselleştirilmiş gastronomi asistanınız! Önümüzde harika özellikler var, sizin gibi mutfak tutkunları (veya sadece hızlıca doymak isteyenler) için tasarlanan özelliklerimiz şunlar:";
+  const welcomeMessage2 = "🛒 Dolabımdakiler: Evdeki kısıtlı malzemelerle mucizeler yaratmak isteyen pratik aşçılar içindir.\n\n📅 Haftalık Zeki Program: Bütçesini haftalık tasarlamak isteyenler içindir.\n\n👨‍👩‍👧‍👦 Evin Sağlık Karnesi: Diyet ve çocuk menüsünü tek malzemede birleştirir.\n\n🎡 Şans Çarkı: Ne pişirsem stresinden bıkan spontane ruhlar içindir.\n\n🎬 Eğlence Serüveni: Yemek videoları kaydırabileceğiniz, kendi videolarınızı çekebileceğiniz ve diğer şeflerle takipleşip mesajlaşabileceğiniz interaktif sosyal gurme ağınızdır. (Eğlence Serüveni içerisindeki Profil sekmesinden şef profil fotoğrafınızı yükleyip hesabınızı kişiselleştirmeyi unutmayın!)\n\nEğer bana doğrudan 'kıyma var ne yapayım' veya 'Karnıyarık nasıl yapılır' diye sorarsanız da tarifinizi anında dökerim. Bugün nasıl bir ruh halindesiniz? 😊";
+  const [globalChatMessages, setGlobalChatMessages] = useState([
+    { text: welcomeMessage1, sender: 'bot' },
+    { text: welcomeMessage2, sender: 'bot' }
+  ]);
   const t = (key) => TRANSLATIONS[appLang] ? (TRANSLATIONS[appLang][key] || TRANSLATIONS['tr'][key]) : TRANSLATIONS['tr'][key];
 
   useEffect(() => {
@@ -68,6 +74,8 @@ function App() {
 
   const [globalAd, setGlobalAd] = useState("");
   const [globalAdImg, setGlobalAdImg] = useState("");
+  const [globalMarket, setGlobalMarket] = useState(null);
+  
   useEffect(() => {
      const adSub = onSnapshot(doc(db, 'system', 'adConfig'), (d) => {
          if(d.exists()) {
@@ -75,7 +83,13 @@ function App() {
              setGlobalAdImg(d.data().image || "");
          }
      });
-     return () => adSub();
+     const marketSub = onSnapshot(doc(db, 'system', 'marketConfig'), (d) => {
+         if (d.exists() && d.data().partner) {
+             setGlobalMarket(d.data().partner);
+             localStorage.setItem('GLOBAL_MARKET_PARTNER', d.data().partner);
+         }
+     });
+     return () => { adSub(); marketSub(); };
   }, []);
 
   // BAN & DELETION SHIELD
@@ -428,7 +442,7 @@ function App() {
       )}
       
       {activeTab === 'CHAT' && (
-        <ChatbotFlow handleTitleClick={handleTitleClick} />
+        <ChatbotFlow handleTitleClick={handleTitleClick} setActiveTab={setActiveTab} messages={globalChatMessages} setMessages={setGlobalChatMessages} />
       )}
 
       {activeTab === 'RECYCLE' && (
@@ -515,6 +529,14 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
       if(validRewards.length === 0) return null;
       return validRewards[rewardSeed % validRewards.length];
   }, [moneySaved, rewardSeed]);
+
+  useEffect(() => {
+     if (window.appBus) {
+        if (window.appBus === 'WHEEL') { setDashboardView('WHEEL'); setWheelItems(generateWheelItems('NO_FILTER')); }
+        if (window.appBus === 'FRIDGE') { setDashboardView('FRIDGE'); setFridgeMains([]); }
+        window.appBus = null;
+     }
+  }, []);
 
   const getIsoWeek = () => {
     const today = new Date();
@@ -1643,14 +1665,7 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
 // ========================
 // YZ CHATBOT MODÜLÜ
 // ========================
-function ChatbotFlow({ handleTitleClick }) {
-  const welcomeMessage1 = "Merhaba ben Baki'nin mutfağı özel şefi Demet Şef. 👩‍🍳 Burası sizin sıradan bir yemek kitabınız değil, kişiselleştirilmiş gastronomi asistanınız! Önümüzde harika özellikler var, sizin gibi mutfak tutkunları (veya sadece hızlıca doymak isteyenler) için tasarlanan özelliklerimiz şunlar:";
-  const welcomeMessage2 = "🛒 Dolabımdakiler: Evdeki kısıtlı malzemelerle mucizeler yaratmak isteyen pratik aşçılar içindir.\n\n📅 Haftalık Zeki Program: Bütçesini haftalık tasarlamak isteyenler içindir.\n\n👨‍👩‍👧‍👦 Evin Sağlık Karnesi: Diyet ve çocuk menüsünü tek malzemede birleştirir.\n\n🎡 Şans Çarkı: Ne pişirsem stresinden bıkan spontane ruhlar içindir.\n\n🎬 Eğlence Serüveni: Yemek videoları kaydırabileceğiniz, kendi videolarınızı çekebileceğiniz ve diğer şeflerle takipleşip mesajlaşabileceğiniz interaktif sosyal gurme ağınızdır. (Eğlence Serüveni içerisindeki Profil sekmesinden şef profil fotoğrafınızı yükleyip hesabınızı kişiselleştirmeyi unutmayın!)\n\nEğer bana doğrudan 'kıyma var ne yapayım' veya 'Karnıyarık nasıl yapılır' diye sorarsanız da tarifinizi anında dökerim. Bugün nasıl bir ruh halindesiniz? 😊";
-
-  const [messages, setMessages] = useState([
-    { text: welcomeMessage1, sender: 'bot' },
-    { text: welcomeMessage2, sender: 'bot' }
-  ]);
+function ChatbotFlow({ handleTitleClick, setActiveTab, messages, setMessages }) {
   const [input, setInput] = useState("");
   const [isListening, setIsListening] = useState(false);
   const endRef = useRef(null);
@@ -1661,9 +1676,17 @@ function ChatbotFlow({ handleTitleClick }) {
     setMessages(prev => [...prev, { text: userText, sender: 'user' }]);
     setInput("");
     
-    // AI Engine Processing (Hızlandırıldı)
     setTimeout(() => {
-      const response = processChatPrompt(userText);
+      let response = processChatPrompt(userText);
+      if (response.startsWith("__CMD:WHEEL__")) {
+          response = response.replace("__CMD:WHEEL__", "");
+          window.appBus = "WHEEL";
+          setTimeout(() => setActiveTab('APP'), 1000); 
+      } else if (response.startsWith("__CMD:FRIDGE__")) {
+          response = response.replace("__CMD:FRIDGE__", "");
+          window.appBus = "FRIDGE";
+          setTimeout(() => setActiveTab('APP'), 1000);
+      }
       setMessages(prev => [...prev, { text: response, sender: 'bot' }]);
     }, 100);
   };
@@ -2020,10 +2043,15 @@ function AdminDashboard({ setView, activeUser }) {
        { code: 'ISTEGELSIN', name: "İsteGelsin", bg: '#3B82F6', color: 'white', desc: "Süpermarket (%5 Artış)" }
     ];
 
-    const changePartner = (code) => {
+    const changePartner = async (code) => {
         setMarketPartner(code);
         localStorage.setItem('GLOBAL_MARKET_PARTNER', code);
-        alert(`B2B Affiliate Değişimi: Uygulamadaki tüm pazar/maliyet fiyatları artık ${code} oranlarına göre canlı hesaplanacaktır! Komisyon bağlantısı alışveriş listelerinde aktifleştirildi.`);
+        try {
+           await setDoc(doc(db, 'system', 'marketConfig'), { partner: code }, { merge: true });
+           alert(`B2B Affiliate Değişimi: Uygulamadaki tüm pazar/maliyet fiyatları artık ${code} oranlarına göre canlı hesaplanacaktır! (Tüm kullanıcılara aktarıldı)`);
+        } catch(e) {
+           alert("Hata: " + e.message);
+        }
     };
 
     useEffect(() => {

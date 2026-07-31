@@ -36,6 +36,9 @@ export default function SocialFlow({ activeUser, setActiveUser }) {
    const [commentModalPost, setCommentModalPost] = useState(null);
    const [commentText, setCommentText] = useState("");
 
+   // --- RESİM BÜYÜTMA MODALI ---
+   const [enlargedPhoto, setEnlargedPhoto] = useState(null);
+
     useEffect(() => {
         async function loadModel() {
             try {
@@ -137,6 +140,10 @@ export default function SocialFlow({ activeUser, setActiveUser }) {
        if (!videoFile) return alert("Lütfen kameradan veya galeriden bir dosya seçin!");
        if (!activeUser?.uid) return alert("Google girişi yapılmamış.");
        
+       if (!videoDesc || videoDesc.trim().length < 4) {
+           return alert("Lütfen video için açıklayıcı bir metin girin.");
+       }
+
        if (isModelLoading) {
            return alert("Yapay Zeka güvenlik modülü arka planda yükleniyor, lütfen 3-4 saniye bekleyip tekrar deneyin.");
        }
@@ -364,7 +371,7 @@ export default function SocialFlow({ activeUser, setActiveUser }) {
                 
                 <div style={{background: 'white', padding: '20px', borderRadius: '16px', boxShadow: '0 4px 6px rgba(0,0,0,0.03)', marginBottom: '20px', textAlign: 'center'}}>
                     <div style={{position: 'relative', display: 'inline-block', marginBottom: '15px'}}>
-                        <img src={activeUser.photoURL || 'https://via.placeholder.com/100'} alt="Avatar" style={{width: '90px', height: '90px', borderRadius: '50%', objectFit: 'cover', border: '3px solid #E2E8F0', background: '#F8FAFC'}} />
+                        <img src={activeUser.photoURL || 'https://via.placeholder.com/100'} alt="Avatar" style={{width: '90px', height: '90px', borderRadius: '50%', objectFit: 'cover', border: '3px solid #E2E8F0', background: '#F8FAFC', cursor: 'zoom-in'}} onClick={() => { if(activeUser.photoURL) setEnlargedPhoto(activeUser.photoURL) }} />
                         <label style={{position: 'absolute', bottom: 0, right: 0, background: '#10B981', color: 'white', width: '30px', height: '30px', borderRadius: '15px', display: 'flex', justifyContent: 'center', alignItems: 'center', cursor: 'pointer', fontSize: '14px', border: '2px solid white'}}>
                             📷
                             <input type="file" accept="image/*" style={{display: 'none'}} onChange={handleAvatarUpload} />
@@ -477,7 +484,7 @@ export default function SocialFlow({ activeUser, setActiveUser }) {
                        return (
                            <div key={u.id} style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '15px', background: 'white', borderRadius: '16px', marginBottom: '10px', boxShadow: '0 4px 6px rgba(0,0,0,0.03)'}}>
                                <div onClick={() => openProfile(u)} style={{display: 'flex', gap: '15px', alignItems: 'center', cursor: 'pointer'}}>
-                                   {u.photoURL ? <img src={u.photoURL} style={{width:'50px', height:'50px', borderRadius:'50%', objectFit: 'cover'}} /> : <div style={{width:'50px',height:'50px',borderRadius:'50%',background:'#F1F5F9',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'24px'}}>👤</div>}
+                                   {u.photoURL ? <img src={u.photoURL} onClick={(e) => { e.stopPropagation(); setEnlargedPhoto(u.photoURL) }} style={{width:'50px', height:'50px', borderRadius:'50%', objectFit: 'cover', cursor: 'zoom-in'}} /> : <div style={{width:'50px',height:'50px',borderRadius:'50%',background:'#F1F5F9',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'24px'}}>👤</div>}
                                    <div style={{fontWeight: 800, color: '#334155'}}>@{u.username}</div>
                                </div>
                                <button onClick={() => handleFollow(u.id, isFollowing, u.isPrivate, isRequested)} style={{background: isFollowing ? '#E2E8F0' : isRequested ? '#F59E0B' : '#8B5CF6', color: isFollowing ? '#64748B' : 'white', padding: '8px 16px', borderRadius: '20px', border: 'none', fontWeight: 800, cursor: 'pointer', transition: '0.2s'}}>
@@ -696,7 +703,7 @@ export default function SocialFlow({ activeUser, setActiveUser }) {
                 </div>
                 
                 <div style={{display: 'flex', gap: '20px', alignItems: 'center', marginBottom: '20px'}}>
-                    {selectedProfileUser.photoURL ? <img src={selectedProfileUser.photoURL} alt="" style={{width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover'}} /> : <div style={{width: '80px', height: '80px', borderRadius: '50%', background: '#E2E8F0', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '36px'}}>👤</div>}
+                    {selectedProfileUser.photoURL ? <img src={selectedProfileUser.photoURL} alt="" onClick={(e) => { e.stopPropagation(); setEnlargedPhoto(selectedProfileUser.photoURL); }} style={{width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover', cursor: 'zoom-in'}} /> : <div style={{width: '80px', height: '80px', borderRadius: '50%', background: '#E2E8F0', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '36px'}}>👤</div>}
                     
                     <div style={{flex: 1, display: 'flex', justifyContent: 'space-around', textAlign: 'center'}}>
                         <div>
@@ -1036,6 +1043,16 @@ export default function SocialFlow({ activeUser, setActiveUser }) {
                }
            </div>
            
+           {/* FOTOĞRAF BÜYÜTME MODALI */}
+           {enlargedPhoto && (
+               <div style={{position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.85)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px'}} onClick={() => setEnlargedPhoto(null)}>
+                   <div style={{position: 'relative', maxWidth: '90%', maxHeight: '90%'}}>
+                       <button onClick={() => setEnlargedPhoto(null)} style={{position: 'absolute', top: '-40px', right: '0', background: 'transparent', color: 'white', fontSize: '30px', border: 'none', cursor: 'pointer', fontWeight: 800}}>✕</button>
+                       <img src={enlargedPhoto} style={{width: '100%', height: 'auto', maxHeight: '80vh', objectFit: 'contain', borderRadius: '15px', boxShadow: '0 10px 25px rgba(0,0,0,0.5)'}} />
+                   </div>
+               </div>
+           )}
+
            {/* ALT ALT-MENÜ (SUB-NAVBAR) */}
            <div style={{position: 'fixed', bottom: '75px', left: '0', right: '0', margin: '0 auto', maxWidth: '600px', zIndex: 90, display:'flex', justifyContent:'space-around', padding:'10px', background:'white', borderTop: '1px solid #E2E8F0', boxShadow: '0 -4px 6px -1px rgba(0, 0, 0, 0.05)'}}>
                <button onClick={()=>setSubTab('MY_PROFILE')} style={{background: subTab==='MY_PROFILE' ? '#3B82F6':'transparent', color: subTab==='MY_PROFILE'?'white':'#64748B', border:'none', padding:'10px', borderRadius:'12px', fontWeight:600, flex: 1, margin: '0 2px', cursor: 'pointer', transition: '0.2s'}}>👤 Profil</button>

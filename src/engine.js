@@ -99,8 +99,20 @@ export const processChatPrompt = (text) => {
   }
 
   if (t.includes("çark") || t.includes("ne yesem") || t.includes("kararsız") || t.includes("ne pişirsem") || t.includes("akşama ne") || t.includes("bugün ne") || t.includes("canım ne istiyor")) {
-    const randomMain = DB_MAINS_HUGE ? DB_MAINS_HUGE[Math.floor(Math.random() * DB_MAINS_HUGE.length)].name : "Harika bir Fırın Somon";
-    return `Kararsız kaldıysan 'Şans Çarkı' modülü seni büyük bir dertten kurtarır! Tüm filtrelerini seçip topu şansa bırakabilirsin. Ya da şahsi tavsiyemi istersen, bugün bence kesinlikle nefis bir ${randomMain} yapmalısın. Tarifini istersen bana doğrudan adını yaz!`;
+    return `__CMD:WHEEL__Hemen seni Şans Çarkı'na yönlendiriyorum! Orada kaderine ne çıkarsa onu pişirirsin.`;
+  }
+  
+  if (t.includes("dolap") || t.includes("malzeme") || t.includes("evde") || t.includes("buzdolabı")) {
+      return `__CMD:FRIDGE__Eldeki malzemeleri değerlendirmek harika fikir! Seni hemen 'Dolabımdakiler' modülüne ışınlıyorum.`;
+  }
+
+  if (t.includes("kaç dakika") || t.includes("ne kadar sürer") || t.includes("süresi") || t.includes("kalori") || t.includes("maliyet") || t.includes("fiyat")) {
+      let foundDish = DB_MAINS_HUGE.find(m => t.includes(m.name.toLowerCase()));
+      if (foundDish) {
+          const det = getDishDetails(foundDish);
+          return `Hemen analiz ediyorum! ${foundDish.name} yemeği ortalama ${det.prepTime} dakikada pişer, kalorisi yaklaşık ${det.calories} kcal'dir ve yapım maliyeti yaklaşık ${det.totalCost} TL tutar.`;
+      }
+      return `Hangi yemeği sorduğunuzu tam çıkaramadım. Lütfen yemeğin adını tam belirterek ("Karnıyarık kaç dakika sürer" gibi) sorar mısın?`;
   }
 
   if (t.includes("fiyat") || t.includes("pazar listesi") || t.includes("alışveriş") || t.includes("eksik")) {
@@ -380,17 +392,19 @@ export const generateFridgeMains = (selectedIngredients, filter = 'ALL', maxTime
       let matchScore = 0;
       let matchedIngs = [];
       let missingIngs = [];
+      let dynamicMissingCost = 0;
       m.ingredients.forEach(ing => {
           if(lowerSelected.some(sel => sel.includes(ing) || ing.includes(sel))) {
               matchScore++;
               matchedIngs.push(ing);
           } else {
               missingIngs.push(ing);
+              dynamicMissingCost += getTrueCost(ing);
           }
       });
       if (matchScore > 0) {
          const details = getDishDetails(m);
-         mains.push({ ...m, matchScore, matchedIngs, missingIngs, calories: details.calories, macros: details.macros, prepTime: details.prepTime, totalCost: details.totalCost, recipe: details.recipe });
+         mains.push({ ...m, matchScore, matchedIngs, missingIngs, calories: details.calories, macros: details.macros, prepTime: details.prepTime, totalCost: dynamicMissingCost, recipe: details.recipe });
       }
    }
    mains.sort((a, b) => b.matchScore - a.matchScore);
@@ -632,18 +646,18 @@ export function getTrueCost(ing) {
    else if (partnerCode === 'ISTEGELSIN') m = 1.05;
 
    const tokens = ing.toLowerCase().split(' ');
-   const hasWord = (word) => tokens.some(t => t === word);
+   const hasWord = (word) => tokens.some(t => t === word || t.includes(word));
    const hasAny = (words) => words.some(w => hasWord(w));
 
-   let base = 30; // Default
-   if (hasAny(["et", "kuşbaşı", "bonfile", "antrikot", "somon", "levrek", "kavurma", "sucuk", "pastırma"])) base = 450;
-   else if (hasAny(["kıyma"])) base = 380;
-   else if (hasAny(["tavuk", "piliç", "baget"])) base = 180;
-   else if (hasAny(["kaşar", "peynir", "tereyağı"])) base = 150;
-   else if (hasAny(["noodle", "sushi", "soya", "teriyaki"])) base = 85;
-   else if (hasAny(["domates", "biber", "soğan", "patates", "havuç", "patlıcan", "kabak", "sarımsak"])) base = 35;
-   else if (hasAny(["makarna", "pirinç", "bulgur", "un", "mercimek", "nohut", "fasulye", "galeta"])) base = 45;
-   else if (hasAny(["salça", "krema", "süt", "yumurta", "yoğurt"])) base = 55;
+   let base = 15; // Default baharat vs
+   if (hasAny(["et", "kuşbaşı", "bonfile", "antrikot", "somon", "levrek", "kavurma", "sucuk", "pastırma"])) base = 120;
+   else if (hasAny(["kıyma"])) base = 85;
+   else if (hasAny(["tavuk", "piliç", "baget"])) base = 48;
+   else if (hasAny(["kaşar", "peynir", "tereyağı"])) base = 35;
+   else if (hasAny(["noodle", "sushi", "soya", "teriyaki"])) base = 75;
+   else if (hasAny(["domates", "biber", "soğan", "patates", "havuç", "patlıcan", "kabak", "sarımsak", "mantar"])) base = 18;
+   else if (hasAny(["makarna", "pirinç", "bulgur", "un", "mercimek", "nohut", "fasulye", "galeta"])) base = 25;
+   else if (hasAny(["salça", "krema", "süt", "yumurta", "yoğurt"])) base = 20;
    
    return Math.round(base * m);
 };
@@ -658,11 +672,15 @@ export function getTrueCost(ing) {
         let pPro = 5; let cCarb = 10; let fFat = 5;
         let pTime = 15; // Base chopping time (15 mins)
         
-        let hasMeat = false; let hasChicken = false; let hasLegume = false; let hasOven = false;
+        let hasMeat = false; let hasChicken = false; let hasFish = false; let hasLegume = false; let hasOven = false; let isDessert = false;
 
         const nameLower = dish.name.toLowerCase();
-        if (nameLower.includes("fırın") || nameLower.includes("graten") || nameLower.includes("güveç") || nameLower.includes("kebab") || nameLower.includes("şinitzel")) {
+        if (nameLower.includes("fırın") || nameLower.includes("graten") || nameLower.includes("güveç") || nameLower.includes("kebab") || nameLower.includes("pide") || nameLower.includes("pizza") || nameLower.includes("börek") || nameLower.includes("kek") || nameLower.includes("pasta") || nameLower.includes("poğaça")) {
             hasOven = true;
+        }
+        if (nameLower.includes("tatlı") || nameLower.includes("kek") || nameLower.includes("pasta") || nameLower.includes("sütlaç") || nameLower.includes("krem")) {
+            isDessert = true;
+            cCarb += 30; // Base sugar allowance
         }
 
         dish.ingredients.forEach(ing => {
@@ -671,7 +689,7 @@ export function getTrueCost(ing) {
             
             const lower = rawIng.toLowerCase();
             const tokens = lower.split(' ');
-            const has = (w) => tokens.some(t => t === w) || nameLower.includes(w);
+            const has = (w) => tokens.some(t => t.includes(w)); // Sadece ingrediyente (elemana) bakılır, yemeğin adına değil.
 
             // Macros & Physics processing
             if (has("et") || has("kuşbaşı") || has("kavurma") || lower.includes("kebab") || has("antrikot") || has("bonfile") || has("somon")) {
@@ -704,16 +722,18 @@ export function getTrueCost(ing) {
         });
 
         // Resolve Final Times
-        if (hasMeat) pTime += 45; // Kırmızı et pişme payı
-        if (hasChicken) pTime += 25; // Beyaz et
+        if (hasMeat) pTime += 35; // Kırmızı et pişme payı
+        if (hasChicken) pTime += 20; // Beyaz et
+        if (hasFish) pTime += 15; // Balık hızlı pişer
         if (hasLegume && !nameLower.includes("çorba")) pTime += 35; // Bakliyat
-        if (hasOven) pTime += 20; // Fırınlama
+        if (hasOven) pTime += 25; // Fırınlama
+        if (isDessert) pTime += 20;
 
         // Prevent absurd times (e.g. basic side salad getting 60 mins etc)
-        if (pTime > 120) pTime = 120;
+        if (pTime > 150) pTime = 120;
         if (pTime < 15) pTime = 15;
-        if (nameLower.includes("salata") && !hasMeat && !hasChicken) pTime = 15;
-        if (nameLower.includes("çorba") && pTime > 45) pTime = 40;
+        if ((nameLower.includes("salata") || nameLower.includes("meze") || nameLower.includes("cacık")) && !hasMeat && !hasChicken && !hasOven) pTime = 10;
+        if (nameLower.includes("çorba") && pTime > 40) pTime = 35;
 
         // Force Sync Standard Object Nodes
         dish.cost = dynamicCost;
@@ -787,17 +807,7 @@ export const generateWeeklyPlan = (daysCount, strategy, profile, cuisine = 'ALL'
 };
 
 export const generateWheelItems = (filters) => {
-   const currentWindow = Math.floor(Date.now() / (12 * 60 * 60 * 1000));
-   const getPseudoRandom = (str, num) => {
-       let hash = 0;
-       const combined = str + num;
-       for (let i = 0; i < combined.length; i++) {
-           hash = Math.imul(31, hash) + combined.charCodeAt(i) | 0;
-       }
-       return Math.abs(hash) / 2147483647;
-   };
-
-   let shuffled = [...DB_MAINS_HUGE].sort((a, b) => getPseudoRandom(a.name, currentWindow) - getPseudoRandom(b.name, currentWindow));
+   let shuffled = [...DB_MAINS_HUGE].sort(() => 0.5 - Math.random());
    if (filters.includes('UNDER_45')) shuffled = shuffled.filter(m => m.time <= 45);
    if (filters.includes('UNDER_300TL')) shuffled = shuffled.filter(m => m.cost < 300);
    if (filters.includes('DIABETIC')) shuffled = shuffled.filter(m => !m.ingredients.some(i => i.includes("şeker") || i.includes("makarna") || i.includes("pirinç") || i.includes("noodle")));
@@ -805,7 +815,7 @@ export const generateWheelItems = (filters) => {
    if (filters.includes('VEGAN')) shuffled = shuffled.filter(m => !m.ingredients.some(i => i.includes("tavuk") || i.includes("kıyma") || i.includes("et") || i.includes("süt") || i.includes("yumurta") || i.includes("peynir") || i.includes("kaşar") || i.includes("tereyağı")));
    if (filters.includes('GLUTEN_FREE')) shuffled = shuffled.filter(m => !m.ingredients.some(i => i.includes("makarna") || i.includes("noodle") || i.includes("un") || i.includes("ekmek") || i.includes("bulgur")));
    
-   if (shuffled.length < 13) shuffled = [...DB_MAINS_HUGE].sort((a, b) => getPseudoRandom(a.name, currentWindow) - getPseudoRandom(b.name, currentWindow));
+   if (shuffled.length < 13) shuffled = [...DB_MAINS_HUGE].sort(() => 0.5 - Math.random());
    
    return shuffled.slice(0, 13).map(m => ({ ...m, ...getDishDetails(m) }));
 };
@@ -820,9 +830,11 @@ export const generateCrossMenu = (inputStr) => {
   
   if (matches.length < 2) {
       const single = { ...matches[0], ...getDishDetails(matches[0]) };
+      const randomSuffix1 = Math.random() > 0.5 ? " (Özel Şef Dokunuşu)" : " (Fırınlanmış)";
+      const randomSuffix2 = Math.random() > 0.5 ? " (Çocuk Porsiyonu)" : " (Sporcu Formatı)";
       return {
-         diet: { name: single.name, desc: `🔥 Kalori: ${single.calories} - Diyet formuna uygun tek alternatif.`, dishObj: single },
-         kid: { name: single.name + " (Çocuk/Sporcu Porsiyonu)", desc: `⏱ Süre: ${single.time} dk - Daha doyurucu soslarla ekstra porsiyonlu servis.`, dishObj: single }
+         diet: { name: single.name + randomSuffix1, desc: `🔥 Kalori: ${single.calories} - Diyet formuna uygun esnetilmiş alternatif.`, dishObj: single },
+         kid: { name: single.name + randomSuffix2, desc: `⏱ Süre: ${single.time} dk - Daha doyurucu soslarla ekstra porsiyonlu servis.`, dishObj: single }
       };
   }
   
@@ -911,7 +923,9 @@ export const generateGroupMenu = (members) => {
    
    // Randomize outputs for the Refresh button mechanic
    const shuffledSplits = [...splitRecipes].sort(() => 0.5 - Math.random());
-   if (members.length > 1) {
+   const allDietsIdentical = members.every(m => m.rule === members[0].rule);
+
+   if (members.length > 1 && !allDietsIdentical) {
        // Grubun farklı tercihleri var, 1 adet özel split mutlaka ekle
        finalSuggestions.push(shuffledSplits[0]);
    }
