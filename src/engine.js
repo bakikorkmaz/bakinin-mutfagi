@@ -1058,37 +1058,45 @@ export const generateCrossMenu = (inputStr) => {
   const t = inputStr.trim().toLowerCase();
   if(!t) return null;
   let matches = DB_MAINS_HUGE.filter(m => m.name.toLowerCase().includes(t) || m.ingredients.some(i => i.toLowerCase().includes(t)));
-  if (matches.length === 0) return null;
   
-  matches.sort((a, b) => a.heaviness - b.heaviness);
-  
-  if (matches.length < 2) {
-      const single = { ...matches[0], ...getDishDetails(matches[0]) };
-      const randomSuffix1 = Math.random() > 0.5 ? " (Özel Şef Dokunuşu)" : " (Fırınlanmış)";
-      const randomSuffix2 = Math.random() > 0.5 ? " (Çocuk Porsiyonu)" : " (Sporcu Formatı)";
+  if (matches.length === 0) {
+      // Fallback matching by generic food categories
+      if (/(et|kıyma|tavuk|kebap|köfte)/.test(t)) {
+          matches = DB_MAINS_HUGE.filter(m => m.ingredients.some(i => /(et|kıyma|tavuk)/.test(i)));
+      } else {
+          matches = [...DB_MAINS_HUGE];
+      }
+  }
+
+  // Shuffle matches for non-repeating results on every click
+  const shuffledMatches = [...matches].sort(() => 0.5 - Math.random());
+  shuffledMatches.sort((a, b) => a.heaviness - b.heaviness);
+
+  if (shuffledMatches.length < 2) {
+      const single = { ...shuffledMatches[0], ...getDishDetails(shuffledMatches[0]) };
+      const lightModifiers = [" (Zeytinyağlı & Fit Versiyon)", " (Buharda Hafif Pişirilmiş)", " (Diyet Şef Dokunuşu)"];
+      const heavyModifiers = [" (Gurme Kaşarlı Porsiyon)", " (Yüksek Enerjili Sporcu Formatı)", " (Fırınlanmış Doyurucu Menü)"];
+      const modL = lightModifiers[Math.floor(Math.random() * lightModifiers.length)];
+      const modH = heavyModifiers[Math.floor(Math.random() * heavyModifiers.length)];
       return {
-         diet: { name: single.name + randomSuffix1, desc: `🔥 Kalori: ${single.calories} - Diyet formuna uygun esnetilmiş alternatif.`, dishObj: single },
-         kid: { name: single.name + randomSuffix2, desc: `⏱ Süre: ${single.time} dk - Daha doyurucu soslarla ekstra porsiyonlu servis.`, dishObj: single }
+         diet: { name: single.name + modL, desc: `🔥 Kalori: ${single.calories} - Saf, hafif ve sindirimi kolay, diyet formuna tam uygun esnetilmiş tarif.`, dishObj: single },
+         kid: { name: single.name + modH, desc: `⏱ Süre: ${single.time} dk - Yüksek enerjili, çocukların ve sporcuların bayılacağı tam doyurucu format.`, dishObj: single }
       };
   }
   
-  // Lighest items pool (First 30%)
-  const lightLimit = Math.max(1, Math.floor(matches.length * 0.4));
-  const lightPool = matches.slice(0, lightLimit).sort(() => 0.5 - Math.random());
+  const midPoint = Math.floor(shuffledMatches.length / 2);
+  const lightPool = shuffledMatches.slice(0, Math.max(1, midPoint)).sort(() => 0.5 - Math.random());
+  const heavyPool = shuffledMatches.slice(Math.max(1, midPoint)).sort(() => 0.5 - Math.random());
   
-  // Heaviest items pool (Last 30%)
-  const heavyStart = Math.max(lightLimit, matches.length - Math.floor(matches.length * 0.4));
-  const heavyPool = matches.slice(heavyStart).sort(() => 0.5 - Math.random());
-  
-  const rawDiet = lightPool[0] || matches[0];
-  const rawKid = heavyPool[0] || matches[matches.length - 1];
+  const rawDiet = lightPool[0] || shuffledMatches[0];
+  const rawKid = heavyPool[0] || shuffledMatches[shuffledMatches.length - 1];
 
   const dietDish = { ...rawDiet, ...getDishDetails(rawDiet) };
   const kidDish = { ...rawKid, ...getDishDetails(rawKid) };
 
   return {
      diet: { name: dietDish.name, desc: `🔥 Kalori: ${dietDish.calories} - Saf, hafif ve sindirimi kolay, diyet formuna tam uygun '${t}' alternatifi.`, dishObj: dietDish },
-     kid: { name: kidDish.name, desc: `⏱ Süre: ${kidDish.time} dk - Yüksek enerjili, çocukların ve sporcuların bayılacağı tam doyurucu formatı.`, dishObj: kidDish }
+     kid: { name: kidDish.name, desc: `⏱ Süre: ${kidDish.time} dk - Yüksek enerjili, çocukların ve doyurucu lezzet sevenlerin bayılacağı format.`, dishObj: kidDish }
   };
 };
 
@@ -1096,6 +1104,7 @@ export const generateGroupMenu = (members) => {
    if (!members || members.length === 0) return [];
    
    const rules = members.map(m => m.rule);
+   const isCarnivore = rules.includes('CARNIVORE');
    const isVegan = rules.includes('VEGAN');
    const isGlutenFree = rules.includes('GLUTEN_FREE');
    const isLactoseFree = rules.includes('LACTOSE_FREE');
@@ -1104,9 +1113,9 @@ export const generateGroupMenu = (members) => {
    const wantsWeightLoss = rules.includes('WEIGHT_LOSS');
    const wantsWeightGain = rules.includes('WEIGHT_GAIN');
    const wantsProtein = rules.includes('HIGH_PROTEIN');
-   const hasConflictingDiets = isVegan && (wantsProtein || wantsWeightGain);
 
-   const veganBanned = /(tavuk|kıyma|et|kuşbaşı|somon|levrek|süt|yumurta|peynir|kaşar|tereyağı|krema|kavurma)/i;
+   const carnivoreMustHave = /(tavuk|kıyma|et|kuşbaşı|antrikot|bonfile|köfte|sucuk|kavurma|döner|kebap|somon|levrek)/i;
+   const veganBanned = /(tavuk|kıyma|et|kuşbaşı|somon|levrek|süt|yumurta|peynir|kaşar|tereyağı|krema|kavurma|sucuk|bonfile)/i;
    const glutenBanned = /(makarna|noodle|un|ekmek|bulgur|şehriye)/i;
    const lactoseBanned = /(süt|krema|peynir|kaşar|tereyağı)/i;
    const diabeticBanned = /(şeker|makarna|pirinç|noodle|ekmek|patates)/i;
@@ -1118,6 +1127,7 @@ export const generateGroupMenu = (members) => {
    DB_MAINS_HUGE.forEach(dish => {
        const ings = dish.ingredients.join(" ").toLowerCase() + " " + dish.name.toLowerCase();
        let isBanned = false;
+       if (isCarnivore && !carnivoreMustHave.test(ings)) isBanned = true;
        if (isVegan && veganBanned.test(ings)) isBanned = true;
        if (isGlutenFree && glutenBanned.test(ings)) isBanned = true;
        if (isLactoseFree && lactoseBanned.test(ings)) isBanned = true;
@@ -1127,6 +1137,7 @@ export const generateGroupMenu = (members) => {
        
        if (!isBanned) {
            let score = 0;
+           if (isCarnivore && carnivoreMustHave.test(ings)) score += 10;
            if (wantsProtein && proteinBoost.test(ings)) score += 5;
            if (wantsWeightLoss && dish.heaviness <= 3) score += 3;
            if (wantsWeightGain && dish.heaviness >= 7) score += 3;
@@ -1134,63 +1145,114 @@ export const generateGroupMenu = (members) => {
        }
    });
 
-   // Dinamik Split Tarifler Dizisi
+   // 12 Zengin Ayrıştırılabilir (Split) Tarif Havuzu
    const splitRecipes = [
       {
-         name: "Ayrıştırılabilir Soslu Makarna (Etli ve Vegan/Sebzeli)",
+         name: "Ayrıştırılabilir Soslu Makarna (Etobur/Kıymalı & Veggie Soslu)",
          time: 30, cost: 250, type: "MIXED", heaviness: 5, ingredients: ["makarna", "kıyma", "domates", "zeytinyağı", "fesleğen"],
-         logicExplanation: "Grubunuzda hem et yiyen hem yemeyen (vegan/diyet) biri var. Sade makarnayı haşlayıp ikiye ayırın! Bir kısmına kıymalı/etli bolonez sos eklerken, diğerine domatesli zeytinyağlı enfes vegan sosunuzu ekleyin. Herkes mutlu!"
+         logicExplanation: "Ayrıştırılabilir pratik menü! Sade makarnayı haşlayıp ikiye ayırın: Etobur/protein diyetliler için tavadaki bolonez kıyma sosunu ekleyin, vegan/sebze sevenler için domatesli fesleğenli zeytinyağlı sosu ilave edin."
       },
       {
-         name: "Kişiselleştirilebilir Meksika Tacosu / Burrito",
+         name: "Kişiselleştirilebilir Meksika Tacosu / Burrito Kasesi",
          time: 35, cost: 350, type: "MIXED", heaviness: 6, ingredients: ["lavaş", "kıyma", "meksika fasulyesi", "mısır", "avokado", "kırmızı biber"],
-         logicExplanation: "Kişiselleştirilebilir mükemmel aile matrisi! Sosları (guacamole, salsa) ve Meksika fasulyesini veganlar/hassas diyetliler için ortak masaya dizin. Et sevenler için ise tavada hızla harmanlanan kıymayı ekstra olarak dürümün içine ekleyin."
+         logicExplanation: "Modüler aile sofrası! Lavaş, guacamole, salsa sos ve Meksika fasulyesini masaya ortak dizin. Etoburlar için sotelenmiş baharatlı kıymayı veya sotelenmiş tavuğu ekstra kapta sunun."
       },
       {
-         name: "Ayrıştırılmış Sulu Yemek (Örn: Etli/Etsiz Nohut veya Fasulye)",
-         time: 50, cost: 200, type: "MIXED", heaviness: 4, ingredients: ["kuru fasulye", "kuşbaşı et", "soğan", "salça", "zeytinyağı"],
-         logicExplanation: "Yemeğin tabanını zeytinyağı ile tamamen etsiz (vegan/sade) pişirin. Yemeğin %50'si piştikten sonra vegan/diyet olan şefimiz için porsiyonu tencereden ayırın. Ardından tencerede kalan yemeğe daha önceden jülyen sotelediğiniz etleri ekleyip 10 dk daha özdeşleştirin."
+         name: "Çift Kanatlı Fırın Tepsisi (Bir Tarafı Bonfile/Köfte, Diğer Tarafı Sebzeli Graten)",
+         time: 45, cost: 380, type: "MIXED", heaviness: 6, ingredients: ["dana bonfile", "köfte", "patlıcan", "kabak", "zeytinyağı", "kaşar"],
+         logicExplanation: "Tepsinin sol tarafında etobur aile fertleri için kasap köfte / bonfile dilimleri pişerken, sağ tarafında bitkisel ve hafif diyet beslenenler için zeytinyağlı sebzeler fırınlanır."
+      },
+      {
+         name: "Ayrıştırılmış Tencere Yemeği (Etsiz Pişirilip Sonradan Et/Kıyma Eklenen Güveç)",
+         time: 50, cost: 220, type: "MIXED", heaviness: 4, ingredients: ["kuru fasulye", "kuşbaşı et", "soğan", "salça", "zeytinyağı"],
+         logicExplanation: "Sebze veya bakliyat tabanını zeytinyağı ile piştikten sonra porsiyonlayın! Hafif ve etsiz diyetlilerin porsiyonu ayrıldıktan sonra tencerede kalan yemeğe sote et veya kıyma harmanlanır."
+      },
+      {
+         name: "Modüler Izgara & Tahıl Tabağı (Etobura Bonfile / Diğerlerine Mantar-Kinoa)",
+         time: 25, cost: 340, type: "MIXED", heaviness: 4, ingredients: ["bonfile", "mantar", "kinoa", "roka", "zeytinyağı"],
+         logicExplanation: "Taban kinoa ve yeşillik salatası ortak hazırlanır. Etobur ve yüksek protein diyetindeki kişiye dana bonfile dilimleri, sebze severlere ızgara kestane mantarı eklenir."
+      },
+      {
+         name: "İkili Lahmacun & Pide Tepsisi (Kıymalı & Sebzeli/Glutensiz Tabanlı)",
+         time: 40, cost: 260, type: "MIXED", heaviness: 6, ingredients: ["kıyma", "domates", "biber", "mantar", "mısır"],
+         logicExplanation: "Aynı fırın tepsisinde kıymalı harçlı etobur pideler ile mantarlı/sebzeli zeytinyağlı pideler eş zamanlı pişirilir."
+      },
+      {
+         name: "Çift Hazneli Çorba & Kebap Konsepti (Et Suyu Bonfile & Sebze Çorbası)",
+         time: 35, cost: 290, type: "MIXED", heaviness: 5, ingredients: ["tavuk", "sarımsak", "yoğurt", "nane", "kabak"],
+         logicExplanation: "Grupta hem etobur hem de hafif sebze diyetli varsa: Tencerenin birinde kemik sulu tavuk çorbası hazırlanırken, diğerinde saf sebze çorbası pişirilir."
+      },
+      {
+         name: "Kişiselleştirilebilir Izgara Tavuk / Mantar Kasesi (Bowl)",
+         time: 25, cost: 230, type: "MIXED", heaviness: 4, ingredients: ["tavuk göğüsü", "mantar", "pirinç", "avokado", "mısır"],
+         logicExplanation: "Pirinç, avokado ve mısır kasesinin üzerine etobur kişilere ızgara tavuk göğsü; vegan/vejetaryen kişilere ızgara soya soslu mantar ilave edilir."
+      },
+      {
+         name: "İki Farklı İç Harçlı Dolma / Sarma (Kıymalı & Fıstıklı Zeytinyağlı)",
+         time: 60, cost: 210, type: "MIXED", heaviness: 5, ingredients: ["biber", "kıyma", "pirinç", "fıstık", "nane", "zeytinyağı"],
+         logicExplanation: "Biberlerin yarısı kıymalı sıcak dolma harcı ile doldurulurken, diğer yarısı fıstıklı üzümlü zeytinyağlı soğuk dolma harcı ile doldurularak tek tencerede pişirilir."
+      },
+      {
+         name: "Katmanlı Fırın Graten (Kıymalı Beşamel & Zeytinyağlı Sebzeli)",
+         time: 45, cost: 270, type: "MIXED", heaviness: 6, ingredients: ["patates", "kıyma", "beşamel", "kaşar", "zeytinyağı"],
+         logicExplanation: "Fırın kabının bir yarısına kıymalı katman atılır, diğer yarısına mantarlı/sebzeli katman atılarak tüm grubun hassasiyeti karşılanır."
+      },
+      {
+         name: "Ayrıştırılabilir Erişte / Mantı Tavası (Kıymalı Mantı & Yoğurtlu Cevizli Erişte)",
+         time: 30, cost: 220, type: "MIXED", heaviness: 5, ingredients: ["mantı", "erişte", "kıyma", "yoğurt", "ceviz", "tereyağı"],
+         logicExplanation: "Etobur ve hamur sevenler için kıymalı sarımsaklı mantı; vejetaryen/hafif yiyenler için cevizli erişte aynı sofrada buluşur."
+      },
+      {
+         name: "Modüler Sote Dürüm (Dana Etli & Soya Soslu Sebzeli)",
+         time: 20, cost: 280, type: "MIXED", heaviness: 5, ingredients: ["lavaş", "bonfile", "biber", "soğan", "mantar"],
+         logicExplanation: "Sotelenen soğan ve biberler iki ayrı tavaya alınır. Birine jülyen dana bonfile, diğerine mantar eklenip lavaş arası yapılır."
       }
    ];
 
    let finalSuggestions = [];
-   
-   // Randomize outputs for the Refresh button mechanic
    const shuffledSplits = [...splitRecipes].sort(() => 0.5 - Math.random());
    const allDietsIdentical = members.every(m => m.rule === members[0].rule);
 
    if (members.length > 1 && !allDietsIdentical) {
-       // Grubun farklı tercihleri var, 1 adet özel split mutlaka ekle
+       // Grubun farklı tercihleri var: 1 veya 2 adet leziz split tarifi rastgele seçip ekle
        finalSuggestions.push(shuffledSplits[0]);
+       if (shuffledSplits[1]) finalSuggestions.push(shuffledSplits[1]);
    }
 
-   // Diğerleri ortak yemeklerden (Eğer tamamen boş değilse)
    if (validDishes.length > 0) {
-       validDishes.sort(() => 0.5 - Math.random()); // Karıştır (Reroll destekli)
-       // Score bazlı ama randomize edilmiş havuz (en iyi %50 içinden rastgele)
+       // Rastgele karıştır ve en iyi skorlu 4 tarifi seç
+       validDishes.sort(() => 0.5 - Math.random());
        validDishes.sort((a,b) => b.score - a.score);
-       const topHalf = validDishes.slice(0, Math.max(3, Math.floor(validDishes.length / 2)));
-       const mixedTopHalf = topHalf.sort(() => 0.5 - Math.random());
+       const topPool = validDishes.slice(0, Math.max(4, Math.floor(validDishes.length / 2)));
+       const mixedTop = topPool.sort(() => 0.5 - Math.random());
        
-       mixedTopHalf.slice(0, members.length > 1 ? 2 : 3).forEach(dish => {
-           let logicExp = "Grupun sağlık standartının '%100 TAM ORTAK KESİŞİM' noktasıdır. ";
+       mixedTop.slice(0, 3).forEach(dish => {
+           let logicExp = "Grubunuzun beslenme standartlarının %100 TAM ORTAK KESİŞİMİDİR. ";
            members.forEach(m => {
-               if (m.rule === 'VEGAN') logicExp += `${m.name} için tamamen bitkisel. `;
-               if (m.rule === 'GLUTEN_FREE') logicExp += `${m.name} için tamamen unsuz. `;
-               if (m.rule === 'DIABETIC') logicExp += `${m.name} için sıfır tatlandırıcı şekersiz. `;
-               if (m.rule === 'HIGH_PROTEIN') logicExp += `${m.name} kaslarını besler. `;
+               if (m.rule === 'CARNIVORE') logicExp += `${m.name} için zengin protein ve et içeriği barındırır. `;
+               if (m.rule === 'VEGAN') logicExp += `${m.name} için tamamen bitkiseldir. `;
+               if (m.rule === 'GLUTEN_FREE') logicExp += `${m.name} için tamamen unsuzdur. `;
+               if (m.rule === 'DIABETIC') logicExp += `${m.name} için şekersiz/düşük karblıdır. `;
+               if (m.rule === 'HIGH_PROTEIN') logicExp += `${m.name} kas gelişimi desteklenir. `;
            });
            finalSuggestions.push({ ...dish, logicExplanation: logicExp.trim() });
        });
    } else if (members.length > 1) {
-       // Hiçbir ortak kesişim yoksa, kalan SPLIT yemeği ver. (Örn 1 Vegan + 1 Carnivore = Ortak kesişim genelde 0)
-       finalSuggestions.push(shuffledSplits[1]);
+       finalSuggestions.push(shuffledSplits[2] || shuffledSplits[0]);
    }
 
-   return finalSuggestions.sort(() => 0.5 - Math.random()).map(dish => {
-       const details = getDishDetails(dish);
-       return { ...dish, ...details };
+   // Deduplicate and return final list
+   const seen = new Set();
+   const uniqueResults = [];
+   finalSuggestions.sort(() => 0.5 - Math.random()).forEach(dish => {
+       if (!seen.has(dish.name)) {
+           seen.add(dish.name);
+           const details = getDishDetails(dish);
+           uniqueResults.push({ ...dish, ...details });
+       }
    });
+
+   return uniqueResults;
 };
 
 export const getSimilarDishes = (target) => {

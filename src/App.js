@@ -616,6 +616,7 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
   const [groupResults, setGroupResults] = useState(null);
 
   const GROUP_RULES = [
+    { id: 'CARNIVORE', label: '🥩 Etobur / Karnivor (Kırmızı Et, Tavuk & Sakatat Sever)' },
     { id: 'VEGAN', label: 'Vegan (Hiçbir Hayvansal Gıda Yok)' },
     { id: 'GLUTEN_FREE', label: 'Glutensiz (Hamur, Un, Buğday Yasak)' },
     { id: 'LACTOSE_FREE', label: 'Laktoz İntoleransı (Süt ve Peynir Yasak)' },
@@ -904,6 +905,11 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
           <div className="hub-icon">📅</div>
           <div className="hub-title">{t('weekly')}</div>
           <div className="hub-desc">Sadece 2 soruyla, tüm hafta ne yiyeceğinizin planını yormadan otonom şekilde oluşturur.</div>
+        </div>
+        <div className="hub-card" onClick={() => setDashboardView('RECYCLE')}>
+          <div className="hub-icon">♻️</div>
+          <div className="hub-title">{t('nav_recycle')}</div>
+          <div className="hub-desc">Dünden kalan yemekleri veya artan malzemeleri yazın, lezzetli dönüşüm tarifleri sunalım.</div>
         </div>
       </div>
     </>
@@ -1369,6 +1375,15 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
              </div>
           )}
         </div>
+      </>
+      )}
+
+      {dashboardView === 'RECYCLE' && (
+      <>
+        <div className="module-header-nav">
+          <button className="back-btn" onClick={() => setDashboardView('HUB')}>← Geri Dön</button>
+        </div>
+        <RecycleFlow handleTitleClick={() => setDashboardView('HUB')} setShoppingCart={setShoppingCart} />
       </>
       )}
 

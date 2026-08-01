@@ -146,3 +146,23 @@ body { background-color: var(--bg); color: var(--text-dark); font-size: 16px; ov
 .staples-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
 .staple-chip { padding: 8px 14px; background: var(--bg); border: 2px solid var(--border); border-radius: 20px; font-size: 14px; cursor: pointer; transition: 0.2s; font-weight: 600; color: var(--text-light); text-transform: capitalize; }
 .staple-chip.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+/* --- KEŞFET & SOSYAL AKIŞ OPTİMİZASYONLARI --- */
+.feed-scroll-container {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  overscroll-behavior-y: contain;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.feed-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+

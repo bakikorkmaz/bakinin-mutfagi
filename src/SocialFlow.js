@@ -5,7 +5,131 @@ import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import * as tf from '@tensorflow/tfjs';
 import * as mobilenet from '@tensorflow-models/mobilenet';
 
+const getHighResPhotoUrl = (url) => {
+    if (!url || typeof url !== 'string') return url || '';
+    if (url.includes('googleusercontent.com')) {
+        return url.replace(/=s\d+(-c)?/g, '=s800');
+    }
+    return url;
+};
+
+
+// İki Parmak Yakınlaştırma (Pinch-to-Zoom) Bileşeni
+function PinchZoomImage({ src, alt, style, onClick, badgeText }) {
+  const [scale, setScale] = useState(1);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const startDistRef = useRef(0);
+  const startScaleRef = useRef(1);
+  const touchStartPosRef = useRef({ x: 0, y: 0 });
+
+  const handleTouchStart = (e) => {
+    if (e.touches.length === 2) {
+      const dist = Math.hypot(
+        e.touches[0].pageX - e.touches[1].pageX,
+        e.touches[0].pageY - e.touches[1].pageY
+      );
+      startDistRef.current = dist;
+      startScaleRef.current = scale;
+    } else if (e.touches.length === 1 && scale > 1) {
+      touchStartPosRef.current = {
+        x: e.touches[0].pageX - position.x,
+        y: e.touches[0].pageY - position.y
+      };
+    }
+  };
+
+  const handleTouchMove = (e) => {
+    if (e.touches.length === 2 && startDistRef.current > 0) {
+      const dist = Math.hypot(
+        e.touches[0].pageX - e.touches[1].pageX,
+        e.touches[0].pageY - e.touches[1].pageY
+      );
+      const zoomFactor = dist / startDistRef.current;
+      const newScale = Math.min(Math.max(1, startScaleRef.current * zoomFactor), 4);
+      setScale(newScale);
+      if (newScale === 1) setPosition({ x: 0, y: 0 });
+    } else if (e.touches.length === 1 && scale > 1) {
+      const newX = e.touches[0].pageX - touchStartPosRef.current.x;
+      const newY = e.touches[0].pageY - touchStartPosRef.current.y;
+      setPosition({ x: newX, y: newY });
+    }
+  };
+
+  const handleTouchEnd = (e) => {
+    if (e.touches.length < 2) {
+      startDistRef.current = 0;
+      if (scale < 1.05) {
+        setScale(1);
+        setPosition({ x: 0, y: 0 });
+      }
+    }
+  };
+
+  const handleDoubleClick = () => {
+    if (scale > 1) {
+      setScale(1);
+      setPosition({ x: 0, y: 0 });
+    } else {
+      setScale(2.5);
+    }
+  };
+
+  return (
+    <div
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      onDoubleClick={handleDoubleClick}
+      style={{
+        overflow: 'hidden',
+        touchAction: scale > 1 ? 'none' : 'pan-y',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100%',
+        height: '100%',
+        position: 'relative'
+      }}
+    >
+      <img
+        src={src}
+        alt={alt}
+        onClick={onClick}
+        style={{
+          ...style,
+          transform: `translate(${position.x}px, ${position.y}px) scale(${scale})`,
+          transition: scale === 1 ? 'transform 0.2s ease-out' : 'none',
+          willChange: 'transform',
+          userSelect: 'none',
+          WebkitUserSelect: 'none'
+        }}
+      />
+      {badgeText && (
+        <div style={{
+          position: 'absolute',
+          top: '15px',
+          right: '15px',
+          background: 'rgba(0,0,0,0.7)',
+          color: 'white',
+          padding: '4px 10px',
+          borderRadius: '12px',
+          fontSize: '11px',
+          fontWeight: 800,
+          backdropFilter: 'blur(4px)',
+          pointerEvents: 'none',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '4px'
+        }}>
+          {badgeText}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function SocialFlow({ activeUser, setActiveUser }) {
+
    const [subTab, setSubTab] = useState('FOLLOW'); // FEED, CHAT, FOLLOW, UPLOAD
    const [model, setModel] = useState(null);
    const [isModelLoading, setIsModelLoading] = useState(true);
@@ -484,7 +608,7 @@ export default function SocialFlow({ activeUser, setActiveUser }) {
                        return (
                            <div key={u.id} style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '15px', background: 'white', borderRadius: '16px', marginBottom: '10px', boxShadow: '0 4px 6px rgba(0,0,0,0.03)'}}>
                                <div onClick={() => openProfile(u)} style={{display: 'flex', gap: '15px', alignItems: 'center', cursor: 'pointer'}}>
-                                   {u.photoURL ? <img src={u.photoURL} onClick={(e) => { e.stopPropagation(); setEnlargedPhoto(u.photoURL) }} style={{width:'50px', height:'50px', borderRadius:'50%', objectFit: 'cover', cursor: 'zoom-in'}} /> : <div style={{width:'50px',height:'50px',borderRadius:'50%',background:'#F1F5F9',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'24px'}}>👤</div>}
+                                   {u.photoURL ? <img src={getHighResPhotoUrl(u.photoURL)} onClick={(e) => { e.stopPropagation(); setEnlargedPhoto(u.photoURL) }} style={{width:'50px', height:'50px', borderRadius:'50%', objectFit: 'cover', cursor: 'zoom-in'}} /> : <div style={{width:'50px',height:'50px',borderRadius:'50%',background:'#F1F5F9',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'24px'}}>👤</div>}
                                    <div style={{fontWeight: 800, color: '#334155'}}>@{u.username}</div>
                                </div>
                                <button onClick={() => handleFollow(u.id, isFollowing, u.isPrivate, isRequested)} style={{background: isFollowing ? '#E2E8F0' : isRequested ? '#F59E0B' : '#8B5CF6', color: isFollowing ? '#64748B' : 'white', padding: '8px 16px', borderRadius: '20px', border: 'none', fontWeight: 800, cursor: 'pointer', transition: '0.2s'}}>
@@ -495,19 +619,19 @@ export default function SocialFlow({ activeUser, setActiveUser }) {
                    })}
                </div>
            ) : (
-               <div style={{overflowY: 'scroll', scrollSnapType: 'y mandatory', margin: '0 -15px', background: 'black', flex: 1, paddingBottom: '70px'}}>
+               <div className="feed-scroll-container" style={{overflowY: 'scroll', scrollSnapType: 'y mandatory', WebkitOverflowScrolling: 'touch', margin: '0 -15px', background: '#0F172A', flex: 1, paddingBottom: '70px'}}>
                    {visiblePosts.length === 0 ? (
                        <div style={{textAlign: 'center', margin: '30px 20px', color: '#64748B', display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%'}}>Henüz hiçbir gönderi paylaşılmamış. İlk paylaşan şef sen ol!</div>
                    ) : (
                        visiblePosts.map(post => {
                            const isLikedByMe = post.likes?.includes(activeUser.uid);
                            return (
-                               <div key={post.id} style={{scrollSnapAlign: 'start', height: 'calc(100vh - 130px)', width: '100%', position: 'relative', overflow: 'hidden'}}>
+                               <div key={post.id} style={{scrollSnapAlign: 'start', scrollSnapStop: 'always', height: 'calc(100vh - 140px)', width: '100%', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', background: '#090D16'}}>
                             {post.images && post.images.length > 0 ? (
                                  <div style={{display: 'flex', width: '100%', height: '100%', overflowX: 'auto', scrollSnapType: 'x mandatory'}}>
                                      {post.images.map((imgUrl, i) => (
-                                         <div key={i} style={{minWidth: '100vw', height: '100%', scrollSnapAlign: 'center', position: 'relative'}}>
-                                             <img src={imgUrl} alt="post" style={{width: '100%', height: '100%', objectFit: 'contain', background: 'black'}} />
+                                         <div key={i} style={{minWidth: '100%', width: '100%', flexShrink: 0, height: '100%', scrollSnapAlign: 'center', position: 'relative'}}>
+                                             <img src={getHighResPhotoUrl(imgUrl)} alt="post" onClick={() => setEnlargedPhoto(getHighResPhotoUrl(imgUrl))} style={{maxWidth: '100%', maxHeight: '100%', width: 'auto', height: 'auto', objectFit: 'contain', borderRadius: '16px', background: '#1E293B', boxShadow: '0 8px 30px rgba(0,0,0,0.7)', cursor: 'zoom-in'}} />
                                              <div style={{position: 'absolute', top: '20px', right: '20px', background: 'rgba(0,0,0,0.5)', color: 'white', padding: '8px 15px', borderRadius: '15px', fontSize: '14px', fontWeight: 900}}>
                                                  {i + 1} / {post.images.length}
                                              </div>
@@ -529,7 +653,7 @@ export default function SocialFlow({ activeUser, setActiveUser }) {
                                          const pOwner = allUsers.find(u => u.id === post.userId) || {id: post.userId, username: post.username, name: post.userName, photoURL: post.userPhoto};
                                          openProfile(pOwner);
                                      }} style={{display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer'}}>
-                                       {post.userPhoto ? <img src={post.userPhoto} alt="p" style={{width:'35px', height:'35px', borderRadius:'50%'}} /> : <span style={{fontSize:'24px'}}>👤</span>}
+                                       {post.userPhoto ? <img src={getHighResPhotoUrl(post.userPhoto)} alt="p" style={{width:'35px', height:'35px', borderRadius:'50%'}} /> : <span style={{fontSize:'24px'}}>👤</span>}
                                        @{post.username || post.userName.replace(/\s+/g, '')}
                                     </div>
                                     
@@ -787,7 +911,7 @@ export default function SocialFlow({ activeUser, setActiveUser }) {
 
                                     return finalUsers.map(u => (
                                         <div key={u.id} onClick={() => { setConnectionModal(null); openProfile(u); }} style={{display: 'flex', alignItems: 'center', gap: '15px', padding: '10px 0', borderBottom: '1px solid #E2E8F0', cursor: 'pointer'}}>
-                                            {u.photoURL ? <img src={u.photoURL} alt="" style={{width: '45px', height: '45px', borderRadius: '50%', objectFit: 'cover'}} /> : <div style={{width: '45px', height: '45px', borderRadius: '50%', background: '#F1F5F9', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '20px'}}>👤</div>}
+                                            {u.photoURL ? <img src={getHighResPhotoUrl(u.photoURL)} alt="" style={{width: '45px', height: '45px', borderRadius: '50%', objectFit: 'cover'}} /> : <div style={{width: '45px', height: '45px', borderRadius: '50%', background: '#F1F5F9', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '20px'}}>👤</div>}
                                             <div style={{fontWeight: 800, color: '#334155'}}>@{u.username}</div>
                                         </div>
                                     ));
@@ -833,7 +957,7 @@ export default function SocialFlow({ activeUser, setActiveUser }) {
            {reqs.length === 0 ? <div style={{textAlign: 'center', margin: '30px 0', color: '#64748B'}}>Henüz yeni bir takip isteğiniz yok.</div> : reqs.map(u => (
                <div key={u.id} style={{padding: '15px', background: 'white', borderRadius: '16px', marginBottom: '10px', display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
                    <div style={{display: 'flex', alignItems: 'center', gap: '10px'}}>
-                       {u.photoURL ? <img src={u.photoURL} alt="" style={{width: '45px', height: '45px', borderRadius: '50%', objectFit: 'cover'}}/> : <div style={{width:'45px', height:'45px', borderRadius:'50%', background:'#F1F5F9', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'24px'}}>👤</div>}
+                       {u.photoURL ? <img src={getHighResPhotoUrl(u.photoURL)} alt="" style={{width: '45px', height: '45px', borderRadius: '50%', objectFit: 'cover'}}/> : <div style={{width:'45px', height:'45px', borderRadius:'50%', background:'#F1F5F9', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'24px'}}>👤</div>}
                        <div><div style={{fontWeight: 800}}>@{u.username}</div><div style={{fontSize: '12px', color: '#64748B'}}>Sizi takip etmek istiyor</div></div>
                    </div>
                    <div style={{display: 'flex', gap: '8px'}}>
@@ -901,7 +1025,7 @@ export default function SocialFlow({ activeUser, setActiveUser }) {
                        <div key={u.id} style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '15px', background: 'white', borderRadius: '16px', marginBottom: '10px', boxShadow: '0 4px 6px rgba(0,0,0,0.03)'}}>
                            <div style={{display: 'flex', alignItems: 'center', gap: '15px'}}>
                                {u.photoURL ? (
-                                    <img src={u.photoURL} alt={u.name} style={{width:'50px', height:'50px', borderRadius:'50%', objectFit: 'cover'}} />
+                                    <img src={getHighResPhotoUrl(u.photoURL)} alt={u.name} style={{width:'50px', height:'50px', borderRadius:'50%', objectFit: 'cover'}} />
                                ) : (
                                     <div style={{width:'50px', height:'50px', borderRadius:'50%', background:'#F1F5F9', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'24px'}}>👤</div>
                                )}
@@ -931,7 +1055,7 @@ export default function SocialFlow({ activeUser, setActiveUser }) {
            </div>
 
            {/* İÇERİK EKRANLARI */}
-           <div style={{flex:1, overflowY: 'auto', padding: '0 15px', paddingBottom: '70px'}}>
+           <div style={{flex:1, overflowY: (subTab === 'FEED' && feedMode === 'WATCH') ? 'hidden' : 'auto', padding: (subTab === 'FEED' && feedMode === 'WATCH') ? '0' : '0 15px', paddingBottom: (subTab === 'FEED' && feedMode === 'WATCH') ? '0' : '70px'}}>
                {subTab === 'MY_PROFILE' && renderMyProfileScreen()}
                {subTab === 'FEED' && renderFeedScreen()}
                {subTab === 'CHAT' && (
@@ -946,7 +1070,7 @@ export default function SocialFlow({ activeUser, setActiveUser }) {
                               ) : (
                                   allUsers.filter(u => myProfile?.follows?.includes(u.id)).map(u => (
                                      <div key={u.id} onClick={() => setSelectedChatUser(u)} style={{display: 'flex', alignItems: 'center', gap: '15px', padding: '15px', background: 'white', borderRadius: '16px', marginBottom: '10px', boxShadow: '0 4px 6px rgba(0,0,0,0.03)', cursor: 'pointer'}}>
-                                         {u.photoURL ? <img src={u.photoURL} alt="p" style={{width:'45px', height:'45px', borderRadius:'50%', objectFit:'cover'}} /> : <div style={{width:'45px', height:'45px', borderRadius:'50%', background:'#E2E8F0', display:'flex', alignItems:'center', justifyContent:'center'}}>👤</div>}
+                                         {u.photoURL ? <img src={getHighResPhotoUrl(u.photoURL)} alt="p" style={{width:'45px', height:'45px', borderRadius:'50%', objectFit:'cover'}} /> : <div style={{width:'45px', height:'45px', borderRadius:'50%', background:'#E2E8F0', display:'flex', alignItems:'center', justifyContent:'center'}}>👤</div>}
                                          <div style={{fontWeight: '800', color: '#334155'}}>@{u.username || 'anonim'}</div>
                                      </div>
                                   ))
@@ -1048,7 +1172,12 @@ export default function SocialFlow({ activeUser, setActiveUser }) {
                <div style={{position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.85)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px'}} onClick={() => setEnlargedPhoto(null)}>
                    <div style={{position: 'relative', maxWidth: '90%', maxHeight: '90%'}}>
                        <button onClick={() => setEnlargedPhoto(null)} style={{position: 'absolute', top: '-40px', right: '0', background: 'transparent', color: 'white', fontSize: '30px', border: 'none', cursor: 'pointer', fontWeight: 800}}>✕</button>
-                       <img src={enlargedPhoto} style={{width: '100%', height: 'auto', maxHeight: '80vh', objectFit: 'contain', borderRadius: '15px', boxShadow: '0 10px 25px rgba(0,0,0,0.5)'}} />
+                       <PinchZoomImage 
+   src={getHighResPhotoUrl(enlargedPhoto)} 
+   alt="enlarged" 
+   badgeText="✌️ İki Parmakla Büyüt / Çift Dokun"
+   style={{width: '100%', height: 'auto', maxHeight: '80vh', objectFit: 'contain', borderRadius: '15px', boxShadow: '0 10px 25px rgba(0,0,0,0.5)'}} 
+/>
                    </div>
                </div>
            )}
