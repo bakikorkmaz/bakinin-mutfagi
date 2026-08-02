@@ -133,7 +133,8 @@ export const processChatPrompt = (text) => {
       return !/tavuk|kıyma|et|kuşbaşı|somon|levrek|sucuk|pastırma|kavurma|bonfile|kaşar|peynir|krema|tereyağı/.test(mIngs);
     }).sort(() => 0.5 - Math.random()).slice(0, 5);
     const names2 = plantDishes2.map(m => "🌿 " + m.name).join("\n");
-    return "Evet şefim, tıbbi bir süreç sonrasında hayvansal içerik içermeyen hafif yemekler çok önemli! Tam sana göre seçtiklerim:\n\n" + names2 + "\n\nBunların tarifini görmek için \"... nasıl yapılır?\" diyebilirsin. Bitkisel gıdalar iyileşmeyi hızlandırır. 💚";
+    if (typeof window !== 'undefined') { window.globalLastDietFilter = 'plant_strict'; window.globalShownDietDishes = plantDishes2.map(m => m.id); }
+    return "Evet şefim, tıbbi bir süreç sonrasında hayvansal içerik içermeyen hafif yemekler çok önemli! Tam sana göre seçtiklerim:\n\n" + names2 + "\n\nBunların tarifini görmek için \"... nasıl yapılır?\" diyebilirsin. Beğenmezsen \"başka\" veya \"değiştir\" diyerek yeni öneriler isteyebilirsin. Bitkisel gıdalar iyileşmeyi hızlandırır. 💚";
   }
 
   if (wantsPlantBased) {
@@ -142,7 +143,8 @@ export const processChatPrompt = (text) => {
       return !/tavuk|kıyma|et|kuşbaşı|somon|levrek|sucuk|pastırma|kavurma|bonfile/.test(mIngs);
     }).sort(() => 0.5 - Math.random()).slice(0, 5);
     const names3 = plantDishes3.map(m => "🌿 " + m.name).join("\n");
-    return "Hayvansal içeriği olmayan bitkisel yemekler için harika seçimler:\n\n" + names3 + "\n\nHepsinin tarifi için isim yazman yeterli! Daha fazlası için 'Başka ne var?' diyebilirsin. 🌱";
+    if (typeof window !== 'undefined') { window.globalLastDietFilter = 'plant'; window.globalShownDietDishes = plantDishes3.map(m => m.id); }
+    return "Hayvansal içeriği olmayan bitkisel yemekler için harika seçimler:\n\n" + names3 + "\n\nHepsinin tarifi için isim yazman yeterli! Beğenmezsen \"başka\" veya \"değiştir\" diyerek yeni öneriler isteyebilirsin. 🌱";
   }
 
   if (isMedical) {
@@ -1097,10 +1099,22 @@ export const generateWheelItems = (filters) => {
 export const generateCrossMenu = (inputStr) => {
   const t = inputStr.trim().toLowerCase();
   if(!t) return null;
+
+  // Durstenfeld true Fisher-Yates shuffle
+  function durShuffle(arr) { const a = [...arr]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+
+  // Session tracking per input - prevents same pair from showing again
+  if (!window.crossShownPairs) window.crossShownPairs = {};
+  if (!window.crossLastInput) window.crossLastInput = '';
+  if (window.crossLastInput !== t) {
+    window.crossShownPairs[t] = [];
+    window.crossLastInput = t;
+  }
+  const shownPairIds = window.crossShownPairs[t] || [];
+
   let matches = DB_MAINS_HUGE.filter(m => m.name.toLowerCase().includes(t) || m.ingredients.some(i => i.toLowerCase().includes(t)));
   
   if (matches.length === 0) {
-      // Fallback matching by generic food categories
       if (/(et|kıyma|tavuk|kebap|köfte)/.test(t)) {
           matches = DB_MAINS_HUGE.filter(m => m.ingredients.some(i => /(et|kıyma|tavuk)/.test(i)));
       } else {
@@ -1108,14 +1122,30 @@ export const generateCrossMenu = (inputStr) => {
       }
   }
 
-  // Shuffle matches for non-repeating results on every click
-  const shuffledMatches = [...matches].sort(() => 0.5 - Math.random());
-  shuffledMatches.sort((a, b) => a.heaviness - b.heaviness);
+  // Filter out already-shown dishes in this session
+  let available = matches.filter(m => !shownPairIds.includes(m.id));
+  if (available.length < 2) {
+    window.crossShownPairs[t] = [];
+    available = [...matches];
+  }
 
-  if (shuffledMatches.length < 2) {
-      const single = { ...shuffledMatches[0], ...getDishDetails(shuffledMatches[0]) };
-      const lightModifiers = [" (Zeytinyağlı & Fit Versiyon)", " (Buharda Hafif Pişirilmiş)", " (Diyet Şef Dokunuşu)"];
-      const heavyModifiers = [" (Gurme Kaşarlı Porsiyon)", " (Yüksek Enerjili Sporcu Formatı)", " (Fırınlanmış Doyurucu Menü)"];
+  const shuffled = durShuffle(available);
+  // Separate into light (heaviness <= 4) and heavy (heaviness >= 5)
+  const lightPool = durShuffle(shuffled.filter(m => m.heaviness <= 4));
+  const heavyPool = durShuffle(shuffled.filter(m => m.heaviness >= 5));
+
+  const rawDiet = lightPool.length > 0 ? lightPool[0] : shuffled[0];
+  const rawKid = heavyPool.length > 0 ? heavyPool[0] : shuffled.find(m => m.id !== rawDiet.id) || shuffled[shuffled.length - 1];
+
+  // Ensure distinct dishes
+  const finalKid = rawKid && rawKid.id !== rawDiet.id ? rawKid : (shuffled.find(m => m.id !== rawDiet.id) || rawDiet);
+
+  window.crossShownPairs[t].push(rawDiet.id, finalKid.id);
+
+  if (shuffled.length < 2) {
+      const single = { ...shuffled[0], ...getDishDetails(shuffled[0]) };
+      const lightModifiers = [" (Zeytinyağlı & Fit Versiyon)", " (Buharda Hafif Pişirilmiş)", " (Diyet Şef Dokunuşu)", " (Izgara Sağlıklı Form)"];
+      const heavyModifiers = [" (Gurme Kaşarlı Porsiyon)", " (Yüksek Enerjili Sporcu Formatı)", " (Fırınlanmış Doyurucu Menü)", " (Aile Boy Büyük Porsiyon)"];
       const modL = lightModifiers[Math.floor(Math.random() * lightModifiers.length)];
       const modH = heavyModifiers[Math.floor(Math.random() * heavyModifiers.length)];
       return {
@@ -1123,23 +1153,15 @@ export const generateCrossMenu = (inputStr) => {
          kid: { name: single.name + modH, desc: `⏱ Süre: ${single.time} dk - Yüksek enerjili, çocukların ve sporcuların bayılacağı tam doyurucu format.`, dishObj: single }
       };
   }
-  
-  const midPoint = Math.floor(shuffledMatches.length / 2);
-  const lightPool = shuffledMatches.slice(0, Math.max(1, midPoint)).sort(() => 0.5 - Math.random());
-  const heavyPool = shuffledMatches.slice(Math.max(1, midPoint)).sort(() => 0.5 - Math.random());
-  
-  const rawDiet = lightPool[0] || shuffledMatches[0];
-  const rawKid = heavyPool[0] || shuffledMatches[shuffledMatches.length - 1];
 
   const dietDish = { ...rawDiet, ...getDishDetails(rawDiet) };
-  const kidDish = { ...rawKid, ...getDishDetails(rawKid) };
+  const kidDish = { ...finalKid, ...getDishDetails(finalKid) };
 
   return {
      diet: { name: dietDish.name, desc: `🔥 Kalori: ${dietDish.calories} - Saf, hafif ve sindirimi kolay, diyet formuna tam uygun '${t}' alternatifi.`, dishObj: dietDish },
      kid: { name: kidDish.name, desc: `⏱ Süre: ${kidDish.time} dk - Yüksek enerjili, çocukların ve doyurucu lezzet sevenlerin bayılacağı format.`, dishObj: kidDish }
   };
 };
-
 export const generateGroupMenu = (members) => {
    if (!members || members.length === 0) return [];
    
@@ -1249,24 +1271,46 @@ export const generateGroupMenu = (members) => {
       }
    ];
 
+   // Durstenfeld true Fisher-Yates shuffle
+   function durShuffleG(arr) { const a = [...arr]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+
+   // Session tracking per unique member combination
+   const memberKey = members.map(m => m.name + ':' + m.rule).sort().join('|');
+   if (!window.groupShownIds) window.groupShownIds = {};
+   if (!window.groupShownSplitIdxs) window.groupShownSplitIdxs = {};
+   if (!window.groupLastMemberKey) window.groupLastMemberKey = '';
+   if (window.groupLastMemberKey !== memberKey) {
+     window.groupShownIds[memberKey] = [];
+     window.groupShownSplitIdxs[memberKey] = [];
+     window.groupLastMemberKey = memberKey;
+   }
+   const shownIds = window.groupShownIds[memberKey] || [];
+   const shownSplitIdxs = window.groupShownSplitIdxs[memberKey] || [];
+
    let finalSuggestions = [];
-   const shuffledSplits = [...splitRecipes].sort(() => 0.5 - Math.random());
+
+   // True-shuffle splits, pick ones not seen recently
+   const allSplitIdxs = durShuffleG(splitRecipes.map((_, i) => i));
+   const freshSplitIdxs = allSplitIdxs.filter(i => !shownSplitIdxs.includes(i));
+   // If we've exhausted all splits, reset
+   if (freshSplitIdxs.length < 2) { window.groupShownSplitIdxs[memberKey] = []; freshSplitIdxs.push(...allSplitIdxs); }
+
    const allDietsIdentical = members.every(m => m.rule === members[0].rule);
 
    if (members.length > 1 && !allDietsIdentical) {
-       // Grubun farklı tercihleri var: 1 veya 2 adet leziz split tarifi rastgele seçip ekle
-       finalSuggestions.push(shuffledSplits[0]);
-       if (shuffledSplits[1]) finalSuggestions.push(shuffledSplits[1]);
+       const si1 = freshSplitIdxs[0]; const si2 = freshSplitIdxs[1];
+       if (si1 !== undefined) { finalSuggestions.push(splitRecipes[si1]); window.groupShownSplitIdxs[memberKey].push(si1); }
+       if (si2 !== undefined) { finalSuggestions.push(splitRecipes[si2]); window.groupShownSplitIdxs[memberKey].push(si2); }
    }
 
    if (validDishes.length > 0) {
-       // Rastgele karıştır ve en iyi skorlu 4 tarifi seç
-       validDishes.sort(() => 0.5 - Math.random());
-       validDishes.sort((a,b) => b.score - a.score);
-       const topPool = validDishes.slice(0, Math.max(4, Math.floor(validDishes.length / 2)));
-       const mixedTop = topPool.sort(() => 0.5 - Math.random());
+       // Remove already-shown dishes, score, then Durstenfeld shuffle for true variety
+       let freshDishes = validDishes.filter(d => !shownIds.includes(d.id));
+       if (freshDishes.length < 3) { window.groupShownIds[memberKey] = []; freshDishes = [...validDishes]; }
+       freshDishes.sort((a,b) => b.score - a.score);
+       const topPool = durShuffleG(freshDishes.slice(0, Math.max(10, Math.floor(freshDishes.length / 2))));
        
-       mixedTop.slice(0, 3).forEach(dish => {
+       topPool.slice(0, 3).forEach(dish => {
            let logicExp = "Grubunuzun beslenme standartlarının %100 TAM ORTAK KESİŞİMİDİR. ";
            members.forEach(m => {
                if (m.rule === 'CARNIVORE') logicExp += `${m.name} için zengin protein ve et içeriği barındırır. `;
@@ -1275,16 +1319,18 @@ export const generateGroupMenu = (members) => {
                if (m.rule === 'DIABETIC') logicExp += `${m.name} için şekersiz/düşük karblıdır. `;
                if (m.rule === 'HIGH_PROTEIN') logicExp += `${m.name} kas gelişimi desteklenir. `;
            });
+           window.groupShownIds[memberKey].push(dish.id);
            finalSuggestions.push({ ...dish, logicExplanation: logicExp.trim() });
        });
    } else if (members.length > 1) {
-       finalSuggestions.push(shuffledSplits[2] || shuffledSplits[0]);
+       const si3 = freshSplitIdxs[2] !== undefined ? freshSplitIdxs[2] : 0;
+       finalSuggestions.push(splitRecipes[si3]);
    }
 
-   // Deduplicate and return final list
+   // Deduplicate and return
    const seen = new Set();
    const uniqueResults = [];
-   finalSuggestions.sort(() => 0.5 - Math.random()).forEach(dish => {
+   durShuffleG(finalSuggestions).forEach(dish => {
        if (!seen.has(dish.name)) {
            seen.add(dish.name);
            const details = getDishDetails(dish);
