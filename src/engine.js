@@ -404,7 +404,19 @@ export const generateFridgeMains = (selectedIngredients, filter = 'ALL', maxTime
       });
       if (matchScore > 0) {
          const details = getDishDetails(m);
-         mains.push({ ...m, matchScore, matchedIngs, missingIngs, calories: details.calories, macros: details.macros, prepTime: details.prepTime, totalCost: dynamicMissingCost, recipe: details.recipe });
+         const recipeFullCost = details.totalCost || m.cost || 110;
+         mains.push({ 
+           ...m, 
+           matchScore, 
+           matchedIngs, 
+           missingIngs, 
+           calories: details.calories, 
+           macros: details.macros, 
+           prepTime: details.prepTime, 
+           totalCost: recipeFullCost,
+           missingCost: dynamicMissingCost, 
+           recipe: details.recipe 
+         });
       }
    }
    mains.sort((a, b) => b.matchScore - a.matchScore);
@@ -827,7 +839,8 @@ export function getTrueCost(ing) {
                 dynamicCost += getTrueCost(ri);
             });
             // Gerçek piyasa fiyatı ile karşılaştır, üst sınır olarak kullan
-            dish.totalCost = Math.max(Math.round(dynamicCost / 4), lookupHit.cost);
+            dish.totalCost = Math.max(Math.round(dynamicCost), lookupHit.cost);
+            dish.cost = dish.totalCost;
             dish.protein = 0; dish.carbs = 0; dish.fat = 0;
             return; // Bu yemeği hesaplamayla geçmeye gerek yok
         }
@@ -967,10 +980,11 @@ export function getTrueCost(ing) {
         if (nameLower.includes("çorba") && pTime > 40) pTime = 35;
 
         // KALORİ VE MALİYETİ 4 PORSİYONA BÖLEREK GERÇEKÇİ YAP
-        tCal = Math.round(tCal / SERVINGS);
-        dynamicCost = Math.round(dynamicCost / SERVINGS);
+        tCal = Math.round(tCal);
+        dynamicCost = Math.round(dynamicCost);
         // Force Sync Standard Object Nodes
-        dish.cost = dynamicCost;
+        dish.cost = Math.max(50, dynamicCost);
+        dish.totalCost = dish.cost;
         dish.time = pTime;
         dish.calories = Math.round(tCal) + " kcal";
         dish.macros = `Protein: ${Math.round(pPro)}g | Karb: ${Math.round(cCarb)}g | Yağ: ${Math.round(fFat)}g`;
