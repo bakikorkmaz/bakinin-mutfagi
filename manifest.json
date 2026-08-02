@@ -1,16 +1,31 @@
 {
-  "short_name": "Baki.Mutfak",
-  "name": "Baki'nin Mutfağı - Akıllı Gastronomi",
+  "short_name": "Baki Mutfak",
+  "name": "Baki'nin Mutfağı - Akıllı Gastronomi & Sosyal Tarif",
+  "description": "Dolabındaki malzemelerle kişiselleştirilmiş şef tarifleri, eğlence serüveni, şans çarkı ve sosyal gastronomi topluluğu.",
   "icons": [
     {
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
   ],
-  "start_url": ".",
+  "start_url": "/bakinin-mutfagi/",
+  "scope": "/bakinin-mutfagi/",
   "display": "standalone",
-  "theme_color": "#FF5A5F",
-  "background_color": "#F7F9FC",
-  "orientation": "portrait"
+  "orientation": "portrait",
+  "theme_color": "#0F172A",
+  "background_color": "#0F172A",
+  "categories": ["lifestyle", "food", "social"]
 }
