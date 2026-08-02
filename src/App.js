@@ -906,11 +906,6 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
           <div className="hub-title">{t('weekly')}</div>
           <div className="hub-desc">Sadece 2 soruyla, tüm hafta ne yiyeceğinizin planını yormadan otonom şekilde oluşturur.</div>
         </div>
-        <div className="hub-card" onClick={() => setDashboardView('RECYCLE')}>
-          <div className="hub-icon">♻️</div>
-          <div className="hub-title">{t('nav_recycle')}</div>
-          <div className="hub-desc">Dünden kalan yemekleri veya artan malzemeleri yazın, lezzetli dönüşüm tarifleri sunalım.</div>
-        </div>
       </div>
     </>
   );
