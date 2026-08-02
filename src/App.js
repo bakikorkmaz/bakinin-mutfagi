@@ -8,6 +8,7 @@ import { doc, setDoc, getDoc, updateDoc, collection, query, where, getDocs, onSn
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import SocialFlow from './SocialFlow';
 import { REWARDS } from './rewardsDb';
+import { validateUsername } from './utils/usernameValidation';
 const TRANSLATIONS = {
   tr: { nav_social: "Eğlence Serüveni", nav_smart: "Akıllı Menü", nav_chat: "YZ Sohbet", nav_recycle: "Dönüşüm", nav_settings: "Ayarlar", hub_welcome: "Hoş Geldin", hub_desc: "Gurme Yapay Zeka Kapınızda", fridge: "Dolabımdakiler", wheel: "Şans Çarkı (Ne Yesek?)", health: "Evin Sağlık Karnesi", weekly: "Haftalık Zeki Program", theme: "Tema ve Görünüm", dark_mode: "Karanlık Moda Geç", lang: "Arayüz Dili", favs: "Favorilerim", logout: "Oturumu Kapat" },
   en: { nav_social: "Adventure", nav_smart: "Smart Menu", nav_chat: "AI Chat", nav_recycle: "Recycle", nav_settings: "Settings", hub_welcome: "Welcome", hub_desc: "Gourmet AI at your Doorstep", fridge: "In My Fridge", wheel: "Lucky Wheel", health: "Family Health", weekly: "Smart Weekly", theme: "Theme & Display", dark_mode: "Enable Dark Mode", lang: "Interface Language", favs: "My Favorites", logout: "Sign Out" },
@@ -49,6 +50,7 @@ function App() {
       return (activeUser && activeUser.username) ? 'APP' : (activeUser ? 'USERNAME_SETUP' : 'AUTH');
   }); // AUTH, APP, USERNAME_SETUP, ADMIN
   const [activeTab, setActiveTab] = useState('APP'); 
+  const [shoppingCart, setShoppingCart] = useState(null);
   const [darkMode, setDarkMode] = useState(localStorage.getItem('baki_theme') === 'dark');
   const [appLang, setAppLang] = useState(localStorage.getItem('baki_lang') || 'tr');
   const [staples, setStaples] = useState(() => {
@@ -359,13 +361,11 @@ function App() {
 
   if (view === 'USERNAME_SETUP') {
      const handleUsernameSetup = async () => {
-         const clean = setupUsername.toLowerCase().trim().replace(/[^a-z0-9_.]/g, '');
-         if (clean.length < 3) return alert("Kullanıcı adı en az 3 karakter olmalıdır. Türkçe karakter yerine ingilizce harfler kullanın.");
-         
-         const BAD_WORDS = ['amk', 'sik', 'yarrak', 'orospu', 'piç', 'göt', 'bok', 'mal', 'kahpe', 'am', 'meme', 'yavsak', 'surtuk', 'koyayim'];
-         if (BAD_WORDS.some(w => clean.includes(w))) {
-             return alert("Kullanıcı adınız sistem standartlarına aykırı kelimeler içeriyor. Sistem tarafından reddedildi.");
+         const validation = await validateUsername(setupUsername, activeUser?.uid, [], db);
+         if (!validation.valid) {
+             return alert(validation.error);
          }
+         const clean = validation.clean;
 
          try {
              // Benzersizlik Kontrolü
@@ -373,7 +373,7 @@ function App() {
              const querySnapshot = await getDocs(q);
              
              if (!querySnapshot.empty) {
-                 return alert("⚠️ Bu kullanıcı adı şu anda kullanımda! Lütfen bambaşka bir kullanıcı adı seçin.");
+                 return alert("Bu kullanıcı adı zaten kullanılmakta.");
              }
              
              // Firestore ve Local Storage Kaydı
@@ -446,7 +446,7 @@ function App() {
       )}
       
       {activeTab === 'APP' && (
-        <MainAppFlow handleTitleClick={handleTitleClick} setActiveTab={setActiveTab} activeUser={activeUser} appLang={appLang} staples={staples || []} />
+        <MainAppFlow handleTitleClick={handleTitleClick} setActiveTab={setActiveTab} activeUser={activeUser} appLang={appLang} staples={staples || []} shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} />
       )}
       
       {activeTab === 'CHAT' && (
@@ -462,10 +462,11 @@ function App() {
       )}
       
       {activeTab === 'SOCIAL' && (
-        <SocialFlow activeUser={activeUser} setActiveUser={setActiveUser} />
+        <SocialFlow activeUser={activeUser} setActiveUser={setActiveUser} onBack={() => setActiveTab('APP')} />
       )}
 
       {/* BOTTOM NAV */}
+      {activeTab !== 'SOCIAL' && (
       <div className="tab-navbar">
         <button 
           className={`tab-btn ${activeTab === 'APP' ? 'active' : ''}`}
@@ -498,6 +499,7 @@ function App() {
           <span className="icon">🎬</span> {t('nav_social')}
         </button>
       </div>
+      )}
 
     </div>
   );
@@ -512,6 +514,7 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
   const gamiKey = activeUser ? `baki_gamification_v5_${activeUser?.email}` : 'baki_gamification_v5';
   const favKey = activeUser ? `baki_favorites_${activeUser?.email}` : 'baki_favorites';
   const [showConfetti, setShowConfetti] = useState(false);
+  const [showSavingsInfoModal, setShowSavingsInfoModal] = useState(false);
 
   // Gamification (Kısmi Büyüme)
   const [moneySaved, setMoneySaved] = useState(() => {
@@ -540,11 +543,24 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
 
   useEffect(() => {
      if (window.appBus) {
-        if (window.appBus === 'WHEEL') { setDashboardView('WHEEL'); setWheelItems(generateWheelItems('NO_FILTER')); }
+        if (window.appBus === 'WHEEL') { setDashboardView('WHEEL'); setWheelItems(generateWheelItems([])); }
         if (window.appBus === 'FRIDGE') { setDashboardView('FRIDGE'); setFridgeMains([]); }
         window.appBus = null;
      }
   }, []);
+
+  // Daily auto-refresh check for Wheel of Fortune
+  useEffect(() => {
+    if (dashboardView === 'WHEEL') {
+      const todayStr = new Date().toISOString().slice(0, 10);
+      const savedDate = localStorage.getItem('bakinin_wheel_today_date');
+      if (savedDate !== todayStr || wheelItems.length === 0) {
+        localStorage.setItem('bakinin_wheel_today_date', todayStr);
+        setWheelItems(generateWheelItems(wheelFilters));
+        setWinningDish(null);
+      }
+    }
+  }, [dashboardView]);
 
   const getIsoWeek = () => {
     const today = new Date();
@@ -832,60 +848,88 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
 
   const renderHub = () => (
     <>
-      <div className="gamification-banner" onClick={() => setShowHistoryModal(true)} style={{cursor: 'pointer', position: 'relative'}}>
-        <div style={{position: 'absolute', top: '15px', right: '15px', background: 'rgba(255,255,255,0.2)', padding: '6px 12px', borderRadius: '15px', fontSize: '11px', fontWeight: 800, backdropFilter: 'blur(10px)'}}>Geçmişi Gör 🔍</div>
+      <div className="gamification-banner" onClick={() => setShowHistoryModal(true)} style={{cursor: 'pointer', position: 'relative', padding: '16px 20px', borderRadius: '18px', background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)', boxShadow: '0 8px 25px rgba(16, 185, 129, 0.25)'}}>
+        <div style={{position: 'absolute', top: '14px', right: '14px', background: 'rgba(255,255,255,0.2)', padding: '5px 10px', borderRadius: '12px', fontSize: '11px', fontWeight: 800, backdropFilter: 'blur(10px)'}}>Geçmişi Gör 🔍</div>
         <div>
-          {activeUser && <div style={{display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px'}}>
+          {activeUser && <div style={{display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px'}}>
              {activeUser.photoURL ? (
-                 <img src={activeUser.photoURL} alt="Profile" referrerPolicy="no-referrer" style={{width: '50px', height: '50px', borderRadius: '50%', border: '3px solid #10B981', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', objectFit: 'cover'}} />
+                 <img src={activeUser.photoURL} alt="Profile" referrerPolicy="no-referrer" style={{width: '42px', height: '42px', borderRadius: '50%', border: '2px solid white', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', objectFit: 'cover'}} />
              ) : (
-                 <div style={{width: '50px', height: '50px', borderRadius: '50%', background: '#E2E8F0', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px'}}>👤</div>
+                 <div style={{width: '42px', height: '42px', borderRadius: '50%', background: '#E2E8F0', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '20px'}}>👤</div>
              )}
              <div>
-               <div style={{fontSize: '22px', fontWeight: 800, color: 'white'}}>{t('hub_welcome')}, {activeUser.name ? activeUser.name.split(' ')[0] : "Gurme"} 👋</div>
-               <div style={{fontSize: '13px', color: '#10B981', fontWeight: 800, background: 'rgba(255,255,255,0.2)', padding: '2px 8px', borderRadius: '12px', display: 'inline-block', marginTop: '3px'}}>
+               <div style={{fontSize: '18px', fontWeight: 800, color: 'white'}}>{t('hub_welcome')}, {activeUser.name ? activeUser.name.split(' ')[0] : "Gurme"} 👋</div>
+               <div style={{fontSize: '11px', color: '#10B981', fontWeight: 800, background: 'rgba(255,255,255,0.9)', padding: '2px 8px', borderRadius: '10px', display: 'inline-block', marginTop: '2px'}}>
                    @{activeUser.username || "anonim"}
                </div>
              </div>
           </div>}
-          <div style={{fontSize: '14px', opacity: 0.9, marginBottom: '5px'}}>Kümülatif Tasarruf Raporunuz</div>
-          {moneySaved === 0 ? (
-            <>
-              <span className="gami-val" style={{fontSize: '28px'}}>₺0</span>
-              <div style={{fontSize: '13px', marginTop: '15px', background: 'rgba(255,255,255,0.1)', padding: '15px', borderRadius: '12px', lineHeight: '1.5', border: '1px dashed rgba(255,255,255,0.3)', color: '#E2E8F0'}}>
-                  <strong style={{color: 'white'}}>🍳 Henüz bir tarif oluşturmadınız!</strong><br/><br/>
-                  <b>Tasarruf Raporu Nedir?</b><br/>
-                  Uygulama, dışarıdan söylemek yerine evde kendi mutfağınızdaki malzemelerle yemek yaptığınızda ne kadar parayı cebinizde tuttuğunuzu (Tasarruf Miktarını) matematiksel olarak hesaplar.<br/><br/>
-                  Hemen aşağıdan bir moda (Şans Çarkı, Dolabımdakiler vb.) tıklayıp kendinize bir tarif çıkartın ve tarifin altında çıkan <b>"Yapmaya Karar Verdim"</b> tuşuna basarak cebinize kalan miktarı görün!
-              </div>
-            </>
-          ) : (
-            <>
-              <span className="gami-val">₺{moneySaved}</span>
-              <div style={{fontSize: '13px', marginTop: '8px', opacity: 0.9}}>Bu Hafta Dışarıya Kıyasla Kurtardığınız Tutar!</div>
-              <div style={{fontSize: '11px', marginTop: '8px', padding: '6px', backgroundColor: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '6px', color: '#FCD34D', fontWeight: 600}}>
-                  ⚠️ Tasarruf sayacınız, dışarıdan yemek yeme alışkanlığınızı haftalık olarak ölçebilmeniz ve yönetebilmeniz için her hafta başı sıfırlanır.
-              </div>
-            </>
-          )}
+
+          <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px', marginTop: '4px'}}>
+             <div>
+                <div style={{fontSize: '12px', color: 'rgba(255,255,255,0.95)', fontWeight: 600}}>Kümülatif Tasarruf Raporunuz</div>
+                <div style={{display: 'flex', alignItems: 'baseline', gap: '8px', marginTop: '2px'}}>
+                   <span className="gami-val" style={{fontSize: '26px', fontWeight: 900, color: 'white'}}>₺{moneySaved}</span>
+                   <span style={{fontSize: '11px', opacity: 0.9, color: '#ECFDF5'}}>Bu Hafta Kurtarılan Tutar</span>
+                </div>
+             </div>
+             
+             <button 
+                onClick={(e) => { e.stopPropagation(); setShowSavingsInfoModal(true); }}
+                style={{background: 'rgba(255,255,255,0.22)', border: '1px solid rgba(255,255,255,0.4)', color: 'white', padding: '6px 12px', borderRadius: '20px', fontSize: '11px', fontWeight: 800, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px', backdropFilter: 'blur(8px)', transition: '0.2s'}}
+             >
+                Ne işe yarıyor? ℹ️
+             </button>
+          </div>
         </div>
 
         {currentReward && moneySaved > 0 && (
-           <div onClick={(e) => { e.stopPropagation(); setRewardSeed(s => s + 1); }} style={{marginTop: '25px', background: 'rgba(255,255,255,0.95)', padding: '15px', borderRadius: '15px', color: '#1E293B', display: 'flex', alignItems: 'center', gap: '15px', boxShadow: '0 4px 15px rgba(0,0,0,0.1)', cursor: 'pointer', transition: '0.2s'}}>
-              <div style={{fontSize: '32px'}}>💡</div>
+           <div onClick={(e) => { e.stopPropagation(); }} style={{marginTop: '12px', background: 'rgba(255,255,255,0.95)', padding: '10px 14px', borderRadius: '12px', color: '#1E293B', display: 'flex', alignItems: 'center', gap: '10px', boxShadow: '0 4px 10px rgba(0,0,0,0.08)', cursor: 'default', transition: '0.2s'}}>
+              <div style={{fontSize: '22px'}}>💡</div>
               <div style={{flex: 1}}>
-                 <div style={{fontSize: '11px', color: '#3B82F6', textTransform: 'uppercase', fontWeight: 900, marginBottom: '2px'}}>Şefin Şımartma Tavsiyesi</div>
-                 <div style={{fontSize: '14px', fontWeight: 700, color: '#334155'}}>{currentReward.text}</div>
+                 <div style={{fontSize: '10px', color: '#3B82F6', textTransform: 'uppercase', fontWeight: 900}}>Şefin Şımartma Tavsiyesi</div>
+                 <div style={{fontSize: '13px', fontWeight: 700, color: '#334155'}}>{currentReward.text}</div>
               </div>
-              <button onClick={(e) => { e.stopPropagation(); setRewardSeed(s => s + 1); }} style={{background: '#EFF6FF', color: '#2563EB', border: 'none', width: '40px', minWidth: '40px', height: '40px', borderRadius: '50%', cursor: 'pointer', fontSize: '18px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <button onClick={(e) => { e.stopPropagation(); setRewardSeed(s => s + 1); }} style={{background: '#EFF6FF', color: '#2563EB', border: 'none', width: '32px', minWidth: '32px', height: '32px', borderRadius: '50%', cursor: 'pointer', fontSize: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                  🔄
               </button>
            </div>
         )}
       </div>
-      
 
-      <div className="dashboard-grid-hub">
+      {/* TASARRUF RAPORU BİLGİLENDİRME MODALI */}
+      {showSavingsInfoModal && (
+        <div style={{position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(15,23,42,0.75)', backdropFilter: 'blur(6px)', zIndex: 99999, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px'}} onClick={() => setShowSavingsInfoModal(false)}>
+           <div style={{background: 'white', borderRadius: '24px', padding: '25px', maxWidth: '420px', width: '100%', boxShadow: '0 20px 40px rgba(0,0,0,0.25)', animation: 'fadeIn 0.2s ease-out'}} onClick={e => e.stopPropagation()}>
+              <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px'}}>
+                 <div style={{fontSize: '20px', fontWeight: 900, color: '#0F172A', display: 'flex', alignItems: 'center', gap: '8px'}}>
+                    💡 Tasarruf Raporu Nedir?
+                 </div>
+                 <button onClick={() => setShowSavingsInfoModal(false)} style={{background: '#F1F5F9', border: 'none', width: '36px', height: '36px', borderRadius: '50%', fontSize: '18px', cursor: 'pointer', color: '#64748B', fontWeight: 800}}>✕</button>
+              </div>
+
+              <div style={{fontSize: '14px', color: '#334155', lineHeight: '1.6', display: 'flex', flexDirection: 'column', gap: '12px'}}>
+                 <div style={{background: '#ECFDF5', borderLeft: '4px solid #10B981', padding: '12px', borderRadius: '8px', color: '#047857', fontWeight: 600}}>
+                    🍳 <strong>Ev Mutfak Tasarrufu Matematiği:</strong><br/>
+                    Dışarıdan yemek söylemek yerine evde kendi malzemelerinizle yemek yaptığınızda ortalama <strong>%30 net tasarruf</strong> sağlarsınız.
+                 </div>
+
+                 <p>Uygulamada bir tarif çıkarttığınızda altında çıkan <strong>"Yapmaya Karar Verdim"</strong> butonuna her bastığınızda cebinizde kalan miktar buraya kümülatif olarak eklenir.</p>
+
+                 <div style={{background: '#FFFBEB', border: '1px solid #FCD34D', padding: '10px 12px', borderRadius: '10px', fontSize: '12px', color: '#92400E', fontWeight: 600}}>
+                    ⚠️ Tasarruf sayacınız, dışarıdan yemek yeme alışkanlığınızı haftalık ölçüp yönetebilmeniz için her hafta başı otonom sıfırlanır.
+                 </div>
+              </div>
+
+              <button onClick={() => setShowSavingsInfoModal(false)} style={{marginTop: '20px', width: '100%', padding: '14px', background: '#10B981', color: 'white', border: 'none', borderRadius: '14px', fontWeight: 800, fontSize: '15px', cursor: 'pointer', boxShadow: '0 4px 12px rgba(16,185,129,0.3)'}}>
+                 Anladım 👍
+              </button>
+           </div>
+        </div>
+      )}
+
+
+<div className="dashboard-grid-hub">
         <div className="hub-card" onClick={() => { setDashboardView('FRIDGE'); setFridgeMains([]); }}>
           <div className="hub-icon">🛒</div>
           <div className="hub-title">{t('fridge')}</div>
@@ -914,7 +958,6 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
     <>
       <header className="app-header">
         <h1 className="app-title" onClick={handleTitleClick}>Baki'nin Mutfağı</h1>
-        <p className="app-subtitle">Gurme Yapay Zeka Kapınızda</p>
       </header>
 
       {showConfetti && <Confetti />}
@@ -1109,6 +1152,8 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
                    <div style={{display: 'flex', gap: '10px', flexWrap: 'wrap'}}>
                      {[
                        {id: 'BALANCED', label: '🥗 Dengeli'},
+                       {id: 'VEGETARIAN', label: '🥦 Vejetaryen (Etsiz)'},
+                       {id: 'VEGAN', label: '🌱 Vegan (Sıfır Hayvansal)'},
                        {id: 'FIT', label: '💪 Fit & Zinde'},
                        {id: 'BUDGET', label: '💰 Bütçe Dostu'},
                        {id: 'PREMIUM', label: '💎 Bol Etli (Premium)'}
@@ -1125,6 +1170,8 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
                    <div style={{display: 'flex', gap: '10px', flexWrap: 'wrap'}}>
                      {[
                        {id: 'SINGLE', label: '🤵 Bekar (Hızlı & Pratik)'},
+                       {id: 'SOSYETE', label: '✨ Sosyete (Süslü & Sunumlu)'},
+                       {id: 'GLUTEN_FREE', label: '🌾 Glutensiz'},
                        {id: 'KIDS', label: '👨‍👩‍👧 Çocuklu (Acısız & Sevilen)'},
                        {id: 'DIABETIC', label: '💉 Diyabet (Düşük Karb)'},
                        {id: 'ATHLETE', label: '🏋️‍♂️ Sporcu (Bol Protein)'}
@@ -1391,28 +1438,46 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
           <h3 className="budget-title">🎡 Ne Yesek Çarkı</h3>
           <p style={{fontSize: '13px', color: '#8D99AE', marginBottom: '15px'}}>Tıkanıklığı aşın! Şartlarınızı belirleyin ve 13 opsiyon arasından çarkın sizin yerinize karar vermesine izin verin.</p>
           
-          <div style={{display: 'flex', gap: '8px', marginBottom: '15px', flexWrap: 'wrap'}}>
-             {[
-               {id: 'NO_FILTER', label: '🎲 Sıfırla'},
-               {id: 'UNDER_45', label: '⏱ Pratik (<45dk)'},
-               {id: 'UNDER_300TL', label: '💰 Ekonomik (<300₺)'},
-               {id: 'DIABETIC', label: '💉 Şeker / Diyabet'},
-               {id: 'HIGH_PROTEIN', label: '💪 Yüksek Protein'},
-               {id: 'VEGAN', label: '🌱 Vegan (Etsiz/Sütsüz)'},
-               {id: 'GLUTEN_FREE', label: '🌾 Glutensiz (Unsuz)'}
-             ].map(f => (
-               <button 
-                  key={f.id} onClick={() => toggleWheelFilter(f.id)}
-                  style={{
-                    padding: '8px 12px', borderRadius: '10px', fontSize: '13px', fontWeight: 600, cursor: 'pointer',
-                    border: (wheelFilters.includes(f.id) || (f.id === 'NO_FILTER' && wheelFilters.length === 0)) ? 'none' : '1px solid #E2E8F0',
-                    backgroundColor: (wheelFilters.includes(f.id) || (f.id === 'NO_FILTER' && wheelFilters.length === 0)) ? '#EC4899' : 'white',
-                    color: (wheelFilters.includes(f.id) || (f.id === 'NO_FILTER' && wheelFilters.length === 0)) ? 'white' : '#64748B'
-                  }}
-               >
-                 {(wheelFilters.includes(f.id)) ? '✓ ' : '+ '}{f.label}
-               </button>
-             ))}
+          <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px', flexWrap: 'wrap', gap: '10px'}}>
+             <div style={{display: 'flex', gap: '8px', flexWrap: 'wrap'}}>
+                {[
+                  {id: 'NO_FILTER', label: '🎲 Sıfırla'},
+                  {id: 'UNDER_45', label: '⏱ Pratik (<45dk)'},
+                  {id: 'UNDER_300TL', label: '💰 Ekonomik (<300₺)'},
+                  {id: 'DIABETIC', label: '💉 Şeker / Diyabet'},
+                  {id: 'HIGH_PROTEIN', label: '💪 Yüksek Protein'},
+                  {id: 'VEGAN', label: '🌱 Vegan (Etsiz/Sütsüz)'},
+                  {id: 'GLUTEN_FREE', label: '🌾 Glutensiz (Unsuz)'}
+                ].map(f => (
+                  <button 
+                     key={f.id} onClick={() => toggleWheelFilter(f.id)}
+                     style={{
+                       padding: '8px 12px', borderRadius: '10px', fontSize: '13px', fontWeight: 600, cursor: 'pointer',
+                       border: (wheelFilters.includes(f.id) || (f.id === 'NO_FILTER' && wheelFilters.length === 0)) ? 'none' : '1px solid #E2E8F0',
+                       backgroundColor: (wheelFilters.includes(f.id) || (f.id === 'NO_FILTER' && wheelFilters.length === 0)) ? '#EC4899' : 'white',
+                       color: (wheelFilters.includes(f.id) || (f.id === 'NO_FILTER' && wheelFilters.length === 0)) ? 'white' : '#64748B'
+                     }}
+                  >
+                    {(wheelFilters.includes(f.id)) ? '✓ ' : '+ '}{f.label}
+                  </button>
+                ))}
+             </div>
+
+             <button 
+                onClick={() => {
+                  setWheelItems(generateWheelItems(wheelFilters));
+                  setWinningDish(null);
+                  setWheelRotation(0);
+                }}
+                style={{
+                  padding: '10px 16px', borderRadius: '12px', border: 'none',
+                  background: 'linear-gradient(135deg, #EC4899, #BE185D)', color: 'white',
+                  fontWeight: 900, fontSize: '13px', cursor: 'pointer',
+                  boxShadow: '0 4px 12px rgba(236,72,153,0.3)', display: 'flex', alignItems: 'center', gap: '6px'
+                }}
+             >
+                🔄 YENİ ÇARK TARİFLERİ ÜRET / YENİLE
+             </button>
           </div>
 
           {!winningDish && (
@@ -1801,18 +1866,19 @@ function RecycleFlow({ handleTitleClick, setShoppingCart }) {
   const [hasSearched, setHasSearched] = useState(false);
   const recycleResultRef = React.useRef(null);
 
-  const handleSearch = () => {
-    if (!input.trim()) return;
-    const output = processLeftovers(input);
+  const handleSearch = (queryOverride = null) => {
+    const textToUse = typeof queryOverride === 'string' ? queryOverride : input;
+    if (!textToUse || !textToUse.trim()) return;
+    const output = processLeftovers(textToUse);
     setResults(output);
     setHasSearched(true);
-    setTimeout(() => recycleResultRef.current?.scrollIntoView({ behavior: 'auto' }), 10);
+    setTimeout(() => recycleResultRef.current?.scrollIntoView({ behavior: 'smooth' }), 50);
   };
 
   return (
     <>
       <header className="app-header">
-        <h1 className="app-title" onClick={handleTitleClick}>Artan Yemek Motoru</h1>
+        <h1 className="app-title" onClick={handleTitleClick}>Artan Yemek Motoru ♻️</h1>
         <p className="app-subtitle">İsrafı Önle, Lezzet Yarat</p>
       </header>
       
@@ -1829,11 +1895,17 @@ function RecycleFlow({ handleTitleClick, setShoppingCart }) {
           />
           <div style={{display:'flex', flexWrap:'wrap', gap:'8px', marginBottom:'15px'}}>
              <span style={{fontSize:'12px', color:'#64748B', display:'flex', alignItems:'center', fontWeight:700}}>Yapay Zekaya Hızlıca Sor:</span>
-             {["Bir kase pilav", "Yarım paket makarna", "Haşlanmış tavuk", "Bayat ekmek", "Kalan nohut yemeği", "Biraz kıyma", "Ezilmiş patates"].map(ex => (
-                <span key={ex} onClick={() => setInput(ex)} style={{fontSize:'12px', padding:'4px 10px', background:'#FFF', color:'#10B981', borderRadius:'15px', cursor:'pointer', border:'1px solid #10B981', fontWeight: 600}}>{ex}</span>
+             {["Bir kase pilav", "Yarım paket makarna", "Haşlanmış tavuk", "Bayat ekmek", "Kalan nohut yemeği", "Biraz kıyma", "Ezilmiş patates", "Artan sebzeler", "Yoğurt & Peynir"].map(ex => (
+                <span 
+                  key={ex} 
+                  onClick={() => { setInput(ex); handleSearch(ex); }} 
+                  style={{fontSize:'12px', padding:'5px 11px', background:'#ECFDF5', color:'#047857', borderRadius:'15px', cursor:'pointer', border:'1px solid #6EE7B7', fontWeight: 700}}
+                >
+                  {ex}
+                </span>
              ))}
           </div>
-          <button className="budget-calc-btn" style={{width: '100%', backgroundColor: '#10B981', color: 'white'}} onClick={handleSearch}>Dönüşüm Tariflerini Bul ✨</button>
+          <button className="budget-calc-btn" style={{width: '100%', backgroundColor: '#10B981', color: 'white', fontWeight: 800, padding: '14px', borderRadius: '10px'}} onClick={() => handleSearch()}>Dönüşüm Tariflerini Bul ✨</button>
         </div>
       </div>
 
@@ -1843,19 +1915,26 @@ function RecycleFlow({ handleTitleClick, setShoppingCart }) {
               Buna uygun özel bir geri dönüşüm tarifi bulamadım. Ancak "Mutfak YZ Sohbet" bölümünden detaylı tarif isteyebilirsiniz! Veya "makarna", "pilav", "tavuk" gibi anahtar kelimeler girmeyi deneyin.
            </div>
         )}
+        {results.length > 0 && (
+           <div style={{marginBottom: '15px'}}>
+              <button onClick={() => handleSearch()} style={{width: '100%', padding: '14px', background: '#F1F5F9', color: '#334155', border: '1px solid #CBD5E1', borderRadius: '10px', fontWeight: 800, cursor: 'pointer', fontSize: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px'}}>
+                 <span>YENİ DÖNÜŞÜM VARYASYONLARI ÜRET 🔄</span>
+              </button>
+           </div>
+        )}
         {results.map((res, idx) => (
           <div key={idx} className="menu-card">
-            <div className="menu-label-badge" style={{backgroundColor: '#10B981', color: 'white'}}>
+            <div className="menu-label-badge" style={{backgroundColor: '#10B981', color: 'white', fontWeight: 800}}>
                ✨ {res.ingredient.toUpperCase()} DÖNÜŞÜMÜ
             </div>
             
             <div style={{marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '15px'}}>
               {res.recipes.map((recipe, rIdx) => (
-                 <div key={rIdx} style={{padding: '12px', border: '1px solid #E2E8F0', borderRadius: '8px', backgroundColor: '#F8FAFC'}}>
-                    <div style={{fontWeight: '700', color: '#1E293B', marginBottom: '5px', display: 'flex', alignItems: 'center', gap: '8px'}}>
+                 <div key={rIdx} style={{padding: '14px', border: '1px solid #E2E8F0', borderRadius: '10px', backgroundColor: '#F8FAFC'}}>
+                    <div style={{fontWeight: '800', color: '#1E293B', marginBottom: '6px', fontSize: '15px', display: 'flex', alignItems: 'center', gap: '8px'}}>
                       <span>🍲</span> {recipe.name}
                     </div>
-                    <div style={{fontSize: '13px', color: '#64748B', lineHeight: '1.5', marginBottom: '10px'}}>
+                    <div style={{fontSize: '13px', color: '#64748B', lineHeight: '1.5', marginBottom: '12px'}}>
                       {recipe.desc}
                     </div>
                     {typeof setShoppingCart === 'function' && (

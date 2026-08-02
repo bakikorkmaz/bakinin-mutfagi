@@ -1,6 +1,67 @@
 // OTOMATİK ÜRETİLEN MİLLİ VE DÜNYA MUTFAĞI TARİF VERİTABANI (GERÇEK RECETELER)
 export const DB_MAINS_HUGE = [
   {
+    "id": "spinach_1",
+    "name": "Zeytinyağlı Ispanak",
+    "ingredients": ["ıspanak", "kuru soğan", "zeytinyağı", "pirinç", "domates salçası", "limon"],
+    "type": "TURKISH",
+    "time": 25,
+    "heaviness": 2,
+    "cost": 85,
+    "recipeDesc": "👨‍🍳 Mutfak Şefi Hazırlık Aşaması:\n1. Taze ıspanakları bol suda yıkayıp doğrayın.\n2. Soğanı zeytinyağında pembeleştirip hafif salça ve pirinç ekleyin.\n3. Kısık ateşte kendi suyuyla pişirin, yoğurtla hafif ve diyet dostu servis edin."
+  },
+  {
+    "id": "spinach_2",
+    "name": "Ispanaklı Yumurta",
+    "ingredients": ["ıspanak", "yumurta", "kuru soğan", "tereyağı", "karabiber", "tuz"],
+    "type": "TURKISH",
+    "time": 15,
+    "heaviness": 3,
+    "cost": 75,
+    "recipeDesc": "👨‍🍳 Mutfak Şefi Hazırlık Aşaması:\n1. Soğan ve ıspanakları tavada soteleyin.\n2. Üzerine yuvalar açıp taze yumurtaları kırın.\n3. Kapağı kapalı 3-4 dakika pişirip sıcak sporcu öğünü hazırlayın."
+  },
+  {
+    "id": "spinach_3",
+    "name": "Ispanaklı Fırın Graten",
+    "ingredients": ["ıspanak", "kaşar peyniri", "süt", "un", "tereyağı", "muskat"],
+    "type": "TURKISH",
+    "time": 35,
+    "heaviness": 6,
+    "cost": 160,
+    "recipeDesc": "👨‍🍳 Mutfak Şefi Hazırlık Aşaması:\n1. Haşlanmış ıspanakları beşamel sos ile harmanlayın.\n2. Güveç veya fırın kabına alıp üzerine bol kaşar rendesi serpin.\n3. 200 derece fırında nar gibi kızarana kadar pişirin."
+  },
+  {
+    "id": "spinach_4",
+    "name": "Ispanaklı El Açması Börek",
+    "ingredients": ["ıspanak", "yufka", "lor peyniri", "kuru soğan", "yumurta", "zeytinyağı"],
+    "type": "TURKISH",
+    "time": 45,
+    "heaviness": 7,
+    "cost": 190,
+    "recipeDesc": "👨‍🍳 Mutfak Şefi Hazırlık Aşaması:\n1. Ispanak, lor peyniri ve ince kıyılmış soğanı karıştırın.\n2. Yufkaların arasına zeytinyağlı harç sürerek rulo sarın.\n3. Üzerine yumurta sarısı sürüp çıtır olana kadar fırınlayın."
+  },
+  {
+    "id": "spinach_5",
+    "name": "Kremalı Ispanak Çorbası",
+    "ingredients": ["ıspanak", "süt", "krema", "tereyağı", "un", "sarımsak"],
+    "type": "TURKISH",
+    "time": 20,
+    "heaviness": 2,
+    "cost": 65,
+    "recipeDesc": "👨‍🍳 Mutfak Şefi Hazırlık Aşaması:\n1. Ispanakları tereyağında sarımsakla soteleyin.\n2. Un ve süt ekleyip pürüzsüz olana kadar blenderdan geçirin.\n3. Sıcak ve şifalı diyet çorbanız hazır."
+  },
+  {
+    "id": "spinach_6",
+    "name": "Süzme Yoğurtlu Ispanak Borani",
+    "ingredients": ["ıspanak", "süzme yoğurt", "sarımsak", "zeytinyağı", "ceviz", "pul biber"],
+    "type": "TURKISH",
+    "time": 15,
+    "heaviness": 2,
+    "cost": 90,
+    "recipeDesc": "👨‍🍳 Mutfak Şefi Hazırlık Aşaması:\n1. Ispanakları hafifçe buharda pişirip soğutun.\n2. Sarımsaklı süzme yoğurt ile karıştırıp servis tabağına yayın.\n3. Üzerine zeytinyağında yakılmış ceviz ve pul biber gezdirin."
+  },
+
+  {
     "id": "uniq_1",
     "name": "Tavuk Tantuni",
     "ingredients": [

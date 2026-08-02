@@ -123,11 +123,56 @@ export const processChatPrompt = (text) => {
     return `Afiyet bal şeker olsun! Sizin için her zaman buradayım, mutfakla ilgili başka bir sorunuz olursa çekinmeden sorun. Ne isterseniz emrinize amade! 💖`;
   }
   
-  // === SAGLIK / TIP / BESLENME BAGIMI ===
+  // === 1. YANINA NE GİDER? (EŞLEŞTİRME & YAN YEMEK DANIŞMANI) ===
+  if (t.includes("yanına ne") || t.includes("ne gider") || t.includes("ne yakışır") || t.includes("yanında ne") || t.includes("eşlik")) {
+     let dish = DB_MAINS_HUGE.find(m => t.includes(m.name.toLowerCase()));
+     const dishName = dish ? dish.name : t.replace(/(yanına ne|ne gider|ne yakışır|yanında ne|eşlik eder|gider|\?)/gi, '').trim();
+     
+     if (/(köfte|kebap|et|bonfile|pirzola|kavurma)/i.test(dishName)) {
+        return `🍖 ${dishName || 'Kırmızı Et / Köfte'} yanında muazzam gidecek ikililer:\n\n1. 🍚 Tereyağlı Şehriyeli Pirinç Pilavı veya Meyhane Pilavı\n2. 🥗 Taze Fırınlanmış Patates Kama & Köz Biber\n3. 🥣 Süzme Cacık veya Bol Nar Ekşili Gavurdağı Salatası\n4. 🧊 Soğuk Şalgam Suyu veya Ayran\n\nHangi pilavın veya salatanın detaylı tarifini istersin şefim?`;
+     } else if (/(tavuk|şinitzel|sote|nugget)/i.test(dishName)) {
+        return `🍗 ${dishName || 'Tavuk Yemekleri'} ile damak çatlatan eşleşmeler:\n\n1. 🍝 Kremalı Mantarlı Makarna veya Patates Püresi\n2. 🥗 Akdeniz Yeşillikleri & Sezar Soslu Salata\n3. 🥣 Kremalı Mantar veya Mısır Çorbası\n\nTariflerini hemen verebilirim!`;
+     } else if (/(balık|somon|levrek|hamsi)/i.test(dishName)) {
+        return `🐟 ${dishName || 'Balık'} sofrasının olmazsa olmazları:\n\n1. 🥗 Roka Salatası (Kırmızı soğan ve bol limonlu)\n2. 🥔 Fırında Taze Patates veya Sarımsaklı Ekmek\n3. 🍮 Tatlı Kapanış: Sıcak Tahin Helvası (Fırınlanmış)\n\nFırın helvanın özel yapılışını duymak ister misin?`;
+     } else if (/(kuru fasulye|nohut|türlü|bamya)/i.test(dishName)) {
+        return `🍲 ${dishName || 'Sulu Ev Yemeği'} klasik menü tamamlayıcıları:\n\n1. 🍚 Tane Tane Tereyağlı Pirinç Pilavı\n2. 🥒 Ev Yapımı Kütür Kütür Turşu & Kuru Soğan\n3. 🥣 Bol Nane Yayla Çorbası veya Cacık`;
+     } else if (/(makarna|spagetti|penne|lazanya)/i.test(dishName)) {
+        return `🍝 ${dishName || 'Makarna'} lezzetini zirveye çıkaracak öneriler:\n\n1. 🥖 Fırınlanmış Sarımsaklı & Otlu Ekmek\n2. 🥗 İtalyan Tarzı Caprese veya Sezar Salata\n3. 🍷 Meyve Aromalı Soğuk İçecekler veya Bruschetta`;
+     } else {
+        return `🍽️ ${dishName ? '"' + dishName + '"' : 'Yemeğinin'} yanına en çok yakışan klasikler:\n\n1. 🥣 Başlangıç için hafif bir Süzme Mercimek Çorbası\n2. 🍚 Yan lezzet olarak Pirinç veya Bulgur Pilavı\n3. 🥗 Ferahlatıcı Çoban Salata ve Ev Yapımı Yoğurt!`;
+     }
+  }
+
+  // === 2. ÇORBA SEÇKİLERİ & BAŞLANGIÇLAR ===
+  if (t.includes("çorba")) {
+     const soups = DB_MAINS_HUGE.filter(m => /çorba/i.test(m.name)).slice(0, 5);
+     const names = soups.map(s => `🥣 ${s.name} (${s.time} dk - ₺${s.cost})`).join("\n");
+     return `İşte mutfağımızın şifa kaynağı çorba alternatifleri:\n\n${names}\n\nHangi çorbanın ustasından püf noktalı tarifini istersin?`;
+  }
+
+  // === 3. TATLI & PASTA & HAMUR İŞİ ===
+  if (t.includes("tatlı") || t.includes("şerbetli") || t.includes("pasta") || t.includes("kek") || t.includes("çikolata")) {
+     return `🍰 Nefis Tatlı & Hamur İşi Fikirleri:\n\n1. 🍮 Fırın Sütlaç (Üzeri Karamelize & Bol Sütlü)\n2. 🍫 Islak Kek (Bol Çikolata Soslu Nefis Kıvam)\n3. 🍎 Tarçınlı Cevizli Elmalı Kurabiye\n4. 🍧 İrmik Helvası (Dondurma Dolgulu)\n\nHangi tatlının adım adım altın kural tarifini hazırlayayım şefim?`;
+  }
+
+  // === 4. KAHVALTI & BRUNCH ===
+  if (t.includes("kahvaltı") || t.includes("brunch") || t.includes("omlet") || t.includes("menemen")) {
+     return `🍳 Güne Enfes Başlangıç İçin Kahvaltı Fikirleri:\n\n1. 🍅 Bol Domatesli & Biberli Peynirli Menemen\n2. 🥞 Puf Puf Pankek (Bal & Meyve Eşliğinde)\n3. 🧀 Fırında Peynirli Sucuklu Ekmek Dilimleri\n4. 🥔 Patatesli Kaşarlı Omlet\n\nHangisinin tarifini detayıyla anlatayım?`;
+  }
+
+  // === 5. SPORCU & KETO & LAKTOZSUZ DİYETLER ===
+  if (t.includes("sporcu") || t.includes("protein") || t.includes("keto") || t.includes("laktozsuz") || t.includes("tuzsuz")) {
+     const fitDishes = DB_MAINS_HUGE.filter(m => (m.type === 'FIT' || m.heaviness <= 4) && /tavuk|et|somon|yumurta|lor/i.test(m.ingredients.join(" "))).slice(0, 4);
+     const fitNames = fitDishes.map(m => `💪 ${m.name} (~${m.calories || 450} kcal - Bol Protein)`).join("\n");
+     return `🏋️‍♂️ Sporcu ve Özel Beslenme İçin Makro Dengeli Öneriler:\n\n${fitNames}\n\nİstediğin tarifin adını yazman yeterli şefim!`;
+  }
+
+  // === 6. SAGLIK / TIP / BESLENME BAGIMI ===
   const isMedical = t.includes("hacamat") || t.includes("ameliyat") || t.includes("hasta") || t.includes("tedavi") || t.includes("iyileşme") || t.includes("operasyon");
-  const wantsPlantBased = (t.includes("hayvansal") && (t.includes("yok") || t.includes("yeme") || t.includes("içerme") || t.includes("istemiyorum") || t.includes("olmayan") || t.includes("hariç"))) || t.includes("bitkisel") || t.includes("vegan") || t.includes("vejetaryen") || t.includes("etsiz");
+  const wantsPlantBased = (t.includes("hayvansal") && (t.includes("yok") || t.includes("yeme") || t.includes("içerme") || t.includes("istemiyorum") || t.includes("olmasın") || t.includes("tüketm") || t.includes("olmayan") || t.includes("hariç") || t.includes("çıkar") || t.includes("kes"))) || t.includes("bitkisel") || t.includes("vegan") || t.includes("vejetaryen") || t.includes("etsiz");
 
   if (isMedical && wantsPlantBased) {
+    if (typeof window !== 'undefined') window.globalLastIngs = null;
     const plantDishes2 = DB_MAINS_HUGE.filter(m => {
       const mIngs = m.ingredients.join(" ").toLowerCase();
       return !/tavuk|kıyma|et|kuşbaşı|somon|levrek|sucuk|pastırma|kavurma|bonfile|kaşar|peynir|krema|tereyağı/.test(mIngs);
@@ -138,24 +183,36 @@ export const processChatPrompt = (text) => {
   }
 
   if (wantsPlantBased) {
-    const plantDishes3 = DB_MAINS_HUGE.filter(m => {
+    if (typeof window !== 'undefined') window.globalLastIngs = null;
+    const alreadyShown = (typeof window !== 'undefined' && window.globalShownDietDishes) ? window.globalShownDietDishes : [];
+    let plantDishes3 = DB_MAINS_HUGE.filter(m => {
       const mIngs = m.ingredients.join(" ").toLowerCase();
       return !/tavuk|kıyma|et|kuşbaşı|somon|levrek|sucuk|pastırma|kavurma|bonfile/.test(mIngs);
-    }).sort(() => 0.5 - Math.random()).slice(0, 5);
+    });
+    if (alreadyShown.length > 0) {
+      const freshPlant = plantDishes3.filter(m => !alreadyShown.includes(m.id));
+      if (freshPlant.length >= 3) plantDishes3 = freshPlant;
+    }
+    plantDishes3 = plantDishes3.sort(() => 0.5 - Math.random()).slice(0, 5);
     const names3 = plantDishes3.map(m => "🌿 " + m.name).join("\n");
-    if (typeof window !== 'undefined') { window.globalLastDietFilter = 'plant'; window.globalShownDietDishes = plantDishes3.map(m => m.id); }
-    return "Hayvansal içeriği olmayan bitkisel yemekler için harika seçimler:\n\n" + names3 + "\n\nHepsinin tarifi için isim yazman yeterli! Beğenmezsen \"başka\" veya \"değiştir\" diyerek yeni öneriler isteyebilirsin. 🌱";
+    if (typeof window !== 'undefined') {
+      window.globalLastDietFilter = 'plant';
+      if (!window.globalShownDietDishes) window.globalShownDietDishes = [];
+      window.globalShownDietDishes.push(...plantDishes3.map(m => m.id));
+    }
+    return "Hayvansal içeriği olmayan bitkisel/vegan yemekler için harika seçimler:\n\n" + names3 + "\n\nHepsinin tarifi için isim yazman yeterli! Beğenmezsen \"başka\" veya \"değiştir\" diyerek yepyeni alternatifler isteyebilirsin. 🌱";
   }
 
   if (isMedical) {
+    if (typeof window !== 'undefined') window.globalLastIngs = null;
     return "Sağlık sürecinizde dikkatli beslenmeniz çok önemli, şefim! Genel olarak:\n\n🥗 Sebze ağırlıklı, az yağlı yemekler (mercimek çorbası, zeytinyağlı sebzeler)\n🍗 Hafif pişmiş tavuk (haşlama veya buharda)\n🐟 Fırın balık (sade)\n🥣 Yoğurt ve probiyotikler\n\n...tercih edilir. Hayvansal içerik dışında yemek istersen 'hayvansal içerik olmayan yemekler' diyebilirsin.";
   }
 
-    if (t.includes("diyet") || t.includes("kalori") || t.includes("zayıf") || t.includes("kilo") || t.includes("spor")) {
+  if (t.includes("diyet") || t.includes("kalori") || t.includes("zayıf") || t.includes("kilo") || t.includes("spor")) {
     return `Kilo kontrolü veya sağlıklı beslenme mi? Harika! Ana ekrandaki 'Evin Sağlık Karnesi' modülüne sadece tek bir malzeme (Örn: tavuk) yazarak onun hem diyet (zayıflatan) hem de doyurucu iki farklı versiyonunu eş zamanlı görebilirsin.`;
   }
-  
-  // 1. Doğrudan Tarif İsteklerini Çok Daha Akıllı Yakalama (Genişletilmiş Regex)
+
+  // === 7. ULTRA GELİŞMİŞ ÜRETKEN TARİF SİMÜLATÖRÜ ===
   const recipeMatch = t.match(/([a-zA-ZğüşıöçĞÜŞİÖÇ\s]+)(?:nasıl yapılır|tarifi|nasıl yap|anlat|verir misin|yapılışı|nasıldır)/i) || 
                       (t.includes("yap") && t.split(" ").length <= 4 ? [null, t.replace(/(yap|nasıl|bana|bir)/g, "").trim()] : null);
                       
@@ -163,50 +220,68 @@ export const processChatPrompt = (text) => {
     const rawDishName = (recipeMatch && recipeMatch[1]) ? recipeMatch[1].trim() : t.replace(/(nasıl yapılır|tarifi|nasılır|anlat|verir misin|yapılışı|\?|bana|bir)/gi, '').trim();
     
     if (rawDishName.length > 2) {
-      // Veritabanında tam eşleşme ara
       const matchedDish = DB_MAINS_HUGE.find(m => rawDishName.includes(m.name.toLowerCase()) || m.name.toLowerCase().includes(rawDishName));
       
       if(matchedDish) {
          const details = getDishDetails(matchedDish);
          return `Hemen! İşte ustasından garantili ${matchedDish.name} tarifi:\n\n${details.recipe}`;
       } else {
-         // YZ ÜRETKEN MODEL (Dinamik Tarif Simülasyonu)
-         // Rastgele baharatlar ve dinamik format
          const dishUpper = rawDishName.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
-         const randomSpices = ["karabiber", "kimyon", "tuz", "pul biber", "kekik", "nane", "sumak", "biberiye"];
-         const s1 = randomSpices[Math.floor(Math.random() * randomSpices.length)];
-         const s2 = randomSpices[Math.floor(Math.random() * randomSpices.length)];
-         
-         const isDessert = t.includes("tatlı") || t.includes("pasta") || t.includes("kek");
+         const isDessert = /(tatlı|pasta|kek|sütlaç|puding|helva|kurabiye|bisküvi)/i.test(t + " " + rawDishName);
          
          if (isDessert) {
-            return `Ooo harika bir seçim! ${dishUpper} yapmak için püf noktalar şunlar: 👨‍🍳\n\n1. Her şeyden önce yumurta ve şeker ikilisini köpük köpük olup rengi açılana kadar (en az 5 dakika) mikserle çırpın.\n2. Ardından sığ sıvıları (süt, yağ) ekleyin ve hafifçe sıvı harcı karıştırın.\n3. Un, kabartma tozu ve vanilyayı "eleyerek" sıvı harcın üzerine eklemek en büyük sırdır! Spatulayla alttan üste söndürmeden yedirin.\n4. Önceden ısıtılmış 180 derece fırında ilk 20 dakika kapağı ASLA açmadan pişirin.\n\nEğer daha özel, kalori ve malzeme bazlı hesaplanmış bir ana listeye dönmek istersen 'Dolabımdakiler' modülünü kullanabilirsin!`;
+            return `🍰 Master-Chef Rehberi: ${dishUpper} Yapılışı\n\n` +
+                   `🛒 Malzemeler: 2 su bardağı süt/un, 1 su bardağı şeker, 2 yumurta, 100g tereyağı, 1 paket vanilya/kabartma tozu.\n\n` +
+                   `👨‍🍳 Adım Adım Hazırlanışı:\n` +
+                   `1. Şeker ve yumurtayı mikserle rengi beyazlaşana kadar en az 5 dakika çırpın.\n` +
+                   `2. Sıvı malzemeleri yavaşça ekleyip düşük devirde karıştırın.\n` +
+                   `3. Kuru malzemeleri (un, vanilya) eleyerek harca ekleyin ve spatulayla havasını söndürmeden karıştırın.\n` +
+                   `4. Önceden ısıtılmış 180°C fırında 25-30 dakika kapağını açmadan pişirin.\n\n` +
+                   `⏱️ Pişme Süresi: 35 dk | 📊 Kalori: ~380 kcal/porsiyon | 💰 Tahmini Maliyet: ₺95`;
          } else {
-            return `Efsane bir ${dishUpper} yapmak için adım adım rehberin burada! 👨‍🍳\n\n1. Öncelikle biraz zeytinyağı veya tereyağında soğan ve sarımsak ikilisini güzelce soteleyerek işe başla (Lezzetin temeli budur).\n2. Ardından ${dishUpper.toLowerCase()} için tüm ana malzemelerini tencereye ekleyip sularını çekene kadar, aromalar birbirine geçene dek kavur.\n3. Renk ve derinlik için bir yemek kaşığı salçayı orta ateşte kokusu çıkana kadar tencere tabanında çevir.\n4. İşin sırrı baharatlarda gizli: Doğru oranda ${s1} ve ${s2} eklemeyi sakın unutma.\n5. Tencerenin kapağını kapatıp, kısık ateşte yemeği yavaşça kendi demlenmesine bırakarak tam kıvamını bulmasını sağla. Afiyet olsun!`;
+            return `🍳 Ustasından Garantili: ${dishUpper} Yapılışı\n\n` +
+                   `🛒 Malzemeler: 500g ana malzeme, 1 adet kuru soğan, 2 diş sarımsak, 2 yemek kaşığı zeytinyağı/tereyağı, 1 kaşık domates salçası, karabiber, kekik, tuz.\n\n` +
+                   `👨‍🍳 Adım Adım Hazırlanışı:\n` +
+                   `1. İnce kıyılmış soğan ve sarımsağı yağda pembeleşene kadar soteleyin.\n` +
+                   `2. Ana malzemeyi tencereye alıp suyunu salıp çekene kadar orta ateşte kavurun.\n` +
+                   `3. Salçayı ekleyip kokusu çıkana kadar 2 dakika çevirin.\n` +
+                   `4. Baharatları ve üzerini 1 parmak geçecek sıcak suyu ekleyip kapağı kapalı kısık ateşte demlenmeye bırakın.\n\n` +
+                   `⏱️ Pişme Süresi: 30-40 dk | 📊 Kalori: ~450 kcal/porsiyon | 💰 Tahmini Maliyet: ₺160`;
          }
       }
     }
   }
 
-  // 2. Malzeme Beyanı ve NLP (Evde şu var ne yapayım?)
-  const ings = INGREDIENT_KEYWORDS.filter(k => t.includes(k));
+  // === 8. DEVAM EDEN İSTEK ('BAŞKA / YENİLE') ===
+  const isAskingMore = t.includes("başka") || t.includes("daha") || t.includes("peki") || t.includes("alternatif") || t.includes("diğer") || t.includes("değiştir");
+  
+  if (isAskingMore) {
+    if (typeof window !== 'undefined' && window.globalLastDietFilter === 'plant') {
+       return processChatPrompt("hayvansal olmasın başka");
+    }
+  }
+
+  // === 9. AKILLI MALZEME NLP VE EŞLEŞTİRME ===
+  const cleanedText = t.replace(/(tüketmi|tüketme|istemiyorum|olmasın|olmayan|hayvansal|vejetaryen|vegan|etsiz|diyet|başka|değiştir)/gi, '');
+  const ings = INGREDIENT_KEYWORDS.filter(k => {
+     if (k.length <= 2) return false;
+     const reg = new RegExp(`\\b${k}\\b`, 'i');
+     return reg.test(cleanedText) || (k.length >= 4 && cleanedText.includes(k));
+  });
   
   if (ings.length > 0) {
-    if (typeof window.globalLastIngs !== 'undefined' && JSON.stringify(window.globalLastIngs) !== JSON.stringify(ings)) {
+    if (typeof window !== 'undefined' && JSON.stringify(window.globalLastIngs) !== JSON.stringify(ings)) {
        window.globalShownDishes = [];
     }
-    window.globalLastIngs = ings; 
+    if (typeof window !== 'undefined') window.globalLastIngs = ings; 
     
     let matches = DB_MAINS_HUGE.filter(m => 
        ings.some(ing => m.ingredients.some(mi => mi.toLowerCase().includes(ing)))
     );
-    // Strict Matcher (Hepsini içerenleri üste al)
     const strictMatches = matches.filter(m => ings.every(ing => m.ingredients.some(mi => mi.toLowerCase().includes(ing))));
     if (strictMatches.length > 0) matches = strictMatches;
     
-    const isAskingMore = t.includes("başka") || t.includes("daha") || t.includes("peki") || t.includes("alternatif") || t.includes("diğer");
-
-    if (isAskingMore && window.globalShownDishes && window.globalShownDishes.length > 0) {
+    if (isAskingMore && typeof window !== 'undefined' && window.globalShownDishes && window.globalShownDishes.length > 0) {
         matches = matches.filter(m => !window.globalShownDishes.includes(m.id));
     }
 
@@ -215,8 +290,10 @@ export const processChatPrompt = (text) => {
        const selected = shuffled.slice(0, 3);
        const topMatches = selected.map(m => `🍲 ${m.name}`).join("\n");
        
-       if(!window.globalShownDishes) window.globalShownDishes = [];
-       window.globalShownDishes.push(...selected.map(m => m.id));
+       if (typeof window !== 'undefined') {
+         if(!window.globalShownDishes) window.globalShownDishes = [];
+         window.globalShownDishes.push(...selected.map(m => m.id));
+       }
        
        const joinedIngs = ings.join(", ");
        
@@ -225,21 +302,18 @@ export const processChatPrompt = (text) => {
        }
        return `Harika! Elindeki "${joinedIngs}" ile mutfakta harikalar yaratabiliriz. Senin için yapay zeka hafızamdan çektiğim en uyumlu 3 tarif şunlar:\n\n${topMatches}\n\nBu yemeklerden ilgini çekenin tarifini (Örn: "${selected[0].name} nasıl yapılır?") diye sorabilirsin. İstersen "Başka ne var?" diyerek önerileri de değiştirebilirim!`;
     } else {
+       const joinedIngs = ings.join(", ");
+       const isFruit = ings.some(i => /(elma|ayva|erik|muz|armut|çilek|portakal|mandalina|kivi|üzüm|incir)/i.test(i));
+       
+       if (isFruit) {
+           return `Hımm, "${joinedIngs}" ile tuzlu tencere yemeği yapmak yerine harika bir taze meyve salatası, komposto veya yoğurtlu/ballı smoothie hazırlayabilirsin! 🍎 Veya yanına fırınlamak için tarçın ve ceviz eklemek ister misin?`;
+       }
        if (isAskingMore) {
-           return `Elimdeki "${ings.join(", ")}" içeren tüm şaheserleri sana saydım şefim! Bunlar dışında repertuarım şimdilik tükendi. Yanına başka bir malzeme eşleştirsek? (Örn: patates veya kaşar ekleyerek sorarsan yeni tarifler bulabilirim).`;
+           return `Elimdeki "${joinedIngs}" içeren tüm şaheserleri sana saydım şefim! Bunlar dışında repertuarım şimdilik tükendi. Yanına başka bir malzeme eşleştirsek? (Örn: patates veya kaşar ekleyerek sorarsan yeni tarifler bulabilirim).`;
        } else {
-           return `Hımm, itiraf etmeliyim ki saf olarak sadece "${ings.join(", ")}" içeren hazır bir tarif bulamadım. Ancak bunları tavada biraz zeytinyağı ve baharatla soteleyip enfes bir hızlı lezzet yaratabilirsin! Veya yanına bir malzeme daha söyle?`;
+           return `Hımm, saf olarak sadece "${joinedIngs}" içeren hazır bir tencere tarifi bulamadım şefim. Yanına soğan, salça veya patates ekleyip nefis bir sote veya çorba yapabiliriz! Veya yanına eklemek istediğin başka bir malzeme var mı?`;
        }
     }
-  }
-
-  // 3. Devam Eden Konteksti Yakalama (Sadece 'başka ne yapılır' deyince)
-  if (t.includes("başka") || t.includes("peki") || t.includes("daha") || t.includes("alternatif")) {
-     if (typeof window.globalLastIngs !== 'undefined' && window.globalLastIngs.length > 0) {
-         return processChatPrompt(window.globalLastIngs.join(" ") + " başka");
-     } else if (typeof window.globalShownDishes !== 'undefined' && window.globalShownDishes.length > 0) {
-         return `Tam olarak hangi malzemenin alternatifini aradığını anlayamadım. (Örn: 'Kabak ile başka neler yapılır?' dersen harika olur)`;
-     }
   }
 
   if (t === "tamam" || t === "peki" || t === "anladım" || t === "olur" || t.includes("görüşürüz")) {
@@ -451,76 +525,295 @@ export const generateFridgeMains = (selectedIngredients, filter = 'ALL', maxTime
    return mains;
 };
 
-export const getWasteWarnings = (selectedIngredients) => {
-  let warnings = [];
-  const lowerSelected = selectedIngredients.map(x=>x.toLowerCase());
-  if (lowerSelected.includes("soğan") || lowerSelected.includes("sarımsak")) {
-      warnings.push("Soğan ve Sarımsakların filizlenmeye yatkın; serin/gölge yerde değilse max 3-5 günde çürüyebilir. Öncelikle bunlarla kavurmacı/soteli tarifleri seçmelisin.");
-  }
-  if (lowerSelected.includes("patlıcan")) {
-      warnings.push("Patlıcan çabuk büzüşür, 4 gün içinde karnıyarık veya musakka yaparak israfı önleyebilirsin.");
-  }
-  if (lowerSelected.includes("domates")) {
-      warnings.push("Yumuşayan domatesleri dondurucuya atmayacaksan bugün, menüde salça yerine bol taze domates kullanmalısın.");
-  }
-  return warnings;
-};
-
-// -- ARTAN YEMEK (LEFTOVER) MOTORU --
 export const LEFTOVER_DB = [
-  { keywords: ["tavuk", "haşlanmış tavuk", "baget"], recipes: [{ name: "Tavuklu Tel Şehriye Çorbası", desc: "Tavuk parçalarını didikleyip şehriyeli tavuk suyuna çorba yapabilirsiniz." }, { name: "Tavuklu Sezar Salata", desc: "Soğuk tavuk parçalarını marul ve kruton ekmekle salataya dönüştürün." }, { name: "Tavuklu Sandviç / Dürüm", desc: "Tavuğu didikleyip mayonez ve kornişon turşu ile harmanlayarak harika bir soğuk sandviç içi elde edebilirsiniz." }, { name: "Tavuklu Fırın Graten", desc: "Didiklenmiş tavuğu sebzelerle fırına verip beşamel sos ve kaşarla graten yapın." }, { name: "Tavuk Sote", desc: "Kalan tavuğu soğan ve biberle soteleyerek canlandırın." }] },
-  { keywords: ["makarna"], recipes: [{ name: "Fırın Makarna", desc: "Kalan makarnayı beşamel sos ve kaşarla fırınlayarak yepyeni bir yemeğe çevirin." }, { name: "Makarna Salatası", desc: "Soğuk makarnayı yoğurt, mayonez ve garnitür ile karıştırarak pratik bir salata yapın." }, { name: "Yumurtalı Makarna", desc: "Makarnayı tavada az yağ ile çevirip yumurta kırarak doyurucu bir kahvaltı / öğle öğünü yapın." }, { name: "Sosyete Mantısı (Makarnadan)", desc: "Kalan sade makarnayı sarımsaklı yoğurt ve salçalı sosla mantı gibi servis edin." }, { name: "Kavrulmuş Makarna", desc: "Makarnayı salçayla kavurarak ısıtıp yepyeni bir aroma katın." }] },
-  { keywords: ["ekmek", "bayat ekmek", "pide"], recipes: [{ name: "Ekmek Pizzası", desc: "Bayat ekmek dilimlerinin üzerine sos ve kaşar ekleyip fırınlayarak pratik atıştırmalıklar yapabilirsiniz." }, { name: "Yumurtalı Ekmek", desc: "Ekmekleri çırpılmış yumurtaya bulayıp kızartarak harika bir kahvaltı hazırlayın." }, { name: "Bayat Ekmek Köftesi", desc: "Ekmek içlerini ıslatıp baharat ve soğanla harmanlayarak etsiz (veya kıymalı) köfte yapabilirsiniz." }, { name: "Papara", desc: "Bayat ekmekleri doğrayın ve üzerine et suyu döküp yoğurtla servis edin." }, { name: "Fırın Kruton", desc: "Çorbaların üstü için ekmekleri zeytinyağı ve baharat ile küp küp fırınlayıp çıtırlaştırın." }] },
-  { keywords: ["patates", "haşlanmış patates", "patates püresi", "kızartma"], recipes: [{ name: "Patates Kroket", desc: "Püre şeklindeki (veya ezilmiş) patatesleri top yapıp galeta ununa bulayarak kızartın." }, { name: "Patatesli Omlet / Frittata", desc: "Artan patatesleri küp küp doğrayarak sabah kahvaltısında bol yumurtayla tavada değerlendirin." }, { name: "Patates Kavurması", desc: "Soğanları kavurup kalan patatesi salçayla çevirin, ev yemeğine dönsün." }, { name: "Yoğurtlu Patates Salatası", desc: "Ezilmiş patatesi süzme yoğurt ve nane ile birleştirip muhteşem bir meze yapın." }] },
-  { keywords: ["kıyma", "kavrulmuş kıyma", "köfte"], recipes: [{ name: "Kıymalı Yumurta", desc: "Artan kavrulmuş kıymayı ısıtıp üzerine yumurta kırarak hızlı ve protein dolu bir öğün yapın." }, { name: "Kıymalı Makarna (Bolonez)", desc: "Kıymayı salça ile hafif sulandırarak makarnanın üzerine nefis bir bolonez sos haline getirin." }, { name: "Kıymalı Tost / Dürüm", desc: "Kıymayı ekmek veya lavaş arasına koyup kaşarla tost makinesinde basın." }, { name: "Ali Nazik (Hızlı Versiyon)", desc: "Hazır köz patlıcan veya püreniz varsa kıymayı üstüne çekerek anında ali nazik yapın." }] },
-  { keywords: ["pilav", "pirinç", "pirinç pilavı"], recipes: [{ name: "Kadınbudu Köfte", desc: "Artan pilavı kıyma ile yoğurarak yumurtaya bulayıp kızartarak harika bir köfte yapabilirsiniz." }, { name: "Pirinç Çorbası (Yayla)", desc: "Kalan pilavı yoğurt, nane ve sıcak suyla karıştırarak hızlı bir yayla çorbası hazırlayabilirsiniz." }, { name: "Sütlaç", desc: "Şekersiz pişmiş sade pirinç pilavınız kaldıysa, süt ve şekerle kaynatarak çok hızlı bir sütlaç yapabilirsiniz." }, { name: "Tavuklu Çakma Risotto", desc: "Kalan pirinci tavuk suyu ile biraz daha açarak kremamsı bir pilava dönüştürün." }] },
-  { keywords: ["bulgur", "bulgur pilavı"], recipes: [{ name: "Ezogelin / Tarhana Çorbası Destekleyicisi", desc: "Bulgur pilavınızı çorbaların içine katarak yoğunluğunu ve doyuruculuğunu artırabilirsiniz." }, { name: "Kısır Formatında Salata", desc: "Soğuk turşu, yeşillik ve nar ekşisiyle ezerek zeytinyağlı kısır benzeri bir atıştırmalık yapın." }, { name: "Bulgurlu Köfte", desc: "Kalan bulguru sıcak suyla şişirip domates salçasıyla yoğurarak yassı veya fellah köftesi yapın." }] },
-  { keywords: ["nohut", "kalan nohut", "haşlanmış nohut"], recipes: [{ name: "Ev Yapımı Humus", desc: "Nohutları ezip tahin, sarımsak, limon ve zeytinyağı ile karıştırıp harika bir meze elde edebilirsiniz." }, { name: "Fırınlanmış Çıtır Nohut (Atıştırmalık)", desc: "Kalan nohutları süzüp, zeytinyağı, tuz ve kırmızı toz biberle fırına verin. Cips yerine harika sağlıklı bir atıştırmalıktır." }, { name: "Nohutlu Ispanak", desc: "Yeşil sebze yemeğinize ekleyerek protein değerini hızla katlayın." }] },
-  { keywords: ["fasulye", "kuru fasulye"], recipes: [{ name: "Piyazlık Fasulye Salatası", desc: "Kalan fasulyeleri süzüp soğan, maydanoz, sirkeli sosla salataya çevirin." }, { name: "Fasulye Ezmesi Meze", desc: "Meksika usulü baharatlandırıp robotta çekerek dip sos hazırayın." }, { name: "Yumurtalı Kuru Fasulye", desc: "Kış kahvaltılarında kalan kuru fasulyeye soğan ve iki yumurta kırın." }] },
-  { keywords: ["et", "haşlama", "kavurma", "kuşbaşı"], recipes: [{ name: "Etli Pilav / Etli Şehriye", desc: "Kalan eti didikleyip sade pilavın veya makarnanın üzerine entegre ederek harika bir akşam yemeği yaratın." }, { name: "Et Sote Sandviç", desc: "Sıcak eti biraz soğan ve taze biberle tavada canlandırın, lavaş veya somun ekmek arası yapın." }, { name: "Etli Patates Güveç", desc: "Etleri küp veya elma dilim patateslerle küçük güveçte kaşarlayıp fırınlayın." }, { name: "Pratik Hünkar Beğendi", desc: "Etinizi salçayla ısıtıp kavanoz patlıcan ezmesine dökerek hızlı asil menü çıkartın." }] }
+  {
+    keywords: ["tavuk", "haşlanmış tavuk", "baget", "kanat", "göğüs"],
+    recipes: [
+      { name: "Tavuklu Tel Şehriye Çorbası", desc: "Tavuk parçalarını didikleyip şehriyeli tavuk suyuna çorba yapabilirsiniz.", ingredients: ["haşlanmış tavuk", "tel şehriye", "tereyağı", "limon", "maydanoz"] },
+      { name: "Tavuklu Sezar Salata", desc: "Soğuk tavuk parçalarını marul ve kruton ekmekle salataya dönüştürün.", ingredients: ["haşlanmış tavuk", "marul", "bayat ekmek", "zeytinyağı", "kaşar peyniri"] },
+      { name: "Tavuklu Sandviç / Dürüm", desc: "Tavuğu didikleyip mayonez ve kornişon turşu ile harmanlayarak harika bir soğuk sandviç içi elde edebilirsiniz.", ingredients: ["haşlanmış tavuk", "lavaş", "mayonez", "turşu"] },
+      { name: "Tavuklu Fırın Graten", desc: "Didiklenmiş tavuğu sebzelerle fırına verip beşamel sos ve kaşarla graten yapın.", ingredients: ["tavuk", "beşamel sos", "kaşar peyniri", "biber"] },
+      { name: "Tavuk Sote", desc: "Kalan tavuğu soğan ve biberle soteleyerek canlandırın.", ingredients: ["tavuk", "soğan", "biber", "domates", "zeytinyağı"] }
+    ]
+  },
+  {
+    keywords: ["makarna", "erişte", "spagetti", "penne"],
+    recipes: [
+      { name: "Fırın Makarna", desc: "Kalan makarnayı beşamel sos ve kaşarla fırınlayarak yepyeni bir yemeğe çevirin.", ingredients: ["makarna", "beşamel sos", "kaşar peyniri", "tereyağı"] },
+      { name: "Makarna Salatası", desc: "Soğuk makarnayı yoğurt, mayonez ve garnitür ile karıştırarak pratik bir salata yapın.", ingredients: ["makarna", "yoğurt", "mayonez", "garnitür", "mısır"] },
+      { name: "Yumurtalı Makarna", desc: "Makarnayı tavada az yağ ile çevirip yumurta kırarak doyurucu bir öğün yapın.", ingredients: ["makarna", "yumurta", "tereyağı", "karabiber"] },
+      { name: "Sosyete Mantısı (Makarnadan)", desc: "Kalan sade makarnayı sarımsaklı yoğurt ve salçalı sosla mantı gibi servis edin.", ingredients: ["makarna", "sarımsaklı yoğurt", "salça", "nane"] }
+    ]
+  },
+  {
+    keywords: ["ekmek", "bayat ekmek", "pide", "simit", "poğaça", "lavaş"],
+    recipes: [
+      { name: "Ekmek Pizzası", desc: "Bayat ekmek dilimlerinin üzerine sos ve kaşar ekleyip fırınlayarak pratik atıştırmalıklar yapabilirsiniz.", ingredients: ["bayat ekmek", "domates sosu", "kaşar peyniri", "sucuk"] },
+      { name: "Yumurtalı Ekmek", desc: "Ekmekleri çırpılmış yumurtaya bulayıp kızartarak harika bir kahvaltı hazırlayın.", ingredients: ["bayat ekmek", "yumurta", "tuz", "zeytinyağı"] },
+      { name: "Bayat Ekmek Köftesi", desc: "Ekmek içlerini ıslatıp baharat ve soğanla harmanlayarak etsiz (veya kıymalı) köfte yapabilirsiniz.", ingredients: ["bayat ekmek", "soğan", "maydanoz", "yumurta", "baharat"] },
+      { name: "Papara", desc: "Bayat ekmekleri doğrayın ve üzerine et suyu döküp yoğurtla servis edin.", ingredients: ["bayat ekmek", "et suyu", "yoğurt", "tereyağı"] },
+      { name: "Fırın Kruton", desc: "Çorbaların üstü için ekmekleri zeytinyağı ve baharat ile küp küp fırınlayıp çıtırlaştırın.", ingredients: ["bayat ekmek", "zeytinyağı", "kekik", "tuz"] }
+    ]
+  },
+  {
+    keywords: ["patates", "haşlanmış patates", "patates püresi", "kızartma"],
+    recipes: [
+      { name: "Patates Kroket", desc: "Püre şeklindeki patatesleri top yapıp galeta ununa bulayarak kızartın.", ingredients: ["patates", "yumurta", "galeta unu", "kaşar peyniri"] },
+      { name: "Patatesli Omlet / Frittata", desc: "Artan patatesleri küp küp doğrayarak sabah kahvaltısında bol yumurtayla tavada değerlendirin.", ingredients: ["patates", "yumurta", "soğan", "maydanoz"] },
+      { name: "Patates Kavurması", desc: "Soğanları kavurup kalan patatesi salçayla çevirin, ev yemeğine dönsün.", ingredients: ["patates", "soğan", "salça", "zeytinyağı"] },
+      { name: "Yoğurtlu Patates Salatası", desc: "Ezilmiş patatesi süzme yoğurt ve nane ile birleştirip muhteşem bir meze yapın.", ingredients: ["patates", "süzme yoğurt", "sarımsak", "nane", "zeytinyağı"] }
+    ]
+  },
+  {
+    keywords: ["kıyma", "kavrulmuş kıyma", "köfte"],
+    recipes: [
+      { name: "Kıymalı Yumurta", desc: "Artan kavrulmuş kıymayı ısıtıp üzerine yumurta kırarak hızlı ve protein dolu bir öğün yapın.", ingredients: ["kıyma", "yumurta", "tereyağı", "karabiber"] },
+      { name: "Kıymalı Makarna (Bolonez)", desc: "Kıymayı salça ile hafif sulandırarak makarnanın üzerine nefis bir bolonez sos haline getirin.", ingredients: ["kıyma", "domates salçası", "makarna", "sarımsak"] },
+      { name: "Kıymalı Tost / Dürüm", desc: "Kıymayı ekmek veya lavaş arasına koyup kaşarla tost makinesinde basın.", ingredients: ["kıyma", "ekmek", "kaşar peyniri", "biber"] },
+      { name: "Ali Nazik (Hızlı Versiyon)", desc: "Hazır köz patlıcan veya püreniz varsa kıymayı üstüne çekerek anında ali nazik yapın.", ingredients: ["kıyma", "patlıcan ezmesi", "sarımsaklı yoğurt", "tereyağı"] }
+    ]
+  },
+  {
+    keywords: ["pilav", "pirinç", "pirinç pilavı"],
+    recipes: [
+      { name: "Kadınbudu Köfte", desc: "Artan pilavı kıyma ile yoğurarak yumurtaya bulayıp kızartarak harika bir köfte yapabilirsiniz.", ingredients: ["pirinç pilavı", "kıyma", "yumurta", "soğan"] },
+      { name: "Pirinç Çorbası (Yayla)", desc: "Kalan pilavı yoğurt, nane ve sıcak suyla karıştırarak hızlı bir yayla çorbası hazırlayabilirsiniz.", ingredients: ["pirinç pilavı", "yoğurt", "yumurta", "nane", "tereyağı"] },
+      { name: "Sütlaç", desc: "Şekersiz pişmiş sade pirinç pilavınız kaldıysa, süt ve şekerle kaynatarak çok hızlı bir sütlaç yapabilirsiniz.", ingredients: ["pirinç pilavı", "süt", "şeker", "nişasta"] },
+      { name: "Tavuklu Çakma Risotto", desc: "Kalan pirinci tavuk suyu ile biraz daha açarak kremamsı bir pilava dönüştürün.", ingredients: ["pirinç pilavı", "tavuk suyu", "tereyağı", "kaşar peyniri"] }
+    ]
+  },
+  {
+    keywords: ["bulgur", "bulgur pilavı"],
+    recipes: [
+      { name: "Ezogelin Çorbası Destekleyicisi", desc: "Bulgur pilavınızı çorbaların içine katarak yoğunluğunu ve doyuruculuğunu artırabilirsiniz.", ingredients: ["bulgur pilavı", "kırmızı mercimek", "salça", "nane"] },
+      { name: "Kısır Formatında Salata", desc: "Soğuk turşu, yeşillik ve nar ekşisiyle ezerek zeytinyağlı kısır benzeri bir atıştırmalık yapın.", ingredients: ["bulgur pilavı", "maydanoz", "taze soğan", "nar ekşisi", "zeytinyağı"] },
+      { name: "Bulgurlu Köfte", desc: "Kalan bulguru sıcak suyla şişirip domates salçasıyla yoğurarak yassı köfte yapın.", ingredients: ["bulgur pilavı", "salça", "un", "kimyon"] }
+    ]
+  },
+  {
+    keywords: ["nohut", "haşlanmış nohut"],
+    recipes: [
+      { name: "Ev Yapımı Humus", desc: "Nohutları ezip tahin, sarımsak, limon ve zeytinyağı ile karıştırıp harika bir meze elde edebilirsiniz.", ingredients: ["nohut", "tahin", "limon", "sarımsak", "zeytinyağı"] },
+      { name: "Fırınlanmış Çıtır Nohut", desc: "Kalan nohutları süzüp, zeytinyağı, tuz ve kırmızı toz biberle fırına verin. Harika sağlıklı bir cips alternatifidir.", ingredients: ["nohut", "zeytinyağı", "toz biber", "tuz"] },
+      { name: "Nohutlu Ispanak / Sebze", desc: "Sebze yemeğinize ekleyerek protein değerini hızla katlayın.", ingredients: ["nohut", "ıspanak", "soğan", "salça"] }
+    ]
+  },
+  {
+    keywords: ["fasulye", "kuru fasulye", "barbunya"],
+    recipes: [
+      { name: "Piyazlık Fasulye Salatası", desc: "Kalan fasulyeleri süzüp soğan, maydanoz, sirkeli sosla salataya çevirin.", ingredients: ["kuru fasulye", "soğan", "maydanoz", "haşlanmış yumurta", "zeytinyağı"] },
+      { name: "Fasulye Ezmesi Meze", desc: "Meksika usulü baharatlandırıp robotta çekerek dip sos hazırlayın.", ingredients: ["kuru fasulye", "sarımsak", "kimyon", "zeytinyağı"] },
+      { name: "Yumurtalı Kuru Fasulye", desc: "Kalan kuru fasulyeye soğan ve iki yumurta kırarak doyurucu bir öğün yapın.", ingredients: ["kuru fasulye", "yumurta", "soğan", "tereyağı"] }
+    ]
+  },
+  {
+    keywords: ["et", "haşlama", "kavurma", "kuşbaşı", "döner", "bonfile", "biftek"],
+    recipes: [
+      { name: "Etli Pilav / Şehriye", desc: "Kalan eti didikleyip sade pilavın veya makarnanın üzerine entegre ederek harika bir akşam yemeği yaratın.", ingredients: ["et", "pirinç pilavı", "tereyağı"] },
+      { name: "Et Sote Sandviç", desc: "Sıcak eti biraz soğan ve taze biberle tavada canlandırın, lavaş veya somun ekmek arası yapın.", ingredients: ["et", "soğan", "biber", "lavaş"] },
+      { name: "Etli Patates Güveç", desc: "Etleri küp patateslerle küçük güveçte kaşarlayıp fırınlayın.", ingredients: ["et", "patates", "salça", "kaşar peyniri"] }
+    ]
+  },
+  {
+    keywords: ["sebze", "domates", "biber", "patlıcan", "kabak", "ıspanak", "pırasa", "karnabahar", "brokoli", "pazı", "enginar"],
+    recipes: [
+      { name: "Fırın Sebzeli Mücver", desc: "Artan sebzeleri rendeleyip veya doğrayıp yumurta, biraz un ve peynirle fırında pişirin.", ingredients: ["karışık sebze", "yumurta", "un", "beyaz peynir", "zeytinyağı"] },
+      { name: "Zeytinyağlı Sebze Sote", desc: "Sebzeleri zeytinyağı, soğan ve sarımsakla kısık ateşte soteleyerek nefis bir sıcak meze yapın.", ingredients: ["karışık sebze", "soğan", "sarımsak", "zeytinyağı"] },
+      { name: "Pratik Sebze Çorbası", desc: "Tüm artan sebzeleri haşlayıp blenderdan geçirerek kremamsı vitamin çorbası elde edin.", ingredients: ["karışık sebze", "tereyağı", "un", "süt"] }
+    ]
+  },
+  {
+    keywords: ["balık", "somon", "hamsi", "ton balığı", "palamut", "mezgit"],
+    recipes: [
+      { name: "Balık Köftesi / Mücveri", desc: "Artan balık etlerini didikleyip patates püresi, soğan ve baharatla köfte yapıp kızartın.", ingredients: ["balık eti", "patates püresi", "maydanoz", "soğan", "galeta unu"] },
+      { name: "Balıklı Yeşil Salata", desc: "Soğuk balık parçalarını bol roka, marul ve limonlu zeytinyağı sosu ile zenginleştirin.", ingredients: ["balık eti", "roka", "marul", "limon", "zeytinyağı"] },
+      { name: "Kremalı Balık Çorbası", desc: "Balık parçalarını sebze suyu ve krema ile kaynatarak nefis bir çorba yapın.", ingredients: ["balık eti", "havuç", "patates", "krema", "limon"] }
+    ]
+  },
+  {
+    keywords: ["süt", "yoğurt", "peynir", "çökelek", "lor"],
+    recipes: [
+      { name: "Yoğurtlu Meze / Haydari", desc: "Artan yoğurdu nane, sarımsak ve zeytinyağı ile çırparak nefis bir meze yapın.", ingredients: ["yoğurt", "sarımsak", "nane", "zeytinyağı"] },
+      { name: "Peynirli Tavuk / Sebze Sote", desc: "Elinizdeki peyniri sebze veya et sotenin üzerine eriterek lezzet katın.", ingredients: ["peynir", "sebze", "tereyağı"] },
+      { name: "Peynirli Pişi / Pankek", desc: "Peynir artıklarını un ve yumurtayla çırpıp tavada pratik pişiler hazırlayın.", ingredients: ["peynir", "un", "yumurta", "kabartma tozu"] }
+    ]
+  },
+  {
+    keywords: ["meyve", "elma", "ayva", "muz", "armut", "çilek", "portakal"],
+    recipes: [
+      { name: "Fırınlanmış Tarçınlı Meyve Tatlısı", desc: "Meyveleri dilimleyip az şeker ve tarçınla fırına verin. Üzerine ceviz serpip servis edin.", ingredients: ["meyve", "tarçın", "ceviz", "tereyağı"] },
+      { name: "Pratik Meyve Kompostosu / Hoşaf", desc: "Olgunlaşmış meyveleri biraz su, şeker ve karanfille kaynatarak ferahlatıcı bir komposto yapın.", ingredients: ["meyve", "şeker", "su", "karanfil"] },
+      { name: "Meyveli Pelte / Muhallebi", desc: "Meyve pürəsini nişasta ve sütle pişirerek lezzetli hafif bir tatlı yapın.", ingredients: ["meyve", "süt", "nişasta", "şeker"] }
+    ]
+  },
+  {
+    keywords: ["kek", "tatlı", "kurabiye", "helva"],
+    recipes: [
+      { name: "Kek Pop / Trifle Tatlısı", desc: "Bayat keki ufalayıp krem şanti veya muhallebi kat aralarına yerleştirerek şık bir kadeh tatlısı yapın.", ingredients: ["bayat kek", "süt", "muhallebi", "çikolata sosu"] },
+      { name: "Yumurtalı Helva Sote", desc: "Tahin helvasını tavada az sütle eritip güveçte fırınlayarak sıcak helva yapın.", ingredients: ["tahin helvası", "süt", "limon suyu"] }
+    ]
+  }
 ];
 
 export const processLeftovers = (promptText) => {
-  const t = promptText.toLowerCase();
-  let suggestions = [];
+  if (!promptText || typeof promptText !== 'string') return [];
+  const t = promptText.toLowerCase().trim();
+  if (!t) return [];
+  if (!window.leftoverShownRecipes) window.leftoverShownRecipes = {};
+  if (!window.leftoverShownRecipes[t]) window.leftoverShownRecipes[t] = [];
+  const shown = window.leftoverShownRecipes[t];
+
+  function durShuffleL(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  let candidateRecipes = [];
   
   LEFTOVER_DB.forEach(item => {
     if (item.keywords.some(k => t.includes(k))) {
-      const shuffled = [...item.recipes].sort(() => 0.5 - Math.random());
-      suggestions.push({
-        ingredient: item.keywords[0],
-        recipes: shuffled.slice(0, 3)
-      });
+      candidateRecipes.push(...item.recipes);
+      // suggestions.push({
+        // ingredient
+        // recipes
+      // end
     }
   });
 
-  return suggestions;
+  // ZERO-FAILURE FALLBACK GENERATOR:
+  // Eğer özel/farklı bir malzeme girilmişse veya genişletilmiş arama gerekiyorsa veritabanını akıllıca tara!
+  if (t.length > 0) {
+    const cleanMainIng = t
+      .replace(/(dünden|kalan|biraz|bir|kase|paket|haşlanmış|kızarmış|bayat|kullanılmamış|adet|tane|gram|kg|yemeği|yemeğim|yemeğinden|çorbası|sotesi|sote|kızartması|salatası|soslu|tavası|fırında)/gi, '')
+      .trim();
+
+    const tokens = cleanMainIng.split(/\s+/).filter(w => w.length >= 3);
+    const searchTokens = tokens.length > 0 ? tokens : [cleanMainIng || t];
+    const capitalizedIng = (cleanMainIng || t).charAt(0).toUpperCase() + (cleanMainIng || t).slice(1);
+
+    DB_MAINS_HUGE.forEach(dish => {
+      const dishNameLower = dish.name.toLowerCase();
+      const dishIngsLower = dish.ingredients.join(" ").toLowerCase();
+      const matchesToken = searchTokens.some(token => dishNameLower.includes(token) || dishIngsLower.includes(token));
+      if (matchesToken) {
+        candidateRecipes.push({
+          name: dish.name,
+          desc: `Artan ${cleanMainIng || t} malzemesi ile nefis ${dish.name} dönüşümü! (${dish.time || 30} dk - ₺${dish.cost || 120} - ${dish.calories || 350} kcal)`,
+          ingredients: dish.ingredients
+        });
+      }
+    });
+
+    if (candidateRecipes.length < 3) {
+      const complementaryCategories = DB_MAINS_HUGE.filter(dish => {
+        const dName = dish.name.toLowerCase();
+        return dName.includes("zeytinyağlı") || dName.includes("çorba") || dName.includes("meze") || dName.includes("sote") || dName.includes("graten") || dName.includes("börek") || dName.includes("dolma") || dName.includes("salata");
+      });
+      complementaryCategories.forEach(dish => {
+        candidateRecipes.push({
+          name: `${capitalizedIng} Yanına / Dokunuşuyla ${dish.name}`,
+          desc: `Kalan ${cleanMainIng} malzemenizi ${dish.name} ile harmanlayarak veya yanında sunarak lezzetli bir öğün yaratın.`,
+          ingredients: [cleanMainIng, ...dish.ingredients.slice(0, 3)]
+        });
+      });
+    }
+
+    const uniqueCandidateMap = new Map();
+    candidateRecipes.forEach(r => {
+      if (!uniqueCandidateMap.has(r.name)) {
+        uniqueCandidateMap.set(r.name, r);
+      }
+    });
+    let allCandidates = Array.from(uniqueCandidateMap.values());
+
+    let freshCandidates = allCandidates.filter(r => !shown.includes(r.name));
+
+    if (freshCandidates.length < 3) {
+      window.leftoverShownRecipes[t] = [];
+      freshCandidates = [...allCandidates];
+    }
+
+    const selectedRecipes = durShuffleL(freshCandidates).slice(0, 3);
+    selectedRecipes.forEach(r => window.leftoverShownRecipes[t].push(r.name));
+
+    return [
+      {
+        ingredient: cleanMainIng,
+        recipes: selectedRecipes
+      }
+    ];
+  }
+    /* dead comments */
+        // obj 1
+          // name 1
+          // desc 1
+          // ing 1
+        // object 1 end
+        // object 2
+          // name 2
+          // desc 2
+          // ing 2
+        // object 2 end
+        // object 3
+          // name 3
+          // desc 3
+          // ing 3
+        // object 3 end
+      // end array
+    // end old push
+    /* end dead comments */
+
+  return [];
 };
 
-export const generateGuestMenu = (personCountInput, restrictionsArray) => {
+export const generateGuestMenu = (personCountInput, restrictionsArray = []) => {
   const personCount = Math.max(1, parseInt(personCountInput) || 1);
-  const isVeg = restrictionsArray.includes("vejetaryen");
+  const isVeg = restrictionsArray.includes("vejetaryen") || restrictionsArray.includes("vegan");
+  const isVegan = restrictionsArray.includes("vegan");
   const isGlutenFree = restrictionsArray.includes("glutensiz");
   const isDiabetic = restrictionsArray.includes("diyabetik");
 
+  const veganBanned = /(tavuk|kıyma|et|kuşbaşı|somon|levrek|balık|karides|süt|yumurta|peynir|kaşar|tereyağı|krema|kavurma|sucuk|bonfile|antrikot|köfte|kebap|tas kebabı|mayonez|şinitzel|döner|bacon|sosis|jambon|sakatat)/i;
+  const vegBanned = /(tavuk|kıyma|et|kuşbaşı|somon|levrek|balık|karides|kavurma|sucuk|bonfile|antrikot|köfte|kebap|tas kebabı|şinitzel|döner|bacon|sosis|jambon|sakatat)/i;
+  const glutenBanned = /(makarna|noodle|un|ekmek|bulgur|şehriye|pide|yufka|lavaş|krep|bazlama|galeta|erişte|irmik)/i;
+  const diabeticBanned = /(şeker|makarna|pirinç|noodle|ekmek|patates|tatlı|reçel|bal|pekmez|irmik|baklava|kadayıf|pide|lavaş)/i;
+
   const safeSoups = DB_SOUPS.filter(s => {
-    if (isGlutenFree && (s.ingredients.includes("un") || s.ingredients.includes("şehriye") || s.ingredients.includes("buğday"))) return false;
+    const fullText = (s.name || "") + " " + (s.ingredients || []).join(" ");
+    if (isVegan && veganBanned.test(fullText)) return false;
+    if (isVeg && vegBanned.test(fullText)) return false;
+    if (isGlutenFree && glutenBanned.test(fullText)) return false;
     return true;
   });
 
   const safeMains = DB_MAINS.filter(m => {
-    if (isVeg && (m.ingredients.includes("kıyma") || m.ingredients.includes("tavuk") || m.ingredients.includes("et") || m.ingredients.includes("kuşbaşı") || m.ingredients.includes("somon"))) return false;
-    if (isGlutenFree && (m.ingredients.includes("makarna") || m.ingredients.includes("bulgur"))) return false;
+    const fullText = (m.name || "") + " " + (m.ingredients || []).join(" ");
+    if (isVegan && veganBanned.test(fullText)) return false;
+    if (isVeg && vegBanned.test(fullText)) return false;
+    if (isGlutenFree && glutenBanned.test(fullText)) return false;
+    if (isDiabetic && diabeticBanned.test(fullText)) return false;
     return true;
   });
 
   const safeCarbs = DB_CARBS.filter(c => {
-    if (isGlutenFree && (c.ingredients.includes("makarna") || c.ingredients.includes("bulgur") || c.ingredients.includes("şehriye"))) return false;
+    const fullText = (c.name || "") + " " + (c.ingredients || []).join(" ");
+    if (isVegan && veganBanned.test(fullText)) return false;
+    if (isVeg && vegBanned.test(fullText)) return false;
+    if (isGlutenFree && glutenBanned.test(fullText)) return false;
+    if (isDiabetic && diabeticBanned.test(fullText)) return false;
     return true;
   });
 
   const safeDesserts = DB_DESSERTS_GUEST.filter(d => {
-    if (isDiabetic && !d.strictMatch.includes("diyabetik")) return false;
+    const fullText = (d.name || "") + " " + (d.ingredients || []).join(" ");
+    if (isVegan && veganBanned.test(fullText)) return false;
+    if (isVeg && vegBanned.test(fullText)) return false;
+    if (isGlutenFree && glutenBanned.test(fullText)) return false;
+    if (isDiabetic && (diabeticBanned.test(fullText) || !d.strictMatch?.includes("diyabetik"))) return false;
     return true;
   });
 
@@ -569,7 +862,20 @@ const getIngredientWithQuantityAndGrams = (ingName) => {
    if (lower.includes("yumurta")) return { text: `2-3 adet ${ingName}`, grams: 120 };
    if (lower.includes("salça") || lower.includes("tereyağı")) return { text: `2 yemek kaşığı ${ingName}`, grams: 40 };
    if (lower.includes("nane") || lower.includes("roka") || lower.includes("fesleğen")) return { text: `1 tutam ${ingName}`, grams: 10 };
-   return { text: `Bir miktar ${ingName}`, grams: 50 };
+   // Yoğurt, Yağ, Lavaş, Pide, Baharat Vb. Özel Birimler
+   if (lower.includes("yoğurt")) return { text: `3 yemek kaşığı ${ingName} (yaklaşık 150g)`, grams: 150 };
+   if (lower.includes("lavaş") || lower.includes("tortilla")) return { text: `2 adet ${ingName}`, grams: 150 };
+   if (lower.includes("pide") || lower.includes("yufka") || lower.includes("ekmek") || lower.includes("bazlama")) return { text: `1-2 adet ${ingName}`, grams: 160 };
+   if (lower.includes("zeytinyağı") || lower.includes("sıvı yağ") || lower.includes("yağ")) return { text: `3 yemek kaşığı ${ingName}`, grams: 30 };
+   if (lower.includes("un") || lower.includes("nişasta")) return { text: `2 yemek kaşığı ${ingName} (yaklaşık 40g)`, grams: 40 };
+   if (lower.includes("tuz") || lower.includes("karabiber") || lower.includes("pul biber") || lower.includes("kekik") || lower.includes("baharat")) return { text: `1 tatlı kaşığı ${ingName}`, grams: 5 };
+   if (lower.includes("limon")) return { text: `1/2 adet ${ingName} suyu`, grams: 30 };
+   if (lower.includes("nar ekşisi") || lower.includes("sirke") || lower.includes("sos")) return { text: `1 yemek kaşığı ${ingName}`, grams: 15 };
+   if (lower.includes("maydanoz") || lower.includes("dereotu")) return { text: `1/2 demet ince kıyılmış ${ingName}`, grams: 20 };
+   if (lower.includes("mısır") || lower.includes("bezelye")) return { text: `1 çay bardağı ${ingName}`, grams: 80 };
+   if (lower.includes("zeytin") || lower.includes("turşu")) return { text: `5-6 adet ${ingName}`, grams: 50 };
+
+   return { text: `1 porsiyon (yaklaşık 100g) ${ingName}`, grams: 100 };
 };
 
 export const getDishDetails = (dish) => {
@@ -768,6 +1074,30 @@ export function getTrueCost(ing) {
         // Temmuz 2026 TL fiyatları: TEPAV + Migros/A101 ortalaması
         // Porsiyon: 1 kişilik tipik ev porsiyonu
         const DISH_METRICS = {
+          'tantuni':          { cal: 420, cost: 160, time: 25 },
+          'tavuk tantuni':    { cal: 380, cost: 140, time: 25 },
+          'taco':             { cal: 450, cost: 180, time: 30 },
+          'tavuklu taco':     { cal: 410, cost: 160, time: 25 },
+          'fajita':           { cal: 480, cost: 190, time: 30 },
+          'noodle':           { cal: 460, cost: 130, time: 20 },
+          'çökertme':         { cal: 520, cost: 210, time: 35 },
+          'sultan kebabı':    { cal: 490, cost: 185, time: 35 },
+          'piliç topkapı':    { cal: 510, cost: 195, time: 45 },
+          'tavuk şinitzel':   { cal: 430, cost: 145, time: 25 },
+          'içli köfte':       { cal: 390, cost: 140, time: 40 },
+          'ballı susamlı':    { cal: 440, cost: 155, time: 30 },
+          'köri soslu':       { cal: 430, cost: 150, time: 30 },
+          'orman kebabı':     { cal: 390, cost: 180, time: 45 },
+          'hünkar beğendi':   { cal: 470, cost: 210, time: 40 },
+          'tas kebabı':       { cal: 410, cost: 190, time: 40 },
+          'çoban kavurma':    { cal: 440, cost: 200, time: 35 },
+          'kilis tava':       { cal: 460, cost: 195, time: 30 },
+          'sulu köfte':       { cal: 340, cost: 140, time: 35 },
+          'hasanpaşa':        { cal: 450, cost: 175, time: 40 },
+          'kadınbudu':        { cal: 380, cost: 150, time: 35 },
+          'ali nazik':        { cal: 430, cost: 185, time: 35 },
+          'tepsi böreği':     { cal: 410, cost: 130, time: 45 },
+          'biber dolması':    { cal: 310, cost: 110, time: 40 },
           // ÇORBALAR (kcal, TL, dakika)
           'mercimek':         { cal: 185, cost: 35, time: 30 },
           'yayla':            { cal: 145, cost: 30, time: 25 },
@@ -922,6 +1252,9 @@ export function getTrueCost(ing) {
             } else if (has('tavuk') || has('piliç') || has('baget')) {
                 // Tavuk but/kanat 200 kcal/100g × 350g
                 tCal += 170; pPro += 25; fFat += 8; hasChicken = true;
+            } else if (has('lavaş') || has('tortilla') || has('yufka') || has('pide') || has('ekmek') || has('taco')) {
+                // Lavaş / Ekmek tabanı ~160 kcal
+                tCal += 160; cCarb += 32; pPro += 4; fFat += 2;
             } else if (has('makarna') || has('spagetti') || has('fettuccine') || has('penne') || has('noodle')) {
                 // Makarna kuru 350 kcal/100g × 80g kuru (=200g pişmiş) = 280 kcal
                 tCal += 140; cCarb += 55; pPro += 5; fFat += 1;
@@ -1042,13 +1375,26 @@ export const generateMissingShoppingList = (missingIngs) => {
 
 export const generateWeeklyPlan = (daysCount, strategy, profile, cuisine = 'ALL', maxTime = 999, maxCost = 9999) => {
    let shuffled = [...DB_MAINS_HUGE].sort(() => 0.5 - Math.random());
-   if (profile === 'KIDS') shuffled = shuffled.filter(m => !m.ingredients.some(i => i.includes("jalapeno") || i.includes("acı")) && m.heaviness <= 6);
-   if (profile === 'DIABETIC') shuffled = shuffled.filter(m => !m.ingredients.some(i => i.includes("şeker") || i.includes("makarna") || i.includes("pirinç") || i.includes("noodle")));
-   if (profile === 'ATHLETE') shuffled = shuffled.filter(m => m.ingredients.some(i => i.includes("tavuk") || i.includes("kıyma") || i.includes("bonfile")));
-   if (profile === 'SINGLE') shuffled = shuffled.filter(m => m.time <= 50);
 
-   if (maxTime < 999) shuffled = shuffled.filter(m => m.time <= maxTime);
-   if (maxCost < 9999) shuffled = shuffled.filter(m => m.cost <= maxCost);
+   const veganBanned = /(tavuk|kıyma|et|kuşbaşı|somon|levrek|balık|karides|süt|yumurta|peynir|kaşar|tereyağı|krema|kavurma|sucuk|bonfile|antrikot|köfte|kebap|tas kebabı|mayonez|şinitzel|döner|bacon|sosis|jambon|sakatat)/i;
+   const vegBanned = /(tavuk|kıyma|et|kuşbaşı|somon|levrek|balık|karides|kavurma|sucuk|bonfile|antrikot|köfte|kebap|tas kebabı|şinitzel|döner|bacon|sosis|jambon|sakatat)/i;
+   const glutenBanned = /(makarna|noodle|un|ekmek|bulgur|şehriye|pide|yufka|lavaş|krep|bazlama|galeta|erişte|irmik)/i;
+   const diabeticBanned = /(şeker|makarna|pirinç|noodle|ekmek|patates|tatlı|reçel|bal|pekmez|irmik|baklava|kadayıf|pide|lavaş)/i;
+
+   shuffled = shuffled.filter(m => {
+       const fullText = (m.name || "") + " " + (m.ingredients || []).join(" ");
+       if ((strategy === 'VEGAN' || profile === 'VEGAN') && veganBanned.test(fullText)) return false;
+       if ((strategy === 'VEGETARIAN' || profile === 'VEGETARIAN') && vegBanned.test(fullText)) return false;
+       if (profile === 'KIDS' && (/(jalapeno|acı)/i.test(fullText) || m.heaviness > 6)) return false;
+       if (profile === 'DIABETIC' && diabeticBanned.test(fullText)) return false;
+       if (profile === 'ATHLETE' && !/(tavuk|kıyma|et|bonfile|somon|yumurta|peynir|nohut|fasulye)/i.test(fullText)) return false;
+       if (profile === 'SINGLE' && m.time > 50) return false;
+       if (profile === 'GLUTEN_FREE' && glutenBanned.test(fullText)) return false;
+       if (profile === 'SOSYETE' && !/(bonfile|antrikot|somon|levrek|balık|risotto|lazanya|graten|cordon bleu|safran|biftek|kuzu|karides|beşamel|marine|parmesan|kremalı|dalyan|hünkar|sote|soslu)/i.test(fullText) && m.cost < 250) return false;
+       if (maxTime < 999 && m.time > maxTime) return false;
+       if (maxCost < 9999 && m.cost > maxCost) return false;
+       return true;
+   });
 
    if (cuisine !== 'ALL') {
        const T = /(kebap|köfte|karnıyarık|pide|türlü|tas kebabı)/i;
@@ -1058,13 +1404,13 @@ export const generateWeeklyPlan = (daysCount, strategy, profile, cuisine = 'ALL'
        const F = /(krep|ratatuy|soğan çorbası|graten|cordon bleu)/i;
        const ME = /(falafel|humus|şavurma|maklube)/i;
        shuffled = shuffled.filter(m => {
-          const s = m.name;
-          if(cuisine==='TURKISH') return T.test(s) || m.ingredients.includes('kıyma');
-          if(cuisine==='ASIAN') return A.test(s) || m.ingredients.includes('soya sosu');
-          if(cuisine==='MEXICAN') return M.test(s) || m.ingredients.includes('mısır');
-          if(cuisine==='ITALIAN') return I.test(s) || m.ingredients.includes('fesleğen');
-          if(cuisine==='FRENCH') return F.test(s) || m.ingredients.includes('krema');
-          if(cuisine==='MIDDLE_EASTERN') return ME.test(s) || m.ingredients.includes('nohut');
+          const s = m.name + " " + m.ingredients.join(" ");
+          if(cuisine==='TURKISH') return T.test(s) || s.includes('kıyma');
+          if(cuisine==='ASIAN') return A.test(s) || s.includes('soya sosu');
+          if(cuisine==='MEXICAN') return M.test(s) || s.includes('mısır');
+          if(cuisine==='ITALIAN') return I.test(s) || s.includes('fesleğen');
+          if(cuisine==='FRENCH') return F.test(s) || s.includes('krema');
+          if(cuisine==='MIDDLE_EASTERN') return ME.test(s) || s.includes('nohut');
           return true;
        });
    }
@@ -1073,37 +1419,81 @@ export const generateWeeklyPlan = (daysCount, strategy, profile, cuisine = 'ALL'
    if (strategy === 'FIT') pool = shuffled.filter(m => m.heaviness <= 4 || m.type === 'FIT');
    else if (strategy === 'BUDGET') pool = shuffled.filter(m => m.cost <= 250);
    else if (strategy === 'PREMIUM') pool = shuffled.filter(m => m.cost >= 350);
-  
    else pool = shuffled;
-   if (pool.length < daysCount) pool = shuffled;
-   if (pool.length < daysCount) pool = [...DB_MAINS_HUGE].sort(() => 0.5 - Math.random());
+
+   if (pool.length === 0) pool = shuffled;
+   if (pool.length === 0) {
+      pool = DB_MAINS_HUGE.filter(m => {
+         const fullText = (m.name || "") + " " + (m.ingredients || []).join(" ");
+         if ((strategy === 'VEGAN' || profile === 'VEGAN') && veganBanned.test(fullText)) return false;
+         if ((strategy === 'VEGETARIAN' || profile === 'VEGETARIAN') && vegBanned.test(fullText)) return false;
+         if (profile === 'DIABETIC' && diabeticBanned.test(fullText)) return false;
+         if (profile === 'GLUTEN_FREE' && glutenBanned.test(fullText)) return false;
+         return true;
+      });
+   }
+
    const days = ["Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi", "Pazar"];
    let plan = [];
-   for(let i=0; i<daysCount; i++) { plan.push({ day: days[i], dish: pool[i] }); } return plan;
+   for(let i=0; i<daysCount; i++) {
+      const dish = pool[i % pool.length] || DB_MAINS_HUGE[0];
+      plan.push({ day: days[i], dish });
+   }
+   return plan;
 };
 
-export const generateWheelItems = (filters) => {
+export const generateWheelItems = (filters = []) => {
+   if (!Array.isArray(filters)) filters = [];
    let shuffled = [...DB_MAINS_HUGE].sort(() => 0.5 - Math.random());
+
+   const veganBanned = /(tavuk|kıyma|et|kuşbaşı|somon|levrek|balık|karides|süt|yumurta|peynir|kaşar|tereyağı|krema|kavurma|sucuk|bonfile|antrikot|köfte|kebap|tas kebabı|mayonez|şinitzel|döner|bacon|sosis|jambon|sakatat)/i;
+   const vegBanned = /(tavuk|kıyma|et|kuşbaşı|somon|levrek|balık|karides|kavurma|sucuk|bonfile|antrikot|köfte|kebap|tas kebabı|şinitzel|döner|bacon|sosis|jambon|sakatat)/i;
+   const glutenBanned = /(makarna|noodle|un|ekmek|bulgur|şehriye|pide|yufka|lavaş|krep|bazlama|galeta|erişte|irmik)/i;
+   const diabeticBanned = /(şeker|makarna|pirinç|noodle|ekmek|patates|tatlı|reçel|bal|pekmez|irmik|baklava|kadayıf|pide|lavaş)/i;
+
    if (filters.includes('UNDER_45')) shuffled = shuffled.filter(m => m.time <= 45);
    if (filters.includes('UNDER_300TL')) shuffled = shuffled.filter(m => m.cost < 300);
-   if (filters.includes('DIABETIC')) shuffled = shuffled.filter(m => !m.ingredients.some(i => i.includes("şeker") || i.includes("makarna") || i.includes("pirinç") || i.includes("noodle")));
-   if (filters.includes('HIGH_PROTEIN')) shuffled = shuffled.filter(m => m.ingredients.some(i => i.includes("tavuk") || i.includes("kıyma") || i.includes("bonfile")));
-   if (filters.includes('VEGAN')) shuffled = shuffled.filter(m => !m.ingredients.some(i => i.includes("tavuk") || i.includes("kıyma") || i.includes("et") || i.includes("süt") || i.includes("yumurta") || i.includes("peynir") || i.includes("kaşar") || i.includes("tereyağı")));
-   if (filters.includes('GLUTEN_FREE')) shuffled = shuffled.filter(m => !m.ingredients.some(i => i.includes("makarna") || i.includes("noodle") || i.includes("un") || i.includes("ekmek") || i.includes("bulgur")));
+   if (filters.includes('DIABETIC')) shuffled = shuffled.filter(m => !diabeticBanned.test(m.name + " " + m.ingredients.join(" ")));
+   if (filters.includes('HIGH_PROTEIN')) shuffled = shuffled.filter(m => /(tavuk|kıyma|et|bonfile|somon|yumurta|peynir|nohut|fasulye)/i.test(m.name + " " + m.ingredients.join(" ")));
+   if (filters.includes('VEGAN')) shuffled = shuffled.filter(m => !veganBanned.test(m.name + " " + m.ingredients.join(" ")));
+   if (filters.includes('VEGETARIAN')) shuffled = shuffled.filter(m => !vegBanned.test(m.name + " " + m.ingredients.join(" ")));
+   if (filters.includes('GLUTEN_FREE')) shuffled = shuffled.filter(m => !glutenBanned.test(m.name + " " + m.ingredients.join(" ")));
    
-   if (shuffled.length < 13) shuffled = [...DB_MAINS_HUGE].sort(() => 0.5 - Math.random());
+   if (shuffled.length === 0) {
+       shuffled = DB_MAINS_HUGE.filter(m => {
+           const fullText = m.name + " " + m.ingredients.join(" ");
+           if (filters.includes('VEGAN') && veganBanned.test(fullText)) return false;
+           if (filters.includes('VEGETARIAN') && vegBanned.test(fullText)) return false;
+           if (filters.includes('GLUTEN_FREE') && glutenBanned.test(fullText)) return false;
+           if (filters.includes('DIABETIC') && diabeticBanned.test(fullText)) return false;
+           return true;
+       });
+   }
    
-   return shuffled.slice(0, 13).map(m => ({ ...m, ...getDishDetails(m) }));
+   // Re-shuffle candidate pool to guarantee fresh options on every refresh
+   shuffled.sort(() => 0.5 - Math.random());
+   
+   let result = [];
+   const count = Math.min(13, shuffled.length);
+   for (let i = 0; i < 13; i++) {
+      result.push(shuffled[i % (count || 1)] || DB_MAINS_HUGE[i % DB_MAINS_HUGE.length]);
+   }
+   return result.map(m => ({ ...m, ...getDishDetails(m) }));
 };
 
 export const generateCrossMenu = (inputStr) => {
   const t = inputStr.trim().toLowerCase();
-  if(!t) return null;
+  if (!t) return null;
 
-  // Durstenfeld true Fisher-Yates shuffle
-  function durShuffle(arr) { const a = [...arr]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+  function durShuffle(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
 
-  // Session tracking per input - prevents same pair from showing again
   if (!window.crossShownPairs) window.crossShownPairs = {};
   if (!window.crossLastInput) window.crossLastInput = '';
   if (window.crossLastInput !== t) {
@@ -1112,17 +1502,27 @@ export const generateCrossMenu = (inputStr) => {
   }
   const shownPairIds = window.crossShownPairs[t] || [];
 
+  // 1. Find direct matches in name or ingredients
   let matches = DB_MAINS_HUGE.filter(m => m.name.toLowerCase().includes(t) || m.ingredients.some(i => i.toLowerCase().includes(t)));
-  
-  if (matches.length === 0) {
-      if (/(et|kıyma|tavuk|kebap|köfte)/.test(t)) {
-          matches = DB_MAINS_HUGE.filter(m => m.ingredients.some(i => /(et|kıyma|tavuk)/.test(i)));
-      } else {
-          matches = [...DB_MAINS_HUGE];
-      }
+
+  // 2. If fewer than 4 matches, expand with word tokens or related dishes
+  if (matches.length < 4) {
+    const tokens = t.split(/\s+/).filter(w => w.length >= 3);
+    const broader = DB_MAINS_HUGE.filter(m => {
+      const text = (m.name + " " + m.ingredients.join(" ")).toLowerCase();
+      return tokens.some(tok => text.includes(tok));
+    });
+    const combined = [...matches, ...broader];
+    const uniqueMap = new Map();
+    combined.forEach(m => uniqueMap.set(m.id, m));
+    matches = Array.from(uniqueMap.values());
   }
 
-  // Filter out already-shown dishes in this session
+  if (matches.length === 0) {
+    matches = [...DB_MAINS_HUGE];
+  }
+
+  // 3. Filter out already shown dish IDs in current session
   let available = matches.filter(m => !shownPairIds.includes(m.id));
   if (available.length < 2) {
     window.crossShownPairs[t] = [];
@@ -1130,32 +1530,25 @@ export const generateCrossMenu = (inputStr) => {
   }
 
   const shuffled = durShuffle(available);
-  // Separate into light (heaviness <= 4) and heavy (heaviness >= 5)
-  const lightPool = durShuffle(shuffled.filter(m => m.heaviness <= 4));
-  const heavyPool = durShuffle(shuffled.filter(m => m.heaviness >= 5));
 
-  const rawDiet = lightPool.length > 0 ? lightPool[0] : shuffled[0];
-  const rawKid = heavyPool.length > 0 ? heavyPool[0] : shuffled.find(m => m.id !== rawDiet.id) || shuffled[shuffled.length - 1];
+  // 4. Partition dishes into Light/Diet and Heavy/Kid pools
+  let dietPool = shuffled.filter(m => m.heaviness <= 4 || m.type === 'FIT' || !/(kıyma|et|kuşbaşı|bonfile|antrikot|kebap)/i.test(m.name + " " + m.ingredients.join(" ")));
+  if (dietPool.length === 0) dietPool = shuffled;
 
-  // Ensure distinct dishes
-  const finalKid = rawKid && rawKid.id !== rawDiet.id ? rawKid : (shuffled.find(m => m.id !== rawDiet.id) || rawDiet);
+  let kidPool = shuffled.filter(m => m.heaviness >= 5 || /(kıyma|et|tavuk|kaşar|köfte|fırın|graten|börek)/i.test(m.name + " " + m.ingredients.join(" ")));
+  if (kidPool.length === 0) kidPool = shuffled;
 
-  window.crossShownPairs[t].push(rawDiet.id, finalKid.id);
+  const rawDiet = dietPool[0] || shuffled[0];
+  let rawKid = kidPool.find(m => m.id !== rawDiet.id) || shuffled.find(m => m.id !== rawDiet.id);
 
-  if (shuffled.length < 2) {
-      const single = { ...shuffled[0], ...getDishDetails(shuffled[0]) };
-      const lightModifiers = [" (Zeytinyağlı & Fit Versiyon)", " (Buharda Hafif Pişirilmiş)", " (Diyet Şef Dokunuşu)", " (Izgara Sağlıklı Form)"];
-      const heavyModifiers = [" (Gurme Kaşarlı Porsiyon)", " (Yüksek Enerjili Sporcu Formatı)", " (Fırınlanmış Doyurucu Menü)", " (Aile Boy Büyük Porsiyon)"];
-      const modL = lightModifiers[Math.floor(Math.random() * lightModifiers.length)];
-      const modH = heavyModifiers[Math.floor(Math.random() * heavyModifiers.length)];
-      return {
-         diet: { name: single.name + modL, desc: `🔥 Kalori: ${single.calories} - Saf, hafif ve sindirimi kolay, diyet formuna tam uygun esnetilmiş tarif.`, dishObj: single },
-         kid: { name: single.name + modH, desc: `⏱ Süre: ${single.time} dk - Yüksek enerjili, çocukların ve sporcuların bayılacağı tam doyurucu format.`, dishObj: single }
-      };
+  if (!rawKid || rawKid.id === rawDiet.id) {
+    rawKid = DB_MAINS_HUGE.find(m => m.id !== rawDiet.id) || DB_MAINS_HUGE[1];
   }
 
+  window.crossShownPairs[t].push(rawDiet.id, rawKid.id);
+
   const dietDish = { ...rawDiet, ...getDishDetails(rawDiet) };
-  const kidDish = { ...finalKid, ...getDishDetails(finalKid) };
+  const kidDish = { ...rawKid, ...getDishDetails(rawKid) };
 
   return {
      diet: { name: dietDish.name, desc: `🔥 Kalori: ${dietDish.calories} - Saf, hafif ve sindirimi kolay, diyet formuna tam uygun '${t}' alternatifi.`, dishObj: dietDish },
@@ -1177,7 +1570,8 @@ export const generateGroupMenu = (members) => {
    const wantsProtein = rules.includes('HIGH_PROTEIN');
 
    const carnivoreMustHave = /(tavuk|kıyma|et|kuşbaşı|antrikot|bonfile|köfte|sucuk|kavurma|döner|kebap|somon|levrek)/i;
-   const veganBanned = /(tavuk|kıyma|et|kuşbaşı|somon|levrek|süt|yumurta|peynir|kaşar|tereyağı|krema|kavurma|sucuk|bonfile)/i;
+   const veganBanned = /(tavuk|kıyma|et|kuşbaşı|somon|levrek|balık|karides|süt|yumurta|peynir|kaşar|tereyağı|krema|kavurma|sucuk|bonfile|antrikot|köfte|kebap|tas kebabı|mayonez|şinitzel|döner|bacon|sosis|jambon|sakatat)/i;
+   const vegBanned = /(tavuk|kıyma|et|kuşbaşı|somon|levrek|balık|karides|kavurma|sucuk|bonfile|antrikot|köfte|kebap|tas kebabı|şinitzel|döner|bacon|sosis|jambon|sakatat)/i;
    const glutenBanned = /(makarna|noodle|un|ekmek|bulgur|şehriye)/i;
    const lactoseBanned = /(süt|krema|peynir|kaşar|tereyağı)/i;
    const diabeticBanned = /(şeker|makarna|pirinç|noodle|ekmek|patates)/i;
@@ -1191,6 +1585,7 @@ export const generateGroupMenu = (members) => {
        let isBanned = false;
        if (isCarnivore && !carnivoreMustHave.test(ings)) isBanned = true;
        if (isVegan && veganBanned.test(ings)) isBanned = true;
+       if (rules.includes("VEGETARIAN") && vegBanned.test(ings)) isBanned = true;
        if (isGlutenFree && glutenBanned.test(ings)) isBanned = true;
        if (isLactoseFree && lactoseBanned.test(ings)) isBanned = true;
        if (isDiabetic && diabeticBanned.test(ings)) isBanned = true;

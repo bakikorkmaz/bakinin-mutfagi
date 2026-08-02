@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { db, auth, storage } from './firebase';
 import { collection, getDocs, doc, updateDoc, arrayUnion, arrayRemove, getDoc, addDoc, query, orderBy, onSnapshot } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { validateUsername } from './utils/usernameValidation';
 import * as tf from '@tensorflow/tfjs';
 import * as mobilenet from '@tensorflow-models/mobilenet';
 
@@ -128,7 +129,7 @@ function PinchZoomImage({ src, alt, style, onClick, badgeText }) {
   );
 }
 
-export default function SocialFlow({ activeUser, setActiveUser }) {
+export default function SocialFlow({ activeUser, setActiveUser, onBack }) {
 
    const [subTab, setSubTab] = useState('FOLLOW'); // FEED, CHAT, FOLLOW, UPLOAD
    const [model, setModel] = useState(null);
@@ -140,6 +141,50 @@ export default function SocialFlow({ activeUser, setActiveUser }) {
    const [myProfile, setMyProfile] = useState(null);
    const [searchQuery, setSearchQuery] = useState("");
    const [feedMode, setFeedMode] = useState('WATCH');
+
+   // --- KULLANICI ADI (USERNAME) DÜZENLEME SİSTEMİ ---
+   const [isEditingUsername, setIsEditingUsername] = useState(false);
+   const [newUsernameInput, setNewUsernameInput] = useState(activeUser?.username || '');
+   const [usernameUpdating, setUsernameUpdating] = useState(false);
+
+   const handleSaveUsername = async () => {
+       if (!newUsernameInput) {
+           return alert("Kullanıcı adı boş bırakılamaz.");
+       }
+       setUsernameUpdating(true);
+       const result = await validateUsername(newUsernameInput, activeUser?.uid, allUsers, db);
+       if (!result.valid) {
+           alert(result.error);
+           setUsernameUpdating(false);
+           return;
+       }
+       try {
+           const clean = result.clean;
+           if (activeUser?.uid) {
+               await updateDoc(doc(db, 'users', activeUser.uid), { username: clean });
+           }
+
+           if (activeUser?.uid && activeUser.uid.startsWith("local_")) {
+               const dbUsers = JSON.parse(localStorage.getItem('baki_users_db') || "[]");
+               const usr = dbUsers.find(u => u.email === activeUser.email);
+               if (usr) {
+                   usr.username = clean;
+                   localStorage.setItem('baki_users_db', JSON.stringify(dbUsers));
+               }
+           }
+
+           const updatedUser = { ...activeUser, username: clean };
+           if (setActiveUser) setActiveUser(updatedUser);
+           localStorage.setItem('baki_active_user', JSON.stringify(updatedUser));
+
+           setIsEditingUsername(false);
+           alert("🎉 Kullanıcı adınız başarıyla @" + clean + " olarak güncellendi!");
+       } catch (e) {
+           alert("Güncelleme hatası: " + e.message);
+       } finally {
+           setUsernameUpdating(false);
+       }
+   };
 
    // --- VIDEO YÜKLEME (UPLOAD) SİSTEMİ ---
    const [uploading, setUploading] = useState(false);
@@ -503,7 +548,16 @@ export default function SocialFlow({ activeUser, setActiveUser }) {
                     </div>
                     
                     <h2 style={{fontSize: '18px', margin: 0, color: '#1E293B'}}>{activeUser.name || 'İsimsiz Şef'}</h2>
-                    <p style={{fontSize: '13px', color: '#64748B', fontWeight: 600}}>@{activeUser.username}</p>
+                    
+                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginTop: '4px'}}>
+                        <span style={{fontSize: '13px', color: '#64748B', fontWeight: 700}}>@{activeUser.username || 'anonim'}</span>
+                        <button 
+                           onClick={() => { setNewUsernameInput(activeUser.username || ''); setIsEditingUsername(true); }}
+                           style={{background: '#EEF2FF', color: '#4F46E5', border: '1px solid #C7D2FE', padding: '3px 9px', borderRadius: '12px', fontSize: '11px', fontWeight: 800, cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '4px'}}
+                        >
+                           ✏️ Değiştir
+                        </button>
+                    </div>
                     
                     <div style={{display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '20px'}}>
                         <div>
@@ -533,6 +587,39 @@ export default function SocialFlow({ activeUser, setActiveUser }) {
                     </label>
                     <p style={{fontSize: '12px', color: '#64748B', marginTop: '8px', lineHeight: 1.4}}>Profiliniz gizli olursa gönderilerinizi sadece onayladığınız takipçiler görebilir. Sizi takip etmek isteyenler "Bildirim" havuzuna istek olarak düşer.</p>
                 </div>
+
+                {isEditingUsername && (
+                    <div style={{position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(15, 23, 42, 0.75)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 100000, padding: '20px', backdropFilter: 'blur(6px)'}}>
+                        <div style={{background: 'white', padding: '24px', borderRadius: '20px', width: '100%', maxWidth: '380px', boxShadow: '0 20px 40px rgba(0,0,0,0.25)'}}>
+                            <h3 style={{fontSize: '18px', color: '#1E293B', fontWeight: 900, marginBottom: '16px'}}>✏️ Kullanıcı Adını Değiştir</h3>
+                            <div style={{display: 'flex', alignItems: 'center', background: '#F8FAFC', borderRadius: '12px', padding: '12px 14px', border: '2px solid #E2E8F0', marginBottom: '16px'}}>
+                                <span style={{color: '#8B5CF6', fontWeight: 900, fontSize: '16px', marginRight: '6px'}}>@</span>
+                                <input 
+                                   type="text" 
+                                   value={newUsernameInput} 
+                                   onChange={(e) => setNewUsernameInput(e.target.value)} 
+                                   placeholder="kullanici_adiniz" 
+                                   style={{border: 'none', outline: 'none', background: 'transparent', width: '100%', fontSize: '15px', fontWeight: 700, color: '#1E293B'}}
+                                />
+                            </div>
+                            <div style={{display: 'flex', gap: '10px'}}>
+                                <button 
+                                   onClick={() => setIsEditingUsername(false)} 
+                                   style={{flex: 1, padding: '12px', borderRadius: '12px', border: '1px solid #CBD5E1', background: '#F1F5F9', color: '#475569', fontWeight: 700, cursor: 'pointer'}}
+                                >
+                                   Vazgeç
+                                </button>
+                                <button 
+                                   onClick={handleSaveUsername} 
+                                   disabled={usernameUpdating}
+                                   style={{flex: 1, padding: '12px', borderRadius: '12px', border: 'none', background: '#8B5CF6', color: 'white', fontWeight: 800, cursor: 'pointer', boxShadow: '0 4px 12px rgba(139, 92, 246, 0.3)'}}
+                                >
+                                   {usernameUpdating ? 'Kaydediliyor...' : 'Kaydet 💾'}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                )}
                 
                 <h3 style={{fontSize: '16px', color: '#1E293B', marginBottom: '10px', fontWeight: 800}}>📸 Kendi Gönderilerim ({myPosts.length})</h3>
                 {myPosts.length === 0 ? <p style={{color: '#94A3B8', fontSize: '13px', marginBottom: '20px'}}>Henüz hiç gönderi paylaşmamışsınız.</p> : (
@@ -567,355 +654,281 @@ export default function SocialFlow({ activeUser, setActiveUser }) {
         );
     };
 
-   const renderFeedScreen = () => {
-       // Gizlilik Filtresi
-       let visiblePosts = feedPosts.filter(p => {
-           if (p.userId === activeUser.uid) return true; // Kendi içeriğimiz görünür
-           const postOwner = allUsers.find(u => u.id === p.userId);
-           if (!postOwner) return true;
-           if (myProfile?.blocked?.includes(postOwner.id)) return false;
-           if (postOwner.blocked?.includes(activeUser.uid)) return false;
-           if (postOwner.isPrivate && !(myProfile?.follows?.includes(postOwner.id))) return false; // Takip etmediğimiz gizli hesap görünmez
-           return true; 
-       });
-       
-       if (feedMode === 'LIKED') {
-           visiblePosts = visiblePosts.filter(p => p.likes?.includes(activeUser.uid));
-       }
-
-       return (
-       <div className="feed-container" style={{display: 'flex', flexDirection: 'column', height: '100%'}}>
-           <div style={{display: 'flex', gap: '10px', marginBottom: '10px', padding: '5px', background: '#F1F5F9', borderRadius: '12px'}}>
-               <button onClick={() => setFeedMode('WATCH')} style={{flex: 1, padding: '8px', background: feedMode === 'WATCH' ? 'white' : 'transparent', color: feedMode === 'WATCH' ? '#3B82F6' : '#64748B', borderRadius: '8px', border: 'none', fontWeight: 800, cursor: 'pointer', boxShadow: feedMode === 'WATCH' ? '0 2px 4px rgba(0,0,0,0.05)' : 'none', transition: '0.2s'}}>📺 İzle</button>
-               <button onClick={() => setFeedMode('SEARCH')} style={{flex: 1, padding: '8px', background: feedMode === 'SEARCH' ? 'white' : 'transparent', color: feedMode === 'SEARCH' ? '#8B5CF6' : '#64748B', borderRadius: '8px', border: 'none', fontWeight: 800, cursor: 'pointer', boxShadow: feedMode === 'SEARCH' ? '0 2px 4px rgba(0,0,0,0.05)' : 'none', transition: '0.2s'}}>🔍 Şef Bul</button>
-               <button onClick={() => setFeedMode('LIKED')} style={{flex: 1, padding: '8px', background: feedMode === 'LIKED' ? 'white' : 'transparent', color: feedMode === 'LIKED' ? '#EC4899' : '#64748B', borderRadius: '8px', border: 'none', fontWeight: 800, cursor: 'pointer', boxShadow: feedMode === 'LIKED' ? '0 2px 4px rgba(0,0,0,0.05)' : 'none', transition: '0.2s'}}>❤️ Beğeniler</button>
-           </div>
-           
-           {feedMode === 'SEARCH' ? (
-               <div style={{flex: 1, overflowY: 'auto', paddingBottom: '20px'}}>
-                   <input 
-                       type="text" 
-                       placeholder="👤 Dünya genelinde Şef Ara..." 
-                       value={searchQuery} 
-                       onChange={(e) => setSearchQuery(e.target.value)}
-                       style={{width: '100%', padding: '12px 15px', borderRadius: '12px', background: 'white', border: '1px solid #E2E8F0', outline: 'none', color: '#334155', marginBottom: '15px'}}
-                   />
-                   {allUsers.filter(u => u.id !== activeUser.uid && ((u.username||'').toLowerCase().includes(searchQuery.toLowerCase()) || (u.name||'').toLowerCase().includes(searchQuery.toLowerCase()))).map(u => {
-                       if (myProfile?.blocked?.includes(u.id)) return null;
-                       if (u.blocked?.includes(activeUser.uid)) return null;
-                       const isFollowing = myProfile?.follows?.includes(u.id);
-                       const isRequested = u.requests?.includes(activeUser.uid);
-                       return (
-                           <div key={u.id} style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '15px', background: 'white', borderRadius: '16px', marginBottom: '10px', boxShadow: '0 4px 6px rgba(0,0,0,0.03)'}}>
-                               <div onClick={() => openProfile(u)} style={{display: 'flex', gap: '15px', alignItems: 'center', cursor: 'pointer'}}>
-                                   {u.photoURL ? <img src={getHighResPhotoUrl(u.photoURL)} onClick={(e) => { e.stopPropagation(); setEnlargedPhoto(u.photoURL) }} style={{width:'50px', height:'50px', borderRadius:'50%', objectFit: 'cover', cursor: 'zoom-in'}} /> : <div style={{width:'50px',height:'50px',borderRadius:'50%',background:'#F1F5F9',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'24px'}}>👤</div>}
-                                   <div style={{fontWeight: 800, color: '#334155'}}>@{u.username}</div>
-                               </div>
-                               <button onClick={() => handleFollow(u.id, isFollowing, u.isPrivate, isRequested)} style={{background: isFollowing ? '#E2E8F0' : isRequested ? '#F59E0B' : '#8B5CF6', color: isFollowing ? '#64748B' : 'white', padding: '8px 16px', borderRadius: '20px', border: 'none', fontWeight: 800, cursor: 'pointer', transition: '0.2s'}}>
-                                   {isFollowing ? 'Takibi Bırak' : isRequested ? 'İstek Gönderildi' : 'Takip Et'}
-                               </button>
-                           </div>
-                       )
-                   })}
-               </div>
-           ) : (
-               <div className="feed-scroll-container" style={{overflowY: 'scroll', scrollSnapType: 'y mandatory', WebkitOverflowScrolling: 'touch', margin: '0 -15px', background: '#0F172A', flex: 1, paddingBottom: '70px'}}>
-                   {visiblePosts.length === 0 ? (
-                       <div style={{textAlign: 'center', margin: '30px 20px', color: '#64748B', display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%'}}>Henüz hiçbir gönderi paylaşılmamış. İlk paylaşan şef sen ol!</div>
-                   ) : (
-                       visiblePosts.map(post => {
-                           const isLikedByMe = post.likes?.includes(activeUser.uid);
-                           return (
-                               <div key={post.id} style={{scrollSnapAlign: 'start', scrollSnapStop: 'always', height: 'calc(100vh - 140px)', width: '100%', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', background: '#090D16'}}>
-                            {post.images && post.images.length > 0 ? (
-                                 <div style={{display: 'flex', width: '100%', height: '100%', overflowX: 'auto', scrollSnapType: 'x mandatory'}}>
-                                     {post.images.map((imgUrl, i) => (
-                                         <div key={i} style={{minWidth: '100%', width: '100%', flexShrink: 0, height: '100%', scrollSnapAlign: 'center', position: 'relative'}}>
-                                             <img src={getHighResPhotoUrl(imgUrl)} alt="post" onClick={() => setEnlargedPhoto(getHighResPhotoUrl(imgUrl))} style={{maxWidth: '100%', maxHeight: '100%', width: 'auto', height: 'auto', objectFit: 'contain', borderRadius: '16px', background: '#1E293B', boxShadow: '0 8px 30px rgba(0,0,0,0.7)', cursor: 'zoom-in'}} />
-                                             <div style={{position: 'absolute', top: '20px', right: '20px', background: 'rgba(0,0,0,0.5)', color: 'white', padding: '8px 15px', borderRadius: '15px', fontSize: '14px', fontWeight: 900}}>
-                                                 {i + 1} / {post.images.length}
-                                             </div>
-                                         </div>
-                                     ))}
-                                 </div>
-                             ) : (
-                                 <video 
-                                     src={post.videoURL} 
-                                     controls 
-                                     playsInline 
-                                     style={{width: '100%', height: '100%', objectFit: 'contain', background: 'black'}} 
-                                 />
-                             )}
-                            
-                            <div style={{position: 'absolute', bottom: '25px', left: '15px', right: '70px', color: 'white', textShadow: '0 1px 3px rgba(0,0,0,0.8)', zIndex: 5}}>
-                                <div style={{fontWeight: 900, fontSize: '18px', display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap'}}>
-                                    <div onClick={() => {
-                                         const pOwner = allUsers.find(u => u.id === post.userId) || {id: post.userId, username: post.username, name: post.userName, photoURL: post.userPhoto};
-                                         openProfile(pOwner);
-                                     }} style={{display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer'}}>
-                                       {post.userPhoto ? <img src={getHighResPhotoUrl(post.userPhoto)} alt="p" style={{width:'35px', height:'35px', borderRadius:'50%'}} /> : <span style={{fontSize:'24px'}}>👤</span>}
-                                       @{post.username || post.userName.replace(/\s+/g, '')}
-                                    </div>
-                                    
-                                    {post.userId !== activeUser.uid && (
-                                        <button 
-                                            onClick={() => handleFollow(post.userId, myProfile?.follows?.includes(post.userId))}
-                                            style={{
-                                                padding: '4px 12px', borderRadius: '15px', border: '1px solid white', 
-                                                background: myProfile?.follows?.includes(post.userId) ? 'transparent' : '#EC4899', 
-                                                color: 'white', fontWeight: 800, fontSize: '12px', cursor: 'pointer', transition: '0.2s', marginLeft: '5px'
-                                            }}>
-                                            {myProfile?.follows?.includes(post.userId) ? '✓ Takipte' : 'Takip Et +'}
-                                        </button>
-                                    )}
-                                </div>
-                                <div style={{fontSize: '14px', marginTop: '10px', lineHeight: '1.4'}}>{post.caption}</div>
-                            </div>
-
-                            <div style={{position: 'absolute', bottom: '35px', right: '15px', display: 'flex', flexDirection: 'column', gap: '20px', alignItems: 'center', zIndex: 5}}>
-                                <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', cursor: 'pointer'}} onClick={async () => {
-                                      const pRef = doc(db, 'posts', post.id);
-                                      if (isLikedByMe) {
-                                          await updateDoc(pRef, { likes: arrayRemove(activeUser.uid) });
-                                      } else {
-                                          await updateDoc(pRef, { likes: arrayUnion(activeUser.uid) });
-                                          if (post.userId !== activeUser.uid) {
-                                              const nMsg = `${activeUser.name || activeUser.username || "Bir şef"} adlı şef videonuzu beğendi.`;
-                                              const newNotif = { id: Date.now().toString(), text: nMsg, type: 'LIKE', fromId: activeUser.uid, timestamp: Date.now() };
-                                              await updateDoc(doc(db, 'users', post.userId), { notifications: arrayUnion(newNotif) });
-                                          }
-                                      }
-                                }}>
-                                    <div style={{width: '45px', height: '45px', borderRadius: '50%', background: 'rgba(0,0,0,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', color: isLikedByMe ? '#EC4899' : 'white'}}>
-                                       {isLikedByMe ? '❤️' : '🤍'}
-                                    </div>
-                                    <span style={{color: 'white', fontSize: '12px', marginTop: '5px', fontWeight: 600, textShadow: '0 1px 2px black'}}>{post.likes?.length || 0}</span>
-                                </div>
-                                <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', cursor: 'pointer'}} onClick={() => {
-                                      setCommentModalPost(post);
-                                      setCommentText('');
-                                }}>
-                                    <div style={{width: '45px', height: '45px', borderRadius: '50%', background: 'rgba(0,0,0,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', color: 'white'}}>
-                                       💬
-                                    </div>
-                                    <span style={{color: 'white', fontSize: '12px', marginTop: '5px', fontWeight: 600, textShadow: '0 1px 2px black'}}>{post.comments?.length || 0}</span>
-                                </div>
-                            </div>
-                       </div>
-                   )
-               })
-           )}
-               </div>
-           )}
-
-           {/* YORUM MODALI */}
-           {commentModalPost && (
-               <div style={{position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.6)', zIndex: 9999, display: 'flex', alignItems: 'flex-end', justifyContent: 'center'}} onClick={() => setCommentModalPost(null)}>
-                   <div style={{background: 'white', width: '100%', maxWidth: '500px', height: '60vh', borderTopLeftRadius: '20px', borderTopRightRadius: '20px', display: 'flex', flexDirection: 'column', padding: '20px'}} onClick={e => e.stopPropagation()}>
-                       <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px', borderBottom: '1px solid #E2E8F0', paddingBottom: '10px'}}>
-                           <h3 style={{margin: 0, fontSize: '18px', color: '#1E293B', fontWeight: 900}}>Yorumlar ({commentModalPost.comments?.length || 0})</h3>
-                           <button onClick={() => setCommentModalPost(null)} style={{background: 'none', border: 'none', fontSize: '24px', cursor: 'pointer', color: '#64748B'}}>✕</button>
-                       </div>
-                       
-                       <div style={{flex: 1, overflowY: 'auto', marginBottom: '15px'}}>
-                           {(!commentModalPost.comments || commentModalPost.comments.length === 0) ? (
-                               <div style={{textAlign: 'center', color: '#94A3B8', marginTop: '40px'}}>İlk yorumu siz yapın!</div>
-                           ) : (
-                               [...commentModalPost.comments].map((c, idx) => (
-                                   <div key={idx} style={{display: 'flex', gap: '10px', marginBottom: '15px', alignItems: 'flex-start'}}>
-                                       {c.photoURL ? <img src={c.photoURL} alt="" style={{width: '35px', height: '35px', borderRadius: '50%', objectFit: 'cover'}} /> : <div style={{width: '35px', height: '35px', borderRadius: '50%', background: '#F1F5F9', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '16px'}}>👤</div>}
-                                       <div style={{flex: 1}}>
-                                           <div style={{display: 'flex', alignItems: 'center', gap: '5px'}}>
-                                               <span style={{fontWeight: 800, fontSize: '14px', color: '#334155'}}>@{c.username}</span>
-                                               <span style={{fontSize: '11px', color: '#94A3B8'}}>{new Date(c.timestamp).toLocaleTimeString('tr-TR', {hour:'2-digit', minute:'2-digit'})}</span>
-                                           </div>
-                                           <div style={{fontSize: '14px', color: '#1E293B', marginTop: '2px'}}>{c.text}</div>
-                                       </div>
-                                   </div>
-                               ))
-                           )}
-                       </div>
-                       
-                       <div style={{display: 'flex', gap: '10px'}}>
-                           <input 
-                               type="text" 
-                               value={commentText} 
-                               onChange={e => setCommentText(e.target.value)} 
-                               onKeyDown={async e => {
-                                   if (e.key === 'Enter' && commentText.trim() && activeUser?.uid) {
-                                       const pRef = doc(db, 'posts', commentModalPost.id);
-                                       const newComment = {
-                                           userId: activeUser.uid,
-                                           username: activeUser.username || 'anonim',
-                                           photoURL: activeUser.photoURL || '',
-                                           text: commentText.trim(),
-                                           timestamp: Date.now()
-                                       };
-                                       await updateDoc(pRef, { comments: arrayUnion(newComment) });
-                                       
-                                       // Eğer modal açıkken canlı güncellemeyi Modal'da görmek için manuel ekleyelim (onSnapshot feedPosts'u güncelleyecek zaten ama modal için anlık state override iyi olur)
-                                       setCommentModalPost({...commentModalPost, comments: [...(commentModalPost.comments||[]), newComment]});
-                                       setCommentText('');
-
-                                       if (commentModalPost.userId !== activeUser.uid) {
-                                           const nMsg = `${activeUser.name || activeUser.username || "Bir şef"} gönderinize yorum yaptı: "${commentText.trim().substring(0, 20)}..."`;
-                                           const newNotif = { id: Date.now().toString(), text: nMsg, type: 'COMMENT', fromId: activeUser.uid, timestamp: Date.now() };
-                                           await updateDoc(doc(db, 'users', commentModalPost.userId), { notifications: arrayUnion(newNotif) });
-                                       }
-                                   }
-                               }}
-                               placeholder={activeUser?.uid ? "Yorumunuzu yazın..." : "Giriş yapmanız gerekiyor."} 
-                               disabled={!activeUser?.uid}
-                               style={{flex: 1, padding: '12px 15px', border: '1px solid #E2E8F0', borderRadius: '20px', outline: 'none', background: '#F8FAFC'}} 
-                           />
-                           <button 
-                               onClick={async () => {
-                                   if (commentText.trim() && activeUser?.uid) {
-                                       const pRef = doc(db, 'posts', commentModalPost.id);
-                                       const newComment = {
-                                           userId: activeUser.uid,
-                                           username: activeUser.username || 'anonim',
-                                           photoURL: activeUser.photoURL || '',
-                                           text: commentText.trim(),
-                                           timestamp: Date.now()
-                                       };
-                                       await updateDoc(pRef, { comments: arrayUnion(newComment) });
-                                       
-                                       setCommentModalPost({...commentModalPost, comments: [...(commentModalPost.comments||[]), newComment]});
-                                       setCommentText('');
-
-                                       if (commentModalPost.userId !== activeUser.uid) {
-                                           const nMsg = `${activeUser.name || activeUser.username || "Bir şef"} gönderinize yorum yaptı: "${commentText.trim().substring(0, 20)}..."`;
-                                           const newNotif = { id: Date.now().toString(), text: nMsg, type: 'COMMENT', fromId: activeUser.uid, timestamp: Date.now() };
-                                           await updateDoc(doc(db, 'users', commentModalPost.userId), { notifications: arrayUnion(newNotif) });
-                                       }
-                                   }
-                               }} 
-                               disabled={!activeUser?.uid || !commentText.trim()}
-                               style={{background: '#3B82F6', color: 'white', border: 'none', borderRadius: '50%', width: '45px', height: '45px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer'}}
-                           >
-                               ➤
-                           </button>
-                       </div>
-                   </div>
-               </div>
-           )}
-       </div>
-       );
-   };
-
-    const renderProfileScreen = () => {
-        if (!selectedProfileUser) return null;
-        if (selectedProfileUser.blocked?.includes(activeUser.uid)) {
-            return <div style={{padding: '50px 20px', textAlign: 'center', color: '#64748B', fontWeight: 800}}><div style={{fontSize: '40px', marginBottom: '10px'}}>🚫</div>Bu profili görüntüleyemezsiniz. <br/><button onClick={()=>setSubTab('FEED')} style={{marginTop:'15px', padding:'8px 15px', borderRadius:'8px', border:'none', background:'#3B82F6', color:'white', cursor:'pointer'}}>Geri Dön</button></div>;
-        }
-
-        const isMe = selectedProfileUser.id === activeUser.uid;
-        const isBlockedByMe = myProfile?.blocked?.includes(selectedProfileUser.id);
-        const userPosts = feedPosts.filter(p => p.userId === selectedProfileUser.id);
-        const isFollowing = myProfile?.follows?.includes(selectedProfileUser.id);
-        const isPrivate = selectedProfileUser.isPrivate;
-        const isRequested = selectedProfileUser.requests?.includes(activeUser.uid);
-        const canSeePosts = (isMe || !isPrivate || isFollowing) && !isBlockedByMe;
-        const userExists = (uid) => uid === activeUser?.uid || allUsers.some(u => u.id === uid);
-        
+   
+    const renderSearchScreen = () => {
         return (
             <div style={{padding: '10px 0'}}>
-                <div style={{display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px'}}>
-                    <button onClick={() => setSubTab('FEED')} style={{background: '#E2E8F0', border: 'none', padding: '8px 12px', borderRadius: '8px', cursor: 'pointer', fontWeight: 800, color: '#64748B'}}>← Geri</button>
-                    <div style={{fontWeight: 900, color: '#1E293B', fontSize: '20px'}}>@{selectedProfileUser.username}</div>
-                </div>
-                
-                <div style={{display: 'flex', gap: '20px', alignItems: 'center', marginBottom: '20px'}}>
-                    {selectedProfileUser.photoURL ? <img src={selectedProfileUser.photoURL} alt="" onClick={(e) => { e.stopPropagation(); setEnlargedPhoto(selectedProfileUser.photoURL); }} style={{width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover', cursor: 'zoom-in'}} /> : <div style={{width: '80px', height: '80px', borderRadius: '50%', background: '#E2E8F0', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '36px'}}>👤</div>}
-                    
-                    <div style={{flex: 1, display: 'flex', justifyContent: 'space-around', textAlign: 'center'}}>
-                        <div>
-                            <div style={{fontWeight: 900, fontSize: '18px'}}>{userPosts.length}</div>
-                            <div style={{fontSize: '12px', color: '#64748B'}}>Gönderi</div>
-                        </div>
-                        <div onClick={() => canSeePosts && setConnectionModal('followers')} style={{cursor: canSeePosts ? 'pointer' : 'default'}}>
-                            <div style={{fontWeight: 900, fontSize: '18px'}}>{(selectedProfileUser.followers || []).filter(userExists).length}</div>
-                            <div style={{fontSize: '12px', color: '#64748B'}}>Takipçi</div>
-                        </div>
-                        <div onClick={() => canSeePosts && setConnectionModal('follows')} style={{cursor: canSeePosts ? 'pointer' : 'default'}}>
-                            <div style={{fontWeight: 900, fontSize: '18px'}}>{(selectedProfileUser.follows || []).filter(userExists).length}</div>
-                            <div style={{fontSize: '12px', color: '#64748B'}}>Takip</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div style={{marginBottom: '20px'}}>
-                    <div style={{fontWeight: 800, color: '#1E293B', fontSize: '16px'}}>{selectedProfileUser.name}</div>
-                    {selectedProfileUser.bio && <div style={{fontSize: '14px', marginTop: '5px', color: '#64748B'}}>{selectedProfileUser.bio}</div>}
-                    
-                    {!isMe && (
-                        <div style={{display: 'flex', gap: '8px', marginTop: '15px'}}>
-                            {!isBlockedByMe && (
-                                <>
-                                    <button onClick={() => handleFollow(selectedProfileUser.id, isFollowing, isPrivate, isRequested)} style={{flex: 1, padding: '8px', borderRadius: '8px', border: 'none', background: isFollowing ? '#E2E8F0' : (isRequested ? '#F59E0B' : '#3B82F6'), color: isFollowing ? '#64748B' : 'white', fontWeight: 800, cursor: 'pointer'}}>
-                                        {isFollowing ? 'Takibi Bırak' : isRequested ? 'İstek Gönderildi' : 'Takip Et'}
-                                    </button>
-                                    {isFollowing && <button onClick={() => { setSubTab('CHAT'); setSelectedChatUser(selectedProfileUser); }} style={{flex: 1, padding: '8px', borderRadius: '8px', border: 'none', background: '#10B981', color: 'white', fontWeight: 800, cursor: 'pointer'}}>Mesaj Gönder</button>}
-                                </>
-                            )}
-                            <button onClick={() => {
-                                if(!isBlockedByMe && !window.confirm("Bu kişiyi engellemek istediğinize emin misiniz? (Tüm takipler silinir)")) return;
-                                handleBlockUser(selectedProfileUser.id, isBlockedByMe);
-                            }} style={{padding: '8px 12px', borderRadius: '8px', border: 'none', background: isBlockedByMe ? '#E2E8F0' : '#EF4444', color: isBlockedByMe ? '#64748B' : 'white', fontWeight: 800, cursor: 'pointer'}}>
-                                {isBlockedByMe ? 'Engeli Kaldır' : 'Engelle'}
-                            </button>
-                        </div>
-                    )}
-                </div>
-                
-                <div style={{display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '4px', margin: '0 -15px'}}>
-                    {!canSeePosts ? (
-                        <div style={{gridColumn: '1 / -1', textAlign: 'center', padding: '40px 20px', color: '#64748B'}}>
-                            <div style={{fontSize: '40px', marginBottom: '10px'}}>🔒</div>
-                            <div style={{fontWeight: 800}}>Bu hesap gizli.</div>
-                            <div style={{fontSize: '13px'}}>İçeriklerini görmek için takip etmelisin.</div>
-                        </div>
-                    ) : userPosts.length === 0 ? (
-                        <div style={{gridColumn: '1 / -1', padding: '50px 20px', textAlign: 'center', color: '#64748B'}}>
-                            <div style={{fontSize: '40px', marginBottom: '10px'}}>🎬</div>
-                            <div style={{fontWeight: 600}}>Henüz gönderi yok.</div>
-                        </div>
-                    ) : (
-                        userPosts.sort((a,b)=>b.timestamp-a.timestamp).map(p => (
-                            <div key={p.id} style={{aspectRatio: '9/16', background: 'black', position: 'relative'}}>
-                                 <video src={p.videoURL} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
-                                 <div style={{position: 'absolute', bottom: '5px', left: '5px', color: 'white', fontSize: '10px', fontWeight: 800, display: 'flex', alignItems: 'center', gap: '3px', background: 'rgba(0,0,0,0.5)', padding: '2px 5px', borderRadius: '10px'}}>
-                                     <span>❤️</span> {p.likes?.length || 0}
-                                 </div>
+                <h2 style={{fontSize: '22px', color: '#1E293B', marginBottom: '5px', fontWeight: 900}}>🔍 Şef Bul</h2>
+                <p style={{fontSize: '13px', color: '#64748B', marginBottom: '15px'}}>Dünya genelindeki tüm şefleri arayın, profillerini inceleyin ve takipleşin.</p>
+                <input 
+                    type="text" 
+                    placeholder="👤 Şef Kullanıcı Adı veya İsim Ara..." 
+                    value={searchQuery} 
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    style={{width: '100%', padding: '12px 15px', borderRadius: '12px', background: 'white', border: '1px solid #E2E8F0', outline: 'none', color: '#334155', marginBottom: '15px'}}
+                />
+                <div style={{paddingBottom: '70px'}}>
+                    {allUsers.filter(u => u.id !== activeUser.uid && ((u.username||'').toLowerCase().includes(searchQuery.toLowerCase()) || (u.name||'').toLowerCase().includes(searchQuery.toLowerCase()))).map(u => {
+                        if (myProfile?.blocked?.includes(u.id)) return null;
+                        if (u.blocked?.includes(activeUser.uid)) return null;
+                        const isFollowing = myProfile?.follows?.includes(u.id);
+                        const isRequested = u.requests?.includes(activeUser.uid);
+                        return (
+                            <div key={u.id} style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '15px', background: 'white', borderRadius: '16px', marginBottom: '10px', boxShadow: '0 4px 6px rgba(0,0,0,0.03)'}}>
+                                <div onClick={() => openProfile(u)} style={{display: 'flex', gap: '15px', alignItems: 'center', cursor: 'pointer'}}>
+                                    {u.photoURL ? <img src={getHighResPhotoUrl(u.photoURL)} onClick={(e) => { e.stopPropagation(); setEnlargedPhoto(u.photoURL) }} style={{width:'50px', height:'50px', borderRadius:'50%', objectFit: 'cover', cursor: 'zoom-in'}} /> : <div style={{width:'50px',height:'50px',borderRadius:'50%',background:'#F1F5F9',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'24px'}}>👤</div>}
+                                    <div>
+                                       <div style={{fontWeight: 800, color: '#334155'}}>@{u.username}</div>
+                                       <div style={{fontSize: '12px', color: '#64748B'}}>{u.name}</div>
+                                    </div>
+                                </div>
+                                <button onClick={() => handleFollow(u.id, isFollowing, u.isPrivate, isRequested)} style={{background: isFollowing ? '#E2E8F0' : isRequested ? '#F59E0B' : '#8B5CF6', color: isFollowing ? '#64748B' : 'white', padding: '8px 16px', borderRadius: '20px', border: 'none', fontWeight: 800, cursor: 'pointer', transition: '0.2s'}}>
+                                    {isFollowing ? 'Takibi Bırak' : isRequested ? 'İstek Gönderildi' : 'Takip Et'}
+                                </button>
                             </div>
-                        ))
-                    )}
+                        );
+                    })}
                 </div>
-                
-                {connectionModal && (
-                    <div style={{position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.5)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px'}} onClick={() => setConnectionModal(null)}>
-                        <div style={{background: 'white', width: '100%', maxWidth: '400px', borderRadius: '16px', padding: '20px', maxHeight: '70vh', display: 'flex', flexDirection: 'column'}} onClick={e => e.stopPropagation()}>
-                            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px'}}>
-                                <h3 style={{margin: 0, fontSize: '18px', color: '#1E293B', fontWeight: 900}}>{connectionModal === 'followers' ? 'Takipçiler' : 'Takip Ettikleri'}</h3>
-                                <button onClick={() => setConnectionModal(null)} style={{background: 'none', border: 'none', fontSize: '20px', cursor: 'pointer', color: '#64748B'}}>✕</button>
-                            </div>
-                            <div style={{flex: 1, overflowY: 'auto'}}>
-                                {(() => {
-                                    const idsList = connectionModal === 'followers' ? (selectedProfileUser.followers || []) : (selectedProfileUser.follows || []);
-                                    
-                                    const globalUsers = [...allUsers, {id: activeUser.uid, name: activeUser.name, username: activeUser.username, photoURL: activeUser.photoURL}];
-                                    const finalUsers = globalUsers.filter(u => idsList.includes(u.id));
-                                    
-                                    if (finalUsers.length === 0) return <div style={{textAlign: 'center', color: '#64748B', margin: '20px 0'}}>Liste boş.</div>;
+            </div>
+        );
+    };
 
-                                    return finalUsers.map(u => (
-                                        <div key={u.id} onClick={() => { setConnectionModal(null); openProfile(u); }} style={{display: 'flex', alignItems: 'center', gap: '15px', padding: '10px 0', borderBottom: '1px solid #E2E8F0', cursor: 'pointer'}}>
-                                            {u.photoURL ? <img src={getHighResPhotoUrl(u.photoURL)} alt="" style={{width: '45px', height: '45px', borderRadius: '50%', objectFit: 'cover'}} /> : <div style={{width: '45px', height: '45px', borderRadius: '50%', background: '#F1F5F9', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '20px'}}>👤</div>}
-                                            <div style={{fontWeight: 800, color: '#334155'}}>@{u.username}</div>
-                                        </div>
-                                    ));
-                                })()}
+         
+    const [viewMode, setViewMode] = useState('GRID'); // 'GRID' or 'REELS'
+    const [selectedPostModal, setSelectedPostModal] = useState(null); // Post for Instagram Detail Modal
+    const [commentDrawerPost, setCommentDrawerPost] = useState(null); // Post for Comment Drawer
+    const [newCommentText, setNewCommentText] = useState('');
+
+    const handleAddComment = async (postId) => {
+        if (!newCommentText.trim() || !activeUser) return;
+        const commentObj = {
+            id: Date.now().toString(),
+            userId: activeUser.uid,
+            userName: activeUser.name || 'Gözde Şef',
+            username: activeUser.username || 'anonim',
+            userPhoto: activeUser.photoURL || '',
+            text: newCommentText.trim(),
+            timestamp: Date.now()
+        };
+
+        const postRef = doc(db, 'posts', postId);
+        await updateDoc(postRef, {
+            comments: arrayUnion(commentObj)
+        });
+
+        // Update local states
+        const targetPost = feedPosts.find(p => p.id === postId);
+        if (targetPost) {
+            targetPost.comments = [...(targetPost.comments || []), commentObj];
+            if (selectedPostModal?.id === postId) {
+                setSelectedPostModal({...targetPost});
+            }
+            if (commentDrawerPost?.id === postId) {
+                setCommentDrawerPost({...targetPost});
+            }
+        }
+
+        // Notify post owner if different
+        if (targetPost && targetPost.userId !== activeUser.uid) {
+            const ownerRef = doc(db, 'users', targetPost.userId);
+            await updateDoc(ownerRef, {
+                notifications: arrayUnion({
+                    id: Date.now().toString(),
+                    type: 'COMMENT',
+                    text: '@' + (activeUser.username || 'Bir şef') + ' gönderinize yorum yaptı: "' + newCommentText.trim().slice(0, 30) + '..."',
+                    timestamp: Date.now()
+                })
+            });
+        }
+
+        setNewCommentText('');
+    };
+
+    
+    const renderFeedScreen = () => {
+        let visiblePosts = feedPosts.filter(p => {
+            if (p.userId === activeUser.uid) return true;
+            const postOwner = allUsers.find(u => u.id === p.userId);
+            if (!postOwner) return true;
+            if (myProfile?.blocked?.includes(postOwner.id)) return false;
+            if (postOwner.blocked?.includes(activeUser.uid)) return false;
+            if (postOwner.isPrivate && !(myProfile?.follows?.includes(postOwner.id))) return false;
+            return true; 
+        });
+
+        return (
+            <div style={{position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, width: '100vw', height: '100vh', zIndex: 99999, background: '#000000', overflow: 'hidden'}}>
+                {/* YUKARIDAKİ SOL GERİ DÖN BUTONU */}
+                <button 
+                    onClick={() => setSubTab('MY_PROFILE')}
+                    style={{
+                        position: 'absolute', top: '20px', left: '20px', zIndex: 100000, 
+                        background: 'rgba(0, 0, 0, 0.6)', backdropFilter: 'blur(10px)', 
+                        color: 'white', border: '1px solid rgba(255, 255, 255, 0.25)', 
+                        padding: '10px 18px', borderRadius: '30px', fontSize: '13px', 
+                        fontWeight: 900, cursor: 'pointer', display: 'flex', alignItems: 'center', 
+                        gap: '8px', boxShadow: '0 4px 15px rgba(0,0,0,0.5)', transition: '0.2s'
+                    }}
+                >
+                    ← Eğlence Serüveni
+                </button>
+
+                {visiblePosts.length === 0 ? (
+                    <div style={{textAlign: 'center', color: '#64748B', display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh', width: '100vw'}}>
+                        Henüz hiçbir gönderi paylaşılmamış. İlk paylaşan şef sen ol!
+                    </div>
+                ) : (
+                    /* 🎬 DIKEY AKIŞ (PURE FULL-SCREEN VERTICAL REELS) */
+                    <div className="feed-scroll-container" style={{overflowY: 'scroll', scrollSnapType: 'y mandatory', WebkitOverflowScrolling: 'touch', width: '100vw', height: '100vh', margin: 0, padding: 0, background: '#000000'}}>
+                        {visiblePosts.map(post => {
+                            const isLikedByMe = post.likes?.includes(activeUser.uid);
+                            return (
+                                <div key={post.id} style={{scrollSnapAlign: 'start', scrollSnapStop: 'always', height: '100vh', width: '100vw', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', background: '#000000', margin: 0, padding: 0}}>
+                                     {post.images && post.images.length > 0 ? (
+                                          <div style={{display: 'flex', width: '100%', height: '100%', overflowX: 'auto', scrollSnapType: 'x mandatory'}}>
+                                              {post.images.map((imgUrl, i) => (
+                                                  <div key={i} style={{minWidth: '100%', width: '100%', flexShrink: 0, height: '100%', scrollSnapAlign: 'center', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                                                      <img src={getHighResPhotoUrl(imgUrl)} alt="post" onClick={() => setEnlargedPhoto(getHighResPhotoUrl(imgUrl))} style={{width: '100%', height: '100%', objectFit: 'cover', background: '#000000', cursor: 'zoom-in'}} />
+                                                      {post.images.length > 1 && (
+                                                          <div style={{position: 'absolute', top: '25px', right: '20px', background: 'rgba(0,0,0,0.6)', color: 'white', padding: '5px 12px', borderRadius: '12px', fontSize: '12px', fontWeight: 900}}>
+                                                              {i + 1} / {post.images.length}
+                                                          </div>
+                                                      )}
+                                                  </div>
+                                              ))}
+                                          </div>
+                                      ) : (
+                                          <video 
+                                              src={post.videoURL} 
+                                              controls 
+                                              playsInline 
+                                              style={{width: '100%', height: '100%', objectFit: 'cover', background: 'black'}} 
+                                          />
+                                      )}
+                                     
+                                     {/* SOL ALT: PROFİL + AÇIKLAMA */}
+                                     <div style={{position: 'absolute', bottom: '30px', left: '20px', right: '80px', color: 'white', textShadow: '0 2px 5px rgba(0,0,0,0.9)', zIndex: 10000}}>
+                                         <div style={{fontWeight: 900, fontSize: '17px', display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap'}}>
+                                             <div onClick={() => {
+                                                  const pOwner = allUsers.find(u => u.id === post.userId) || {id: post.userId, username: post.username, name: post.userName, photoURL: post.userPhoto};
+                                                  openProfile(pOwner);
+                                              }} style={{display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer'}}>
+                                                {post.userPhoto ? <img src={getHighResPhotoUrl(post.userPhoto)} alt="p" style={{width:'40px', height:'40px', borderRadius:'50%', border: '2px solid white', objectFit: 'cover'}} /> : <span style={{fontSize:'28px'}}>👤</span>}
+                                                @{post.username || (post.userName||'').replace(/\s+/g, '')}
+                                             </div>
+                                             
+                                             {post.userId !== activeUser.uid && (
+                                                 <button 
+                                                     onClick={() => handleFollow(post.userId, myProfile?.follows?.includes(post.userId))}
+                                                     style={{
+                                                         padding: '5px 14px', borderRadius: '20px', border: '1px solid white', 
+                                                         background: myProfile?.follows?.includes(post.userId) ? 'rgba(255,255,255,0.2)' : '#EC4899', 
+                                                         color: 'white', fontWeight: 900, fontSize: '12px', cursor: 'pointer', transition: '0.2s', marginLeft: '5px', backdropFilter: 'blur(5px)'
+                                                     }}>
+                                                     {myProfile?.follows?.includes(post.userId) ? '✓ Takipte' : 'Takip Et +'}
+                                                 </button>
+                                             )}
+                                         </div>
+                                         {post.caption && <div style={{fontSize: '14px', marginTop: '10px', lineHeight: '1.4', fontWeight: 500, background: 'rgba(0,0,0,0.3)', padding: '8px 12px', borderRadius: '12px', backdropFilter: 'blur(4px)', display: 'inline-block'}}>{post.caption}</div>}
+                                     </div>
+
+                                     {/* SAĞ ALT: SADECE BEĞENİ VE YORUM */}
+                                     <div style={{position: 'absolute', bottom: '40px', right: '20px', display: 'flex', flexDirection: 'column', gap: '22px', alignItems: 'center', zIndex: 10000}}>
+                                         {/* BEĞENİ ❤️ */}
+                                         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', cursor: 'pointer'}} onClick={async () => {
+                                               const pRef = doc(db, 'posts', post.id);
+                                               if (isLikedByMe) {
+                                                   await updateDoc(pRef, { likes: arrayRemove(activeUser.uid) });
+                                               } else {
+                                                   await updateDoc(pRef, { likes: arrayUnion(activeUser.uid) });
+                                                   if (post.userId !== activeUser.uid) {
+                                                       const targetUserRef = doc(db, 'users', post.userId);
+                                                       await updateDoc(targetUserRef, {
+                                                           notifications: arrayUnion({
+                                                               id: Date.now().toString(),
+                                                               type: 'LIKE',
+                                                               text: '@' + (activeUser.username || 'Bir şef') + ' gönderinizi beğendi!',
+                                                               timestamp: Date.now()
+                                                           })
+                                                       });
+                                                   }
+                                               }
+                                         }}>
+                                             <div style={{width: '50px', height: '50px', borderRadius: '50%', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(10px)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(255,255,255,0.2)', boxShadow: '0 4px 10px rgba(0,0,0,0.4)'}}>
+                                                 <span style={{fontSize: '26px'}}>{isLikedByMe ? '❤️' : '🤍'}</span>
+                                             </div>
+                                             <span style={{color: 'white', fontSize: '12px', fontWeight: 900, marginTop: '4px', textShadow: '0 1px 3px rgba(0,0,0,0.8)'}}>{post.likes?.length || 0}</span>
+                                         </div>
+
+                                         {/* YORUM 💬 */}
+                                         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', cursor: 'pointer'}} onClick={() => setCommentDrawerPost(post)}>
+                                             <div style={{width: '50px', height: '50px', borderRadius: '50%', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(10px)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(255,255,255,0.2)', boxShadow: '0 4px 10px rgba(0,0,0,0.4)'}}>
+                                                 <span style={{fontSize: '24px'}}>💬</span>
+                                             </div>
+                                             <span style={{color: 'white', fontSize: '12px', fontWeight: 900, marginTop: '4px', textShadow: '0 1px 3px rgba(0,0,0,0.8)'}}>{post.comments?.length || 0}</span>
+                                         </div>
+                                     </div>
+                                </div>
+                            );
+                        })}
+                    </div>
+                )}
+
+                {/* 💬 YORUMLAR MODALI (COMMENT DRAWER) */}
+                {commentDrawerPost && (
+                    <div 
+                        style={{position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.7)', zIndex: 200000, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', backdropFilter: 'blur(8px)'}}
+                        onClick={() => setCommentDrawerPost(null)}
+                    >
+                        <div 
+                            style={{background: 'white', width: '100%', maxWidth: '500px', height: '75vh', borderTopLeftRadius: '24px', borderTopRightRadius: '24px', padding: '20px', display: 'flex', flexDirection: 'column', boxShadow: '0 -10px 30px rgba(0,0,0,0.3)'}}
+                            onClick={e => e.stopPropagation()}
+                        >
+                            {/* Yorumlar Başlığı */}
+                            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '12px', borderBottom: '1px solid #E2E8F0'}}>
+                                <h3 style={{margin: 0, fontSize: '17px', color: '#1E293B', fontWeight: 900}}>💬 Yorumlar ({commentDrawerPost.comments?.length || 0})</h3>
+                                <button onClick={() => setCommentDrawerPost(null)} style={{background: 'none', border: 'none', fontSize: '22px', cursor: 'pointer', color: '#64748B', fontWeight: 800}}>✕</button>
+                            </div>
+
+                            {/* Yorumlar Listesi */}
+                            <div style={{flex: 1, overflowY: 'auto', padding: '15px 0', display: 'flex', flexDirection: 'column', gap: '15px'}}>
+                                {(!commentDrawerPost.comments || commentDrawerPost.comments.length === 0) ? (
+                                    <div style={{textAlign: 'center', color: '#94A3B8', margin: '40px 0'}}>Henüz yorum yapılmamış. İlk yorumu sen ekle!</div>
+                                ) : (
+                                    commentDrawerPost.comments.map(c => {
+                                        const cTime = c.timestamp ? new Date(c.timestamp).toLocaleTimeString('tr-TR', {hour: '2-digit', minute: '2-digit'}) : '';
+                                        return (
+                                            <div key={c.id || Math.random()} style={{display: 'flex', gap: '12px', alignItems: 'flex-start'}}>
+                                                {c.userPhoto ? <img src={getHighResPhotoUrl(c.userPhoto)} alt="" style={{width: '36px', height: '36px', borderRadius: '50%', objectFit: 'cover'}} /> : <div style={{width: '36px', height: '36px', borderRadius: '50%', background: '#F1F5F9', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>👤</div>}
+                                                <div style={{background: '#F8FAFC', padding: '10px 14px', borderRadius: '16px', flex: 1, border: '1px solid #F1F5F9'}}>
+                                                    <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px'}}>
+                                                        <span style={{fontWeight: 800, fontSize: '13px', color: '#1E293B'}}>@{c.username || c.userName}</span>
+                                                        <span style={{fontSize: '10px', color: '#94A3B8'}}>{cTime}</span>
+                                                    </div>
+                                                    <div style={{fontSize: '13px', color: '#334155', lineHeight: '1.4'}}>{c.text}</div>
+                                                </div>
+                                            </div>
+                                        );
+                                    })
+                                )}
+                            </div>
+
+                            {/* Yorum Yazma Alanı */}
+                            <div style={{display: 'flex', gap: '10px', paddingTop: '12px', borderTop: '1px solid #E2E8F0'}}>
+                                <input 
+                                    type="text" 
+                                    placeholder="Düşüncelerini paylaş..." 
+                                    value={newCommentText} 
+                                    onChange={e => setNewCommentText(e.target.value)}
+                                    onKeyDown={e => e.key === 'Enter' && handleAddComment(commentDrawerPost.id)}
+                                    style={{flex: 1, padding: '12px 15px', borderRadius: '20px', border: '1px solid #E2E8F0', outline: 'none', background: '#F8FAFC', fontSize: '13px'}}
+                                />
+                                <button 
+                                    onClick={() => handleAddComment(commentDrawerPost.id)}
+                                    style={{background: '#3B82F6', color: 'white', border: 'none', padding: '10px 18px', borderRadius: '20px', fontWeight: 800, fontSize: '13px', cursor: 'pointer', boxShadow: '0 4px 10px rgba(59,130,246,0.3)'}}
+                                >
+                                    Gönder
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -924,7 +937,8 @@ export default function SocialFlow({ activeUser, setActiveUser }) {
         );
     };
 
-   const renderNotificationsScreen = () => {
+
+const renderNotificationsScreen = () => {
        const reqs = allUsers.filter(u => myProfile?.requests?.includes(u.id));
        const chatGivers = allUsers.filter(u => myProfile?.unreadCount?.includes(u.id));
        
@@ -1048,16 +1062,26 @@ export default function SocialFlow({ activeUser, setActiveUser }) {
    };
 
    return (
-       <div style={{display:'flex', flexDirection:'column', height:'calc(100vh - 80px)', width:'100%', background: '#F8FAFC'}}>
-           {/* ÜST BAŞLIK */}
-           <div style={{padding: '15px 20px', background: '#1E293B', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
-               <div style={{fontWeight: 900, fontSize: '20px'}}>🎬 Eğlence Serüveni</div>
+       <div style={{position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: 99999, display:'flex', flexDirection:'column', height:'100vh', width:'100vw', background: '#0F172A', overflow: 'hidden'}}>
+           {/* ÜST BAŞLIK & GERİ ÇIKMA BUTONU */}
+           <div style={{padding: '12px 18px', background: '#0F172A', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid #1E293B', flexShrink: 0}}>
+               <button 
+                  onClick={onBack} 
+                  style={{background: 'rgba(255,255,255,0.15)', color: 'white', border: 'none', padding: '8px 16px', borderRadius: '20px', fontWeight: 800, cursor: 'pointer', fontSize: '13px', display: 'flex', alignItems: 'center', gap: '6px', backdropFilter: 'blur(6px)'}}
+               >
+                  ← Geri Dön
+               </button>
+               <div style={{fontWeight: 900, fontSize: '17px', display: 'flex', alignItems: 'center', gap: '6px'}}>
+                  🎬 Eğlence Serüveni
+               </div>
+               <div style={{width: '85px'}}></div>
            </div>
 
            {/* İÇERİK EKRANLARI */}
            <div style={{flex:1, overflowY: (subTab === 'FEED' && feedMode === 'WATCH') ? 'hidden' : 'auto', padding: (subTab === 'FEED' && feedMode === 'WATCH') ? '0' : '0 15px', paddingBottom: (subTab === 'FEED' && feedMode === 'WATCH') ? '0' : '70px'}}>
                {subTab === 'MY_PROFILE' && renderMyProfileScreen()}
                {subTab === 'FEED' && renderFeedScreen()}
+                {subTab === 'SEARCH' && renderSearchScreen()}
                {subTab === 'CHAT' && (
                   <div style={{padding: '10px 0', height: '100%', display: 'flex', flexDirection: 'column'}}>
                      {!selectedChatUser ? (
@@ -1183,9 +1207,9 @@ export default function SocialFlow({ activeUser, setActiveUser }) {
            )}
 
            {/* ALT ALT-MENÜ (SUB-NAVBAR) */}
-           <div style={{position: 'fixed', bottom: '75px', left: '0', right: '0', margin: '0 auto', maxWidth: '600px', zIndex: 90, display:'flex', justifyContent:'space-around', padding:'10px', background:'white', borderTop: '1px solid #E2E8F0', boxShadow: '0 -4px 6px -1px rgba(0, 0, 0, 0.05)'}}>
-               <button onClick={()=>setSubTab('MY_PROFILE')} style={{background: subTab==='MY_PROFILE' ? '#3B82F6':'transparent', color: subTab==='MY_PROFILE'?'white':'#64748B', border:'none', padding:'10px', borderRadius:'12px', fontWeight:600, flex: 1, margin: '0 2px', cursor: 'pointer', transition: '0.2s'}}>👤 Profil</button>
-               <button onClick={()=>setSubTab('FEED')} style={{background: subTab==='FEED' ? '#3B82F6':'transparent', color: subTab==='FEED'?'white':'#64748B', border:'none', padding:'10px', borderRadius:'12px', fontWeight:600, flex: 1, margin: '0 2px', cursor: 'pointer', transition: '0.2s'}}>🌍 Keşfet</button>
+           <div style={{position: 'fixed', bottom: '0px', left: '0', right: '0', margin: '0 auto', maxWidth: '600px', zIndex: 90, display:'flex', justifyContent:'space-around', padding:'10px', background: (subTab === 'FEED' && feedMode === 'WATCH') ? 'rgba(15, 23, 42, 0.95)' : 'white', backdropFilter: 'blur(12px)', borderTop: (subTab === 'FEED' && feedMode === 'WATCH') ? '1px solid rgba(255,255,255,0.1)' : '1px solid #E2E8F0', boxShadow: '0 -4px 6px -1px rgba(0, 0, 0, 0.05)', transition: 'background 0.3s ease'}}>
+               <button onClick={()=>setSubTab('MY_PROFILE')} style={{background: subTab==='MY_PROFILE' ? '#3B82F6':'transparent', color: subTab==='MY_PROFILE'?'white': ((subTab === 'FEED' && feedMode === 'WATCH') ? '#94A3B8' : '#64748B'), border:'none', padding:'10px', borderRadius:'12px', fontWeight:600, flex: 1, margin: '0 2px', cursor: 'pointer', transition: '0.2s'}}>👤 Profil</button>
+               <button onClick={()=>{ setSubTab('FEED'); setFeedMode('WATCH'); }} style={{background: (subTab==='FEED' && feedMode==='WATCH') ? '#3B82F6':'transparent', color: (subTab==='FEED' && feedMode==='WATCH') ? 'white' : ((subTab === 'FEED' && feedMode === 'WATCH') ? '#94A3B8' : '#64748B'), border:'none', padding:'10px', borderRadius:'12px', fontWeight:600, flex: 1, margin: '0 2px', cursor: 'pointer', transition: '0.2s'}}>🌍 Keşfet</button>
                <button onClick={()=>setSubTab('CHAT')} style={{background: subTab==='CHAT' ? '#3B82F6':'transparent', color: subTab==='CHAT'?'white':'#64748B', border:'none', padding:'10px', borderRadius:'12px', fontWeight:600, flex: 1, margin: '0 2px', cursor: 'pointer', transition: '0.2s'}}>💬 Sohbet</button>
                <button onClick={()=>setSubTab('NOTIFY')} style={{position: 'relative', background: subTab==='NOTIFY' ? '#3B82F6':'transparent', color: subTab==='NOTIFY'?'white':'#64748B', border:'none', padding:'10px', borderRadius:'12px', fontWeight:600, flex: 1, margin: '0 2px', cursor: 'pointer', transition: '0.2s'}}>
                   🔔 Bildirim
@@ -1195,7 +1219,7 @@ export default function SocialFlow({ activeUser, setActiveUser }) {
                      </span>
                   )}
                </button>
-               <button onClick={()=>setSubTab('FOLLOW')} style={{background: subTab==='FOLLOW' ? '#3B82F6':'transparent', color: subTab==='FOLLOW'?'white':'#64748B', border:'none', padding:'10px', borderRadius:'12px', fontWeight:600, flex: 1, margin: '0 2px', cursor: 'pointer', transition: '0.2s'}}>👥 Şeflerim</button>
+               <button onClick={()=>setSubTab('SEARCH')} style={{background: subTab==='SEARCH' ? '#3B82F6':'transparent', color: subTab==='SEARCH'?'white': ((subTab === 'FEED') ? '#94A3B8' : '#64748B'), border:'none', padding:'10px', borderRadius:'12px', fontWeight:600, flex: 1, margin: '0 2px', cursor: 'pointer', transition: '0.2s'}}>🔍 Şef Bul</button>
                <button onClick={()=>setSubTab('UPLOAD')} style={{background: subTab==='UPLOAD' ? '#EC4899':'transparent', color: subTab==='UPLOAD'?'white':'#64748B', border:'none', padding:'10px', borderRadius:'12px', fontWeight:600, flex: 1, margin: '0 2px', cursor: 'pointer', transition: '0.2s'}}>🎬</button>
            </div>
         </div>
