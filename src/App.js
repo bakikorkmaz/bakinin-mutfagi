@@ -963,7 +963,7 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
   return (
     <>
       <header className="app-header">
-        <h1 className="app-title" onClick={handleTitleClick}>Baki'nin Mutfağı</h1>
+        <h1 className="app-title" onClick={handleTitleClick}>Sofranın Kurtarıcısı <span style={{fontSize: '0.65em', opacity: 0.88, fontWeight: 500}}>(Meal Saver)</span></h1>
       </header>
 
       {showConfetti && <Confetti />}
