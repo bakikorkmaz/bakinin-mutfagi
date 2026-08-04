@@ -1234,7 +1234,6 @@ const renderNotificationsScreen = () => {
                                      </div>
                                  </div>
                              </div>
-                             
                              {/* MESAJ GEÇMİŞİ */}
                              <div style={{flex: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '15px', padding: '10px'}}>
                                  {chatMessages.length === 0 && (
@@ -1245,9 +1244,11 @@ const renderNotificationsScreen = () => {
                                      </div>
                                  )}
                                  {chatMessages.map(m => {
-                                     const isMe = m.senderId === activeUser.uid;
+                                     const currentUid = activeUser?.uid || activeUser?.id || 'guest';
+                                     const currentEmail = activeUser?.email || '';
+                                     const isMe = m.senderId === currentUid;
                                      const timeString = m.timestamp ? new Date(m.timestamp).toLocaleTimeString('tr-TR', {hour: '2-digit', minute:'2-digit'}) : 'Anlık';
-                                     const canDelete = isMe || activeUser.email === "yusufkorqmaz79@gmail.com";
+                                     const canDelete = isMe || currentEmail === "yusufkorqmaz79@gmail.com";
                                      const reactionsMap = m.reactions || {};
                                      const reactionEntries = Object.entries(reactionsMap);
                                      const isPickerOpen = reactionPickerMsgId === m.id;
