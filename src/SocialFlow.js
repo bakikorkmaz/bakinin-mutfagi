@@ -1326,30 +1326,15 @@ const renderNotificationsScreen = () => {
                                  <div ref={chatEndRef} />
                              </div>
                              
-                             {/* GİRDİ ALANI */}
+                             {/* GİRDİ ALANI (Sadece Metin + Gönder) */}
                              <div style={{display: 'flex', gap: '8px', padding: '10px', background: 'white', borderRadius: '24px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)', border: '1px solid #E2E8F0', position: 'sticky', bottom: 0, zIndex: 50, alignItems: 'center'}}>
-                                 <label style={{background: '#F1F5F9', color: '#3B82F6', width: '42px', height: '42px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px', cursor: 'pointer', flexShrink: 0}}>
-                                     📸
-                                     <input type="file" accept="image/*" onChange={handleSendChatPhoto} style={{display: 'none'}} />
-                                 </label>
-
-                                 {!isRecording ? (
-                                     <button onClick={startVoiceRecording} title="Sesli Mesaj Kaydet" style={{background: '#FEF2F2', color: '#EF4444', border: '1px solid #FCA5A5', width: '42px', height: '42px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px', cursor: 'pointer', flexShrink: 0}}>
-                                         🎙️
-                                     </button>
-                                 ) : (
-                                     <button onClick={stopVoiceRecording} style={{background: '#EF4444', color: 'white', border: 'none', padding: '8px 14px', borderRadius: '20px', display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12px', fontWeight: 800, cursor: 'pointer', flexShrink: 0, animation: 'pulse 1s infinite'}}>
-                                         🔴 {recordingTime}s (Durdur & Gönder)
-                                     </button>
-                                 )}
-
                                  <input 
                                      type="text" 
                                      value={msgText} 
                                      onChange={e => setMsgText(e.target.value)} 
                                      onKeyDown={e => e.key === 'Enter' && handleSendMessage()} 
                                      placeholder="Mesajınızı yazın..." 
-                                     style={{flex: 1, padding: '12px 16px', border: 'none', outline: 'none', background: 'transparent', fontSize: '14px', color: '#0F172A'}} 
+                                     style={{flex: 1, padding: '12px 16px', border: 'none', outline: 'none', background: 'transparent', fontSize: '15px', color: '#0F172A'}} 
                                  />
 
                                  <button onClick={handleSendMessage} style={{background: '#10B981', color: 'white', border: 'none', borderRadius: '50%', width: '42px', height: '42px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', flexShrink: 0, fontWeight: 900, boxShadow: '0 4px 10px rgba(16,185,129,0.3)'}}>
