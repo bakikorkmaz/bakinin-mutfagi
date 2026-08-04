@@ -2625,16 +2625,20 @@ function AdminDashboard({ setView, activeUser }) {
                                         <input 
                                             type="text" 
                                             defaultValue={mData.customUrl || ''} 
-                                            placeholder="Partnerden aldığınız özel linki yapıştırın (Örn: https://market.com/cart?items={QUERY}&aff_id=BAKI123)" 
+                                            placeholder="Partnerden aldığınız web / arama linkini yapıştırın (Örn: https://www.migros.com.tr/arama)" 
                                             onChange={(e) => {
                                                 const current = JSON.parse(localStorage.getItem('baki_market_links') || '{}');
-                                                current[m.code] = { ...(current[m.code] || { enabled: true }), customUrl: e.target.value };
+                                                let val = e.target.value.trim();
+                                                 if (val && !val.includes('{QUERY}')) {
+                                                     val = val.endsWith('=') ? val + '{QUERY}' : (val.includes('?') ? val + '&q={QUERY}' : val + '?q={QUERY}');
+                                                 }
+                                                 current[m.code] = { ...(current[m.code] || { enabled: true }), customUrl: val };
                                                 localStorage.setItem('baki_market_links', JSON.stringify(current));
                                             }}
                                             style={{flex: 1, padding: '10px 14px', border: '1px solid #CBD5E1', borderRadius: '10px', fontSize: '12px', outline: 'none', background: 'white'}}
                                         />
                                     </div>
-                                    <div style={{fontSize: '11px', color: '#94A3B8'}}>💡 Not: Link içerisine <b>{'{QUERY}'}</b> yazdığınız yere kullanıcının evinde olmayan malzemeler otomatik yerleştirilir.</div>
+                                    <div style={{fontSize: '11px', color: '#94A3B8'}}>✨ <b>Kolay Kurulum:</b> Siz sadece anlaştığınız marketin linkini yapıştırın! Sistem kullanıcının evinde olmayan tüm eksik malzemeleri otomatik olarak sepete yerleştirecektir.</div>
                                 </div>
                             );
                         })}
