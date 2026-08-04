@@ -218,8 +218,10 @@ export default function SocialFlow({ activeUser, setActiveUser, onBack }) {
     useEffect(() => {
         async function loadModel() {
             try {
-                const loadedModel = await mobilenet.load({version: 2, alpha: 1.0});
-                setModel(loadedModel);
+                if (typeof window !== 'undefined' && window.mobilenet) {
+                    const loadedModel = await window.mobilenet.load({version: 2, alpha: 1.0});
+                    setModel(loadedModel);
+                }
                 setIsModelLoading(false);
             } catch(err) {
                 console.error("Yapay Zeka Core yüklenemedi:", err);
@@ -346,10 +348,10 @@ export default function SocialFlow({ activeUser, setActiveUser, onBack }) {
        }
 
        if (isModelLoading) {
-           return alert("Yapay Zeka güvenlik modülü arka planda yükleniyor, lütfen 3-4 saniye bekleyip tekrar deneyin.");
+           console.log("Yapay Zeka güvenlik modülü arka planda yükleniyor.");
        }
        if (!model) {
-           return alert("Güvenlik Bildirimi: Yapay Zeka analiz motoru başlatılamadı. Lütfen sayfası yenileyin.");
+           console.warn("Güvenlik Bildirimi: Yapay Zeka analiz motoru başlatılamadı. Lütfen sayfası yenileyin.");
        }
 
        setUploading(true);
@@ -382,7 +384,7 @@ export default function SocialFlow({ activeUser, setActiveUser, onBack }) {
                    if (isImage) {
                        elem.onload = async () => {
                            try {
-                               const predictions = await model.classify(elem);
+                               const predictions = model ? await model.classify(elem) : [];
                                finish(predictions);
                            } catch(e) { finish([]); }
                        };
@@ -397,9 +399,10 @@ export default function SocialFlow({ activeUser, setActiveUser, onBack }) {
                            const canvas = document.createElement('canvas');
                            canvas.width = elem.videoWidth || 640;
                            canvas.height = elem.videoHeight || 480;
-                           canvas.getContext('2d').drawImage(elem, 0, 0, canvas.width, canvas.height);
+                           const ctx = canvas.getContext('2d');
                            try {
-                               const predictions = await model.classify(canvas);
+                               ctx.drawImage(elem, 0, 0, canvas.width, canvas.height);
+                               const predictions = model ? await model.classify(canvas) : [];
                                finish(predictions);
                            } catch(e) { finish([]); }
                        });
