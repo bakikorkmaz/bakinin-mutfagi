@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bakinin-mutfagi-v2';
+const CACHE_NAME = 'bakinin-mutfagi-v3.5-1785802189792';
 const urlsToCache = [
   './',
   './index.html',
