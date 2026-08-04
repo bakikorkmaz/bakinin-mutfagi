@@ -517,10 +517,21 @@ export default function SocialFlow({ activeUser, setActiveUser, onBack }) {
     const handleSendMessage = async () => {
         if (!msgText.trim()) return;
         const currentUid = activeUser?.uid || activeUser?.id;
+        const currentEmail = activeUser?.email || '';
         const targetId = selectedChatUser?.id || selectedChatUser?.uid;
         if (!currentUid || !targetId) {
             return alert("Sohbet edebilmek için Google veya kullanıcı hesabınızla giriş yapmış olmalısınız.");
         }
+
+        // Kural: yusufkorqmaz79@gmail.com hariç, alıcı (targetUser) göndericiyi (activeUser) takip etmiyorsa mesaj gönderilemez!
+        const isAdmin = currentEmail === "yusufkorqmaz79@gmail.com";
+        const targetFollowers = selectedChatUser?.followers || [];
+        const doesTargetFollowMe = targetFollowers.includes(currentUid);
+
+        if (!isAdmin && !doesTargetFollowMe) {
+            return alert("🚫 Bu kullanıcı sizi takip etmeden mesaj atamazsınız.");
+        }
+
         try {
             const chatId = [currentUid, targetId].sort().join('_');
             await addDoc(collection(db, 'chats', chatId, 'messages'), {
