@@ -617,10 +617,9 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
   const getCookHistory = () => JSON.parse(localStorage.getItem(cookHistoryKey) || '[]');
   
   const currentReward = React.useMemo(() => {
-      const validRewards = REWARDS.filter(r => moneySaved >= r.min && moneySaved <= r.max);
-      if(validRewards.length === 0) return null;
-      return validRewards[rewardSeed % validRewards.length];
-  }, [moneySaved, rewardSeed]);
+      if (!REWARDS || REWARDS.length === 0) return null;
+      return REWARDS[rewardSeed % REWARDS.length];
+  }, [rewardSeed]);
 
   useEffect(() => {
      if (window.appBus) {
@@ -964,14 +963,36 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
           </div>
         </div>
 
-        {currentReward && moneySaved > 0 && (
-           <div onClick={(e) => { e.stopPropagation(); }} style={{marginTop: '12px', background: 'rgba(255,255,255,0.95)', padding: '10px 14px', borderRadius: '12px', color: '#1E293B', display: 'flex', alignItems: 'center', gap: '10px', boxShadow: '0 4px 10px rgba(0,0,0,0.08)', cursor: 'default', transition: '0.2s'}}>
-              <div style={{fontSize: '22px'}}>💡</div>
+        {currentReward && (
+           <div 
+              onClick={(e) => { e.stopPropagation(); e.preventDefault(); }} 
+              onTouchEnd={(e) => { e.stopPropagation(); }}
+              style={{marginTop: '12px', background: 'rgba(255,255,255,0.95)', padding: '12px 14px', borderRadius: '14px', color: '#1E293B', display: 'flex', alignItems: 'center', gap: '10px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', cursor: 'default', transition: '0.2s'}}
+           >
+              <div style={{fontSize: '24px', flexShrink: 0}}>💡</div>
               <div style={{flex: 1}}>
-                 <div style={{fontSize: '10px', color: '#3B82F6', textTransform: 'uppercase', fontWeight: 900}}>Şefin Şımartma Tavsiyesi</div>
-                 <div style={{fontSize: '13px', fontWeight: 700, color: '#334155'}}>{currentReward.text}</div>
+                 <div style={{fontSize: '11px', color: '#2563EB', textTransform: 'uppercase', fontWeight: 900, display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap'}}>
+                    Şefin Şımartma Tavsiyesi 
+                    <span style={{fontSize: '9px', background: '#DBEAFE', color: '#1E40AF', padding: '2px 6px', borderRadius: '8px', fontWeight: 800}}>
+                       Alternatif {(rewardSeed % REWARDS.length) + 1}/{REWARDS.length}
+                    </span>
+                 </div>
+                 <div style={{fontSize: '13px', fontWeight: 700, color: '#334155', marginTop: '2px', lineHeight: '1.4'}}>{currentReward.text}</div>
               </div>
-              <button onClick={(e) => { e.stopPropagation(); setRewardSeed(s => s + 1); }} style={{background: '#EFF6FF', color: '#2563EB', border: 'none', width: '32px', minWidth: '32px', height: '32px', borderRadius: '50%', cursor: 'pointer', fontSize: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <button 
+                 onClick={(e) => { 
+                    e.stopPropagation(); 
+                    e.preventDefault(); 
+                    setRewardSeed(s => s + 1); 
+                 }} 
+                 onTouchEnd={(e) => {
+                    e.stopPropagation(); 
+                    e.preventDefault(); 
+                    setRewardSeed(s => s + 1); 
+                 }}
+                 title="Farklı Bir Tavsiye Göster 🔄"
+                 style={{background: '#EFF6FF', color: '#2563EB', border: '1px solid #BFDBFE', width: '38px', minWidth: '38px', height: '38px', borderRadius: '50%', cursor: 'pointer', fontSize: '18px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, boxShadow: '0 2px 6px rgba(37,99,235,0.2)'}}
+              >
                  🔄
               </button>
            </div>
