@@ -7,6 +7,7 @@ import { signInWithPopup, signInAnonymously } from 'firebase/auth';
 import { doc, setDoc, getDoc, updateDoc, collection, query, where, getDocs, onSnapshot, deleteDoc } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import SocialFlow from './SocialFlow';
+import DailyMenuFlow from './DailyMenuFlow';
 import { REWARDS } from './rewardsDb';
 import { validateUsername } from './utils/usernameValidation';
 const TRANSLATIONS = {
@@ -334,31 +335,94 @@ function App() {
 
   if (view === 'AUTH') {
     return (
-      <div className="App">
-        <div className="auth-container">
-          <h1 className="auth-logo">Baki'nin Mutfağı</h1>
-          <p className="auth-sub" style={{color: '#10B981', fontWeight: 600}}>SaaS v2.0 - Kimlik Doğrulama</p>
-
-          <div style={{display: 'flex', gap: '10px', marginBottom: '15px', width: '100%', maxWidth: '300px'}}>
-             <button style={{flex: 1, padding: '10px', borderRadius: '8px', border: 'none', background: isLoginMode ? '#1E293B' : '#E2E8F0', color: isLoginMode ? 'white' : '#64748B', fontWeight: 800, cursor: 'pointer', transition: '0.3s'}} onClick={() => setIsLoginMode(true)}>GİRİŞ YAP</button>
-             <button style={{flex: 1, padding: '10px', borderRadius: '8px', border: 'none', background: !isLoginMode ? '#10B981' : '#E2E8F0', color: !isLoginMode ? 'white' : '#64748B', fontWeight: 800, cursor: 'pointer', transition: '0.3s'}} onClick={() => setIsLoginMode(false)}>KAYDOL</button>
+      <div className="auth-wrapper">
+        <div className="auth-card">
+          <div className="auth-brand-badge">
+            <span>🍱</span> SOFRANIN KURTARICISI
           </div>
 
-          <div className="auth-form" style={{width: '100%', maxWidth: '300px'}}>
-            {!isLoginMode && (
-              <input type="text" placeholder="İsim Soyisim" className="auth-input" value={fullName} onChange={e=>setFullName(e.target.value)} />
-            )}
-            <input type="email" placeholder="E-posta Adresiniz" className="auth-input" value={email} onChange={e=>setEmail(e.target.value)} />
-            <input type="password" placeholder="Şifreniz" className="auth-input" value={password} onChange={e=>setPassword(e.target.value)} />
-            <button className="auth-btn" onClick={handleAuth}>{isLoginMode ? 'Giriş Yap' : 'Yeni Hesap Aç'}</button>
-          </div>
+          <h1 className="auth-main-title">Sofranın Kurtarıcısı</h1>
+          <p className="auth-sub-title">
+            Akıllı Gastronomi, Yemek Tarifleri ve Sosyal Keşfet Platformu
+          </p>
 
-          <div className="auth-divider">VEYA SOSYAL GİRİŞ (Firebase Aktif)</div>
-
-          <div className="social-btns">
-            <button className="social-btn google" onClick={() => handleSocialLogin(googleProvider, "Google")}>
-              G Google ile Devam Et
+          <div className="auth-tabs">
+            <button
+              className={`auth-tab-btn ${isLoginMode ? 'active' : ''}`}
+              onClick={() => setIsLoginMode(true)}
+            >
+              🔑 Giriş Yap
             </button>
+            <button
+              className={`auth-tab-btn ${!isLoginMode ? 'active' : ''}`}
+              onClick={() => setIsLoginMode(false)}
+            >
+              ✍️ Kaydol
+            </button>
+          </div>
+
+          <div className="auth-form-group">
+            {!isLoginMode && (
+              <div className="auth-input-wrapper">
+                <span className="auth-input-icon">👤</span>
+                <input
+                  type="text"
+                  placeholder="İsim Soyisim"
+                  className="auth-premium-input"
+                  value={fullName}
+                  onChange={e => setFullName(e.target.value)}
+                />
+              </div>
+            )}
+
+            <div className="auth-input-wrapper">
+              <span className="auth-input-icon">✉️</span>
+              <input
+                type="email"
+                placeholder="E-posta Adresiniz"
+                className="auth-premium-input"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+              />
+            </div>
+
+            <div className="auth-input-wrapper">
+              <span className="auth-input-icon">🔒</span>
+              <input
+                type="password"
+                placeholder="Şifreniz"
+                className="auth-premium-input"
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+              />
+            </div>
+
+            <button className="auth-primary-btn" onClick={handleAuth}>
+              <span>{isLoginMode ? 'Giriş Yap' : 'Hesabımı Oluştur'}</span>
+              <span>→</span>
+            </button>
+          </div>
+
+          <div className="auth-divider-line">
+            VEYA GÜVENLİ SOSYAL GİRİŞ
+          </div>
+
+          <button
+            className="social-btn-google-premium"
+            onClick={() => handleSocialLogin(googleProvider, "Google")}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.1c-.22-.66-.35-1.36-.35-2.1s.13-1.44.35-2.1V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.62z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+            </svg>
+            <span>Google ile Tek Tıkla Güvenli Giriş</span>
+          </button>
+
+          <div className="auth-security-footer">
+            <span>🔒</span>
+            <span>256-Bit SSL Şifreli Güvenli Oturum</span>
           </div>
         </div>
       </div>
@@ -514,6 +578,17 @@ function App() {
 // ========================
 // ANA UYGULAMA (DASHBOARD HUB)
 // ========================
+const PAMPERING_TIPS_APP = [
+    "🍨 Tasarrufunuzun ₺30'u ile menünün yanına 2 top antep fıstıklı hakiki Maraş dondurması ekleyin!",
+    "☕ Tasarrufunuzun ₺25'i ile yemeğin üstüne mis gibi köpüklü közde Türk kahvesi ve bitter çikolata keyfi yapın!",
+    "🍋 Tasarrufunuzun ₺20'si ile taze nane yaprakları ve limonla nefis buzlu ev limonatası hazırlayın!",
+    "🍓 Tasarrufunuzun ₺40'ı ile akşama hafif bisküvili taze çilekli magnolia kupları hazırlayın!",
+    "🧀 Tasarrufunuzun ₺35'i ile başlangıca tereyağlı fırınlanmış kaşarlı mantar jülyen ekleyin!",
+    "🥐 Tasarrufunuzun ₺45'i ile yemeğin sonuna akışkan çikolatalı ev suflesi katın!",
+    "🍊 Tasarrufunuzun ₺25'i ile günün menüsüne C vitamini deposu taze portakal suyu ekleyin!",
+    "🥖 Tasarrufunuzun ₺15'i ile çorbanın yanına nar gibi kızarmış sarımsaklı fırın ekmek hazırlayın!"
+];
+
 function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, staples }) {
   const [dashboardView, setDashboardView] = useState('HUB'); 
   const t = (key) => TRANSLATIONS[appLang] ? (TRANSLATIONS[appLang][key] || TRANSLATIONS['tr'][key]) : TRANSLATIONS['tr'][key];
@@ -936,22 +1011,41 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
 
 
 <div className="dashboard-grid-hub">
-        <div className="hub-card" onClick={() => { setDashboardView('FRIDGE'); setFridgeMains([]); }}>
+        {/* 🛒 DOLABIMDAKİLER */}
+        <div className="hub-card" onClick={() => { setDashboardView('FRIDGE'); setFridgeMains([]); }} style={{borderTop: '4px solid #10B981'}}>
+          <div className="hub-tag" style={{background: '#D1FAE5', color: '#047857'}}>DOLABIMDAKİLER</div>
           <div className="hub-icon">🛒</div>
           <div className="hub-title">{t('fridge')}</div>
           <div className="hub-desc">Evinizdeki malzemeleri seçin, onlara uygun efsane menüleri dökelim. YENİ: Dünya mutfağı filtreleme eklendi.</div>
         </div>
-        <div className="hub-card" onClick={() => { setDashboardView('WHEEL'); setWinningDish(null); setWheelItems(generateWheelItems('NO_FILTER')); }}>
+
+        {/* 🎡 ŞANS ÇARKI */}
+        <div className="hub-card" onClick={() => { setDashboardView('WHEEL'); setWinningDish(null); setWheelItems(generateWheelItems('NO_FILTER')); }} style={{borderTop: '4px solid #3B82F6'}}>
+          <div className="hub-tag" style={{background: '#DBEAFE', color: '#1D4ED8'}}>ŞANS ÇARKI</div>
           <div className="hub-icon">🎡</div>
           <div className="hub-title">{t('wheel')}</div>
           <div className="hub-desc">Filtreni seç, 13 yemeklik çarkı çevir! Evdeki malzemelerini listede işaretle, sisteme eksik pazar listesi ve hesabı çektir.</div>
         </div>
-        <div className="hub-card" onClick={() => setDashboardView('HEALTH')}>
+
+        {/* 🍱 GÜNÜN YEMEK MENÜSÜ */}
+        <div className="hub-card" onClick={() => setDashboardView('DAILY_MENU')} style={{borderTop: '4px solid #F59E0B'}}>
+          <div className="hub-tag" style={{background: '#FEF3C7', color: '#D97706'}}>GÜNLÜK MENÜ</div>
+          <div className="hub-icon">🍱</div>
+          <div className="hub-title">Günün Yemek Menüsü</div>
+          <div className="hub-desc">Diyetinize ve bütçenize özel her gün kendini tekrar etmeyen 5 kaplık menü önerisi üretir.</div>
+        </div>
+
+        {/* 👨‍👩‍👧‍👦 ÇAPRAZ REÇETELER */}
+        <div className="hub-card" onClick={() => setDashboardView('HEALTH')} style={{borderTop: '4px solid #EC4899'}}>
+          <div className="hub-tag" style={{background: '#FCE7F3', color: '#BE185D'}}>SAĞLIK & AİLE</div>
           <div className="hub-icon">👨‍👩‍👧‍👦</div>
           <div className="hub-title">{t('health')}</div>
           <div className="hub-desc">Aynı ana malzemeden hem diyete hem çocuklara uygun 2 farklı çapraz tarif üretir.</div>
         </div>
-        <div className="hub-card" onClick={() => { setDashboardView('WEEKLY'); setWeeklyPlan(null); }}>
+
+        {/* 📅 HAFTALIK PLAN */}
+        <div className="hub-card" onClick={() => { setDashboardView('WEEKLY'); setWeeklyPlan(null); }} style={{borderTop: '4px solid #8B5CF6'}}>
+          <div className="hub-tag" style={{background: '#EDE9FE', color: '#6D28D9'}}>HAFTALIK PLAN</div>
           <div className="hub-icon">📅</div>
           <div className="hub-title">{t('weekly')}</div>
           <div className="hub-desc">Sadece 2 soruyla, tüm hafta ne yiyeceğinizin planını yormadan otonom şekilde oluşturur.</div>
@@ -969,6 +1063,10 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
       {showConfetti && <Confetti />}
 
       {dashboardView === 'HUB' && renderHub()}
+
+      {dashboardView === 'DAILY_MENU' && (
+        <DailyMenuFlow onBack={() => setDashboardView('HUB')} openShopping={openShopping} acceptMenuAction={acceptMenuAction} />
+      )}
 
 
 
@@ -2378,7 +2476,150 @@ function AdminDashboard({ setView, activeUser }) {
                         </div>
                     </div>
                 </div>
+                
+                
+                {/* 🍱 GÜNÜN YEMEK MENÜSÜ ADMİN YÖNETİMİ & ŞEFİN ÖZEL MENÜSÜ */}
                 <div style={{background: 'white', padding: '20px', borderRadius: '16px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', marginBottom: '20px'}}>
+                    <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px'}}>
+                        <h3 style={{fontSize: '18px', color: '#1E293B', margin: 0, fontWeight: 900}}>🍱 Günün Yemek Menüsü Yönetimi (Şefin Özel Menüsü)</h3>
+                        <span style={{fontSize: '11px', background: '#FEF3C7', color: '#D97706', padding: '4px 10px', borderRadius: '20px', fontWeight: 800}}>ÖZEL YÖNETİCİ MENÜSÜ</span>
+                    </div>
+                    <p style={{fontSize: '13px', color: '#64748B', marginBottom: '15px', lineHeight: '1.5'}}>
+                        Günün Yemek Menüsü modunda kullanıcılara algoritmik menü yerine doğrudan sizin belirlediğiniz 5 kaplık özel günün menüsünü sunabilirsiniz.
+                    </p>
+
+                    {(() => {
+                        const savedMenu = JSON.parse(localStorage.getItem('baki_admin_daily_menu') || '{}');
+                        const isCustomActive = savedMenu.enabled || false;
+
+                        return (
+                            <div style={{display: 'flex', flexDirection: 'column', gap: '12px', background: '#F8FAFC', padding: '16px', borderRadius: '14px', border: '1px solid #E2E8F0'}}>
+                                <label style={{display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer', background: 'white', padding: '10px 14px', borderRadius: '12px', border: '1px solid #CBD5E1', width: 'fit-content'}}>
+                                    <input 
+                                        type="checkbox" 
+                                        defaultChecked={isCustomActive} 
+                                        onChange={(e) => {
+                                            const current = JSON.parse(localStorage.getItem('baki_admin_daily_menu') || '{}');
+                                            current.enabled = e.target.checked;
+                                            localStorage.setItem('baki_admin_daily_menu', JSON.stringify(current));
+                                        }} 
+                                        style={{width: '18px', height: '18px', accentColor: '#10B981'}}
+                                    />
+                                    <span style={{fontSize: '13px', fontWeight: 800, color: '#0F172A'}}>Özel Admin Günlük Menüsünü Uygulamada Aktif Et</span>
+                                </label>
+
+                                <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '10px', marginTop: '5px'}}>
+                                    <div>
+                                        <label style={{fontSize: '11px', fontWeight: 800, color: '#64748B'}}>1. ÇORBA</label>
+                                        <input type="text" id="admin_m_soup" defaultValue={savedMenu.soup || "Süzme Mercimek Çorbası"} placeholder="Çorba Adı" style={{width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid #CBD5E1', fontSize: '12px', marginTop: '4px'}} />
+                                    </div>
+                                    <div>
+                                        <label style={{fontSize: '11px', fontWeight: 800, color: '#64748B'}}>2. ANA YEMEK</label>
+                                        <input type="text" id="admin_m_main" defaultValue={savedMenu.main || "Hünkar Beğendi Kebap"} placeholder="Ana Yemek Adı" style={{width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid #CBD5E1', fontSize: '12px', marginTop: '4px'}} />
+                                    </div>
+                                    <div>
+                                        <label style={{fontSize: '11px', fontWeight: 800, color: '#64748B'}}>3. KARBONHİDRAT</label>
+                                        <input type="text" id="admin_m_carb" defaultValue={savedMenu.carb || "Tereyağlı Şehriyeli Pirinç Pilavı"} placeholder="Yan Yemek Adı" style={{width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid #CBD5E1', fontSize: '12px', marginTop: '4px'}} />
+                                    </div>
+                                    <div>
+                                        <label style={{fontSize: '11px', fontWeight: 800, color: '#64748B'}}>4. SALATA & MEZE</label>
+                                        <input type="text" id="admin_m_salad" defaultValue={savedMenu.salad || "Taze Mevsim Salatası"} placeholder="Salata Adı" style={{width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid #CBD5E1', fontSize: '12px', marginTop: '4px'}} />
+                                    </div>
+                                    <div>
+                                        <label style={{fontSize: '11px', fontWeight: 800, color: '#64748B'}}>5. TATLI</label>
+                                        <input type="text" id="admin_m_dessert" defaultValue={savedMenu.dessert || "Fırın Sütlaç"} placeholder="Tatlı Adı" style={{width: '100%', padding: '10px', borderRadius: '8px', border: '1px solid #CBD5E1', fontSize: '12px', marginTop: '4px'}} />
+                                    </div>
+                                </div>
+
+                                <button 
+                                    onClick={() => {
+                                        const soup = document.getElementById('admin_m_soup').value;
+                                        const main = document.getElementById('admin_m_main').value;
+                                        const carb = document.getElementById('admin_m_carb').value;
+                                        const salad = document.getElementById('admin_m_salad').value;
+                                        const dessert = document.getElementById('admin_m_dessert').value;
+                                        const current = JSON.parse(localStorage.getItem('baki_admin_daily_menu') || '{}');
+                                        
+                                        const updated = {
+                                            ...current,
+                                            soup, main, carb, salad, dessert,
+                                            updatedAt: new Date().toISOString()
+                                        };
+                                        localStorage.setItem('baki_admin_daily_menu', JSON.stringify(updated));
+                                        alert("🎉 Şefin Özel Günlük Menüsü başarıyla kaydedildi ve canlıya aktarıldı!");
+                                    }}
+                                    style={{padding: '12px 20px', background: '#10B981', color: 'white', border: 'none', borderRadius: '10px', fontWeight: 800, fontSize: '13px', cursor: 'pointer', marginTop: '10px', alignSelf: 'flex-start'}}
+                                >
+                                    💾 Şef Menüsünü Kaydet ve Aktif Et
+                                </button>
+                            </div>
+                        );
+                    })()}
+                </div>
+{/* 🛒 SÜPERMARKET ENTEGRASYONU & ÖZEL LINK YÖNETİMİ */}
+                <div style={{background: 'white', padding: '20px', borderRadius: '16px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', marginBottom: '20px'}}>
+                    <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px'}}>
+                        <h3 style={{fontSize: '18px', color: '#1E293B', margin: 0, fontWeight: 900}}>🛒 Süpermarket Sipariş Entegrasyonu & Partner Link Yönetimi</h3>
+                        <span style={{fontSize: '11px', background: '#DCFCE7', color: '#15803D', padding: '4px 10px', borderRadius: '20px', fontWeight: 800}}>CANLI SİPARİŞ APİ</span>
+                    </div>
+                    <p style={{fontSize: '13px', color: '#64748B', marginBottom: '15px', lineHeight: '1.5'}}>
+                        Kullanıcılar 'Pazar Listesi / Sepetteki Malzemeler' ekranında tek tıkla sipariş verebilsin diye istediğiniz markayı aktif/pasif yapabilir veya firmalarla anlaşıp aldığınız özel ortaklık / yönlendirme linkini aşağıya yapıştırabilirsiniz.
+                    </p>
+                    
+                    <div style={{display: 'flex', flexDirection: 'column', gap: '15px'}}>
+                        {[
+                            { code: 'migros', name: 'Migros Sanal Market', bg: '#FF6F00', color: 'white', icon: '🟠', defaultUrl: 'https://www.migros.com.tr/arama?q={QUERY}' },
+                            { code: 'a101', name: 'A101 Kapıda', bg: '#00A3E0', color: 'white', icon: '💙', defaultUrl: 'https://www.a101.com.tr/listefilter/?search_text={QUERY}' },
+                            { code: 'sok', name: 'ŞOK Cepte', bg: '#ED1C24', color: 'white', icon: '🟡', defaultUrl: 'https://www.ceptesok.com/arama?q={QUERY}' },
+                            { code: 'getir', name: 'Getir Market', bg: '#5C3EBC', color: 'white', icon: '🟣', defaultUrl: 'https://getir.com/search/?q={QUERY}' },
+                            { code: 'yemeksepeti', name: 'Yemeksepeti Market', bg: '#EA004B', color: 'white', icon: '🔴', defaultUrl: 'https://www.yemeksepeti.com/search?q={QUERY}' },
+                            { code: 'carrefour', name: 'CarrefourSA', bg: '#004A99', color: 'white', icon: '🔵', defaultUrl: 'https://www.carrefoursa.com/arama?text={QUERY}' }
+                        ].map(m => {
+                            const savedLinks = JSON.parse(localStorage.getItem('baki_market_links') || '{}');
+                            const mData = savedLinks[m.code] || { enabled: true, customUrl: '' };
+                            return (
+                                <div key={m.code} style={{background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '14px', padding: '14px', display: 'flex', flexDirection: 'column', gap: '10px'}}>
+                                    <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                                        <div style={{display: 'flex', alignItems: 'center', gap: '10px'}}>
+                                            <span style={{fontSize: '20px'}}>{m.icon}</span>
+                                            <div>
+                                                <div style={{fontWeight: 800, fontSize: '15px', color: '#0F172A'}}>{m.name}</div>
+                                                <div style={{fontSize: '11px', color: '#64748B'}}>Standart URL: {m.defaultUrl}</div>
+                                            </div>
+                                        </div>
+                                        <label style={{display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', background: 'white', padding: '6px 12px', borderRadius: '20px', border: '1px solid #CBD5E1'}}>
+                                            <input 
+                                                type="checkbox" 
+                                                defaultChecked={mData.enabled} 
+                                                onChange={(e) => {
+                                                    const current = JSON.parse(localStorage.getItem('baki_market_links') || '{}');
+                                                    current[m.code] = { ...(current[m.code] || { customUrl: '' }), enabled: e.target.checked };
+                                                    localStorage.setItem('baki_market_links', JSON.stringify(current));
+                                                }}
+                                            />
+                                            <span style={{fontSize: '12px', fontWeight: 800, color: '#334155'}}>Uygulamada Göster</span>
+                                        </label>
+                                    </div>
+                                    <div style={{display: 'flex', gap: '10px', alignItems: 'center'}}>
+                                        <input 
+                                            type="text" 
+                                            defaultValue={mData.customUrl || ''} 
+                                            placeholder="Partnerden aldığınız özel linki yapıştırın (Örn: https://market.com/cart?items={QUERY}&aff_id=BAKI123)" 
+                                            onChange={(e) => {
+                                                const current = JSON.parse(localStorage.getItem('baki_market_links') || '{}');
+                                                current[m.code] = { ...(current[m.code] || { enabled: true }), customUrl: e.target.value };
+                                                localStorage.setItem('baki_market_links', JSON.stringify(current));
+                                            }}
+                                            style={{flex: 1, padding: '10px 14px', border: '1px solid #CBD5E1', borderRadius: '10px', fontSize: '12px', outline: 'none', background: 'white'}}
+                                        />
+                                    </div>
+                                    <div style={{fontSize: '11px', color: '#94A3B8'}}>💡 Not: Link içerisine <b>{'{QUERY}'}</b> yazdığınız yere kullanıcının evinde olmayan malzemeler otomatik yerleştirilir.</div>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+<div style={{background: 'white', padding: '20px', borderRadius: '16px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', marginBottom: '20px'}}>
                     <h3 style={{fontSize: '16px', color: '#1E293B', marginBottom: '10px'}}>🛒 B2B Market Affiliate / Ortaklık Yapılandırması (Canlı)</h3>
                     <p style={{fontSize: '13px', color: '#64748B', marginBottom: '15px'}}>Seçtiğiniz partner marka anında tüm algoritmik maliyet fiyatlarını gerçek zamanlı komisyon / pazar oranına göre uygulamadaki herkeste yeniden biçimlendirir.</p>
                     <div style={{display: 'flex', flexWrap: 'wrap', gap: '10px'}}>

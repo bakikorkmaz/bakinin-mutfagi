@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { db, auth, storage } from './firebase';
-import { collection, getDocs, doc, updateDoc, arrayUnion, arrayRemove, getDoc, addDoc, query, orderBy, onSnapshot } from 'firebase/firestore';
+import { collection, getDocs, doc, updateDoc, arrayUnion, arrayRemove, getDoc, addDoc, query, orderBy, onSnapshot, deleteDoc } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { validateUsername } from './utils/usernameValidation';
-import * as tf from '@tensorflow/tfjs';
-import * as mobilenet from '@tensorflow-models/mobilenet';
 
 const getHighResPhotoUrl = (url) => {
     if (!url || typeof url !== 'string') return url || '';
@@ -201,6 +199,15 @@ export default function SocialFlow({ activeUser, setActiveUser, onBack }) {
    const [chatMessages, setChatMessages] = useState([]);
    const [msgText, setMsgText] = useState("");
 
+   // --- SES KAYDI & MEDYA & REAKSİYON STATE ---
+   const [isRecording, setIsRecording] = useState(false);
+   const [recordingTime, setRecordingTime] = useState(0);
+   const mediaRecorderRef = useRef(null);
+   const audioChunksRef = useRef([]);
+   const recordingTimerRef = useRef(null);
+   const chatEndRef = useRef(null);
+   const [reactionPickerMsgId, setReactionPickerMsgId] = useState(null);
+
    // --- YORUM (COMMENT) SİSTEMİ ---
    const [commentModalPost, setCommentModalPost] = useState(null);
    const [commentText, setCommentText] = useState("");
@@ -241,19 +248,44 @@ export default function SocialFlow({ activeUser, setActiveUser, onBack }) {
         }
     }, [activeUser]);
 
-   // Sohbet Aboneliği
+   // Sohbet Aboneliği (Fail-Safe & Local Persistence)
    useEffect(() => {
-       if (selectedChatUser && activeUser?.uid) {
-           const chatId = [activeUser.uid, selectedChatUser.id].sort().join('_');
-           const chatQ = query(collection(db, 'chats', chatId, 'messages'), orderBy('timestamp', 'asc'));
-           const unSubChat = onSnapshot(chatQ, (snap) => {
-               const m = [];
-               snap.forEach(d => m.push({id: d.id, ...d.data()}));
-               setChatMessages(m);
-           });
-           return () => unSubChat();
+       const targetId = selectedChatUser?.id || selectedChatUser?.uid;
+       const currentUid = activeUser?.uid || activeUser?.id;
+       if (targetId && currentUid) {
+           const chatId = [currentUid, targetId].sort().join('_');
+           const localKey = 'baki_chat_' + chatId;
+           
+           // Fast initial render from localStorage
+           try {
+               const cached = JSON.parse(localStorage.getItem(localKey) || '[]');
+               if (cached.length > 0) setChatMessages(cached);
+           } catch(e) {}
+
+           try {
+               // Index-free collection reference to avoid Firestore index errors
+               const chatRef = collection(db, 'chats', chatId, 'messages');
+               const unSubChat = onSnapshot(chatRef, (snap) => {
+                   const m = [];
+                   snap.forEach(d => m.push({id: d.id, ...d.data()}));
+                   m.sort((a,b) => (a.timestamp || 0) - (b.timestamp || 0));
+                   setChatMessages(m);
+                   try { localStorage.setItem(localKey, JSON.stringify(m)); } catch(err) {}
+               }, (err) => {
+                   console.log("Firestore Chat Subscription Fallback:", err);
+               });
+               return () => unSubChat();
+           } catch(e) {
+               console.error("Chat init error:", e);
+           }
+       } else {
+           setChatMessages([]);
        }
    }, [selectedChatUser, activeUser]);
+
+   useEffect(() => {
+       chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+   }, [chatMessages]);
 
     const fetchUsersAndProfile = async () => {
         setLoadingUsers(true);
@@ -378,21 +410,22 @@ export default function SocialFlow({ activeUser, setActiveUser, onBack }) {
 
            const predictions = await processMedia();
            
-           const FOOD_TERMS = ['food', 'plate', 'dish', 'cup', 'fruit', 'vegetable', 'meat', 'cake', 'bread', 'bowl', 'pot', 'pan', 'bottle', 'pizza', 'hamburger', 'hotdog', 'ice cream', 'strawberry', 'apple', 'banana', 'orange', 'broccoli', 'carrot', 'sandwich', 'hot pot', 'bakery', 'restaurant', 'coffee', 'espresso', 'tea', 'menu', 'soup', 'salad', 'dining table', 'wine', 'beer', 'sauce', 'cookie', 'dough', 'spoon', 'fork', 'kitchen', 'recipe', 'meal', 'drink', 'pudding', 'confectionery', 'cheese', 'grocery', 'produce'];
+           const FOOD_TERMS = ['food', 'plate', 'dish', 'cup', 'fruit', 'vegetable', 'meat', 'cake', 'bread', 'bowl', 'pot', 'pan', 'bottle', 'pizza', 'hamburger', 'hotdog', 'ice cream', 'strawberry', 'apple', 'banana', 'orange', 'broccoli', 'carrot', 'sandwich', 'hot pot', 'bakery', 'restaurant', 'coffee', 'espresso', 'tea', 'menu', 'soup', 'salad', 'dining table', 'wine', 'beer', 'sauce', 'cookie', 'dough', 'spoon', 'fork', 'kitchen', 'recipe', 'meal', 'drink', 'pudding', 'confectionery', 'cheese', 'grocery', 'produce', 'table', 'snack', 'sweet', 'dessert', 'pie', 'pie', 'soup', 'baklava', 'kebab', 'rice', 'chicken', 'tavuk', 'yemek', 'tarif', 'lezzet', 'sunum', 'mutfak', 'görsel', 'servis'];
 
            const isFoodRelated = predictions.some(p => {
                return FOOD_TERMS.some(t => p.className.toLowerCase().includes(t));
            });
 
-           if (!isFoodRelated) {
-               console.log("Model Algılaması Engellendi:", predictions);
-               const confirmBypass = window.confirm("Güvenlik Bildirimi: Yapay Zeka analizine göre bu içerik tam olarak yemek/mutfak ile eşleşmedi (veya henüz başında).\n\nSadece yemek fotoğrafı veya videosu gönderebilirsiniz. İçeriğin kesinlikle mutfak/yemek ile ilgili olduğunu onaylıyor musunuz?");
-               if (!confirmBypass) {
-                   setUploading(false);
-                   return;
-               }
-               // Kullanıcı onaylarsa yükleme devam eder.
-           }
+           if (!isFoodRelated && predictions.length > 0) {
+                console.log("Yapay Zeka Mutfak Güvenlik Algılaması:", predictions);
+                const alertMsg = "⚠️ YAPAY ZEKA MUTFAK GÜVENLİK BİLDİRİMİ:\n\nYüklediğiniz görsel/video yapay zeka tarafından 'Yemek / Mutfak / Tarif' ile doğrudan ilişkilendirilemedi.\n\nBaki'nin Mutfağı topluluk kuralları gereği yalnızca nefis yemek ve tarif görselleri paylaşabilirsiniz. İçeriğinizin gerçekten yemekle ilgili olduğundan emin olun!";
+                alert(alertMsg);
+                const confirmBypass = window.confirm("İçeriğiniz gerçekten yemek veya tarif ile mi ilgili? Yayınlamak için Tamam'a basın.");
+                if (!confirmBypass) {
+                    setUploading(false);
+                    return;
+                }
+            }
        } catch (err) {
            console.error("AI Görsel Analiz Hatası:", err);
            setUploading(false);
@@ -480,8 +513,13 @@ export default function SocialFlow({ activeUser, setActiveUser, onBack }) {
 
     const handleSendMessage = async () => {
         if (!msgText.trim()) return;
+        const currentUid = activeUser?.uid || activeUser?.id;
+        const targetId = selectedChatUser?.id || selectedChatUser?.uid;
+        if (!currentUid || !targetId) {
+            return alert("Sohbet edebilmek için Google veya kullanıcı hesabınızla giriş yapmış olmalısınız.");
+        }
         try {
-            const chatId = [activeUser.uid, selectedChatUser.id].sort().join('_');
+            const chatId = [currentUid, targetId].sort().join('_');
             await addDoc(collection(db, 'chats', chatId, 'messages'), {
                 senderId: activeUser.uid,
                 text: msgText,
@@ -498,6 +536,34 @@ export default function SocialFlow({ activeUser, setActiveUser, onBack }) {
             setMsgText("");
         } catch (err) {
             console.error(err);
+        }
+    };
+
+    const handleDeleteChatMessage = async (msgId) => {
+        const currentUid = activeUser?.uid || activeUser?.id;
+        const targetId = selectedChatUser?.id || selectedChatUser?.uid;
+        if (!targetId || !currentUid || !msgId) return;
+        try {
+            const chatId = [currentUid, targetId].sort().join('_');
+            await deleteDoc(doc(db, 'chats', chatId, 'messages', msgId));
+        } catch (err) {
+            console.error("Mesaj silinemedi:", err);
+        }
+    };
+
+    const handleToggleReaction = async (msgId, emoji) => {
+        const currentUid = activeUser?.uid || activeUser?.id;
+        const targetId = selectedChatUser?.id || selectedChatUser?.uid;
+        if (!targetId || !currentUid || !msgId) return;
+        try {
+            const chatId = [currentUid, targetId].sort().join('_');
+            const msgRef = doc(db, 'chats', chatId, 'messages', msgId);
+            await updateDoc(msgRef, {
+                [`reactions.${currentUid}`]: emoji
+            });
+            setReactionPickerMsgId(null);
+        } catch (err) {
+            console.error("Reaksiyon eklenemedi:", err);
         }
     };
 
@@ -842,15 +908,25 @@ export default function SocialFlow({ activeUser, setActiveUser, onBack }) {
                                                } else {
                                                    await updateDoc(pRef, { likes: arrayUnion(activeUser.uid) });
                                                    if (post.userId !== activeUser.uid) {
-                                                       const targetUserRef = doc(db, 'users', post.userId);
-                                                       await updateDoc(targetUserRef, {
-                                                           notifications: arrayUnion({
-                                                               id: Date.now().toString(),
+                                                       try {
+                                                           const targetUserRef = doc(db, 'users', post.userId);
+                                                           const notifObj = {
+                                                               id: Date.now().toString() + '_' + Math.random().toString(36).substr(2, 4),
                                                                type: 'LIKE',
-                                                               text: '@' + (activeUser.username || 'Bir şef') + ' gönderinizi beğendi!',
+                                                               text: '❤️ @' + (activeUser.username || activeUser.name || 'Bir şef') + ' lezzetli gönderinizi beğendi!',
+                                                               fromId: activeUser.uid,
+                                                               postId: post.id,
                                                                timestamp: Date.now()
-                                                           })
-                                                       });
+                                                           };
+                                                           await updateDoc(targetUserRef, {
+                                                               notifications: arrayUnion(notifObj)
+                                                           }).catch(async (e) => {
+                                                               await setDoc(targetUserRef, { notifications: [notifObj] }, { merge: true });
+                                                           });
+                                                           console.log("Beğeni bildirimi başarıyla gönderildi!");
+                                                       } catch(err) {
+                                                           console.log("Beğeni bildirimi iletim hatası:", err);
+                                                       }
                                                    }
                                                }
                                          }}>
@@ -897,13 +973,19 @@ export default function SocialFlow({ activeUser, setActiveUser, onBack }) {
                                 ) : (
                                     commentDrawerPost.comments.map(c => {
                                         const cTime = c.timestamp ? new Date(c.timestamp).toLocaleTimeString('tr-TR', {hour: '2-digit', minute: '2-digit'}) : '';
+                                        const canDeleteComment = (c.userId === activeUser.uid) || (commentDrawerPost.userId === activeUser.uid) || (activeUser.email === "yusufkorqmaz79@gmail.com");
                                         return (
-                                            <div key={c.id || Math.random()} style={{display: 'flex', gap: '12px', alignItems: 'flex-start'}}>
+                                            <div key={c.id || c.timestamp || Math.random()} style={{display: 'flex', gap: '12px', alignItems: 'flex-start'}}>
                                                 {c.userPhoto ? <img src={getHighResPhotoUrl(c.userPhoto)} alt="" style={{width: '36px', height: '36px', borderRadius: '50%', objectFit: 'cover'}} /> : <div style={{width: '36px', height: '36px', borderRadius: '50%', background: '#F1F5F9', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>👤</div>}
                                                 <div style={{background: '#F8FAFC', padding: '10px 14px', borderRadius: '16px', flex: 1, border: '1px solid #F1F5F9'}}>
                                                     <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px'}}>
                                                         <span style={{fontWeight: 800, fontSize: '13px', color: '#1E293B'}}>@{c.username || c.userName}</span>
-                                                        <span style={{fontSize: '10px', color: '#94A3B8'}}>{cTime}</span>
+                                                        <div style={{display: 'flex', alignItems: 'center', gap: '8px'}}>
+                                                            <span style={{fontSize: '10px', color: '#94A3B8'}}>{cTime}</span>
+                                                            {canDeleteComment && (
+                                                                <button onClick={() => handleDeleteComment(commentDrawerPost.id, c)} style={{background: 'none', border: 'none', color: '#EF4444', fontSize: '12px', cursor: 'pointer', padding: 0}}>🗑️</button>
+                                                            )}
+                                                        </div>
                                                     </div>
                                                     <div style={{fontSize: '13px', color: '#334155', lineHeight: '1.4'}}>{c.text}</div>
                                                 </div>
@@ -913,8 +995,8 @@ export default function SocialFlow({ activeUser, setActiveUser, onBack }) {
                                 )}
                             </div>
 
-                            {/* Yorum Yazma Alanı */}
-                            <div style={{display: 'flex', gap: '10px', paddingTop: '12px', borderTop: '1px solid #E2E8F0'}}>
+                            {/* Yorum Yazma Alanı (Sabit En Alt) */}
+                            <div style={{display: 'flex', gap: '10px', paddingTop: '12px', borderTop: '1px solid #E2E8F0', position: 'sticky', bottom: 0, background: 'white', zIndex: 10}}>
                                 <input 
                                     type="text" 
                                     placeholder="Düşüncelerini paylaş..." 
@@ -1078,64 +1160,204 @@ const renderNotificationsScreen = () => {
            </div>
 
            {/* İÇERİK EKRANLARI */}
-           <div style={{flex:1, overflowY: (subTab === 'FEED' && feedMode === 'WATCH') ? 'hidden' : 'auto', padding: (subTab === 'FEED' && feedMode === 'WATCH') ? '0' : '0 15px', paddingBottom: (subTab === 'FEED' && feedMode === 'WATCH') ? '0' : '70px'}}>
+           <div style={{flex:1, overflowY: (subTab === 'CHAT' && selectedChatUser) ? 'hidden' : ((subTab === 'FEED' && feedMode === 'WATCH') ? 'hidden' : 'auto'), padding: (subTab === 'CHAT' && selectedChatUser) ? '0' : ((subTab === 'FEED' && feedMode === 'WATCH') ? '0' : '0 15px'), paddingBottom: (subTab === 'CHAT' && selectedChatUser) ? '0' : ((subTab === 'FEED' && feedMode === 'WATCH') ? '0' : '70px'), display: 'flex', flexDirection: 'column'}}>
                {subTab === 'MY_PROFILE' && renderMyProfileScreen()}
                {subTab === 'FEED' && renderFeedScreen()}
                 {subTab === 'SEARCH' && renderSearchScreen()}
                {subTab === 'CHAT' && (
-                  <div style={{padding: '10px 0', height: '100%', display: 'flex', flexDirection: 'column'}}>
-                     {!selectedChatUser ? (
-                        <>
-                           <h2 style={{fontSize: '22px', color: '#1E293B', marginBottom: '5px', fontWeight: 900}}>💬 Gurme Sohbetleri</h2>
-                           <p style={{fontSize: '13px', color: '#64748B', marginBottom: '20px'}}>Sadece takipleştiğiniz şeflerle anlık ve güvenli sohbet edin.</p>
-                           <div style={{flex: 1, overflowY: 'auto'}}>
-                              {allUsers.filter(u => myProfile?.follows?.includes(u.id)).length === 0 ? (
-                                  <div style={{textAlign: 'center', margin: '30px 0', color: '#64748B'}}>Henüz kimseyi takip etmiyorsunuz. Önce topluluktan şefleri bulun!</div>
-                              ) : (
-                                  allUsers.filter(u => myProfile?.follows?.includes(u.id)).map(u => (
-                                     <div key={u.id} onClick={() => setSelectedChatUser(u)} style={{display: 'flex', alignItems: 'center', gap: '15px', padding: '15px', background: 'white', borderRadius: '16px', marginBottom: '10px', boxShadow: '0 4px 6px rgba(0,0,0,0.03)', cursor: 'pointer'}}>
-                                         {u.photoURL ? <img src={getHighResPhotoUrl(u.photoURL)} alt="p" style={{width:'45px', height:'45px', borderRadius:'50%', objectFit:'cover'}} /> : <div style={{width:'45px', height:'45px', borderRadius:'50%', background:'#E2E8F0', display:'flex', alignItems:'center', justifyContent:'center'}}>👤</div>}
-                                         <div style={{fontWeight: '800', color: '#334155'}}>@{u.username || 'anonim'}</div>
-                                     </div>
-                                  ))
-                              )}
-                           </div>
-                        </>
-                     ) : (
-                        <div style={{display: 'flex', flexDirection: 'column', height: '100%'}}>
-                           <div style={{display: 'flex', alignItems: 'center', gap: '15px', paddingBottom: '15px', borderBottom: '1px solid #E2E8F0', marginBottom: '15px'}}>
-                               <button onClick={() => setSelectedChatUser(null)} style={{background: '#E2E8F0', border: 'none', padding: '8px 12px', borderRadius: '8px', cursor: 'pointer', fontWeight: 800, color: '#64748B'}}>← Geri</button>
-                               <div onClick={() => openProfile(selectedChatUser)} style={{fontWeight: 900, color: '#1E293B', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '10px'}}>
-                                   {selectedChatUser.photoURL ? <img src={selectedChatUser.photoURL} style={{width:'30px',height:'30px',borderRadius:'50%',objectFit:'cover'}}/> : <span>👤</span>}
-                                   @{selectedChatUser.username || 'anonim'} <span style={{fontSize: '12px', color: '#64748B', fontWeight: 600}}>ile Sohbet</span>
-                               </div>
-                           </div>
-                           
-                           <div style={{flex: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '15px', paddingBottom: '10px', paddingTop: '10px'}}>
-                               {chatMessages.length === 0 && <div style={{textAlign: 'center', color: '#94A3B8', marginTop: '20px'}}>İlk mesajı siz gönderin!</div>}
-                               {chatMessages.map(m => {
-                                   const isMe = m.senderId === activeUser.uid;
-                                   const timeString = new Date(m.timestamp).toLocaleTimeString('tr-TR', {hour: '2-digit', minute:'2-digit'});
-                                   return (
-                                   <div key={m.id} style={{alignSelf: isMe ? 'flex-end' : 'flex-start', maxWidth: '80%', display: 'flex', flexDirection: isMe ? 'row-reverse' : 'row', gap: '10px', alignItems:'flex-end'}}>
-                                       {!isMe && <img src={selectedChatUser?.photoURL || ''} alt="" style={{width:'28px', height:'28px', borderRadius:'50%', objectFit: 'cover', background: '#E2E8F0'}}/>}
-                                       <div style={{background: isMe ? 'linear-gradient(135deg, #10B981, #059669)' : 'white', color: isMe ? 'white' : '#1E293B', padding: '12px 16px', borderRadius: '20px', borderBottomRightRadius: isMe ? '4px' : '20px', borderBottomLeftRadius: isMe ? '20px' : '4px', boxShadow: '0 2px 5px rgba(0,0,0,0.05)', position: 'relative'}}>
-                                           <div style={{fontSize: '15px', lineHeight: '1.4'}}>{m.text}</div>
-                                           <div style={{fontSize: '10px', color: isMe ? 'rgba(255,255,255,0.8)' : '#94A3B8', textAlign: isMe ? 'right' : 'left', marginTop: '6px', fontWeight: 600}}>{timeString}</div>
-                                       </div>
+                   <div style={{padding: '15px 0', height: '100%', display: 'flex', flexDirection: 'column'}}>
+                      {!selectedChatUser ? (
+                         <div style={{background: 'white', borderRadius: '24px', padding: '20px', height: '100%', display: 'flex', flexDirection: 'column', boxShadow: '0 10px 25px rgba(0,0,0,0.1)'}}>
+                            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px'}}>
+                                <div>
+                                    <h2 style={{fontSize: '22px', color: '#0F172A', margin: 0, fontWeight: 900}}>💬 Gurme Sohbet Odası</h2>
+                                    <p style={{fontSize: '13px', color: '#64748B', margin: '4px 0 0 0'}}>Mutfak topluluğundaki tüm şeflerle anlık mesajlaşın.</p>
+                                </div>
+                                <span style={{background: '#ECFDF5', color: '#047857', padding: '6px 12px', borderRadius: '20px', fontSize: '12px', fontWeight: 800}}>● Canlı</span>
+                            </div>
+
+                            <div style={{flex: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '10px', paddingRight: '5px'}}>
+                               {allUsers.length === 0 ? (
+                                   <div style={{textAlign: 'center', margin: '40px 0', color: '#64748B'}}>
+                                       <div style={{fontSize: '36px', marginBottom: '10px'}}>👨‍🍳</div>
+                                       Topluluk şefleri yükleniyor veya henüz başka şef kayıtlı değil...
                                    </div>
-                               )})}
-                           </div>
-                           
-                           <div style={{display: 'flex', gap: '10px', marginTop: 'auto'}}>
-                               <input type="text" value={msgText} onChange={e => setMsgText(e.target.value)} onKeyDown={e => e.key === 'Enter' && handleSendMessage()} placeholder="Mesaj yazın..." style={{flex: 1, padding: '12px 15px', border: '1px solid #E2E8F0', borderRadius: '20px', outline: 'none', background: '#F8FAFC'}} />
-                               <button onClick={handleSendMessage} style={{background: '#3B82F6', color: 'white', border: 'none', borderRadius: '50%', width: '45px', height: '45px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer'}}>➤</button>
-                           </div>
-                        </div>
-                     )}
-                  </div>
-               )}
-               {subTab === 'NOTIFY' && renderNotificationsScreen()}
+                               ) : (
+                                   allUsers.map(u => {
+                                      const uId = u.id || u.uid;
+                                      const isFollowing = myProfile?.follows?.includes(uId);
+                                      return (
+                                         <div 
+                                            key={uId} 
+                                            onClick={() => setSelectedChatUser({ ...u, id: uId })} 
+                                            style={{
+                                                display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                                                padding: '14px 16px', background: '#F8FAFC', borderRadius: '18px',
+                                                border: '1px solid #E2E8F0', cursor: 'pointer', transition: '0.2s'
+                                            }}
+                                         >
+                                             <div style={{display: 'flex', alignItems: 'center', gap: '14px'}}>
+                                                 {u.photoURL ? (
+                                                     <img src={getHighResPhotoUrl(u.photoURL)} alt="p" style={{width:'46px', height:'46px', borderRadius:'50%', objectFit:'cover', border: '2px solid #10B981'}} />
+                                                 ) : (
+                                                     <div style={{width:'46px', height:'46px', borderRadius:'50%', background:'#E2E8F0', display:'flex', alignItems:'center', justifyContent:'center', fontSize: '22px'}}>👤</div>
+                                                 )}
+                                                 <div>
+                                                     <div style={{fontWeight: '900', color: '#0F172A', fontSize: '15px'}}>@{u.username || u.name || 'anonim'}</div>
+                                                     <div style={{fontSize: '12px', color: isFollowing ? '#10B981' : '#64748B', fontWeight: 600}}>
+                                                         {isFollowing ? '✓ Takip Ediyorsun' : 'Mutfak Topluluğu Şefi'}
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                             
+                                             <button style={{background: '#10B981', color: 'white', border: 'none', padding: '8px 14px', borderRadius: '12px', fontWeight: 800, fontSize: '12px', cursor: 'pointer'}}>
+                                                 Sohbet Et 💬
+                                             </button>
+                                         </div>
+                                      );
+                                   })
+                               )}
+                            </div>
+                         </div>
+                      ) : (
+                          <div style={{display: 'flex', flexDirection: 'column', height: '100%', width: '100%', position: 'relative', overflow: 'hidden', background: '#F8FAFC', borderRadius: '24px', padding: '15px'}}>
+                             {/* SOHBET ÜST KART */}
+                             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '12px', borderBottom: '1px solid #E2E8F0', background: 'white', padding: '12px 16px', borderRadius: '16px', marginBottom: '10px', boxShadow: '0 2px 8px rgba(0,0,0,0.04)'}}>
+                                 <div style={{display: 'flex', alignItems: 'center', gap: '12px'}}>
+                                     <button onClick={() => setSelectedChatUser(null)} style={{background: '#F1F5F9', border: 'none', padding: '8px 14px', borderRadius: '20px', cursor: 'pointer', fontWeight: 800, color: '#475569', fontSize: '13px'}}>← Geri</button>
+                                     <div onClick={() => openProfile(selectedChatUser)} style={{fontWeight: 900, color: '#1E293B', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '10px'}}>
+                                         {selectedChatUser.photoURL ? <img src={getHighResPhotoUrl(selectedChatUser.photoURL)} style={{width:'38px',height:'38px',borderRadius:'50%',objectFit:'cover', border: '2px solid #10B981'}}/> : <div style={{width:'38px',height:'38px',borderRadius:'50%',background:'#E2E8F0',display:'flex',alignItems:'center',justifyContent:'center'}}>👤</div>}
+                                         <div>
+                                             <div style={{fontSize: '15px', fontWeight: 900, color: '#0F172A'}}>@{selectedChatUser.username || selectedChatUser.name || 'anonim'}</div>
+                                             <div style={{fontSize: '11px', color: '#10B981', fontWeight: 700}}>● Canlı Sohbet Odası</div>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                             
+                             {/* MESAJ GEÇMİŞİ */}
+                             <div style={{flex: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '15px', padding: '10px'}}>
+                                 {chatMessages.length === 0 && (
+                                     <div style={{textAlign: 'center', color: '#64748B', marginTop: '40px', background: 'white', padding: '25px', borderRadius: '20px', border: '1px solid #E2E8F0'}}>
+                                         <div style={{fontSize: '32px', marginBottom: '8px'}}>👋</div>
+                                         <strong style={{color: '#0F172A'}}>Henüz mesajlaşma başlamadı.</strong><br/>
+                                         <span style={{fontSize: '13px'}}>İlk mesajı yazarak veya fotoğraf göndererek iletişime geçin!</span>
+                                     </div>
+                                 )}
+                                 {chatMessages.map(m => {
+                                     const isMe = m.senderId === activeUser.uid;
+                                     const timeString = m.timestamp ? new Date(m.timestamp).toLocaleTimeString('tr-TR', {hour: '2-digit', minute:'2-digit'}) : 'Anlık';
+                                     const canDelete = isMe || activeUser.email === "yusufkorqmaz79@gmail.com";
+                                     const reactionsMap = m.reactions || {};
+                                     const reactionEntries = Object.entries(reactionsMap);
+                                     const isPickerOpen = reactionPickerMsgId === m.id;
+
+                                     return (
+                                         <div key={m.id || Math.random()} style={{alignSelf: isMe ? 'flex-end' : 'flex-start', maxWidth: '85%', display: 'flex', flexDirection: isMe ? 'row-reverse' : 'row', gap: '8px', alignItems:'flex-end', position: 'relative'}}>
+                                             {!isMe && <img src={getHighResPhotoUrl(selectedChatUser?.photoURL) || ''} alt="" style={{width:'30px', height:'30px', borderRadius:'50%', objectFit: 'cover', background: '#E2E8F0'}}/>}
+                                             
+                                             <div style={{position: 'relative'}}>
+                                                 {isPickerOpen && (
+                                                     <div style={{position: 'absolute', top: '-42px', [isMe ? 'right' : 'left']: 0, background: 'white', borderRadius: '20px', padding: '4px 10px', boxShadow: '0 4px 15px rgba(0,0,0,0.15)', display: 'flex', gap: '8px', zIndex: 100, border: '1px solid #E2E8F0'}}>
+                                                         {['❤️', '🔥', '👍', '😂', '😮', '👏'].map(emoji => (
+                                                             <span key={emoji} onClick={() => handleToggleReaction(m.id, emoji)} style={{fontSize: '18px', cursor: 'pointer', transform: 'scale(1)', transition: '0.1s'}}>
+                                                                 {emoji}
+                                                             </span>
+                                                         ))}
+                                                     </div>
+                                                 )}
+
+                                                 <div 
+                                                     onClick={() => setReactionPickerMsgId(isPickerOpen ? null : m.id)}
+                                                     style={{
+                                                         background: isMe ? 'linear-gradient(135deg, #10B981, #059669)' : 'white', 
+                                                         color: isMe ? 'white' : '#1E293B', 
+                                                         padding: '12px 16px', 
+                                                         borderRadius: '20px', 
+                                                         borderBottomRightRadius: isMe ? '4px' : '20px', 
+                                                         borderBottomLeftRadius: isMe ? '20px' : '4px', 
+                                                         boxShadow: '0 3px 8px rgba(0,0,0,0.06)', 
+                                                         position: 'relative',
+                                                         cursor: 'pointer',
+                                                         border: isMe ? 'none' : '1px solid #E2E8F0'
+                                                     }}
+                                                 >
+                                                     {m.text && <div style={{fontSize: '14px', lineHeight: '1.4', wordBreak: 'break-word'}}>{m.text}</div>}
+                                                     
+                                                     {m.imageURL && (
+                                                         <img 
+                                                             src={m.imageURL} 
+                                                             alt="Chat Photo" 
+                                                             onClick={(e) => { e.stopPropagation(); setEnlargedPhoto(m.imageURL); }} 
+                                                             style={{maxWidth: '220px', maxHeight: '220px', borderRadius: '12px', objectFit: 'cover', cursor: 'pointer', display: 'block', margin: '4px 0'}} 
+                                                         />
+                                                     )}
+
+                                                     {m.audioURL && (
+                                                         <div style={{display: 'flex', alignItems: 'center', gap: '8px', margin: '4px 0'}}>
+                                                             <audio controls src={m.audioURL} style={{maxWidth: '210px', height: '40px'}} />
+                                                         </div>
+                                                     )}
+
+                                                     <div style={{display: 'flex', alignItems: 'center', justifyContent: isMe ? 'flex-end' : 'space-between', gap: '10px', marginTop: '6px'}}>
+                                                         <span style={{fontSize: '10px', opacity: 0.85, fontWeight: 600}}>{timeString}</span>
+                                                         {canDelete && (
+                                                             <button onClick={(e) => { e.stopPropagation(); handleDeleteChatMessage(m.id); }} style={{background: 'none', border: 'none', color: isMe ? 'rgba(255,255,255,0.9)' : '#EF4444', fontSize: '12px', cursor: 'pointer', padding: 0}}>🗑️</button>
+                                                         )}
+                                                     </div>
+
+                                                     {reactionEntries.length > 0 && (
+                                                         <div style={{position: 'absolute', bottom: '-12px', [isMe ? 'left' : 'right']: '10px', background: 'white', borderRadius: '12px', padding: '2px 8px', boxShadow: '0 2px 6px rgba(0,0,0,0.12)', fontSize: '11px', display: 'flex', gap: '4px', alignItems: 'center', border: '1px solid #E2E8F0', color: '#1E293B'}}>
+                                                             {Array.from(new Set(reactionEntries.map(r => r[1]))).map(emoji => (
+                                                                 <span key={emoji}>{emoji}</span>
+                                                             ))}
+                                                             <span style={{fontSize: '10px', fontWeight: 800, color: '#64748B'}}>{reactionEntries.length}</span>
+                                                         </div>
+                                                     )}
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     );
+                                 })}
+                                 <div ref={chatEndRef} />
+                             </div>
+                             
+                             {/* GİRDİ ALANI */}
+                             <div style={{display: 'flex', gap: '8px', padding: '10px', background: 'white', borderRadius: '24px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)', border: '1px solid #E2E8F0', position: 'sticky', bottom: 0, zIndex: 50, alignItems: 'center'}}>
+                                 <label style={{background: '#F1F5F9', color: '#3B82F6', width: '42px', height: '42px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px', cursor: 'pointer', flexShrink: 0}}>
+                                     📸
+                                     <input type="file" accept="image/*" onChange={handleSendChatPhoto} style={{display: 'none'}} />
+                                 </label>
+
+                                 {!isRecording ? (
+                                     <button onClick={startVoiceRecording} title="Sesli Mesaj Kaydet" style={{background: '#FEF2F2', color: '#EF4444', border: '1px solid #FCA5A5', width: '42px', height: '42px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px', cursor: 'pointer', flexShrink: 0}}>
+                                         🎙️
+                                     </button>
+                                 ) : (
+                                     <button onClick={stopVoiceRecording} style={{background: '#EF4444', color: 'white', border: 'none', padding: '8px 14px', borderRadius: '20px', display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12px', fontWeight: 800, cursor: 'pointer', flexShrink: 0, animation: 'pulse 1s infinite'}}>
+                                         🔴 {recordingTime}s (Durdur & Gönder)
+                                     </button>
+                                 )}
+
+                                 <input 
+                                     type="text" 
+                                     value={msgText} 
+                                     onChange={e => setMsgText(e.target.value)} 
+                                     onKeyDown={e => e.key === 'Enter' && handleSendMessage()} 
+                                     placeholder="Mesajınızı yazın..." 
+                                     style={{flex: 1, padding: '12px 16px', border: 'none', outline: 'none', background: 'transparent', fontSize: '14px', color: '#0F172A'}} 
+                                 />
+
+                                 <button onClick={handleSendMessage} style={{background: '#10B981', color: 'white', border: 'none', borderRadius: '50%', width: '42px', height: '42px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', flexShrink: 0, fontWeight: 900, boxShadow: '0 4px 10px rgba(16,185,129,0.3)'}}>
+                                     ➤
+                                 </button>
+                             </div>
+                          </div>
+                      )}
+                   </div>
+                )}
+                
+                {subTab === 'NOTIFY' && renderNotificationsScreen()}
                {subTab === 'FOLLOW' && renderFollowScreen()}
                {subTab === 'PROFILE' && renderProfileScreen()}
                

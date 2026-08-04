@@ -801,3 +801,109 @@ export const DB_SIDES = [
     ]
   }
 ];
+
+export const DB_SALADS = [
+  {
+    "id": "sal1",
+    "name": "Taze Mevsim Salatası",
+    "type": "LOCAL",
+    "cost": 25,
+    "time": 10,
+    "heaviness": 1,
+    "ingredients": ["marul", "salatalık", "domates", "havuç", "mısır", "zeytinyağı", "limon"],
+    "recipeDesc": "1. Marul ve yeşillikleri bol suda yıkayıp kurulayın.\n2. Domates, salatalık ve havuçları ince ince doğrayın.\n3. Zengin zeytinyağı, limon ve bir çimdik tuz ile harmanlayıp taze servis edin."
+  },
+  {
+    "id": "sal2",
+    "name": "Geleneksel Çoban Salatası",
+    "type": "LOCAL",
+    "cost": 30,
+    "time": 10,
+    "heaviness": 1,
+    "ingredients": ["domates", "salatalık", "kuru soğan", "yeşil biber", "maydanoz", "zeytinyağı", "sirke"],
+    "recipeDesc": "1. Tüm sebzeleri tavla zarı büyüklüğünde minik küpler halinde doğrayın.\n2. Ince kıyılmış maydanozu ekleyin.\n3. Sızma zeytinyağı, elma sirkesi ve tuz gezdirip iyice karıştırın."
+  },
+  {
+    "id": "sal3",
+    "name": "Cevizli Gavurdağı Salatası",
+    "type": "LOCAL",
+    "cost": 55,
+    "time": 15,
+    "heaviness": 2,
+    "ingredients": ["domates", "ceviz", "nar ekşisi", "kuru soğan", "maydanoz", "zeytinyağı", "pul biber"],
+    "recipeDesc": "1. Domates ve soğanları çok ince kıyın.\n2. Bol kırıklanmış ceviz içini ekleyin.\n3. Hakiki nar ekşisi, zeytinyağı ve pul biber ile lezzetlendirip servis edin."
+  },
+  {
+    "id": "sal4",
+    "name": "Sezar Salata (Tavuklu & Parmesanlı)",
+    "type": "FOREIGN",
+    "cost": 85,
+    "time": 20,
+    "heaviness": 3,
+    "ingredients": ["tavuk göğsü", "akdeniz yeşillikleri", "parmesan", "kruton ekmek", "sezar sos", "zeytinyağı"],
+    "recipeDesc": "1. Tavuk göğsünü ızgarada pişirip ince dilimleyin.\n2. Taze akdeniz yeşilliklerini geniş kaseye alın.\n3. Kruton ekmekler, parmesan rendesi ve tavuk dilimleri ile süsleyip sezar sos gezdirin."
+  },
+  {
+    "id": "sal5",
+    "name": "Ege Otlu & Beyaz Peynirli Akdeniz Salatası",
+    "type": "LOCAL",
+    "cost": 45,
+    "time": 10,
+    "heaviness": 2,
+    "ingredients": ["akdeniz yeşillikleri", "beyaz peynir", "siyah zeytin", "ceviz", "zeytinyağı", "nar ekşisi"],
+    "recipeDesc": "1. Yeşillikleri kıyıp servis tabağına yayın.\n2. Üzerine küp küp doğranmış beyaz peynir, zeytin ve ceviz serpiştirin.\n3. Sızma zeytinyağı ve nar ekşisi dökerek tamamlayın."
+  }
+];
+
+export const DB_DESSERTS = [
+  {
+    "id": "des1",
+    "name": "Geleneksel Fırın Sütlaç",
+    "type": "LOCAL",
+    "cost": 35,
+    "time": 45,
+    "heaviness": 3,
+    "ingredients": ["süt", "pirinç", "şeker", "nişasta", "vanilya", "yumurta sarısı"],
+    "recipeDesc": "1. Pirinci haşlayıp süt ve şeker ile kaynatın.\n2. Nişastayı az suda açıp kıvam alması için tencereye ekleyin.\n3. Isıya dayanıklı güveçlere paylaştırıp fırının üst ızgarasında üzeri kızarana kadar pişirin."
+  },
+  {
+    "id": "des2",
+    "name": "Antep Fıstıklı Ev Baklavası",
+    "type": "LOCAL",
+    "cost": 120,
+    "time": 60,
+    "heaviness": 5,
+    "ingredients": ["baklavalık yufka", "antep fıstığı", "tereyağı", "şeker", "su", "limon suyu"],
+    "recipeDesc": "1. İncecik baklava yufkalarının arasına eritilmiş tereyağı sürerek kat kat dizin.\n2. Orta kata bol çekilmiş Antep fıstığı yayın.\n3. Dilimleyip fırınlayın, sıcak baklavaya ılık şerbet dökün."
+  },
+  {
+    "id": "des3",
+    "name": "Karamelli Trileçe",
+    "type": "FOREIGN",
+    "cost": 65,
+    "time": 50,
+    "heaviness": 4,
+    "ingredients": ["un", "yumurta", "şeker", "süt", "krema", "karamel sosu"],
+    "recipeDesc": "1. Yumuşacık kek tabanını pişirip çatalla delikler açın.\n2. Süt ve krema karışımını kekin üzerine döküp çekmesini bekleyin.\n3. En üst kısıma ev yapımı karamel sosu döküp soğuk servis edin."
+  },
+  {
+    "id": "des4",
+    "name": "Çilekli Magnolia",
+    "type": "FOREIGN",
+    "cost": 50,
+    "time": 25,
+    "heaviness": 3,
+    "ingredients": ["süt", "un", "nişasta", "şeker", "çilek", "bisküvi", "krema"],
+    "recipeDesc": "1. İpeksi muhallebiyi pişirip soğuduktan sonra krema ile çırpın.\n2. Kuplara çekilmiş bisküvi ve taze çilek dilimleri dizin.\n3. Kat kat muhallebi ve bisküvi yerleştirip buzdolabında soğutun."
+  },
+  {
+    "id": "des5",
+    "name": "Dondurmalı İrmik Helvası",
+    "type": "LOCAL",
+    "cost": 40,
+    "time": 30,
+    "heaviness": 4,
+    "ingredients": ["irmik", "tereyağı", "şeker", "süt", "maraş dondurması", "dolmalık fıstık"],
+    "recipeDesc": "1. İrmiği ve fıstıkları tereyağında pembeleşene kadar kavurun.\n2. Sıcak süt ve şeker şerbetini verip demlenmeye bırakın.\n3. Kaseye helva koyup ortasına Maraş dondurması gizleyerek ters çevirin."
+  }
+];
