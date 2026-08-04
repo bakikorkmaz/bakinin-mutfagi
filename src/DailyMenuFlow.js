@@ -49,53 +49,53 @@ export const isRecipeCompliant = (recipe, diet) => {
     return true;
 };
 
-// Gerçekçi 2026 Türkiye Pazar Fiyatlandırma Motoru (4 Kişilik Aile Porsiyonu Bazlı)
+// Gerçekçi 2026 Türkiye Pazar Fiyatlandırma Motoru (Tek Kişilik / Tarif Porsiyonu Bazlı)
 const getIngredientMarketPrice = (ingName) => {
     const name = (ingName || '').toLowerCase();
     
-    // Et & Şarküteri & Balık (4 Kişilik Aile Porsiyonu)
-    if (name.includes('bonfile') || name.includes('antrikot')) return 340;
-    if (name.includes('somon') || name.includes('karides')) return 290;
-    if (name.includes('kuşbaşı') || name.includes('et') || name.includes('kavurma')) return 250;
-    if (name.includes('kıyma') || name.includes('köfte')) return 220;
-    if (name.includes('sucuk') || name.includes('pastırma')) return 175;
-    if (name.includes('tavuk') || name.includes('hindi')) return 120;
-    if (name.includes('ton balığı') || name.includes('levrek')) return 160;
+    // Et & Şarküteri & Balık (1 Porsiyon / 200-250g Bazlı)
+    if (name.includes('bonfile') || name.includes('antrikot')) return 140;
+    if (name.includes('somon') || name.includes('karides')) return 110;
+    if (name.includes('kuşbaşı') || name.includes('dana et') || name.includes('kavurma') || name.includes('et')) return 85;
+    if (name.includes('kıyma') || name.includes('köfte')) return 75;
+    if (name.includes('sucuk') || name.includes('pastırma') || name.includes('sosis')) return 45;
+    if (name.includes('tavuk') || name.includes('hindi')) return 45;
+    if (name.includes('ton balığı') || name.includes('levrek')) return 55;
 
     // Süt & Peynir & Kahvaltılık
-    if (name.includes('parmesan')) return 90;
-    if (name.includes('kaşar') || name.includes('mozzarella')) return 65;
-    if (name.includes('tereyağı')) return 35;
-    if (name.includes('krema')) return 40;
-    if (name.includes('süzme yoğurt') || name.includes('labne')) return 38;
-    if (name.includes('yoğurt') || name.includes('süt')) return 28;
-    if (name.includes('yumurta')) return 24;
+    if (name.includes('parmesan')) return 40;
+    if (name.includes('kaşar') || name.includes('mozzarella')) return 25;
+    if (name.includes('tereyağı')) return 12;
+    if (name.includes('krema')) return 18;
+    if (name.includes('süzme yoğurt') || name.includes('labne')) return 15;
+    if (name.includes('yoğurt') || name.includes('süt')) return 10;
+    if (name.includes('yumurta')) return 8;
 
     // Bakliyat & Karbonhidrat & Çerez
-    if (name.includes('kinoa') || name.includes('avokado')) return 75;
-    if (name.includes('ceviz') || name.includes('fındık') || name.includes('antep fıstığı')) return 65;
-    if (name.includes('kırmızı mercimek') || name.includes('yeşil mercimek') || name.includes('nohut') || name.includes('fasulye')) return 36;
-    if (name.includes('pirinç') || name.includes('bulgur') || name.includes('kuskus')) return 32;
-    if (name.includes('makarna') || name.includes('noodle') || name.includes('erişte') || name.includes('spagetti')) return 28;
-    if (name.includes('un') || name.includes('irmik') || name.includes('galeta')) return 20;
+    if (name.includes('kinoa') || name.includes('avokado')) return 30;
+    if (name.includes('ceviz') || name.includes('fındık') || name.includes('antep fıstığı')) return 25;
+    if (name.includes('kırmızı mercimek') || name.includes('yeşil mercimek') || name.includes('nohut') || name.includes('fasulye')) return 12;
+    if (name.includes('pirinç') || name.includes('bulgur') || name.includes('kuskus')) return 10;
+    if (name.includes('makarna') || name.includes('noodle') || name.includes('erişte') || name.includes('spagetti')) return 8;
+    if (name.includes('un') || name.includes('irmik') || name.includes('galeta')) return 5;
 
     // Sebze & Meyve
-    if (name.includes('mantar')) return 45;
-    if (name.includes('patlıcan') || name.includes('kabak') || name.includes('enginar')) return 38;
-    if (name.includes('patates') || name.includes('havuç')) return 22;
-    if (name.includes('domates') || name.includes('biber') || name.includes('salatalık')) return 25;
-    if (name.includes('soğan') || name.includes('sarımsak') || name.includes('limon')) return 16;
-    if (name.includes('yeşillik') || name.includes('roka') || name.includes('marul') || name.includes('maydanoz') || name.includes('nane')) return 18;
+    if (name.includes('mantar')) return 18;
+    if (name.includes('patlıcan') || name.includes('kabak') || name.includes('enginar')) return 15;
+    if (name.includes('patates') || name.includes('havuç')) return 6;
+    if (name.includes('domates') || name.includes('biber') || name.includes('salatalık')) return 8;
+    if (name.includes('soğan') || name.includes('sarımsak') || name.includes('limon')) return 4;
+    if (name.includes('yeşillik') || name.includes('roka') || name.includes('marul') || name.includes('maydanoz') || name.includes('nane')) return 5;
 
     // Tatlı & Şeker & Soslar
-    if (name.includes('çikolata') || name.includes('kakao')) return 55;
-    if (name.includes('bal') || name.includes('tahin') || name.includes('pekmez')) return 48;
-    if (name.includes('şeker') || name.includes('vanilya') || name.includes('kabartma')) return 18;
-    if (name.includes('zeytinyağı')) return 38;
-    if (name.includes('salça') || name.includes('sos')) return 24;
-    if (name.includes('baharat') || name.includes('tuz') || name.includes('karabiber') || name.includes('kekik')) return 10;
+    if (name.includes('çikolata') || name.includes('kakao')) return 20;
+    if (name.includes('bal') || name.includes('tahin') || name.includes('pekmez')) return 18;
+    if (name.includes('şeker') || name.includes('vanilya') || name.includes('kabartma')) return 5;
+    if (name.includes('zeytinyağı') || name.includes('yağ')) return 12;
+    if (name.includes('salça') || name.includes('sos')) return 10;
+    if (name.includes('baharat') || name.includes('tuz') || name.includes('karabiber') || name.includes('kekik')) return 3;
 
-    return 28;
+    return 8;
 };
 
 const parseCaloriesNumber = (val) => {
@@ -649,7 +649,7 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction }
                         <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
                             <button
                                 onClick={() => {
-                                    const cost = selectedRecipeModal.details?.cost || 120;
+                                    const cost = selectedRecipeModal.details?.cost || 80;
                                     if (acceptMenuAction) acceptMenuAction(cost);
                                     const saving = Math.round(cost * 0.3);
                                     setSelectedRecipeModal(null);
@@ -666,7 +666,7 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction }
                                     boxShadow: '0 4px 12px rgba(245,158,11,0.3)'
                                 }}
                             >
-                                🍳 Bu Yemeği Yapmaya Karar Verdim! (₺${Math.round((selectedRecipeModal.details?.cost || 120) * 0.3)} Tasarruf Et)
+                                🍳 Bu Yemeği Yapmaya Karar Verdim! ({Math.round((selectedRecipeModal.details?.cost || 80) * 0.3)} TL Tasarruf Et)
                             </button>
                             
                             <div style={{display: 'flex', gap: '10px'}}>
