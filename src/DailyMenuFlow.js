@@ -139,6 +139,7 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction }
     const [dietFilter, setDietFilter] = useState('ALL');
     const [budgetFilter, setBudgetFilter] = useState('ALL');
     const [cuisineFilter, setCuisineFilter] = useState('ALL');
+    const [maxTimeFilter, setMaxTimeFilter] = useState('ALL');
     const [calorieTarget, setCalorieTarget] = useState('ALL');
     const [currentMenu, setCurrentMenu] = useState(null);
     const [isGenerating, setIsGenerating] = useState(false);
@@ -178,7 +179,7 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction }
         const savedFavs = JSON.parse(localStorage.getItem(favKey) || '[]');
         setFavorites(savedFavs);
 
-        generateDailyMenu(dietFilter, budgetFilter, cuisineFilter, calorieTarget, savedHistory);
+        generateDailyMenu(dietFilter, budgetFilter, cuisineFilter, calorieTarget, maxTimeFilter, savedHistory);
     }, []);
 
     const showToast = (msg) => {
@@ -207,7 +208,7 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction }
         return favorites.some(f => f.name === recipe.name || f.id === recipe.id);
     };
 
-    const generateDailyMenu = (diet = dietFilter, budget = budgetFilter, cuisine = cuisineFilter, calTarget = calorieTarget, historyList = menuHistory) => {
+    const generateDailyMenu = (diet = dietFilter, budget = budgetFilter, cuisine = cuisineFilter, calTarget = calorieTarget, timeCap = maxTimeFilter, historyList = menuHistory) => {
         setIsGenerating(true);
 
         setTimeout(() => {
@@ -271,11 +272,13 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction }
                 if (budget === 'FEAST' && totalCost < 450) budgetMatch = false;
 
                 let calMatch = true;
+                let timeMatch = true;
+                if (timeCap === 'FAST' && totalTime > 40) timeMatch = false;
                 if (calTarget === 'LIGHT' && totalCalories > 850) calMatch = false;
                 if (calTarget === 'BALANCED' && (totalCalories < 850 || totalCalories > 1300)) calMatch = false;
                 if (calTarget === 'HEAVY' && totalCalories < 1300) calMatch = false;
 
-                if (!historyList.includes(menuId) && budgetMatch && calMatch) {
+                if (!historyList.includes(menuId) && budgetMatch && calMatch && timeMatch) {
                     selectedMenu = {
                         id: menuId,
                         soup: { ...s, details: sDetails },
@@ -325,12 +328,13 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction }
         }, 300);
     };
 
-    const handleFilterChange = (newDiet, newBudget, newCuisine, newCal) => {
+    const handleFilterChange = (newDiet, newBudget, newCuisine, newCal, newTime = maxTimeFilter) => {
         setDietFilter(newDiet);
         setBudgetFilter(newBudget);
         setCuisineFilter(newCuisine);
         setCalorieTarget(newCal);
-        generateDailyMenu(newDiet, newBudget, newCuisine, newCal);
+        setMaxTimeFilter(newTime);
+        generateDailyMenu(newDiet, newBudget, newCuisine, newCal, newTime);
     };
 
     // Tüm 5 kap yemeğin malzemelerini birleştirme
@@ -378,83 +382,118 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction }
                 </p>
             </div>
 
-            {/* FİLTRELEME SEÇENEKLERİ PANELİ */}
-            <div style={{ background: 'white', padding: '20px', borderRadius: '22px', boxShadow: '0 4px 15px rgba(0,0,0,0.05)', marginBottom: '25px', border: '1px solid #E2E8F0' }}>
-                <h3 style={{ fontSize: '15px', color: '#1E293B', fontWeight: 900, marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    ⚙️ Filtreleme ve Tercihler
-                </h3>
+            {/* FİLTRELEME SEÇENEKLERİ PANELİ (ULTRA MODERN & ŞIK) */}
+            <div style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%)', padding: '24px', borderRadius: '24px', boxShadow: '0 10px 30px rgba(0,0,0,0.06)', marginBottom: '25px', border: '1px solid #E2E8F0' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '18px', paddingBottom: '12px', borderBottom: '1px solid #F1F5F9' }}>
+                    <div>
+                        <h3 style={{ fontSize: '17px', color: '#0F172A', fontWeight: 900, margin: 0, display: 'flex', alignItems: 'center', gap: '8px' }}>
+                            🎯 Menü Kişiselleştirme & Filtreleme
+                        </h3>
+                        <p style={{ fontSize: '12px', color: '#64748B', margin: '4px 0 0 0' }}>Damak tadınıza, diyetinize ve bütçenize tam uyan 5 kaplık menünüzü şekillendirin.</p>
+                    </div>
+                    <button 
+                        onClick={() => handleFilterChange('ALL', 'ALL', 'ALL', 'ALL', 'ALL')} 
+                        style={{ background: '#F1F5F9', border: 'none', color: '#64748B', padding: '6px 12px', borderRadius: '12px', fontSize: '11px', fontWeight: 800, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px' }}
+                    >
+                        🔄 Sıfırla
+                    </button>
+                </div>
 
-                {/* DİYET TERCİHİ */}
-                <div style={{ marginBottom: '16px' }}>
-                    <label style={{ fontSize: '12px', fontWeight: 800, color: '#64748B', display: 'block', marginBottom: '8px' }}>🌱 DİYET TERCİHİ</label>
-                    <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                {/* DİYET TERCİHİ KARTLARI */}
+                <div style={{ marginBottom: '20px' }}>
+                    <label style={{ fontSize: '12px', fontWeight: 800, color: '#475569', display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '10px' }}>
+                        🌱 DİYET & BESLENME TARZI
+                    </label>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '8px' }}>
                         {[
-                            { code: 'ALL', label: '🌟 Standart / Tümü' },
-                            { code: 'VEGETARIAN', label: '🥗 Vejetaryen' },
-                            { code: 'VEGAN', label: '🌱 Vegan' },
-                            { code: 'GLUTEN_FREE', label: '🌾 Glutensiz' },
-                            { code: 'DIABETIC', label: '🩺 Diyabetik Dostu' },
-                            { code: 'CARNIVORE', label: '🥩 Etobur' }
-                        ].map(f => (
-                            <button
-                                key={f.code}
-                                onClick={() => handleFilterChange(f.code, budgetFilter, cuisineFilter, calorieTarget)}
-                                style={{
-                                    padding: '8px 14px', borderRadius: '20px', fontSize: '12px', fontWeight: 800, cursor: 'pointer',
-                                    border: dietFilter === f.code ? 'none' : '1px solid #CBD5E1',
-                                    background: dietFilter === f.code ? '#10B981' : '#F8FAFC',
-                                    color: dietFilter === f.code ? 'white' : '#475569',
-                                    transition: '0.2s'
-                                }}
-                            >
-                                {f.label}
-                            </button>
-                        ))}
+                            { code: 'ALL', label: '🌟 Standart / Tümü', desc: 'Sınırsız lezzetler' },
+                            { code: 'VEGETARIAN', label: '🥗 Vejetaryen', desc: 'Et içermez' },
+                            { code: 'VEGAN', label: '🌱 Vegan', desc: 'Bitkisel bazlı' },
+                            { code: 'GLUTEN_FREE', label: '🌾 Glutensiz', desc: 'Un & Şehriyesiz' },
+                            { code: 'DIABETIC', label: '🩺 Şekersiz / Fit', desc: 'Düşük glisemik' },
+                            { code: 'CARNIVORE', label: '🥩 Etobur / Keto', desc: 'Protein ağırlıklı' }
+                        ].map(f => {
+                            const active = dietFilter === f.code;
+                            return (
+                                <button
+                                    key={f.code}
+                                    onClick={() => handleFilterChange(f.code, budgetFilter, cuisineFilter, calorieTarget, maxTimeFilter)}
+                                    style={{
+                                        padding: '10px 12px', borderRadius: '14px', textAlign: 'left', cursor: 'pointer',
+                                        border: active ? '2px solid #10B981' : '1px solid #E2E8F0',
+                                        background: active ? '#ECFDF5' : 'white',
+                                        boxShadow: active ? '0 4px 12px rgba(16,185,129,0.15)' : 'none',
+                                        transition: 'all 0.2s ease', display: 'flex', flexDirection: 'column', gap: '2px'
+                                    }}
+                                >
+                                    <span style={{ fontSize: '12px', fontWeight: 900, color: active ? '#047857' : '#1E293B' }}>{f.label}</span>
+                                    <span style={{ fontSize: '10px', color: active ? '#059669' : '#94A3B8' }}>{f.desc}</span>
+                                </button>
+                            );
+                        })}
                     </div>
                 </div>
 
-                {/* BÜTÇE VE KALORİ SÜZGEÇLERİ */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '15px' }}>
-                    <div>
-                        <label style={{ fontSize: '12px', fontWeight: 800, color: '#64748B', display: 'block', marginBottom: '6px' }}>💰 BÜTÇE ARALIĞI</label>
+                {/* DETAYLI İKİLİ FİLTRE GRUBU (BÜTÇE & KALORİ & SÜRE & MUTFAK) */}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px' }}>
+                    
+                    {/* BÜTÇE */}
+                    <div style={{ background: 'white', padding: '12px', borderRadius: '16px', border: '1px solid #E2E8F0' }}>
+                        <label style={{ fontSize: '11px', fontWeight: 800, color: '#64748B', display: 'block', marginBottom: '6px' }}>💰 BÜTÇE ARALIĞI</label>
                         <select
                             value={budgetFilter}
-                            onChange={e => handleFilterChange(dietFilter, e.target.value, cuisineFilter, calorieTarget)}
-                            style={{ width: '100%', padding: '10px', borderRadius: '12px', border: '1px solid #CBD5E1', background: '#F8FAFC', fontWeight: 700, fontSize: '13px' }}
+                            onChange={e => handleFilterChange(dietFilter, e.target.value, cuisineFilter, calorieTarget, maxTimeFilter)}
+                            style={{ width: '100%', padding: '10px', borderRadius: '10px', border: '1px solid #CBD5E1', background: '#F8FAFC', fontWeight: 800, fontSize: '12px', color: '#0F172A', outline: 'none' }}
                         >
-                            <option value="ALL">Fark Etmez (Tüm Bütçeler)</option>
-                            <option value="BUDGET">Ekonomik (0 - 240 TL)</option>
-                            <option value="MEDIUM">Dengeli (240 - 450 TL)</option>
-                            <option value="FEAST">Ziyafet Menüsü (450+ TL)</option>
+                            <option value="ALL">💚 Tümü (Fark Etmez)</option>
+                            <option value="BUDGET">💸 Ekonomik (0 - 240 TL)</option>
+                            <option value="MEDIUM">⚖️ Dengeli (240 - 450 TL)</option>
+                            <option value="FEAST">👑 Ziyafet (450+ TL)</option>
                         </select>
                     </div>
 
-                    <div>
-                        <label style={{ fontSize: '12px', fontWeight: 800, color: '#64748B', display: 'block', marginBottom: '6px' }}>🔥 KALORİ HEDEFİ</label>
+                    {/* KALORİ */}
+                    <div style={{ background: 'white', padding: '12px', borderRadius: '16px', border: '1px solid #E2E8F0' }}>
+                        <label style={{ fontSize: '11px', fontWeight: 800, color: '#64748B', display: 'block', marginBottom: '6px' }}>🔥 KALORİ HEDEFİ</label>
                         <select
                             value={calorieTarget}
-                            onChange={e => handleFilterChange(dietFilter, budgetFilter, cuisineFilter, e.target.value)}
-                            style={{ width: '100%', padding: '10px', borderRadius: '12px', border: '1px solid #CBD5E1', background: '#F8FAFC', fontWeight: 700, fontSize: '13px' }}
+                            onChange={e => handleFilterChange(dietFilter, budgetFilter, cuisineFilter, e.target.value, maxTimeFilter)}
+                            style={{ width: '100%', padding: '10px', borderRadius: '10px', border: '1px solid #CBD5E1', background: '#F8FAFC', fontWeight: 800, fontSize: '12px', color: '#0F172A', outline: 'none' }}
                         >
-                            <option value="ALL">Fark Etmez (Tüm Kaloriler)</option>
-                            <option value="LIGHT">Hafif Öğün (&lt; 850 kcal)</option>
-                            <option value="BALANCED">Dengeli Öğün (850 - 1300 kcal)</option>
-                            <option value="HEAVY">Doyurucu Öğün (&gt; 1300 kcal)</option>
+                            <option value="ALL">🌟 Tümü (Fark Etmez)</option>
+                            <option value="LIGHT">🍃 Hafif (&lt; 850 kcal)</option>
+                            <option value="BALANCED">⚖️ Formda (850 - 1300 kcal)</option>
+                            <option value="HEAVY">⚡ Enerjik (&gt; 1300 kcal)</option>
                         </select>
                     </div>
 
-                    <div>
-                        <label style={{ fontSize: '12px', fontWeight: 800, color: '#64748B', display: 'block', marginBottom: '6px' }}>🌍 MUTFAK TARZI</label>
+                    {/* MUTFAK */}
+                    <div style={{ background: 'white', padding: '12px', borderRadius: '16px', border: '1px solid #E2E8F0' }}>
+                        <label style={{ fontSize: '11px', fontWeight: 800, color: '#64748B', display: 'block', marginBottom: '6px' }}>🌍 MUTFAK KÜLTÜRÜ</label>
                         <select
                             value={cuisineFilter}
-                            onChange={e => handleFilterChange(dietFilter, budgetFilter, e.target.value, calorieTarget)}
-                            style={{ width: '100%', padding: '10px', borderRadius: '12px', border: '1px solid #CBD5E1', background: '#F8FAFC', fontWeight: 700, fontSize: '13px' }}
+                            onChange={e => handleFilterChange(dietFilter, budgetFilter, e.target.value, calorieTarget, maxTimeFilter)}
+                            style={{ width: '100%', padding: '10px', borderRadius: '10px', border: '1px solid #CBD5E1', background: '#F8FAFC', fontWeight: 800, fontSize: '12px', color: '#0F172A', outline: 'none' }}
                         >
-                            <option value="ALL">🌟 Tüm Mutfaklar</option>
-                            <option value="TURKISH">🇹🇷 Geleneksel Türk Mutfağı</option>
+                            <option value="ALL">✨ Tüm Mutfaklar</option>
+                            <option value="TURKISH">🇹🇷 Türk & Yöresel Ev</option>
                             <option value="WORLD">🌎 Dünya Mutfağı</option>
                         </select>
                     </div>
+
+                    {/* PRATİKLİK / SÜRE */}
+                    <div style={{ background: 'white', padding: '12px', borderRadius: '16px', border: '1px solid #E2E8F0' }}>
+                        <label style={{ fontSize: '11px', fontWeight: 800, color: '#64748B', display: 'block', marginBottom: '6px' }}>⏱️ HIZ & PRATİKLİK</label>
+                        <select
+                            value={maxTimeFilter}
+                            onChange={e => handleFilterChange(dietFilter, budgetFilter, cuisineFilter, calorieTarget, e.target.value)}
+                            style={{ width: '100%', padding: '10px', borderRadius: '10px', border: '1px solid #CBD5E1', background: '#F8FAFC', fontWeight: 800, fontSize: '12px', color: '#0F172A', outline: 'none' }}
+                        >
+                            <option value="ALL">👨‍🍳 Fark Etmez (Tüm Süreler)</option>
+                            <option value="FAST">⚡ Hızlı & Pratik (≤ 35 Dk)</option>
+                        </select>
+                    </div>
+
                 </div>
             </div>
 
