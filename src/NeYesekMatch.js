@@ -6,17 +6,32 @@ import { DB_MAINS_HUGE } from './hugeRecipes';
 
 const ALL_MATCH_RECIPES = [...DB_MAINS, ...DB_MAINS_HUGE];
 
+const SWEET_MATCH_DESCRIPTIONS = [
+    "Günün tüm kararsızlığını bitirecek, sofranıza lezzet ve mutluluk katacak harika bir sofra seçeneği! 💕✨",
+    "İkinizin de ilk lokmada bayılacağı, hem doyurucu hem de tam kıvamında enfes bir lezzet! 🍽️❤️",
+    "Akşam sofranızı bir şölene dönüştürecek, damak çatlatan mükemmel bir yemek önerisi! 🥗✨",
+    "Mutfakta harikalar yaratıp baş başa lezzetin tadını çıkarabileceğiniz tam bir lezzet klasiği! 🍷✨",
+    "Eşiniz ve sevdiklerinizle aynı sofrada buluşup 'İyi ki bu yemeği seçmişiz' diyeceğiniz enfes bir tat! 💖🍽️",
+    "Hazırlaması keyifli, tadı damağınızda kalacak ve günün yorgunluğunu unutturacak harika bir ana yemek! ✨🍲"
+];
+
 function getRandomMatchPool(count = 15) {
     const shuffled = [...ALL_MATCH_RECIPES].sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, count).map((r, idx) => ({
-        id: r.id || `match_r_${idx}_${Date.now()}`,
-        name: r.name,
-        time: r.prepTime || r.time || 30,
-        calories: r.calories || 450,
-        cost: r.totalCost || r.cost || 90,
-        ingredients: r.ingredients || [],
-        recipeDesc: r.recipeDesc || "Nefis ve pratik ev yemeği habercisi."
-    }));
+    return shuffled.slice(0, count).map((r, idx) => {
+        const ingList = (r.ingredients || []).slice(0, 4).join(', ');
+        const sweetBase = SWEET_MATCH_DESCRIPTIONS[idx % SWEET_MATCH_DESCRIPTIONS.length];
+        const finalDesc = r.recipeDesc || (ingList ? `${sweetBase} (${ingList.charAt(0).toUpperCase() + ingList.slice(1)} malzemeleriyle yapılır)` : sweetBase);
+        
+        return {
+            id: r.id || `match_r_${idx}_${Date.now()}`,
+            name: r.name,
+            time: r.prepTime || r.time || 30,
+            calories: r.calories || 450,
+            cost: r.totalCost || r.cost || 90,
+            ingredients: r.ingredients || [],
+            recipeDesc: finalDesc
+        };
+    });
 }
 
 export default function NeYesekMatch({ activeUser, onBack, openShopping }) {
