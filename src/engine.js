@@ -464,11 +464,24 @@ export const generateSmartMenus = ({ selectedIngredients, budget, cuisine, theme
   return menus.slice(0, 15);
 };
 
+// Pre-computed O(1) Indexed Sets for high performance mobile execution across 1000+ recipes
+const DB_MAINS_HUGE_INDEXED = DB_MAINS_HUGE.map(m => {
+    const ingSet = new Set((m.ingredients || []).map(i => i.toLowerCase().trim()));
+    return {
+        recipe: m,
+        ingSet,
+        ingStr: (m.ingredients || []).join(" ").toLowerCase()
+    };
+});
+
 export const generateFridgeMains = (selectedIngredients, filter = 'ALL', maxTime = 999, maxCost = 9999) => {
    let mains = [];
    const lowerSelected = (selectedIngredients || []).map(x => x.toLowerCase().trim()).filter(Boolean);
    
-   for (let m of DB_MAINS_HUGE) {
+   for (let idx = 0; idx < DB_MAINS_HUGE_INDEXED.length; idx++) {
+      const item = DB_MAINS_HUGE_INDEXED[idx];
+      const m = item.recipe;
+      
       if (m.time > maxTime) continue;
       if (m.cost > maxCost) continue;
 
@@ -482,12 +495,12 @@ export const generateFridgeMains = (selectedIngredients, filter = 'ALL', maxTime
           const ME = /(falafel|humus|şavurma|maklube)/i;
           
           let pass = false;
-          if(filter==='TURKISH' && (T.test(s) || m.ingredients.includes('kıyma'))) pass = true;
-          else if(filter==='ASIAN' && (A.test(s) || m.ingredients.includes('soya sosu'))) pass = true;
-          else if(filter==='MEXICAN' && (M.test(s) || m.ingredients.includes('mısır'))) pass = true;
-          else if(filter==='ITALIAN' && (I.test(s) || m.ingredients.includes('fesleğen'))) pass = true;
-          else if(filter==='FRENCH' && (F.test(s) || m.ingredients.includes('krema'))) pass = true;
-          else if(filter==='MIDDLE_EASTERN' && (ME.test(s) || m.ingredients.includes('nohut'))) pass = true;
+          if(filter==='TURKISH' && (T.test(s) || item.ingSet.has('kıyma'))) pass = true;
+          else if(filter==='ASIAN' && (A.test(s) || item.ingSet.has('soya sosu'))) pass = true;
+          else if(filter==='MEXICAN' && (M.test(s) || item.ingSet.has('mısır'))) pass = true;
+          else if(filter==='ITALIAN' && (I.test(s) || item.ingSet.has('fesleğen'))) pass = true;
+          else if(filter==='FRENCH' && (F.test(s) || item.ingSet.has('krema'))) pass = true;
+          else if(filter==='MIDDLE_EASTERN' && (ME.test(s) || item.ingSet.has('nohut'))) pass = true;
           
           if(!pass) continue;
       }
@@ -500,7 +513,8 @@ export const generateFridgeMains = (selectedIngredients, filter = 'ALL', maxTime
       const totalIngsCount = (m.ingredients || []).length || 1;
       
       m.ingredients.forEach(ing => {
-          if (lowerSelected.length > 0 && lowerSelected.some(sel => sel.includes(ing) || ing.includes(sel))) {
+          const ingLower = ing.toLowerCase();
+          if (lowerSelected.length > 0 && lowerSelected.some(sel => sel.includes(ingLower) || ingLower.includes(sel))) {
               matchScore++;
               matchedIngs.push(ing);
           } else {
@@ -515,7 +529,6 @@ export const generateFridgeMains = (selectedIngredients, filter = 'ALL', maxTime
           : 100;
           
       if (lowerSelected.length > 0 && matchScore > 0) {
-          // Eşleşen malzeme oranını tarif malzemeleri bazlı da tartalım
           const ingRatioPct = Math.round((matchScore / totalIngsCount) * 100);
           matchPercentage = Math.max(matchPercentage, ingRatioPct);
       }
@@ -528,49 +541,40 @@ export const generateFridgeMains = (selectedIngredients, filter = 'ALL', maxTime
            matchScore, 
            matchPercentage,
            matchedIngs, 
-           missingIngs, 
-           calories: details.calories, 
-           macros: details.macros, 
-           prepTime: details.prepTime, 
+           missingIngs,
+           missingCost: dynamicMissingCost,
+           calories: details.calories || m.calories || 450,
            totalCost: recipeFullCost,
-           missingCost: dynamicMissingCost, 
-           recipe: details.recipe 
+           prepTime: details.prepTime || m.prepTime || 30
          });
       }
    }
-   
-   // Eşleşme oranına göre akıllı sıralama
-   mains.sort((a, b) => {
-      if (b.matchPercentage !== a.matchPercentage) return b.matchPercentage - a.matchPercentage;
-      if (b.matchScore !== a.matchScore) return b.matchScore - a.matchScore;
-      return a.missingCost - b.missingCost;
-   });
 
-   // SIFIR YEMEK BULUNAMADI KORUMASI:
-   // Eğer hiçbir tarif %100 uymadıysa bile en yakın % eşleşen alternatifleri göster
-   if (mains.length === 0 && lowerSelected.length > 0) {
-      return DB_MAINS_HUGE.slice(0, 10).map(m => {
-          const details = getDishDetails(m);
-          return {
-             ...m,
-             matchScore: 0,
-             matchPercentage: 40,
-             matchedIngs: [],
-             missingIngs: m.ingredients,
-             calories: details.calories,
-             macros: details.macros,
-             prepTime: details.prepTime,
-             totalCost: details.totalCost || m.cost || 110,
-             missingCost: m.cost || 110,
-             recipe: details.recipe,
-             isFallback: true
-          };
-      });
+   // Sort by highest matchPercentage first, then highest matchScore
+   mains.sort((a, b) => b.matchPercentage - a.matchPercentage || b.matchScore - a.matchScore);
+
+   // Fallback Relaxation: If selected ingredients return zero matches, return top 15 recommendations
+   if (lowerSelected.length > 0 && mains.length === 0) {
+       return DB_MAINS_HUGE.slice(0, 15).map(m => {
+           const details = getDishDetails(m);
+           return {
+               ...m,
+               matchScore: 0,
+               matchPercentage: 30,
+               matchedIngs: [],
+               missingIngs: m.ingredients,
+               missingCost: m.cost,
+               calories: details.calories || m.calories || 450,
+               totalCost: details.totalCost || m.cost || 110,
+               prepTime: details.prepTime || m.prepTime || 30,
+               isFallback: true
+           };
+       });
    }
 
-   return mains;
+   // Return top 50 matches for maximum mobile UI responsiveness without rendering DOM strain
+   return mains.slice(0, 50);
 };
-
 export const LEFTOVER_DB = [
   {
     keywords: ["tavuk", "haşlanmış tavuk", "baget", "kanat", "göğüs"],
