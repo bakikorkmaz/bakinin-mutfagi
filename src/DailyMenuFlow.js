@@ -141,6 +141,7 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction }
     const [cuisineFilter, setCuisineFilter] = useState('ALL');
     const [maxTimeFilter, setMaxTimeFilter] = useState('ALL');
     const [calorieTarget, setCalorieTarget] = useState('ALL');
+    const [moodFilter, setMoodFilter] = useState('ALL'); // ALL, FAST_15, ONE_POT, SUPER_LIGHT
     const [currentMenu, setCurrentMenu] = useState(null);
     const [isGenerating, setIsGenerating] = useState(false);
     const [menuHistory, setMenuHistory] = useState([]);
@@ -179,7 +180,7 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction }
         const savedFavs = JSON.parse(localStorage.getItem(favKey) || '[]');
         setFavorites(savedFavs);
 
-        generateDailyMenu(dietFilter, budgetFilter, cuisineFilter, calorieTarget, maxTimeFilter, savedHistory);
+        generateDailyMenu(dietFilter, budgetFilter, cuisineFilter, calorieTarget, maxTimeFilter, moodFilter, savedHistory);
     }, []);
 
     const showToast = (msg) => {
@@ -208,7 +209,14 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction }
         return favorites.some(f => f.name === recipe.name || f.id === recipe.id);
     };
 
-    const generateDailyMenu = (diet = dietFilter, budget = budgetFilter, cuisine = cuisineFilter, calTarget = calorieTarget, timeCap = maxTimeFilter, historyList = menuHistory) => {
+    const isOnePotRecipe = (recipe) => {
+        if (!recipe) return false;
+        const name = (recipe.name || '').toLowerCase();
+        const desc = (recipe.recipeDesc || '').toLowerCase();
+        return name.includes('tava') || name.includes('tencere') || name.includes('sote') || name.includes('fırın') || name.includes('sulu') || name.includes('çorba') || desc.includes('tek tencere') || desc.includes('tek tava');
+    };
+
+    const generateDailyMenu = (diet = dietFilter, budget = budgetFilter, cuisine = cuisineFilter, calTarget = calorieTarget, timeCap = maxTimeFilter, mood = moodFilter, historyList = menuHistory) => {
         setIsGenerating(true);
 
         setTimeout(() => {
@@ -235,6 +243,19 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction }
                 desserts = desserts.filter(r => r.type === 'FOREIGN');
             }
 
+            // Ruh Hali / Enerji Filtresi
+            if (mood === 'FAST_15') {
+                soups = soups.filter(r => (r.time || 20) <= 20);
+                mains = mains.filter(r => (r.time || 25) <= 25);
+                carbs = carbs.filter(r => (r.time || 20) <= 20);
+            } else if (mood === 'ONE_POT') {
+                mains = mains.filter(r => isOnePotRecipe(r));
+            } else if (mood === 'SUPER_LIGHT') {
+                soups = soups.filter(r => parseCaloriesNumber(r.calories) <= 250);
+                mains = mains.filter(r => parseCaloriesNumber(r.calories) <= 450);
+                salads = salads.filter(r => parseCaloriesNumber(r.calories) <= 200);
+            }
+
             // Fallback listeleri
             if (soups.length === 0) soups = DB_SOUPS;
             if (mains.length === 0) mains = allMains;
@@ -242,17 +263,27 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction }
             if (salads.length === 0) salads = DB_SALADS;
             if (desserts.length === 0) desserts = DB_DESSERTS;
 
-            // KENDİNİ TEKRAR ETMEYEN RASTGELE 5'Lİ MENÜ SEÇİMİ
+            // KENDİNİ TEKRAR ETMEYEN RASTGELE VEYA BÜTÇE ODAKLI 5'Lİ MENÜ SEÇİMİ
             let selectedMenu = null;
             let attempts = 0;
-            const maxAttempts = 60;
+            const maxAttempts = 100;
+
+            // Bütçe Dostu (En Ekonomik) Mod seçildiyse ucuzdan pahalıya sırala
+            if (budget === 'BUDGET_MIN') {
+                soups.sort((a, b) => getNutritionalDetails(a).cost - getNutritionalDetails(b).cost);
+                mains.sort((a, b) => getNutritionalDetails(a).cost - getNutritionalDetails(b).cost);
+                carbs.sort((a, b) => getNutritionalDetails(a).cost - getNutritionalDetails(b).cost);
+                salads.sort((a, b) => getNutritionalDetails(a).cost - getNutritionalDetails(b).cost);
+                desserts.sort((a, b) => getNutritionalDetails(a).cost - getNutritionalDetails(b).cost);
+            }
 
             while (attempts < maxAttempts) {
-                const s = soups[Math.floor(Math.random() * soups.length)];
-                const m = mains[Math.floor(Math.random() * mains.length)];
-                const c = carbs[Math.floor(Math.random() * carbs.length)];
-                const sal = salads[Math.floor(Math.random() * salads.length)];
-                const des = desserts[Math.floor(Math.random() * desserts.length)];
+                // Rastgele seçerken son geçmiştekileri ele
+                const s = budget === 'BUDGET_MIN' ? soups[attempts % soups.length] : soups[Math.floor(Math.random() * soups.length)];
+                const m = budget === 'BUDGET_MIN' ? mains[attempts % mains.length] : mains[Math.floor(Math.random() * mains.length)];
+                const c = budget === 'BUDGET_MIN' ? carbs[attempts % carbs.length] : carbs[Math.floor(Math.random() * carbs.length)];
+                const sal = budget === 'BUDGET_MIN' ? salads[attempts % salads.length] : salads[Math.floor(Math.random() * salads.length)];
+                const des = budget === 'BUDGET_MIN' ? desserts[attempts % desserts.length] : desserts[Math.floor(Math.random() * desserts.length)];
 
                 const menuId = `${s.id}_${m.id}_${c.id}_${sal.id}_${des.id}`;
 
@@ -296,18 +327,25 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction }
             }
 
             if (!selectedMenu) {
-                const s = soups[0];
-                const m = mains[0];
-                const c = carbs[0];
-                const sal = salads[0];
-                const des = desserts[0];
+                // Rastgeleliği korumak için listeden rastgele indeks seç
+                const sIndex = Math.floor(Math.random() * soups.length);
+                const mIndex = Math.floor(Math.random() * mains.length);
+                const cIndex = Math.floor(Math.random() * carbs.length);
+                const salIndex = Math.floor(Math.random() * salads.length);
+                const desIndex = Math.floor(Math.random() * desserts.length);
+
+                const s = soups[sIndex] || DB_SOUPS[0];
+                const m = mains[mIndex] || DB_MAINS[0];
+                const c = carbs[cIndex] || DB_CARBS[0];
+                const sal = salads[salIndex] || DB_SALADS[0];
+                const des = desserts[desIndex] || DB_DESSERTS[0];
                 const sDetails = getNutritionalDetails(s);
                 const mDetails = getNutritionalDetails(m);
                 const cDetails = getNutritionalDetails(c);
                 const salDetails = getNutritionalDetails(sal);
                 const desDetails = getNutritionalDetails(des);
                 selectedMenu = {
-                    id: `${s.id}_${m.id}_${c.id}_${sal.id}_${des.id}`,
+                    id: `${s.id}_${m.id}_${c.id}_${sal.id}_${des.id}_${Date.now()}`,
                     soup: { ...s, details: sDetails },
                     main: { ...m, details: mDetails },
                     carb: { ...c, details: cDetails },
@@ -315,11 +353,11 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction }
                     dessert: { ...des, details: desDetails },
                     totalCost: Number(sDetails.cost) + Number(mDetails.cost) + Number(cDetails.cost) + Number(salDetails.cost) + Number(desDetails.cost),
                     totalCalories: Number(sDetails.calories) + Number(mDetails.calories) + Number(cDetails.calories) + Number(salDetails.calories) + Number(desDetails.calories),
-                    totalTime: 50
+                    totalTime: Math.max(sDetails.time, mDetails.time, cDetails.time) + 15
                 };
             }
 
-            const updatedHistory = [selectedMenu.id, ...historyList].slice(0, 30);
+            const updatedHistory = [selectedMenu.id, ...historyList].slice(0, 50);
             setMenuHistory(updatedHistory);
             localStorage.setItem('baki_daily_menu_history', JSON.stringify(updatedHistory));
 
@@ -328,13 +366,14 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction }
         }, 300);
     };
 
-    const handleFilterChange = (newDiet, newBudget, newCuisine, newCal, newTime = maxTimeFilter) => {
+    const handleFilterChange = (newDiet, newBudget, newCuisine, newCal, newTime = maxTimeFilter, newMood = moodFilter) => {
         setDietFilter(newDiet);
         setBudgetFilter(newBudget);
         setCuisineFilter(newCuisine);
         setCalorieTarget(newCal);
         setMaxTimeFilter(newTime);
-        generateDailyMenu(newDiet, newBudget, newCuisine, newCal, newTime);
+        setMoodFilter(newMood);
+        generateDailyMenu(newDiet, newBudget, newCuisine, newCal, newTime, newMood);
     };
 
     // Tüm 5 kap yemeğin malzemelerini birleştirme
@@ -399,6 +438,39 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction }
                     </button>
                 </div>
 
+                {/* RUH HALİ & ENERJİ MODLARI (YENİ SÜPER PRATİK FİLTRELER) */}
+                <div style={{ marginBottom: '20px' }}>
+                    <label style={{ fontSize: '12px', fontWeight: 800, color: '#475569', display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '10px' }}>
+                        ⚡ RUH HALİ & ENERJİ MODU
+                    </label>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '8px' }}>
+                        {[
+                            { code: 'ALL', label: '😊 Standart Mod', desc: 'Tüm pratik lezzetler' },
+                            { code: 'FAST_15', label: '⚡ 15-20 Dk Hazır', desc: 'Çok açım, hızlıca dolsun' },
+                            { code: 'ONE_POT', label: '🍳 Tek Tava / Az Bulaşık', desc: 'Yorgunum, bulaşık olmasın' },
+                            { code: 'SUPER_LIGHT', label: '🍃 Hafif & Fit', desc: 'Mideyi yormayan tarifler' }
+                        ].map(m => {
+                            const active = moodFilter === m.code;
+                            return (
+                                <button
+                                    key={m.code}
+                                    onClick={() => handleFilterChange(dietFilter, budgetFilter, cuisineFilter, calorieTarget, maxTimeFilter, m.code)}
+                                    style={{
+                                        padding: '10px 12px', borderRadius: '14px', textAlign: 'left', cursor: 'pointer',
+                                        border: active ? '2px solid #8B5CF6' : '1px solid #E2E8F0',
+                                        background: active ? '#F5F3FF' : 'white',
+                                        boxShadow: active ? '0 4px 12px rgba(139,92,246,0.15)' : 'none',
+                                        transition: 'all 0.2s ease', display: 'flex', flexDirection: 'column', gap: '2px'
+                                    }}
+                                >
+                                    <span style={{ fontSize: '12px', fontWeight: 900, color: active ? '#6D28D9' : '#1E293B' }}>{m.label}</span>
+                                    <span style={{ fontSize: '10px', color: active ? '#7C3AED' : '#94A3B8' }}>{m.desc}</span>
+                                </button>
+                            );
+                        })}
+                    </div>
+                </div>
+
                 {/* DİYET TERCİHİ KARTLARI */}
                 <div style={{ marginBottom: '20px' }}>
                     <label style={{ fontSize: '12px', fontWeight: 800, color: '#475569', display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '10px' }}>
@@ -417,7 +489,7 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction }
                             return (
                                 <button
                                     key={f.code}
-                                    onClick={() => handleFilterChange(f.code, budgetFilter, cuisineFilter, calorieTarget, maxTimeFilter)}
+                                    onClick={() => handleFilterChange(f.code, budgetFilter, cuisineFilter, calorieTarget, maxTimeFilter, moodFilter)}
                                     style={{
                                         padding: '10px 12px', borderRadius: '14px', textAlign: 'left', cursor: 'pointer',
                                         border: active ? '2px solid #10B981' : '1px solid #E2E8F0',
@@ -442,11 +514,12 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction }
                         <label style={{ fontSize: '11px', fontWeight: 800, color: '#64748B', display: 'block', marginBottom: '6px' }}>💰 BÜTÇE ARALIĞI</label>
                         <select
                             value={budgetFilter}
-                            onChange={e => handleFilterChange(dietFilter, e.target.value, cuisineFilter, calorieTarget, maxTimeFilter)}
+                            onChange={e => handleFilterChange(dietFilter, e.target.value, cuisineFilter, calorieTarget, maxTimeFilter, moodFilter)}
                             style={{ width: '100%', padding: '10px', borderRadius: '10px', border: '1px solid #CBD5E1', background: '#F8FAFC', fontWeight: 800, fontSize: '12px', color: '#0F172A', outline: 'none' }}
                         >
                             <option value="ALL">💚 Tümü (Fark Etmez)</option>
-                            <option value="BUDGET">💸 Ekonomik (0 - 240 TL)</option>
+                            <option value="BUDGET_MIN">💸 Bütçe Dostu (En Ucuz 5 Kap)</option>
+                            <option value="BUDGET">🏷️ Ekonomik (0 - 240 TL)</option>
                             <option value="MEDIUM">⚖️ Dengeli (240 - 450 TL)</option>
                             <option value="FEAST">👑 Ziyafet (450+ TL)</option>
                         </select>
@@ -457,7 +530,7 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction }
                         <label style={{ fontSize: '11px', fontWeight: 800, color: '#64748B', display: 'block', marginBottom: '6px' }}>🔥 KALORİ HEDEFİ</label>
                         <select
                             value={calorieTarget}
-                            onChange={e => handleFilterChange(dietFilter, budgetFilter, cuisineFilter, e.target.value, maxTimeFilter)}
+                            onChange={e => handleFilterChange(dietFilter, budgetFilter, cuisineFilter, e.target.value, maxTimeFilter, moodFilter)}
                             style={{ width: '100%', padding: '10px', borderRadius: '10px', border: '1px solid #CBD5E1', background: '#F8FAFC', fontWeight: 800, fontSize: '12px', color: '#0F172A', outline: 'none' }}
                         >
                             <option value="ALL">🌟 Tümü (Fark Etmez)</option>

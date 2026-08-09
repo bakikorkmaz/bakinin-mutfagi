@@ -8,6 +8,7 @@ import { doc, setDoc, getDoc, updateDoc, collection, query, where, getDocs, onSn
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import SocialFlow from './SocialFlow';
 import DailyMenuFlow from './DailyMenuFlow';
+import NeYesekMatch from './NeYesekMatch';
 import { REWARDS } from './rewardsDb';
 import { validateUsername } from './utils/usernameValidation';
 const TRANSLATIONS = {
@@ -1071,6 +1072,14 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
           <div className="hub-title">{t('weekly')}</div>
           <div className="hub-desc">Sadece 2 soruyla, tüm hafta ne yiyeceğinizin planını yormadan otonom şekilde oluşturur.</div>
         </div>
+
+        {/* 🎮 NE YESEK MATCH (ÇİFTLER İÇİN SOSYAL KARAR) */}
+        <div className="hub-card" onClick={() => setDashboardView('MATCH')} style={{borderTop: '4px solid #EC4899'}}>
+          <div className="hub-tag" style={{background: '#FCE7F3', color: '#DB2777'}}>ÇİFTLER İÇİN EŞLEŞME</div>
+          <div className="hub-icon">💕</div>
+          <div className="hub-title">Ne Yesek Match</div>
+          <div className="hub-desc">Eşinizle cihazları eşleştirin, ikinizin de sevdiği yemeği canlı Tinder eşleşme mantığıyla dakikalar içinde bulun!</div>
+        </div>
       </div>
     </>
   );
@@ -1087,6 +1096,10 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
 
       {dashboardView === 'DAILY_MENU' && (
         <DailyMenuFlow onBack={() => setDashboardView('HUB')} openShopping={openShopping} acceptMenuAction={acceptMenuAction} />
+      )}
+
+      {dashboardView === 'MATCH' && (
+        <NeYesekMatch activeUser={activeUser} onBack={() => setDashboardView('HUB')} openShopping={openShopping} />
       )}
 
 
