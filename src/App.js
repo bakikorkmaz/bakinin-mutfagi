@@ -1078,7 +1078,7 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
           <div className="hub-tag" style={{background: '#FCE7F3', color: '#DB2777'}}>ÇİFTLER İÇİN EŞLEŞME</div>
           <div className="hub-icon">💕</div>
           <div className="hub-title">Ne Yesek Match</div>
-          <div className="hub-desc">Eşinizle cihazları eşleştirin, ikinizin de sevdiği yemeği canlı Tinder eşleşme mantığıyla dakikalar içinde bulun!</div>
+          <div className="hub-desc">Eşinizle cihazları eşleştirin, ikinizin de sevdiği yemeği canlı kart oylama yöntemiyle dakikalar içinde bulun!</div>
         </div>
       </div>
     </>

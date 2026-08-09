@@ -6,14 +6,14 @@ import { DB_MAINS_HUGE } from './hugeRecipes';
 
 const ALL_MATCH_RECIPES = [...DB_MAINS, ...DB_MAINS_HUGE];
 
-function getRandomMatchPool(count = 12) {
+function getRandomMatchPool(count = 15) {
     const shuffled = [...ALL_MATCH_RECIPES].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, count).map((r, idx) => ({
         id: r.id || `match_r_${idx}_${Date.now()}`,
         name: r.name,
-        time: r.time || 30,
-        calories: r.calories || 400,
-        cost: r.cost || 75,
+        time: r.prepTime || r.time || 30,
+        calories: r.calories || 450,
+        cost: r.totalCost || r.cost || 90,
         ingredients: r.ingredients || [],
         recipeDesc: r.recipeDesc || "Nefis ve pratik ev yemeği habercisi."
     }));
@@ -28,43 +28,65 @@ export default function NeYesekMatch({ activeUser, onBack, openShopping }) {
     const [matchWinner, setMatchWinner] = useState(null);
     const [showConfetti, setShowConfetti] = useState(false);
     const [loadingMsg, setLoadingMsg] = useState('');
+    const [showGuide, setShowGuide] = useState(true);
+    
+    // Single-device mode state
+    const [singleDeviceMode, setSingleDeviceMode] = useState(false);
+    const [singleUserTurn, setSingleUserTurn] = useState(1); // 1 or 2
+    const [p1Votes, setP1Votes] = useState({});
+    const [p2Votes, setP2Votes] = useState({});
 
-    const userName = activeUser?.name || activeUser?.username || 'Gizli Şef';
+    const userName = activeUser?.name || activeUser?.username || 'Şef 1';
     const userUid = activeUser?.uid || `anon_${Date.now()}`;
 
-    // Listen to current active room
+    // Listen to active Firebase room or fallback local room
     useEffect(() => {
-        if (!roomCode) return;
+        if (!roomCode || singleDeviceMode) return;
 
-        const roomRef = doc(db, 'matches', roomCode.toUpperCase());
-        const unsubscribe = onSnapshot(roomRef, (snapshot) => {
-            if (snapshot.exists()) {
-                const data = snapshot.data();
-                setRoomData(data);
+        let unsubscribe = () => {};
+        
+        try {
+            const roomRef = doc(db, 'matches', roomCode.toUpperCase());
+            unsubscribe = onSnapshot(roomRef, (snapshot) => {
+                if (snapshot.exists()) {
+                    const data = snapshot.data();
+                    setRoomData(data);
 
-                // Check for matches
-                const hostVotes = data.hostVotes || {};
-                const guestVotes = data.guestVotes || {};
+                    const hostVotes = data.hostVotes || {};
+                    const guestVotes = data.guestVotes || {};
 
-                // Find any recipe where BOTH host and guest voted true
-                for (const recipeId in hostVotes) {
-                    if (hostVotes[recipeId] === true && guestVotes[recipeId] === true) {
-                        const matched = (data.pool || []).find(r => r.id === recipeId);
-                        if (matched && (!matchWinner || matchWinner.id !== matched.id)) {
-                            setMatchWinner(matched);
-                            setShowConfetti(true);
+                    for (const recipeId in hostVotes) {
+                        if (hostVotes[recipeId] === true && guestVotes[recipeId] === true) {
+                            const matched = (data.pool || []).find(r => r.id === recipeId);
+                            if (matched && (!matchWinner || matchWinner.id !== matched.id)) {
+                                setMatchWinner(matched);
+                                setShowConfetti(true);
+                            }
                         }
                     }
+                } else {
+                    // Try fallback room from localStorage if offline
+                    const localRoom = localStorage.getItem('LOCAL_MATCH_ROOM_' + roomCode);
+                    if (localRoom) {
+                        setRoomData(JSON.parse(localRoom));
+                    } else {
+                        setLoadingMsg('Oda aranıyor...');
+                    }
                 }
-            } else {
-                setLoadingMsg('Oda bulunamadı veya süresi doldu.');
-            }
-        });
+            }, () => {
+                // Firebase error fallback to local storage
+                const localRoom = localStorage.getItem('LOCAL_MATCH_ROOM_' + roomCode);
+                if (localRoom) setRoomData(JSON.parse(localRoom));
+            });
+        } catch (e) {
+            const localRoom = localStorage.getItem('LOCAL_MATCH_ROOM_' + roomCode);
+            if (localRoom) setRoomData(JSON.parse(localRoom));
+        }
 
         return () => unsubscribe();
-    }, [roomCode]);
+    }, [roomCode, singleDeviceMode, matchWinner]);
 
-    // Create Room
+    // Create Room (Firebase + Fallback)
     const handleCreateRoom = async () => {
         const generatedCode = 'BAKI-' + Math.floor(1000 + Math.random() * 9000);
         setLoadingMsg('Oda oluşturuluyor...');
@@ -76,78 +98,165 @@ export default function NeYesekMatch({ activeUser, onBack, openShopping }) {
             hostName: userName,
             guestUid: '',
             guestName: '',
-            status: 'WAITING', // WAITING, ACTIVE, COMPLETED
+            status: 'WAITING',
             pool: newPool,
             hostVotes: {},
             guestVotes: {},
             createdAt: new Date().toISOString()
         };
 
+        // Always save to localStorage for offline fallback
+        localStorage.setItem('LOCAL_MATCH_ROOM_' + generatedCode, JSON.stringify(roomPayload));
+
         try {
             await setDoc(doc(db, 'matches', generatedCode), roomPayload);
-            setIsHost(true);
-            setRoomCode(generatedCode);
-            setLoadingMsg('');
         } catch (e) {
-            alert('Oda oluşturulurken hata: ' + e.message);
-            setLoadingMsg('');
+            console.warn('Firebase çevrimdışı, yerel oda modu aktif:', e);
         }
+
+        setIsHost(true);
+        setRoomCode(generatedCode);
+        setRoomData(roomPayload);
+        setLoadingMsg('');
     };
 
-    // Join Room
+    // Join Room (Firebase + Fallback)
     const handleJoinRoom = async () => {
         const clean = inputCode.trim().toUpperCase();
         if (!clean) return alert('Lütfen 4 haneli oda kodunu girin (Örn: BAKI-1234).');
 
         setLoadingMsg('Odaya bağlanılıyor...');
+        let data = null;
+
         try {
             const roomRef = doc(db, 'matches', clean);
             const docSnap = await getDoc(roomRef);
 
-            if (!docSnap.exists()) {
-                setLoadingMsg('');
-                return alert('Geçersiz oda kodu! Lütfen eşinizin oluşturduğu kodu doğru girdiğinizden emin olun.');
+            if (docSnap.exists()) {
+                data = docSnap.data();
+                if (data.hostUid === userUid) {
+                    setIsHost(true);
+                } else {
+                    setIsHost(false);
+                    data.guestUid = userUid;
+                    data.guestName = userName;
+                    data.status = 'ACTIVE';
+                    await updateDoc(roomRef, {
+                        guestUid: userUid,
+                        guestName: userName,
+                        status: 'ACTIVE'
+                    });
+                }
             }
-
-            const data = docSnap.data();
-            if (data.hostUid === userUid) {
-                setIsHost(true);
-            } else {
-                setIsHost(false);
-                await updateDoc(roomRef, {
-                    guestUid: userUid,
-                    guestName: userName,
-                    status: 'ACTIVE'
-                });
-            }
-
-            setRoomCode(clean);
-            setLoadingMsg('');
         } catch (e) {
-            alert('Odaya katılırken hata: ' + e.message);
-            setLoadingMsg('');
+            console.warn('Firebase bağlantı hatası, yerel oda kontrol ediliyor...');
         }
+
+        // Try local storage if firebase was unreachable or not found
+        if (!data) {
+            const localRoomStr = localStorage.getItem('LOCAL_MATCH_ROOM_' + clean);
+            if (localRoomStr) {
+                data = JSON.parse(localRoomStr);
+                setIsHost(false);
+                data.guestUid = userUid;
+                data.guestName = userName || 'Eş';
+                data.status = 'ACTIVE';
+                localStorage.setItem('LOCAL_MATCH_ROOM_' + clean, JSON.stringify(data));
+            }
+        }
+
+        if (!data) {
+            setLoadingMsg('');
+            return alert('Oda bulunamadı! Lütfen oda oluşturan kişinin verdiği kodu (Örn: BAKI-4892) doğru yazdığınızdan emin olun.');
+        }
+
+        setRoomCode(clean);
+        setRoomData(data);
+        setLoadingMsg('');
+    };
+
+    // Start Single-Device Mode
+    const startSingleDeviceMode = () => {
+        const newPool = getRandomMatchPool(15);
+        setSingleDeviceMode(true);
+        setSingleUserTurn(1);
+        setP1Votes({});
+        setP2Votes({});
+        setCurrentIndex(0);
+        setRoomCode('LOCAL_SINGLE');
+        setRoomData({
+            code: 'TEK-CİHAZ',
+            hostName: '1. Kişi',
+            guestName: '2. Kişi',
+            pool: newPool
+        });
     };
 
     // Vote on Current Recipe Card
     const handleVote = async (voteValue) => {
-        if (!roomData || !roomCode) return;
+        if (!roomData) return;
         const currentRecipe = (roomData.pool || [])[currentIndex];
         if (!currentRecipe) return;
 
+        if (singleDeviceMode) {
+            if (singleUserTurn === 1) {
+                const updatedP1 = { ...p1Votes, [currentRecipe.id]: voteValue };
+                setP1Votes(updatedP1);
+                if (currentIndex < roomData.pool.length - 1) {
+                    setCurrentIndex(prev => prev + 1);
+                } else {
+                    // Turn 1 finished, pass phone to 2nd person
+                    setSingleUserTurn(2);
+                    setCurrentIndex(0);
+                    alert("📱 1. Kişi oylamasını tamamladı! Şimdi telefonu 2. kişiye verin.");
+                }
+            } else {
+                const updatedP2 = { ...p2Votes, [currentRecipe.id]: voteValue };
+                setP2Votes(updatedP2);
+
+                // Check match with P1
+                if (p1Votes[currentRecipe.id] === true && voteValue === true) {
+                    setMatchWinner(currentRecipe);
+                    setShowConfetti(true);
+                    return;
+                }
+
+                if (currentIndex < roomData.pool.length - 1) {
+                    setCurrentIndex(prev => prev + 1);
+                } else {
+                    alert("🏁 Oylama bitti! Ortak eşleşen bir yemek bulunamadıysa tekrar deneyebilirsiniz.");
+                }
+            }
+            return;
+        }
+
+        // Online Multi-Device Vote
         const voteKey = isHost ? `hostVotes.${currentRecipe.id}` : `guestVotes.${currentRecipe.id}`;
 
         try {
             await updateDoc(doc(db, 'matches', roomCode), {
                 [voteKey]: voteValue
             });
-
-            // Move to next card locally
-            if (currentIndex < (roomData.pool.length - 1)) {
-                setCurrentIndex(prev => prev + 1);
-            }
         } catch (e) {
-            console.error('Oy gönderme hatası:', e);
+            // Local storage fallback vote update
+            const localStr = localStorage.getItem('LOCAL_MATCH_ROOM_' + roomCode);
+            if (localStr) {
+                const localData = JSON.parse(localStr);
+                if (isHost) localData.hostVotes[currentRecipe.id] = voteValue;
+                else localData.guestVotes[currentRecipe.id] = voteValue;
+                
+                // Check local match
+                if (localData.hostVotes[currentRecipe.id] && localData.guestVotes[currentRecipe.id]) {
+                    setMatchWinner(currentRecipe);
+                    setShowConfetti(true);
+                }
+                localStorage.setItem('LOCAL_MATCH_ROOM_' + roomCode, JSON.stringify(localData));
+                setRoomData(localData);
+            }
+        }
+
+        if (currentIndex < (roomData.pool.length - 1)) {
+            setCurrentIndex(prev => prev + 1);
         }
     };
 
@@ -182,52 +291,83 @@ export default function NeYesekMatch({ activeUser, onBack, openShopping }) {
             )}
 
             {/* Header Bar */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '15px' }}>
                 <button onClick={onBack} style={{ background: '#F1F5F9', border: '1px solid #CBD5E1', padding: '10px 18px', borderRadius: '16px', fontWeight: 800, cursor: 'pointer', fontSize: '13px', color: '#475569' }}>
                     ← Geri Dön
                 </button>
                 <div style={{ background: 'linear-gradient(135deg, #EC4899, #8B5CF6)', color: 'white', padding: '6px 14px', borderRadius: '20px', fontWeight: 900, fontSize: '12px' }}>
-                    🎮 Ne Yesek Match (Çiftler İçin)
+                    🍽️ Ne Yesek Match (Çiftler & Arkadaşlar)
                 </div>
             </div>
 
-            {/* 1. LOBBY VIEW (CREATE / JOIN) */}
+            {/* 1. LOBBY VIEW (CREATE / JOIN / GUIDE) */}
             {!roomCode && (
-                <div style={{ background: 'white', borderRadius: '26px', padding: '28px', boxShadow: '0 10px 30px rgba(0,0,0,0.08)', border: '1px solid #E2E8F0', textAlign: 'center' }}>
-                    <div style={{ fontSize: '48px', marginBottom: '10px' }}>💕</div>
-                    <h2 style={{ fontSize: '24px', fontWeight: 900, color: '#0F172A', marginBottom: '8px' }}>
-                        "Ne Yesek?" Kavgasını Bitiren Eşleşme
-                    </h2>
-                    <p style={{ fontSize: '13px', color: '#64748B', lineHeight: '1.6', marginBottom: '25px' }}>
-                        Eşiniz veya ev arkadaşınızla cihazları eşleştirin! İki tarafın da ikna olduğu ortak yemeği Tinder mantığıyla saniyeler içinde yakalayın.
-                    </p>
+                <div style={{ background: 'white', borderRadius: '26px', padding: '24px', boxShadow: '0 10px 30px rgba(0,0,0,0.08)', border: '1px solid #E2E8F0' }}>
+                    <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+                        <div style={{ fontSize: '44px', marginBottom: '8px' }}>❤️🍽️</div>
+                        <h2 style={{ fontSize: '22px', fontWeight: 900, color: '#0F172A', marginBottom: '6px' }}>
+                            "Ne Yesek?" Kararsızlığına Ortak Çözüm!
+                        </h2>
+                        <p style={{ fontSize: '13px', color: '#64748B', lineHeight: '1.5' }}>
+                            Eşiniz veya arkadaşınızla yemek seçerken anlaşamıyor musunuz? Kartları oylayın, iki tarafın da beğendiği ortak yemeği anında keşfedin!
+                        </p>
+                    </div>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginBottom: '25px' }}>
+                    {/* USAGE GUIDE BOX */}
+                    <div style={{ background: '#F8FAFC', borderRadius: '18px', padding: '16px', border: '1px solid #E2E8F0', marginBottom: '20px' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer' }} onClick={() => setShowGuide(!showGuide)}>
+                            <span style={{ fontWeight: 800, color: '#4338CA', fontSize: '14px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                ❓ Ne Yesek Match Nasıl Kullanılır? (4 Adımda İşleyiş)
+                            </span>
+                            <span style={{ fontSize: '14px', color: '#6366F1' }}>{showGuide ? '▲' : '▼'}</span>
+                        </div>
+
+                        {showGuide && (
+                            <div style={{ marginTop: '12px', fontSize: '12px', color: '#334155', lineHeight: '1.6' }}>
+                                <div style={{ marginBottom: '6px' }}><b>1. Adım (Oda Oluşturma):</b> Biriniz <b>"👑 Oda Oluştur"</b> butonuna basarak 4 haneli oda kodunu alır (Örn: BAKI-4892).</div>
+                                <div style={{ marginBottom: '6px' }}><b>2. Adım (Odaya Katılma):</b> Diğer kişi kendi telefonundan oda kodunu kutuya yazıp <b>"🔗 Odaya Katıl"</b>a basar.</div>
+                                <div style={{ marginBottom: '6px' }}><b>3. Adım (Kart Oylama):</b> Ekrana gelen lezzetli yemek kartlarına <b>"💚 Evet"</b> veya <b>"❌ Pas"</b> verirsiniz.</div>
+                                <div><b>4. Adım (Mükemmel Eşleşme):</b> İkiniz de aynı yemeği beğendiğiniz anda ekranda kutlama ile ortak yemek açılır! 🎉</div>
+                            </div>
+                        )}
+                    </div>
+
+                    {/* ACTION BUTTONS */}
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '15px' }}>
                         <button
                             onClick={handleCreateRoom}
-                            style={{ background: 'linear-gradient(135deg, #8B5CF6, #6D28D9)', color: 'white', border: 'none', padding: '16px', borderRadius: '20px', fontWeight: 900, fontSize: '14px', cursor: 'pointer', boxShadow: '0 4px 15px rgba(139,92,246,0.3)' }}
+                            style={{ background: 'linear-gradient(135deg, #8B5CF6, #6D28D9)', color: 'white', border: 'none', padding: '16px', borderRadius: '18px', fontWeight: 900, fontSize: '14px', cursor: 'pointer', boxShadow: '0 4px 15px rgba(139,92,246,0.3)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px' }}
                         >
-                            👑 Oda Oluştur (Host)
+                            <span style={{ fontSize: '20px' }}>👑</span>
+                            <span>Oda Oluştur (Host)</span>
                         </button>
-                        <div style={{ background: '#F8FAFC', padding: '16px', borderRadius: '20px', border: '1px solid #E2E8F0' }}>
+                        <div style={{ background: '#F8FAFC', padding: '12px', borderRadius: '18px', border: '1px solid #E2E8F0', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                             <input
                                 type="text"
-                                placeholder="Örn: BAKI-4892"
+                                placeholder="Kodu Gir (Örn: BAKI-1234)"
                                 value={inputCode}
                                 onChange={e => setInputCode(e.target.value)}
-                                style={{ width: '100%', padding: '10px', borderRadius: '12px', border: '1px solid #CBD5E1', textAlign: 'center', fontWeight: 900, fontSize: '14px', textTransform: 'uppercase', marginBottom: '8px' }}
+                                style={{ width: '100%', padding: '10px', borderRadius: '10px', border: '1px solid #CBD5E1', textAlign: 'center', fontWeight: 900, fontSize: '13px', textTransform: 'uppercase' }}
                             />
                             <button
                                 onClick={handleJoinRoom}
-                                style={{ width: '100%', background: '#EC4899', color: 'white', border: 'none', padding: '10px', borderRadius: '12px', fontWeight: 800, fontSize: '13px', cursor: 'pointer' }}
+                                style={{ width: '100%', background: '#EC4899', color: 'white', border: 'none', padding: '10px', borderRadius: '10px', fontWeight: 800, fontSize: '13px', cursor: 'pointer' }}
                             >
                                 🔗 Odaya Katıl
                             </button>
                         </div>
                     </div>
 
+                    {/* SINGLE DEVICE DEMO BUTTON */}
+                    <button
+                        onClick={startSingleDeviceMode}
+                        style={{ width: '100%', padding: '14px', background: '#FEF3C7', border: '1px solid #FCD34D', color: '#92400E', borderRadius: '16px', fontWeight: 800, fontSize: '13px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
+                    >
+                        <span>📱 Tek Telefondan Yan Yana Oyna (Sırayla Oy Ver)</span>
+                    </button>
+
                     {loadingMsg && (
-                        <div style={{ color: '#8B5CF6', fontWeight: 800, fontSize: '13px' }}>{loadingMsg}</div>
+                        <div style={{ color: '#8B5CF6', fontWeight: 800, fontSize: '13px', marginTop: '15px', textAlign: 'center' }}>{loadingMsg}</div>
                     )}
                 </div>
             )}
@@ -267,6 +407,7 @@ export default function NeYesekMatch({ activeUser, onBack, openShopping }) {
                                     setRoomCode('');
                                     setMatchWinner(null);
                                     setShowConfetti(false);
+                                    setSingleDeviceMode(false);
                                 }}
                                 style={{ background: '#F1F5F9', color: '#475569', border: 'none', padding: '12px', borderRadius: '16px', fontWeight: 800, fontSize: '13px', cursor: 'pointer' }}
                             >
@@ -282,23 +423,34 @@ export default function NeYesekMatch({ activeUser, onBack, openShopping }) {
                 <div style={{ background: 'white', borderRadius: '26px', padding: '24px', boxShadow: '0 10px 30px rgba(0,0,0,0.08)', border: '1px solid #E2E8F0' }}>
                     
                     {/* Room Info Bar */}
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#F8FAFC', padding: '12px 18px', borderRadius: '18px', marginBottom: '20px', border: '1px solid #E2E8F0' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#F8FAFC', padding: '12px 18px', borderRadius: '18px', marginBottom: '15px', border: '1px solid #E2E8F0' }}>
                         <div>
                             <div style={{ fontSize: '10px', color: '#64748B', fontWeight: 800 }}>ODA KODU</div>
-                            <div style={{ fontSize: '16px', color: '#8B5CF6', fontWeight: 900, letterSpacing: '1px' }}>{roomData.code}</div>
+                            <div style={{ fontSize: '16px', color: '#8B5CF6', fontWeight: 900, letterSpacing: '1px', cursor: 'pointer' }} onClick={() => { navigator.clipboard?.writeText(roomData.code); alert('Oda kodu kopyalandı: ' + roomData.code); }}>
+                                {roomData.code} 📋
+                            </div>
                         </div>
                         <div style={{ textAlign: 'right' }}>
-                            <div style={{ fontSize: '10px', color: '#64748B', fontWeight: 800 }}>EŞLEŞEN KİŞİLER</div>
+                            <div style={{ fontSize: '10px', color: '#64748B', fontWeight: 800 }}>
+                                {singleDeviceMode ? `SIKRA: ${singleUserTurn}. KİŞİDE` : 'EŞLEŞEN KİŞİLER'}
+                            </div>
                             <div style={{ fontSize: '12px', color: '#0F172A', fontWeight: 800 }}>
                                 👑 {roomData.hostName} {roomData.guestName ? `& 💖 ${roomData.guestName}` : '(Eş Bekleniyor...)'}
                             </div>
                         </div>
                     </div>
 
-                    {/* Waiting Status Banner if alone */}
-                    {!roomData.guestName && (
+                    {/* Waiting Banner if multi-device alone */}
+                    {!singleDeviceMode && !roomData.guestName && (
                         <div style={{ background: '#FFFBEB', border: '1px solid #FDE68A', color: '#D97706', padding: '12px', borderRadius: '16px', textAlign: 'center', fontSize: '12px', fontWeight: 800, marginBottom: '20px' }}>
                             ⏳ Eşinizin odaya girmesi bekleniyor! Oda Kodunu (<strong>{roomData.code}</strong>) eşinize söyleyin.
+                        </div>
+                    )}
+
+                    {/* Single Device Turn Notice Banner */}
+                    {singleDeviceMode && (
+                        <div style={{ background: '#EEF2FF', border: '1px solid #C7D2FE', color: '#4338CA', padding: '10px 14px', borderRadius: '14px', textAlign: 'center', fontSize: '12px', fontWeight: 800, marginBottom: '15px' }}>
+                            📱 Tek Telefon Modu: Şuan <strong>{singleUserTurn}. Kişi</strong> oy veriyor!
                         </div>
                     )}
 
@@ -306,7 +458,7 @@ export default function NeYesekMatch({ activeUser, onBack, openShopping }) {
                     {currentCard ? (
                         <div style={{ background: 'linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%)', borderRadius: '24px', padding: '24px', border: '2px solid #EEF2FF', boxShadow: '0 8px 25px rgba(0,0,0,0.04)', textAlign: 'center', position: 'relative' }}>
                             <div style={{ fontSize: '11px', color: '#8B5CF6', fontWeight: 900, textTransform: 'uppercase', marginBottom: '6px' }}>
-                                TARİF {currentIndex + 1} / {roomData.pool.length}
+                                YEMEK TARİFİ {currentIndex + 1} / {roomData.pool.length}
                             </div>
 
                             <h3 style={{ fontSize: '22px', fontWeight: 900, color: '#0F172A', marginBottom: '12px' }}>
@@ -329,7 +481,7 @@ export default function NeYesekMatch({ activeUser, onBack, openShopping }) {
                                     onClick={() => handleVote(false)}
                                     style={{ background: '#FEE2E2', color: '#DC2626', border: '2px solid #FECACA', padding: '16px', borderRadius: '20px', fontWeight: 900, fontSize: '15px', cursor: 'pointer', transition: '0.2s' }}
                                 >
-                                    ❌ Pas Geç (İstemiyorum)
+                                    ❌ Pas Geç
                                 </button>
                                 <button
                                     onClick={() => handleVote(true)}
