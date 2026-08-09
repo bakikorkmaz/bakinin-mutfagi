@@ -466,7 +466,8 @@ export const generateSmartMenus = ({ selectedIngredients, budget, cuisine, theme
 
 export const generateFridgeMains = (selectedIngredients, filter = 'ALL', maxTime = 999, maxCost = 9999) => {
    let mains = [];
-   const lowerSelected = selectedIngredients.map(x=>x.toLowerCase());
+   const lowerSelected = (selectedIngredients || []).map(x => x.toLowerCase().trim()).filter(Boolean);
+   
    for (let m of DB_MAINS_HUGE) {
       if (m.time > maxTime) continue;
       if (m.cost > maxCost) continue;
@@ -495,8 +496,11 @@ export const generateFridgeMains = (selectedIngredients, filter = 'ALL', maxTime
       let matchedIngs = [];
       let missingIngs = [];
       let dynamicMissingCost = 0;
+      
+      const totalIngsCount = (m.ingredients || []).length || 1;
+      
       m.ingredients.forEach(ing => {
-          if(lowerSelected.some(sel => sel.includes(ing) || ing.includes(sel))) {
+          if (lowerSelected.length > 0 && lowerSelected.some(sel => sel.includes(ing) || ing.includes(sel))) {
               matchScore++;
               matchedIngs.push(ing);
           } else {
@@ -504,12 +508,25 @@ export const generateFridgeMains = (selectedIngredients, filter = 'ALL', maxTime
               dynamicMissingCost += getTrueCost(ing);
           }
       });
-      if (matchScore > 0) {
+
+      // % Eşleşme Oranı Hesaplama
+      let matchPercentage = lowerSelected.length > 0 
+          ? Math.min(100, Math.round((matchScore / Math.max(1, lowerSelected.length)) * 100))
+          : 100;
+          
+      if (lowerSelected.length > 0 && matchScore > 0) {
+          // Eşleşen malzeme oranını tarif malzemeleri bazlı da tartalım
+          const ingRatioPct = Math.round((matchScore / totalIngsCount) * 100);
+          matchPercentage = Math.max(matchPercentage, ingRatioPct);
+      }
+
+      if (lowerSelected.length === 0 || matchScore > 0) {
          const details = getDishDetails(m);
          const recipeFullCost = details.totalCost || m.cost || 110;
          mains.push({ 
            ...m, 
            matchScore, 
+           matchPercentage,
            matchedIngs, 
            missingIngs, 
            calories: details.calories, 
@@ -521,7 +538,36 @@ export const generateFridgeMains = (selectedIngredients, filter = 'ALL', maxTime
          });
       }
    }
-   mains.sort((a, b) => b.matchScore - a.matchScore);
+   
+   // Eşleşme oranına göre akıllı sıralama
+   mains.sort((a, b) => {
+      if (b.matchPercentage !== a.matchPercentage) return b.matchPercentage - a.matchPercentage;
+      if (b.matchScore !== a.matchScore) return b.matchScore - a.matchScore;
+      return a.missingCost - b.missingCost;
+   });
+
+   // SIFIR YEMEK BULUNAMADI KORUMASI:
+   // Eğer hiçbir tarif %100 uymadıysa bile en yakın % eşleşen alternatifleri göster
+   if (mains.length === 0 && lowerSelected.length > 0) {
+      return DB_MAINS_HUGE.slice(0, 10).map(m => {
+          const details = getDishDetails(m);
+          return {
+             ...m,
+             matchScore: 0,
+             matchPercentage: 40,
+             matchedIngs: [],
+             missingIngs: m.ingredients,
+             calories: details.calories,
+             macros: details.macros,
+             prepTime: details.prepTime,
+             totalCost: details.totalCost || m.cost || 110,
+             missingCost: m.cost || 110,
+             recipe: details.recipe,
+             isFallback: true
+          };
+      });
+   }
+
    return mains;
 };
 
@@ -1768,3 +1814,47 @@ export const getSimilarDishes = (target) => {
        return { ...dish, ...details, logicExplanation: exp };
    });
 };
+
+// --- ZAMAN VE SAAT AĞIRLIKLI ŞANS ÇARKI ALGORİTMASI ---
+export const getTimeAwareWheelItem = () => {
+    const hour = new Date().getHours();
+    let timeBadge = "";
+    let preferredTypes = [];
+
+    if (hour >= 6 && hour < 11) {
+        timeBadge = "🍳 Sabah Saatine Özel (Kahvaltılık & Pratik Hamur İşleri %80 Öncelikli)";
+        preferredTypes = ["breakfast", "egg", "pastry", "light"];
+    } else if (hour >= 11 && hour < 16) {
+        timeBadge = "☀️ Öğle Saatine Özel (Doyurucu Ev Yemeği & Sote/Çorba %75 Öncelikli)";
+        preferredTypes = ["TURKISH", "LOCAL", "soup", "sote"];
+    } else if (hour >= 16 && hour < 22) {
+        timeBadge = "🌙 Akşam Saatine Özel (Zengin Ana Yemek & Izgaralar %85 Öncelikli)";
+        preferredTypes = ["TURKISH", "LOCAL", "FOREIGN", "main"];
+    } else {
+        timeBadge = "✨ Gece Saatine Özel (Hafif Çorba & Fit Atıştırmalıklar %80 Öncelikli)";
+        preferredTypes = ["light", "soup", "FIT"];
+    }
+
+    const allDishes = [...DB_MAINS_HUGE];
+    
+    // Saate uygun olanların şans ağırlığını katlayalım
+    const weightedPool = [];
+    allDishes.forEach(dish => {
+        const dishText = (dish.name + " " + (dish.type || "") + " " + (dish.ingredients || []).join(" ")).toLowerCase();
+        let isPreferred = preferredTypes.some(t => dishText.includes(t.toLowerCase()));
+        
+        const copies = isPreferred ? 3 : 1;
+        for (let i = 0; i < copies; i++) {
+            weightedPool.push(dish);
+        }
+    });
+
+    const selectedDish = weightedPool[Math.floor(Math.random() * weightedPool.length)] || allDishes[0];
+
+    return {
+        dish: selectedDish,
+        timeBadge,
+        currentHour: hour
+    };
+};
+

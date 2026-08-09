@@ -1233,7 +1233,7 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
                       <div key={idx} style={{border: '1px solid #10B981', padding: '15px', borderRadius: '12px', background: 'white', flex: '1 1 200px'}}>
                           <div style={{fontSize: '24px', marginBottom: '5px'}}>🍽️</div>
                           <div style={{fontWeight: '800', color: '#065F46', fontSize: '15px', marginBottom: '8px'}}>{mainItem.name}</div>
-                          <div style={{fontSize: '12px', background: '#ECFDF5', padding: '5px 10px', display: 'inline-block', borderRadius: '8px', color: '#10B981', fontWeight: 700, marginBottom: '8px'}}>Eşleşme: {mainItem.matchScore} Malzeme</div>
+                          <div style={{fontSize: '12px', background: (mainItem.matchPercentage || 0) >= 75 ? '#DCFCE7' : (mainItem.matchPercentage || 0) >= 50 ? '#FEF9C3' : '#FEE2E2', padding: '5px 10px', display: 'inline-block', borderRadius: '8px', color: (mainItem.matchPercentage || 0) >= 75 ? '#15803D' : (mainItem.matchPercentage || 0) >= 50 ? '#A16207' : '#B91C1C', fontWeight: 800, marginBottom: '8px'}}>%{mainItem.matchPercentage || 100} Eşleşti! ({mainItem.matchScore} Malzeme)</div>
                           
                           <div style={{display: 'flex', gap: '5px', flexWrap: 'wrap', marginBottom: '8px'}}>
                             <span style={{background: '#EEF2FF', color: '#4338CA', padding: '3px 8px', borderRadius: '4px', fontSize: '11px', fontWeight: 600}}>🔥 {mainItem.calories}</span>

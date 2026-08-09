@@ -222,6 +222,10 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction }
         setTimeout(() => {
             const allMains = [...DB_MAINS, ...DB_MAINS_HUGE];
 
+            // FAILSAFE RELAXATION ENGINE (Asla Boş Ekran Göstermeyen Akıllı Gevşetme Motoru)
+            let isRelaxed = false;
+            let relaxedReason = "";
+
             let soups = DB_SOUPS.filter(r => isRecipeCompliant(r, diet));
             let mains = allMains.filter(r => isRecipeCompliant(r, diet));
             let carbs = DB_CARBS.filter(r => isRecipeCompliant(r, diet));
@@ -230,38 +234,44 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction }
 
             // Mutfak Filtresi
             if (cuisine === 'TURKISH') {
-                soups = soups.filter(r => r.type === 'LOCAL' || r.type === 'TURKISH');
-                mains = mains.filter(r => r.type === 'LOCAL' || r.type === 'TURKISH');
-                carbs = carbs.filter(r => r.type === 'LOCAL' || r.type === 'TURKISH');
-                salads = salads.filter(r => r.type === 'LOCAL' || r.type === 'TURKISH');
-                desserts = desserts.filter(r => r.type === 'LOCAL' || r.type === 'TURKISH');
+                const sFilter = (r) => r.type === 'LOCAL' || r.type === 'TURKISH';
+                if (soups.some(sFilter)) soups = soups.filter(sFilter);
+                if (mains.some(sFilter)) mains = mains.filter(sFilter);
+                if (carbs.some(sFilter)) carbs = carbs.filter(sFilter);
             } else if (cuisine === 'WORLD') {
-                soups = soups.filter(r => r.type === 'FOREIGN');
-                mains = mains.filter(r => r.type === 'FOREIGN');
-                carbs = carbs.filter(r => r.type === 'FOREIGN');
-                salads = salads.filter(r => r.type === 'FOREIGN');
-                desserts = desserts.filter(r => r.type === 'FOREIGN');
+                const sFilter = (r) => r.type === 'FOREIGN';
+                if (soups.some(sFilter)) soups = soups.filter(sFilter);
+                if (mains.some(sFilter)) mains = mains.filter(sFilter);
+                if (carbs.some(sFilter)) carbs = carbs.filter(sFilter);
             }
 
             // Ruh Hali / Enerji Filtresi
             if (mood === 'FAST_15') {
-                soups = soups.filter(r => (r.time || 20) <= 20);
-                mains = mains.filter(r => (r.time || 25) <= 25);
-                carbs = carbs.filter(r => (r.time || 20) <= 20);
+                const s15 = (r) => (r.time || 20) <= 20;
+                const m15 = (r) => (r.time || 25) <= 25;
+                if (soups.some(s15)) soups = soups.filter(s15);
+                if (mains.some(m15)) mains = mains.filter(m15);
+                if (carbs.some(s15)) carbs = carbs.filter(s15);
             } else if (mood === 'ONE_POT') {
-                mains = mains.filter(r => isOnePotRecipe(r));
+                const onePotMains = mains.filter(r => isOnePotRecipe(r));
+                if (onePotMains.length > 0) mains = onePotMains;
             } else if (mood === 'SUPER_LIGHT') {
-                soups = soups.filter(r => parseCaloriesNumber(r.calories) <= 250);
-                mains = mains.filter(r => parseCaloriesNumber(r.calories) <= 450);
-                salads = salads.filter(r => parseCaloriesNumber(r.calories) <= 200);
+                const sLight = (r) => parseCaloriesNumber(r.calories) <= 250;
+                const mLight = (r) => parseCaloriesNumber(r.calories) <= 450;
+                if (soups.some(sLight)) soups = soups.filter(sLight);
+                if (mains.some(mLight)) mains = mains.filter(mLight);
             }
 
-            // Fallback listeleri
-            if (soups.length === 0) soups = DB_SOUPS;
-            if (mains.length === 0) mains = allMains;
-            if (carbs.length === 0) carbs = DB_CARBS;
-            if (salads.length === 0) salads = DB_SALADS;
-            if (desserts.length === 0) desserts = DB_DESSERTS;
+            // Fallback listeleri (Sıfır yemek riski ortadan kaldırıldı)
+            if (soups.length === 0) { soups = DB_SOUPS; isRelaxed = true; }
+            if (mains.length === 0) { mains = allMains; isRelaxed = true; }
+            if (carbs.length === 0) { carbs = DB_CARBS; isRelaxed = true; }
+            if (salads.length === 0) { salads = DB_SALADS; isRelaxed = true; }
+            if (desserts.length === 0) { desserts = DB_DESSERTS; isRelaxed = true; }
+
+            if (isRelaxed) {
+                relaxedReason = "✨ Seçtiğiniz kombinasyon çok kısıtlayıcı olduğu için lezzet dengesi korunarak en yakın 5 kaplık alternatif menü oluşturuldu.";
+            }
 
             // KENDİNİ TEKRAR ETMEYEN RASTGELE VEYA BÜTÇE ODAKLI 5'Lİ MENÜ SEÇİMİ
             let selectedMenu = null;
