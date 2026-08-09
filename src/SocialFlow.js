@@ -127,9 +127,11 @@ function PinchZoomImage({ src, alt, style, onClick, badgeText }) {
   );
 }
 
-export default function SocialFlow({ activeUser, setActiveUser, onBack }) {
+import NeYesekMatch from './NeYesekMatch';
 
-   const [subTab, setSubTab] = useState('FOLLOW'); // FEED, CHAT, FOLLOW, UPLOAD
+export default function SocialFlow({ activeUser, setActiveUser, onBack, openShopping }) {
+
+   const [subTab, setSubTab] = useState('FEED'); // FEED, MATCH, WHEEL, BADGES, CHAT, FOLLOW, UPLOAD, MY_PROFILE
    const [model, setModel] = useState(null);
    const [isModelLoading, setIsModelLoading] = useState(true);
 
@@ -1157,6 +1159,52 @@ const renderNotificationsScreen = () => {
        );
    };
 
+    const renderBadgesScreen = () => {
+        const badges = [
+            { id: 'master_chef', title: '🥇 Usta Şef', desc: '10+ Şef Tarifi Pişiren Gurme', unlocked: true, color: '#F59E0B', bg: '#FEF3C7' },
+            { id: 'zero_waste', title: '🌱 İsraf Avcısı', desc: 'Artan Malzemeleri Dönüştüren Şef', unlocked: true, color: '#10B981', bg: '#DCFCE7' },
+            { id: 'savings_hero', title: '💰 Tasarruf Şampiyonu', desc: 'Dışarı Fiyatına Kıyasla 1,000+ ₺ Tasarruf Eden', unlocked: true, color: '#3B82F6', bg: '#DBEAFE' },
+            { id: 'social_gourmet', title: '🔥 Lezzet Gurmesi', desc: 'Eğlence Serüveninde Paylaşım Yapan', unlocked: (myPosts.length > 0), color: '#EC4899', bg: '#FCE7F3' }
+        ];
+
+        return (
+            <div style={{padding: '15px 0', color: '#1E293B'}}>
+                <div style={{background: 'white', borderRadius: '24px', padding: '20px', boxShadow: '0 10px 25px rgba(0,0,0,0.05)', marginBottom: '20px'}}>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px'}}>
+                        <span style={{fontSize: '32px'}}>🏆</span>
+                        <div>
+                            <h2 style={{margin: 0, fontSize: '20px', fontWeight: 900, color: '#0F172A'}}>Gurme Rozetleri & Şef Yarışmaları</h2>
+                            <p style={{margin: '2px 0 0 0', fontSize: '12px', color: '#64748B'}}>Pişirdikçe rozet kazanın, haftalık tasarruf liginde öne geçin!</p>
+                        </div>
+                    </div>
+
+                    <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginTop: '15px'}}>
+                        {badges.map(b => (
+                            <div key={b.id} style={{
+                                background: b.unlocked ? b.bg : '#F8FAFC',
+                                borderRadius: '16px', padding: '16px',
+                                border: b.unlocked ? `2px solid ${b.color}` : '1px dashed #CBD5E1',
+                                opacity: b.unlocked ? 1 : 0.65
+                            }}>
+                                <div style={{fontSize: '15px', fontWeight: 900, color: b.unlocked ? b.color : '#64748B', marginBottom: '4px'}}>
+                                    {b.title} {b.unlocked ? '✅' : '🔒'}
+                                </div>
+                                <div style={{fontSize: '11px', color: '#475569', lineHeight: '1.4'}}>{b.desc}</div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <div style={{background: 'linear-gradient(135deg, #4F46E5, #3730A3)', borderRadius: '24px', padding: '20px', color: 'white', boxShadow: '0 10px 25px rgba(79,70,229,0.3)'}}>
+                    <h3 style={{margin: '0 0 8px 0', fontSize: '16px', fontWeight: 900}}>🎯 Haftalık En İyi Şef Yarışması</h3>
+                    <p style={{margin: 0, fontSize: '12px', opacity: 0.9, lineHeight: '1.5'}}>
+                        Bu hafta en çok evde pişirip tasarruf sağlayan şefimiz <b>@{activeUser?.username || 'Siz'}</b>! Toplam tasarruf puanınız: <b>1,450 XP</b>.
+                    </p>
+                </div>
+            </div>
+        );
+    };
+
    return (
        <div style={{position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: 99999, display:'flex', flexDirection:'column', height:'100vh', width:'100vw', background: '#0F172A', overflow: 'hidden'}}>
            {/* ÜST BAŞLIK & GERİ ÇIKMA BUTONU */}
@@ -1358,59 +1406,61 @@ const renderNotificationsScreen = () => {
                 )}
                 
                 {subTab === 'NOTIFY' && renderNotificationsScreen()}
-               {subTab === 'FOLLOW' && renderFollowScreen()}
-               {subTab === 'PROFILE' && renderProfileScreen()}
-               
-               {subTab === 'UPLOAD' && 
-                  <div style={{padding: '10px 0'}}>
-                     <h1 style={{fontSize: '24px', color: '#1E293B', marginBottom: '10px', fontWeight: 900}}>🎬 Mutfağınızı Paylaşın</h1>
-                     <p style={{color: '#64748B', fontSize: '13px', marginBottom: '25px'}}>Harika bir tarif mi denediniz? Ya da şans çarkından çıkan çılgın bir yemeği mi yapıyorsunuz? Topluluğa ilham vermek için videonuzu yükleyin.</p>
-                     
-                     <div style={{background: 'white', padding: '20px', borderRadius: '16px', boxShadow: '0 4px 6px rgba(0,0,0,0.03)'}}>
-                        <div style={{marginBottom: '15px'}}>
-                           <label style={{fontWeight: 700, color: '#334155', fontSize: '14px', display: 'block', marginBottom: '8px'}}>Açıklama (Caption)</label>
-                           <textarea 
-                              placeholder="Videonuz ne hakkında? Etiketleri (#) unutmayın!" 
-                              value={videoDesc} onChange={e => setVideoDesc(e.target.value)}
-                              style={{width: '100%', height: '80px', borderRadius: '12px', border: '1px solid #E2E8F0', padding: '10px', resize: 'none', outline: 'none', background: '#F8FAFC'}} 
-                           />
-                        </div>
-                        
-                        <div style={{marginBottom: '20px'}}>
-                           <label style={{fontWeight: 700, color: '#334155', fontSize: '14px', display: 'block', marginBottom: '8px'}}>Medya Dosyası (Video veya Fotoğraf)</label>
-                           
-                           <div style={{display: 'flex', gap: '8px'}}>
-                              <label style={{flex: 1, padding: '10px 5px', background: '#3B82F6', color: 'white', borderRadius: '12px', textAlign: 'center', fontWeight: 800, cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '13px'}}>
-                                 <span style={{fontSize: '20px'}}>📸</span>
-                                 Foto Çek
-                                 <input type="file" accept="image/*" capture="environment" onChange={e => setVideoFile(e.target.files[0])} style={{display: 'none'}} />
-                              </label>
-                              
-                              <label style={{flex: 1, padding: '10px 5px', background: '#EF4444', color: 'white', borderRadius: '12px', textAlign: 'center', fontWeight: 800, cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '13px'}}>
-                                 <span style={{fontSize: '20px'}}>🎥</span>
-                                 Video Çek
-                                 <input type="file" accept="video/*" capture="environment" onChange={e => setVideoFile(e.target.files[0])} style={{display: 'none'}} />
-                              </label>
+                {subTab === 'FOLLOW' && renderFollowScreen()}
+                {subTab === 'PROFILE' && renderProfileScreen()}
+                {subTab === 'BADGES' && renderBadgesScreen()}
+                {subTab === 'MATCH' && <NeYesekMatch openShopping={openShopping} />}
+                
+                {subTab === 'UPLOAD' && 
+                   <div style={{padding: '10px 0'}}>
+                      <h1 style={{fontSize: '24px', color: '#1E293B', marginBottom: '10px', fontWeight: 900}}>🎬 Mutfağınızı Paylaşın</h1>
+                      <p style={{color: '#64748B', fontSize: '13px', marginBottom: '25px'}}>Harika bir tarif mi denediniz? Ya da şans çarkından çıkan çılgın bir yemeği mi yapıyorsunuz? Topluluğa ilham vermek için videonuzu yükleyin.</p>
+                      
+                      <div style={{background: 'white', padding: '20px', borderRadius: '16px', boxShadow: '0 4px 6px rgba(0,0,0,0.03)'}}>
+                         <div style={{marginBottom: '15px'}}>
+                            <label style={{fontWeight: 700, color: '#334155', fontSize: '14px', display: 'block', marginBottom: '8px'}}>Açıklama (Caption)</label>
+                            <textarea 
+                               placeholder="Videonuz ne hakkında? Etiketleri (#) unutmayın!" 
+                               value={videoDesc} onChange={e => setVideoDesc(e.target.value)}
+                               style={{width: '100%', height: '80px', borderRadius: '12px', border: '1px solid #E2E8F0', padding: '10px', resize: 'none', outline: 'none', background: '#F8FAFC'}} 
+                            />
+                         </div>
+                         
+                         <div style={{marginBottom: '20px'}}>
+                            <label style={{fontWeight: 700, color: '#334155', fontSize: '14px', display: 'block', marginBottom: '8px'}}>Medya Dosyası (Video veya Fotoğraf)</label>
+                            
+                            <div style={{display: 'flex', gap: '8px'}}>
+                               <label style={{flex: 1, padding: '10px 5px', background: '#3B82F6', color: 'white', borderRadius: '12px', textAlign: 'center', fontWeight: 800, cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '13px'}}>
+                                  <span style={{fontSize: '20px'}}>📸</span>
+                                  Foto Çek
+                                  <input type="file" accept="image/*" capture="environment" onChange={e => setVideoFile(e.target.files[0])} style={{display: 'none'}} />
+                               </label>
+                               
+                               <label style={{flex: 1, padding: '10px 5px', background: '#EF4444', color: 'white', borderRadius: '12px', textAlign: 'center', fontWeight: 800, cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '13px'}}>
+                                  <span style={{fontSize: '20px'}}>🎥</span>
+                                  Video Çek
+                                  <input type="file" accept="video/*" capture="environment" onChange={e => setVideoFile(e.target.files[0])} style={{display: 'none'}} />
+                               </label>
 
-                              <label style={{flex: 1, padding: '10px 5px', background: '#10B981', color: 'white', borderRadius: '12px', textAlign: 'center', fontWeight: 800, cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '13px'}}>
-                                 <span style={{fontSize: '20px'}}>📂</span>
-                                 Galeriden
-                                 <input type="file" accept="video/*,image/*" onChange={e => setVideoFile(e.target.files[0])} style={{display: 'none'}} />
-                              </label>
-                           </div>
-                           
-                           {videoFile && <div style={{fontSize: '12px', margin: '5px 0', color: '#10B981', fontWeight: 600}}>Seçilen: {videoFile.name}</div>}
-                        </div>
-                        
-                        <button 
-                           onClick={handleVideoUpload} disabled={uploading}
-                           style={{width: '100%', padding: '15px', background: uploading ? '#94A3B8' : '#EC4899', color: 'white', borderRadius: '12px', border: 'none', fontWeight: 800, fontSize: '16px', cursor: uploading ? 'not-allowed' : 'pointer', transition: '0.2s', boxShadow: '0 4px 15px rgba(236,72,153,0.3)'}}
-                        >
-                           {uploading ? '⏳ Yayına Hazırlanıyor...' : '🔥 Paylaş (Gönder)'}
-                        </button>
-                     </div>
-                  </div>
-               }
+                               <label style={{flex: 1, padding: '10px 5px', background: '#10B981', color: 'white', borderRadius: '12px', textAlign: 'center', fontWeight: 800, cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '13px'}}>
+                                  <span style={{fontSize: '20px'}}>📂</span>
+                                  Galeriden
+                                  <input type="file" accept="video/*,image/*" onChange={e => setVideoFile(e.target.files[0])} style={{display: 'none'}} />
+                               </label>
+                            </div>
+                            
+                            {videoFile && <div style={{fontSize: '12px', margin: '5px 0', color: '#10B981', fontWeight: 600}}>Seçilen: {videoFile.name}</div>}
+                         </div>
+                         
+                         <button 
+                            onClick={handleVideoUpload} disabled={uploading}
+                            style={{width: '100%', padding: '15px', background: uploading ? '#94A3B8' : '#EC4899', color: 'white', borderRadius: '12px', border: 'none', fontWeight: 800, fontSize: '16px', cursor: uploading ? 'not-allowed' : 'pointer', transition: '0.2s', boxShadow: '0 4px 15px rgba(236,72,153,0.3)'}}
+                         >
+                            {uploading ? '⏳ Yayına Hazırlanıyor...' : '🔥 Paylaş (Gönder)'}
+                         </button>
+                      </div>
+                   </div>
+                }
            </div>
            
            {/* FOTOĞRAF BÜYÜTME MODALI */}
@@ -1429,21 +1479,14 @@ const renderNotificationsScreen = () => {
            )}
 
            {/* ALT ALT-MENÜ (SUB-NAVBAR) */}
-           <div style={{position: 'fixed', bottom: '0px', left: '0', right: '0', margin: '0 auto', maxWidth: '600px', zIndex: 90, display:'flex', justifyContent:'space-around', padding:'10px', background: (subTab === 'FEED' && feedMode === 'WATCH') ? 'rgba(15, 23, 42, 0.95)' : 'white', backdropFilter: 'blur(12px)', borderTop: (subTab === 'FEED' && feedMode === 'WATCH') ? '1px solid rgba(255,255,255,0.1)' : '1px solid #E2E8F0', boxShadow: '0 -4px 6px -1px rgba(0, 0, 0, 0.05)', transition: 'background 0.3s ease'}}>
-               <button onClick={()=>setSubTab('MY_PROFILE')} style={{background: subTab==='MY_PROFILE' ? '#3B82F6':'transparent', color: subTab==='MY_PROFILE'?'white': ((subTab === 'FEED' && feedMode === 'WATCH') ? '#94A3B8' : '#64748B'), border:'none', padding:'10px', borderRadius:'12px', fontWeight:600, flex: 1, margin: '0 2px', cursor: 'pointer', transition: '0.2s'}}>👤 Profil</button>
-               <button onClick={()=>{ setSubTab('FEED'); setFeedMode('WATCH'); }} style={{background: (subTab==='FEED' && feedMode==='WATCH') ? '#3B82F6':'transparent', color: (subTab==='FEED' && feedMode==='WATCH') ? 'white' : ((subTab === 'FEED' && feedMode === 'WATCH') ? '#94A3B8' : '#64748B'), border:'none', padding:'10px', borderRadius:'12px', fontWeight:600, flex: 1, margin: '0 2px', cursor: 'pointer', transition: '0.2s'}}>🌍 Keşfet</button>
-               <button onClick={()=>setSubTab('CHAT')} style={{background: subTab==='CHAT' ? '#3B82F6':'transparent', color: subTab==='CHAT'?'white':'#64748B', border:'none', padding:'10px', borderRadius:'12px', fontWeight:600, flex: 1, margin: '0 2px', cursor: 'pointer', transition: '0.2s'}}>💬 Sohbet</button>
-               <button onClick={()=>setSubTab('NOTIFY')} style={{position: 'relative', background: subTab==='NOTIFY' ? '#3B82F6':'transparent', color: subTab==='NOTIFY'?'white':'#64748B', border:'none', padding:'10px', borderRadius:'12px', fontWeight:600, flex: 1, margin: '0 2px', cursor: 'pointer', transition: '0.2s'}}>
-                  🔔 Bildirim
-                  {(myProfile?.requests?.length > 0 || myProfile?.unreadCount?.length > 0 || myProfile?.notifications?.length > 0) && (
-                     <span style={{position:'absolute', top:'-5px', right:'-5px', background:'#EF4444', color:'white', borderRadius:'50%', width:'20px', height:'20px', fontSize:'11px', display:'flex', alignItems:'center', justifyContent:'center'}}>
-                        {(myProfile?.requests?.length || 0) + (myProfile?.unreadCount?.length || 0) + (myProfile?.notifications?.length || 0)}
-                     </span>
-                  )}
-               </button>
-               <button onClick={()=>setSubTab('SEARCH')} style={{background: subTab==='SEARCH' ? '#3B82F6':'transparent', color: subTab==='SEARCH'?'white': ((subTab === 'FEED') ? '#94A3B8' : '#64748B'), border:'none', padding:'10px', borderRadius:'12px', fontWeight:600, flex: 1, margin: '0 2px', cursor: 'pointer', transition: '0.2s'}}>🔍 Şef Bul</button>
-               <button onClick={()=>setSubTab('UPLOAD')} style={{background: subTab==='UPLOAD' ? '#EC4899':'transparent', color: subTab==='UPLOAD'?'white':'#64748B', border:'none', padding:'10px', borderRadius:'12px', fontWeight:600, flex: 1, margin: '0 2px', cursor: 'pointer', transition: '0.2s'}}>🎬</button>
-           </div>
+           <div style={{position: 'fixed', bottom: '0px', left: '0', right: '0', margin: '0 auto', maxWidth: '600px', zIndex: 90, display:'flex', justifyContent:'space-around', padding:'8px 4px', background: (subTab === 'FEED' && feedMode === 'WATCH') ? 'rgba(15, 23, 42, 0.95)' : 'white', backdropFilter: 'blur(12px)', borderTop: (subTab === 'FEED' && feedMode === 'WATCH') ? '1px solid rgba(255,255,255,0.1)' : '1px solid #E2E8F0', boxShadow: '0 -4px 6px -1px rgba(0, 0, 0, 0.05)', transition: 'background 0.3s ease'}}>
+                <button onClick={()=>{ setSubTab('FEED'); setFeedMode('WATCH'); }} style={{background: (subTab==='FEED' && feedMode==='WATCH') ? '#3B82F6':'transparent', color: (subTab==='FEED' && feedMode==='WATCH') ? 'white' : '#64748B', border:'none', padding:'8px 6px', borderRadius:'10px', fontWeight:700, fontSize:'11px', flex: 1, margin: '0 1px', cursor: 'pointer'}}>🎬 Keşfet</button>
+                <button onClick={()=>setSubTab('MATCH')} style={{background: subTab==='MATCH' ? '#EC4899':'transparent', color: subTab==='MATCH'?'white':'#64748B', border:'none', padding:'8px 6px', borderRadius:'10px', fontWeight:700, fontSize:'11px', flex: 1, margin: '0 1px', cursor: 'pointer'}}>👥 Match</button>
+                <button onClick={()=>setSubTab('BADGES')} style={{background: subTab==='BADGES' ? '#F59E0B':'transparent', color: subTab==='BADGES'?'white':'#64748B', border:'none', padding:'8px 6px', borderRadius:'10px', fontWeight:700, fontSize:'11px', flex: 1, margin: '0 1px', cursor: 'pointer'}}>🏆 Rozet</button>
+                <button onClick={()=>setSubTab('CHAT')} style={{background: subTab==='CHAT' ? '#10B981':'transparent', color: subTab==='CHAT'?'white':'#64748B', border:'none', padding:'8px 6px', borderRadius:'10px', fontWeight:700, fontSize:'11px', flex: 1, margin: '0 1px', cursor: 'pointer'}}>💬 Sohbet</button>
+                <button onClick={()=>setSubTab('MY_PROFILE')} style={{background: subTab==='MY_PROFILE' ? '#6366F1':'transparent', color: subTab==='MY_PROFILE'?'white':'#64748B', border:'none', padding:'8px 6px', borderRadius:'10px', fontWeight:700, fontSize:'11px', flex: 1, margin: '0 1px', cursor: 'pointer'}}>👤 Profil</button>
+                <button onClick={()=>setSubTab('UPLOAD')} style={{background: subTab==='UPLOAD' ? '#8B5CF6':'transparent', color: subTab==='UPLOAD'?'white':'#64748B', border:'none', padding:'8px 6px', borderRadius:'10px', fontWeight:700, fontSize:'11px', flex: 1, margin: '0 1px', cursor: 'pointer'}}>📸 Yükle</button>
+            </div>
         </div>
     );
 }

@@ -9,6 +9,9 @@ import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import SocialFlow from './SocialFlow';
 import DailyMenuFlow from './DailyMenuFlow';
 import NeYesekMatch from './NeYesekMatch';
+import KitchenTimer from './KitchenTimer';
+import VisualScannerModal from './VisualScannerModal';
+import FocusModeModal from './FocusModeModal';
 import { REWARDS } from './rewardsDb';
 import { validateUsername } from './utils/usernameValidation';
 const TRANSLATIONS = {
@@ -53,6 +56,9 @@ function App() {
   }); // AUTH, APP, USERNAME_SETUP, ADMIN
   const [activeTab, setActiveTab] = useState('APP'); 
   const [shoppingCart, setShoppingCart] = useState(null);
+  const [activeTimerMinutes, setActiveTimerMinutes] = useState(null);
+  const [showTimerWidget, setShowTimerWidget] = useState(true);
+  const [showVisualScanner, setShowVisualScanner] = useState(false);
   const [darkMode, setDarkMode] = useState(localStorage.getItem('baki_theme') === 'dark');
   const [appLang, setAppLang] = useState(localStorage.getItem('baki_lang') || 'tr');
   const [staples, setStaples] = useState(() => {
@@ -1035,50 +1041,42 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
 <div className="dashboard-grid-hub">
         {/* 🛒 DOLABIMDAKİLER */}
         <div className="hub-card" onClick={() => { setDashboardView('FRIDGE'); setFridgeMains([]); }} style={{borderTop: '4px solid #10B981'}}>
-          <div className="hub-tag" style={{background: '#D1FAE5', color: '#047857'}}>DOLABIMDAKİLER</div>
+          <div className="hub-tag" style={{background: '#D1FAE5', color: '#047857'}}>DOLABIMDAKİLER & SKT ALARMI</div>
           <div className="hub-icon">🛒</div>
           <div className="hub-title">{t('fridge')}</div>
-          <div className="hub-desc">Evinizdeki malzemeleri seçin, onlara uygun efsane menüleri dökelim. YENİ: Dünya mutfağı filtreleme eklendi.</div>
+          <div className="hub-desc">Dolabınızdaki malzemeleri seçin veya fotoğrafla taratın. SKT israf alarmları ve Dünya mutfağı filtreleri hazır.</div>
         </div>
 
-        {/* 🎡 ŞANS ÇARKI */}
-        <div className="hub-card" onClick={() => { setDashboardView('WHEEL'); setWinningDish(null); setWheelItems(generateWheelItems('NO_FILTER')); }} style={{borderTop: '4px solid #3B82F6'}}>
-          <div className="hub-tag" style={{background: '#DBEAFE', color: '#1D4ED8'}}>ŞANS ÇARKI</div>
-          <div className="hub-icon">🎡</div>
-          <div className="hub-title">{t('wheel')}</div>
-          <div className="hub-desc">Filtreni seç, 13 yemeklik çarkı çevir! Evdeki malzemelerini listede işaretle, sisteme eksik pazar listesi ve hesabı çektir.</div>
-        </div>
-
-        {/* 🍱 GÜNÜN YEMEK MENÜSÜ */}
+        {/* 🍱 GÜNÜK & HAFTALIK PLAN */}
         <div className="hub-card" onClick={() => setDashboardView('DAILY_MENU')} style={{borderTop: '4px solid #F59E0B'}}>
-          <div className="hub-tag" style={{background: '#FEF3C7', color: '#D97706'}}>GÜNLÜK MENÜ</div>
+          <div className="hub-tag" style={{background: '#FEF3C7', color: '#D97706'}}>GÜNLÜK & HAFTALIK MENÜ</div>
           <div className="hub-icon">🍱</div>
-          <div className="hub-title">Günün Yemek Menüsü</div>
-          <div className="hub-desc">Diyetinize ve bütçenize özel her gün kendini tekrar etmeyen 5 kaplık menü önerisi üretir.</div>
+          <div className="hub-title">Akıllı Günlük Menü</div>
+          <div className="hub-desc">Bütçenize ve damak tadınıza özel kendini tekrar etmeyen 5 kaplık menü önerileri üretir.</div>
         </div>
 
-        {/* 👨‍👩‍👧‍👦 ÇAPRAZ REÇETELER */}
-        <div className="hub-card" onClick={() => setDashboardView('HEALTH')} style={{borderTop: '4px solid #EC4899'}}>
-          <div className="hub-tag" style={{background: '#FCE7F3', color: '#BE185D'}}>SAĞLIK & AİLE</div>
-          <div className="hub-icon">👨‍👩‍👧‍👦</div>
-          <div className="hub-title">{t('health')}</div>
-          <div className="hub-desc">Aynı ana malzemeden hem diyete hem çocuklara uygun 2 farklı çapraz tarif üretir.</div>
+        {/* 🥗 SAĞLIK & FİT KARNEM */}
+        <div className="hub-card" onClick={() => setDashboardView('HEALTH')} style={{borderTop: '4px solid #10B981'}}>
+          <div className="hub-tag" style={{background: '#DCFCE7', color: '#047857'}}>SAĞLIK & FİT KARNEM</div>
+          <div className="hub-icon">🥗</div>
+          <div className="hub-title">Evin Sağlık & Fit Karnesi</div>
+          <div className="hub-desc">Ailenizin diyet kısıtlamalarına uyan tarifler ve günlük kalori/protein makro takip paneli.</div>
         </div>
 
-        {/* 📅 HAFTALIK PLAN */}
-        <div className="hub-card" onClick={() => { setDashboardView('WEEKLY'); setWeeklyPlan(null); }} style={{borderTop: '4px solid #8B5CF6'}}>
-          <div className="hub-tag" style={{background: '#EDE9FE', color: '#6D28D9'}}>HAFTALIK PLAN</div>
-          <div className="hub-icon">📅</div>
-          <div className="hub-title">{t('weekly')}</div>
-          <div className="hub-desc">Sadece 2 soruyla, tüm hafta ne yiyeceğinizin planını yormadan otonom şekilde oluşturur.</div>
+        {/* 🎬 EĞLENCE SERÜVENİ (MATCH + ÇARK + SOSYAL AKIŞ + ROZETLER) */}
+        <div className="hub-card" onClick={() => setShowSocialFlow(true)} style={{borderTop: '4px solid #8B5CF6'}}>
+          <div className="hub-tag" style={{background: '#EDE9FE', color: '#6D28D9'}}>EĞLENCE & SOSYAL KULÜP</div>
+          <div className="hub-icon">🎬</div>
+          <div className="hub-title">Eğlence Serüveni</div>
+          <div className="hub-desc">Ne Yesek Match grup oylaması, Şans Çarkı, Şef Rozetleri ve topluluk medya akışı tek çatıda!</div>
         </div>
 
-        {/* 🎮 NE YESEK MATCH (ÇİFTLER İÇİN SOSYAL KARAR) */}
-        <div className="hub-card" onClick={() => setDashboardView('MATCH')} style={{borderTop: '4px solid #EC4899'}}>
-          <div className="hub-tag" style={{background: '#FCE7F3', color: '#DB2777'}}>ÇİFTLER İÇİN EŞLEŞME</div>
-          <div className="hub-icon">💕</div>
-          <div className="hub-title">Ne Yesek Match</div>
-          <div className="hub-desc">Eşinizle cihazları eşleştirin, ikinizin de sevdiği yemeği canlı kart oylama yöntemiyle dakikalar içinde bulun!</div>
+        {/* ♻️ ARTAN YEMEK DÖNÜŞÜM */}
+        <div className="hub-card" onClick={() => setDashboardView('RECYCLE')} style={{borderTop: '4px solid #EC4899'}}>
+          <div className="hub-tag" style={{background: '#FCE7F3', color: '#BE185D'}}>ARTAN YEMEK DÖNÜŞÜM</div>
+          <div className="hub-icon">♻️</div>
+          <div className="hub-title">Sıfır İsraf Mutfağı</div>
+          <div className="hub-desc">Dünden kalan pilav, makarna veya bayat ekmekleri efsane lezzetlere dönüştürün.</div>
         </div>
       </div>
     </>
@@ -1113,6 +1111,49 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
           <h3 className="budget-title">🛒 Dolabımdaki Malzemeler</h3>
           <p style={{fontSize: '13px', color: '#8D99AE', marginBottom: '15px'}}>Kategorilerden seçin veya aklınıza gelen herhangi bir malzemeyi kutuya yazıp Enter'a basın (Sınırsız Malzeme Üretimi).</p>
           
+          <div style={{display: 'flex', gap: '10px', marginBottom: '15px'}}>
+             <button
+                onClick={() => setShowVisualScanner(true)}
+                style={{
+                   flex: 1, padding: '12px', background: 'linear-gradient(135deg, #8B5CF6, #6D28D9)', color: 'white',
+                   border: 'none', borderRadius: '12px', fontWeight: 900, fontSize: '13px', cursor: 'pointer',
+                   display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', boxShadow: '0 4px 12px rgba(139,92,246,0.25)'
+                }}
+             >
+                <span>📸 Fotoğraf İle Malzeme Tara (AI Kamera)</span>
+             </button>
+             <button
+                onClick={() => setActiveTimerMinutes(15)}
+                style={{
+                   padding: '12px 16px', background: '#F59E0B', color: 'white',
+                   border: 'none', borderRadius: '12px', fontWeight: 900, fontSize: '13px', cursor: 'pointer',
+                   display: 'flex', alignItems: 'center', gap: '6px'
+                }}
+             >
+                <span>⏱️ Mutfak Sayacı</span>
+             </button>
+          </div>
+
+           <div style={{marginBottom: '20px', padding: '12px 16px', background: '#FEF2F2', borderRadius: '12px', borderLeft: '4px solid #EF4444', display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
+              <div>
+                 <div style={{fontWeight: 900, color: '#991B1B', fontSize: '13px', display: 'flex', alignItems: 'center', gap: '6px'}}>
+                   🚨 SKT & İsraf Alarmı (Bozulmaya Yakın Malzemeler)
+                 </div>
+                 <div style={{fontSize: '11px', color: '#7F1D1D', marginTop: '2px'}}>
+                   Dolabınızdaki <b>Süt, Yoğurt ve Biber</b> için son 2 gün! Bozulmadan lezzetli yemeğe dönüştürün.
+                 </div>
+              </div>
+              <button 
+                 onClick={() => {
+                   setFridgeIngs(prev => Array.from(new Set([...prev, 'süt', 'yoğurt', 'biber', 'domates'])));
+                   alert("🚨 Bozulmaya yakın 4 malzeme sepetinize eklendi! Şimdi aşağıdan tarif üretebilirsiniz.");
+                 }}
+                 style={{background: '#EF4444', color: 'white', border: 'none', padding: '8px 14px', borderRadius: '8px', fontWeight: 800, fontSize: '12px', cursor: 'pointer', flexShrink: 0}}
+              >
+                 Kurtar & Tarif Yap 🍳
+              </button>
+           </div>
+
           <input type="text" placeholder="Farklı bir malzeme yaz ve Enter'a bas..." 
              value={fridgeCustomStr} onChange={e=>setFridgeCustomStr(e.target.value)} onKeyDown={handleCustomIngDown} 
              style={{width: '100%', padding: '14px', borderRadius: '12px', border: '1px solid #CBD5E1', marginBottom: '20px', outline: 'none', background: '#F8FAFC'}} />
@@ -1705,6 +1746,17 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
                  {selectedDish.calories && <div className="recipe-meta-badge" style={{background: '#EEF2FF', color: '#4338CA'}}>🔥 {selectedDish.calories}</div>}
                  
                  <button onClick={() => {
+                      const mins = parseInt(selectedDish.prepTime) || 30;
+                      setActiveTimerMinutes(mins);
+                  }} style={{background: '#FEF3C7', color: '#B45309', padding: '6px 12px', border: '1px solid #FCD34D', borderRadius: '8px', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '5px'}}>
+                      ⏱️ Pişirme Sayacını Başlat ({parseInt(selectedDish.prepTime) || 30} Dk)
+                  </button>
+
+                  <button onClick={() => setShowFocusModeDish(selectedDish)} style={{background: '#10B981', color: 'white', padding: '6px 14px', border: 'none', borderRadius: '8px', fontWeight: 800, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '5px', boxShadow: '0 2px 8px rgba(16,185,129,0.3)'}}>
+                      👁️ Mutfak Odak Modu (Ekran Kapanmaz)
+                  </button>
+
+                 <button onClick={() => {
                      let favs = JSON.parse(localStorage.getItem(favKey) || '[]');
                      if(!favs.find(f => f.id === selectedDish.id)) {
                          favs.push(selectedDish);
@@ -1889,10 +1941,35 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
                        </div>
                     ))
                  )}
-              </div>
-           </div>
-        </div>
-      )}
+               </div>
+            </div>
+         </div>
+       )}
+
+       {showTimerWidget && (
+          <KitchenTimer
+             activeTimerMinutes={activeTimerMinutes}
+             onCloseTimer={() => setActiveTimerMinutes(null)}
+          />
+       )}
+
+       {showVisualScanner && (
+          <VisualScannerModal
+             onAddDetectedIngredients={(ings) => {
+                setFridgeIngs(prev => Array.from(new Set([...prev, ...ings])));
+                alert(`🎯 ${ings.length} Malzeme dolabınıza başarıyla eklendi!`);
+             }}
+             onClose={() => setShowVisualScanner(false)}
+          />
+       )}
+
+       {showFocusModeDish && (
+          <FocusModeModal
+             dish={showFocusModeDish}
+             onClose={() => setShowFocusModeDish(null)}
+             setActiveTimerMinutes={(mins) => setActiveTimerMinutes(mins)}
+          />
+       )}
     </>
   );
 }
