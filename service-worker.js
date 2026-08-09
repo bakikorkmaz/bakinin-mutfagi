@@ -1,5 +1,5 @@
 /* Baki'nin Mutfağı - PWA Service Worker (Çevrimdışı Mutfak Motoru) */
-const CACHE_NAME = 'bakinin-mutfagi-v2';
+const CACHE_NAME = 'bakinin-mutfagi-v3';
 const STATIC_ASSETS = [
   './',
   './index.html',
