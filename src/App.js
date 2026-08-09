@@ -1736,7 +1736,12 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
                  </div>
               )}
 
-              <div className="recipe-steps">
+              <div style={{background: '#FEF3C7', borderLeft: '4px solid #F59E0B', padding: '12px 15px', borderRadius: '8px', marginBottom: '15px', fontSize: '12px', color: '#92400E', lineHeight: '1.5'}}>
+                  <strong style={{fontSize: '13px', display: 'block', marginBottom: '4px', color: '#78350F'}}>💡 Tarif Bütçesi ve Market Sepeti Açıklaması:</strong>
+                  Tarifte gösterilen <b>₺{selectedDish?.totalCost || selectedDish?.cost}</b> tutarı, sadece bu yemekte kullanılan gramajın maliyetidir (Örn: 2 kaşık zeytinyağı ≈ ₺10). Market siparişlerinde ürünler tam paket (1 Litre Şişe, 1 Kg Paket) halinde satıldığı için sepet tutarı farklı çıkabilir. Evinizde zaten olan stok malzemeleri sepete eklemeyerek sadece ihtiyacınız olan eksik ürünleri alabilirsiniz.
+               </div>
+
+               <div className="recipe-steps">
                  <strong style={{color: '#0F172A'}}>Mutfak Zekası Adım Adım Tarif:</strong><br/><br/>
                  {selectedDish.recipe}
               </div>
@@ -1782,7 +1787,12 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
                    </div>
                  );
               })}
-              <div style={{marginTop: '20px', paddingTop: '15px', borderTop: '1px dashed #CBD5E1', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+              <div style={{background: '#EEF2FF', borderLeft: '4px solid #6366F1', padding: '12px 15px', borderRadius: '8px', marginBottom: '15px', fontSize: '12px', color: '#3730A3', lineHeight: '1.5'}}>
+                  <strong style={{fontSize: '13px', display: 'block', marginBottom: '4px', color: '#1E1B4B'}}>🛒 Sepet Fiyat Farkı Bilgilendirmesi:</strong>
+                  Tarif maliyetleri porsiyonluk gramaj hesabı iken, bu sepet tutarı marketlerden tam paket (1 Litre yağ, 1 Kg un vb.) satın alım tutarını gösterir. Evinizde zaten bulunan temel stok malzemelerin yanındaki tik işaretlerini kaldırarak sepet tutarınızı tam ihtiyacınız olan seviyeye çekebilirsiniz.
+               </div>
+
+               <div style={{marginTop: '20px', paddingTop: '15px', borderTop: '1px dashed #CBD5E1', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
                  <span style={{fontWeight: 700, color: '#475569'}}>Yaklaşık Dolap Dışı Maliyet:</span>
                  <span style={{fontSize: '20px', fontWeight: 800, color: '#10B981'}}>~₺{shoppingCart.estimatedCost}</span>
               </div>
