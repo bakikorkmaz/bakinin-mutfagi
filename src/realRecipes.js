@@ -168,7 +168,10 @@ export const DB_MAINS = [
       "RAMADAN"
     ],
     "cost": 120,
+    "totalCost": 120,
     "time": 60,
+    "prepTime": 60,
+    "calories": 420,
     "heaviness": 6,
     "ingredients": [
       "patlıcan",
@@ -189,7 +192,10 @@ export const DB_MAINS = [
       "WINTER"
     ],
     "cost": 150,
+    "totalCost": 150,
     "time": 45,
+    "prepTime": 45,
+    "calories": 540,
     "heaviness": 7,
     "ingredients": [
       "kıyma",
@@ -211,7 +217,10 @@ export const DB_MAINS = [
       "FIT"
     ],
     "cost": 85,
+    "totalCost": 85,
     "time": 30,
+    "prepTime": 30,
+    "calories": 360,
     "heaviness": 4,
     "ingredients": [
       "tavuk göğsü",
@@ -231,7 +240,10 @@ export const DB_MAINS = [
       "WINTER"
     ],
     "cost": 140,
+    "totalCost": 140,
     "time": 25,
+    "prepTime": 25,
+    "calories": 620,
     "heaviness": 8,
     "ingredients": [
       "spagetti",
@@ -250,7 +262,10 @@ export const DB_MAINS = [
       "WINTER"
     ],
     "cost": 250,
+    "totalCost": 250,
     "time": 40,
+    "prepTime": 40,
+    "calories": 580,
     "heaviness": 8,
     "ingredients": [
       "bonfile",
@@ -271,7 +286,10 @@ export const DB_MAINS = [
       "FIT"
     ],
     "cost": 50,
+    "totalCost": 50,
     "time": 45,
+    "prepTime": 45,
+    "calories": 210,
     "heaviness": 2,
     "ingredients": [
       "taze fasulye",
@@ -290,7 +308,10 @@ export const DB_MAINS = [
       "WINTER"
     ],
     "cost": 130,
+    "totalCost": 130,
     "time": 90,
+    "prepTime": 90,
+    "calories": 480,
     "heaviness": 6,
     "ingredients": [
       "nohut",
@@ -310,7 +331,10 @@ export const DB_MAINS = [
       "SUMMER"
     ],
     "cost": 220,
+    "totalCost": 220,
     "time": 30,
+    "prepTime": 30,
+    "calories": 390,
     "heaviness": 3,
     "ingredients": [
       "somon",
@@ -328,7 +352,10 @@ export const DB_MAINS = [
       "SUMMER"
     ],
     "cost": 110,
+    "totalCost": 110,
     "time": 55,
+    "prepTime": 55,
+    "calories": 440,
     "heaviness": 7,
     "ingredients": [
       "patlıcan",
@@ -349,7 +376,10 @@ export const DB_MAINS = [
       "RAMADAN"
     ],
     "cost": 180,
+    "totalCost": 180,
     "time": 50,
+    "prepTime": 50,
+    "calories": 460,
     "heaviness": 6,
     "ingredients": [
       "kuşbaşı",
@@ -370,7 +400,10 @@ export const DB_MAINS = [
       "STUDENT"
     ],
     "cost": 45,
+    "totalCost": 45,
     "time": 20,
+    "prepTime": 20,
+    "calories": 510,
     "heaviness": 6,
     "ingredients": [
       "burgu makarna",
@@ -390,7 +423,10 @@ export const DB_MAINS = [
       "RAMADAN"
     ],
     "cost": 140,
+    "totalCost": 140,
     "time": 90,
+    "prepTime": 90,
+    "calories": 490,
     "heaviness": 5,
     "ingredients": [
       "bütün tavuk",
@@ -410,7 +446,10 @@ export const DB_MAINS = [
       "WINTER"
     ],
     "cost": 130,
+    "totalCost": 130,
     "time": 80,
+    "prepTime": 80,
+    "calories": 380,
     "heaviness": 5,
     "ingredients": [
       "kuşbaşı",
@@ -432,7 +471,10 @@ export const DB_MAINS = [
       "RAMADAN"
     ],
     "cost": 160,
+    "totalCost": 160,
     "time": 50,
+    "prepTime": 50,
+    "calories": 470,
     "heaviness": 6,
     "ingredients": [
       "kıyma",
@@ -453,7 +495,10 @@ export const DB_MAINS = [
       "STUDENT"
     ],
     "cost": 95,
+    "totalCost": 95,
     "time": 25,
+    "prepTime": 25,
+    "calories": 430,
     "heaviness": 5,
     "ingredients": [
       "tavuk göğsü",
@@ -473,7 +518,10 @@ export const DB_MAINS = [
       "FIT"
     ],
     "cost": 60,
+    "totalCost": 60,
     "time": 60,
+    "prepTime": 60,
+    "calories": 310,
     "heaviness": 3,
     "ingredients": [
       "barbunya",
@@ -494,7 +542,10 @@ export const DB_MAINS = [
       "FIT"
     ],
     "cost": 190,
+    "totalCost": 190,
     "time": 40,
+    "prepTime": 40,
+    "calories": 340,
     "heaviness": 3,
     "ingredients": [
       "levrek",
@@ -515,7 +566,10 @@ export const DB_MAINS = [
       "RAMADAN"
     ],
     "cost": 210,
+    "totalCost": 210,
     "time": 70,
+    "prepTime": 70,
+    "calories": 560,
     "heaviness": 7,
     "ingredients": [
       "kuşbaşı",
@@ -537,7 +591,10 @@ export const DB_MAINS = [
       "WINTER"
     ],
     "cost": 110,
+    "totalCost": 110,
     "time": 90,
+    "prepTime": 90,
+    "calories": 520,
     "heaviness": 7,
     "ingredients": [
       "mantı",
@@ -557,7 +614,10 @@ export const DB_MAINS = [
       "WINTER"
     ],
     "cost": 80,
+    "totalCost": 80,
     "time": 100,
+    "prepTime": 100,
+    "calories": 440,
     "heaviness": 6,
     "ingredients": [
       "kuru fasulye",

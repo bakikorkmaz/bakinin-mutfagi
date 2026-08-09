@@ -20,10 +20,10 @@ export const MENU_THEMES = [
   { id: 'FIT', label: "💪 Fit / Sporcu" }
 ];
 
-import { CATEGORIZED_INGREDIENTS } from './engineIngredients';
-export { CATEGORIZED_INGREDIENTS } from './engineIngredients';
+import { CATEGORIZED_INGREDIENTS } from './engineIngredients.js';
+export { CATEGORIZED_INGREDIENTS } from './engineIngredients.js';
 export const INGREDIENT_KEYWORDS = Object.values(CATEGORIZED_INGREDIENTS).flat().map(i => i.toLowerCase());
-import { DB_MAINS_HUGE } from './hugeRecipes';
+import { DB_MAINS_HUGE } from './hugeRecipes.js';
 
 // Gerçekçi Database (1 Kişilik Fiyatlardır)
 const DB_SOUPS = [
