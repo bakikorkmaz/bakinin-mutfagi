@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/bakinin-mutfagi/static/css/main.b04266fe.css",
-    "main.js": "/bakinin-mutfagi/static/js/main.715fe936.js",
+    "main.js": "/bakinin-mutfagi/static/js/main.ef3e3896.js",
     "index.html": "/bakinin-mutfagi/index.html",
     "main.b04266fe.css.map": "/bakinin-mutfagi/static/css/main.b04266fe.css.map",
-    "main.715fe936.js.map": "/bakinin-mutfagi/static/js/main.715fe936.js.map"
+    "main.ef3e3896.js.map": "/bakinin-mutfagi/static/js/main.ef3e3896.js.map"
   },
   "entrypoints": [
     "static/css/main.b04266fe.css",
-    "static/js/main.715fe936.js"
+    "static/js/main.ef3e3896.js"
   ]
 }
