@@ -601,6 +601,7 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
   const [activeTimerMinutes, setActiveTimerMinutes] = useState(null);
   const [showTimerWidget, setShowTimerWidget] = useState(true);
   const [showVisualScanner, setShowVisualScanner] = useState(false);
+  const [showFocusModeDish, setShowFocusModeDish] = useState(null);
   const t = (key) => TRANSLATIONS[appLang] ? (TRANSLATIONS[appLang][key] || TRANSLATIONS['tr'][key]) : TRANSLATIONS['tr'][key];
   const gamiKey = activeUser ? `baki_gamification_v5_${activeUser?.email}` : 'baki_gamification_v5';
   const favKey = activeUser ? `baki_favorites_${activeUser?.email}` : 'baki_favorites';
@@ -1067,7 +1068,7 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
         </div>
 
         {/* 🎬 EĞLENCE SERÜVENİ (MATCH + ÇARK + SOSYAL AKIŞ + ROZETLER) */}
-        <div className="hub-card" onClick={() => setShowSocialFlow(true)} style={{borderTop: '4px solid #8B5CF6'}}>
+        <div className="hub-card" onClick={() => setActiveTab('SOCIAL')} style={{borderTop: '4px solid #8B5CF6'}}>
           <div className="hub-tag" style={{background: '#EDE9FE', color: '#6D28D9'}}>EĞLENCE & SOSYAL KULÜP</div>
           <div className="hub-icon">🎬</div>
           <div className="hub-title">Eğlence Serüveni</div>
