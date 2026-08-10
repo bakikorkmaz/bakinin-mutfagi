@@ -598,6 +598,9 @@ const PAMPERING_TIPS_APP = [
 
 function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, staples }) {
   const [dashboardView, setDashboardView] = useState('HUB'); 
+  const [activeTimerMinutes, setActiveTimerMinutes] = useState(null);
+  const [showTimerWidget, setShowTimerWidget] = useState(true);
+  const [showVisualScanner, setShowVisualScanner] = useState(false);
   const t = (key) => TRANSLATIONS[appLang] ? (TRANSLATIONS[appLang][key] || TRANSLATIONS['tr'][key]) : TRANSLATIONS['tr'][key];
   const gamiKey = activeUser ? `baki_gamification_v5_${activeUser?.email}` : 'baki_gamification_v5';
   const favKey = activeUser ? `baki_favorites_${activeUser?.email}` : 'baki_favorites';
