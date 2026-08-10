@@ -12,6 +12,7 @@ import NeYesekMatch from './NeYesekMatch';
 import KitchenTimer from './KitchenTimer';
 import VisualScannerModal from './VisualScannerModal';
 import FocusModeModal from './FocusModeModal';
+import { getCleanDishDetails } from './dishUtils';
 import { REWARDS } from './rewardsDb';
 import { validateUsername } from './utils/usernameValidation';
 const TRANSLATIONS = {
@@ -1723,15 +1724,32 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
       )}
 
       {/* --- MODALS --- */}
-      {selectedDish && (
+      {selectedDish && (() => {
+        const dishDetails = getCleanDishDetails(selectedDish);
+        return (
         <div className="modal-overlay" onClick={() => setSelectedDish(null)}>
            <div className="modal-content" onClick={e => e.stopPropagation()}>
               <button className="modal-close" onClick={() => setSelectedDish(null)}>✕</button>
-              <h2 className="modal-title">{selectedDish.isMenu ? selectedDish.name + " Özel Menüsü" : selectedDish.name}</h2>
-              <div className="recipe-meta">
-                 <div className="recipe-meta-badge">⏱ {selectedDish.prepTime ? selectedDish.prepTime + (selectedDish.prepTime.toString().includes('dk') ? '' : ' dk') : "30 dk"}</div>
-                 {selectedDish.totalCost ? <div className="recipe-meta-badge" style={{background: '#FEF3C7', color: '#B45309'}}>₺ {selectedDish.totalCost} Maliyet</div> : null}
-                 {selectedDish.calories && <div className="recipe-meta-badge" style={{background: '#EEF2FF', color: '#4338CA'}}>🔥 {selectedDish.calories}</div>}
+              <h2 className="modal-title">{selectedDish.isMenu ? dishDetails.cleanName + " Özel Menüsü" : dishDetails.cleanName}</h2>
+              
+              <div style={{background: '#EFF6FF', color: '#1D4ED8', padding: '8px 14px', borderRadius: '10px', fontSize: '13px', fontWeight: 800, marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '6px', border: '1px solid #BFDBFE'}}>
+                 📍 Ait Olduğu Yöre / Bölge: <span style={{color: '#1E40AF', fontWeight: 900}}>{dishDetails.region}</span>
+              </div>
+
+              <div className="recipe-meta" style={{display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '15px'}}>
+                 <div className="recipe-meta-badge" style={{background: '#F1F5F9', color: '#334155', fontWeight: 700}}>
+                    ⏱️ Yemeğin Hazırlanma Süresi: {selectedDish.prepTime ? (selectedDish.prepTime.toString().includes('dk') ? selectedDish.prepTime : selectedDish.prepTime + ' Dk') : "30 Dk"}
+                 </div>
+                 {(selectedDish.totalCost || selectedDish.cost) ? (
+                    <div className="recipe-meta-badge" style={{background: '#FEF3C7', color: '#B45309', fontWeight: 700}}>
+                       🏷️ Gramaj Hesabıyla Yemek Maliyeti: ₺{selectedDish.totalCost || selectedDish.cost} (Market sepet tutarından farklı çıkabilir)
+                    </div>
+                 ) : null}
+                 {selectedDish.calories && (
+                    <div className="recipe-meta-badge" style={{background: '#EEF2FF', color: '#4338CA', fontWeight: 700}}>
+                       🔥 Hesaplanan Kalori: {selectedDish.calories} kcal
+                    </div>
+                 )}
                  
                  <button onClick={() => {
                       const mins = parseInt(selectedDish.prepTime) || 30;
@@ -1776,11 +1794,6 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
                  </div>
               )}
 
-              <div style={{background: '#FEF3C7', borderLeft: '4px solid #F59E0B', padding: '12px 15px', borderRadius: '8px', marginBottom: '15px', fontSize: '12px', color: '#92400E', lineHeight: '1.5'}}>
-                  <strong style={{fontSize: '13px', display: 'block', marginBottom: '4px', color: '#78350F'}}>💡 Tarif Bütçesi ve Market Sepeti Açıklaması:</strong>
-                  Tarifte gösterilen <b>₺{selectedDish?.totalCost || selectedDish?.cost}</b> tutarı, sadece bu yemekte kullanılan gramajın maliyetidir (Örn: 2 kaşık zeytinyağı ≈ ₺10). Market siparişlerinde ürünler tam paket (1 Litre Şişe, 1 Kg Paket) halinde satıldığı için sepet tutarı farklı çıkabilir. Evinizde zaten olan stok malzemeleri sepete eklemeyerek sadece ihtiyacınız olan eksik ürünleri alabilirsiniz.
-               </div>
-
                <div className="recipe-steps">
                  <strong style={{color: '#0F172A'}}>Mutfak Zekası Adım Adım Tarif:</strong><br/><br/>
                  {selectedDish.recipe}
@@ -1803,7 +1816,8 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
               )}
            </div>
         </div>
-      )}
+        );
+      })()}
 
       {shoppingCart && (
         <div className="modal-overlay" onClick={() => setShoppingCart(null)}>
