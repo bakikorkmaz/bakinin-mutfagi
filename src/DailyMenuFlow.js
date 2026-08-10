@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
 import { DB_SOUPS, DB_MAINS, DB_CARBS, DB_SIDES, DB_SALADS, DB_DESSERTS } from './realRecipes';
 import { DB_MAINS_HUGE } from './hugeRecipes';
+import { getCleanDishDetails } from './dishUtils';
 
 // --- GELİŞMİŞ DİYET KONTROL MOTORU ---
 const PAMPERING_TIPS = [
@@ -135,7 +135,7 @@ const getNutritionalDetails = (recipe) => {
     return { cost: Number(cost) || 0, time: Number(time) || 25, calories: Number(calories) || 300, ingsFormatted };
 };
 
-export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction }) {
+export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction, openFocusMode }) {
     const [dietFilter, setDietFilter] = useState('ALL');
     const [budgetFilter, setBudgetFilter] = useState('ALL');
     const [cuisineFilter, setCuisineFilter] = useState('ALL');
@@ -730,7 +730,9 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction }
             )}
 
             {/* --- 📖 DETAYLI TARİF MODALI --- */}
-            {selectedRecipeModal && (
+            {selectedRecipeModal && (() => {
+                const dishDetails = getCleanDishDetails(selectedRecipeModal);
+                return (
                 <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(15, 23, 42, 0.75)', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10000, padding: '20px' }}>
                     <div style={{ background: 'white', borderRadius: '24px', padding: '28px', maxWidth: '550px', width: '100%', maxHeight: '85vh', overflowY: 'auto', position: 'relative', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.4)' }}>
                         <button
@@ -740,23 +742,27 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction }
                             ✕
                         </button>
 
-                        <div style={{ fontSize: '12px', background: '#EEF2FF', color: '#4F46E5', padding: '4px 12px', borderRadius: '12px', fontWeight: 800, display: 'inline-block', marginBottom: '10px' }}>
+                        <div style={{ fontSize: '12px', background: '#EEF2FF', color: '#4F46E5', padding: '4px 12px', borderRadius: '12px', fontWeight: 800, display: 'inline-block', marginBottom: '8px' }}>
                             DETAYLI REÇETE
                         </div>
 
-                        <h2 style={{ fontSize: '22px', fontWeight: 900, color: '#0F172A', marginBottom: '10px' }}>
-                            {selectedRecipeModal.name}
+                        <h2 style={{ fontSize: '22px', fontWeight: 900, color: '#0F172A', marginBottom: '8px' }}>
+                            {dishDetails.cleanName}
                         </h2>
 
-                        <div style={{ display: 'flex', gap: '15px', background: '#F8FAFC', padding: '12px', borderRadius: '14px', marginBottom: '20px', fontSize: '13px', fontWeight: 700, color: '#475569' }}>
-                            <span>⏱️ {selectedRecipeModal.details?.time || 30} dk</span>
-                            <span>🔥 {selectedRecipeModal.details?.calories || 300} kcal</span>
-                            <span>💰 ₺{selectedRecipeModal.details?.cost || 50}</span>
+                        <div style={{background: '#EFF6FF', color: '#1D4ED8', padding: '8px 14px', borderRadius: '10px', fontSize: '13px', fontWeight: 800, marginBottom: '14px', display: 'flex', alignItems: 'center', gap: '6px', border: '1px solid #BFDBFE'}}>
+                           📍 Ait Olduğu Yöre / Bölge: <span style={{color: '#1E40AF', fontWeight: 900}}>{dishDetails.region}</span>
+                        </div>
+
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', background: '#F8FAFC', padding: '12px', borderRadius: '14px', marginBottom: '20px', fontSize: '13px', fontWeight: 700, color: '#475569' }}>
+                            <span style={{background: '#F1F5F9', padding: '6px 12px', borderRadius: '8px'}}>⏱️ Yemeğin Hazırlanma Süresi: {selectedRecipeModal.details?.time || 30} Dk</span>
+                            <span style={{background: '#EEF2FF', color: '#4338CA', padding: '6px 12px', borderRadius: '8px'}}>🔥 Hesaplanan Kalori: {selectedRecipeModal.details?.calories || 300} kcal</span>
+                            <span style={{background: '#FEF3C7', color: '#B45309', padding: '6px 12px', borderRadius: '8px'}}>🏷️ Gramaj Hesabıyla Yemek Maliyeti: ₺{selectedRecipeModal.details?.cost || 50} (Market sepet tutarından farklı çıkabilir)</span>
                         </div>
 
                         <h4 style={{ fontSize: '14px', fontWeight: 800, color: '#1E293B', marginBottom: '8px' }}>🛒 Ölçülü Malzemeler:</h4>
                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '20px' }}>
-                            {selectedRecipeModal.details?.ingsFormatted.map((ing, i) => (
+                            {selectedRecipeModal.details?.ingsFormatted?.map((ing, i) => (
                                 <span key={i} style={{ background: '#ECFDF5', border: '1px solid #A7F3D0', padding: '6px 12px', borderRadius: '12px', fontSize: '12px', color: '#065F46', fontWeight: 700 }}>
                                     {ing.name} ({ing.qty}) - <span style={{color: '#047857', fontWeight: 900}}>₺{ing.price}</span>
                                 </span>
@@ -769,6 +775,31 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction }
                         </div>
 
                         <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                            {openFocusMode && (
+                                <button
+                                    onClick={() => {
+                                        const recipeForFocus = {
+                                            name: dishDetails.cleanName,
+                                            region: dishDetails.region,
+                                            prepTime: selectedRecipeModal.details?.time || 30,
+                                            calories: selectedRecipeModal.details?.calories || 300,
+                                            cost: selectedRecipeModal.details?.cost || 50,
+                                            recipe: selectedRecipeModal.recipeDesc || "1. Malzemeleri taze şekilde hazırlayın ve yıkayın.\n2. Tencerede uygun ısıda soteleyerek pişirme adımlarını tamamlayın.\n3. Sıcak olarak taze baharatlarla servis edin."
+                                        };
+                                        setSelectedRecipeModal(null);
+                                        openFocusMode(recipeForFocus);
+                                    }}
+                                    style={{
+                                        width: '100%', padding: '14px', borderRadius: '14px', border: 'none',
+                                        background: '#10B981', color: 'white', fontWeight: 900, fontSize: '14px', cursor: 'pointer',
+                                        display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
+                                        boxShadow: '0 4px 12px rgba(16,185,129,0.3)'
+                                    }}
+                                >
+                                    👁️ Mutfak Odak Modu (Ekran Kapanmaz)
+                                </button>
+                            )}
+
                             <button
                                 onClick={() => {
                                     const cost = selectedRecipeModal.details?.cost || 80;
@@ -776,7 +807,7 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction }
                                     const saving = Math.round(cost * 0.3);
                                     setSelectedRecipeModal(null);
                                     setSavingReportModal({
-                                        title: '🎉 ' + selectedRecipeModal.name + ' Pişiriliyor!',
+                                        title: '🎉 ' + dishDetails.cleanName + ' Pişiriliyor!',
                                         cost: cost,
                                         saving: saving,
                                         outCost: Math.round(cost * 1.3)
@@ -796,26 +827,27 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction }
                                     onClick={() => setSelectedRecipeModal(null)}
                                     style={{
                                         flex: 1, padding: '12px', borderRadius: '14px', border: 'none',
-                                        background: '#10B981', color: 'white', fontWeight: 800, fontSize: '13px', cursor: 'pointer'
+                                        background: '#475569', color: 'white', fontWeight: 800, fontSize: '13px', cursor: 'pointer'
                                     }}
                                 >
-                                    ✅ Onayla ve Kapat
+                                    ✅ Kapat
                                 </button>
-                            <button
-                                onClick={() => toggleFavorite(selectedRecipeModal)}
-                                style={{
-                                    flex: 1, padding: '12px', borderRadius: '14px', border: 'none',
-                                    background: isFav(selectedRecipeModal) ? '#EF4444' : '#3B82F6',
-                                    color: 'white', fontWeight: 800, fontSize: '13px', cursor: 'pointer'
-                                }}
-                            >
-                                {isFav(selectedRecipeModal) ? '💔 Favorilerden Çıkar' : '❤️ Favorilerime Ekle'}
-                            </button>
+                                <button
+                                    onClick={() => toggleFavorite(selectedRecipeModal)}
+                                    style={{
+                                        flex: 1, padding: '12px', borderRadius: '14px', border: 'none',
+                                        background: isFav(selectedRecipeModal) ? '#EF4444' : '#3B82F6',
+                                        color: 'white', fontWeight: 800, fontSize: '13px', cursor: 'pointer'
+                                    }}
+                                >
+                                    {isFav(selectedRecipeModal) ? '💔 Favorilerden Çıkar' : '❤️ Favorilerime Ekle'}
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            )}
+                );
+            })()}
 
             
             {/* --- 💰 TASARRUF RAPORU POPUP MODALI --- */}

@@ -1082,7 +1082,7 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
       {dashboardView === 'HUB' && renderHub()}
 
       {dashboardView === 'DAILY_MENU' && (
-        <DailyMenuFlow onBack={() => setDashboardView('HUB')} openShopping={openShopping} acceptMenuAction={acceptMenuAction} />
+        <DailyMenuFlow onBack={() => setDashboardView('HUB')} openShopping={openShopping} acceptMenuAction={acceptMenuAction} openFocusMode={(dish) => setShowFocusModeDish(dish)} />
       )}
 
       {dashboardView === 'MATCH' && (
