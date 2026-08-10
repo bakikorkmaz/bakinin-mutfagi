@@ -1066,22 +1066,6 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
           <div className="hub-title">Evin Sağlık & Fit Karnesi</div>
           <div className="hub-desc">Ailenizin diyet kısıtlamalarına uyan tarifler ve günlük kalori/protein makro takip paneli.</div>
         </div>
-
-        {/* 🎬 EĞLENCE SERÜVENİ (MATCH + ÇARK + SOSYAL AKIŞ + ROZETLER) */}
-        <div className="hub-card" onClick={() => setActiveTab('SOCIAL')} style={{borderTop: '4px solid #8B5CF6'}}>
-          <div className="hub-tag" style={{background: '#EDE9FE', color: '#6D28D9'}}>EĞLENCE & SOSYAL KULÜP</div>
-          <div className="hub-icon">🎬</div>
-          <div className="hub-title">Eğlence Serüveni</div>
-          <div className="hub-desc">Ne Yesek Match grup oylaması, Şans Çarkı, Şef Rozetleri ve topluluk medya akışı tek çatıda!</div>
-        </div>
-
-        {/* ♻️ ARTAN YEMEK DÖNÜŞÜM */}
-        <div className="hub-card" onClick={() => setDashboardView('RECYCLE')} style={{borderTop: '4px solid #EC4899'}}>
-          <div className="hub-tag" style={{background: '#FCE7F3', color: '#BE185D'}}>ARTAN YEMEK DÖNÜŞÜM</div>
-          <div className="hub-icon">♻️</div>
-          <div className="hub-title">Sıfır İsraf Mutfağı</div>
-          <div className="hub-desc">Dünden kalan pilav, makarna veya bayat ekmekleri efsane lezzetlere dönüştürün.</div>
-        </div>
       </div>
     </>
   );
@@ -1950,7 +1934,7 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
          </div>
        )}
 
-       {showTimerWidget && (
+       {activeTimerMinutes !== null && showTimerWidget && (
           <KitchenTimer
              activeTimerMinutes={activeTimerMinutes}
              onCloseTimer={() => setActiveTimerMinutes(null)}
