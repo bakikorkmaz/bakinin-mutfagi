@@ -131,7 +131,9 @@ import NeYesekMatch from './NeYesekMatch';
 
 export default function SocialFlow({ activeUser, setActiveUser, onBack, openShopping }) {
 
-   const [subTab, setSubTab] = useState('FEED'); // FEED, MATCH, WHEEL, BADGES, CHAT, FOLLOW, UPLOAD, MY_PROFILE
+   const [subTab, setSubTab] = useState('MY_PROFILE'); // FEED, MATCH, WHEEL, BADGES, CHAT, FOLLOW, UPLOAD, MY_PROFILE
+   const [showFeedSearchModal, setShowFeedSearchModal] = useState(false);
+   const [feedSearchQuery, setFeedSearchQuery] = useState("");
    const [model, setModel] = useState(null);
    const [isModelLoading, setIsModelLoading] = useState(true);
 
@@ -525,13 +527,20 @@ export default function SocialFlow({ activeUser, setActiveUser, onBack, openShop
             return alert("Sohbet edebilmek için Google veya kullanıcı hesabınızla giriş yapmış olmalısınız.");
         }
 
-        // Kural: yusufkorqmaz79@gmail.com hariç, alıcı (targetUser) göndericiyi (activeUser) takip etmiyorsa mesaj gönderilemez!
+        // Kural: yusufkorqmaz79@gmail.com hariç, gizlilik ve takip kuralları denetimi
         const isAdmin = currentEmail === "yusufkorqmaz79@gmail.com";
-        const targetFollowers = selectedChatUser?.followers || [];
-        const doesTargetFollowMe = targetFollowers.includes(currentUid);
+        const targetFollowsMe = (selectedChatUser?.follows || []).includes(currentUid) || (selectedChatUser?.followers || []).includes(currentUid);
 
-        if (!isAdmin && !doesTargetFollowMe) {
-            return alert("🚫 Bu kullanıcı sizi takip etmeden mesaj atamazsınız.");
+        if (!isAdmin) {
+            if (selectedChatUser?.isPrivate && !targetFollowsMe) {
+                return alert("Bu hesap gizlidir, sizi takip etmeden mesaj atamazsınız");
+            }
+            if (selectedChatUser?.allowMessagesFromFollowersOnly && !(selectedChatUser?.follows || []).includes(currentUid)) {
+                return alert("Bu kullanıcı yalnızca takip ettiği kişilerden mesaj kabul etmektedir.");
+            }
+            if (!targetFollowsMe) {
+                return alert("Bu hesap gizlidir, sizi takip etmeden mesaj atamazsınız");
+            }
         }
 
         try {
@@ -668,6 +677,22 @@ export default function SocialFlow({ activeUser, setActiveUser, onBack, openShop
                         }} style={{width: '24px', height: '24px', accentColor: '#8B5CF6'}} />
                     </label>
                     <p style={{fontSize: '12px', color: '#64748B', marginTop: '8px', lineHeight: 1.4}}>Profiliniz gizli olursa gönderilerinizi sadece onayladığınız takipçiler görebilir. Sizi takip etmek isteyenler "Bildirim" havuzuna istek olarak düşer.</p>
+
+                    <label style={{display: 'flex', alignItems: 'center', cursor: 'pointer', justifyContent: 'space-between', marginTop: '15px', paddingTop: '15px', borderTop: '1px solid #F1F5F9'}}>
+                        <div>
+                            <div style={{fontSize: '14px', color: '#334155', fontWeight: 600}}>Sadece Takip Ettiğim Kişiler Mesaj Atabilsin</div>
+                            <div style={{fontSize: '11px', color: '#64748B', marginTop: '2px'}}>Profiliniz açık olsa dahi sadece sizin takip ettiğiniz şefler size mesaj gönderebilir.</div>
+                        </div>
+                        <input type="checkbox" checked={activeUser?.allowMessagesFromFollowersOnly || false} onChange={async (e) => {
+                            const isChecked = e.target.checked;
+                            if (activeUser?.uid) {
+                                await updateDoc(doc(db, 'users', activeUser.uid), { allowMessagesFromFollowersOnly: isChecked });
+                                const updatedUser = {...activeUser, allowMessagesFromFollowersOnly: isChecked};
+                                if(setActiveUser) setActiveUser(updatedUser);
+                                localStorage.setItem('baki_active_user', JSON.stringify(updatedUser));
+                            }
+                        }} style={{width: '24px', height: '24px', accentColor: '#8B5CF6'}} />
+                    </label>
                 </div>
 
                 {isEditingUsername && (
@@ -840,20 +865,88 @@ export default function SocialFlow({ activeUser, setActiveUser, onBack, openShop
 
         return (
             <div style={{position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, width: '100vw', height: '100vh', zIndex: 99999, background: '#000000', overflow: 'hidden'}}>
-                {/* YUKARIDAKİ SOL GERİ DÖN BUTONU */}
-                <button 
-                    onClick={() => setSubTab('MY_PROFILE')}
-                    style={{
-                        position: 'absolute', top: '20px', left: '20px', zIndex: 100000, 
-                        background: 'rgba(0, 0, 0, 0.6)', backdropFilter: 'blur(10px)', 
-                        color: 'white', border: '1px solid rgba(255, 255, 255, 0.25)', 
-                        padding: '10px 18px', borderRadius: '30px', fontSize: '13px', 
-                        fontWeight: 900, cursor: 'pointer', display: 'flex', alignItems: 'center', 
-                        gap: '8px', boxShadow: '0 4px 15px rgba(0,0,0,0.5)', transition: '0.2s'
-                    }}
-                >
-                    ← Eğlence Serüveni
-                </button>
+                {/* YUKARIDAKİ SOL GERİ DÖN VE SAĞ PROFIL ARA BUTONLARI */}
+                <div style={{position: 'absolute', top: '20px', left: '20px', right: '20px', zIndex: 100000, display: 'flex', justifyContent: 'space-between', alignItems: 'center', pointerEvents: 'none'}}>
+                    <button 
+                        onClick={() => setSubTab('MY_PROFILE')}
+                        style={{
+                            pointerEvents: 'auto',
+                            background: 'rgba(0, 0, 0, 0.6)', backdropFilter: 'blur(10px)', 
+                            color: 'white', border: '1px solid rgba(255, 255, 255, 0.25)', 
+                            padding: '10px 18px', borderRadius: '30px', fontSize: '13px', 
+                            fontWeight: 900, cursor: 'pointer', display: 'flex', alignItems: 'center', 
+                            gap: '8px', boxShadow: '0 4px 15px rgba(0,0,0,0.5)', transition: '0.2s'
+                        }}
+                    >
+                        ← Eğlence Serüveni
+                    </button>
+
+                    <button 
+                        onClick={() => setShowFeedSearchModal(true)}
+                        style={{
+                            pointerEvents: 'auto',
+                            background: 'rgba(0, 0, 0, 0.6)', backdropFilter: 'blur(10px)', 
+                            color: 'white', border: '1px solid rgba(255, 255, 255, 0.25)', 
+                            padding: '10px 18px', borderRadius: '30px', fontSize: '13px', 
+                            fontWeight: 900, cursor: 'pointer', display: 'flex', alignItems: 'center', 
+                            gap: '8px', boxShadow: '0 4px 15px rgba(0,0,0,0.5)', transition: '0.2s'
+                        }}
+                    >
+                        🔍 Şef Ara
+                    </button>
+                </div>
+
+                {/* 🔍 KEŞFET PROFİL ARAMA MODALI (INSTAGRAM STYLE) */}
+                {showFeedSearchModal && (
+                    <div 
+                        style={{position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.8)', zIndex: 250000, display: 'flex', justifyContent: 'center', alignItems: 'flex-start', paddingTop: '60px', backdropFilter: 'blur(8px)', padding: '60px 15px 20px 15px'}}
+                        onClick={() => setShowFeedSearchModal(false)}
+                    >
+                        <div 
+                            style={{background: 'white', width: '100%', maxWidth: '450px', borderRadius: '24px', padding: '20px', maxHeight: '80vh', display: 'flex', flexDirection: 'column', boxShadow: '0 20px 40px rgba(0,0,0,0.4)'}}
+                            onClick={e => e.stopPropagation()}
+                        >
+                            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px'}}>
+                                <h3 style={{margin: 0, fontSize: '18px', color: '#1E293B', fontWeight: 900}}>🔍 Instagram Tarzı Şef Arama</h3>
+                                <button onClick={() => setShowFeedSearchModal(false)} style={{background: 'none', border: 'none', fontSize: '22px', cursor: 'pointer', color: '#64748B', fontWeight: 800}}>✕</button>
+                            </div>
+                            
+                            <input 
+                                type="text"
+                                autoFocus
+                                placeholder="👤 @kullanici_adi veya İsim Ara..." 
+                                value={feedSearchQuery} 
+                                onChange={e => setFeedSearchQuery(e.target.value)}
+                                style={{width: '100%', padding: '14px 16px', borderRadius: '16px', background: '#F8FAFC', border: '2px solid #E2E8F0', outline: 'none', fontSize: '14px', color: '#1E293B', fontWeight: 700, marginBottom: '15px'}}
+                            />
+
+                            <div style={{flex: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '10px'}}>
+                                {allUsers.filter(u => u.id !== activeUser.uid && ((u.username||'').toLowerCase().includes(feedSearchQuery.toLowerCase()) || (u.name||'').toLowerCase().includes(feedSearchQuery.toLowerCase()))).length === 0 ? (
+                                    <div style={{textAlign: 'center', color: '#94A3B8', padding: '30px 0'}}>Aramanıza uygun şef bulunamadı.</div>
+                                ) : (
+                                    allUsers.filter(u => u.id !== activeUser.uid && ((u.username||'').toLowerCase().includes(feedSearchQuery.toLowerCase()) || (u.name||'').toLowerCase().includes(feedSearchQuery.toLowerCase()))).map(u => {
+                                        const isFollowing = myProfile?.follows?.includes(u.id);
+                                        const isRequested = u.requests?.includes(activeUser.uid);
+                                        return (
+                                            <div key={u.id} style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 14px', background: '#F8FAFC', borderRadius: '16px', border: '1px solid #E2E8F0'}}>
+                                                <div onClick={() => { setShowFeedSearchModal(false); openProfile(u); }} style={{display: 'flex', gap: '12px', alignItems: 'center', cursor: 'pointer', flex: 1}}>
+                                                    {u.photoURL ? <img src={getHighResPhotoUrl(u.photoURL)} style={{width:'44px', height:'44px', borderRadius:'50%', objectFit: 'cover'}} /> : <div style={{width:'44px',height:'44px',borderRadius:'50%',background:'#E2E8F0',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'20px'}}>👤</div>}
+                                                    <div>
+                                                       <div style={{fontWeight: 900, color: '#1E293B', fontSize: '14px'}}>@{u.username || 'anonim'}</div>
+                                                       <div style={{fontSize: '12px', color: '#64748B'}}>{u.name}</div>
+                                                    </div>
+                                                </div>
+                                                <button onClick={() => handleFollow(u.id, isFollowing, u.isPrivate, isRequested)} style={{background: isFollowing ? '#E2E8F0' : isRequested ? '#F59E0B' : '#8B5CF6', color: isFollowing ? '#64748B' : 'white', padding: '8px 14px', borderRadius: '20px', border: 'none', fontWeight: 800, fontSize: '12px', cursor: 'pointer'}}>
+                                                    {isFollowing ? 'Takipte' : isRequested ? 'İstek Gönderildi' : 'Takip Et'}
+                                                </button>
+                                            </div>
+                                        );
+                                    })
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                )}
 
                 {visiblePosts.length === 0 ? (
                     <div style={{textAlign: 'center', color: '#64748B', display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh', width: '100vw'}}>
