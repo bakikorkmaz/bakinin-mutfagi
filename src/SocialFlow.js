@@ -134,6 +134,7 @@ export default function SocialFlow({ activeUser, setActiveUser, onBack, openShop
    const [subTab, setSubTab] = useState('MY_PROFILE'); // FEED, MATCH, WHEEL, BADGES, CHAT, FOLLOW, UPLOAD, MY_PROFILE
    const [showFeedSearchModal, setShowFeedSearchModal] = useState(false);
    const [feedSearchQuery, setFeedSearchQuery] = useState("");
+   const [userListModal, setUserListModal] = useState(null); // { title: string, userIds: string[] }
    const [model, setModel] = useState(null);
    const [isModelLoading, setIsModelLoading] = useState(true);
 
@@ -651,13 +652,19 @@ export default function SocialFlow({ activeUser, setActiveUser, onBack, openShop
                     </div>
                     
                     <div style={{display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '20px'}}>
-                        <div>
-                            <div style={{fontSize: '18px', fontWeight: 800, color: '#1E293B'}}>{(myProfile?.followers || []).filter(userExists).length}</div>
-                            <div style={{fontSize: '11px', color: '#64748B', textTransform: 'uppercase', fontWeight: 700}}>Takipçi</div>
+                        <div 
+                            onClick={() => setUserListModal({ title: '👥 Takipçilerim', userIds: myProfile?.followers || [] })}
+                            style={{cursor: 'pointer', background: '#F8FAFC', padding: '10px 20px', borderRadius: '14px', border: '1px solid #E2E8F0', transition: '0.2s', textAlign: 'center'}}
+                        >
+                            <div style={{fontSize: '18px', fontWeight: 900, color: '#8B5CF6'}}>{(myProfile?.followers || []).filter(userExists).length}</div>
+                            <div style={{fontSize: '11px', color: '#64748B', textTransform: 'uppercase', fontWeight: 800}}>Takipçi ↗</div>
                         </div>
-                        <div>
-                            <div style={{fontSize: '18px', fontWeight: 800, color: '#1E293B'}}>{(myProfile?.follows || []).filter(userExists).length}</div>
-                            <div style={{fontSize: '11px', color: '#64748B', textTransform: 'uppercase', fontWeight: 700}}>Takip</div>
+                        <div 
+                            onClick={() => setUserListModal({ title: '👥 Takip Ettiklerim', userIds: myProfile?.follows || [] })}
+                            style={{cursor: 'pointer', background: '#F8FAFC', padding: '10px 20px', borderRadius: '14px', border: '1px solid #E2E8F0', transition: '0.2s', textAlign: 'center'}}
+                        >
+                            <div style={{fontSize: '18px', fontWeight: 900, color: '#8B5CF6'}}>{(myProfile?.follows || []).filter(userExists).length}</div>
+                            <div style={{fontSize: '11px', color: '#64748B', textTransform: 'uppercase', fontWeight: 800}}>Takip ↗</div>
                         </div>
                     </div>
                 </div>
@@ -1332,49 +1339,71 @@ const renderNotificationsScreen = () => {
                             </div>
 
                             <div style={{flex: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '10px', paddingRight: '5px'}}>
-                               {allUsers.length === 0 ? (
-                                   <div style={{textAlign: 'center', margin: '40px 0', color: '#64748B'}}>
-                                       <div style={{fontSize: '36px', marginBottom: '10px'}}>👨‍🍳</div>
-                                       Topluluk şefleri yükleniyor veya henüz başka şef kayıtlı değil...
-                                   </div>
-                               ) : (
-                                   allUsers.map(u => {
-                                      const uId = u.id || u.uid;
-                                      const isFollowing = myProfile?.follows?.includes(uId);
-                                      return (
-                                         <div 
-                                            key={uId} 
-                                            onClick={() => setSelectedChatUser({ ...u, id: uId })} 
-                                            style={{
-                                                display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                                                padding: '14px 16px', background: '#F8FAFC', borderRadius: '18px',
-                                                border: '1px solid #E2E8F0', cursor: 'pointer', transition: '0.2s'
-                                            }}
-                                         >
-                                             <div style={{display: 'flex', alignItems: 'center', gap: '14px'}}>
-                                                 {u.photoURL ? (
-                                                     <img src={getHighResPhotoUrl(u.photoURL)} alt="p" style={{width:'46px', height:'46px', borderRadius:'50%', objectFit:'cover', border: '2px solid #10B981'}} />
-                                                 ) : (
-                                                     <div style={{width:'46px', height:'46px', borderRadius:'50%', background:'#E2E8F0', display:'flex', alignItems:'center', justifyContent:'center', fontSize: '22px'}}>👤</div>
-                                                 )}
-                                                 <div>
-                                                     <div style={{fontWeight: '900', color: '#0F172A', fontSize: '15px'}}>@{u.username || u.name || 'anonim'}</div>
-                                                     <div style={{fontSize: '12px', color: isFollowing ? '#10B981' : '#64748B', fontWeight: 600}}>
-                                                         {isFollowing ? '✓ Takip Ediyorsun' : 'Mutfak Topluluğu Şefi'}
-                                                     </div>
-                                                 </div>
-                                             </div>
-                                             
-                                             <button style={{background: '#10B981', color: 'white', border: 'none', padding: '8px 14px', borderRadius: '12px', fontWeight: 800, fontSize: '12px', cursor: 'pointer'}}>
-                                                 Sohbet Et 💬
-                                             </button>
-                                         </div>
-                                      );
-                                   })
-                               )}
-                            </div>
-                         </div>
-                      ) : (
+                                {(() => {
+                                   const mutualFollowers = allUsers.filter(u => {
+                                       const uId = u.id || u.uid;
+                                       if (uId === activeUser?.uid) return false;
+                                       const iFollowThem = (myProfile?.follows || []).includes(uId);
+                                       const theyFollowMe = (u.follows || []).includes(activeUser?.uid) || (myProfile?.followers || []).includes(uId);
+                                       return iFollowThem && theyFollowMe;
+                                   });
+
+                                   if (mutualFollowers.length === 0) {
+                                       return (
+                                           <div style={{textAlign: 'center', margin: '40px 0', color: '#64748B', padding: '20px'}}>
+                                               <div style={{fontSize: '36px', marginBottom: '10px'}}>🤝</div>
+                                               <strong style={{color: '#0F172A', display: 'block', marginBottom: '6px'}}>Takipleştiğiniz Şef Bulunmuyor</strong>
+                                               <span style={{fontSize: '13px'}}>Sohbet edebilmek için karşılıklı takipleştiğiniz (sizin takip ettiğiniz ve sizi takip eden) bir şef olması gerekmektedir. Şef Bul sekmesinden veya arama kısmından şefleri takip edebilirsiniz!</span>
+                                           </div>
+                                       );
+                                   }
+
+                                   return mutualFollowers.map(u => {
+                                       const uId = u.id || u.uid;
+                                       return (
+                                          <div 
+                                             key={uId} 
+                                             onClick={() => {
+                                                 const currentEmail = activeUser?.email || '';
+                                                 const isAdmin = currentEmail === "yusufkorqmaz79@gmail.com";
+                                                 if (!isAdmin && u.isPrivate && !(u.follows || []).includes(activeUser?.uid) && !(myProfile?.followers || []).includes(uId)) {
+                                                     return alert("Bu hesap gizlidir, sizi takip etmeden mesaj atamazsınız");
+                                                 }
+                                                 if (!isAdmin && u.allowMessagesFromFollowersOnly && !(u.follows || []).includes(activeUser?.uid)) {
+                                                     return alert("Bu kullanıcı yalnızca takip ettiği kişilerden mesaj kabul etmektedir.");
+                                                 }
+                                                 setSelectedChatUser({ ...u, id: uId });
+                                             }} 
+                                             style={{
+                                                 display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                                                 padding: '14px 16px', background: '#F8FAFC', borderRadius: '18px',
+                                                 border: '1px solid #E2E8F0', cursor: 'pointer', transition: '0.2s'
+                                             }}
+                                          >
+                                              <div style={{display: 'flex', alignItems: 'center', gap: '14px'}}>
+                                                  {u.photoURL ? (
+                                                      <img src={getHighResPhotoUrl(u.photoURL)} alt="p" style={{width:'46px', height:'46px', borderRadius:'50%', objectFit:'cover', border: '2px solid #10B981'}} />
+                                                  ) : (
+                                                      <div style={{width:'46px', height:'46px', borderRadius:'50%', background:'#E2E8F0', display:'flex', alignItems:'center', justifyContent:'center', fontSize: '22px'}}>👤</div>
+                                                  )}
+                                                  <div>
+                                                      <div style={{fontWeight: '900', color: '#0F172A', fontSize: '15px'}}>@{u.username || u.name || 'anonim'}</div>
+                                                      <div style={{fontSize: '12px', color: '#10B981', fontWeight: 600}}>
+                                                          ✓ Takipleşiyorsunuz
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              
+                                              <button style={{background: '#10B981', color: 'white', border: 'none', padding: '8px 14px', borderRadius: '12px', fontWeight: 800, fontSize: '12px', cursor: 'pointer'}}>
+                                                  Sohbet Et 💬
+                                              </button>
+                                          </div>
+                                       );
+                                   });
+                                })()}
+                             </div>
+                          </div>
+                       ) : (
                           <div style={{display: 'flex', flexDirection: 'column', height: '100%', width: '100%', position: 'relative', overflow: 'hidden', background: '#F8FAFC', borderRadius: '24px', padding: '15px'}}>
                              {/* SOHBET ÜST KART */}
                              <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '12px', borderBottom: '1px solid #E2E8F0', background: 'white', padding: '12px 16px', borderRadius: '16px', marginBottom: '10px', boxShadow: '0 2px 8px rgba(0,0,0,0.04)'}}>
@@ -1555,8 +1584,52 @@ const renderNotificationsScreen = () => {
                    </div>
                 }
            </div>
-           
-           {/* FOTOĞRAF BÜYÜTME MODALI */}
+                      {/* 👥 TAKİPÇİ / TAKİP LİSTESİ MODALI */}
+            {userListModal && (
+                <div 
+                    style={{position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.75)', zIndex: 250000, display: 'flex', justifyContent: 'center', alignItems: 'center', backdropFilter: 'blur(6px)', padding: '20px'}}
+                    onClick={() => setUserListModal(null)}
+                >
+                    <div 
+                        style={{background: 'white', width: '100%', maxWidth: '420px', borderRadius: '24px', padding: '20px', maxHeight: '80vh', display: 'flex', flexDirection: 'column', boxShadow: '0 20px 40px rgba(0,0,0,0.3)'}}
+                        onClick={e => e.stopPropagation()}
+                    >
+                        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px', paddingBottom: '12px', borderBottom: '1px solid #E2E8F0'}}>
+                            <h3 style={{margin: 0, fontSize: '18px', color: '#1E293B', fontWeight: 900}}>{userListModal.title} ({userListModal.userIds.length})</h3>
+                            <button onClick={() => setUserListModal(null)} style={{background: 'none', border: 'none', fontSize: '22px', cursor: 'pointer', color: '#64748B', fontWeight: 800}}>✕</button>
+                        </div>
+
+                        <div style={{flex: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '10px'}}>
+                            {userListModal.userIds.length === 0 ? (
+                                <div style={{textAlign: 'center', color: '#94A3B8', padding: '30px 0'}}>Bu listede henüz hiç şef bulunmuyor.</div>
+                            ) : (
+                                userListModal.userIds.map(uid => {
+                                    const targetUser = allUsers.find(u => u.id === uid) || { id: uid, username: 'anonim', name: 'Şef' };
+                                    const isFollowing = myProfile?.follows?.includes(uid);
+                                    const isRequested = targetUser.requests?.includes(activeUser.uid);
+                                    
+                                    return (
+                                        <div key={uid} style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 14px', background: '#F8FAFC', borderRadius: '16px', border: '1px solid #E2E8F0'}}>
+                                            <div onClick={() => { setUserListModal(null); openProfile(targetUser); }} style={{display: 'flex', gap: '12px', alignItems: 'center', cursor: 'pointer', flex: 1}}>
+                                                {targetUser.photoURL ? <img src={getHighResPhotoUrl(targetUser.photoURL)} style={{width:'42px', height:'42px', borderRadius:'50%', objectFit: 'cover'}} alt="avatar"/> : <div style={{width:'42px',height:'42px',borderRadius:'50%',background:'#E2E8F0',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'18px'}}>👤</div>}
+                                                <div>
+                                                   <div style={{fontWeight: 900, color: '#1E293B', fontSize: '14px'}}>@{targetUser.username || 'anonim'}</div>
+                                                   <div style={{fontSize: '12px', color: '#64748B'}}>{targetUser.name || 'Mutfak Gurmesi'}</div>
+                                                </div>
+                                            </div>
+                                            <button onClick={() => handleFollow(uid, isFollowing, targetUser.isPrivate, isRequested)} style={{background: isFollowing ? '#E2E8F0' : isRequested ? '#F59E0B' : '#8B5CF6', color: isFollowing ? '#64748B' : 'white', padding: '7px 13px', borderRadius: '20px', border: 'none', fontWeight: 800, fontSize: '12px', cursor: 'pointer'}}>
+                                                {isFollowing ? 'Takipten Çık' : isRequested ? 'İstek Gönderildi' : 'Takip Et +'}
+                                            </button>
+                                        </div>
+                                    );
+                                })
+                            )}
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* FOTOĞRAF BÜYÜTME MODALI */}
            {enlargedPhoto && (
                <div style={{position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.85)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px'}} onClick={() => setEnlargedPhoto(null)}>
                    <div style={{position: 'relative', maxWidth: '90%', maxHeight: '90%'}}>
