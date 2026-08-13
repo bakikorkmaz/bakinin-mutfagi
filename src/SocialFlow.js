@@ -619,6 +619,172 @@ export default function SocialFlow({ activeUser, setActiveUser, onBack, openShop
         }
     };
 
+    const renderProfileScreen = () => {
+        if (!selectedProfileUser) {
+            return (
+                <div style={{padding: '30px', textAlign: 'center', color: '#64748B'}}>
+                    <p style={{fontSize: '15px', fontWeight: 600}}>Profil bulunamadı veya silinmiş.</p>
+                    <button onClick={() => setSubTab('FEED')} style={{background: '#8B5CF6', color: 'white', border: 'none', padding: '10px 20px', borderRadius: '12px', cursor: 'pointer', fontWeight: 800, marginTop: '10px'}}>
+                        ← Keşfet'e Dön
+                    </button>
+                </div>
+            );
+        }
+
+        const targetUid = selectedProfileUser.id || selectedProfileUser.uid;
+        const liveTargetUser = allUsers.find(u => u.id === targetUid || u.uid === targetUid) || selectedProfileUser;
+        const isFollowing = (myProfile?.follows || []).includes(targetUid);
+        const isRequested = (liveTargetUser.requests || []).includes(activeUser?.uid);
+        const isBlocked = (myProfile?.blocked || []).includes(targetUid);
+        const userExists = (uid) => uid === targetUid || uid === activeUser?.uid || allUsers.some(u => u.id === uid || u.uid === uid);
+
+        const targetPosts = feedPosts.filter(p => p.userId === targetUid);
+        const canViewContent = !liveTargetUser.isPrivate || isFollowing || targetUid === activeUser?.uid;
+
+        return (
+            <div style={{padding: '10px 0', paddingBottom: '80px'}}>
+                {/* ÜST GERİ DÖN KARTI */}
+                <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '15px'}}>
+                    <button 
+                        onClick={() => setSubTab('FEED')}
+                        style={{background: 'rgba(255,255,255,0.1)', color: 'white', border: '1px solid rgba(255,255,255,0.2)', padding: '8px 16px', borderRadius: '20px', fontWeight: 800, cursor: 'pointer', fontSize: '13px', display: 'flex', alignItems: 'center', gap: '6px', backdropFilter: 'blur(6px)'}}
+                    >
+                        ← Keşfet'e Dön
+                    </button>
+                    <span style={{color: '#94A3B8', fontSize: '12px', fontWeight: 700}}>👤 Şef Profili</span>
+                </div>
+
+                {/* PROFİL BAŞLIK KARTI */}
+                <div style={{background: 'white', padding: '24px 20px', borderRadius: '24px', boxShadow: '0 10px 25px rgba(0,0,0,0.06)', marginBottom: '20px', textAlign: 'center'}}>
+                    <div style={{position: 'relative', display: 'inline-block', marginBottom: '15px'}}>
+                        {liveTargetUser.photoURL ? (
+                            <img 
+                                src={getHighResPhotoUrl(liveTargetUser.photoURL)} 
+                                alt="Avatar" 
+                                style={{width: '95px', height: '95px', borderRadius: '50%', objectFit: 'cover', border: '4px solid #E2E8F0', background: '#F8FAFC', cursor: 'zoom-in'}} 
+                                onClick={() => setEnlargedPhoto(liveTargetUser.photoURL)} 
+                            />
+                        ) : (
+                            <div style={{width: '95px', height: '95px', borderRadius: '50%', background: '#F1F5F9', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '42px', border: '4px solid #E2E8F0'}}>👤</div>
+                        )}
+                        {liveTargetUser.isPrivate && (
+                            <div style={{position: 'absolute', bottom: 0, right: 0, background: '#F59E0B', color: 'white', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '14px', border: '2px solid white'}} title="Gizli Hesap">🔒</div>
+                        )}
+                    </div>
+
+                    <h2 style={{fontSize: '20px', margin: 0, color: '#0F172A', fontWeight: 900}}>{liveTargetUser.name || liveTargetUser.userName || 'Mutfak Gurmesi'}</h2>
+                    <div style={{fontSize: '14px', color: '#8B5CF6', fontWeight: 800, marginTop: '3px'}}>@{liveTargetUser.username || 'anonim'}</div>
+
+                    {/* İSTATİSTİKLER (TAKİPÇİ / TAKİP / GÖNDERİ) */}
+                    <div style={{display: 'flex', justifyContent: 'center', gap: '15px', marginTop: '20px'}}>
+                        <div 
+                            onClick={() => setUserListModal({ title: `👥 @${liveTargetUser.username || 'Şef'} Takipçileri`, userIds: liveTargetUser.followers || [] })}
+                            style={{cursor: 'pointer', background: '#F8FAFC', padding: '10px 18px', borderRadius: '16px', border: '1px solid #E2E8F0', transition: '0.2s', flex: 1, maxWidth: '110px'}}
+                        >
+                            <div style={{fontSize: '18px', fontWeight: 900, color: '#8B5CF6'}}>{(liveTargetUser.followers || []).filter(userExists).length}</div>
+                            <div style={{fontSize: '11px', color: '#64748B', textTransform: 'uppercase', fontWeight: 800}}>Takipçi ↗</div>
+                        </div>
+
+                        <div 
+                            onClick={() => setUserListModal({ title: `👥 @${liveTargetUser.username || 'Şef'} Takip Ettikleri`, userIds: liveTargetUser.follows || [] })}
+                            style={{cursor: 'pointer', background: '#F8FAFC', padding: '10px 18px', borderRadius: '16px', border: '1px solid #E2E8F0', transition: '0.2s', flex: 1, maxWidth: '110px'}}
+                        >
+                            <div style={{fontSize: '18px', fontWeight: 900, color: '#8B5CF6'}}>{(liveTargetUser.follows || []).filter(userExists).length}</div>
+                            <div style={{fontSize: '11px', color: '#64748B', textTransform: 'uppercase', fontWeight: 800}}>Takip ↗</div>
+                        </div>
+
+                        <div style={{background: '#F8FAFC', padding: '10px 18px', borderRadius: '16px', border: '1px solid #E2E8F0', flex: 1, maxWidth: '110px'}}>
+                            <div style={{fontSize: '18px', fontWeight: 900, color: '#10B981'}}>{targetPosts.length}</div>
+                            <div style={{fontSize: '11px', color: '#64748B', textTransform: 'uppercase', fontWeight: 800}}>Gönderi</div>
+                        </div>
+                    </div>
+
+                    {/* AKSİYON BUTONLARI (TAKİP ET + SOHBET ET) */}
+                    <div style={{display: 'flex', gap: '10px', marginTop: '20px'}}>
+                        <button 
+                            onClick={() => handleFollow(targetUid, isFollowing, liveTargetUser.isPrivate, isRequested)}
+                            style={{
+                                flex: 1, padding: '12px', borderRadius: '16px', border: 'none', 
+                                background: isFollowing ? '#E2E8F0' : isRequested ? '#F59E0B' : '#8B5CF6', 
+                                color: isFollowing ? '#475569' : 'white', fontWeight: 900, fontSize: '14px', 
+                                cursor: 'pointer', boxShadow: isFollowing ? 'none' : '0 4px 12px rgba(139,92,246,0.3)', transition: '0.2s'
+                            }}
+                        >
+                            {isFollowing ? '✓ Takipte' : isRequested ? '⏳ İstek Gönderildi' : 'Takip Et +'}
+                        </button>
+
+                        <button 
+                            onClick={() => {
+                                const currentEmail = activeUser?.email || '';
+                                const isAdmin = currentEmail === "yusufkorqmaz79@gmail.com";
+                                const targetFollowsMe = (liveTargetUser.follows || []).includes(activeUser?.uid) || (myProfile?.followers || []).includes(targetUid);
+                                
+                                if (!isAdmin && liveTargetUser.isPrivate && !targetFollowsMe) {
+                                    return alert("Bu hesap gizlidir, sizi takip etmeden mesaj atamazsınız");
+                                }
+                                if (!isAdmin && liveTargetUser.allowMessagesFromFollowersOnly && !(liveTargetUser.follows || []).includes(activeUser?.uid)) {
+                                    return alert("Bu kullanıcı yalnızca takip ettiği kişilerden mesaj kabul etmektedir.");
+                                }
+                                setSelectedChatUser({ ...liveTargetUser, id: targetUid });
+                                setSubTab('CHAT');
+                            }}
+                            style={{
+                                flex: 1, padding: '12px', borderRadius: '16px', border: 'none', 
+                                background: '#10B981', color: 'white', fontWeight: 900, fontSize: '14px', 
+                                cursor: 'pointer', boxShadow: '0 4px 12px rgba(16,185,129,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px'
+                            }}
+                        >
+                            Sohbet Et 💬
+                        </button>
+                    </div>
+
+                    <div style={{marginTop: '14px', textAlign: 'right'}}>
+                        <button 
+                            onClick={() => handleBlockUser(targetUid, isBlocked)}
+                            style={{background: 'none', border: 'none', color: '#EF4444', fontSize: '12px', fontWeight: 700, cursor: 'pointer', textDecoration: 'underline'}}
+                        >
+                            {isBlocked ? 'Engeli Kaldır' : '🚫 Kullanıcıyı Engelle'}
+                        </button>
+                    </div>
+                </div>
+
+                {/* GÖNDERİLER VEYA GİZLİ HESAP UYARISI */}
+                <div style={{background: 'white', padding: '20px', borderRadius: '24px', boxShadow: '0 10px 25px rgba(0,0,0,0.06)'}}>
+                    <h3 style={{fontSize: '16px', color: '#0F172A', marginBottom: '15px', fontWeight: 900}}>📸 Şefin Gönderileri ({targetPosts.length})</h3>
+                    
+                    {!canViewContent ? (
+                        <div style={{textAlign: 'center', padding: '40px 20px', background: '#F8FAFC', borderRadius: '16px', border: '1px dashed #CBD5E1'}}>
+                            <div style={{fontSize: '40px', marginBottom: '10px'}}>🔒</div>
+                            <h4 style={{margin: '0 0 6px 0', color: '#0F172A', fontWeight: 900}}>Bu Hesap Gizlidir</h4>
+                            <p style={{margin: 0, fontSize: '13px', color: '#64748B'}}>Gönderileri ve tarif videolarını görebilmek için takip isteği gönderin.</p>
+                        </div>
+                    ) : targetPosts.length === 0 ? (
+                        <p style={{color: '#94A3B8', fontSize: '13px', textAlign: 'center', margin: '30px 0'}}>Bu şef henüz hiç gönderi paylaşmamış.</p>
+                    ) : (
+                        <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px'}}>
+                            {targetPosts.map(p => (
+                                <div key={p.id} style={{background: '#000', height: '150px', borderRadius: '14px', overflow: 'hidden', position: 'relative', cursor: 'pointer'}} onClick={() => { if(p.images?.length > 0) setEnlargedPhoto(p.images[0]); }}>
+                                    {p.images?.length > 0 ? (
+                                        <img src={getHighResPhotoUrl(p.images[0])} style={{width:'100%', height:'100%', objectFit:'cover'}} alt="Post"/>
+                                    ) : p.videoURL ? (
+                                        <video src={p.videoURL} style={{width:'100%', height:'100%', objectFit:'cover'}} muted />
+                                    ) : (
+                                        <div style={{width:'100%', height:'100%', background:'#94A3B8', display:'flex', alignItems:'center', justifyContent:'center', color:'white'}}>Görsel</div>
+                                    )}
+                                    {p.images?.length > 1 && (
+                                        <div style={{position: 'absolute', top: '8px', right: '8px', background: 'rgba(0,0,0,0.6)', color: 'white', padding: '2px 6px', borderRadius: '8px', fontSize: '10px', fontWeight: 900}}>
+                                            📸 {p.images.length}
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </div>
+            </div>
+        );
+    };
+
    // --- EKRANLAR (RENDERERS) ---
    
    const renderMyProfileScreen = () => {
@@ -1090,12 +1256,16 @@ export default function SocialFlow({ activeUser, setActiveUser, onBack, openShop
                                     commentDrawerPost.comments.map(c => {
                                         const cTime = c.timestamp ? new Date(c.timestamp).toLocaleTimeString('tr-TR', {hour: '2-digit', minute: '2-digit'}) : '';
                                         const canDeleteComment = (c.userId === activeUser.uid) || (commentDrawerPost.userId === activeUser.uid) || (activeUser.email === "yusufkorqmaz79@gmail.com");
+                                        const handleUserClick = () => {
+                                            setCommentDrawerPost(null);
+                                            openProfile(allUsers.find(u => u.id === c.userId || u.uid === c.userId) || {id: c.userId, username: c.username, name: c.userName, photoURL: c.userPhoto});
+                                        };
                                         return (
                                             <div key={c.id || c.timestamp || Math.random()} style={{display: 'flex', gap: '12px', alignItems: 'flex-start'}}>
-                                                {c.userPhoto ? <img src={getHighResPhotoUrl(c.userPhoto)} alt="" style={{width: '36px', height: '36px', borderRadius: '50%', objectFit: 'cover'}} /> : <div style={{width: '36px', height: '36px', borderRadius: '50%', background: '#F1F5F9', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>👤</div>}
+                                                {c.userPhoto ? <img src={getHighResPhotoUrl(c.userPhoto)} alt="" onClick={handleUserClick} style={{width: '36px', height: '36px', borderRadius: '50%', objectFit: 'cover', cursor: 'pointer'}} /> : <div onClick={handleUserClick} style={{width: '36px', height: '36px', borderRadius: '50%', background: '#F1F5F9', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer'}}>👤</div>}
                                                 <div style={{background: '#F8FAFC', padding: '10px 14px', borderRadius: '16px', flex: 1, border: '1px solid #F1F5F9'}}>
                                                     <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px'}}>
-                                                        <span style={{fontWeight: 800, fontSize: '13px', color: '#1E293B'}}>@{c.username || c.userName}</span>
+                                                        <span onClick={handleUserClick} style={{fontWeight: 800, fontSize: '13px', color: '#1E293B', cursor: 'pointer'}}>@{c.username || c.userName}</span>
                                                         <div style={{display: 'flex', alignItems: 'center', gap: '8px'}}>
                                                             <span style={{fontSize: '10px', color: '#94A3B8'}}>{cTime}</span>
                                                             {canDeleteComment && (

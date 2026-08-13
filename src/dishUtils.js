@@ -22,9 +22,10 @@ export function getCleanDishDetails(dish) {
     }
   }
 
-  // Clean dish title by removing cluttered cooking style prefixes
+  // Clean dish title by removing cluttered cooking style prefixes and city "usulü" tags
   let cleanName = rawName
-    .replace(/^([A-ZÇĞİÖŞÜa-zçğıöşü\s]+)\s+(Usulü|Stili|Yöresi)\s+/i, '')
+    .replace(/^([A-ZÇĞİÖŞÜa-zçğıöşü\s]+)\s+(Usulü|usulü|Stili|stili|Yöresi|yöresi)\s+/gi, '')
+    .replace(/\b([A-ZÇĞİÖŞÜa-zçğıöşü]+)\s+(Usulü|usulü|Stili|stili|Yöresi|yöresi)\b/gi, '')
     .replace(/Fırında Taş Güveçte\s*/gi, '')
     .replace(/Odun Ateşinde Sac Tavada\s*/gi, '')
     .replace(/Zeytinyağlı Kısık Ateşte\s*/gi, '')

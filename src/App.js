@@ -8,8 +8,6 @@ import { doc, setDoc, getDoc, updateDoc, collection, query, where, getDocs, onSn
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import SocialFlow from './SocialFlow';
 import DailyMenuFlow from './DailyMenuFlow';
-import NeYesekMatch from './NeYesekMatch';
-import KitchenTimer from './KitchenTimer';
 import VisualScannerModal from './VisualScannerModal';
 import FocusModeModal from './FocusModeModal';
 import { getCleanDishDetails } from './dishUtils';
@@ -1732,34 +1730,24 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
               <button className="modal-close" onClick={() => setSelectedDish(null)}>✕</button>
               <h2 className="modal-title">{selectedDish.isMenu ? dishDetails.cleanName + " Özel Menüsü" : dishDetails.cleanName}</h2>
               
-              <div style={{background: '#EFF6FF', color: '#1D4ED8', padding: '8px 14px', borderRadius: '10px', fontSize: '13px', fontWeight: 800, marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '6px', border: '1px solid #BFDBFE'}}>
-                 📍 Ait Olduğu Yöre / Bölge: <span style={{color: '#1E40AF', fontWeight: 900}}>{dishDetails.region}</span>
-              </div>
 
               <div className="recipe-meta" style={{display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '15px'}}>
                  <div className="recipe-meta-badge" style={{background: '#F1F5F9', color: '#334155', fontWeight: 700}}>
-                    ⏱️ Yemeğin Hazırlanma Süresi: {selectedDish.prepTime ? (selectedDish.prepTime.toString().includes('dk') ? selectedDish.prepTime : selectedDish.prepTime + ' Dk') : "30 Dk"}
+                    ⏱️ Süre: {selectedDish.prepTime ? (selectedDish.prepTime.toString().includes('dk') ? selectedDish.prepTime : selectedDish.prepTime + ' Dk') : "30 Dk"}
                  </div>
                  {(selectedDish.totalCost || selectedDish.cost) ? (
                     <div className="recipe-meta-badge" style={{background: '#FEF3C7', color: '#B45309', fontWeight: 700}}>
-                       🏷️ Gramaj Hesabıyla Yemek Maliyeti: ₺{selectedDish.totalCost || selectedDish.cost} (Market sepet tutarından farklı çıkabilir)
+                       💰 Maliyet: ₺{selectedDish.totalCost || selectedDish.cost}
                     </div>
                  ) : null}
                  {selectedDish.calories && (
                     <div className="recipe-meta-badge" style={{background: '#EEF2FF', color: '#4338CA', fontWeight: 700}}>
-                       🔥 Hesaplanan Kalori: {selectedDish.calories} kcal
+                       🔥 Kalori: {selectedDish.calories} kcal
                     </div>
                  )}
-                 
-                 <button onClick={() => {
-                      const mins = parseInt(selectedDish.prepTime) || 30;
-                      setActiveTimerMinutes(mins);
-                  }} style={{background: '#FEF3C7', color: '#B45309', padding: '6px 12px', border: '1px solid #FCD34D', borderRadius: '8px', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '5px'}}>
-                      ⏱️ Pişirme Sayacını Başlat ({parseInt(selectedDish.prepTime) || 30} Dk)
-                  </button>
 
                   <button onClick={() => setShowFocusModeDish(selectedDish)} style={{background: '#10B981', color: 'white', padding: '6px 14px', border: 'none', borderRadius: '8px', fontWeight: 800, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '5px', boxShadow: '0 2px 8px rgba(16,185,129,0.3)'}}>
-                      👁️ Mutfak Odak Modu (Ekran Kapanmaz)
+                      👁️ Mutfak Odak Modu
                   </button>
 
                  <button onClick={() => {
@@ -1948,12 +1936,6 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
          </div>
        )}
 
-       {activeTimerMinutes !== null && showTimerWidget && (
-          <KitchenTimer
-             activeTimerMinutes={activeTimerMinutes}
-             onCloseTimer={() => setActiveTimerMinutes(null)}
-          />
-       )}
 
        {showVisualScanner && (
           <VisualScannerModal
@@ -2378,14 +2360,14 @@ function AdminDashboard({ setView, activeUser }) {
     }
 
     const PARTNERS = [
-       { code: 'BAKI_DEFAULT', name: "Baki'nin Mutfağı (Zemin / Varsayılan Fiyat)", bg: '#10B981', color: 'white', desc: "Standart fiyatlandırma. (Fiyat=1.0x)" },
-       { code: 'MIGROS', name: "Migros Sanal Market", bg: '#F97316', color: 'white', desc: "Premium Market (%10 Artış)" },
-       { code: 'GETIR', name: "Getir / GetirBüyük", bg: '#8B5CF6', color: 'white', desc: "Hızlı depo satışı (Komisyon: %25 Artış)" },
-       { code: 'TRENDYOL', name: "Trendyol Go Market", bg: '#F59E0B', color: 'white', desc: "Mahalle marketi (%12 Artış)" },
-       { code: 'YEMEKSEPETI', name: "Yemeksepeti Mahalle", bg: '#EF4444', color: 'white', desc: "Esnaf komisyonu (%15 Artış)" },
-       { code: 'SOK', name: "Şok Cepte Şok", bg: '#FCD34D', color: '#1E293B', desc: "Ulusal Market (-%10 İndirimli)" },
-       { code: 'A101', name: "A101 Kapıda", bg: '#06B6D4', color: 'white', desc: "Hard Discount (-%15 En Ucuz)" },
-       { code: 'ISTEGELSIN', name: "İsteGelsin", bg: '#3B82F6', color: 'white', desc: "Süpermarket (%5 Artış)" }
+       { code: 'BAKI_DEFAULT', name: "Baki'nin Mutfağı (Zemin / Varsayılan Fiyat)", bg: '#10B981', color: 'white', desc: "Standart fiyatlandırma" },
+       { code: 'MIGROS', name: "Migros Sanal Market", bg: '#F97316', color: 'white', desc: "Hızlı Sanal Market" },
+       { code: 'GETIR', name: "Getir / GetirBüyük", bg: '#8B5CF6', color: 'white', desc: "Hızlı depo ve market satışı" },
+       { code: 'TRENDYOL', name: "Trendyol Go Market", bg: '#F59E0B', color: 'white', desc: "Mahalle marketi teslimatı" },
+       { code: 'YEMEKSEPETI', name: "Yemeksepeti Mahalle", bg: '#EF4444', color: 'white', desc: "Yerel esnaf ve market ağı" },
+       { code: 'SOK', name: "Şok Cepte Şok", bg: '#FCD34D', color: '#1E293B', desc: "Ulusal Market İndirimli" },
+       { code: 'A101', name: "A101 Kapıda", bg: '#06B6D4', color: 'white', desc: "Ekonomik market teslimatı" },
+       { code: 'ISTEGELSIN', name: "İsteGelsin", bg: '#3B82F6', color: 'white', desc: "Süpermarket adrese teslimat" }
     ];
 
     const changePartner = async (code) => {

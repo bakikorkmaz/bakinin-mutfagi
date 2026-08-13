@@ -751,14 +751,10 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction, 
                             {dishDetails.cleanName}
                         </h2>
 
-                        <div style={{background: '#EFF6FF', color: '#1D4ED8', padding: '8px 14px', borderRadius: '10px', fontSize: '13px', fontWeight: 800, marginBottom: '14px', display: 'flex', alignItems: 'center', gap: '6px', border: '1px solid #BFDBFE'}}>
-                           📍 Ait Olduğu Yöre / Bölge: <span style={{color: '#1E40AF', fontWeight: 900}}>{dishDetails.region}</span>
-                        </div>
-
                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', background: '#F8FAFC', padding: '12px', borderRadius: '14px', marginBottom: '20px', fontSize: '13px', fontWeight: 700, color: '#475569' }}>
-                            <span style={{background: '#F1F5F9', padding: '6px 12px', borderRadius: '8px'}}>⏱️ Yemeğin Hazırlanma Süresi: {selectedRecipeModal.details?.time || 30} Dk</span>
-                            <span style={{background: '#EEF2FF', color: '#4338CA', padding: '6px 12px', borderRadius: '8px'}}>🔥 Hesaplanan Kalori: {selectedRecipeModal.details?.calories || 300} kcal</span>
-                            <span style={{background: '#FEF3C7', color: '#B45309', padding: '6px 12px', borderRadius: '8px'}}>🏷️ Gramaj Hesabıyla Yemek Maliyeti: ₺{selectedRecipeModal.details?.cost || 50} (Market sepet tutarından farklı çıkabilir)</span>
+                            <span style={{background: '#F1F5F9', padding: '6px 12px', borderRadius: '8px'}}>⏱️ Süre: {selectedRecipeModal.details?.time || 30} Dk</span>
+                            <span style={{background: '#EEF2FF', color: '#4338CA', padding: '6px 12px', borderRadius: '8px'}}>🔥 Kalori: {selectedRecipeModal.details?.calories || 300} kcal</span>
+                            <span style={{background: '#FEF3C7', color: '#B45309', padding: '6px 12px', borderRadius: '8px'}}>💰 Maliyet: ₺{selectedRecipeModal.details?.cost || 50}</span>
                         </div>
 
                         <h4 style={{ fontSize: '14px', fontWeight: 800, color: '#1E293B', marginBottom: '8px' }}>🛒 Ölçülü Malzemeler:</h4>
