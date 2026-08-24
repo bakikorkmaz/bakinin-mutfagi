@@ -4,7 +4,7 @@
 export const DB_MAINS_HUGE = [
   {
     "id": "recipe_auth_1",
-    "name": "Adana Usulü Fırında Taş Güveçte Patlıcanli Dana Kuşbaşı",
+    "name": "Patlıcanlı Dana Kuşbaşı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -33,7 +33,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2",
-    "name": "Adana Usulü Odun Ateşinde Sac Tavada Patatesli Kuzu İncik",
+    "name": "Patatesli Kuzu İncik",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -62,7 +62,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_3",
-    "name": "Adana Usulü Zeytinyağlı Kısık Ateşte Brokolili Tavuk Göğsü",
+    "name": "Brokolili Tavuk Göğsü",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -91,7 +91,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_4",
-    "name": "Adana Usulü Közde Izgara Ispanakli Satır Köftesi",
+    "name": "Ispanaklı Satır Köftesi",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -120,7 +120,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_5",
-    "name": "Adana Usulü Kremalı Sarımsak Soslu Kerevizli Somon Balığı",
+    "name": "Kerevizli Somon Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -149,7 +149,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_6",
-    "name": "Adana Usulü Odun Ateşinde Közlenmiş Barbunyali Levrek Buğulama",
+    "name": "Közlenmiş Barbunyalı Levrek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -178,7 +178,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_7",
-    "name": "Adana Usulü Buharda Şifalı Mantarli Dana Kıyma",
+    "name": "Buharda Şifalı Mantarlı Dana Kıyma",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -207,7 +207,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_8",
-    "name": "Adana Usulü Tereyağlı Özel Sote Kuşkonmazli Hindi Bonfile",
+    "name": "Kuşkonmazlı Hindi Bonfile",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -236,7 +236,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_9",
-    "name": "Adana Usulü Tepsi Buğulama Tatlı Patatesli Kuru Fasulye",
+    "name": "Tatlı Patatesli Kuru Fasulye",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -265,7 +265,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_10",
-    "name": "Adana Usulü Toprak Çömlek Usulü Şalgamli Kırmızı Mercimek",
+    "name": "Şalgamli Kırmızı Mercimek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -294,7 +294,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_11",
-    "name": "Adana Usulü Közde Tandır Usulü Pazıli Nohut",
+    "name": "Pazılı Nohut",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -323,7 +323,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_12",
-    "name": "Adana Usulü Ekşi Soslu Buğulama Şevketi Bostanli Kültür Mantarı",
+    "name": "Şevketi Bostanli Kültür Mantarı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -352,7 +352,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_13",
-    "name": "Adana Usulü Geleneksel Kavurma Sarımsakli Deniz Karidesi",
+    "name": "Sarımsaklı Deniz Karidesi",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -381,7 +381,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_14",
-    "name": "Adana Usulü Fırın Çıtır Pane Patlıcanli Çipura Balığı",
+    "name": "Patlıcanlı Çipura Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -410,7 +410,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_15",
-    "name": "Adana Usulü Glaze Şerbetli Buhar Patatesli Kuzu Pirzola",
+    "name": "Patatesli Kuzu Pirzola",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -439,7 +439,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_16",
-    "name": "Adana Usulü Tava Kızartma Brokolili Dana Antrikot",
+    "name": "Brokolili Dana Antrikot",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -468,7 +468,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_17",
-    "name": "Adana Usulü Düdüklü Lokum Ispanakli Tavuk Pirzola",
+    "name": "Ispanaklı Tavuk Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -497,7 +497,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_18",
-    "name": "Adana Usulü Fırın Graten Kerevizli Dana Ciğer",
+    "name": "Kerevizli Dana Ciğer",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -526,7 +526,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_19",
-    "name": "Adana Usulü Fırında Taş Güveçte Barbunyali Kuzu Böbrek",
+    "name": "Barbunyalı Kuzu Böbrek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -555,7 +555,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_20",
-    "name": "Adana Usulü Odun Ateşinde Sac Tavada Mantarli Sardalya Balığı",
+    "name": "Mantarlı Sardalya Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -584,7 +584,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_21",
-    "name": "Adana Usulü Zeytinyağlı Kısık Ateşte Kuşkonmazli Hamsi Tava",
+    "name": "Kuşkonmazlı Hamsi Tava",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -613,7 +613,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_22",
-    "name": "Adana Usulü Közde Izgara Tatlı Patatesli Bıldırcın Eti",
+    "name": "Tatlı Patatesli Bıldırcın Eti",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -642,7 +642,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_23",
-    "name": "Adana Usulü Kremalı Sarımsak Soslu Şalgamli Deniz Kalamarı",
+    "name": "Şalgamli Deniz Kalamarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -671,7 +671,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_24",
-    "name": "Adana Usulü Odun Ateşinde Közlenmiş Pazıli Ahtapot",
+    "name": "Közlenmiş Pazılı Ahtapot",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -700,7 +700,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_25",
-    "name": "Adana Usulü Buharda Şifalı Şevketi Bostanli Yeşil Mercimek",
+    "name": "Buharda Şifalı Şevketi Bostanli Yeşil Mercimek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -729,7 +729,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_26",
-    "name": "Adana Usulü Tereyağlı Özel Sote Sarımsakli Barbunya",
+    "name": "Sarımsaklı Barbunya",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -758,7 +758,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_27",
-    "name": "Adana Usulü Tepsi Buğulama Patlıcanli Soya Et",
+    "name": "Patlıcanlı Soya Et",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -787,7 +787,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_28",
-    "name": "Adana Usulü Toprak Çömlek Usulü Patatesli Lor Peyniri",
+    "name": "Patatesli Lor Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -816,7 +816,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_29",
-    "name": "Adana Usulü Közde Tandır Usulü Brokolili Hellim Peyniri",
+    "name": "Brokolili Hellim Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -845,7 +845,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_30",
-    "name": "Adana Usulü Ekşi Soslu Buğulama Ispanakli Kaşar Peyniri",
+    "name": "Ispanaklı Kaşar Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -874,7 +874,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_31",
-    "name": "Adıyaman Usulü Odun Ateşinde Sac Tavada Biberli Dana Kuşbaşı",
+    "name": "Biberli Dana Kuşbaşı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -903,7 +903,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_32",
-    "name": "Adıyaman Usulü Zeytinyağlı Kısık Ateşte Karnabaharli Kuzu İncik",
+    "name": "Karnabaharli Kuzu İncik",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -932,7 +932,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_33",
-    "name": "Adıyaman Usulü Közde Izgara Pırasali Tavuk Göğsü",
+    "name": "Pırasali Tavuk Göğsü",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -961,7 +961,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_34",
-    "name": "Adıyaman Usulü Kremalı Sarımsak Soslu Taze Fasulyeli Satır Köftesi",
+    "name": "Taze Fasulyeli Satır Köftesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -990,7 +990,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_35",
-    "name": "Adıyaman Usulü Odun Ateşinde Közlenmiş Bamyali Somon Balığı",
+    "name": "Közlenmiş Bamyali Somon Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -1019,7 +1019,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_36",
-    "name": "Adıyaman Usulü Buharda Şifalı Enginarli Levrek Buğulama",
+    "name": "Buharda Şifalı Enginarli Levrek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -1048,7 +1048,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_37",
-    "name": "Adıyaman Usulü Tereyağlı Özel Sote Avokadoli Dana Kıyma",
+    "name": "Avokadoli Dana Kıyma",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -1077,7 +1077,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_38",
-    "name": "Adıyaman Usulü Tepsi Buğulama Brüksel Lahanasıli Hindi Bonfile",
+    "name": "Brüksel Lahanasıli Hindi Bonfile",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -1106,7 +1106,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_39",
-    "name": "Adıyaman Usulü Toprak Çömlek Usulü Bezelyeli Kuru Fasulye",
+    "name": "Bezelyeli Kuru Fasulye",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -1135,7 +1135,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_40",
-    "name": "Adıyaman Usulü Közde Tandır Usulü Arapsaçıli Kırmızı Mercimek",
+    "name": "Arapsaçıli Kırmızı Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -1164,7 +1164,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_41",
-    "name": "Adıyaman Usulü Ekşi Soslu Buğulama Deniz Börülcesili Nohut",
+    "name": "Deniz Börülcesili Nohut",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -1193,7 +1193,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_42",
-    "name": "Adıyaman Usulü Geleneksel Kavurma Arpacık Soğanli Kültür Mantarı",
+    "name": "Arpacık Soğanli Kültür Mantarı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -1222,7 +1222,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_43",
-    "name": "Adıyaman Usulü Fırın Çıtır Pane Kabakli Deniz Karidesi",
+    "name": "Kabakli Deniz Karidesi",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -1251,7 +1251,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_44",
-    "name": "Adıyaman Usulü Glaze Şerbetli Buhar Biberli Çipura Balığı",
+    "name": "Biberli Çipura Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -1280,7 +1280,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_45",
-    "name": "Adıyaman Usulü Tava Kızartma Karnabaharli Kuzu Pirzola",
+    "name": "Karnabaharli Kuzu Pirzola",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -1309,7 +1309,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_46",
-    "name": "Adıyaman Usulü Düdüklü Lokum Pırasali Dana Antrikot",
+    "name": "Pırasali Dana Antrikot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -1338,7 +1338,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_47",
-    "name": "Adıyaman Usulü Fırın Graten Taze Fasulyeli Tavuk Pirzola",
+    "name": "Taze Fasulyeli Tavuk Pirzola",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -1367,7 +1367,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_48",
-    "name": "Adıyaman Usulü Fırında Taş Güveçte Bamyali Dana Ciğer",
+    "name": "Bamyali Dana Ciğer",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -1396,7 +1396,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_49",
-    "name": "Adıyaman Usulü Odun Ateşinde Sac Tavada Enginarli Kuzu Böbrek",
+    "name": "Enginarli Kuzu Böbrek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -1425,7 +1425,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_50",
-    "name": "Adıyaman Usulü Zeytinyağlı Kısık Ateşte Avokadoli Sardalya Balığı",
+    "name": "Avokadoli Sardalya Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -1454,7 +1454,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_51",
-    "name": "Adıyaman Usulü Közde Izgara Brüksel Lahanasıli Hamsi Tava",
+    "name": "Brüksel Lahanasıli Hamsi Tava",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -1483,7 +1483,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_52",
-    "name": "Adıyaman Usulü Kremalı Sarımsak Soslu Bezelyeli Bıldırcın Eti",
+    "name": "Bezelyeli Bıldırcın Eti",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -1512,7 +1512,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_53",
-    "name": "Adıyaman Usulü Odun Ateşinde Közlenmiş Arapsaçıli Deniz Kalamarı",
+    "name": "Közlenmiş Arapsaçıli Deniz Kalamarı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -1541,7 +1541,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_54",
-    "name": "Adıyaman Usulü Buharda Şifalı Deniz Börülcesili Ahtapot",
+    "name": "Buharda Şifalı Deniz Börülcesili Ahtapot",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -1570,7 +1570,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_55",
-    "name": "Adıyaman Usulü Tereyağlı Özel Sote Arpacık Soğanli Yeşil Mercimek",
+    "name": "Arpacık Soğanli Yeşil Mercimek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -1599,7 +1599,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_56",
-    "name": "Adıyaman Usulü Tepsi Buğulama Kabakli Barbunya",
+    "name": "Kabakli Barbunya",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -1628,7 +1628,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_57",
-    "name": "Adıyaman Usulü Toprak Çömlek Usulü Biberli Soya Et",
+    "name": "Biberli Soya Et",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -1657,7 +1657,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_58",
-    "name": "Adıyaman Usulü Közde Tandır Usulü Karnabaharli Lor Peyniri",
+    "name": "Karnabaharli Lor Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -1686,7 +1686,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_59",
-    "name": "Adıyaman Usulü Ekşi Soslu Buğulama Pırasali Hellim Peyniri",
+    "name": "Pırasali Hellim Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -1715,7 +1715,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_60",
-    "name": "Adıyaman Usulü Geleneksel Kavurma Taze Fasulyeli Kaşar Peyniri",
+    "name": "Taze Fasulyeli Kaşar Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -1744,7 +1744,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_61",
-    "name": "Afyonkarahisar Usulü Zeytinyağlı Kısık Ateşte Ispanakli Dana Kuşbaşı",
+    "name": "Ispanaklı Dana Kuşbaşı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -1773,7 +1773,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_62",
-    "name": "Afyonkarahisar Usulü Közde Izgara Kerevizli Kuzu İncik",
+    "name": "Kerevizli Kuzu İncik",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -1802,7 +1802,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_63",
-    "name": "Afyonkarahisar Usulü Kremalı Sarımsak Soslu Barbunyali Tavuk Göğsü",
+    "name": "Barbunyalı Tavuk Göğsü",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -1831,7 +1831,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_64",
-    "name": "Afyonkarahisar Usulü Odun Ateşinde Közlenmiş Mantarli Satır Köftesi",
+    "name": "Közlenmiş Mantarlı Satır Köftesi",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -1860,7 +1860,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_65",
-    "name": "Afyonkarahisar Usulü Buharda Şifalı Kuşkonmazli Somon Balığı",
+    "name": "Buharda Şifalı Kuşkonmazlı Somon Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -1889,7 +1889,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_66",
-    "name": "Afyonkarahisar Usulü Tereyağlı Özel Sote Tatlı Patatesli Levrek Buğulama",
+    "name": "Tatlı Patatesli Levrek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -1918,7 +1918,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_67",
-    "name": "Afyonkarahisar Usulü Tepsi Buğulama Şalgamli Dana Kıyma",
+    "name": "Şalgamli Dana Kıyma",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -1947,7 +1947,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_68",
-    "name": "Afyonkarahisar Usulü Toprak Çömlek Usulü Pazıli Hindi Bonfile",
+    "name": "Pazılı Hindi Bonfile",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -1976,7 +1976,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_69",
-    "name": "Afyonkarahisar Usulü Közde Tandır Usulü Şevketi Bostanli Kuru Fasulye",
+    "name": "Şevketi Bostanli Kuru Fasulye",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -2005,7 +2005,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_70",
-    "name": "Afyonkarahisar Usulü Ekşi Soslu Buğulama Sarımsakli Kırmızı Mercimek",
+    "name": "Sarımsaklı Kırmızı Mercimek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -2034,7 +2034,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_71",
-    "name": "Afyonkarahisar Usulü Geleneksel Kavurma Patlıcanli Nohut",
+    "name": "Patlıcanlı Nohut",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -2063,7 +2063,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_72",
-    "name": "Afyonkarahisar Usulü Fırın Çıtır Pane Patatesli Kültür Mantarı",
+    "name": "Patatesli Kültür Mantarı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -2092,7 +2092,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_73",
-    "name": "Afyonkarahisar Usulü Glaze Şerbetli Buhar Brokolili Deniz Karidesi",
+    "name": "Brokolili Deniz Karidesi",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -2121,7 +2121,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_74",
-    "name": "Afyonkarahisar Usulü Tava Kızartma Ispanakli Çipura Balığı",
+    "name": "Ispanaklı Çipura Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -2150,7 +2150,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_75",
-    "name": "Afyonkarahisar Usulü Düdüklü Lokum Kerevizli Kuzu Pirzola",
+    "name": "Kerevizli Kuzu Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -2179,7 +2179,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_76",
-    "name": "Afyonkarahisar Usulü Fırın Graten Barbunyali Dana Antrikot",
+    "name": "Barbunyalı Dana Antrikot",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -2208,7 +2208,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_77",
-    "name": "Afyonkarahisar Usulü Fırında Taş Güveçte Mantarli Tavuk Pirzola",
+    "name": "Mantarlı Tavuk Pirzola",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -2237,7 +2237,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_78",
-    "name": "Afyonkarahisar Usulü Odun Ateşinde Sac Tavada Kuşkonmazli Dana Ciğer",
+    "name": "Kuşkonmazlı Dana Ciğer",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -2266,7 +2266,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_79",
-    "name": "Afyonkarahisar Usulü Zeytinyağlı Kısık Ateşte Tatlı Patatesli Kuzu Böbrek",
+    "name": "Tatlı Patatesli Kuzu Böbrek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -2295,7 +2295,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_80",
-    "name": "Afyonkarahisar Usulü Közde Izgara Şalgamli Sardalya Balığı",
+    "name": "Şalgamli Sardalya Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -2324,7 +2324,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_81",
-    "name": "Afyonkarahisar Usulü Kremalı Sarımsak Soslu Pazıli Hamsi Tava",
+    "name": "Pazılı Hamsi Tava",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -2353,7 +2353,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_82",
-    "name": "Afyonkarahisar Usulü Odun Ateşinde Közlenmiş Şevketi Bostanli Bıldırcın Eti",
+    "name": "Közlenmiş Şevketi Bostanli Bıldırcın Eti",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -2382,7 +2382,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_83",
-    "name": "Afyonkarahisar Usulü Buharda Şifalı Sarımsakli Deniz Kalamarı",
+    "name": "Buharda Şifalı Sarımsaklı Deniz Kalamarı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -2411,7 +2411,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_84",
-    "name": "Afyonkarahisar Usulü Tereyağlı Özel Sote Patlıcanli Ahtapot",
+    "name": "Patlıcanlı Ahtapot",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -2440,7 +2440,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_85",
-    "name": "Afyonkarahisar Usulü Tepsi Buğulama Patatesli Yeşil Mercimek",
+    "name": "Patatesli Yeşil Mercimek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -2469,7 +2469,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_86",
-    "name": "Afyonkarahisar Usulü Toprak Çömlek Usulü Brokolili Barbunya",
+    "name": "Brokolili Barbunya",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -2498,7 +2498,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_87",
-    "name": "Afyonkarahisar Usulü Közde Tandır Usulü Ispanakli Soya Et",
+    "name": "Ispanaklı Soya Et",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -2527,7 +2527,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_88",
-    "name": "Afyonkarahisar Usulü Ekşi Soslu Buğulama Kerevizli Lor Peyniri",
+    "name": "Kerevizli Lor Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -2556,7 +2556,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_89",
-    "name": "Afyonkarahisar Usulü Geleneksel Kavurma Barbunyali Hellim Peyniri",
+    "name": "Barbunyalı Hellim Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -2585,7 +2585,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_90",
-    "name": "Afyonkarahisar Usulü Fırın Çıtır Pane Mantarli Kaşar Peyniri",
+    "name": "Mantarlı Kaşar Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -2614,7 +2614,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_91",
-    "name": "Ağrı Usulü Közde Izgara Taze Fasulyeli Dana Kuşbaşı",
+    "name": "Ağrı Taze Fasulyeli Dana Kuşbaşı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -2643,7 +2643,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_92",
-    "name": "Ağrı Usulü Kremalı Sarımsak Soslu Bamyali Kuzu İncik",
+    "name": "Ağrı Bamyali Kuzu İncik",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -2672,7 +2672,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_93",
-    "name": "Ağrı Usulü Odun Ateşinde Közlenmiş Enginarli Tavuk Göğsü",
+    "name": "Ağrı Közlenmiş Enginarli Tavuk Göğsü",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -2701,7 +2701,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_94",
-    "name": "Ağrı Usulü Buharda Şifalı Avokadoli Satır Köftesi",
+    "name": "Ağrı Buharda Şifalı Avokadoli Satır Köftesi",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -2730,7 +2730,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_95",
-    "name": "Ağrı Usulü Tereyağlı Özel Sote Brüksel Lahanasıli Somon Balığı",
+    "name": "Ağrı Brüksel Lahanasıli Somon Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -2759,7 +2759,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_96",
-    "name": "Ağrı Usulü Tepsi Buğulama Bezelyeli Levrek Buğulama",
+    "name": "Ağrı Bezelyeli Levrek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -2788,7 +2788,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_97",
-    "name": "Ağrı Usulü Toprak Çömlek Usulü Arapsaçıli Dana Kıyma",
+    "name": "Ağrı Arapsaçıli Dana Kıyma",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -2817,7 +2817,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_98",
-    "name": "Ağrı Usulü Közde Tandır Usulü Deniz Börülcesili Hindi Bonfile",
+    "name": "Ağrı Deniz Börülcesili Hindi Bonfile",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -2846,7 +2846,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_99",
-    "name": "Ağrı Usulü Ekşi Soslu Buğulama Arpacık Soğanli Kuru Fasulye",
+    "name": "Ağrı Arpacık Soğanli Kuru Fasulye",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -2875,7 +2875,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_100",
-    "name": "Ağrı Usulü Geleneksel Kavurma Kabakli Kırmızı Mercimek",
+    "name": "Ağrı Kabakli Kırmızı Mercimek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -2904,7 +2904,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_101",
-    "name": "Ağrı Usulü Fırın Çıtır Pane Biberli Nohut",
+    "name": "Ağrı Biberli Nohut",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -2933,7 +2933,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_102",
-    "name": "Ağrı Usulü Glaze Şerbetli Buhar Karnabaharli Kültür Mantarı",
+    "name": "Ağrı Karnabaharli Kültür Mantarı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -2962,7 +2962,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_103",
-    "name": "Ağrı Usulü Tava Kızartma Pırasali Deniz Karidesi",
+    "name": "Ağrı Pırasali Deniz Karidesi",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -2991,7 +2991,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_104",
-    "name": "Ağrı Usulü Düdüklü Lokum Taze Fasulyeli Çipura Balığı",
+    "name": "Ağrı Taze Fasulyeli Çipura Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -3020,7 +3020,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_105",
-    "name": "Ağrı Usulü Fırın Graten Bamyali Kuzu Pirzola",
+    "name": "Ağrı Bamyali Kuzu Pirzola",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -3049,7 +3049,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_106",
-    "name": "Ağrı Usulü Fırında Taş Güveçte Enginarli Dana Antrikot",
+    "name": "Ağrı Enginarli Dana Antrikot",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -3078,7 +3078,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_107",
-    "name": "Ağrı Usulü Odun Ateşinde Sac Tavada Avokadoli Tavuk Pirzola",
+    "name": "Ağrı Avokadoli Tavuk Pirzola",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -3107,7 +3107,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_108",
-    "name": "Ağrı Usulü Zeytinyağlı Kısık Ateşte Brüksel Lahanasıli Dana Ciğer",
+    "name": "Ağrı Brüksel Lahanasıli Dana Ciğer",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -3136,7 +3136,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_109",
-    "name": "Ağrı Usulü Közde Izgara Bezelyeli Kuzu Böbrek",
+    "name": "Ağrı Bezelyeli Kuzu Böbrek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -3165,7 +3165,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_110",
-    "name": "Ağrı Usulü Kremalı Sarımsak Soslu Arapsaçıli Sardalya Balığı",
+    "name": "Ağrı Arapsaçıli Sardalya Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -3194,7 +3194,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_111",
-    "name": "Ağrı Usulü Odun Ateşinde Közlenmiş Deniz Börülcesili Hamsi Tava",
+    "name": "Ağrı Közlenmiş Deniz Börülcesili Hamsi Tava",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -3223,7 +3223,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_112",
-    "name": "Ağrı Usulü Buharda Şifalı Arpacık Soğanli Bıldırcın Eti",
+    "name": "Ağrı Buharda Şifalı Arpacık Soğanli Bıldırcın Eti",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -3252,7 +3252,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_113",
-    "name": "Ağrı Usulü Tereyağlı Özel Sote Kabakli Deniz Kalamarı",
+    "name": "Ağrı Kabakli Deniz Kalamarı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -3281,7 +3281,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_114",
-    "name": "Ağrı Usulü Tepsi Buğulama Biberli Ahtapot",
+    "name": "Ağrı Biberli Ahtapot",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -3310,7 +3310,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_115",
-    "name": "Ağrı Usulü Toprak Çömlek Usulü Karnabaharli Yeşil Mercimek",
+    "name": "Ağrı Karnabaharli Yeşil Mercimek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -3339,7 +3339,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_116",
-    "name": "Ağrı Usulü Közde Tandır Usulü Pırasali Barbunya",
+    "name": "Ağrı Pırasali Barbunya",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -3368,7 +3368,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_117",
-    "name": "Ağrı Usulü Ekşi Soslu Buğulama Taze Fasulyeli Soya Et",
+    "name": "Ağrı Taze Fasulyeli Soya Et",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -3397,7 +3397,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_118",
-    "name": "Ağrı Usulü Geleneksel Kavurma Bamyali Lor Peyniri",
+    "name": "Ağrı Bamyali Lor Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -3426,7 +3426,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_119",
-    "name": "Ağrı Usulü Fırın Çıtır Pane Enginarli Hellim Peyniri",
+    "name": "Ağrı Enginarli Hellim Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -3455,7 +3455,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_120",
-    "name": "Ağrı Usulü Glaze Şerbetli Buhar Avokadoli Kaşar Peyniri",
+    "name": "Ağrı Avokadoli Kaşar Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -3484,7 +3484,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_121",
-    "name": "Amasya Usulü Kremalı Sarımsak Soslu Mantarli Dana Kuşbaşı",
+    "name": "Mantarlı Dana Kuşbaşı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -3513,7 +3513,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_122",
-    "name": "Amasya Usulü Odun Ateşinde Közlenmiş Kuşkonmazli Kuzu İncik",
+    "name": "Közlenmiş Kuşkonmazlı Kuzu İncik",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -3542,7 +3542,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_123",
-    "name": "Amasya Usulü Buharda Şifalı Tatlı Patatesli Tavuk Göğsü",
+    "name": "Buharda Şifalı Tatlı Patatesli Tavuk Göğsü",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -3571,7 +3571,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_124",
-    "name": "Amasya Usulü Tereyağlı Özel Sote Şalgamli Satır Köftesi",
+    "name": "Şalgamli Satır Köftesi",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -3600,7 +3600,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_125",
-    "name": "Amasya Usulü Tepsi Buğulama Pazıli Somon Balığı",
+    "name": "Pazılı Somon Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -3629,7 +3629,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_126",
-    "name": "Amasya Usulü Toprak Çömlek Usulü Şevketi Bostanli Levrek Buğulama",
+    "name": "Şevketi Bostanli Levrek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -3658,7 +3658,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_127",
-    "name": "Amasya Usulü Közde Tandır Usulü Sarımsakli Dana Kıyma",
+    "name": "Sarımsaklı Dana Kıyma",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -3687,7 +3687,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_128",
-    "name": "Amasya Usulü Ekşi Soslu Buğulama Patlıcanli Hindi Bonfile",
+    "name": "Patlıcanlı Hindi Bonfile",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -3716,7 +3716,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_129",
-    "name": "Amasya Usulü Geleneksel Kavurma Patatesli Kuru Fasulye",
+    "name": "Patatesli Kuru Fasulye",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -3745,7 +3745,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_130",
-    "name": "Amasya Usulü Fırın Çıtır Pane Brokolili Kırmızı Mercimek",
+    "name": "Brokolili Kırmızı Mercimek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -3774,7 +3774,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_131",
-    "name": "Amasya Usulü Glaze Şerbetli Buhar Ispanakli Nohut",
+    "name": "Ispanaklı Nohut",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -3803,7 +3803,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_132",
-    "name": "Amasya Usulü Tava Kızartma Kerevizli Kültür Mantarı",
+    "name": "Kerevizli Kültür Mantarı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -3832,7 +3832,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_133",
-    "name": "Amasya Usulü Düdüklü Lokum Barbunyali Deniz Karidesi",
+    "name": "Barbunyalı Deniz Karidesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -3861,7 +3861,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_134",
-    "name": "Amasya Usulü Fırın Graten Mantarli Çipura Balığı",
+    "name": "Mantarlı Çipura Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -3890,7 +3890,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_135",
-    "name": "Amasya Usulü Fırında Taş Güveçte Kuşkonmazli Kuzu Pirzola",
+    "name": "Kuşkonmazlı Kuzu Pirzola",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -3919,7 +3919,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_136",
-    "name": "Amasya Usulü Odun Ateşinde Sac Tavada Tatlı Patatesli Dana Antrikot",
+    "name": "Tatlı Patatesli Dana Antrikot",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -3948,7 +3948,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_137",
-    "name": "Amasya Usulü Zeytinyağlı Kısık Ateşte Şalgamli Tavuk Pirzola",
+    "name": "Şalgamli Tavuk Pirzola",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -3977,7 +3977,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_138",
-    "name": "Amasya Usulü Közde Izgara Pazıli Dana Ciğer",
+    "name": "Pazılı Dana Ciğer",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -4006,7 +4006,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_139",
-    "name": "Amasya Usulü Kremalı Sarımsak Soslu Şevketi Bostanli Kuzu Böbrek",
+    "name": "Şevketi Bostanli Kuzu Böbrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -4035,7 +4035,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_140",
-    "name": "Amasya Usulü Odun Ateşinde Közlenmiş Sarımsakli Sardalya Balığı",
+    "name": "Közlenmiş Sarımsaklı Sardalya Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -4064,7 +4064,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_141",
-    "name": "Amasya Usulü Buharda Şifalı Patlıcanli Hamsi Tava",
+    "name": "Buharda Şifalı Patlıcanlı Hamsi Tava",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -4093,7 +4093,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_142",
-    "name": "Amasya Usulü Tereyağlı Özel Sote Patatesli Bıldırcın Eti",
+    "name": "Patatesli Bıldırcın Eti",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -4122,7 +4122,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_143",
-    "name": "Amasya Usulü Tepsi Buğulama Brokolili Deniz Kalamarı",
+    "name": "Brokolili Deniz Kalamarı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -4151,7 +4151,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_144",
-    "name": "Amasya Usulü Toprak Çömlek Usulü Ispanakli Ahtapot",
+    "name": "Ispanaklı Ahtapot",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -4180,7 +4180,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_145",
-    "name": "Amasya Usulü Közde Tandır Usulü Kerevizli Yeşil Mercimek",
+    "name": "Kerevizli Yeşil Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -4209,7 +4209,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_146",
-    "name": "Amasya Usulü Ekşi Soslu Buğulama Barbunyali Barbunya",
+    "name": "Barbunyalı Barbunya",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -4238,7 +4238,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_147",
-    "name": "Amasya Usulü Geleneksel Kavurma Mantarli Soya Et",
+    "name": "Mantarlı Soya Et",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -4267,7 +4267,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_148",
-    "name": "Amasya Usulü Fırın Çıtır Pane Kuşkonmazli Lor Peyniri",
+    "name": "Kuşkonmazlı Lor Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -4296,7 +4296,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_149",
-    "name": "Amasya Usulü Glaze Şerbetli Buhar Tatlı Patatesli Hellim Peyniri",
+    "name": "Tatlı Patatesli Hellim Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -4325,7 +4325,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_150",
-    "name": "Amasya Usulü Tava Kızartma Şalgamli Kaşar Peyniri",
+    "name": "Şalgamli Kaşar Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -4354,7 +4354,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_151",
-    "name": "Ankara Usulü Odun Ateşinde Közlenmiş Avokadoli Dana Kuşbaşı",
+    "name": "Közlenmiş Avokadoli Dana Kuşbaşı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -4383,7 +4383,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_152",
-    "name": "Ankara Usulü Buharda Şifalı Brüksel Lahanasıli Kuzu İncik",
+    "name": "Buharda Şifalı Brüksel Lahanasıli Kuzu İncik",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -4412,7 +4412,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_153",
-    "name": "Ankara Usulü Tereyağlı Özel Sote Bezelyeli Tavuk Göğsü",
+    "name": "Bezelyeli Tavuk Göğsü",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -4441,7 +4441,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_154",
-    "name": "Ankara Usulü Tepsi Buğulama Arapsaçıli Satır Köftesi",
+    "name": "Arapsaçıli Satır Köftesi",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -4470,7 +4470,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_155",
-    "name": "Ankara Usulü Toprak Çömlek Usulü Deniz Börülcesili Somon Balığı",
+    "name": "Deniz Börülcesili Somon Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -4499,7 +4499,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_156",
-    "name": "Ankara Usulü Közde Tandır Usulü Arpacık Soğanli Levrek Buğulama",
+    "name": "Arpacık Soğanli Levrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -4528,7 +4528,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_157",
-    "name": "Ankara Usulü Ekşi Soslu Buğulama Kabakli Dana Kıyma",
+    "name": "Kabakli Dana Kıyma",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -4557,7 +4557,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_158",
-    "name": "Ankara Usulü Geleneksel Kavurma Biberli Hindi Bonfile",
+    "name": "Biberli Hindi Bonfile",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -4586,7 +4586,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_159",
-    "name": "Ankara Usulü Fırın Çıtır Pane Karnabaharli Kuru Fasulye",
+    "name": "Karnabaharli Kuru Fasulye",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -4615,7 +4615,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_160",
-    "name": "Ankara Usulü Glaze Şerbetli Buhar Pırasali Kırmızı Mercimek",
+    "name": "Pırasali Kırmızı Mercimek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -4644,7 +4644,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_161",
-    "name": "Ankara Usulü Tava Kızartma Taze Fasulyeli Nohut",
+    "name": "Taze Fasulyeli Nohut",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -4673,7 +4673,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_162",
-    "name": "Ankara Usulü Düdüklü Lokum Bamyali Kültür Mantarı",
+    "name": "Bamyali Kültür Mantarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -4702,7 +4702,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_163",
-    "name": "Ankara Usulü Fırın Graten Enginarli Deniz Karidesi",
+    "name": "Enginarli Deniz Karidesi",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -4731,7 +4731,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_164",
-    "name": "Ankara Usulü Fırında Taş Güveçte Avokadoli Çipura Balığı",
+    "name": "Avokadoli Çipura Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -4760,7 +4760,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_165",
-    "name": "Ankara Usulü Odun Ateşinde Sac Tavada Brüksel Lahanasıli Kuzu Pirzola",
+    "name": "Brüksel Lahanasıli Kuzu Pirzola",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -4789,7 +4789,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_166",
-    "name": "Ankara Usulü Zeytinyağlı Kısık Ateşte Bezelyeli Dana Antrikot",
+    "name": "Bezelyeli Dana Antrikot",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -4818,7 +4818,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_167",
-    "name": "Ankara Usulü Közde Izgara Arapsaçıli Tavuk Pirzola",
+    "name": "Arapsaçıli Tavuk Pirzola",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -4847,7 +4847,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_168",
-    "name": "Ankara Usulü Kremalı Sarımsak Soslu Deniz Börülcesili Dana Ciğer",
+    "name": "Deniz Börülcesili Dana Ciğer",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -4876,7 +4876,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_169",
-    "name": "Ankara Usulü Odun Ateşinde Közlenmiş Arpacık Soğanli Kuzu Böbrek",
+    "name": "Közlenmiş Arpacık Soğanli Kuzu Böbrek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -4905,7 +4905,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_170",
-    "name": "Ankara Usulü Buharda Şifalı Kabakli Sardalya Balığı",
+    "name": "Buharda Şifalı Kabakli Sardalya Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -4934,7 +4934,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_171",
-    "name": "Ankara Usulü Tereyağlı Özel Sote Biberli Hamsi Tava",
+    "name": "Biberli Hamsi Tava",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -4963,7 +4963,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_172",
-    "name": "Ankara Usulü Tepsi Buğulama Karnabaharli Bıldırcın Eti",
+    "name": "Karnabaharli Bıldırcın Eti",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -4992,7 +4992,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_173",
-    "name": "Ankara Usulü Toprak Çömlek Usulü Pırasali Deniz Kalamarı",
+    "name": "Pırasali Deniz Kalamarı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -5021,7 +5021,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_174",
-    "name": "Ankara Usulü Közde Tandır Usulü Taze Fasulyeli Ahtapot",
+    "name": "Taze Fasulyeli Ahtapot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -5050,7 +5050,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_175",
-    "name": "Ankara Usulü Ekşi Soslu Buğulama Bamyali Yeşil Mercimek",
+    "name": "Bamyali Yeşil Mercimek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -5079,7 +5079,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_176",
-    "name": "Ankara Usulü Geleneksel Kavurma Enginarli Barbunya",
+    "name": "Enginarli Barbunya",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -5108,7 +5108,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_177",
-    "name": "Ankara Usulü Fırın Çıtır Pane Avokadoli Soya Et",
+    "name": "Avokadoli Soya Et",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -5137,7 +5137,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_178",
-    "name": "Ankara Usulü Glaze Şerbetli Buhar Brüksel Lahanasıli Lor Peyniri",
+    "name": "Brüksel Lahanasıli Lor Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -5166,7 +5166,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_179",
-    "name": "Ankara Usulü Tava Kızartma Bezelyeli Hellim Peyniri",
+    "name": "Bezelyeli Hellim Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -5195,7 +5195,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_180",
-    "name": "Ankara Usulü Düdüklü Lokum Arapsaçıli Kaşar Peyniri",
+    "name": "Arapsaçıli Kaşar Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -5224,7 +5224,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_181",
-    "name": "Antalya Usulü Buharda Şifalı Şalgamli Dana Kuşbaşı",
+    "name": "Buharda Şifalı Şalgamli Dana Kuşbaşı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -5253,7 +5253,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_182",
-    "name": "Antalya Usulü Tereyağlı Özel Sote Pazıli Kuzu İncik",
+    "name": "Pazılı Kuzu İncik",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -5282,7 +5282,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_183",
-    "name": "Antalya Usulü Tepsi Buğulama Şevketi Bostanli Tavuk Göğsü",
+    "name": "Şevketi Bostanli Tavuk Göğsü",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -5311,7 +5311,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_184",
-    "name": "Antalya Usulü Toprak Çömlek Usulü Sarımsakli Satır Köftesi",
+    "name": "Sarımsaklı Satır Köftesi",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -5340,7 +5340,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_185",
-    "name": "Antalya Usulü Közde Tandır Usulü Patlıcanli Somon Balığı",
+    "name": "Patlıcanlı Somon Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -5369,7 +5369,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_186",
-    "name": "Antalya Usulü Ekşi Soslu Buğulama Patatesli Levrek Buğulama",
+    "name": "Patatesli Levrek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -5398,7 +5398,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_187",
-    "name": "Antalya Usulü Geleneksel Kavurma Brokolili Dana Kıyma",
+    "name": "Brokolili Dana Kıyma",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -5427,7 +5427,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_188",
-    "name": "Antalya Usulü Fırın Çıtır Pane Ispanakli Hindi Bonfile",
+    "name": "Ispanaklı Hindi Bonfile",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -5456,7 +5456,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_189",
-    "name": "Antalya Usulü Glaze Şerbetli Buhar Kerevizli Kuru Fasulye",
+    "name": "Kerevizli Kuru Fasulye",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -5485,7 +5485,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_190",
-    "name": "Antalya Usulü Tava Kızartma Barbunyali Kırmızı Mercimek",
+    "name": "Barbunyalı Kırmızı Mercimek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -5514,7 +5514,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_191",
-    "name": "Antalya Usulü Düdüklü Lokum Mantarli Nohut",
+    "name": "Mantarlı Nohut",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -5543,7 +5543,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_192",
-    "name": "Antalya Usulü Fırın Graten Kuşkonmazli Kültür Mantarı",
+    "name": "Kuşkonmazlı Kültür Mantarı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -5572,7 +5572,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_193",
-    "name": "Antalya Usulü Fırında Taş Güveçte Tatlı Patatesli Deniz Karidesi",
+    "name": "Tatlı Patatesli Deniz Karidesi",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -5601,7 +5601,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_194",
-    "name": "Antalya Usulü Odun Ateşinde Sac Tavada Şalgamli Çipura Balığı",
+    "name": "Şalgamli Çipura Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -5630,7 +5630,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_195",
-    "name": "Antalya Usulü Zeytinyağlı Kısık Ateşte Pazıli Kuzu Pirzola",
+    "name": "Pazılı Kuzu Pirzola",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -5659,7 +5659,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_196",
-    "name": "Antalya Usulü Közde Izgara Şevketi Bostanli Dana Antrikot",
+    "name": "Şevketi Bostanli Dana Antrikot",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -5688,7 +5688,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_197",
-    "name": "Antalya Usulü Kremalı Sarımsak Soslu Sarımsakli Tavuk Pirzola",
+    "name": "Sarımsaklı Tavuk Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -5717,7 +5717,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_198",
-    "name": "Antalya Usulü Odun Ateşinde Közlenmiş Patlıcanli Dana Ciğer",
+    "name": "Közlenmiş Patlıcanlı Dana Ciğer",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -5746,7 +5746,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_199",
-    "name": "Antalya Usulü Buharda Şifalı Patatesli Kuzu Böbrek",
+    "name": "Buharda Şifalı Patatesli Kuzu Böbrek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -5775,7 +5775,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_200",
-    "name": "Antalya Usulü Tereyağlı Özel Sote Brokolili Sardalya Balığı",
+    "name": "Brokolili Sardalya Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -5804,7 +5804,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_201",
-    "name": "Antalya Usulü Tepsi Buğulama Ispanakli Hamsi Tava",
+    "name": "Ispanaklı Hamsi Tava",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -5833,7 +5833,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_202",
-    "name": "Antalya Usulü Toprak Çömlek Usulü Kerevizli Bıldırcın Eti",
+    "name": "Kerevizli Bıldırcın Eti",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -5862,7 +5862,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_203",
-    "name": "Antalya Usulü Közde Tandır Usulü Barbunyali Deniz Kalamarı",
+    "name": "Barbunyalı Deniz Kalamarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -5891,7 +5891,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_204",
-    "name": "Antalya Usulü Ekşi Soslu Buğulama Mantarli Ahtapot",
+    "name": "Mantarlı Ahtapot",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -5920,7 +5920,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_205",
-    "name": "Antalya Usulü Geleneksel Kavurma Kuşkonmazli Yeşil Mercimek",
+    "name": "Kuşkonmazlı Yeşil Mercimek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -5949,7 +5949,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_206",
-    "name": "Antalya Usulü Fırın Çıtır Pane Tatlı Patatesli Barbunya",
+    "name": "Tatlı Patatesli Barbunya",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -5978,7 +5978,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_207",
-    "name": "Antalya Usulü Glaze Şerbetli Buhar Şalgamli Soya Et",
+    "name": "Şalgamli Soya Et",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -6007,7 +6007,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_208",
-    "name": "Antalya Usulü Tava Kızartma Pazıli Lor Peyniri",
+    "name": "Pazılı Lor Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -6036,7 +6036,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_209",
-    "name": "Antalya Usulü Düdüklü Lokum Şevketi Bostanli Hellim Peyniri",
+    "name": "Şevketi Bostanli Hellim Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -6065,7 +6065,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_210",
-    "name": "Antalya Usulü Fırın Graten Sarımsakli Kaşar Peyniri",
+    "name": "Sarımsaklı Kaşar Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -6094,7 +6094,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_211",
-    "name": "Artvin Usulü Tereyağlı Özel Sote Arapsaçıli Dana Kuşbaşı",
+    "name": "Arapsaçıli Dana Kuşbaşı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -6123,7 +6123,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_212",
-    "name": "Artvin Usulü Tepsi Buğulama Deniz Börülcesili Kuzu İncik",
+    "name": "Deniz Börülcesili Kuzu İncik",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -6152,7 +6152,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_213",
-    "name": "Artvin Usulü Toprak Çömlek Usulü Arpacık Soğanli Tavuk Göğsü",
+    "name": "Arpacık Soğanli Tavuk Göğsü",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -6181,7 +6181,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_214",
-    "name": "Artvin Usulü Közde Tandır Usulü Kabakli Satır Köftesi",
+    "name": "Kabakli Satır Köftesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -6210,7 +6210,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_215",
-    "name": "Artvin Usulü Ekşi Soslu Buğulama Biberli Somon Balığı",
+    "name": "Biberli Somon Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -6239,7 +6239,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_216",
-    "name": "Artvin Usulü Geleneksel Kavurma Karnabaharli Levrek Buğulama",
+    "name": "Karnabaharli Levrek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -6268,7 +6268,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_217",
-    "name": "Artvin Usulü Fırın Çıtır Pane Pırasali Dana Kıyma",
+    "name": "Pırasali Dana Kıyma",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -6297,7 +6297,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_218",
-    "name": "Artvin Usulü Glaze Şerbetli Buhar Taze Fasulyeli Hindi Bonfile",
+    "name": "Taze Fasulyeli Hindi Bonfile",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -6326,7 +6326,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_219",
-    "name": "Artvin Usulü Tava Kızartma Bamyali Kuru Fasulye",
+    "name": "Bamyali Kuru Fasulye",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -6355,7 +6355,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_220",
-    "name": "Artvin Usulü Düdüklü Lokum Enginarli Kırmızı Mercimek",
+    "name": "Enginarli Kırmızı Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -6384,7 +6384,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_221",
-    "name": "Artvin Usulü Fırın Graten Avokadoli Nohut",
+    "name": "Avokadoli Nohut",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -6413,7 +6413,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_222",
-    "name": "Artvin Usulü Fırında Taş Güveçte Brüksel Lahanasıli Kültür Mantarı",
+    "name": "Brüksel Lahanasıli Kültür Mantarı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -6442,7 +6442,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_223",
-    "name": "Artvin Usulü Odun Ateşinde Sac Tavada Bezelyeli Deniz Karidesi",
+    "name": "Bezelyeli Deniz Karidesi",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -6471,7 +6471,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_224",
-    "name": "Artvin Usulü Zeytinyağlı Kısık Ateşte Arapsaçıli Çipura Balığı",
+    "name": "Arapsaçıli Çipura Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -6500,7 +6500,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_225",
-    "name": "Artvin Usulü Közde Izgara Deniz Börülcesili Kuzu Pirzola",
+    "name": "Deniz Börülcesili Kuzu Pirzola",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -6529,7 +6529,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_226",
-    "name": "Artvin Usulü Kremalı Sarımsak Soslu Arpacık Soğanli Dana Antrikot",
+    "name": "Arpacık Soğanli Dana Antrikot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -6558,7 +6558,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_227",
-    "name": "Artvin Usulü Odun Ateşinde Közlenmiş Kabakli Tavuk Pirzola",
+    "name": "Közlenmiş Kabakli Tavuk Pirzola",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -6587,7 +6587,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_228",
-    "name": "Artvin Usulü Buharda Şifalı Biberli Dana Ciğer",
+    "name": "Buharda Şifalı Biberli Dana Ciğer",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -6616,7 +6616,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_229",
-    "name": "Artvin Usulü Tereyağlı Özel Sote Karnabaharli Kuzu Böbrek",
+    "name": "Karnabaharli Kuzu Böbrek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -6645,7 +6645,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_230",
-    "name": "Artvin Usulü Tepsi Buğulama Pırasali Sardalya Balığı",
+    "name": "Pırasali Sardalya Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -6674,7 +6674,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_231",
-    "name": "Artvin Usulü Toprak Çömlek Usulü Taze Fasulyeli Hamsi Tava",
+    "name": "Taze Fasulyeli Hamsi Tava",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -6703,7 +6703,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_232",
-    "name": "Artvin Usulü Közde Tandır Usulü Bamyali Bıldırcın Eti",
+    "name": "Bamyali Bıldırcın Eti",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -6732,7 +6732,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_233",
-    "name": "Artvin Usulü Ekşi Soslu Buğulama Enginarli Deniz Kalamarı",
+    "name": "Enginarli Deniz Kalamarı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -6761,7 +6761,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_234",
-    "name": "Artvin Usulü Geleneksel Kavurma Avokadoli Ahtapot",
+    "name": "Avokadoli Ahtapot",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -6790,7 +6790,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_235",
-    "name": "Artvin Usulü Fırın Çıtır Pane Brüksel Lahanasıli Yeşil Mercimek",
+    "name": "Brüksel Lahanasıli Yeşil Mercimek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -6819,7 +6819,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_236",
-    "name": "Artvin Usulü Glaze Şerbetli Buhar Bezelyeli Barbunya",
+    "name": "Bezelyeli Barbunya",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -6848,7 +6848,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_237",
-    "name": "Artvin Usulü Tava Kızartma Arapsaçıli Soya Et",
+    "name": "Arapsaçıli Soya Et",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -6877,7 +6877,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_238",
-    "name": "Artvin Usulü Düdüklü Lokum Deniz Börülcesili Lor Peyniri",
+    "name": "Deniz Börülcesili Lor Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -6906,7 +6906,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_239",
-    "name": "Artvin Usulü Fırın Graten Arpacık Soğanli Hellim Peyniri",
+    "name": "Arpacık Soğanli Hellim Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -6935,7 +6935,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_240",
-    "name": "Artvin Usulü Fırında Taş Güveçte Kabakli Kaşar Peyniri",
+    "name": "Kabakli Kaşar Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -6964,7 +6964,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_241",
-    "name": "Aydın Usulü Tepsi Buğulama Sarımsakli Dana Kuşbaşı",
+    "name": "Sarımsaklı Dana Kuşbaşı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -6993,7 +6993,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_242",
-    "name": "Aydın Usulü Toprak Çömlek Usulü Patlıcanli Kuzu İncik",
+    "name": "Patlıcanlı Kuzu İncik",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -7022,7 +7022,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_243",
-    "name": "Aydın Usulü Közde Tandır Usulü Patatesli Tavuk Göğsü",
+    "name": "Patatesli Tavuk Göğsü",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -7051,7 +7051,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_244",
-    "name": "Aydın Usulü Ekşi Soslu Buğulama Brokolili Satır Köftesi",
+    "name": "Brokolili Satır Köftesi",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -7080,7 +7080,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_245",
-    "name": "Aydın Usulü Geleneksel Kavurma Ispanakli Somon Balığı",
+    "name": "Ispanaklı Somon Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -7109,7 +7109,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_246",
-    "name": "Aydın Usulü Fırın Çıtır Pane Kerevizli Levrek Buğulama",
+    "name": "Kerevizli Levrek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -7138,7 +7138,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_247",
-    "name": "Aydın Usulü Glaze Şerbetli Buhar Barbunyali Dana Kıyma",
+    "name": "Barbunyalı Dana Kıyma",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -7167,7 +7167,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_248",
-    "name": "Aydın Usulü Tava Kızartma Mantarli Hindi Bonfile",
+    "name": "Mantarlı Hindi Bonfile",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -7196,7 +7196,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_249",
-    "name": "Aydın Usulü Düdüklü Lokum Kuşkonmazli Kuru Fasulye",
+    "name": "Kuşkonmazlı Kuru Fasulye",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -7225,7 +7225,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_250",
-    "name": "Aydın Usulü Fırın Graten Tatlı Patatesli Kırmızı Mercimek",
+    "name": "Tatlı Patatesli Kırmızı Mercimek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -7254,7 +7254,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_251",
-    "name": "Aydın Usulü Fırında Taş Güveçte Şalgamli Nohut",
+    "name": "Şalgamli Nohut",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -7283,7 +7283,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_252",
-    "name": "Aydın Usulü Odun Ateşinde Sac Tavada Pazıli Kültür Mantarı",
+    "name": "Pazılı Kültür Mantarı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -7312,7 +7312,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_253",
-    "name": "Aydın Usulü Zeytinyağlı Kısık Ateşte Şevketi Bostanli Deniz Karidesi",
+    "name": "Şevketi Bostanli Deniz Karidesi",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -7341,7 +7341,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_254",
-    "name": "Aydın Usulü Közde Izgara Sarımsakli Çipura Balığı",
+    "name": "Sarımsaklı Çipura Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -7370,7 +7370,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_255",
-    "name": "Aydın Usulü Kremalı Sarımsak Soslu Patlıcanli Kuzu Pirzola",
+    "name": "Patlıcanlı Kuzu Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -7399,7 +7399,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_256",
-    "name": "Aydın Usulü Odun Ateşinde Közlenmiş Patatesli Dana Antrikot",
+    "name": "Közlenmiş Patatesli Dana Antrikot",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -7428,7 +7428,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_257",
-    "name": "Aydın Usulü Buharda Şifalı Brokolili Tavuk Pirzola",
+    "name": "Buharda Şifalı Brokolili Tavuk Pirzola",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -7457,7 +7457,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_258",
-    "name": "Aydın Usulü Tereyağlı Özel Sote Ispanakli Dana Ciğer",
+    "name": "Ispanaklı Dana Ciğer",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -7486,7 +7486,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_259",
-    "name": "Aydın Usulü Tepsi Buğulama Kerevizli Kuzu Böbrek",
+    "name": "Kerevizli Kuzu Böbrek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -7515,7 +7515,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_260",
-    "name": "Aydın Usulü Toprak Çömlek Usulü Barbunyali Sardalya Balığı",
+    "name": "Barbunyalı Sardalya Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -7544,7 +7544,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_261",
-    "name": "Aydın Usulü Közde Tandır Usulü Mantarli Hamsi Tava",
+    "name": "Mantarlı Hamsi Tava",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -7573,7 +7573,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_262",
-    "name": "Aydın Usulü Ekşi Soslu Buğulama Kuşkonmazli Bıldırcın Eti",
+    "name": "Kuşkonmazlı Bıldırcın Eti",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -7602,7 +7602,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_263",
-    "name": "Aydın Usulü Geleneksel Kavurma Tatlı Patatesli Deniz Kalamarı",
+    "name": "Tatlı Patatesli Deniz Kalamarı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -7631,7 +7631,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_264",
-    "name": "Aydın Usulü Fırın Çıtır Pane Şalgamli Ahtapot",
+    "name": "Şalgamli Ahtapot",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -7660,7 +7660,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_265",
-    "name": "Aydın Usulü Glaze Şerbetli Buhar Pazıli Yeşil Mercimek",
+    "name": "Pazılı Yeşil Mercimek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -7689,7 +7689,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_266",
-    "name": "Aydın Usulü Tava Kızartma Şevketi Bostanli Barbunya",
+    "name": "Şevketi Bostanli Barbunya",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -7718,7 +7718,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_267",
-    "name": "Aydın Usulü Düdüklü Lokum Sarımsakli Soya Et",
+    "name": "Sarımsaklı Soya Et",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -7747,7 +7747,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_268",
-    "name": "Aydın Usulü Fırın Graten Patlıcanli Lor Peyniri",
+    "name": "Patlıcanlı Lor Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -7776,7 +7776,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_269",
-    "name": "Aydın Usulü Fırında Taş Güveçte Patatesli Hellim Peyniri",
+    "name": "Patatesli Hellim Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -7805,7 +7805,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_270",
-    "name": "Aydın Usulü Odun Ateşinde Sac Tavada Brokolili Kaşar Peyniri",
+    "name": "Brokolili Kaşar Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -7834,7 +7834,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_271",
-    "name": "Balıkesir Usulü Toprak Çömlek Usulü Kabakli Dana Kuşbaşı",
+    "name": "Kabakli Dana Kuşbaşı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -7863,7 +7863,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_272",
-    "name": "Balıkesir Usulü Közde Tandır Usulü Biberli Kuzu İncik",
+    "name": "Biberli Kuzu İncik",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -7892,7 +7892,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_273",
-    "name": "Balıkesir Usulü Ekşi Soslu Buğulama Karnabaharli Tavuk Göğsü",
+    "name": "Karnabaharli Tavuk Göğsü",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -7921,7 +7921,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_274",
-    "name": "Balıkesir Usulü Geleneksel Kavurma Pırasali Satır Köftesi",
+    "name": "Pırasali Satır Köftesi",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -7950,7 +7950,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_275",
-    "name": "Balıkesir Usulü Fırın Çıtır Pane Taze Fasulyeli Somon Balığı",
+    "name": "Taze Fasulyeli Somon Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -7979,7 +7979,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_276",
-    "name": "Balıkesir Usulü Glaze Şerbetli Buhar Bamyali Levrek Buğulama",
+    "name": "Bamyali Levrek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -8008,7 +8008,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_277",
-    "name": "Balıkesir Usulü Tava Kızartma Enginarli Dana Kıyma",
+    "name": "Enginarli Dana Kıyma",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -8037,7 +8037,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_278",
-    "name": "Balıkesir Usulü Düdüklü Lokum Avokadoli Hindi Bonfile",
+    "name": "Avokadoli Hindi Bonfile",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -8066,7 +8066,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_279",
-    "name": "Balıkesir Usulü Fırın Graten Brüksel Lahanasıli Kuru Fasulye",
+    "name": "Brüksel Lahanasıli Kuru Fasulye",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -8095,7 +8095,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_280",
-    "name": "Balıkesir Usulü Fırında Taş Güveçte Bezelyeli Kırmızı Mercimek",
+    "name": "Bezelyeli Kırmızı Mercimek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -8124,7 +8124,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_281",
-    "name": "Balıkesir Usulü Odun Ateşinde Sac Tavada Arapsaçıli Nohut",
+    "name": "Arapsaçıli Nohut",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -8153,7 +8153,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_282",
-    "name": "Balıkesir Usulü Zeytinyağlı Kısık Ateşte Deniz Börülcesili Kültür Mantarı",
+    "name": "Deniz Börülcesili Kültür Mantarı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -8182,7 +8182,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_283",
-    "name": "Balıkesir Usulü Közde Izgara Arpacık Soğanli Deniz Karidesi",
+    "name": "Arpacık Soğanli Deniz Karidesi",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -8211,7 +8211,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_284",
-    "name": "Balıkesir Usulü Kremalı Sarımsak Soslu Kabakli Çipura Balığı",
+    "name": "Kabakli Çipura Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -8240,7 +8240,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_285",
-    "name": "Balıkesir Usulü Odun Ateşinde Közlenmiş Biberli Kuzu Pirzola",
+    "name": "Közlenmiş Biberli Kuzu Pirzola",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -8269,7 +8269,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_286",
-    "name": "Balıkesir Usulü Buharda Şifalı Karnabaharli Dana Antrikot",
+    "name": "Buharda Şifalı Karnabaharli Dana Antrikot",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -8298,7 +8298,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_287",
-    "name": "Balıkesir Usulü Tereyağlı Özel Sote Pırasali Tavuk Pirzola",
+    "name": "Pırasali Tavuk Pirzola",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -8327,7 +8327,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_288",
-    "name": "Balıkesir Usulü Tepsi Buğulama Taze Fasulyeli Dana Ciğer",
+    "name": "Taze Fasulyeli Dana Ciğer",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -8356,7 +8356,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_289",
-    "name": "Balıkesir Usulü Toprak Çömlek Usulü Bamyali Kuzu Böbrek",
+    "name": "Bamyali Kuzu Böbrek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -8385,7 +8385,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_290",
-    "name": "Balıkesir Usulü Közde Tandır Usulü Enginarli Sardalya Balığı",
+    "name": "Enginarli Sardalya Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -8414,7 +8414,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_291",
-    "name": "Balıkesir Usulü Ekşi Soslu Buğulama Avokadoli Hamsi Tava",
+    "name": "Avokadoli Hamsi Tava",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -8443,7 +8443,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_292",
-    "name": "Balıkesir Usulü Geleneksel Kavurma Brüksel Lahanasıli Bıldırcın Eti",
+    "name": "Brüksel Lahanasıli Bıldırcın Eti",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -8472,7 +8472,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_293",
-    "name": "Balıkesir Usulü Fırın Çıtır Pane Bezelyeli Deniz Kalamarı",
+    "name": "Bezelyeli Deniz Kalamarı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -8501,7 +8501,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_294",
-    "name": "Balıkesir Usulü Glaze Şerbetli Buhar Arapsaçıli Ahtapot",
+    "name": "Arapsaçıli Ahtapot",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -8530,7 +8530,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_295",
-    "name": "Balıkesir Usulü Tava Kızartma Deniz Börülcesili Yeşil Mercimek",
+    "name": "Deniz Börülcesili Yeşil Mercimek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -8559,7 +8559,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_296",
-    "name": "Balıkesir Usulü Düdüklü Lokum Arpacık Soğanli Barbunya",
+    "name": "Arpacık Soğanli Barbunya",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -8588,7 +8588,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_297",
-    "name": "Balıkesir Usulü Fırın Graten Kabakli Soya Et",
+    "name": "Kabakli Soya Et",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -8617,7 +8617,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_298",
-    "name": "Balıkesir Usulü Fırında Taş Güveçte Biberli Lor Peyniri",
+    "name": "Biberli Lor Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -8646,7 +8646,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_299",
-    "name": "Balıkesir Usulü Odun Ateşinde Sac Tavada Karnabaharli Hellim Peyniri",
+    "name": "Karnabaharli Hellim Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -8675,7 +8675,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_300",
-    "name": "Balıkesir Usulü Zeytinyağlı Kısık Ateşte Pırasali Kaşar Peyniri",
+    "name": "Pırasali Kaşar Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -8704,7 +8704,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_301",
-    "name": "Bilecik Usulü Közde Tandır Usulü Brokolili Dana Kuşbaşı",
+    "name": "Brokolili Dana Kuşbaşı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -8733,7 +8733,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_302",
-    "name": "Bilecik Usulü Ekşi Soslu Buğulama Ispanakli Kuzu İncik",
+    "name": "Ispanaklı Kuzu İncik",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -8762,7 +8762,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_303",
-    "name": "Bilecik Usulü Geleneksel Kavurma Kerevizli Tavuk Göğsü",
+    "name": "Kerevizli Tavuk Göğsü",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -8791,7 +8791,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_304",
-    "name": "Bilecik Usulü Fırın Çıtır Pane Barbunyali Satır Köftesi",
+    "name": "Barbunyalı Satır Köftesi",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -8820,7 +8820,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_305",
-    "name": "Bilecik Usulü Glaze Şerbetli Buhar Mantarli Somon Balığı",
+    "name": "Mantarlı Somon Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -8849,7 +8849,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_306",
-    "name": "Bilecik Usulü Tava Kızartma Kuşkonmazli Levrek Buğulama",
+    "name": "Kuşkonmazlı Levrek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -8878,7 +8878,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_307",
-    "name": "Bilecik Usulü Düdüklü Lokum Tatlı Patatesli Dana Kıyma",
+    "name": "Tatlı Patatesli Dana Kıyma",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -8907,7 +8907,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_308",
-    "name": "Bilecik Usulü Fırın Graten Şalgamli Hindi Bonfile",
+    "name": "Şalgamli Hindi Bonfile",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -8936,7 +8936,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_309",
-    "name": "Bilecik Usulü Fırında Taş Güveçte Pazıli Kuru Fasulye",
+    "name": "Pazılı Kuru Fasulye",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -8965,7 +8965,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_310",
-    "name": "Bilecik Usulü Odun Ateşinde Sac Tavada Şevketi Bostanli Kırmızı Mercimek",
+    "name": "Şevketi Bostanli Kırmızı Mercimek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -8994,7 +8994,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_311",
-    "name": "Bilecik Usulü Zeytinyağlı Kısık Ateşte Sarımsakli Nohut",
+    "name": "Sarımsaklı Nohut",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -9023,7 +9023,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_312",
-    "name": "Bilecik Usulü Közde Izgara Patlıcanli Kültür Mantarı",
+    "name": "Patlıcanlı Kültür Mantarı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -9052,7 +9052,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_313",
-    "name": "Bilecik Usulü Kremalı Sarımsak Soslu Patatesli Deniz Karidesi",
+    "name": "Patatesli Deniz Karidesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -9081,7 +9081,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_314",
-    "name": "Bilecik Usulü Odun Ateşinde Közlenmiş Brokolili Çipura Balığı",
+    "name": "Közlenmiş Brokolili Çipura Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -9110,7 +9110,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_315",
-    "name": "Bilecik Usulü Buharda Şifalı Ispanakli Kuzu Pirzola",
+    "name": "Buharda Şifalı Ispanaklı Kuzu Pirzola",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -9139,7 +9139,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_316",
-    "name": "Bilecik Usulü Tereyağlı Özel Sote Kerevizli Dana Antrikot",
+    "name": "Kerevizli Dana Antrikot",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -9168,7 +9168,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_317",
-    "name": "Bilecik Usulü Tepsi Buğulama Barbunyali Tavuk Pirzola",
+    "name": "Barbunyalı Tavuk Pirzola",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -9197,7 +9197,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_318",
-    "name": "Bilecik Usulü Toprak Çömlek Usulü Mantarli Dana Ciğer",
+    "name": "Mantarlı Dana Ciğer",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -9226,7 +9226,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_319",
-    "name": "Bilecik Usulü Közde Tandır Usulü Kuşkonmazli Kuzu Böbrek",
+    "name": "Kuşkonmazlı Kuzu Böbrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -9255,7 +9255,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_320",
-    "name": "Bilecik Usulü Ekşi Soslu Buğulama Tatlı Patatesli Sardalya Balığı",
+    "name": "Tatlı Patatesli Sardalya Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -9284,7 +9284,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_321",
-    "name": "Bilecik Usulü Geleneksel Kavurma Şalgamli Hamsi Tava",
+    "name": "Şalgamli Hamsi Tava",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -9313,7 +9313,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_322",
-    "name": "Bilecik Usulü Fırın Çıtır Pane Pazıli Bıldırcın Eti",
+    "name": "Pazılı Bıldırcın Eti",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -9342,7 +9342,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_323",
-    "name": "Bilecik Usulü Glaze Şerbetli Buhar Şevketi Bostanli Deniz Kalamarı",
+    "name": "Şevketi Bostanli Deniz Kalamarı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -9371,7 +9371,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_324",
-    "name": "Bilecik Usulü Tava Kızartma Sarımsakli Ahtapot",
+    "name": "Sarımsaklı Ahtapot",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -9400,7 +9400,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_325",
-    "name": "Bilecik Usulü Düdüklü Lokum Patlıcanli Yeşil Mercimek",
+    "name": "Patlıcanlı Yeşil Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -9429,7 +9429,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_326",
-    "name": "Bilecik Usulü Fırın Graten Patatesli Barbunya",
+    "name": "Patatesli Barbunya",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -9458,7 +9458,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_327",
-    "name": "Bilecik Usulü Fırında Taş Güveçte Brokolili Soya Et",
+    "name": "Brokolili Soya Et",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -9487,7 +9487,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_328",
-    "name": "Bilecik Usulü Odun Ateşinde Sac Tavada Ispanakli Lor Peyniri",
+    "name": "Ispanaklı Lor Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -9516,7 +9516,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_329",
-    "name": "Bilecik Usulü Zeytinyağlı Kısık Ateşte Kerevizli Hellim Peyniri",
+    "name": "Kerevizli Hellim Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -9545,7 +9545,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_330",
-    "name": "Bilecik Usulü Közde Izgara Barbunyali Kaşar Peyniri",
+    "name": "Barbunyalı Kaşar Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -9574,7 +9574,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_331",
-    "name": "Bingöl Usulü Ekşi Soslu Buğulama Pırasali Dana Kuşbaşı",
+    "name": "Pırasali Dana Kuşbaşı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -9603,7 +9603,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_332",
-    "name": "Bingöl Usulü Geleneksel Kavurma Taze Fasulyeli Kuzu İncik",
+    "name": "Taze Fasulyeli Kuzu İncik",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -9632,7 +9632,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_333",
-    "name": "Bingöl Usulü Fırın Çıtır Pane Bamyali Tavuk Göğsü",
+    "name": "Bamyali Tavuk Göğsü",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -9661,7 +9661,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_334",
-    "name": "Bingöl Usulü Glaze Şerbetli Buhar Enginarli Satır Köftesi",
+    "name": "Enginarli Satır Köftesi",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -9690,7 +9690,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_335",
-    "name": "Bingöl Usulü Tava Kızartma Avokadoli Somon Balığı",
+    "name": "Avokadoli Somon Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -9719,7 +9719,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_336",
-    "name": "Bingöl Usulü Düdüklü Lokum Brüksel Lahanasıli Levrek Buğulama",
+    "name": "Brüksel Lahanasıli Levrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -9748,7 +9748,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_337",
-    "name": "Bingöl Usulü Fırın Graten Bezelyeli Dana Kıyma",
+    "name": "Bezelyeli Dana Kıyma",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -9777,7 +9777,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_338",
-    "name": "Bingöl Usulü Fırında Taş Güveçte Arapsaçıli Hindi Bonfile",
+    "name": "Arapsaçıli Hindi Bonfile",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -9806,7 +9806,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_339",
-    "name": "Bingöl Usulü Odun Ateşinde Sac Tavada Deniz Börülcesili Kuru Fasulye",
+    "name": "Deniz Börülcesili Kuru Fasulye",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -9835,7 +9835,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_340",
-    "name": "Bingöl Usulü Zeytinyağlı Kısık Ateşte Arpacık Soğanli Kırmızı Mercimek",
+    "name": "Arpacık Soğanli Kırmızı Mercimek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -9864,7 +9864,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_341",
-    "name": "Bingöl Usulü Közde Izgara Kabakli Nohut",
+    "name": "Kabakli Nohut",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -9893,7 +9893,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_342",
-    "name": "Bingöl Usulü Kremalı Sarımsak Soslu Biberli Kültür Mantarı",
+    "name": "Biberli Kültür Mantarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -9922,7 +9922,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_343",
-    "name": "Bingöl Usulü Odun Ateşinde Közlenmiş Karnabaharli Deniz Karidesi",
+    "name": "Közlenmiş Karnabaharli Deniz Karidesi",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -9951,7 +9951,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_344",
-    "name": "Bingöl Usulü Buharda Şifalı Pırasali Çipura Balığı",
+    "name": "Buharda Şifalı Pırasali Çipura Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -9980,7 +9980,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_345",
-    "name": "Bingöl Usulü Tereyağlı Özel Sote Taze Fasulyeli Kuzu Pirzola",
+    "name": "Taze Fasulyeli Kuzu Pirzola",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -10009,7 +10009,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_346",
-    "name": "Bingöl Usulü Tepsi Buğulama Bamyali Dana Antrikot",
+    "name": "Bamyali Dana Antrikot",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -10038,7 +10038,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_347",
-    "name": "Bingöl Usulü Toprak Çömlek Usulü Enginarli Tavuk Pirzola",
+    "name": "Enginarli Tavuk Pirzola",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -10067,7 +10067,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_348",
-    "name": "Bingöl Usulü Közde Tandır Usulü Avokadoli Dana Ciğer",
+    "name": "Avokadoli Dana Ciğer",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -10096,7 +10096,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_349",
-    "name": "Bingöl Usulü Ekşi Soslu Buğulama Brüksel Lahanasıli Kuzu Böbrek",
+    "name": "Brüksel Lahanasıli Kuzu Böbrek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -10125,7 +10125,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_350",
-    "name": "Bingöl Usulü Geleneksel Kavurma Bezelyeli Sardalya Balığı",
+    "name": "Bezelyeli Sardalya Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -10154,7 +10154,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_351",
-    "name": "Bingöl Usulü Fırın Çıtır Pane Arapsaçıli Hamsi Tava",
+    "name": "Arapsaçıli Hamsi Tava",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -10183,7 +10183,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_352",
-    "name": "Bingöl Usulü Glaze Şerbetli Buhar Deniz Börülcesili Bıldırcın Eti",
+    "name": "Deniz Börülcesili Bıldırcın Eti",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -10212,7 +10212,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_353",
-    "name": "Bingöl Usulü Tava Kızartma Arpacık Soğanli Deniz Kalamarı",
+    "name": "Arpacık Soğanli Deniz Kalamarı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -10241,7 +10241,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_354",
-    "name": "Bingöl Usulü Düdüklü Lokum Kabakli Ahtapot",
+    "name": "Kabakli Ahtapot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -10270,7 +10270,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_355",
-    "name": "Bingöl Usulü Fırın Graten Biberli Yeşil Mercimek",
+    "name": "Biberli Yeşil Mercimek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -10299,7 +10299,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_356",
-    "name": "Bingöl Usulü Fırında Taş Güveçte Karnabaharli Barbunya",
+    "name": "Karnabaharli Barbunya",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -10328,7 +10328,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_357",
-    "name": "Bingöl Usulü Odun Ateşinde Sac Tavada Pırasali Soya Et",
+    "name": "Pırasali Soya Et",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -10357,7 +10357,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_358",
-    "name": "Bingöl Usulü Zeytinyağlı Kısık Ateşte Taze Fasulyeli Lor Peyniri",
+    "name": "Taze Fasulyeli Lor Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -10386,7 +10386,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_359",
-    "name": "Bingöl Usulü Közde Izgara Bamyali Hellim Peyniri",
+    "name": "Bamyali Hellim Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -10415,7 +10415,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_360",
-    "name": "Bingöl Usulü Kremalı Sarımsak Soslu Enginarli Kaşar Peyniri",
+    "name": "Enginarli Kaşar Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -10444,7 +10444,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_361",
-    "name": "Bitlis Usulü Geleneksel Kavurma Barbunyali Dana Kuşbaşı",
+    "name": "Barbunyalı Dana Kuşbaşı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -10473,7 +10473,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_362",
-    "name": "Bitlis Usulü Fırın Çıtır Pane Mantarli Kuzu İncik",
+    "name": "Mantarlı Kuzu İncik",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -10502,7 +10502,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_363",
-    "name": "Bitlis Usulü Glaze Şerbetli Buhar Kuşkonmazli Tavuk Göğsü",
+    "name": "Kuşkonmazlı Tavuk Göğsü",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -10531,7 +10531,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_364",
-    "name": "Bitlis Usulü Tava Kızartma Tatlı Patatesli Satır Köftesi",
+    "name": "Tatlı Patatesli Satır Köftesi",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -10560,7 +10560,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_365",
-    "name": "Bitlis Usulü Düdüklü Lokum Şalgamli Somon Balığı",
+    "name": "Şalgamli Somon Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -10589,7 +10589,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_366",
-    "name": "Bitlis Usulü Fırın Graten Pazıli Levrek Buğulama",
+    "name": "Pazılı Levrek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -10618,7 +10618,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_367",
-    "name": "Bitlis Usulü Fırında Taş Güveçte Şevketi Bostanli Dana Kıyma",
+    "name": "Şevketi Bostanli Dana Kıyma",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -10647,7 +10647,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_368",
-    "name": "Bitlis Usulü Odun Ateşinde Sac Tavada Sarımsakli Hindi Bonfile",
+    "name": "Sarımsaklı Hindi Bonfile",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -10676,7 +10676,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_369",
-    "name": "Bitlis Usulü Zeytinyağlı Kısık Ateşte Patlıcanli Kuru Fasulye",
+    "name": "Patlıcanlı Kuru Fasulye",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -10705,7 +10705,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_370",
-    "name": "Bitlis Usulü Közde Izgara Patatesli Kırmızı Mercimek",
+    "name": "Patatesli Kırmızı Mercimek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -10734,7 +10734,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_371",
-    "name": "Bitlis Usulü Kremalı Sarımsak Soslu Brokolili Nohut",
+    "name": "Brokolili Nohut",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -10763,7 +10763,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_372",
-    "name": "Bitlis Usulü Odun Ateşinde Közlenmiş Ispanakli Kültür Mantarı",
+    "name": "Közlenmiş Ispanaklı Kültür Mantarı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -10792,7 +10792,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_373",
-    "name": "Bitlis Usulü Buharda Şifalı Kerevizli Deniz Karidesi",
+    "name": "Buharda Şifalı Kerevizli Deniz Karidesi",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -10821,7 +10821,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_374",
-    "name": "Bitlis Usulü Tereyağlı Özel Sote Barbunyali Çipura Balığı",
+    "name": "Barbunyalı Çipura Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -10850,7 +10850,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_375",
-    "name": "Bitlis Usulü Tepsi Buğulama Mantarli Kuzu Pirzola",
+    "name": "Mantarlı Kuzu Pirzola",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -10879,7 +10879,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_376",
-    "name": "Bitlis Usulü Toprak Çömlek Usulü Kuşkonmazli Dana Antrikot",
+    "name": "Kuşkonmazlı Dana Antrikot",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -10908,7 +10908,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_377",
-    "name": "Bitlis Usulü Közde Tandır Usulü Tatlı Patatesli Tavuk Pirzola",
+    "name": "Tatlı Patatesli Tavuk Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -10937,7 +10937,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_378",
-    "name": "Bitlis Usulü Ekşi Soslu Buğulama Şalgamli Dana Ciğer",
+    "name": "Şalgamli Dana Ciğer",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -10966,7 +10966,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_379",
-    "name": "Bitlis Usulü Geleneksel Kavurma Pazıli Kuzu Böbrek",
+    "name": "Pazılı Kuzu Böbrek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -10995,7 +10995,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_380",
-    "name": "Bitlis Usulü Fırın Çıtır Pane Şevketi Bostanli Sardalya Balığı",
+    "name": "Şevketi Bostanli Sardalya Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -11024,7 +11024,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_381",
-    "name": "Bitlis Usulü Glaze Şerbetli Buhar Sarımsakli Hamsi Tava",
+    "name": "Sarımsaklı Hamsi Tava",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -11053,7 +11053,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_382",
-    "name": "Bitlis Usulü Tava Kızartma Patlıcanli Bıldırcın Eti",
+    "name": "Patlıcanlı Bıldırcın Eti",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -11082,7 +11082,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_383",
-    "name": "Bitlis Usulü Düdüklü Lokum Patatesli Deniz Kalamarı",
+    "name": "Patatesli Deniz Kalamarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -11111,7 +11111,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_384",
-    "name": "Bitlis Usulü Fırın Graten Brokolili Ahtapot",
+    "name": "Brokolili Ahtapot",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -11140,7 +11140,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_385",
-    "name": "Bitlis Usulü Fırında Taş Güveçte Ispanakli Yeşil Mercimek",
+    "name": "Ispanaklı Yeşil Mercimek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -11169,7 +11169,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_386",
-    "name": "Bitlis Usulü Odun Ateşinde Sac Tavada Kerevizli Barbunya",
+    "name": "Kerevizli Barbunya",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -11198,7 +11198,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_387",
-    "name": "Bitlis Usulü Zeytinyağlı Kısık Ateşte Barbunyali Soya Et",
+    "name": "Barbunyalı Soya Et",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -11227,7 +11227,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_388",
-    "name": "Bitlis Usulü Közde Izgara Mantarli Lor Peyniri",
+    "name": "Mantarlı Lor Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -11256,7 +11256,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_389",
-    "name": "Bitlis Usulü Kremalı Sarımsak Soslu Kuşkonmazli Hellim Peyniri",
+    "name": "Kuşkonmazlı Hellim Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -11285,7 +11285,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_390",
-    "name": "Bitlis Usulü Odun Ateşinde Közlenmiş Tatlı Patatesli Kaşar Peyniri",
+    "name": "Közlenmiş Tatlı Patatesli Kaşar Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -11314,7 +11314,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_391",
-    "name": "Bolu Usulü Fırın Çıtır Pane Enginarli Dana Kuşbaşı",
+    "name": "Enginarli Dana Kuşbaşı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -11343,7 +11343,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_392",
-    "name": "Bolu Usulü Glaze Şerbetli Buhar Avokadoli Kuzu İncik",
+    "name": "Avokadoli Kuzu İncik",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -11372,7 +11372,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_393",
-    "name": "Bolu Usulü Tava Kızartma Brüksel Lahanasıli Tavuk Göğsü",
+    "name": "Brüksel Lahanasıli Tavuk Göğsü",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -11401,7 +11401,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_394",
-    "name": "Bolu Usulü Düdüklü Lokum Bezelyeli Satır Köftesi",
+    "name": "Bezelyeli Satır Köftesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -11430,7 +11430,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_395",
-    "name": "Bolu Usulü Fırın Graten Arapsaçıli Somon Balığı",
+    "name": "Arapsaçıli Somon Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -11459,7 +11459,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_396",
-    "name": "Bolu Usulü Fırında Taş Güveçte Deniz Börülcesili Levrek Buğulama",
+    "name": "Deniz Börülcesili Levrek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -11488,7 +11488,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_397",
-    "name": "Bolu Usulü Odun Ateşinde Sac Tavada Arpacık Soğanli Dana Kıyma",
+    "name": "Arpacık Soğanli Dana Kıyma",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -11517,7 +11517,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_398",
-    "name": "Bolu Usulü Zeytinyağlı Kısık Ateşte Kabakli Hindi Bonfile",
+    "name": "Kabakli Hindi Bonfile",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -11546,7 +11546,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_399",
-    "name": "Bolu Usulü Közde Izgara Biberli Kuru Fasulye",
+    "name": "Biberli Kuru Fasulye",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -11575,7 +11575,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_400",
-    "name": "Bolu Usulü Kremalı Sarımsak Soslu Karnabaharli Kırmızı Mercimek",
+    "name": "Karnabaharli Kırmızı Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -11604,7 +11604,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_401",
-    "name": "Bolu Usulü Odun Ateşinde Közlenmiş Pırasali Nohut",
+    "name": "Közlenmiş Pırasali Nohut",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -11633,7 +11633,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_402",
-    "name": "Bolu Usulü Buharda Şifalı Taze Fasulyeli Kültür Mantarı",
+    "name": "Buharda Şifalı Taze Fasulyeli Kültür Mantarı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -11662,7 +11662,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_403",
-    "name": "Bolu Usulü Tereyağlı Özel Sote Bamyali Deniz Karidesi",
+    "name": "Bamyali Deniz Karidesi",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -11691,7 +11691,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_404",
-    "name": "Bolu Usulü Tepsi Buğulama Enginarli Çipura Balığı",
+    "name": "Enginarli Çipura Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -11720,7 +11720,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_405",
-    "name": "Bolu Usulü Toprak Çömlek Usulü Avokadoli Kuzu Pirzola",
+    "name": "Avokadoli Kuzu Pirzola",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -11749,7 +11749,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_406",
-    "name": "Bolu Usulü Közde Tandır Usulü Brüksel Lahanasıli Dana Antrikot",
+    "name": "Brüksel Lahanasıli Dana Antrikot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -11778,7 +11778,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_407",
-    "name": "Bolu Usulü Ekşi Soslu Buğulama Bezelyeli Tavuk Pirzola",
+    "name": "Bezelyeli Tavuk Pirzola",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -11807,7 +11807,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_408",
-    "name": "Bolu Usulü Geleneksel Kavurma Arapsaçıli Dana Ciğer",
+    "name": "Arapsaçıli Dana Ciğer",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -11836,7 +11836,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_409",
-    "name": "Bolu Usulü Fırın Çıtır Pane Deniz Börülcesili Kuzu Böbrek",
+    "name": "Deniz Börülcesili Kuzu Böbrek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -11865,7 +11865,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_410",
-    "name": "Bolu Usulü Glaze Şerbetli Buhar Arpacık Soğanli Sardalya Balığı",
+    "name": "Arpacık Soğanli Sardalya Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -11894,7 +11894,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_411",
-    "name": "Bolu Usulü Tava Kızartma Kabakli Hamsi Tava",
+    "name": "Kabakli Hamsi Tava",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -11923,7 +11923,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_412",
-    "name": "Bolu Usulü Düdüklü Lokum Biberli Bıldırcın Eti",
+    "name": "Biberli Bıldırcın Eti",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -11952,7 +11952,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_413",
-    "name": "Bolu Usulü Fırın Graten Karnabaharli Deniz Kalamarı",
+    "name": "Karnabaharli Deniz Kalamarı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -11981,7 +11981,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_414",
-    "name": "Bolu Usulü Fırında Taş Güveçte Pırasali Ahtapot",
+    "name": "Pırasali Ahtapot",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -12010,7 +12010,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_415",
-    "name": "Bolu Usulü Odun Ateşinde Sac Tavada Taze Fasulyeli Yeşil Mercimek",
+    "name": "Taze Fasulyeli Yeşil Mercimek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -12039,7 +12039,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_416",
-    "name": "Bolu Usulü Zeytinyağlı Kısık Ateşte Bamyali Barbunya",
+    "name": "Bamyali Barbunya",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -12068,7 +12068,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_417",
-    "name": "Bolu Usulü Közde Izgara Enginarli Soya Et",
+    "name": "Enginarli Soya Et",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -12097,7 +12097,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_418",
-    "name": "Bolu Usulü Kremalı Sarımsak Soslu Avokadoli Lor Peyniri",
+    "name": "Avokadoli Lor Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -12126,7 +12126,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_419",
-    "name": "Bolu Usulü Odun Ateşinde Közlenmiş Brüksel Lahanasıli Hellim Peyniri",
+    "name": "Közlenmiş Brüksel Lahanasıli Hellim Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -12155,7 +12155,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_420",
-    "name": "Bolu Usulü Buharda Şifalı Bezelyeli Kaşar Peyniri",
+    "name": "Buharda Şifalı Bezelyeli Kaşar Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -12184,7 +12184,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_421",
-    "name": "Burdur Usulü Glaze Şerbetli Buhar Tatlı Patatesli Dana Kuşbaşı",
+    "name": "Tatlı Patatesli Dana Kuşbaşı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -12213,7 +12213,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_422",
-    "name": "Burdur Usulü Tava Kızartma Şalgamli Kuzu İncik",
+    "name": "Şalgamli Kuzu İncik",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -12242,7 +12242,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_423",
-    "name": "Burdur Usulü Düdüklü Lokum Pazıli Tavuk Göğsü",
+    "name": "Pazılı Tavuk Göğsü",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -12271,7 +12271,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_424",
-    "name": "Burdur Usulü Fırın Graten Şevketi Bostanli Satır Köftesi",
+    "name": "Şevketi Bostanli Satır Köftesi",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -12300,7 +12300,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_425",
-    "name": "Burdur Usulü Fırında Taş Güveçte Sarımsakli Somon Balığı",
+    "name": "Sarımsaklı Somon Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -12329,7 +12329,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_426",
-    "name": "Burdur Usulü Odun Ateşinde Sac Tavada Patlıcanli Levrek Buğulama",
+    "name": "Patlıcanlı Levrek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -12358,7 +12358,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_427",
-    "name": "Burdur Usulü Zeytinyağlı Kısık Ateşte Patatesli Dana Kıyma",
+    "name": "Patatesli Dana Kıyma",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -12387,7 +12387,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_428",
-    "name": "Burdur Usulü Közde Izgara Brokolili Hindi Bonfile",
+    "name": "Brokolili Hindi Bonfile",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -12416,7 +12416,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_429",
-    "name": "Burdur Usulü Kremalı Sarımsak Soslu Ispanakli Kuru Fasulye",
+    "name": "Ispanaklı Kuru Fasulye",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -12445,7 +12445,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_430",
-    "name": "Burdur Usulü Odun Ateşinde Közlenmiş Kerevizli Kırmızı Mercimek",
+    "name": "Közlenmiş Kerevizli Kırmızı Mercimek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -12474,7 +12474,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_431",
-    "name": "Burdur Usulü Buharda Şifalı Barbunyali Nohut",
+    "name": "Buharda Şifalı Barbunyalı Nohut",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -12503,7 +12503,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_432",
-    "name": "Burdur Usulü Tereyağlı Özel Sote Mantarli Kültür Mantarı",
+    "name": "Mantarlı Kültür Mantarı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -12532,7 +12532,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_433",
-    "name": "Burdur Usulü Tepsi Buğulama Kuşkonmazli Deniz Karidesi",
+    "name": "Kuşkonmazlı Deniz Karidesi",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -12561,7 +12561,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_434",
-    "name": "Burdur Usulü Toprak Çömlek Usulü Tatlı Patatesli Çipura Balığı",
+    "name": "Tatlı Patatesli Çipura Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -12590,7 +12590,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_435",
-    "name": "Burdur Usulü Közde Tandır Usulü Şalgamli Kuzu Pirzola",
+    "name": "Şalgamli Kuzu Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -12619,7 +12619,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_436",
-    "name": "Burdur Usulü Ekşi Soslu Buğulama Pazıli Dana Antrikot",
+    "name": "Pazılı Dana Antrikot",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -12648,7 +12648,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_437",
-    "name": "Burdur Usulü Geleneksel Kavurma Şevketi Bostanli Tavuk Pirzola",
+    "name": "Şevketi Bostanli Tavuk Pirzola",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -12677,7 +12677,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_438",
-    "name": "Burdur Usulü Fırın Çıtır Pane Sarımsakli Dana Ciğer",
+    "name": "Sarımsaklı Dana Ciğer",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -12706,7 +12706,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_439",
-    "name": "Burdur Usulü Glaze Şerbetli Buhar Patlıcanli Kuzu Böbrek",
+    "name": "Patlıcanlı Kuzu Böbrek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -12735,7 +12735,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_440",
-    "name": "Burdur Usulü Tava Kızartma Patatesli Sardalya Balığı",
+    "name": "Patatesli Sardalya Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -12764,7 +12764,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_441",
-    "name": "Burdur Usulü Düdüklü Lokum Brokolili Hamsi Tava",
+    "name": "Brokolili Hamsi Tava",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -12793,7 +12793,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_442",
-    "name": "Burdur Usulü Fırın Graten Ispanakli Bıldırcın Eti",
+    "name": "Ispanaklı Bıldırcın Eti",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -12822,7 +12822,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_443",
-    "name": "Burdur Usulü Fırında Taş Güveçte Kerevizli Deniz Kalamarı",
+    "name": "Kerevizli Deniz Kalamarı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -12851,7 +12851,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_444",
-    "name": "Burdur Usulü Odun Ateşinde Sac Tavada Barbunyali Ahtapot",
+    "name": "Barbunyalı Ahtapot",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -12880,7 +12880,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_445",
-    "name": "Burdur Usulü Zeytinyağlı Kısık Ateşte Mantarli Yeşil Mercimek",
+    "name": "Mantarlı Yeşil Mercimek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -12909,7 +12909,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_446",
-    "name": "Burdur Usulü Közde Izgara Kuşkonmazli Barbunya",
+    "name": "Kuşkonmazlı Barbunya",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -12938,7 +12938,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_447",
-    "name": "Burdur Usulü Kremalı Sarımsak Soslu Tatlı Patatesli Soya Et",
+    "name": "Tatlı Patatesli Soya Et",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -12967,7 +12967,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_448",
-    "name": "Burdur Usulü Odun Ateşinde Közlenmiş Şalgamli Lor Peyniri",
+    "name": "Közlenmiş Şalgamli Lor Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -12996,7 +12996,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_449",
-    "name": "Burdur Usulü Buharda Şifalı Pazıli Hellim Peyniri",
+    "name": "Buharda Şifalı Pazılı Hellim Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -13025,7 +13025,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_450",
-    "name": "Burdur Usulü Tereyağlı Özel Sote Şevketi Bostanli Kaşar Peyniri",
+    "name": "Şevketi Bostanli Kaşar Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -13054,7 +13054,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_451",
-    "name": "Bursa Usulü Tava Kızartma Bezelyeli Dana Kuşbaşı",
+    "name": "Bezelyeli Dana Kuşbaşı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -13083,7 +13083,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_452",
-    "name": "Bursa Usulü Düdüklü Lokum Arapsaçıli Kuzu İncik",
+    "name": "Arapsaçıli Kuzu İncik",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -13112,7 +13112,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_453",
-    "name": "Bursa Usulü Fırın Graten Deniz Börülcesili Tavuk Göğsü",
+    "name": "Deniz Börülcesili Tavuk Göğsü",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -13141,7 +13141,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_454",
-    "name": "Bursa Usulü Fırında Taş Güveçte Arpacık Soğanli Satır Köftesi",
+    "name": "Arpacık Soğanli Satır Köftesi",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -13170,7 +13170,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_455",
-    "name": "Bursa Usulü Odun Ateşinde Sac Tavada Kabakli Somon Balığı",
+    "name": "Kabakli Somon Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -13199,7 +13199,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_456",
-    "name": "Bursa Usulü Zeytinyağlı Kısık Ateşte Biberli Levrek Buğulama",
+    "name": "Biberli Levrek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -13228,7 +13228,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_457",
-    "name": "Bursa Usulü Közde Izgara Karnabaharli Dana Kıyma",
+    "name": "Karnabaharli Dana Kıyma",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -13257,7 +13257,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_458",
-    "name": "Bursa Usulü Kremalı Sarımsak Soslu Pırasali Hindi Bonfile",
+    "name": "Pırasali Hindi Bonfile",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -13286,7 +13286,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_459",
-    "name": "Bursa Usulü Odun Ateşinde Közlenmiş Taze Fasulyeli Kuru Fasulye",
+    "name": "Közlenmiş Taze Fasulyeli Kuru Fasulye",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -13315,7 +13315,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_460",
-    "name": "Bursa Usulü Buharda Şifalı Bamyali Kırmızı Mercimek",
+    "name": "Buharda Şifalı Bamyali Kırmızı Mercimek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -13344,7 +13344,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_461",
-    "name": "Bursa Usulü Tereyağlı Özel Sote Enginarli Nohut",
+    "name": "Enginarli Nohut",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -13373,7 +13373,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_462",
-    "name": "Bursa Usulü Tepsi Buğulama Avokadoli Kültür Mantarı",
+    "name": "Avokadoli Kültür Mantarı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -13402,7 +13402,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_463",
-    "name": "Bursa Usulü Toprak Çömlek Usulü Brüksel Lahanasıli Deniz Karidesi",
+    "name": "Brüksel Lahanasıli Deniz Karidesi",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -13431,7 +13431,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_464",
-    "name": "Bursa Usulü Közde Tandır Usulü Bezelyeli Çipura Balığı",
+    "name": "Bezelyeli Çipura Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -13460,7 +13460,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_465",
-    "name": "Bursa Usulü Ekşi Soslu Buğulama Arapsaçıli Kuzu Pirzola",
+    "name": "Arapsaçıli Kuzu Pirzola",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -13489,7 +13489,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_466",
-    "name": "Bursa Usulü Geleneksel Kavurma Deniz Börülcesili Dana Antrikot",
+    "name": "Deniz Börülcesili Dana Antrikot",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -13518,7 +13518,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_467",
-    "name": "Bursa Usulü Fırın Çıtır Pane Arpacık Soğanli Tavuk Pirzola",
+    "name": "Arpacık Soğanli Tavuk Pirzola",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -13547,7 +13547,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_468",
-    "name": "Bursa Usulü Glaze Şerbetli Buhar Kabakli Dana Ciğer",
+    "name": "Kabakli Dana Ciğer",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -13576,7 +13576,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_469",
-    "name": "Bursa Usulü Tava Kızartma Biberli Kuzu Böbrek",
+    "name": "Biberli Kuzu Böbrek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -13605,7 +13605,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_470",
-    "name": "Bursa Usulü Düdüklü Lokum Karnabaharli Sardalya Balığı",
+    "name": "Karnabaharli Sardalya Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -13634,7 +13634,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_471",
-    "name": "Bursa Usulü Fırın Graten Pırasali Hamsi Tava",
+    "name": "Pırasali Hamsi Tava",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -13663,7 +13663,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_472",
-    "name": "Bursa Usulü Fırında Taş Güveçte Taze Fasulyeli Bıldırcın Eti",
+    "name": "Taze Fasulyeli Bıldırcın Eti",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -13692,7 +13692,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_473",
-    "name": "Bursa Usulü Odun Ateşinde Sac Tavada Bamyali Deniz Kalamarı",
+    "name": "Bamyali Deniz Kalamarı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -13721,7 +13721,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_474",
-    "name": "Bursa Usulü Zeytinyağlı Kısık Ateşte Enginarli Ahtapot",
+    "name": "Enginarli Ahtapot",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -13750,7 +13750,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_475",
-    "name": "Bursa Usulü Közde Izgara Avokadoli Yeşil Mercimek",
+    "name": "Avokadoli Yeşil Mercimek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -13779,7 +13779,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_476",
-    "name": "Bursa Usulü Kremalı Sarımsak Soslu Brüksel Lahanasıli Barbunya",
+    "name": "Brüksel Lahanasıli Barbunya",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -13808,7 +13808,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_477",
-    "name": "Bursa Usulü Odun Ateşinde Közlenmiş Bezelyeli Soya Et",
+    "name": "Közlenmiş Bezelyeli Soya Et",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -13837,7 +13837,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_478",
-    "name": "Bursa Usulü Buharda Şifalı Arapsaçıli Lor Peyniri",
+    "name": "Buharda Şifalı Arapsaçıli Lor Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -13866,7 +13866,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_479",
-    "name": "Bursa Usulü Tereyağlı Özel Sote Deniz Börülcesili Hellim Peyniri",
+    "name": "Deniz Börülcesili Hellim Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -13895,7 +13895,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_480",
-    "name": "Bursa Usulü Tepsi Buğulama Arpacık Soğanli Kaşar Peyniri",
+    "name": "Arpacık Soğanli Kaşar Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -13924,7 +13924,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_481",
-    "name": "Çanakkale Usulü Düdüklü Lokum Şevketi Bostanli Dana Kuşbaşı",
+    "name": "Çanakkale Şevketi Bostanli Dana Kuşbaşı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -13953,7 +13953,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_482",
-    "name": "Çanakkale Usulü Fırın Graten Sarımsakli Kuzu İncik",
+    "name": "Çanakkale Sarımsaklı Kuzu İncik",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -13982,7 +13982,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_483",
-    "name": "Çanakkale Usulü Fırında Taş Güveçte Patlıcanli Tavuk Göğsü",
+    "name": "Çanakkale Patlıcanlı Tavuk Göğsü",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -14011,7 +14011,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_484",
-    "name": "Çanakkale Usulü Odun Ateşinde Sac Tavada Patatesli Satır Köftesi",
+    "name": "Çanakkale Patatesli Satır Köftesi",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -14040,7 +14040,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_485",
-    "name": "Çanakkale Usulü Zeytinyağlı Kısık Ateşte Brokolili Somon Balığı",
+    "name": "Çanakkale Brokolili Somon Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -14069,7 +14069,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_486",
-    "name": "Çanakkale Usulü Közde Izgara Ispanakli Levrek Buğulama",
+    "name": "Çanakkale Ispanaklı Levrek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -14098,7 +14098,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_487",
-    "name": "Çanakkale Usulü Kremalı Sarımsak Soslu Kerevizli Dana Kıyma",
+    "name": "Çanakkale Kerevizli Dana Kıyma",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -14127,7 +14127,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_488",
-    "name": "Çanakkale Usulü Odun Ateşinde Közlenmiş Barbunyali Hindi Bonfile",
+    "name": "Çanakkale Közlenmiş Barbunyalı Hindi Bonfile",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -14156,7 +14156,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_489",
-    "name": "Çanakkale Usulü Buharda Şifalı Mantarli Kuru Fasulye",
+    "name": "Çanakkale Buharda Şifalı Mantarlı Kuru Fasulye",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -14185,7 +14185,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_490",
-    "name": "Çanakkale Usulü Tereyağlı Özel Sote Kuşkonmazli Kırmızı Mercimek",
+    "name": "Çanakkale Kuşkonmazlı Kırmızı Mercimek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -14214,7 +14214,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_491",
-    "name": "Çanakkale Usulü Tepsi Buğulama Tatlı Patatesli Nohut",
+    "name": "Çanakkale Tatlı Patatesli Nohut",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -14243,7 +14243,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_492",
-    "name": "Çanakkale Usulü Toprak Çömlek Usulü Şalgamli Kültür Mantarı",
+    "name": "Çanakkale Şalgamli Kültür Mantarı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -14272,7 +14272,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_493",
-    "name": "Çanakkale Usulü Közde Tandır Usulü Pazıli Deniz Karidesi",
+    "name": "Çanakkale Pazılı Deniz Karidesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -14301,7 +14301,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_494",
-    "name": "Çanakkale Usulü Ekşi Soslu Buğulama Şevketi Bostanli Çipura Balığı",
+    "name": "Çanakkale Şevketi Bostanli Çipura Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -14330,7 +14330,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_495",
-    "name": "Çanakkale Usulü Geleneksel Kavurma Sarımsakli Kuzu Pirzola",
+    "name": "Çanakkale Sarımsaklı Kuzu Pirzola",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -14359,7 +14359,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_496",
-    "name": "Çanakkale Usulü Fırın Çıtır Pane Patlıcanli Dana Antrikot",
+    "name": "Çanakkale Patlıcanlı Dana Antrikot",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -14388,7 +14388,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_497",
-    "name": "Çanakkale Usulü Glaze Şerbetli Buhar Patatesli Tavuk Pirzola",
+    "name": "Çanakkale Patatesli Tavuk Pirzola",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -14417,7 +14417,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_498",
-    "name": "Çanakkale Usulü Tava Kızartma Brokolili Dana Ciğer",
+    "name": "Çanakkale Brokolili Dana Ciğer",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -14446,7 +14446,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_499",
-    "name": "Çanakkale Usulü Düdüklü Lokum Ispanakli Kuzu Böbrek",
+    "name": "Çanakkale Ispanaklı Kuzu Böbrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -14475,7 +14475,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_500",
-    "name": "Çanakkale Usulü Fırın Graten Kerevizli Sardalya Balığı",
+    "name": "Çanakkale Kerevizli Sardalya Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -14504,7 +14504,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_501",
-    "name": "Çanakkale Usulü Fırında Taş Güveçte Barbunyali Hamsi Tava",
+    "name": "Çanakkale Barbunyalı Hamsi Tava",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -14533,7 +14533,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_502",
-    "name": "Çanakkale Usulü Odun Ateşinde Sac Tavada Mantarli Bıldırcın Eti",
+    "name": "Çanakkale Mantarlı Bıldırcın Eti",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -14562,7 +14562,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_503",
-    "name": "Çanakkale Usulü Zeytinyağlı Kısık Ateşte Kuşkonmazli Deniz Kalamarı",
+    "name": "Çanakkale Kuşkonmazlı Deniz Kalamarı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -14591,7 +14591,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_504",
-    "name": "Çanakkale Usulü Közde Izgara Tatlı Patatesli Ahtapot",
+    "name": "Çanakkale Tatlı Patatesli Ahtapot",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -14620,7 +14620,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_505",
-    "name": "Çanakkale Usulü Kremalı Sarımsak Soslu Şalgamli Yeşil Mercimek",
+    "name": "Çanakkale Şalgamli Yeşil Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -14649,7 +14649,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_506",
-    "name": "Çanakkale Usulü Odun Ateşinde Közlenmiş Pazıli Barbunya",
+    "name": "Çanakkale Közlenmiş Pazılı Barbunya",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -14678,7 +14678,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_507",
-    "name": "Çanakkale Usulü Buharda Şifalı Şevketi Bostanli Soya Et",
+    "name": "Çanakkale Buharda Şifalı Şevketi Bostanli Soya Et",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -14707,7 +14707,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_508",
-    "name": "Çanakkale Usulü Tereyağlı Özel Sote Sarımsakli Lor Peyniri",
+    "name": "Çanakkale Sarımsaklı Lor Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -14736,7 +14736,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_509",
-    "name": "Çanakkale Usulü Tepsi Buğulama Patlıcanli Hellim Peyniri",
+    "name": "Çanakkale Patlıcanlı Hellim Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -14765,7 +14765,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_510",
-    "name": "Çanakkale Usulü Toprak Çömlek Usulü Patatesli Kaşar Peyniri",
+    "name": "Çanakkale Patatesli Kaşar Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -14794,7 +14794,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_511",
-    "name": "Çankırı Usulü Fırın Graten Arpacık Soğanli Dana Kuşbaşı",
+    "name": "Çankırı Arpacık Soğanli Dana Kuşbaşı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -14823,7 +14823,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_512",
-    "name": "Çankırı Usulü Fırında Taş Güveçte Kabakli Kuzu İncik",
+    "name": "Çankırı Kabakli Kuzu İncik",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -14852,7 +14852,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_513",
-    "name": "Çankırı Usulü Odun Ateşinde Sac Tavada Biberli Tavuk Göğsü",
+    "name": "Çankırı Biberli Tavuk Göğsü",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -14881,7 +14881,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_514",
-    "name": "Çankırı Usulü Zeytinyağlı Kısık Ateşte Karnabaharli Satır Köftesi",
+    "name": "Çankırı Karnabaharli Satır Köftesi",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -14910,7 +14910,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_515",
-    "name": "Çankırı Usulü Közde Izgara Pırasali Somon Balığı",
+    "name": "Çankırı Pırasali Somon Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -14939,7 +14939,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_516",
-    "name": "Çankırı Usulü Kremalı Sarımsak Soslu Taze Fasulyeli Levrek Buğulama",
+    "name": "Çankırı Taze Fasulyeli Levrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -14968,7 +14968,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_517",
-    "name": "Çankırı Usulü Odun Ateşinde Közlenmiş Bamyali Dana Kıyma",
+    "name": "Çankırı Közlenmiş Bamyali Dana Kıyma",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -14997,7 +14997,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_518",
-    "name": "Çankırı Usulü Buharda Şifalı Enginarli Hindi Bonfile",
+    "name": "Çankırı Buharda Şifalı Enginarli Hindi Bonfile",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -15026,7 +15026,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_519",
-    "name": "Çankırı Usulü Tereyağlı Özel Sote Avokadoli Kuru Fasulye",
+    "name": "Çankırı Avokadoli Kuru Fasulye",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -15055,7 +15055,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_520",
-    "name": "Çankırı Usulü Tepsi Buğulama Brüksel Lahanasıli Kırmızı Mercimek",
+    "name": "Çankırı Brüksel Lahanasıli Kırmızı Mercimek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -15084,7 +15084,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_521",
-    "name": "Çankırı Usulü Toprak Çömlek Usulü Bezelyeli Nohut",
+    "name": "Çankırı Bezelyeli Nohut",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -15113,7 +15113,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_522",
-    "name": "Çankırı Usulü Közde Tandır Usulü Arapsaçıli Kültür Mantarı",
+    "name": "Çankırı Arapsaçıli Kültür Mantarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -15142,7 +15142,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_523",
-    "name": "Çankırı Usulü Ekşi Soslu Buğulama Deniz Börülcesili Deniz Karidesi",
+    "name": "Çankırı Deniz Börülcesili Deniz Karidesi",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -15171,7 +15171,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_524",
-    "name": "Çankırı Usulü Geleneksel Kavurma Arpacık Soğanli Çipura Balığı",
+    "name": "Çankırı Arpacık Soğanli Çipura Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -15200,7 +15200,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_525",
-    "name": "Çankırı Usulü Fırın Çıtır Pane Kabakli Kuzu Pirzola",
+    "name": "Çankırı Kabakli Kuzu Pirzola",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -15229,7 +15229,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_526",
-    "name": "Çankırı Usulü Glaze Şerbetli Buhar Biberli Dana Antrikot",
+    "name": "Çankırı Biberli Dana Antrikot",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -15258,7 +15258,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_527",
-    "name": "Çankırı Usulü Tava Kızartma Karnabaharli Tavuk Pirzola",
+    "name": "Çankırı Karnabaharli Tavuk Pirzola",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -15287,7 +15287,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_528",
-    "name": "Çankırı Usulü Düdüklü Lokum Pırasali Dana Ciğer",
+    "name": "Çankırı Pırasali Dana Ciğer",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -15316,7 +15316,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_529",
-    "name": "Çankırı Usulü Fırın Graten Taze Fasulyeli Kuzu Böbrek",
+    "name": "Çankırı Taze Fasulyeli Kuzu Böbrek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -15345,7 +15345,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_530",
-    "name": "Çankırı Usulü Fırında Taş Güveçte Bamyali Sardalya Balığı",
+    "name": "Çankırı Bamyali Sardalya Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -15374,7 +15374,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_531",
-    "name": "Çankırı Usulü Odun Ateşinde Sac Tavada Enginarli Hamsi Tava",
+    "name": "Çankırı Enginarli Hamsi Tava",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -15403,7 +15403,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_532",
-    "name": "Çankırı Usulü Zeytinyağlı Kısık Ateşte Avokadoli Bıldırcın Eti",
+    "name": "Çankırı Avokadoli Bıldırcın Eti",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -15432,7 +15432,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_533",
-    "name": "Çankırı Usulü Közde Izgara Brüksel Lahanasıli Deniz Kalamarı",
+    "name": "Çankırı Brüksel Lahanasıli Deniz Kalamarı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -15461,7 +15461,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_534",
-    "name": "Çankırı Usulü Kremalı Sarımsak Soslu Bezelyeli Ahtapot",
+    "name": "Çankırı Bezelyeli Ahtapot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -15490,7 +15490,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_535",
-    "name": "Çankırı Usulü Odun Ateşinde Közlenmiş Arapsaçıli Yeşil Mercimek",
+    "name": "Çankırı Közlenmiş Arapsaçıli Yeşil Mercimek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -15519,7 +15519,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_536",
-    "name": "Çankırı Usulü Buharda Şifalı Deniz Börülcesili Barbunya",
+    "name": "Çankırı Buharda Şifalı Deniz Börülcesili Barbunya",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -15548,7 +15548,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_537",
-    "name": "Çankırı Usulü Tereyağlı Özel Sote Arpacık Soğanli Soya Et",
+    "name": "Çankırı Arpacık Soğanli Soya Et",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -15577,7 +15577,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_538",
-    "name": "Çankırı Usulü Tepsi Buğulama Kabakli Lor Peyniri",
+    "name": "Çankırı Kabakli Lor Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -15606,7 +15606,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_539",
-    "name": "Çankırı Usulü Toprak Çömlek Usulü Biberli Hellim Peyniri",
+    "name": "Çankırı Biberli Hellim Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -15635,7 +15635,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_540",
-    "name": "Çankırı Usulü Közde Tandır Usulü Karnabaharli Kaşar Peyniri",
+    "name": "Çankırı Karnabaharli Kaşar Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -15664,7 +15664,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_541",
-    "name": "Çorum Usulü Fırında Taş Güveçte Patatesli Dana Kuşbaşı",
+    "name": "Çorum Patatesli Dana Kuşbaşı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -15693,7 +15693,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_542",
-    "name": "Çorum Usulü Odun Ateşinde Sac Tavada Brokolili Kuzu İncik",
+    "name": "Çorum Brokolili Kuzu İncik",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -15722,7 +15722,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_543",
-    "name": "Çorum Usulü Zeytinyağlı Kısık Ateşte Ispanakli Tavuk Göğsü",
+    "name": "Çorum Ispanaklı Tavuk Göğsü",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -15751,7 +15751,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_544",
-    "name": "Çorum Usulü Közde Izgara Kerevizli Satır Köftesi",
+    "name": "Çorum Kerevizli Satır Köftesi",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -15780,7 +15780,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_545",
-    "name": "Çorum Usulü Kremalı Sarımsak Soslu Barbunyali Somon Balığı",
+    "name": "Çorum Barbunyalı Somon Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -15809,7 +15809,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_546",
-    "name": "Çorum Usulü Odun Ateşinde Közlenmiş Mantarli Levrek Buğulama",
+    "name": "Çorum Közlenmiş Mantarlı Levrek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -15838,7 +15838,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_547",
-    "name": "Çorum Usulü Buharda Şifalı Kuşkonmazli Dana Kıyma",
+    "name": "Çorum Buharda Şifalı Kuşkonmazlı Dana Kıyma",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -15867,7 +15867,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_548",
-    "name": "Çorum Usulü Tereyağlı Özel Sote Tatlı Patatesli Hindi Bonfile",
+    "name": "Çorum Tatlı Patatesli Hindi Bonfile",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -15896,7 +15896,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_549",
-    "name": "Çorum Usulü Tepsi Buğulama Şalgamli Kuru Fasulye",
+    "name": "Çorum Şalgamli Kuru Fasulye",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -15925,7 +15925,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_550",
-    "name": "Çorum Usulü Toprak Çömlek Usulü Pazıli Kırmızı Mercimek",
+    "name": "Çorum Pazılı Kırmızı Mercimek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -15954,7 +15954,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_551",
-    "name": "Çorum Usulü Közde Tandır Usulü Şevketi Bostanli Nohut",
+    "name": "Çorum Şevketi Bostanli Nohut",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -15983,7 +15983,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_552",
-    "name": "Çorum Usulü Ekşi Soslu Buğulama Sarımsakli Kültür Mantarı",
+    "name": "Çorum Sarımsaklı Kültür Mantarı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -16012,7 +16012,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_553",
-    "name": "Çorum Usulü Geleneksel Kavurma Patlıcanli Deniz Karidesi",
+    "name": "Çorum Patlıcanlı Deniz Karidesi",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -16041,7 +16041,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_554",
-    "name": "Çorum Usulü Fırın Çıtır Pane Patatesli Çipura Balığı",
+    "name": "Çorum Patatesli Çipura Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -16070,7 +16070,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_555",
-    "name": "Çorum Usulü Glaze Şerbetli Buhar Brokolili Kuzu Pirzola",
+    "name": "Çorum Brokolili Kuzu Pirzola",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -16099,7 +16099,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_556",
-    "name": "Çorum Usulü Tava Kızartma Ispanakli Dana Antrikot",
+    "name": "Çorum Ispanaklı Dana Antrikot",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -16128,7 +16128,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_557",
-    "name": "Çorum Usulü Düdüklü Lokum Kerevizli Tavuk Pirzola",
+    "name": "Çorum Kerevizli Tavuk Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -16157,7 +16157,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_558",
-    "name": "Çorum Usulü Fırın Graten Barbunyali Dana Ciğer",
+    "name": "Çorum Barbunyalı Dana Ciğer",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -16186,7 +16186,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_559",
-    "name": "Çorum Usulü Fırında Taş Güveçte Mantarli Kuzu Böbrek",
+    "name": "Çorum Mantarlı Kuzu Böbrek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -16215,7 +16215,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_560",
-    "name": "Çorum Usulü Odun Ateşinde Sac Tavada Kuşkonmazli Sardalya Balığı",
+    "name": "Çorum Kuşkonmazlı Sardalya Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -16244,7 +16244,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_561",
-    "name": "Çorum Usulü Zeytinyağlı Kısık Ateşte Tatlı Patatesli Hamsi Tava",
+    "name": "Çorum Tatlı Patatesli Hamsi Tava",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -16273,7 +16273,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_562",
-    "name": "Çorum Usulü Közde Izgara Şalgamli Bıldırcın Eti",
+    "name": "Çorum Şalgamli Bıldırcın Eti",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -16302,7 +16302,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_563",
-    "name": "Çorum Usulü Kremalı Sarımsak Soslu Pazıli Deniz Kalamarı",
+    "name": "Çorum Pazılı Deniz Kalamarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -16331,7 +16331,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_564",
-    "name": "Çorum Usulü Odun Ateşinde Közlenmiş Şevketi Bostanli Ahtapot",
+    "name": "Çorum Közlenmiş Şevketi Bostanli Ahtapot",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -16360,7 +16360,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_565",
-    "name": "Çorum Usulü Buharda Şifalı Sarımsakli Yeşil Mercimek",
+    "name": "Çorum Buharda Şifalı Sarımsaklı Yeşil Mercimek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -16389,7 +16389,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_566",
-    "name": "Çorum Usulü Tereyağlı Özel Sote Patlıcanli Barbunya",
+    "name": "Çorum Patlıcanlı Barbunya",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -16418,7 +16418,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_567",
-    "name": "Çorum Usulü Tepsi Buğulama Patatesli Soya Et",
+    "name": "Çorum Patatesli Soya Et",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -16447,7 +16447,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_568",
-    "name": "Çorum Usulü Toprak Çömlek Usulü Brokolili Lor Peyniri",
+    "name": "Çorum Brokolili Lor Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -16476,7 +16476,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_569",
-    "name": "Çorum Usulü Közde Tandır Usulü Ispanakli Hellim Peyniri",
+    "name": "Çorum Ispanaklı Hellim Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -16505,7 +16505,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_570",
-    "name": "Çorum Usulü Ekşi Soslu Buğulama Kerevizli Kaşar Peyniri",
+    "name": "Çorum Kerevizli Kaşar Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -16534,7 +16534,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_571",
-    "name": "Denizli Usulü Odun Ateşinde Sac Tavada Karnabaharli Dana Kuşbaşı",
+    "name": "Karnabaharli Dana Kuşbaşı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -16563,7 +16563,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_572",
-    "name": "Denizli Usulü Zeytinyağlı Kısık Ateşte Pırasali Kuzu İncik",
+    "name": "Pırasali Kuzu İncik",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -16592,7 +16592,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_573",
-    "name": "Denizli Usulü Közde Izgara Taze Fasulyeli Tavuk Göğsü",
+    "name": "Taze Fasulyeli Tavuk Göğsü",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -16621,7 +16621,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_574",
-    "name": "Denizli Usulü Kremalı Sarımsak Soslu Bamyali Satır Köftesi",
+    "name": "Bamyali Satır Köftesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -16650,7 +16650,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_575",
-    "name": "Denizli Usulü Odun Ateşinde Közlenmiş Enginarli Somon Balığı",
+    "name": "Közlenmiş Enginarli Somon Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -16679,7 +16679,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_576",
-    "name": "Denizli Usulü Buharda Şifalı Avokadoli Levrek Buğulama",
+    "name": "Buharda Şifalı Avokadoli Levrek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -16708,7 +16708,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_577",
-    "name": "Denizli Usulü Tereyağlı Özel Sote Brüksel Lahanasıli Dana Kıyma",
+    "name": "Brüksel Lahanasıli Dana Kıyma",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -16737,7 +16737,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_578",
-    "name": "Denizli Usulü Tepsi Buğulama Bezelyeli Hindi Bonfile",
+    "name": "Bezelyeli Hindi Bonfile",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -16766,7 +16766,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_579",
-    "name": "Denizli Usulü Toprak Çömlek Usulü Arapsaçıli Kuru Fasulye",
+    "name": "Arapsaçıli Kuru Fasulye",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -16795,7 +16795,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_580",
-    "name": "Denizli Usulü Közde Tandır Usulü Deniz Börülcesili Kırmızı Mercimek",
+    "name": "Deniz Börülcesili Kırmızı Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -16824,7 +16824,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_581",
-    "name": "Denizli Usulü Ekşi Soslu Buğulama Arpacık Soğanli Nohut",
+    "name": "Arpacık Soğanli Nohut",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -16853,7 +16853,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_582",
-    "name": "Denizli Usulü Geleneksel Kavurma Kabakli Kültür Mantarı",
+    "name": "Kabakli Kültür Mantarı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -16882,7 +16882,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_583",
-    "name": "Denizli Usulü Fırın Çıtır Pane Biberli Deniz Karidesi",
+    "name": "Biberli Deniz Karidesi",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -16911,7 +16911,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_584",
-    "name": "Denizli Usulü Glaze Şerbetli Buhar Karnabaharli Çipura Balığı",
+    "name": "Karnabaharli Çipura Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -16940,7 +16940,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_585",
-    "name": "Denizli Usulü Tava Kızartma Pırasali Kuzu Pirzola",
+    "name": "Pırasali Kuzu Pirzola",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -16969,7 +16969,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_586",
-    "name": "Denizli Usulü Düdüklü Lokum Taze Fasulyeli Dana Antrikot",
+    "name": "Taze Fasulyeli Dana Antrikot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -16998,7 +16998,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_587",
-    "name": "Denizli Usulü Fırın Graten Bamyali Tavuk Pirzola",
+    "name": "Bamyali Tavuk Pirzola",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -17027,7 +17027,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_588",
-    "name": "Denizli Usulü Fırında Taş Güveçte Enginarli Dana Ciğer",
+    "name": "Enginarli Dana Ciğer",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -17056,7 +17056,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_589",
-    "name": "Denizli Usulü Odun Ateşinde Sac Tavada Avokadoli Kuzu Böbrek",
+    "name": "Avokadoli Kuzu Böbrek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -17085,7 +17085,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_590",
-    "name": "Denizli Usulü Zeytinyağlı Kısık Ateşte Brüksel Lahanasıli Sardalya Balığı",
+    "name": "Brüksel Lahanasıli Sardalya Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -17114,7 +17114,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_591",
-    "name": "Denizli Usulü Közde Izgara Bezelyeli Hamsi Tava",
+    "name": "Bezelyeli Hamsi Tava",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -17143,7 +17143,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_592",
-    "name": "Denizli Usulü Kremalı Sarımsak Soslu Arapsaçıli Bıldırcın Eti",
+    "name": "Arapsaçıli Bıldırcın Eti",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -17172,7 +17172,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_593",
-    "name": "Denizli Usulü Odun Ateşinde Közlenmiş Deniz Börülcesili Deniz Kalamarı",
+    "name": "Közlenmiş Deniz Börülcesili Deniz Kalamarı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -17201,7 +17201,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_594",
-    "name": "Denizli Usulü Buharda Şifalı Arpacık Soğanli Ahtapot",
+    "name": "Buharda Şifalı Arpacık Soğanli Ahtapot",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -17230,7 +17230,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_595",
-    "name": "Denizli Usulü Tereyağlı Özel Sote Kabakli Yeşil Mercimek",
+    "name": "Kabakli Yeşil Mercimek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -17259,7 +17259,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_596",
-    "name": "Denizli Usulü Tepsi Buğulama Biberli Barbunya",
+    "name": "Biberli Barbunya",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -17288,7 +17288,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_597",
-    "name": "Denizli Usulü Toprak Çömlek Usulü Karnabaharli Soya Et",
+    "name": "Karnabaharli Soya Et",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -17317,7 +17317,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_598",
-    "name": "Denizli Usulü Közde Tandır Usulü Pırasali Lor Peyniri",
+    "name": "Pırasali Lor Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -17346,7 +17346,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_599",
-    "name": "Denizli Usulü Ekşi Soslu Buğulama Taze Fasulyeli Hellim Peyniri",
+    "name": "Taze Fasulyeli Hellim Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -17375,7 +17375,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_600",
-    "name": "Denizli Usulü Geleneksel Kavurma Bamyali Kaşar Peyniri",
+    "name": "Bamyali Kaşar Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -17404,7 +17404,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_601",
-    "name": "Diyarbakır Usulü Zeytinyağlı Kısık Ateşte Kerevizli Dana Kuşbaşı",
+    "name": "Kerevizli Dana Kuşbaşı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -17433,7 +17433,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_602",
-    "name": "Diyarbakır Usulü Közde Izgara Barbunyali Kuzu İncik",
+    "name": "Barbunyalı Kuzu İncik",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -17462,7 +17462,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_603",
-    "name": "Diyarbakır Usulü Kremalı Sarımsak Soslu Mantarli Tavuk Göğsü",
+    "name": "Mantarlı Tavuk Göğsü",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -17491,7 +17491,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_604",
-    "name": "Diyarbakır Usulü Odun Ateşinde Közlenmiş Kuşkonmazli Satır Köftesi",
+    "name": "Közlenmiş Kuşkonmazlı Satır Köftesi",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -17520,7 +17520,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_605",
-    "name": "Diyarbakır Usulü Buharda Şifalı Tatlı Patatesli Somon Balığı",
+    "name": "Buharda Şifalı Tatlı Patatesli Somon Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -17549,7 +17549,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_606",
-    "name": "Diyarbakır Usulü Tereyağlı Özel Sote Şalgamli Levrek Buğulama",
+    "name": "Şalgamli Levrek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -17578,7 +17578,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_607",
-    "name": "Diyarbakır Usulü Tepsi Buğulama Pazıli Dana Kıyma",
+    "name": "Pazılı Dana Kıyma",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -17607,7 +17607,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_608",
-    "name": "Diyarbakır Usulü Toprak Çömlek Usulü Şevketi Bostanli Hindi Bonfile",
+    "name": "Şevketi Bostanli Hindi Bonfile",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -17636,7 +17636,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_609",
-    "name": "Diyarbakır Usulü Közde Tandır Usulü Sarımsakli Kuru Fasulye",
+    "name": "Sarımsaklı Kuru Fasulye",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -17665,7 +17665,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_610",
-    "name": "Diyarbakır Usulü Ekşi Soslu Buğulama Patlıcanli Kırmızı Mercimek",
+    "name": "Patlıcanlı Kırmızı Mercimek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -17694,7 +17694,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_611",
-    "name": "Diyarbakır Usulü Geleneksel Kavurma Patatesli Nohut",
+    "name": "Patatesli Nohut",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -17723,7 +17723,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_612",
-    "name": "Diyarbakır Usulü Fırın Çıtır Pane Brokolili Kültür Mantarı",
+    "name": "Brokolili Kültür Mantarı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -17752,7 +17752,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_613",
-    "name": "Diyarbakır Usulü Glaze Şerbetli Buhar Ispanakli Deniz Karidesi",
+    "name": "Ispanaklı Deniz Karidesi",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -17781,7 +17781,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_614",
-    "name": "Diyarbakır Usulü Tava Kızartma Kerevizli Çipura Balığı",
+    "name": "Kerevizli Çipura Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -17810,7 +17810,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_615",
-    "name": "Diyarbakır Usulü Düdüklü Lokum Barbunyali Kuzu Pirzola",
+    "name": "Barbunyalı Kuzu Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -17839,7 +17839,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_616",
-    "name": "Diyarbakır Usulü Fırın Graten Mantarli Dana Antrikot",
+    "name": "Mantarlı Dana Antrikot",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -17868,7 +17868,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_617",
-    "name": "Diyarbakır Usulü Fırında Taş Güveçte Kuşkonmazli Tavuk Pirzola",
+    "name": "Kuşkonmazlı Tavuk Pirzola",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -17897,7 +17897,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_618",
-    "name": "Diyarbakır Usulü Odun Ateşinde Sac Tavada Tatlı Patatesli Dana Ciğer",
+    "name": "Tatlı Patatesli Dana Ciğer",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -17926,7 +17926,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_619",
-    "name": "Diyarbakır Usulü Zeytinyağlı Kısık Ateşte Şalgamli Kuzu Böbrek",
+    "name": "Şalgamli Kuzu Böbrek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -17955,7 +17955,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_620",
-    "name": "Diyarbakır Usulü Közde Izgara Pazıli Sardalya Balığı",
+    "name": "Pazılı Sardalya Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -17984,7 +17984,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_621",
-    "name": "Diyarbakır Usulü Kremalı Sarımsak Soslu Şevketi Bostanli Hamsi Tava",
+    "name": "Şevketi Bostanli Hamsi Tava",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -18013,7 +18013,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_622",
-    "name": "Diyarbakır Usulü Odun Ateşinde Közlenmiş Sarımsakli Bıldırcın Eti",
+    "name": "Közlenmiş Sarımsaklı Bıldırcın Eti",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -18042,7 +18042,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_623",
-    "name": "Diyarbakır Usulü Buharda Şifalı Patlıcanli Deniz Kalamarı",
+    "name": "Buharda Şifalı Patlıcanlı Deniz Kalamarı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -18071,7 +18071,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_624",
-    "name": "Diyarbakır Usulü Tereyağlı Özel Sote Patatesli Ahtapot",
+    "name": "Patatesli Ahtapot",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -18100,7 +18100,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_625",
-    "name": "Diyarbakır Usulü Tepsi Buğulama Brokolili Yeşil Mercimek",
+    "name": "Brokolili Yeşil Mercimek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -18129,7 +18129,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_626",
-    "name": "Diyarbakır Usulü Toprak Çömlek Usulü Ispanakli Barbunya",
+    "name": "Ispanaklı Barbunya",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -18158,7 +18158,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_627",
-    "name": "Diyarbakır Usulü Közde Tandır Usulü Kerevizli Soya Et",
+    "name": "Kerevizli Soya Et",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -18187,7 +18187,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_628",
-    "name": "Diyarbakır Usulü Ekşi Soslu Buğulama Barbunyali Lor Peyniri",
+    "name": "Barbunyalı Lor Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -18216,7 +18216,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_629",
-    "name": "Diyarbakır Usulü Geleneksel Kavurma Mantarli Hellim Peyniri",
+    "name": "Mantarlı Hellim Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -18245,7 +18245,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_630",
-    "name": "Diyarbakır Usulü Fırın Çıtır Pane Kuşkonmazli Kaşar Peyniri",
+    "name": "Kuşkonmazlı Kaşar Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -18274,7 +18274,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_631",
-    "name": "Edirne Usulü Közde Izgara Bamyali Dana Kuşbaşı",
+    "name": "Bamyali Dana Kuşbaşı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -18303,7 +18303,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_632",
-    "name": "Edirne Usulü Kremalı Sarımsak Soslu Enginarli Kuzu İncik",
+    "name": "Enginarli Kuzu İncik",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -18332,7 +18332,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_633",
-    "name": "Edirne Usulü Odun Ateşinde Közlenmiş Avokadoli Tavuk Göğsü",
+    "name": "Közlenmiş Avokadoli Tavuk Göğsü",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -18361,7 +18361,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_634",
-    "name": "Edirne Usulü Buharda Şifalı Brüksel Lahanasıli Satır Köftesi",
+    "name": "Buharda Şifalı Brüksel Lahanasıli Satır Köftesi",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -18390,7 +18390,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_635",
-    "name": "Edirne Usulü Tereyağlı Özel Sote Bezelyeli Somon Balığı",
+    "name": "Bezelyeli Somon Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -18419,7 +18419,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_636",
-    "name": "Edirne Usulü Tepsi Buğulama Arapsaçıli Levrek Buğulama",
+    "name": "Arapsaçıli Levrek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -18448,7 +18448,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_637",
-    "name": "Edirne Usulü Toprak Çömlek Usulü Deniz Börülcesili Dana Kıyma",
+    "name": "Deniz Börülcesili Dana Kıyma",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -18477,7 +18477,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_638",
-    "name": "Edirne Usulü Közde Tandır Usulü Arpacık Soğanli Hindi Bonfile",
+    "name": "Arpacık Soğanli Hindi Bonfile",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -18506,7 +18506,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_639",
-    "name": "Edirne Usulü Ekşi Soslu Buğulama Kabakli Kuru Fasulye",
+    "name": "Kabakli Kuru Fasulye",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -18535,7 +18535,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_640",
-    "name": "Edirne Usulü Geleneksel Kavurma Biberli Kırmızı Mercimek",
+    "name": "Biberli Kırmızı Mercimek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -18564,7 +18564,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_641",
-    "name": "Edirne Usulü Fırın Çıtır Pane Karnabaharli Nohut",
+    "name": "Karnabaharli Nohut",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -18593,7 +18593,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_642",
-    "name": "Edirne Usulü Glaze Şerbetli Buhar Pırasali Kültür Mantarı",
+    "name": "Pırasali Kültür Mantarı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -18622,7 +18622,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_643",
-    "name": "Edirne Usulü Tava Kızartma Taze Fasulyeli Deniz Karidesi",
+    "name": "Taze Fasulyeli Deniz Karidesi",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -18651,7 +18651,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_644",
-    "name": "Edirne Usulü Düdüklü Lokum Bamyali Çipura Balığı",
+    "name": "Bamyali Çipura Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -18680,7 +18680,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_645",
-    "name": "Edirne Usulü Fırın Graten Enginarli Kuzu Pirzola",
+    "name": "Enginarli Kuzu Pirzola",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -18709,7 +18709,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_646",
-    "name": "Edirne Usulü Fırında Taş Güveçte Avokadoli Dana Antrikot",
+    "name": "Avokadoli Dana Antrikot",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -18738,7 +18738,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_647",
-    "name": "Edirne Usulü Odun Ateşinde Sac Tavada Brüksel Lahanasıli Tavuk Pirzola",
+    "name": "Brüksel Lahanasıli Tavuk Pirzola",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -18767,7 +18767,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_648",
-    "name": "Edirne Usulü Zeytinyağlı Kısık Ateşte Bezelyeli Dana Ciğer",
+    "name": "Bezelyeli Dana Ciğer",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -18796,7 +18796,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_649",
-    "name": "Edirne Usulü Közde Izgara Arapsaçıli Kuzu Böbrek",
+    "name": "Arapsaçıli Kuzu Böbrek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -18825,7 +18825,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_650",
-    "name": "Edirne Usulü Kremalı Sarımsak Soslu Deniz Börülcesili Sardalya Balığı",
+    "name": "Deniz Börülcesili Sardalya Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -18854,7 +18854,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_651",
-    "name": "Edirne Usulü Odun Ateşinde Közlenmiş Arpacık Soğanli Hamsi Tava",
+    "name": "Közlenmiş Arpacık Soğanli Hamsi Tava",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -18883,7 +18883,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_652",
-    "name": "Edirne Usulü Buharda Şifalı Kabakli Bıldırcın Eti",
+    "name": "Buharda Şifalı Kabakli Bıldırcın Eti",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -18912,7 +18912,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_653",
-    "name": "Edirne Usulü Tereyağlı Özel Sote Biberli Deniz Kalamarı",
+    "name": "Biberli Deniz Kalamarı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -18941,7 +18941,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_654",
-    "name": "Edirne Usulü Tepsi Buğulama Karnabaharli Ahtapot",
+    "name": "Karnabaharli Ahtapot",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -18970,7 +18970,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_655",
-    "name": "Edirne Usulü Toprak Çömlek Usulü Pırasali Yeşil Mercimek",
+    "name": "Pırasali Yeşil Mercimek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -18999,7 +18999,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_656",
-    "name": "Edirne Usulü Közde Tandır Usulü Taze Fasulyeli Barbunya",
+    "name": "Taze Fasulyeli Barbunya",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -19028,7 +19028,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_657",
-    "name": "Edirne Usulü Ekşi Soslu Buğulama Bamyali Soya Et",
+    "name": "Bamyali Soya Et",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -19057,7 +19057,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_658",
-    "name": "Edirne Usulü Geleneksel Kavurma Enginarli Lor Peyniri",
+    "name": "Enginarli Lor Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -19086,7 +19086,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_659",
-    "name": "Edirne Usulü Fırın Çıtır Pane Avokadoli Hellim Peyniri",
+    "name": "Avokadoli Hellim Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -19115,7 +19115,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_660",
-    "name": "Edirne Usulü Glaze Şerbetli Buhar Brüksel Lahanasıli Kaşar Peyniri",
+    "name": "Brüksel Lahanasıli Kaşar Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -19144,7 +19144,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_661",
-    "name": "Elazığ Usulü Kremalı Sarımsak Soslu Kuşkonmazli Dana Kuşbaşı",
+    "name": "Elazığ Kuşkonmazlı Dana Kuşbaşı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -19173,7 +19173,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_662",
-    "name": "Elazığ Usulü Odun Ateşinde Közlenmiş Tatlı Patatesli Kuzu İncik",
+    "name": "Elazığ Közlenmiş Tatlı Patatesli Kuzu İncik",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -19202,7 +19202,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_663",
-    "name": "Elazığ Usulü Buharda Şifalı Şalgamli Tavuk Göğsü",
+    "name": "Elazığ Buharda Şifalı Şalgamli Tavuk Göğsü",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -19231,7 +19231,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_664",
-    "name": "Elazığ Usulü Tereyağlı Özel Sote Pazıli Satır Köftesi",
+    "name": "Elazığ Pazılı Satır Köftesi",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -19260,7 +19260,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_665",
-    "name": "Elazığ Usulü Tepsi Buğulama Şevketi Bostanli Somon Balığı",
+    "name": "Elazığ Şevketi Bostanli Somon Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -19289,7 +19289,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_666",
-    "name": "Elazığ Usulü Toprak Çömlek Usulü Sarımsakli Levrek Buğulama",
+    "name": "Elazığ Sarımsaklı Levrek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -19318,7 +19318,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_667",
-    "name": "Elazığ Usulü Közde Tandır Usulü Patlıcanli Dana Kıyma",
+    "name": "Elazığ Patlıcanlı Dana Kıyma",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -19347,7 +19347,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_668",
-    "name": "Elazığ Usulü Ekşi Soslu Buğulama Patatesli Hindi Bonfile",
+    "name": "Elazığ Patatesli Hindi Bonfile",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -19376,7 +19376,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_669",
-    "name": "Elazığ Usulü Geleneksel Kavurma Brokolili Kuru Fasulye",
+    "name": "Elazığ Brokolili Kuru Fasulye",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -19405,7 +19405,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_670",
-    "name": "Elazığ Usulü Fırın Çıtır Pane Ispanakli Kırmızı Mercimek",
+    "name": "Elazığ Ispanaklı Kırmızı Mercimek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -19434,7 +19434,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_671",
-    "name": "Elazığ Usulü Glaze Şerbetli Buhar Kerevizli Nohut",
+    "name": "Elazığ Kerevizli Nohut",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -19463,7 +19463,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_672",
-    "name": "Elazığ Usulü Tava Kızartma Barbunyali Kültür Mantarı",
+    "name": "Elazığ Barbunyalı Kültür Mantarı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -19492,7 +19492,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_673",
-    "name": "Elazığ Usulü Düdüklü Lokum Mantarli Deniz Karidesi",
+    "name": "Elazığ Mantarlı Deniz Karidesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -19521,7 +19521,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_674",
-    "name": "Elazığ Usulü Fırın Graten Kuşkonmazli Çipura Balığı",
+    "name": "Elazığ Kuşkonmazlı Çipura Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -19550,7 +19550,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_675",
-    "name": "Elazığ Usulü Fırında Taş Güveçte Tatlı Patatesli Kuzu Pirzola",
+    "name": "Elazığ Tatlı Patatesli Kuzu Pirzola",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -19579,7 +19579,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_676",
-    "name": "Elazığ Usulü Odun Ateşinde Sac Tavada Şalgamli Dana Antrikot",
+    "name": "Elazığ Şalgamli Dana Antrikot",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -19608,7 +19608,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_677",
-    "name": "Elazığ Usulü Zeytinyağlı Kısık Ateşte Pazıli Tavuk Pirzola",
+    "name": "Elazığ Pazılı Tavuk Pirzola",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -19637,7 +19637,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_678",
-    "name": "Elazığ Usulü Közde Izgara Şevketi Bostanli Dana Ciğer",
+    "name": "Elazığ Şevketi Bostanli Dana Ciğer",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -19666,7 +19666,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_679",
-    "name": "Elazığ Usulü Kremalı Sarımsak Soslu Sarımsakli Kuzu Böbrek",
+    "name": "Elazığ Sarımsaklı Kuzu Böbrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -19695,7 +19695,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_680",
-    "name": "Elazığ Usulü Odun Ateşinde Közlenmiş Patlıcanli Sardalya Balığı",
+    "name": "Elazığ Közlenmiş Patlıcanlı Sardalya Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -19724,7 +19724,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_681",
-    "name": "Elazığ Usulü Buharda Şifalı Patatesli Hamsi Tava",
+    "name": "Elazığ Buharda Şifalı Patatesli Hamsi Tava",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -19753,7 +19753,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_682",
-    "name": "Elazığ Usulü Tereyağlı Özel Sote Brokolili Bıldırcın Eti",
+    "name": "Elazığ Brokolili Bıldırcın Eti",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -19782,7 +19782,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_683",
-    "name": "Elazığ Usulü Tepsi Buğulama Ispanakli Deniz Kalamarı",
+    "name": "Elazığ Ispanaklı Deniz Kalamarı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -19811,7 +19811,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_684",
-    "name": "Elazığ Usulü Toprak Çömlek Usulü Kerevizli Ahtapot",
+    "name": "Elazığ Kerevizli Ahtapot",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -19840,7 +19840,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_685",
-    "name": "Elazığ Usulü Közde Tandır Usulü Barbunyali Yeşil Mercimek",
+    "name": "Elazığ Barbunyalı Yeşil Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -19869,7 +19869,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_686",
-    "name": "Elazığ Usulü Ekşi Soslu Buğulama Mantarli Barbunya",
+    "name": "Elazığ Mantarlı Barbunya",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -19898,7 +19898,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_687",
-    "name": "Elazığ Usulü Geleneksel Kavurma Kuşkonmazli Soya Et",
+    "name": "Elazığ Kuşkonmazlı Soya Et",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -19927,7 +19927,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_688",
-    "name": "Elazığ Usulü Fırın Çıtır Pane Tatlı Patatesli Lor Peyniri",
+    "name": "Elazığ Tatlı Patatesli Lor Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -19956,7 +19956,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_689",
-    "name": "Elazığ Usulü Glaze Şerbetli Buhar Şalgamli Hellim Peyniri",
+    "name": "Elazığ Şalgamli Hellim Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -19985,7 +19985,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_690",
-    "name": "Elazığ Usulü Tava Kızartma Pazıli Kaşar Peyniri",
+    "name": "Elazığ Pazılı Kaşar Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -20014,7 +20014,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_691",
-    "name": "Erzincan Usulü Odun Ateşinde Közlenmiş Brüksel Lahanasıli Dana Kuşbaşı",
+    "name": "Közlenmiş Brüksel Lahanasıli Dana Kuşbaşı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -20043,7 +20043,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_692",
-    "name": "Erzincan Usulü Buharda Şifalı Bezelyeli Kuzu İncik",
+    "name": "Buharda Şifalı Bezelyeli Kuzu İncik",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -20072,7 +20072,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_693",
-    "name": "Erzincan Usulü Tereyağlı Özel Sote Arapsaçıli Tavuk Göğsü",
+    "name": "Arapsaçıli Tavuk Göğsü",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -20101,7 +20101,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_694",
-    "name": "Erzincan Usulü Tepsi Buğulama Deniz Börülcesili Satır Köftesi",
+    "name": "Deniz Börülcesili Satır Köftesi",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -20130,7 +20130,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_695",
-    "name": "Erzincan Usulü Toprak Çömlek Usulü Arpacık Soğanli Somon Balığı",
+    "name": "Arpacık Soğanli Somon Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -20159,7 +20159,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_696",
-    "name": "Erzincan Usulü Közde Tandır Usulü Kabakli Levrek Buğulama",
+    "name": "Kabakli Levrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -20188,7 +20188,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_697",
-    "name": "Erzincan Usulü Ekşi Soslu Buğulama Biberli Dana Kıyma",
+    "name": "Biberli Dana Kıyma",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -20217,7 +20217,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_698",
-    "name": "Erzincan Usulü Geleneksel Kavurma Karnabaharli Hindi Bonfile",
+    "name": "Karnabaharli Hindi Bonfile",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -20246,7 +20246,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_699",
-    "name": "Erzincan Usulü Fırın Çıtır Pane Pırasali Kuru Fasulye",
+    "name": "Pırasali Kuru Fasulye",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -20275,7 +20275,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_700",
-    "name": "Erzincan Usulü Glaze Şerbetli Buhar Taze Fasulyeli Kırmızı Mercimek",
+    "name": "Taze Fasulyeli Kırmızı Mercimek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -20304,7 +20304,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_701",
-    "name": "Erzincan Usulü Tava Kızartma Bamyali Nohut",
+    "name": "Bamyali Nohut",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -20333,7 +20333,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_702",
-    "name": "Erzincan Usulü Düdüklü Lokum Enginarli Kültür Mantarı",
+    "name": "Enginarli Kültür Mantarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -20362,7 +20362,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_703",
-    "name": "Erzincan Usulü Fırın Graten Avokadoli Deniz Karidesi",
+    "name": "Avokadoli Deniz Karidesi",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -20391,7 +20391,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_704",
-    "name": "Erzincan Usulü Fırında Taş Güveçte Brüksel Lahanasıli Çipura Balığı",
+    "name": "Brüksel Lahanasıli Çipura Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -20420,7 +20420,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_705",
-    "name": "Erzincan Usulü Odun Ateşinde Sac Tavada Bezelyeli Kuzu Pirzola",
+    "name": "Bezelyeli Kuzu Pirzola",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -20449,7 +20449,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_706",
-    "name": "Erzincan Usulü Zeytinyağlı Kısık Ateşte Arapsaçıli Dana Antrikot",
+    "name": "Arapsaçıli Dana Antrikot",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -20478,7 +20478,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_707",
-    "name": "Erzincan Usulü Közde Izgara Deniz Börülcesili Tavuk Pirzola",
+    "name": "Deniz Börülcesili Tavuk Pirzola",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -20507,7 +20507,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_708",
-    "name": "Erzincan Usulü Kremalı Sarımsak Soslu Arpacık Soğanli Dana Ciğer",
+    "name": "Arpacık Soğanli Dana Ciğer",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -20536,7 +20536,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_709",
-    "name": "Erzincan Usulü Odun Ateşinde Közlenmiş Kabakli Kuzu Böbrek",
+    "name": "Közlenmiş Kabakli Kuzu Böbrek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -20565,7 +20565,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_710",
-    "name": "Erzincan Usulü Buharda Şifalı Biberli Sardalya Balığı",
+    "name": "Buharda Şifalı Biberli Sardalya Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -20594,7 +20594,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_711",
-    "name": "Erzincan Usulü Tereyağlı Özel Sote Karnabaharli Hamsi Tava",
+    "name": "Karnabaharli Hamsi Tava",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -20623,7 +20623,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_712",
-    "name": "Erzincan Usulü Tepsi Buğulama Pırasali Bıldırcın Eti",
+    "name": "Pırasali Bıldırcın Eti",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -20652,7 +20652,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_713",
-    "name": "Erzincan Usulü Toprak Çömlek Usulü Taze Fasulyeli Deniz Kalamarı",
+    "name": "Taze Fasulyeli Deniz Kalamarı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -20681,7 +20681,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_714",
-    "name": "Erzincan Usulü Közde Tandır Usulü Bamyali Ahtapot",
+    "name": "Bamyali Ahtapot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -20710,7 +20710,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_715",
-    "name": "Erzincan Usulü Ekşi Soslu Buğulama Enginarli Yeşil Mercimek",
+    "name": "Enginarli Yeşil Mercimek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -20739,7 +20739,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_716",
-    "name": "Erzincan Usulü Geleneksel Kavurma Avokadoli Barbunya",
+    "name": "Avokadoli Barbunya",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -20768,7 +20768,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_717",
-    "name": "Erzincan Usulü Fırın Çıtır Pane Brüksel Lahanasıli Soya Et",
+    "name": "Brüksel Lahanasıli Soya Et",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -20797,7 +20797,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_718",
-    "name": "Erzincan Usulü Glaze Şerbetli Buhar Bezelyeli Lor Peyniri",
+    "name": "Bezelyeli Lor Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -20826,7 +20826,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_719",
-    "name": "Erzincan Usulü Tava Kızartma Arapsaçıli Hellim Peyniri",
+    "name": "Arapsaçıli Hellim Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -20855,7 +20855,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_720",
-    "name": "Erzincan Usulü Düdüklü Lokum Deniz Börülcesili Kaşar Peyniri",
+    "name": "Deniz Börülcesili Kaşar Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -20884,7 +20884,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_721",
-    "name": "Erzurum Usulü Buharda Şifalı Pazıli Dana Kuşbaşı",
+    "name": "Buharda Şifalı Pazılı Dana Kuşbaşı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -20913,7 +20913,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_722",
-    "name": "Erzurum Usulü Tereyağlı Özel Sote Şevketi Bostanli Kuzu İncik",
+    "name": "Şevketi Bostanli Kuzu İncik",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -20942,7 +20942,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_723",
-    "name": "Erzurum Usulü Tepsi Buğulama Sarımsakli Tavuk Göğsü",
+    "name": "Sarımsaklı Tavuk Göğsü",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -20971,7 +20971,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_724",
-    "name": "Erzurum Usulü Toprak Çömlek Usulü Patlıcanli Satır Köftesi",
+    "name": "Patlıcanlı Satır Köftesi",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -21000,7 +21000,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_725",
-    "name": "Erzurum Usulü Közde Tandır Usulü Patatesli Somon Balığı",
+    "name": "Patatesli Somon Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -21029,7 +21029,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_726",
-    "name": "Erzurum Usulü Ekşi Soslu Buğulama Brokolili Levrek Buğulama",
+    "name": "Brokolili Levrek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -21058,7 +21058,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_727",
-    "name": "Erzurum Usulü Geleneksel Kavurma Ispanakli Dana Kıyma",
+    "name": "Ispanaklı Dana Kıyma",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -21087,7 +21087,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_728",
-    "name": "Erzurum Usulü Fırın Çıtır Pane Kerevizli Hindi Bonfile",
+    "name": "Kerevizli Hindi Bonfile",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -21116,7 +21116,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_729",
-    "name": "Erzurum Usulü Glaze Şerbetli Buhar Barbunyali Kuru Fasulye",
+    "name": "Barbunyalı Kuru Fasulye",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -21145,7 +21145,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_730",
-    "name": "Erzurum Usulü Tava Kızartma Mantarli Kırmızı Mercimek",
+    "name": "Mantarlı Kırmızı Mercimek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -21174,7 +21174,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_731",
-    "name": "Erzurum Usulü Düdüklü Lokum Kuşkonmazli Nohut",
+    "name": "Kuşkonmazlı Nohut",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -21203,7 +21203,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_732",
-    "name": "Erzurum Usulü Fırın Graten Tatlı Patatesli Kültür Mantarı",
+    "name": "Tatlı Patatesli Kültür Mantarı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -21232,7 +21232,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_733",
-    "name": "Erzurum Usulü Fırında Taş Güveçte Şalgamli Deniz Karidesi",
+    "name": "Şalgamli Deniz Karidesi",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -21261,7 +21261,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_734",
-    "name": "Erzurum Usulü Odun Ateşinde Sac Tavada Pazıli Çipura Balığı",
+    "name": "Pazılı Çipura Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -21290,7 +21290,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_735",
-    "name": "Erzurum Usulü Zeytinyağlı Kısık Ateşte Şevketi Bostanli Kuzu Pirzola",
+    "name": "Şevketi Bostanli Kuzu Pirzola",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -21319,7 +21319,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_736",
-    "name": "Erzurum Usulü Közde Izgara Sarımsakli Dana Antrikot",
+    "name": "Sarımsaklı Dana Antrikot",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -21348,7 +21348,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_737",
-    "name": "Erzurum Usulü Kremalı Sarımsak Soslu Patlıcanli Tavuk Pirzola",
+    "name": "Patlıcanlı Tavuk Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -21377,7 +21377,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_738",
-    "name": "Erzurum Usulü Odun Ateşinde Közlenmiş Patatesli Dana Ciğer",
+    "name": "Közlenmiş Patatesli Dana Ciğer",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -21406,7 +21406,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_739",
-    "name": "Erzurum Usulü Buharda Şifalı Brokolili Kuzu Böbrek",
+    "name": "Buharda Şifalı Brokolili Kuzu Böbrek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -21435,7 +21435,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_740",
-    "name": "Erzurum Usulü Tereyağlı Özel Sote Ispanakli Sardalya Balığı",
+    "name": "Ispanaklı Sardalya Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -21464,7 +21464,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_741",
-    "name": "Erzurum Usulü Tepsi Buğulama Kerevizli Hamsi Tava",
+    "name": "Kerevizli Hamsi Tava",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -21493,7 +21493,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_742",
-    "name": "Erzurum Usulü Toprak Çömlek Usulü Barbunyali Bıldırcın Eti",
+    "name": "Barbunyalı Bıldırcın Eti",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -21522,7 +21522,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_743",
-    "name": "Erzurum Usulü Közde Tandır Usulü Mantarli Deniz Kalamarı",
+    "name": "Mantarlı Deniz Kalamarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -21551,7 +21551,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_744",
-    "name": "Erzurum Usulü Ekşi Soslu Buğulama Kuşkonmazli Ahtapot",
+    "name": "Kuşkonmazlı Ahtapot",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -21580,7 +21580,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_745",
-    "name": "Erzurum Usulü Geleneksel Kavurma Tatlı Patatesli Yeşil Mercimek",
+    "name": "Tatlı Patatesli Yeşil Mercimek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -21609,7 +21609,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_746",
-    "name": "Erzurum Usulü Fırın Çıtır Pane Şalgamli Barbunya",
+    "name": "Şalgamli Barbunya",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -21638,7 +21638,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_747",
-    "name": "Erzurum Usulü Glaze Şerbetli Buhar Pazıli Soya Et",
+    "name": "Pazılı Soya Et",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -21667,7 +21667,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_748",
-    "name": "Erzurum Usulü Tava Kızartma Şevketi Bostanli Lor Peyniri",
+    "name": "Şevketi Bostanli Lor Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -21696,7 +21696,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_749",
-    "name": "Erzurum Usulü Düdüklü Lokum Sarımsakli Hellim Peyniri",
+    "name": "Sarımsaklı Hellim Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -21725,7 +21725,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_750",
-    "name": "Erzurum Usulü Fırın Graten Patlıcanli Kaşar Peyniri",
+    "name": "Patlıcanlı Kaşar Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -21754,7 +21754,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_751",
-    "name": "Eskişehir Usulü Tereyağlı Özel Sote Deniz Börülcesili Dana Kuşbaşı",
+    "name": "Deniz Börülcesili Dana Kuşbaşı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -21783,7 +21783,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_752",
-    "name": "Eskişehir Usulü Tepsi Buğulama Arpacık Soğanli Kuzu İncik",
+    "name": "Arpacık Soğanli Kuzu İncik",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -21812,7 +21812,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_753",
-    "name": "Eskişehir Usulü Toprak Çömlek Usulü Kabakli Tavuk Göğsü",
+    "name": "Kabakli Tavuk Göğsü",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -21841,7 +21841,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_754",
-    "name": "Eskişehir Usulü Közde Tandır Usulü Biberli Satır Köftesi",
+    "name": "Biberli Satır Köftesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -21870,7 +21870,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_755",
-    "name": "Eskişehir Usulü Ekşi Soslu Buğulama Karnabaharli Somon Balığı",
+    "name": "Karnabaharli Somon Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -21899,7 +21899,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_756",
-    "name": "Eskişehir Usulü Geleneksel Kavurma Pırasali Levrek Buğulama",
+    "name": "Pırasali Levrek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -21928,7 +21928,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_757",
-    "name": "Eskişehir Usulü Fırın Çıtır Pane Taze Fasulyeli Dana Kıyma",
+    "name": "Taze Fasulyeli Dana Kıyma",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -21957,7 +21957,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_758",
-    "name": "Eskişehir Usulü Glaze Şerbetli Buhar Bamyali Hindi Bonfile",
+    "name": "Bamyali Hindi Bonfile",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -21986,7 +21986,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_759",
-    "name": "Eskişehir Usulü Tava Kızartma Enginarli Kuru Fasulye",
+    "name": "Enginarli Kuru Fasulye",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -22015,7 +22015,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_760",
-    "name": "Eskişehir Usulü Düdüklü Lokum Avokadoli Kırmızı Mercimek",
+    "name": "Avokadoli Kırmızı Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -22044,7 +22044,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_761",
-    "name": "Eskişehir Usulü Fırın Graten Brüksel Lahanasıli Nohut",
+    "name": "Brüksel Lahanasıli Nohut",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -22073,7 +22073,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_762",
-    "name": "Eskişehir Usulü Fırında Taş Güveçte Bezelyeli Kültür Mantarı",
+    "name": "Bezelyeli Kültür Mantarı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -22102,7 +22102,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_763",
-    "name": "Eskişehir Usulü Odun Ateşinde Sac Tavada Arapsaçıli Deniz Karidesi",
+    "name": "Arapsaçıli Deniz Karidesi",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -22131,7 +22131,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_764",
-    "name": "Eskişehir Usulü Zeytinyağlı Kısık Ateşte Deniz Börülcesili Çipura Balığı",
+    "name": "Deniz Börülcesili Çipura Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -22160,7 +22160,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_765",
-    "name": "Eskişehir Usulü Közde Izgara Arpacık Soğanli Kuzu Pirzola",
+    "name": "Arpacık Soğanli Kuzu Pirzola",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -22189,7 +22189,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_766",
-    "name": "Eskişehir Usulü Kremalı Sarımsak Soslu Kabakli Dana Antrikot",
+    "name": "Kabakli Dana Antrikot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -22218,7 +22218,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_767",
-    "name": "Eskişehir Usulü Odun Ateşinde Közlenmiş Biberli Tavuk Pirzola",
+    "name": "Közlenmiş Biberli Tavuk Pirzola",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -22247,7 +22247,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_768",
-    "name": "Eskişehir Usulü Buharda Şifalı Karnabaharli Dana Ciğer",
+    "name": "Buharda Şifalı Karnabaharli Dana Ciğer",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -22276,7 +22276,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_769",
-    "name": "Eskişehir Usulü Tereyağlı Özel Sote Pırasali Kuzu Böbrek",
+    "name": "Pırasali Kuzu Böbrek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -22305,7 +22305,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_770",
-    "name": "Eskişehir Usulü Tepsi Buğulama Taze Fasulyeli Sardalya Balığı",
+    "name": "Taze Fasulyeli Sardalya Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -22334,7 +22334,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_771",
-    "name": "Eskişehir Usulü Toprak Çömlek Usulü Bamyali Hamsi Tava",
+    "name": "Bamyali Hamsi Tava",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -22363,7 +22363,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_772",
-    "name": "Eskişehir Usulü Közde Tandır Usulü Enginarli Bıldırcın Eti",
+    "name": "Enginarli Bıldırcın Eti",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -22392,7 +22392,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_773",
-    "name": "Eskişehir Usulü Ekşi Soslu Buğulama Avokadoli Deniz Kalamarı",
+    "name": "Avokadoli Deniz Kalamarı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -22421,7 +22421,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_774",
-    "name": "Eskişehir Usulü Geleneksel Kavurma Brüksel Lahanasıli Ahtapot",
+    "name": "Brüksel Lahanasıli Ahtapot",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -22450,7 +22450,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_775",
-    "name": "Eskişehir Usulü Fırın Çıtır Pane Bezelyeli Yeşil Mercimek",
+    "name": "Bezelyeli Yeşil Mercimek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -22479,7 +22479,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_776",
-    "name": "Eskişehir Usulü Glaze Şerbetli Buhar Arapsaçıli Barbunya",
+    "name": "Arapsaçıli Barbunya",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -22508,7 +22508,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_777",
-    "name": "Eskişehir Usulü Tava Kızartma Deniz Börülcesili Soya Et",
+    "name": "Deniz Börülcesili Soya Et",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -22537,7 +22537,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_778",
-    "name": "Eskişehir Usulü Düdüklü Lokum Arpacık Soğanli Lor Peyniri",
+    "name": "Arpacık Soğanli Lor Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -22566,7 +22566,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_779",
-    "name": "Eskişehir Usulü Fırın Graten Kabakli Hellim Peyniri",
+    "name": "Kabakli Hellim Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -22595,7 +22595,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_780",
-    "name": "Eskişehir Usulü Fırında Taş Güveçte Biberli Kaşar Peyniri",
+    "name": "Biberli Kaşar Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -22624,7 +22624,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_781",
-    "name": "Gaziantep Usulü Tepsi Buğulama Patlıcanli Dana Kuşbaşı",
+    "name": "Patlıcanlı Dana Kuşbaşı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -22653,7 +22653,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_782",
-    "name": "Gaziantep Usulü Toprak Çömlek Usulü Patatesli Kuzu İncik",
+    "name": "Patatesli Kuzu İncik",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -22682,7 +22682,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_783",
-    "name": "Gaziantep Usulü Közde Tandır Usulü Brokolili Tavuk Göğsü",
+    "name": "Brokolili Tavuk Göğsü",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -22711,7 +22711,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_784",
-    "name": "Gaziantep Usulü Ekşi Soslu Buğulama Ispanakli Satır Köftesi",
+    "name": "Ispanaklı Satır Köftesi",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -22740,7 +22740,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_785",
-    "name": "Gaziantep Usulü Geleneksel Kavurma Kerevizli Somon Balığı",
+    "name": "Kerevizli Somon Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -22769,7 +22769,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_786",
-    "name": "Gaziantep Usulü Fırın Çıtır Pane Barbunyali Levrek Buğulama",
+    "name": "Barbunyalı Levrek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -22798,7 +22798,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_787",
-    "name": "Gaziantep Usulü Glaze Şerbetli Buhar Mantarli Dana Kıyma",
+    "name": "Mantarlı Dana Kıyma",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -22827,7 +22827,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_788",
-    "name": "Gaziantep Usulü Tava Kızartma Kuşkonmazli Hindi Bonfile",
+    "name": "Kuşkonmazlı Hindi Bonfile",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -22856,7 +22856,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_789",
-    "name": "Gaziantep Usulü Düdüklü Lokum Tatlı Patatesli Kuru Fasulye",
+    "name": "Tatlı Patatesli Kuru Fasulye",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -22885,7 +22885,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_790",
-    "name": "Gaziantep Usulü Fırın Graten Şalgamli Kırmızı Mercimek",
+    "name": "Şalgamli Kırmızı Mercimek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -22914,7 +22914,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_791",
-    "name": "Gaziantep Usulü Fırında Taş Güveçte Pazıli Nohut",
+    "name": "Pazılı Nohut",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -22943,7 +22943,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_792",
-    "name": "Gaziantep Usulü Odun Ateşinde Sac Tavada Şevketi Bostanli Kültür Mantarı",
+    "name": "Şevketi Bostanli Kültür Mantarı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -22972,7 +22972,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_793",
-    "name": "Gaziantep Usulü Zeytinyağlı Kısık Ateşte Sarımsakli Deniz Karidesi",
+    "name": "Sarımsaklı Deniz Karidesi",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -23001,7 +23001,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_794",
-    "name": "Gaziantep Usulü Közde Izgara Patlıcanli Çipura Balığı",
+    "name": "Patlıcanlı Çipura Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -23030,7 +23030,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_795",
-    "name": "Gaziantep Usulü Kremalı Sarımsak Soslu Patatesli Kuzu Pirzola",
+    "name": "Patatesli Kuzu Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -23059,7 +23059,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_796",
-    "name": "Gaziantep Usulü Odun Ateşinde Közlenmiş Brokolili Dana Antrikot",
+    "name": "Közlenmiş Brokolili Dana Antrikot",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -23088,7 +23088,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_797",
-    "name": "Gaziantep Usulü Buharda Şifalı Ispanakli Tavuk Pirzola",
+    "name": "Buharda Şifalı Ispanaklı Tavuk Pirzola",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -23117,7 +23117,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_798",
-    "name": "Gaziantep Usulü Tereyağlı Özel Sote Kerevizli Dana Ciğer",
+    "name": "Kerevizli Dana Ciğer",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -23146,7 +23146,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_799",
-    "name": "Gaziantep Usulü Tepsi Buğulama Barbunyali Kuzu Böbrek",
+    "name": "Barbunyalı Kuzu Böbrek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -23175,7 +23175,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_800",
-    "name": "Gaziantep Usulü Toprak Çömlek Usulü Mantarli Sardalya Balığı",
+    "name": "Mantarlı Sardalya Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -23204,7 +23204,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_801",
-    "name": "Gaziantep Usulü Közde Tandır Usulü Kuşkonmazli Hamsi Tava",
+    "name": "Kuşkonmazlı Hamsi Tava",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -23233,7 +23233,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_802",
-    "name": "Gaziantep Usulü Ekşi Soslu Buğulama Tatlı Patatesli Bıldırcın Eti",
+    "name": "Tatlı Patatesli Bıldırcın Eti",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -23262,7 +23262,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_803",
-    "name": "Gaziantep Usulü Geleneksel Kavurma Şalgamli Deniz Kalamarı",
+    "name": "Şalgamli Deniz Kalamarı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -23291,7 +23291,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_804",
-    "name": "Gaziantep Usulü Fırın Çıtır Pane Pazıli Ahtapot",
+    "name": "Pazılı Ahtapot",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -23320,7 +23320,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_805",
-    "name": "Gaziantep Usulü Glaze Şerbetli Buhar Şevketi Bostanli Yeşil Mercimek",
+    "name": "Şevketi Bostanli Yeşil Mercimek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -23349,7 +23349,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_806",
-    "name": "Gaziantep Usulü Tava Kızartma Sarımsakli Barbunya",
+    "name": "Sarımsaklı Barbunya",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -23378,7 +23378,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_807",
-    "name": "Gaziantep Usulü Düdüklü Lokum Patlıcanli Soya Et",
+    "name": "Patlıcanlı Soya Et",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -23407,7 +23407,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_808",
-    "name": "Gaziantep Usulü Fırın Graten Patatesli Lor Peyniri",
+    "name": "Patatesli Lor Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -23436,7 +23436,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_809",
-    "name": "Gaziantep Usulü Fırında Taş Güveçte Brokolili Hellim Peyniri",
+    "name": "Brokolili Hellim Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -23465,7 +23465,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_810",
-    "name": "Gaziantep Usulü Odun Ateşinde Sac Tavada Ispanakli Kaşar Peyniri",
+    "name": "Ispanaklı Kaşar Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -23494,7 +23494,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_811",
-    "name": "Giresun Usulü Toprak Çömlek Usulü Biberli Dana Kuşbaşı",
+    "name": "Biberli Dana Kuşbaşı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -23523,7 +23523,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_812",
-    "name": "Giresun Usulü Közde Tandır Usulü Karnabaharli Kuzu İncik",
+    "name": "Karnabaharli Kuzu İncik",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -23552,7 +23552,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_813",
-    "name": "Giresun Usulü Ekşi Soslu Buğulama Pırasali Tavuk Göğsü",
+    "name": "Pırasali Tavuk Göğsü",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -23581,7 +23581,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_814",
-    "name": "Giresun Usulü Geleneksel Kavurma Taze Fasulyeli Satır Köftesi",
+    "name": "Taze Fasulyeli Satır Köftesi",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -23610,7 +23610,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_815",
-    "name": "Giresun Usulü Fırın Çıtır Pane Bamyali Somon Balığı",
+    "name": "Bamyali Somon Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -23639,7 +23639,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_816",
-    "name": "Giresun Usulü Glaze Şerbetli Buhar Enginarli Levrek Buğulama",
+    "name": "Enginarli Levrek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -23668,7 +23668,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_817",
-    "name": "Giresun Usulü Tava Kızartma Avokadoli Dana Kıyma",
+    "name": "Avokadoli Dana Kıyma",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -23697,7 +23697,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_818",
-    "name": "Giresun Usulü Düdüklü Lokum Brüksel Lahanasıli Hindi Bonfile",
+    "name": "Brüksel Lahanasıli Hindi Bonfile",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -23726,7 +23726,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_819",
-    "name": "Giresun Usulü Fırın Graten Bezelyeli Kuru Fasulye",
+    "name": "Bezelyeli Kuru Fasulye",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -23755,7 +23755,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_820",
-    "name": "Giresun Usulü Fırında Taş Güveçte Arapsaçıli Kırmızı Mercimek",
+    "name": "Arapsaçıli Kırmızı Mercimek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -23784,7 +23784,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_821",
-    "name": "Giresun Usulü Odun Ateşinde Sac Tavada Deniz Börülcesili Nohut",
+    "name": "Deniz Börülcesili Nohut",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -23813,7 +23813,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_822",
-    "name": "Giresun Usulü Zeytinyağlı Kısık Ateşte Arpacık Soğanli Kültür Mantarı",
+    "name": "Arpacık Soğanli Kültür Mantarı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -23842,7 +23842,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_823",
-    "name": "Giresun Usulü Közde Izgara Kabakli Deniz Karidesi",
+    "name": "Kabakli Deniz Karidesi",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -23871,7 +23871,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_824",
-    "name": "Giresun Usulü Kremalı Sarımsak Soslu Biberli Çipura Balığı",
+    "name": "Biberli Çipura Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -23900,7 +23900,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_825",
-    "name": "Giresun Usulü Odun Ateşinde Közlenmiş Karnabaharli Kuzu Pirzola",
+    "name": "Közlenmiş Karnabaharli Kuzu Pirzola",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -23929,7 +23929,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_826",
-    "name": "Giresun Usulü Buharda Şifalı Pırasali Dana Antrikot",
+    "name": "Buharda Şifalı Pırasali Dana Antrikot",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -23958,7 +23958,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_827",
-    "name": "Giresun Usulü Tereyağlı Özel Sote Taze Fasulyeli Tavuk Pirzola",
+    "name": "Taze Fasulyeli Tavuk Pirzola",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -23987,7 +23987,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_828",
-    "name": "Giresun Usulü Tepsi Buğulama Bamyali Dana Ciğer",
+    "name": "Bamyali Dana Ciğer",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -24016,7 +24016,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_829",
-    "name": "Giresun Usulü Toprak Çömlek Usulü Enginarli Kuzu Böbrek",
+    "name": "Enginarli Kuzu Böbrek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -24045,7 +24045,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_830",
-    "name": "Giresun Usulü Közde Tandır Usulü Avokadoli Sardalya Balığı",
+    "name": "Avokadoli Sardalya Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -24074,7 +24074,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_831",
-    "name": "Giresun Usulü Ekşi Soslu Buğulama Brüksel Lahanasıli Hamsi Tava",
+    "name": "Brüksel Lahanasıli Hamsi Tava",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -24103,7 +24103,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_832",
-    "name": "Giresun Usulü Geleneksel Kavurma Bezelyeli Bıldırcın Eti",
+    "name": "Bezelyeli Bıldırcın Eti",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -24132,7 +24132,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_833",
-    "name": "Giresun Usulü Fırın Çıtır Pane Arapsaçıli Deniz Kalamarı",
+    "name": "Arapsaçıli Deniz Kalamarı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -24161,7 +24161,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_834",
-    "name": "Giresun Usulü Glaze Şerbetli Buhar Deniz Börülcesili Ahtapot",
+    "name": "Deniz Börülcesili Ahtapot",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -24190,7 +24190,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_835",
-    "name": "Giresun Usulü Tava Kızartma Arpacık Soğanli Yeşil Mercimek",
+    "name": "Arpacık Soğanli Yeşil Mercimek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -24219,7 +24219,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_836",
-    "name": "Giresun Usulü Düdüklü Lokum Kabakli Barbunya",
+    "name": "Kabakli Barbunya",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -24248,7 +24248,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_837",
-    "name": "Giresun Usulü Fırın Graten Biberli Soya Et",
+    "name": "Biberli Soya Et",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -24277,7 +24277,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_838",
-    "name": "Giresun Usulü Fırında Taş Güveçte Karnabaharli Lor Peyniri",
+    "name": "Karnabaharli Lor Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -24306,7 +24306,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_839",
-    "name": "Giresun Usulü Odun Ateşinde Sac Tavada Pırasali Hellim Peyniri",
+    "name": "Pırasali Hellim Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -24335,7 +24335,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_840",
-    "name": "Giresun Usulü Zeytinyağlı Kısık Ateşte Taze Fasulyeli Kaşar Peyniri",
+    "name": "Taze Fasulyeli Kaşar Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -24364,7 +24364,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_841",
-    "name": "Gümüşhane Usulü Közde Tandır Usulü Ispanakli Dana Kuşbaşı",
+    "name": "Ispanaklı Dana Kuşbaşı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -24393,7 +24393,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_842",
-    "name": "Gümüşhane Usulü Ekşi Soslu Buğulama Kerevizli Kuzu İncik",
+    "name": "Kerevizli Kuzu İncik",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -24422,7 +24422,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_843",
-    "name": "Gümüşhane Usulü Geleneksel Kavurma Barbunyali Tavuk Göğsü",
+    "name": "Barbunyalı Tavuk Göğsü",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -24451,7 +24451,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_844",
-    "name": "Gümüşhane Usulü Fırın Çıtır Pane Mantarli Satır Köftesi",
+    "name": "Mantarlı Satır Köftesi",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -24480,7 +24480,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_845",
-    "name": "Gümüşhane Usulü Glaze Şerbetli Buhar Kuşkonmazli Somon Balığı",
+    "name": "Kuşkonmazlı Somon Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -24509,7 +24509,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_846",
-    "name": "Gümüşhane Usulü Tava Kızartma Tatlı Patatesli Levrek Buğulama",
+    "name": "Tatlı Patatesli Levrek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -24538,7 +24538,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_847",
-    "name": "Gümüşhane Usulü Düdüklü Lokum Şalgamli Dana Kıyma",
+    "name": "Şalgamli Dana Kıyma",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -24567,7 +24567,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_848",
-    "name": "Gümüşhane Usulü Fırın Graten Pazıli Hindi Bonfile",
+    "name": "Pazılı Hindi Bonfile",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -24596,7 +24596,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_849",
-    "name": "Gümüşhane Usulü Fırında Taş Güveçte Şevketi Bostanli Kuru Fasulye",
+    "name": "Şevketi Bostanli Kuru Fasulye",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -24625,7 +24625,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_850",
-    "name": "Gümüşhane Usulü Odun Ateşinde Sac Tavada Sarımsakli Kırmızı Mercimek",
+    "name": "Sarımsaklı Kırmızı Mercimek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -24654,7 +24654,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_851",
-    "name": "Gümüşhane Usulü Zeytinyağlı Kısık Ateşte Patlıcanli Nohut",
+    "name": "Patlıcanlı Nohut",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -24683,7 +24683,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_852",
-    "name": "Gümüşhane Usulü Közde Izgara Patatesli Kültür Mantarı",
+    "name": "Patatesli Kültür Mantarı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -24712,7 +24712,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_853",
-    "name": "Gümüşhane Usulü Kremalı Sarımsak Soslu Brokolili Deniz Karidesi",
+    "name": "Brokolili Deniz Karidesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -24741,7 +24741,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_854",
-    "name": "Gümüşhane Usulü Odun Ateşinde Közlenmiş Ispanakli Çipura Balığı",
+    "name": "Közlenmiş Ispanaklı Çipura Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -24770,7 +24770,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_855",
-    "name": "Gümüşhane Usulü Buharda Şifalı Kerevizli Kuzu Pirzola",
+    "name": "Buharda Şifalı Kerevizli Kuzu Pirzola",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -24799,7 +24799,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_856",
-    "name": "Gümüşhane Usulü Tereyağlı Özel Sote Barbunyali Dana Antrikot",
+    "name": "Barbunyalı Dana Antrikot",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -24828,7 +24828,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_857",
-    "name": "Gümüşhane Usulü Tepsi Buğulama Mantarli Tavuk Pirzola",
+    "name": "Mantarlı Tavuk Pirzola",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -24857,7 +24857,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_858",
-    "name": "Gümüşhane Usulü Toprak Çömlek Usulü Kuşkonmazli Dana Ciğer",
+    "name": "Kuşkonmazlı Dana Ciğer",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -24886,7 +24886,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_859",
-    "name": "Gümüşhane Usulü Közde Tandır Usulü Tatlı Patatesli Kuzu Böbrek",
+    "name": "Tatlı Patatesli Kuzu Böbrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -24915,7 +24915,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_860",
-    "name": "Gümüşhane Usulü Ekşi Soslu Buğulama Şalgamli Sardalya Balığı",
+    "name": "Şalgamli Sardalya Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -24944,7 +24944,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_861",
-    "name": "Gümüşhane Usulü Geleneksel Kavurma Pazıli Hamsi Tava",
+    "name": "Pazılı Hamsi Tava",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -24973,7 +24973,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_862",
-    "name": "Gümüşhane Usulü Fırın Çıtır Pane Şevketi Bostanli Bıldırcın Eti",
+    "name": "Şevketi Bostanli Bıldırcın Eti",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -25002,7 +25002,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_863",
-    "name": "Gümüşhane Usulü Glaze Şerbetli Buhar Sarımsakli Deniz Kalamarı",
+    "name": "Sarımsaklı Deniz Kalamarı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -25031,7 +25031,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_864",
-    "name": "Gümüşhane Usulü Tava Kızartma Patlıcanli Ahtapot",
+    "name": "Patlıcanlı Ahtapot",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -25060,7 +25060,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_865",
-    "name": "Gümüşhane Usulü Düdüklü Lokum Patatesli Yeşil Mercimek",
+    "name": "Patatesli Yeşil Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -25089,7 +25089,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_866",
-    "name": "Gümüşhane Usulü Fırın Graten Brokolili Barbunya",
+    "name": "Brokolili Barbunya",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -25118,7 +25118,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_867",
-    "name": "Gümüşhane Usulü Fırında Taş Güveçte Ispanakli Soya Et",
+    "name": "Ispanaklı Soya Et",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -25147,7 +25147,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_868",
-    "name": "Gümüşhane Usulü Odun Ateşinde Sac Tavada Kerevizli Lor Peyniri",
+    "name": "Kerevizli Lor Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -25176,7 +25176,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_869",
-    "name": "Gümüşhane Usulü Zeytinyağlı Kısık Ateşte Barbunyali Hellim Peyniri",
+    "name": "Barbunyalı Hellim Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -25205,7 +25205,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_870",
-    "name": "Gümüşhane Usulü Közde Izgara Mantarli Kaşar Peyniri",
+    "name": "Mantarlı Kaşar Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -25234,7 +25234,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_871",
-    "name": "Hakkari Usulü Ekşi Soslu Buğulama Taze Fasulyeli Dana Kuşbaşı",
+    "name": "Taze Fasulyeli Dana Kuşbaşı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -25263,7 +25263,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_872",
-    "name": "Hakkari Usulü Geleneksel Kavurma Bamyali Kuzu İncik",
+    "name": "Bamyali Kuzu İncik",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -25292,7 +25292,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_873",
-    "name": "Hakkari Usulü Fırın Çıtır Pane Enginarli Tavuk Göğsü",
+    "name": "Enginarli Tavuk Göğsü",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -25321,7 +25321,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_874",
-    "name": "Hakkari Usulü Glaze Şerbetli Buhar Avokadoli Satır Köftesi",
+    "name": "Avokadoli Satır Köftesi",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -25350,7 +25350,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_875",
-    "name": "Hakkari Usulü Tava Kızartma Brüksel Lahanasıli Somon Balığı",
+    "name": "Brüksel Lahanasıli Somon Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -25379,7 +25379,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_876",
-    "name": "Hakkari Usulü Düdüklü Lokum Bezelyeli Levrek Buğulama",
+    "name": "Bezelyeli Levrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -25408,7 +25408,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_877",
-    "name": "Hakkari Usulü Fırın Graten Arapsaçıli Dana Kıyma",
+    "name": "Arapsaçıli Dana Kıyma",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -25437,7 +25437,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_878",
-    "name": "Hakkari Usulü Fırında Taş Güveçte Deniz Börülcesili Hindi Bonfile",
+    "name": "Deniz Börülcesili Hindi Bonfile",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -25466,7 +25466,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_879",
-    "name": "Hakkari Usulü Odun Ateşinde Sac Tavada Arpacık Soğanli Kuru Fasulye",
+    "name": "Arpacık Soğanli Kuru Fasulye",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -25495,7 +25495,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_880",
-    "name": "Hakkari Usulü Zeytinyağlı Kısık Ateşte Kabakli Kırmızı Mercimek",
+    "name": "Kabakli Kırmızı Mercimek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -25524,7 +25524,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_881",
-    "name": "Hakkari Usulü Közde Izgara Biberli Nohut",
+    "name": "Biberli Nohut",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -25553,7 +25553,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_882",
-    "name": "Hakkari Usulü Kremalı Sarımsak Soslu Karnabaharli Kültür Mantarı",
+    "name": "Karnabaharli Kültür Mantarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -25582,7 +25582,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_883",
-    "name": "Hakkari Usulü Odun Ateşinde Közlenmiş Pırasali Deniz Karidesi",
+    "name": "Közlenmiş Pırasali Deniz Karidesi",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -25611,7 +25611,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_884",
-    "name": "Hakkari Usulü Buharda Şifalı Taze Fasulyeli Çipura Balığı",
+    "name": "Buharda Şifalı Taze Fasulyeli Çipura Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -25640,7 +25640,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_885",
-    "name": "Hakkari Usulü Tereyağlı Özel Sote Bamyali Kuzu Pirzola",
+    "name": "Bamyali Kuzu Pirzola",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -25669,7 +25669,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_886",
-    "name": "Hakkari Usulü Tepsi Buğulama Enginarli Dana Antrikot",
+    "name": "Enginarli Dana Antrikot",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -25698,7 +25698,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_887",
-    "name": "Hakkari Usulü Toprak Çömlek Usulü Avokadoli Tavuk Pirzola",
+    "name": "Avokadoli Tavuk Pirzola",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -25727,7 +25727,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_888",
-    "name": "Hakkari Usulü Közde Tandır Usulü Brüksel Lahanasıli Dana Ciğer",
+    "name": "Brüksel Lahanasıli Dana Ciğer",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -25756,7 +25756,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_889",
-    "name": "Hakkari Usulü Ekşi Soslu Buğulama Bezelyeli Kuzu Böbrek",
+    "name": "Bezelyeli Kuzu Böbrek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -25785,7 +25785,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_890",
-    "name": "Hakkari Usulü Geleneksel Kavurma Arapsaçıli Sardalya Balığı",
+    "name": "Arapsaçıli Sardalya Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -25814,7 +25814,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_891",
-    "name": "Hakkari Usulü Fırın Çıtır Pane Deniz Börülcesili Hamsi Tava",
+    "name": "Deniz Börülcesili Hamsi Tava",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -25843,7 +25843,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_892",
-    "name": "Hakkari Usulü Glaze Şerbetli Buhar Arpacık Soğanli Bıldırcın Eti",
+    "name": "Arpacık Soğanli Bıldırcın Eti",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -25872,7 +25872,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_893",
-    "name": "Hakkari Usulü Tava Kızartma Kabakli Deniz Kalamarı",
+    "name": "Kabakli Deniz Kalamarı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -25901,7 +25901,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_894",
-    "name": "Hakkari Usulü Düdüklü Lokum Biberli Ahtapot",
+    "name": "Biberli Ahtapot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -25930,7 +25930,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_895",
-    "name": "Hakkari Usulü Fırın Graten Karnabaharli Yeşil Mercimek",
+    "name": "Karnabaharli Yeşil Mercimek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -25959,7 +25959,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_896",
-    "name": "Hakkari Usulü Fırında Taş Güveçte Pırasali Barbunya",
+    "name": "Pırasali Barbunya",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -25988,7 +25988,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_897",
-    "name": "Hakkari Usulü Odun Ateşinde Sac Tavada Taze Fasulyeli Soya Et",
+    "name": "Taze Fasulyeli Soya Et",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -26017,7 +26017,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_898",
-    "name": "Hakkari Usulü Zeytinyağlı Kısık Ateşte Bamyali Lor Peyniri",
+    "name": "Bamyali Lor Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -26046,7 +26046,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_899",
-    "name": "Hakkari Usulü Közde Izgara Enginarli Hellim Peyniri",
+    "name": "Enginarli Hellim Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -26075,7 +26075,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_900",
-    "name": "Hakkari Usulü Kremalı Sarımsak Soslu Avokadoli Kaşar Peyniri",
+    "name": "Avokadoli Kaşar Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -26104,7 +26104,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_901",
-    "name": "Hatay Usulü Geleneksel Kavurma Mantarli Dana Kuşbaşı",
+    "name": "Mantarlı Dana Kuşbaşı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -26133,7 +26133,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_902",
-    "name": "Hatay Usulü Fırın Çıtır Pane Kuşkonmazli Kuzu İncik",
+    "name": "Kuşkonmazlı Kuzu İncik",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -26162,7 +26162,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_903",
-    "name": "Hatay Usulü Glaze Şerbetli Buhar Tatlı Patatesli Tavuk Göğsü",
+    "name": "Tatlı Patatesli Tavuk Göğsü",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -26191,7 +26191,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_904",
-    "name": "Hatay Usulü Tava Kızartma Şalgamli Satır Köftesi",
+    "name": "Şalgamli Satır Köftesi",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -26220,7 +26220,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_905",
-    "name": "Hatay Usulü Düdüklü Lokum Pazıli Somon Balığı",
+    "name": "Pazılı Somon Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -26249,7 +26249,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_906",
-    "name": "Hatay Usulü Fırın Graten Şevketi Bostanli Levrek Buğulama",
+    "name": "Şevketi Bostanli Levrek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -26278,7 +26278,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_907",
-    "name": "Hatay Usulü Fırında Taş Güveçte Sarımsakli Dana Kıyma",
+    "name": "Sarımsaklı Dana Kıyma",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -26307,7 +26307,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_908",
-    "name": "Hatay Usulü Odun Ateşinde Sac Tavada Patlıcanli Hindi Bonfile",
+    "name": "Patlıcanlı Hindi Bonfile",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -26336,7 +26336,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_909",
-    "name": "Hatay Usulü Zeytinyağlı Kısık Ateşte Patatesli Kuru Fasulye",
+    "name": "Patatesli Kuru Fasulye",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -26365,7 +26365,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_910",
-    "name": "Hatay Usulü Közde Izgara Brokolili Kırmızı Mercimek",
+    "name": "Brokolili Kırmızı Mercimek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -26394,7 +26394,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_911",
-    "name": "Hatay Usulü Kremalı Sarımsak Soslu Ispanakli Nohut",
+    "name": "Ispanaklı Nohut",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -26423,7 +26423,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_912",
-    "name": "Hatay Usulü Odun Ateşinde Közlenmiş Kerevizli Kültür Mantarı",
+    "name": "Közlenmiş Kerevizli Kültür Mantarı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -26452,7 +26452,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_913",
-    "name": "Hatay Usulü Buharda Şifalı Barbunyali Deniz Karidesi",
+    "name": "Buharda Şifalı Barbunyalı Deniz Karidesi",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -26481,7 +26481,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_914",
-    "name": "Hatay Usulü Tereyağlı Özel Sote Mantarli Çipura Balığı",
+    "name": "Mantarlı Çipura Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -26510,7 +26510,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_915",
-    "name": "Hatay Usulü Tepsi Buğulama Kuşkonmazli Kuzu Pirzola",
+    "name": "Kuşkonmazlı Kuzu Pirzola",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -26539,7 +26539,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_916",
-    "name": "Hatay Usulü Toprak Çömlek Usulü Tatlı Patatesli Dana Antrikot",
+    "name": "Tatlı Patatesli Dana Antrikot",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -26568,7 +26568,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_917",
-    "name": "Hatay Usulü Közde Tandır Usulü Şalgamli Tavuk Pirzola",
+    "name": "Şalgamli Tavuk Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -26597,7 +26597,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_918",
-    "name": "Hatay Usulü Ekşi Soslu Buğulama Pazıli Dana Ciğer",
+    "name": "Pazılı Dana Ciğer",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -26626,7 +26626,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_919",
-    "name": "Hatay Usulü Geleneksel Kavurma Şevketi Bostanli Kuzu Böbrek",
+    "name": "Şevketi Bostanli Kuzu Böbrek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -26655,7 +26655,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_920",
-    "name": "Hatay Usulü Fırın Çıtır Pane Sarımsakli Sardalya Balığı",
+    "name": "Sarımsaklı Sardalya Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -26684,7 +26684,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_921",
-    "name": "Hatay Usulü Glaze Şerbetli Buhar Patlıcanli Hamsi Tava",
+    "name": "Patlıcanlı Hamsi Tava",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -26713,7 +26713,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_922",
-    "name": "Hatay Usulü Tava Kızartma Patatesli Bıldırcın Eti",
+    "name": "Patatesli Bıldırcın Eti",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -26742,7 +26742,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_923",
-    "name": "Hatay Usulü Düdüklü Lokum Brokolili Deniz Kalamarı",
+    "name": "Brokolili Deniz Kalamarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -26771,7 +26771,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_924",
-    "name": "Hatay Usulü Fırın Graten Ispanakli Ahtapot",
+    "name": "Ispanaklı Ahtapot",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -26800,7 +26800,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_925",
-    "name": "Hatay Usulü Fırında Taş Güveçte Kerevizli Yeşil Mercimek",
+    "name": "Kerevizli Yeşil Mercimek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -26829,7 +26829,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_926",
-    "name": "Hatay Usulü Odun Ateşinde Sac Tavada Barbunyali Barbunya",
+    "name": "Barbunyalı Barbunya",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -26858,7 +26858,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_927",
-    "name": "Hatay Usulü Zeytinyağlı Kısık Ateşte Mantarli Soya Et",
+    "name": "Mantarlı Soya Et",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -26887,7 +26887,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_928",
-    "name": "Hatay Usulü Közde Izgara Kuşkonmazli Lor Peyniri",
+    "name": "Kuşkonmazlı Lor Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -26916,7 +26916,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_929",
-    "name": "Hatay Usulü Kremalı Sarımsak Soslu Tatlı Patatesli Hellim Peyniri",
+    "name": "Tatlı Patatesli Hellim Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -26945,7 +26945,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_930",
-    "name": "Hatay Usulü Odun Ateşinde Közlenmiş Şalgamli Kaşar Peyniri",
+    "name": "Közlenmiş Şalgamli Kaşar Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -26974,7 +26974,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_931",
-    "name": "Isparta Usulü Fırın Çıtır Pane Avokadoli Dana Kuşbaşı",
+    "name": "Avokadoli Dana Kuşbaşı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -27003,7 +27003,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_932",
-    "name": "Isparta Usulü Glaze Şerbetli Buhar Brüksel Lahanasıli Kuzu İncik",
+    "name": "Brüksel Lahanasıli Kuzu İncik",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -27032,7 +27032,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_933",
-    "name": "Isparta Usulü Tava Kızartma Bezelyeli Tavuk Göğsü",
+    "name": "Bezelyeli Tavuk Göğsü",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -27061,7 +27061,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_934",
-    "name": "Isparta Usulü Düdüklü Lokum Arapsaçıli Satır Köftesi",
+    "name": "Arapsaçıli Satır Köftesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -27090,7 +27090,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_935",
-    "name": "Isparta Usulü Fırın Graten Deniz Börülcesili Somon Balığı",
+    "name": "Deniz Börülcesili Somon Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -27119,7 +27119,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_936",
-    "name": "Isparta Usulü Fırında Taş Güveçte Arpacık Soğanli Levrek Buğulama",
+    "name": "Arpacık Soğanli Levrek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -27148,7 +27148,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_937",
-    "name": "Isparta Usulü Odun Ateşinde Sac Tavada Kabakli Dana Kıyma",
+    "name": "Kabakli Dana Kıyma",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -27177,7 +27177,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_938",
-    "name": "Isparta Usulü Zeytinyağlı Kısık Ateşte Biberli Hindi Bonfile",
+    "name": "Biberli Hindi Bonfile",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -27206,7 +27206,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_939",
-    "name": "Isparta Usulü Közde Izgara Karnabaharli Kuru Fasulye",
+    "name": "Karnabaharli Kuru Fasulye",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -27235,7 +27235,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_940",
-    "name": "Isparta Usulü Kremalı Sarımsak Soslu Pırasali Kırmızı Mercimek",
+    "name": "Pırasali Kırmızı Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -27264,7 +27264,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_941",
-    "name": "Isparta Usulü Odun Ateşinde Közlenmiş Taze Fasulyeli Nohut",
+    "name": "Közlenmiş Taze Fasulyeli Nohut",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -27293,7 +27293,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_942",
-    "name": "Isparta Usulü Buharda Şifalı Bamyali Kültür Mantarı",
+    "name": "Buharda Şifalı Bamyali Kültür Mantarı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -27322,7 +27322,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_943",
-    "name": "Isparta Usulü Tereyağlı Özel Sote Enginarli Deniz Karidesi",
+    "name": "Enginarli Deniz Karidesi",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -27351,7 +27351,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_944",
-    "name": "Isparta Usulü Tepsi Buğulama Avokadoli Çipura Balığı",
+    "name": "Avokadoli Çipura Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -27380,7 +27380,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_945",
-    "name": "Isparta Usulü Toprak Çömlek Usulü Brüksel Lahanasıli Kuzu Pirzola",
+    "name": "Brüksel Lahanasıli Kuzu Pirzola",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -27409,7 +27409,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_946",
-    "name": "Isparta Usulü Közde Tandır Usulü Bezelyeli Dana Antrikot",
+    "name": "Bezelyeli Dana Antrikot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -27438,7 +27438,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_947",
-    "name": "Isparta Usulü Ekşi Soslu Buğulama Arapsaçıli Tavuk Pirzola",
+    "name": "Arapsaçıli Tavuk Pirzola",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -27467,7 +27467,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_948",
-    "name": "Isparta Usulü Geleneksel Kavurma Deniz Börülcesili Dana Ciğer",
+    "name": "Deniz Börülcesili Dana Ciğer",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -27496,7 +27496,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_949",
-    "name": "Isparta Usulü Fırın Çıtır Pane Arpacık Soğanli Kuzu Böbrek",
+    "name": "Arpacık Soğanli Kuzu Böbrek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -27525,7 +27525,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_950",
-    "name": "Isparta Usulü Glaze Şerbetli Buhar Kabakli Sardalya Balığı",
+    "name": "Kabakli Sardalya Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -27554,7 +27554,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_951",
-    "name": "Isparta Usulü Tava Kızartma Biberli Hamsi Tava",
+    "name": "Biberli Hamsi Tava",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -27583,7 +27583,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_952",
-    "name": "Isparta Usulü Düdüklü Lokum Karnabaharli Bıldırcın Eti",
+    "name": "Karnabaharli Bıldırcın Eti",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -27612,7 +27612,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_953",
-    "name": "Isparta Usulü Fırın Graten Pırasali Deniz Kalamarı",
+    "name": "Pırasali Deniz Kalamarı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -27641,7 +27641,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_954",
-    "name": "Isparta Usulü Fırında Taş Güveçte Taze Fasulyeli Ahtapot",
+    "name": "Taze Fasulyeli Ahtapot",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -27670,7 +27670,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_955",
-    "name": "Isparta Usulü Odun Ateşinde Sac Tavada Bamyali Yeşil Mercimek",
+    "name": "Bamyali Yeşil Mercimek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -27699,7 +27699,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_956",
-    "name": "Isparta Usulü Zeytinyağlı Kısık Ateşte Enginarli Barbunya",
+    "name": "Enginarli Barbunya",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -27728,7 +27728,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_957",
-    "name": "Isparta Usulü Közde Izgara Avokadoli Soya Et",
+    "name": "Avokadoli Soya Et",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -27757,7 +27757,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_958",
-    "name": "Isparta Usulü Kremalı Sarımsak Soslu Brüksel Lahanasıli Lor Peyniri",
+    "name": "Brüksel Lahanasıli Lor Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -27786,7 +27786,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_959",
-    "name": "Isparta Usulü Odun Ateşinde Közlenmiş Bezelyeli Hellim Peyniri",
+    "name": "Közlenmiş Bezelyeli Hellim Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -27815,7 +27815,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_960",
-    "name": "Isparta Usulü Buharda Şifalı Arapsaçıli Kaşar Peyniri",
+    "name": "Buharda Şifalı Arapsaçıli Kaşar Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -27844,7 +27844,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_961",
-    "name": "Mersin Usulü Glaze Şerbetli Buhar Şalgamli Dana Kuşbaşı",
+    "name": "Şalgamli Dana Kuşbaşı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -27873,7 +27873,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_962",
-    "name": "Mersin Usulü Tava Kızartma Pazıli Kuzu İncik",
+    "name": "Pazılı Kuzu İncik",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -27902,7 +27902,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_963",
-    "name": "Mersin Usulü Düdüklü Lokum Şevketi Bostanli Tavuk Göğsü",
+    "name": "Şevketi Bostanli Tavuk Göğsü",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -27931,7 +27931,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_964",
-    "name": "Mersin Usulü Fırın Graten Sarımsakli Satır Köftesi",
+    "name": "Sarımsaklı Satır Köftesi",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -27960,7 +27960,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_965",
-    "name": "Mersin Usulü Fırında Taş Güveçte Patlıcanli Somon Balığı",
+    "name": "Patlıcanlı Somon Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -27989,7 +27989,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_966",
-    "name": "Mersin Usulü Odun Ateşinde Sac Tavada Patatesli Levrek Buğulama",
+    "name": "Patatesli Levrek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -28018,7 +28018,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_967",
-    "name": "Mersin Usulü Zeytinyağlı Kısık Ateşte Brokolili Dana Kıyma",
+    "name": "Brokolili Dana Kıyma",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -28047,7 +28047,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_968",
-    "name": "Mersin Usulü Közde Izgara Ispanakli Hindi Bonfile",
+    "name": "Ispanaklı Hindi Bonfile",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -28076,7 +28076,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_969",
-    "name": "Mersin Usulü Kremalı Sarımsak Soslu Kerevizli Kuru Fasulye",
+    "name": "Kerevizli Kuru Fasulye",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -28105,7 +28105,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_970",
-    "name": "Mersin Usulü Odun Ateşinde Közlenmiş Barbunyali Kırmızı Mercimek",
+    "name": "Közlenmiş Barbunyalı Kırmızı Mercimek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -28134,7 +28134,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_971",
-    "name": "Mersin Usulü Buharda Şifalı Mantarli Nohut",
+    "name": "Buharda Şifalı Mantarlı Nohut",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -28163,7 +28163,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_972",
-    "name": "Mersin Usulü Tereyağlı Özel Sote Kuşkonmazli Kültür Mantarı",
+    "name": "Kuşkonmazlı Kültür Mantarı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -28192,7 +28192,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_973",
-    "name": "Mersin Usulü Tepsi Buğulama Tatlı Patatesli Deniz Karidesi",
+    "name": "Tatlı Patatesli Deniz Karidesi",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -28221,7 +28221,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_974",
-    "name": "Mersin Usulü Toprak Çömlek Usulü Şalgamli Çipura Balığı",
+    "name": "Şalgamli Çipura Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -28250,7 +28250,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_975",
-    "name": "Mersin Usulü Közde Tandır Usulü Pazıli Kuzu Pirzola",
+    "name": "Pazılı Kuzu Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -28279,7 +28279,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_976",
-    "name": "Mersin Usulü Ekşi Soslu Buğulama Şevketi Bostanli Dana Antrikot",
+    "name": "Şevketi Bostanli Dana Antrikot",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -28308,7 +28308,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_977",
-    "name": "Mersin Usulü Geleneksel Kavurma Sarımsakli Tavuk Pirzola",
+    "name": "Sarımsaklı Tavuk Pirzola",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -28337,7 +28337,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_978",
-    "name": "Mersin Usulü Fırın Çıtır Pane Patlıcanli Dana Ciğer",
+    "name": "Patlıcanlı Dana Ciğer",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -28366,7 +28366,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_979",
-    "name": "Mersin Usulü Glaze Şerbetli Buhar Patatesli Kuzu Böbrek",
+    "name": "Patatesli Kuzu Böbrek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -28395,7 +28395,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_980",
-    "name": "Mersin Usulü Tava Kızartma Brokolili Sardalya Balığı",
+    "name": "Brokolili Sardalya Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -28424,7 +28424,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_981",
-    "name": "Mersin Usulü Düdüklü Lokum Ispanakli Hamsi Tava",
+    "name": "Ispanaklı Hamsi Tava",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -28453,7 +28453,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_982",
-    "name": "Mersin Usulü Fırın Graten Kerevizli Bıldırcın Eti",
+    "name": "Kerevizli Bıldırcın Eti",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -28482,7 +28482,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_983",
-    "name": "Mersin Usulü Fırında Taş Güveçte Barbunyali Deniz Kalamarı",
+    "name": "Barbunyalı Deniz Kalamarı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -28511,7 +28511,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_984",
-    "name": "Mersin Usulü Odun Ateşinde Sac Tavada Mantarli Ahtapot",
+    "name": "Mantarlı Ahtapot",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -28540,7 +28540,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_985",
-    "name": "Mersin Usulü Zeytinyağlı Kısık Ateşte Kuşkonmazli Yeşil Mercimek",
+    "name": "Kuşkonmazlı Yeşil Mercimek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -28569,7 +28569,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_986",
-    "name": "Mersin Usulü Közde Izgara Tatlı Patatesli Barbunya",
+    "name": "Tatlı Patatesli Barbunya",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -28598,7 +28598,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_987",
-    "name": "Mersin Usulü Kremalı Sarımsak Soslu Şalgamli Soya Et",
+    "name": "Şalgamli Soya Et",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -28627,7 +28627,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_988",
-    "name": "Mersin Usulü Odun Ateşinde Közlenmiş Pazıli Lor Peyniri",
+    "name": "Közlenmiş Pazılı Lor Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -28656,7 +28656,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_989",
-    "name": "Mersin Usulü Buharda Şifalı Şevketi Bostanli Hellim Peyniri",
+    "name": "Buharda Şifalı Şevketi Bostanli Hellim Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -28685,7 +28685,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_990",
-    "name": "Mersin Usulü Tereyağlı Özel Sote Sarımsakli Kaşar Peyniri",
+    "name": "Sarımsaklı Kaşar Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -28714,7 +28714,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_991",
-    "name": "İstanbul Usulü Tava Kızartma Arapsaçıli Dana Kuşbaşı",
+    "name": "İstanbul Arapsaçıli Dana Kuşbaşı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -28743,7 +28743,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_992",
-    "name": "İstanbul Usulü Düdüklü Lokum Deniz Börülcesili Kuzu İncik",
+    "name": "İstanbul Deniz Börülcesili Kuzu İncik",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -28772,7 +28772,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_993",
-    "name": "İstanbul Usulü Fırın Graten Arpacık Soğanli Tavuk Göğsü",
+    "name": "İstanbul Arpacık Soğanli Tavuk Göğsü",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -28801,7 +28801,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_994",
-    "name": "İstanbul Usulü Fırında Taş Güveçte Kabakli Satır Köftesi",
+    "name": "İstanbul Kabakli Satır Köftesi",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -28830,7 +28830,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_995",
-    "name": "İstanbul Usulü Odun Ateşinde Sac Tavada Biberli Somon Balığı",
+    "name": "İstanbul Biberli Somon Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -28859,7 +28859,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_996",
-    "name": "İstanbul Usulü Zeytinyağlı Kısık Ateşte Karnabaharli Levrek Buğulama",
+    "name": "İstanbul Karnabaharli Levrek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -28888,7 +28888,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_997",
-    "name": "İstanbul Usulü Közde Izgara Pırasali Dana Kıyma",
+    "name": "İstanbul Pırasali Dana Kıyma",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -28917,7 +28917,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_998",
-    "name": "İstanbul Usulü Kremalı Sarımsak Soslu Taze Fasulyeli Hindi Bonfile",
+    "name": "İstanbul Taze Fasulyeli Hindi Bonfile",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -28946,7 +28946,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_999",
-    "name": "İstanbul Usulü Odun Ateşinde Közlenmiş Bamyali Kuru Fasulye",
+    "name": "İstanbul Közlenmiş Bamyali Kuru Fasulye",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -28975,7 +28975,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1000",
-    "name": "İstanbul Usulü Buharda Şifalı Enginarli Kırmızı Mercimek",
+    "name": "İstanbul Buharda Şifalı Enginarli Kırmızı Mercimek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -29004,7 +29004,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1001",
-    "name": "İstanbul Usulü Tereyağlı Özel Sote Avokadoli Nohut",
+    "name": "İstanbul Avokadoli Nohut",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -29033,7 +29033,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1002",
-    "name": "İstanbul Usulü Tepsi Buğulama Brüksel Lahanasıli Kültür Mantarı",
+    "name": "İstanbul Brüksel Lahanasıli Kültür Mantarı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -29062,7 +29062,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1003",
-    "name": "İstanbul Usulü Toprak Çömlek Usulü Bezelyeli Deniz Karidesi",
+    "name": "İstanbul Bezelyeli Deniz Karidesi",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -29091,7 +29091,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1004",
-    "name": "İstanbul Usulü Közde Tandır Usulü Arapsaçıli Çipura Balığı",
+    "name": "İstanbul Arapsaçıli Çipura Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -29120,7 +29120,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1005",
-    "name": "İstanbul Usulü Ekşi Soslu Buğulama Deniz Börülcesili Kuzu Pirzola",
+    "name": "İstanbul Deniz Börülcesili Kuzu Pirzola",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -29149,7 +29149,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1006",
-    "name": "İstanbul Usulü Geleneksel Kavurma Arpacık Soğanli Dana Antrikot",
+    "name": "İstanbul Arpacık Soğanli Dana Antrikot",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -29178,7 +29178,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1007",
-    "name": "İstanbul Usulü Fırın Çıtır Pane Kabakli Tavuk Pirzola",
+    "name": "İstanbul Kabakli Tavuk Pirzola",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -29207,7 +29207,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1008",
-    "name": "İstanbul Usulü Glaze Şerbetli Buhar Biberli Dana Ciğer",
+    "name": "İstanbul Biberli Dana Ciğer",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -29236,7 +29236,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1009",
-    "name": "İstanbul Usulü Tava Kızartma Karnabaharli Kuzu Böbrek",
+    "name": "İstanbul Karnabaharli Kuzu Böbrek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -29265,7 +29265,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1010",
-    "name": "İstanbul Usulü Düdüklü Lokum Pırasali Sardalya Balığı",
+    "name": "İstanbul Pırasali Sardalya Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -29294,7 +29294,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1011",
-    "name": "İstanbul Usulü Fırın Graten Taze Fasulyeli Hamsi Tava",
+    "name": "İstanbul Taze Fasulyeli Hamsi Tava",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -29323,7 +29323,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1012",
-    "name": "İstanbul Usulü Fırında Taş Güveçte Bamyali Bıldırcın Eti",
+    "name": "İstanbul Bamyali Bıldırcın Eti",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -29352,7 +29352,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1013",
-    "name": "İstanbul Usulü Odun Ateşinde Sac Tavada Enginarli Deniz Kalamarı",
+    "name": "İstanbul Enginarli Deniz Kalamarı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -29381,7 +29381,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1014",
-    "name": "İstanbul Usulü Zeytinyağlı Kısık Ateşte Avokadoli Ahtapot",
+    "name": "İstanbul Avokadoli Ahtapot",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -29410,7 +29410,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1015",
-    "name": "İstanbul Usulü Közde Izgara Brüksel Lahanasıli Yeşil Mercimek",
+    "name": "İstanbul Brüksel Lahanasıli Yeşil Mercimek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -29439,7 +29439,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1016",
-    "name": "İstanbul Usulü Kremalı Sarımsak Soslu Bezelyeli Barbunya",
+    "name": "İstanbul Bezelyeli Barbunya",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -29468,7 +29468,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1017",
-    "name": "İstanbul Usulü Odun Ateşinde Közlenmiş Arapsaçıli Soya Et",
+    "name": "İstanbul Közlenmiş Arapsaçıli Soya Et",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -29497,7 +29497,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1018",
-    "name": "İstanbul Usulü Buharda Şifalı Deniz Börülcesili Lor Peyniri",
+    "name": "İstanbul Buharda Şifalı Deniz Börülcesili Lor Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -29526,7 +29526,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1019",
-    "name": "İstanbul Usulü Tereyağlı Özel Sote Arpacık Soğanli Hellim Peyniri",
+    "name": "İstanbul Arpacık Soğanli Hellim Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -29555,7 +29555,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1020",
-    "name": "İstanbul Usulü Tepsi Buğulama Kabakli Kaşar Peyniri",
+    "name": "İstanbul Kabakli Kaşar Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -29584,7 +29584,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1021",
-    "name": "İzmir Usulü Düdüklü Lokum Sarımsakli Dana Kuşbaşı",
+    "name": "İzmir Sarımsaklı Dana Kuşbaşı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -29613,7 +29613,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1022",
-    "name": "İzmir Usulü Fırın Graten Patlıcanli Kuzu İncik",
+    "name": "İzmir Patlıcanlı Kuzu İncik",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -29642,7 +29642,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1023",
-    "name": "İzmir Usulü Fırında Taş Güveçte Patatesli Tavuk Göğsü",
+    "name": "İzmir Patatesli Tavuk Göğsü",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -29671,7 +29671,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1024",
-    "name": "İzmir Usulü Odun Ateşinde Sac Tavada Brokolili Satır Köftesi",
+    "name": "İzmir Brokolili Satır Köftesi",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -29700,7 +29700,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1025",
-    "name": "İzmir Usulü Zeytinyağlı Kısık Ateşte Ispanakli Somon Balığı",
+    "name": "İzmir Ispanaklı Somon Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -29729,7 +29729,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1026",
-    "name": "İzmir Usulü Közde Izgara Kerevizli Levrek Buğulama",
+    "name": "İzmir Kerevizli Levrek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -29758,7 +29758,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1027",
-    "name": "İzmir Usulü Kremalı Sarımsak Soslu Barbunyali Dana Kıyma",
+    "name": "İzmir Barbunyalı Dana Kıyma",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -29787,7 +29787,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1028",
-    "name": "İzmir Usulü Odun Ateşinde Közlenmiş Mantarli Hindi Bonfile",
+    "name": "İzmir Közlenmiş Mantarlı Hindi Bonfile",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -29816,7 +29816,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1029",
-    "name": "İzmir Usulü Buharda Şifalı Kuşkonmazli Kuru Fasulye",
+    "name": "İzmir Buharda Şifalı Kuşkonmazlı Kuru Fasulye",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -29845,7 +29845,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1030",
-    "name": "İzmir Usulü Tereyağlı Özel Sote Tatlı Patatesli Kırmızı Mercimek",
+    "name": "İzmir Tatlı Patatesli Kırmızı Mercimek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -29874,7 +29874,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1031",
-    "name": "İzmir Usulü Tepsi Buğulama Şalgamli Nohut",
+    "name": "İzmir Şalgamli Nohut",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -29903,7 +29903,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1032",
-    "name": "İzmir Usulü Toprak Çömlek Usulü Pazıli Kültür Mantarı",
+    "name": "İzmir Pazılı Kültür Mantarı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -29932,7 +29932,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1033",
-    "name": "İzmir Usulü Közde Tandır Usulü Şevketi Bostanli Deniz Karidesi",
+    "name": "İzmir Şevketi Bostanli Deniz Karidesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -29961,7 +29961,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1034",
-    "name": "İzmir Usulü Ekşi Soslu Buğulama Sarımsakli Çipura Balığı",
+    "name": "İzmir Sarımsaklı Çipura Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -29990,7 +29990,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1035",
-    "name": "İzmir Usulü Geleneksel Kavurma Patlıcanli Kuzu Pirzola",
+    "name": "İzmir Patlıcanlı Kuzu Pirzola",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -30019,7 +30019,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1036",
-    "name": "İzmir Usulü Fırın Çıtır Pane Patatesli Dana Antrikot",
+    "name": "İzmir Patatesli Dana Antrikot",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -30048,7 +30048,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1037",
-    "name": "İzmir Usulü Glaze Şerbetli Buhar Brokolili Tavuk Pirzola",
+    "name": "İzmir Brokolili Tavuk Pirzola",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -30077,7 +30077,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1038",
-    "name": "İzmir Usulü Tava Kızartma Ispanakli Dana Ciğer",
+    "name": "İzmir Ispanaklı Dana Ciğer",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -30106,7 +30106,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1039",
-    "name": "İzmir Usulü Düdüklü Lokum Kerevizli Kuzu Böbrek",
+    "name": "İzmir Kerevizli Kuzu Böbrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -30135,7 +30135,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1040",
-    "name": "İzmir Usulü Fırın Graten Barbunyali Sardalya Balığı",
+    "name": "İzmir Barbunyalı Sardalya Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -30164,7 +30164,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1041",
-    "name": "İzmir Usulü Fırında Taş Güveçte Mantarli Hamsi Tava",
+    "name": "İzmir Mantarlı Hamsi Tava",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -30193,7 +30193,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1042",
-    "name": "İzmir Usulü Odun Ateşinde Sac Tavada Kuşkonmazli Bıldırcın Eti",
+    "name": "İzmir Kuşkonmazlı Bıldırcın Eti",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -30222,7 +30222,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1043",
-    "name": "İzmir Usulü Zeytinyağlı Kısık Ateşte Tatlı Patatesli Deniz Kalamarı",
+    "name": "İzmir Tatlı Patatesli Deniz Kalamarı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -30251,7 +30251,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1044",
-    "name": "İzmir Usulü Közde Izgara Şalgamli Ahtapot",
+    "name": "İzmir Şalgamli Ahtapot",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -30280,7 +30280,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1045",
-    "name": "İzmir Usulü Kremalı Sarımsak Soslu Pazıli Yeşil Mercimek",
+    "name": "İzmir Pazılı Yeşil Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -30309,7 +30309,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1046",
-    "name": "İzmir Usulü Odun Ateşinde Közlenmiş Şevketi Bostanli Barbunya",
+    "name": "İzmir Közlenmiş Şevketi Bostanli Barbunya",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -30338,7 +30338,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1047",
-    "name": "İzmir Usulü Buharda Şifalı Sarımsakli Soya Et",
+    "name": "İzmir Buharda Şifalı Sarımsaklı Soya Et",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -30367,7 +30367,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1048",
-    "name": "İzmir Usulü Tereyağlı Özel Sote Patlıcanli Lor Peyniri",
+    "name": "İzmir Patlıcanlı Lor Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -30396,7 +30396,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1049",
-    "name": "İzmir Usulü Tepsi Buğulama Patatesli Hellim Peyniri",
+    "name": "İzmir Patatesli Hellim Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -30425,7 +30425,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1050",
-    "name": "İzmir Usulü Toprak Çömlek Usulü Brokolili Kaşar Peyniri",
+    "name": "İzmir Brokolili Kaşar Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -30454,7 +30454,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1051",
-    "name": "Kars Usulü Fırın Graten Kabakli Dana Kuşbaşı",
+    "name": "Kabakli Dana Kuşbaşı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -30483,7 +30483,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1052",
-    "name": "Kars Usulü Fırında Taş Güveçte Biberli Kuzu İncik",
+    "name": "Biberli Kuzu İncik",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -30512,7 +30512,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1053",
-    "name": "Kars Usulü Odun Ateşinde Sac Tavada Karnabaharli Tavuk Göğsü",
+    "name": "Karnabaharli Tavuk Göğsü",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -30541,7 +30541,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1054",
-    "name": "Kars Usulü Zeytinyağlı Kısık Ateşte Pırasali Satır Köftesi",
+    "name": "Pırasali Satır Köftesi",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -30570,7 +30570,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1055",
-    "name": "Kars Usulü Közde Izgara Taze Fasulyeli Somon Balığı",
+    "name": "Taze Fasulyeli Somon Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -30599,7 +30599,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1056",
-    "name": "Kars Usulü Kremalı Sarımsak Soslu Bamyali Levrek Buğulama",
+    "name": "Bamyali Levrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -30628,7 +30628,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1057",
-    "name": "Kars Usulü Odun Ateşinde Közlenmiş Enginarli Dana Kıyma",
+    "name": "Közlenmiş Enginarli Dana Kıyma",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -30657,7 +30657,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1058",
-    "name": "Kars Usulü Buharda Şifalı Avokadoli Hindi Bonfile",
+    "name": "Buharda Şifalı Avokadoli Hindi Bonfile",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -30686,7 +30686,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1059",
-    "name": "Kars Usulü Tereyağlı Özel Sote Brüksel Lahanasıli Kuru Fasulye",
+    "name": "Brüksel Lahanasıli Kuru Fasulye",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -30715,7 +30715,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1060",
-    "name": "Kars Usulü Tepsi Buğulama Bezelyeli Kırmızı Mercimek",
+    "name": "Bezelyeli Kırmızı Mercimek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -30744,7 +30744,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1061",
-    "name": "Kars Usulü Toprak Çömlek Usulü Arapsaçıli Nohut",
+    "name": "Arapsaçıli Nohut",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -30773,7 +30773,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1062",
-    "name": "Kars Usulü Közde Tandır Usulü Deniz Börülcesili Kültür Mantarı",
+    "name": "Deniz Börülcesili Kültür Mantarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -30802,7 +30802,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1063",
-    "name": "Kars Usulü Ekşi Soslu Buğulama Arpacık Soğanli Deniz Karidesi",
+    "name": "Arpacık Soğanli Deniz Karidesi",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -30831,7 +30831,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1064",
-    "name": "Kars Usulü Geleneksel Kavurma Kabakli Çipura Balığı",
+    "name": "Kabakli Çipura Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -30860,7 +30860,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1065",
-    "name": "Kars Usulü Fırın Çıtır Pane Biberli Kuzu Pirzola",
+    "name": "Biberli Kuzu Pirzola",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -30889,7 +30889,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1066",
-    "name": "Kars Usulü Glaze Şerbetli Buhar Karnabaharli Dana Antrikot",
+    "name": "Karnabaharli Dana Antrikot",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -30918,7 +30918,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1067",
-    "name": "Kars Usulü Tava Kızartma Pırasali Tavuk Pirzola",
+    "name": "Pırasali Tavuk Pirzola",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -30947,7 +30947,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1068",
-    "name": "Kars Usulü Düdüklü Lokum Taze Fasulyeli Dana Ciğer",
+    "name": "Taze Fasulyeli Dana Ciğer",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -30976,7 +30976,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1069",
-    "name": "Kars Usulü Fırın Graten Bamyali Kuzu Böbrek",
+    "name": "Bamyali Kuzu Böbrek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -31005,7 +31005,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1070",
-    "name": "Kars Usulü Fırında Taş Güveçte Enginarli Sardalya Balığı",
+    "name": "Enginarli Sardalya Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -31034,7 +31034,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1071",
-    "name": "Kars Usulü Odun Ateşinde Sac Tavada Avokadoli Hamsi Tava",
+    "name": "Avokadoli Hamsi Tava",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -31063,7 +31063,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1072",
-    "name": "Kars Usulü Zeytinyağlı Kısık Ateşte Brüksel Lahanasıli Bıldırcın Eti",
+    "name": "Brüksel Lahanasıli Bıldırcın Eti",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -31092,7 +31092,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1073",
-    "name": "Kars Usulü Közde Izgara Bezelyeli Deniz Kalamarı",
+    "name": "Bezelyeli Deniz Kalamarı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -31121,7 +31121,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1074",
-    "name": "Kars Usulü Kremalı Sarımsak Soslu Arapsaçıli Ahtapot",
+    "name": "Arapsaçıli Ahtapot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -31150,7 +31150,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1075",
-    "name": "Kars Usulü Odun Ateşinde Közlenmiş Deniz Börülcesili Yeşil Mercimek",
+    "name": "Közlenmiş Deniz Börülcesili Yeşil Mercimek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -31179,7 +31179,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1076",
-    "name": "Kars Usulü Buharda Şifalı Arpacık Soğanli Barbunya",
+    "name": "Buharda Şifalı Arpacık Soğanli Barbunya",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -31208,7 +31208,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1077",
-    "name": "Kars Usulü Tereyağlı Özel Sote Kabakli Soya Et",
+    "name": "Kabakli Soya Et",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -31237,7 +31237,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1078",
-    "name": "Kars Usulü Tepsi Buğulama Biberli Lor Peyniri",
+    "name": "Biberli Lor Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -31266,7 +31266,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1079",
-    "name": "Kars Usulü Toprak Çömlek Usulü Karnabaharli Hellim Peyniri",
+    "name": "Karnabaharli Hellim Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -31295,7 +31295,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1080",
-    "name": "Kars Usulü Közde Tandır Usulü Pırasali Kaşar Peyniri",
+    "name": "Pırasali Kaşar Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -31324,7 +31324,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1081",
-    "name": "Kastamonu Usulü Fırında Taş Güveçte Brokolili Dana Kuşbaşı",
+    "name": "Brokolili Dana Kuşbaşı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -31353,7 +31353,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1082",
-    "name": "Kastamonu Usulü Odun Ateşinde Sac Tavada Ispanakli Kuzu İncik",
+    "name": "Ispanaklı Kuzu İncik",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -31382,7 +31382,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1083",
-    "name": "Kastamonu Usulü Zeytinyağlı Kısık Ateşte Kerevizli Tavuk Göğsü",
+    "name": "Kerevizli Tavuk Göğsü",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -31411,7 +31411,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1084",
-    "name": "Kastamonu Usulü Közde Izgara Barbunyali Satır Köftesi",
+    "name": "Barbunyalı Satır Köftesi",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -31440,7 +31440,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1085",
-    "name": "Kastamonu Usulü Kremalı Sarımsak Soslu Mantarli Somon Balığı",
+    "name": "Mantarlı Somon Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -31469,7 +31469,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1086",
-    "name": "Kastamonu Usulü Odun Ateşinde Közlenmiş Kuşkonmazli Levrek Buğulama",
+    "name": "Közlenmiş Kuşkonmazlı Levrek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -31498,7 +31498,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1087",
-    "name": "Kastamonu Usulü Buharda Şifalı Tatlı Patatesli Dana Kıyma",
+    "name": "Buharda Şifalı Tatlı Patatesli Dana Kıyma",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -31527,7 +31527,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1088",
-    "name": "Kastamonu Usulü Tereyağlı Özel Sote Şalgamli Hindi Bonfile",
+    "name": "Şalgamli Hindi Bonfile",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -31556,7 +31556,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1089",
-    "name": "Kastamonu Usulü Tepsi Buğulama Pazıli Kuru Fasulye",
+    "name": "Pazılı Kuru Fasulye",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -31585,7 +31585,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1090",
-    "name": "Kastamonu Usulü Toprak Çömlek Usulü Şevketi Bostanli Kırmızı Mercimek",
+    "name": "Şevketi Bostanli Kırmızı Mercimek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -31614,7 +31614,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1091",
-    "name": "Kastamonu Usulü Közde Tandır Usulü Sarımsakli Nohut",
+    "name": "Sarımsaklı Nohut",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -31643,7 +31643,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1092",
-    "name": "Kastamonu Usulü Ekşi Soslu Buğulama Patlıcanli Kültür Mantarı",
+    "name": "Patlıcanlı Kültür Mantarı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -31672,7 +31672,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1093",
-    "name": "Kastamonu Usulü Geleneksel Kavurma Patatesli Deniz Karidesi",
+    "name": "Patatesli Deniz Karidesi",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -31701,7 +31701,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1094",
-    "name": "Kastamonu Usulü Fırın Çıtır Pane Brokolili Çipura Balığı",
+    "name": "Brokolili Çipura Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -31730,7 +31730,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1095",
-    "name": "Kastamonu Usulü Glaze Şerbetli Buhar Ispanakli Kuzu Pirzola",
+    "name": "Ispanaklı Kuzu Pirzola",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -31759,7 +31759,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1096",
-    "name": "Kastamonu Usulü Tava Kızartma Kerevizli Dana Antrikot",
+    "name": "Kerevizli Dana Antrikot",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -31788,7 +31788,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1097",
-    "name": "Kastamonu Usulü Düdüklü Lokum Barbunyali Tavuk Pirzola",
+    "name": "Barbunyalı Tavuk Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -31817,7 +31817,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1098",
-    "name": "Kastamonu Usulü Fırın Graten Mantarli Dana Ciğer",
+    "name": "Mantarlı Dana Ciğer",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -31846,7 +31846,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1099",
-    "name": "Kastamonu Usulü Fırında Taş Güveçte Kuşkonmazli Kuzu Böbrek",
+    "name": "Kuşkonmazlı Kuzu Böbrek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -31875,7 +31875,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1100",
-    "name": "Kastamonu Usulü Odun Ateşinde Sac Tavada Tatlı Patatesli Sardalya Balığı",
+    "name": "Tatlı Patatesli Sardalya Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -31904,7 +31904,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1101",
-    "name": "Kastamonu Usulü Zeytinyağlı Kısık Ateşte Şalgamli Hamsi Tava",
+    "name": "Şalgamli Hamsi Tava",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -31933,7 +31933,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1102",
-    "name": "Kastamonu Usulü Közde Izgara Pazıli Bıldırcın Eti",
+    "name": "Pazılı Bıldırcın Eti",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -31962,7 +31962,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1103",
-    "name": "Kastamonu Usulü Kremalı Sarımsak Soslu Şevketi Bostanli Deniz Kalamarı",
+    "name": "Şevketi Bostanli Deniz Kalamarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -31991,7 +31991,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1104",
-    "name": "Kastamonu Usulü Odun Ateşinde Közlenmiş Sarımsakli Ahtapot",
+    "name": "Közlenmiş Sarımsaklı Ahtapot",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -32020,7 +32020,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1105",
-    "name": "Kastamonu Usulü Buharda Şifalı Patlıcanli Yeşil Mercimek",
+    "name": "Buharda Şifalı Patlıcanlı Yeşil Mercimek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -32049,7 +32049,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1106",
-    "name": "Kastamonu Usulü Tereyağlı Özel Sote Patatesli Barbunya",
+    "name": "Patatesli Barbunya",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -32078,7 +32078,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1107",
-    "name": "Kastamonu Usulü Tepsi Buğulama Brokolili Soya Et",
+    "name": "Brokolili Soya Et",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -32107,7 +32107,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1108",
-    "name": "Kastamonu Usulü Toprak Çömlek Usulü Ispanakli Lor Peyniri",
+    "name": "Ispanaklı Lor Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -32136,7 +32136,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1109",
-    "name": "Kastamonu Usulü Közde Tandır Usulü Kerevizli Hellim Peyniri",
+    "name": "Kerevizli Hellim Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -32165,7 +32165,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1110",
-    "name": "Kastamonu Usulü Ekşi Soslu Buğulama Barbunyali Kaşar Peyniri",
+    "name": "Barbunyalı Kaşar Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -32194,7 +32194,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1111",
-    "name": "Kayseri Usulü Odun Ateşinde Sac Tavada Pırasali Dana Kuşbaşı",
+    "name": "Pırasali Dana Kuşbaşı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -32223,7 +32223,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1112",
-    "name": "Kayseri Usulü Zeytinyağlı Kısık Ateşte Taze Fasulyeli Kuzu İncik",
+    "name": "Taze Fasulyeli Kuzu İncik",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -32252,7 +32252,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1113",
-    "name": "Kayseri Usulü Közde Izgara Bamyali Tavuk Göğsü",
+    "name": "Bamyali Tavuk Göğsü",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -32281,7 +32281,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1114",
-    "name": "Kayseri Usulü Kremalı Sarımsak Soslu Enginarli Satır Köftesi",
+    "name": "Enginarli Satır Köftesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -32310,7 +32310,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1115",
-    "name": "Kayseri Usulü Odun Ateşinde Közlenmiş Avokadoli Somon Balığı",
+    "name": "Közlenmiş Avokadoli Somon Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -32339,7 +32339,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1116",
-    "name": "Kayseri Usulü Buharda Şifalı Brüksel Lahanasıli Levrek Buğulama",
+    "name": "Buharda Şifalı Brüksel Lahanasıli Levrek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -32368,7 +32368,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1117",
-    "name": "Kayseri Usulü Tereyağlı Özel Sote Bezelyeli Dana Kıyma",
+    "name": "Bezelyeli Dana Kıyma",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -32397,7 +32397,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1118",
-    "name": "Kayseri Usulü Tepsi Buğulama Arapsaçıli Hindi Bonfile",
+    "name": "Arapsaçıli Hindi Bonfile",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -32426,7 +32426,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1119",
-    "name": "Kayseri Usulü Toprak Çömlek Usulü Deniz Börülcesili Kuru Fasulye",
+    "name": "Deniz Börülcesili Kuru Fasulye",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -32455,7 +32455,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1120",
-    "name": "Kayseri Usulü Közde Tandır Usulü Arpacık Soğanli Kırmızı Mercimek",
+    "name": "Arpacık Soğanli Kırmızı Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -32484,7 +32484,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1121",
-    "name": "Kayseri Usulü Ekşi Soslu Buğulama Kabakli Nohut",
+    "name": "Kabakli Nohut",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -32513,7 +32513,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1122",
-    "name": "Kayseri Usulü Geleneksel Kavurma Biberli Kültür Mantarı",
+    "name": "Biberli Kültür Mantarı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -32542,7 +32542,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1123",
-    "name": "Kayseri Usulü Fırın Çıtır Pane Karnabaharli Deniz Karidesi",
+    "name": "Karnabaharli Deniz Karidesi",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -32571,7 +32571,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1124",
-    "name": "Kayseri Usulü Glaze Şerbetli Buhar Pırasali Çipura Balığı",
+    "name": "Pırasali Çipura Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -32600,7 +32600,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1125",
-    "name": "Kayseri Usulü Tava Kızartma Taze Fasulyeli Kuzu Pirzola",
+    "name": "Taze Fasulyeli Kuzu Pirzola",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -32629,7 +32629,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1126",
-    "name": "Kayseri Usulü Düdüklü Lokum Bamyali Dana Antrikot",
+    "name": "Bamyali Dana Antrikot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -32658,7 +32658,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1127",
-    "name": "Kayseri Usulü Fırın Graten Enginarli Tavuk Pirzola",
+    "name": "Enginarli Tavuk Pirzola",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -32687,7 +32687,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1128",
-    "name": "Kayseri Usulü Fırında Taş Güveçte Avokadoli Dana Ciğer",
+    "name": "Avokadoli Dana Ciğer",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -32716,7 +32716,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1129",
-    "name": "Kayseri Usulü Odun Ateşinde Sac Tavada Brüksel Lahanasıli Kuzu Böbrek",
+    "name": "Brüksel Lahanasıli Kuzu Böbrek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -32745,7 +32745,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1130",
-    "name": "Kayseri Usulü Zeytinyağlı Kısık Ateşte Bezelyeli Sardalya Balığı",
+    "name": "Bezelyeli Sardalya Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -32774,7 +32774,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1131",
-    "name": "Kayseri Usulü Közde Izgara Arapsaçıli Hamsi Tava",
+    "name": "Arapsaçıli Hamsi Tava",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -32803,7 +32803,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1132",
-    "name": "Kayseri Usulü Kremalı Sarımsak Soslu Deniz Börülcesili Bıldırcın Eti",
+    "name": "Deniz Börülcesili Bıldırcın Eti",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -32832,7 +32832,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1133",
-    "name": "Kayseri Usulü Odun Ateşinde Közlenmiş Arpacık Soğanli Deniz Kalamarı",
+    "name": "Közlenmiş Arpacık Soğanli Deniz Kalamarı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -32861,7 +32861,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1134",
-    "name": "Kayseri Usulü Buharda Şifalı Kabakli Ahtapot",
+    "name": "Buharda Şifalı Kabakli Ahtapot",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -32890,7 +32890,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1135",
-    "name": "Kayseri Usulü Tereyağlı Özel Sote Biberli Yeşil Mercimek",
+    "name": "Biberli Yeşil Mercimek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -32919,7 +32919,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1136",
-    "name": "Kayseri Usulü Tepsi Buğulama Karnabaharli Barbunya",
+    "name": "Karnabaharli Barbunya",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -32948,7 +32948,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1137",
-    "name": "Kayseri Usulü Toprak Çömlek Usulü Pırasali Soya Et",
+    "name": "Pırasali Soya Et",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -32977,7 +32977,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1138",
-    "name": "Kayseri Usulü Közde Tandır Usulü Taze Fasulyeli Lor Peyniri",
+    "name": "Taze Fasulyeli Lor Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -33006,7 +33006,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1139",
-    "name": "Kayseri Usulü Ekşi Soslu Buğulama Bamyali Hellim Peyniri",
+    "name": "Bamyali Hellim Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -33035,7 +33035,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1140",
-    "name": "Kayseri Usulü Geleneksel Kavurma Enginarli Kaşar Peyniri",
+    "name": "Enginarli Kaşar Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -33064,7 +33064,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1141",
-    "name": "Kırklareli Usulü Zeytinyağlı Kısık Ateşte Barbunyali Dana Kuşbaşı",
+    "name": "Barbunyalı Dana Kuşbaşı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -33093,7 +33093,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1142",
-    "name": "Kırklareli Usulü Közde Izgara Mantarli Kuzu İncik",
+    "name": "Mantarlı Kuzu İncik",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -33122,7 +33122,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1143",
-    "name": "Kırklareli Usulü Kremalı Sarımsak Soslu Kuşkonmazli Tavuk Göğsü",
+    "name": "Kuşkonmazlı Tavuk Göğsü",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -33151,7 +33151,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1144",
-    "name": "Kırklareli Usulü Odun Ateşinde Közlenmiş Tatlı Patatesli Satır Köftesi",
+    "name": "Közlenmiş Tatlı Patatesli Satır Köftesi",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -33180,7 +33180,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1145",
-    "name": "Kırklareli Usulü Buharda Şifalı Şalgamli Somon Balığı",
+    "name": "Buharda Şifalı Şalgamli Somon Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -33209,7 +33209,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1146",
-    "name": "Kırklareli Usulü Tereyağlı Özel Sote Pazıli Levrek Buğulama",
+    "name": "Pazılı Levrek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -33238,7 +33238,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1147",
-    "name": "Kırklareli Usulü Tepsi Buğulama Şevketi Bostanli Dana Kıyma",
+    "name": "Şevketi Bostanli Dana Kıyma",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -33267,7 +33267,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1148",
-    "name": "Kırklareli Usulü Toprak Çömlek Usulü Sarımsakli Hindi Bonfile",
+    "name": "Sarımsaklı Hindi Bonfile",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -33296,7 +33296,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1149",
-    "name": "Kırklareli Usulü Közde Tandır Usulü Patlıcanli Kuru Fasulye",
+    "name": "Patlıcanlı Kuru Fasulye",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -33325,7 +33325,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1150",
-    "name": "Kırklareli Usulü Ekşi Soslu Buğulama Patatesli Kırmızı Mercimek",
+    "name": "Patatesli Kırmızı Mercimek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -33354,7 +33354,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1151",
-    "name": "Kırklareli Usulü Geleneksel Kavurma Brokolili Nohut",
+    "name": "Brokolili Nohut",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -33383,7 +33383,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1152",
-    "name": "Kırklareli Usulü Fırın Çıtır Pane Ispanakli Kültür Mantarı",
+    "name": "Ispanaklı Kültür Mantarı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -33412,7 +33412,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1153",
-    "name": "Kırklareli Usulü Glaze Şerbetli Buhar Kerevizli Deniz Karidesi",
+    "name": "Kerevizli Deniz Karidesi",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -33441,7 +33441,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1154",
-    "name": "Kırklareli Usulü Tava Kızartma Barbunyali Çipura Balığı",
+    "name": "Barbunyalı Çipura Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -33470,7 +33470,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1155",
-    "name": "Kırklareli Usulü Düdüklü Lokum Mantarli Kuzu Pirzola",
+    "name": "Mantarlı Kuzu Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -33499,7 +33499,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1156",
-    "name": "Kırklareli Usulü Fırın Graten Kuşkonmazli Dana Antrikot",
+    "name": "Kuşkonmazlı Dana Antrikot",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -33528,7 +33528,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1157",
-    "name": "Kırklareli Usulü Fırında Taş Güveçte Tatlı Patatesli Tavuk Pirzola",
+    "name": "Tatlı Patatesli Tavuk Pirzola",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -33557,7 +33557,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1158",
-    "name": "Kırklareli Usulü Odun Ateşinde Sac Tavada Şalgamli Dana Ciğer",
+    "name": "Şalgamli Dana Ciğer",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -33586,7 +33586,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1159",
-    "name": "Kırklareli Usulü Zeytinyağlı Kısık Ateşte Pazıli Kuzu Böbrek",
+    "name": "Pazılı Kuzu Böbrek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -33615,7 +33615,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1160",
-    "name": "Kırklareli Usulü Közde Izgara Şevketi Bostanli Sardalya Balığı",
+    "name": "Şevketi Bostanli Sardalya Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -33644,7 +33644,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1161",
-    "name": "Kırklareli Usulü Kremalı Sarımsak Soslu Sarımsakli Hamsi Tava",
+    "name": "Sarımsaklı Hamsi Tava",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -33673,7 +33673,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1162",
-    "name": "Kırklareli Usulü Odun Ateşinde Közlenmiş Patlıcanli Bıldırcın Eti",
+    "name": "Közlenmiş Patlıcanlı Bıldırcın Eti",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -33702,7 +33702,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1163",
-    "name": "Kırklareli Usulü Buharda Şifalı Patatesli Deniz Kalamarı",
+    "name": "Buharda Şifalı Patatesli Deniz Kalamarı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -33731,7 +33731,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1164",
-    "name": "Kırklareli Usulü Tereyağlı Özel Sote Brokolili Ahtapot",
+    "name": "Brokolili Ahtapot",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -33760,7 +33760,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1165",
-    "name": "Kırklareli Usulü Tepsi Buğulama Ispanakli Yeşil Mercimek",
+    "name": "Ispanaklı Yeşil Mercimek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -33789,7 +33789,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1166",
-    "name": "Kırklareli Usulü Toprak Çömlek Usulü Kerevizli Barbunya",
+    "name": "Kerevizli Barbunya",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -33818,7 +33818,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1167",
-    "name": "Kırklareli Usulü Közde Tandır Usulü Barbunyali Soya Et",
+    "name": "Barbunyalı Soya Et",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -33847,7 +33847,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1168",
-    "name": "Kırklareli Usulü Ekşi Soslu Buğulama Mantarli Lor Peyniri",
+    "name": "Mantarlı Lor Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -33876,7 +33876,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1169",
-    "name": "Kırklareli Usulü Geleneksel Kavurma Kuşkonmazli Hellim Peyniri",
+    "name": "Kuşkonmazlı Hellim Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -33905,7 +33905,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1170",
-    "name": "Kırklareli Usulü Fırın Çıtır Pane Tatlı Patatesli Kaşar Peyniri",
+    "name": "Tatlı Patatesli Kaşar Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -33934,7 +33934,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1171",
-    "name": "Kırşehir Usulü Közde Izgara Enginarli Dana Kuşbaşı",
+    "name": "Enginarli Dana Kuşbaşı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -33963,7 +33963,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1172",
-    "name": "Kırşehir Usulü Kremalı Sarımsak Soslu Avokadoli Kuzu İncik",
+    "name": "Avokadoli Kuzu İncik",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -33992,7 +33992,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1173",
-    "name": "Kırşehir Usulü Odun Ateşinde Közlenmiş Brüksel Lahanasıli Tavuk Göğsü",
+    "name": "Közlenmiş Brüksel Lahanasıli Tavuk Göğsü",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -34021,7 +34021,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1174",
-    "name": "Kırşehir Usulü Buharda Şifalı Bezelyeli Satır Köftesi",
+    "name": "Buharda Şifalı Bezelyeli Satır Köftesi",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -34050,7 +34050,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1175",
-    "name": "Kırşehir Usulü Tereyağlı Özel Sote Arapsaçıli Somon Balığı",
+    "name": "Arapsaçıli Somon Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -34079,7 +34079,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1176",
-    "name": "Kırşehir Usulü Tepsi Buğulama Deniz Börülcesili Levrek Buğulama",
+    "name": "Deniz Börülcesili Levrek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -34108,7 +34108,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1177",
-    "name": "Kırşehir Usulü Toprak Çömlek Usulü Arpacık Soğanli Dana Kıyma",
+    "name": "Arpacık Soğanli Dana Kıyma",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -34137,7 +34137,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1178",
-    "name": "Kırşehir Usulü Közde Tandır Usulü Kabakli Hindi Bonfile",
+    "name": "Kabakli Hindi Bonfile",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -34166,7 +34166,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1179",
-    "name": "Kırşehir Usulü Ekşi Soslu Buğulama Biberli Kuru Fasulye",
+    "name": "Biberli Kuru Fasulye",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -34195,7 +34195,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1180",
-    "name": "Kırşehir Usulü Geleneksel Kavurma Karnabaharli Kırmızı Mercimek",
+    "name": "Karnabaharli Kırmızı Mercimek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -34224,7 +34224,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1181",
-    "name": "Kırşehir Usulü Fırın Çıtır Pane Pırasali Nohut",
+    "name": "Pırasali Nohut",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -34253,7 +34253,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1182",
-    "name": "Kırşehir Usulü Glaze Şerbetli Buhar Taze Fasulyeli Kültür Mantarı",
+    "name": "Taze Fasulyeli Kültür Mantarı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -34282,7 +34282,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1183",
-    "name": "Kırşehir Usulü Tava Kızartma Bamyali Deniz Karidesi",
+    "name": "Bamyali Deniz Karidesi",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -34311,7 +34311,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1184",
-    "name": "Kırşehir Usulü Düdüklü Lokum Enginarli Çipura Balığı",
+    "name": "Enginarli Çipura Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -34340,7 +34340,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1185",
-    "name": "Kırşehir Usulü Fırın Graten Avokadoli Kuzu Pirzola",
+    "name": "Avokadoli Kuzu Pirzola",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -34369,7 +34369,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1186",
-    "name": "Kırşehir Usulü Fırında Taş Güveçte Brüksel Lahanasıli Dana Antrikot",
+    "name": "Brüksel Lahanasıli Dana Antrikot",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -34398,7 +34398,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1187",
-    "name": "Kırşehir Usulü Odun Ateşinde Sac Tavada Bezelyeli Tavuk Pirzola",
+    "name": "Bezelyeli Tavuk Pirzola",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -34427,7 +34427,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1188",
-    "name": "Kırşehir Usulü Zeytinyağlı Kısık Ateşte Arapsaçıli Dana Ciğer",
+    "name": "Arapsaçıli Dana Ciğer",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -34456,7 +34456,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1189",
-    "name": "Kırşehir Usulü Közde Izgara Deniz Börülcesili Kuzu Böbrek",
+    "name": "Deniz Börülcesili Kuzu Böbrek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -34485,7 +34485,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1190",
-    "name": "Kırşehir Usulü Kremalı Sarımsak Soslu Arpacık Soğanli Sardalya Balığı",
+    "name": "Arpacık Soğanli Sardalya Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -34514,7 +34514,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1191",
-    "name": "Kırşehir Usulü Odun Ateşinde Közlenmiş Kabakli Hamsi Tava",
+    "name": "Közlenmiş Kabakli Hamsi Tava",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -34543,7 +34543,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1192",
-    "name": "Kırşehir Usulü Buharda Şifalı Biberli Bıldırcın Eti",
+    "name": "Buharda Şifalı Biberli Bıldırcın Eti",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -34572,7 +34572,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1193",
-    "name": "Kırşehir Usulü Tereyağlı Özel Sote Karnabaharli Deniz Kalamarı",
+    "name": "Karnabaharli Deniz Kalamarı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -34601,7 +34601,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1194",
-    "name": "Kırşehir Usulü Tepsi Buğulama Pırasali Ahtapot",
+    "name": "Pırasali Ahtapot",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -34630,7 +34630,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1195",
-    "name": "Kırşehir Usulü Toprak Çömlek Usulü Taze Fasulyeli Yeşil Mercimek",
+    "name": "Taze Fasulyeli Yeşil Mercimek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -34659,7 +34659,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1196",
-    "name": "Kırşehir Usulü Közde Tandır Usulü Bamyali Barbunya",
+    "name": "Bamyali Barbunya",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -34688,7 +34688,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1197",
-    "name": "Kırşehir Usulü Ekşi Soslu Buğulama Enginarli Soya Et",
+    "name": "Enginarli Soya Et",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -34717,7 +34717,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1198",
-    "name": "Kırşehir Usulü Geleneksel Kavurma Avokadoli Lor Peyniri",
+    "name": "Avokadoli Lor Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -34746,7 +34746,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1199",
-    "name": "Kırşehir Usulü Fırın Çıtır Pane Brüksel Lahanasıli Hellim Peyniri",
+    "name": "Brüksel Lahanasıli Hellim Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -34775,7 +34775,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1200",
-    "name": "Kırşehir Usulü Glaze Şerbetli Buhar Bezelyeli Kaşar Peyniri",
+    "name": "Bezelyeli Kaşar Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -34804,7 +34804,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1201",
-    "name": "Kocaeli Usulü Kremalı Sarımsak Soslu Tatlı Patatesli Dana Kuşbaşı",
+    "name": "Tatlı Patatesli Dana Kuşbaşı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -34833,7 +34833,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1202",
-    "name": "Kocaeli Usulü Odun Ateşinde Közlenmiş Şalgamli Kuzu İncik",
+    "name": "Közlenmiş Şalgamli Kuzu İncik",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -34862,7 +34862,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1203",
-    "name": "Kocaeli Usulü Buharda Şifalı Pazıli Tavuk Göğsü",
+    "name": "Buharda Şifalı Pazılı Tavuk Göğsü",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -34891,7 +34891,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1204",
-    "name": "Kocaeli Usulü Tereyağlı Özel Sote Şevketi Bostanli Satır Köftesi",
+    "name": "Şevketi Bostanli Satır Köftesi",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -34920,7 +34920,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1205",
-    "name": "Kocaeli Usulü Tepsi Buğulama Sarımsakli Somon Balığı",
+    "name": "Sarımsaklı Somon Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -34949,7 +34949,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1206",
-    "name": "Kocaeli Usulü Toprak Çömlek Usulü Patlıcanli Levrek Buğulama",
+    "name": "Patlıcanlı Levrek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -34978,7 +34978,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1207",
-    "name": "Kocaeli Usulü Közde Tandır Usulü Patatesli Dana Kıyma",
+    "name": "Patatesli Dana Kıyma",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -35007,7 +35007,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1208",
-    "name": "Kocaeli Usulü Ekşi Soslu Buğulama Brokolili Hindi Bonfile",
+    "name": "Brokolili Hindi Bonfile",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -35036,7 +35036,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1209",
-    "name": "Kocaeli Usulü Geleneksel Kavurma Ispanakli Kuru Fasulye",
+    "name": "Ispanaklı Kuru Fasulye",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -35065,7 +35065,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1210",
-    "name": "Kocaeli Usulü Fırın Çıtır Pane Kerevizli Kırmızı Mercimek",
+    "name": "Kerevizli Kırmızı Mercimek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -35094,7 +35094,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1211",
-    "name": "Kocaeli Usulü Glaze Şerbetli Buhar Barbunyali Nohut",
+    "name": "Barbunyalı Nohut",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -35123,7 +35123,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1212",
-    "name": "Kocaeli Usulü Tava Kızartma Mantarli Kültür Mantarı",
+    "name": "Mantarlı Kültür Mantarı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -35152,7 +35152,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1213",
-    "name": "Kocaeli Usulü Düdüklü Lokum Kuşkonmazli Deniz Karidesi",
+    "name": "Kuşkonmazlı Deniz Karidesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -35181,7 +35181,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1214",
-    "name": "Kocaeli Usulü Fırın Graten Tatlı Patatesli Çipura Balığı",
+    "name": "Tatlı Patatesli Çipura Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -35210,7 +35210,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1215",
-    "name": "Kocaeli Usulü Fırında Taş Güveçte Şalgamli Kuzu Pirzola",
+    "name": "Şalgamli Kuzu Pirzola",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -35239,7 +35239,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1216",
-    "name": "Kocaeli Usulü Odun Ateşinde Sac Tavada Pazıli Dana Antrikot",
+    "name": "Pazılı Dana Antrikot",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -35268,7 +35268,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1217",
-    "name": "Kocaeli Usulü Zeytinyağlı Kısık Ateşte Şevketi Bostanli Tavuk Pirzola",
+    "name": "Şevketi Bostanli Tavuk Pirzola",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -35297,7 +35297,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1218",
-    "name": "Kocaeli Usulü Közde Izgara Sarımsakli Dana Ciğer",
+    "name": "Sarımsaklı Dana Ciğer",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -35326,7 +35326,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1219",
-    "name": "Kocaeli Usulü Kremalı Sarımsak Soslu Patlıcanli Kuzu Böbrek",
+    "name": "Patlıcanlı Kuzu Böbrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -35355,7 +35355,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1220",
-    "name": "Kocaeli Usulü Odun Ateşinde Közlenmiş Patatesli Sardalya Balığı",
+    "name": "Közlenmiş Patatesli Sardalya Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -35384,7 +35384,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1221",
-    "name": "Kocaeli Usulü Buharda Şifalı Brokolili Hamsi Tava",
+    "name": "Buharda Şifalı Brokolili Hamsi Tava",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -35413,7 +35413,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1222",
-    "name": "Kocaeli Usulü Tereyağlı Özel Sote Ispanakli Bıldırcın Eti",
+    "name": "Ispanaklı Bıldırcın Eti",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -35442,7 +35442,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1223",
-    "name": "Kocaeli Usulü Tepsi Buğulama Kerevizli Deniz Kalamarı",
+    "name": "Kerevizli Deniz Kalamarı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -35471,7 +35471,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1224",
-    "name": "Kocaeli Usulü Toprak Çömlek Usulü Barbunyali Ahtapot",
+    "name": "Barbunyalı Ahtapot",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -35500,7 +35500,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1225",
-    "name": "Kocaeli Usulü Közde Tandır Usulü Mantarli Yeşil Mercimek",
+    "name": "Mantarlı Yeşil Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -35529,7 +35529,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1226",
-    "name": "Kocaeli Usulü Ekşi Soslu Buğulama Kuşkonmazli Barbunya",
+    "name": "Kuşkonmazlı Barbunya",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -35558,7 +35558,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1227",
-    "name": "Kocaeli Usulü Geleneksel Kavurma Tatlı Patatesli Soya Et",
+    "name": "Tatlı Patatesli Soya Et",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -35587,7 +35587,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1228",
-    "name": "Kocaeli Usulü Fırın Çıtır Pane Şalgamli Lor Peyniri",
+    "name": "Şalgamli Lor Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -35616,7 +35616,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1229",
-    "name": "Kocaeli Usulü Glaze Şerbetli Buhar Pazıli Hellim Peyniri",
+    "name": "Pazılı Hellim Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -35645,7 +35645,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1230",
-    "name": "Kocaeli Usulü Tava Kızartma Şevketi Bostanli Kaşar Peyniri",
+    "name": "Şevketi Bostanli Kaşar Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -35674,7 +35674,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1231",
-    "name": "Konya Usulü Odun Ateşinde Közlenmiş Bezelyeli Dana Kuşbaşı",
+    "name": "Közlenmiş Bezelyeli Dana Kuşbaşı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -35703,7 +35703,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1232",
-    "name": "Konya Usulü Buharda Şifalı Arapsaçıli Kuzu İncik",
+    "name": "Buharda Şifalı Arapsaçıli Kuzu İncik",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -35732,7 +35732,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1233",
-    "name": "Konya Usulü Tereyağlı Özel Sote Deniz Börülcesili Tavuk Göğsü",
+    "name": "Deniz Börülcesili Tavuk Göğsü",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -35761,7 +35761,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1234",
-    "name": "Konya Usulü Tepsi Buğulama Arpacık Soğanli Satır Köftesi",
+    "name": "Arpacık Soğanli Satır Köftesi",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -35790,7 +35790,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1235",
-    "name": "Konya Usulü Toprak Çömlek Usulü Kabakli Somon Balığı",
+    "name": "Kabakli Somon Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -35819,7 +35819,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1236",
-    "name": "Konya Usulü Közde Tandır Usulü Biberli Levrek Buğulama",
+    "name": "Biberli Levrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -35848,7 +35848,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1237",
-    "name": "Konya Usulü Ekşi Soslu Buğulama Karnabaharli Dana Kıyma",
+    "name": "Karnabaharli Dana Kıyma",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -35877,7 +35877,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1238",
-    "name": "Konya Usulü Geleneksel Kavurma Pırasali Hindi Bonfile",
+    "name": "Pırasali Hindi Bonfile",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -35906,7 +35906,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1239",
-    "name": "Konya Usulü Fırın Çıtır Pane Taze Fasulyeli Kuru Fasulye",
+    "name": "Taze Fasulyeli Kuru Fasulye",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -35935,7 +35935,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1240",
-    "name": "Konya Usulü Glaze Şerbetli Buhar Bamyali Kırmızı Mercimek",
+    "name": "Bamyali Kırmızı Mercimek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -35964,7 +35964,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1241",
-    "name": "Konya Usulü Tava Kızartma Enginarli Nohut",
+    "name": "Enginarli Nohut",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -35993,7 +35993,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1242",
-    "name": "Konya Usulü Düdüklü Lokum Avokadoli Kültür Mantarı",
+    "name": "Avokadoli Kültür Mantarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -36022,7 +36022,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1243",
-    "name": "Konya Usulü Fırın Graten Brüksel Lahanasıli Deniz Karidesi",
+    "name": "Brüksel Lahanasıli Deniz Karidesi",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -36051,7 +36051,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1244",
-    "name": "Konya Usulü Fırında Taş Güveçte Bezelyeli Çipura Balığı",
+    "name": "Bezelyeli Çipura Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -36080,7 +36080,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1245",
-    "name": "Konya Usulü Odun Ateşinde Sac Tavada Arapsaçıli Kuzu Pirzola",
+    "name": "Arapsaçıli Kuzu Pirzola",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -36109,7 +36109,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1246",
-    "name": "Konya Usulü Zeytinyağlı Kısık Ateşte Deniz Börülcesili Dana Antrikot",
+    "name": "Deniz Börülcesili Dana Antrikot",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -36138,7 +36138,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1247",
-    "name": "Konya Usulü Közde Izgara Arpacık Soğanli Tavuk Pirzola",
+    "name": "Arpacık Soğanli Tavuk Pirzola",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -36167,7 +36167,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1248",
-    "name": "Konya Usulü Kremalı Sarımsak Soslu Kabakli Dana Ciğer",
+    "name": "Kabakli Dana Ciğer",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -36196,7 +36196,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1249",
-    "name": "Konya Usulü Odun Ateşinde Közlenmiş Biberli Kuzu Böbrek",
+    "name": "Közlenmiş Biberli Kuzu Böbrek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -36225,7 +36225,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1250",
-    "name": "Konya Usulü Buharda Şifalı Karnabaharli Sardalya Balığı",
+    "name": "Buharda Şifalı Karnabaharli Sardalya Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -36254,7 +36254,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1251",
-    "name": "Konya Usulü Tereyağlı Özel Sote Pırasali Hamsi Tava",
+    "name": "Pırasali Hamsi Tava",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -36283,7 +36283,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1252",
-    "name": "Konya Usulü Tepsi Buğulama Taze Fasulyeli Bıldırcın Eti",
+    "name": "Taze Fasulyeli Bıldırcın Eti",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -36312,7 +36312,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1253",
-    "name": "Konya Usulü Toprak Çömlek Usulü Bamyali Deniz Kalamarı",
+    "name": "Bamyali Deniz Kalamarı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -36341,7 +36341,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1254",
-    "name": "Konya Usulü Közde Tandır Usulü Enginarli Ahtapot",
+    "name": "Enginarli Ahtapot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -36370,7 +36370,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1255",
-    "name": "Konya Usulü Ekşi Soslu Buğulama Avokadoli Yeşil Mercimek",
+    "name": "Avokadoli Yeşil Mercimek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -36399,7 +36399,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1256",
-    "name": "Konya Usulü Geleneksel Kavurma Brüksel Lahanasıli Barbunya",
+    "name": "Brüksel Lahanasıli Barbunya",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -36428,7 +36428,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1257",
-    "name": "Konya Usulü Fırın Çıtır Pane Bezelyeli Soya Et",
+    "name": "Bezelyeli Soya Et",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -36457,7 +36457,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1258",
-    "name": "Konya Usulü Glaze Şerbetli Buhar Arapsaçıli Lor Peyniri",
+    "name": "Arapsaçıli Lor Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -36486,7 +36486,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1259",
-    "name": "Konya Usulü Tava Kızartma Deniz Börülcesili Hellim Peyniri",
+    "name": "Deniz Börülcesili Hellim Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -36515,7 +36515,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1260",
-    "name": "Konya Usulü Düdüklü Lokum Arpacık Soğanli Kaşar Peyniri",
+    "name": "Arpacık Soğanli Kaşar Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -36544,7 +36544,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1261",
-    "name": "Kütahya Usulü Buharda Şifalı Şevketi Bostanli Dana Kuşbaşı",
+    "name": "Buharda Şifalı Şevketi Bostanli Dana Kuşbaşı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -36573,7 +36573,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1262",
-    "name": "Kütahya Usulü Tereyağlı Özel Sote Sarımsakli Kuzu İncik",
+    "name": "Sarımsaklı Kuzu İncik",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -36602,7 +36602,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1263",
-    "name": "Kütahya Usulü Tepsi Buğulama Patlıcanli Tavuk Göğsü",
+    "name": "Patlıcanlı Tavuk Göğsü",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -36631,7 +36631,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1264",
-    "name": "Kütahya Usulü Toprak Çömlek Usulü Patatesli Satır Köftesi",
+    "name": "Patatesli Satır Köftesi",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -36660,7 +36660,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1265",
-    "name": "Kütahya Usulü Közde Tandır Usulü Brokolili Somon Balığı",
+    "name": "Brokolili Somon Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -36689,7 +36689,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1266",
-    "name": "Kütahya Usulü Ekşi Soslu Buğulama Ispanakli Levrek Buğulama",
+    "name": "Ispanaklı Levrek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -36718,7 +36718,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1267",
-    "name": "Kütahya Usulü Geleneksel Kavurma Kerevizli Dana Kıyma",
+    "name": "Kerevizli Dana Kıyma",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -36747,7 +36747,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1268",
-    "name": "Kütahya Usulü Fırın Çıtır Pane Barbunyali Hindi Bonfile",
+    "name": "Barbunyalı Hindi Bonfile",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -36776,7 +36776,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1269",
-    "name": "Kütahya Usulü Glaze Şerbetli Buhar Mantarli Kuru Fasulye",
+    "name": "Mantarlı Kuru Fasulye",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -36805,7 +36805,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1270",
-    "name": "Kütahya Usulü Tava Kızartma Kuşkonmazli Kırmızı Mercimek",
+    "name": "Kuşkonmazlı Kırmızı Mercimek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -36834,7 +36834,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1271",
-    "name": "Kütahya Usulü Düdüklü Lokum Tatlı Patatesli Nohut",
+    "name": "Tatlı Patatesli Nohut",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -36863,7 +36863,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1272",
-    "name": "Kütahya Usulü Fırın Graten Şalgamli Kültür Mantarı",
+    "name": "Şalgamli Kültür Mantarı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -36892,7 +36892,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1273",
-    "name": "Kütahya Usulü Fırında Taş Güveçte Pazıli Deniz Karidesi",
+    "name": "Pazılı Deniz Karidesi",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -36921,7 +36921,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1274",
-    "name": "Kütahya Usulü Odun Ateşinde Sac Tavada Şevketi Bostanli Çipura Balığı",
+    "name": "Şevketi Bostanli Çipura Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -36950,7 +36950,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1275",
-    "name": "Kütahya Usulü Zeytinyağlı Kısık Ateşte Sarımsakli Kuzu Pirzola",
+    "name": "Sarımsaklı Kuzu Pirzola",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -36979,7 +36979,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1276",
-    "name": "Kütahya Usulü Közde Izgara Patlıcanli Dana Antrikot",
+    "name": "Patlıcanlı Dana Antrikot",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -37008,7 +37008,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1277",
-    "name": "Kütahya Usulü Kremalı Sarımsak Soslu Patatesli Tavuk Pirzola",
+    "name": "Patatesli Tavuk Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -37037,7 +37037,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1278",
-    "name": "Kütahya Usulü Odun Ateşinde Közlenmiş Brokolili Dana Ciğer",
+    "name": "Közlenmiş Brokolili Dana Ciğer",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -37066,7 +37066,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1279",
-    "name": "Kütahya Usulü Buharda Şifalı Ispanakli Kuzu Böbrek",
+    "name": "Buharda Şifalı Ispanaklı Kuzu Böbrek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -37095,7 +37095,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1280",
-    "name": "Kütahya Usulü Tereyağlı Özel Sote Kerevizli Sardalya Balığı",
+    "name": "Kerevizli Sardalya Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -37124,7 +37124,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1281",
-    "name": "Kütahya Usulü Tepsi Buğulama Barbunyali Hamsi Tava",
+    "name": "Barbunyalı Hamsi Tava",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -37153,7 +37153,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1282",
-    "name": "Kütahya Usulü Toprak Çömlek Usulü Mantarli Bıldırcın Eti",
+    "name": "Mantarlı Bıldırcın Eti",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -37182,7 +37182,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1283",
-    "name": "Kütahya Usulü Közde Tandır Usulü Kuşkonmazli Deniz Kalamarı",
+    "name": "Kuşkonmazlı Deniz Kalamarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -37211,7 +37211,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1284",
-    "name": "Kütahya Usulü Ekşi Soslu Buğulama Tatlı Patatesli Ahtapot",
+    "name": "Tatlı Patatesli Ahtapot",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -37240,7 +37240,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1285",
-    "name": "Kütahya Usulü Geleneksel Kavurma Şalgamli Yeşil Mercimek",
+    "name": "Şalgamli Yeşil Mercimek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -37269,7 +37269,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1286",
-    "name": "Kütahya Usulü Fırın Çıtır Pane Pazıli Barbunya",
+    "name": "Pazılı Barbunya",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -37298,7 +37298,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1287",
-    "name": "Kütahya Usulü Glaze Şerbetli Buhar Şevketi Bostanli Soya Et",
+    "name": "Şevketi Bostanli Soya Et",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -37327,7 +37327,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1288",
-    "name": "Kütahya Usulü Tava Kızartma Sarımsakli Lor Peyniri",
+    "name": "Sarımsaklı Lor Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -37356,7 +37356,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1289",
-    "name": "Kütahya Usulü Düdüklü Lokum Patlıcanli Hellim Peyniri",
+    "name": "Patlıcanlı Hellim Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -37385,7 +37385,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1290",
-    "name": "Kütahya Usulü Fırın Graten Patatesli Kaşar Peyniri",
+    "name": "Patatesli Kaşar Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -37414,7 +37414,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1291",
-    "name": "Malatya Usulü Tereyağlı Özel Sote Arpacık Soğanli Dana Kuşbaşı",
+    "name": "Arpacık Soğanli Dana Kuşbaşı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -37443,7 +37443,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1292",
-    "name": "Malatya Usulü Tepsi Buğulama Kabakli Kuzu İncik",
+    "name": "Kabakli Kuzu İncik",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -37472,7 +37472,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1293",
-    "name": "Malatya Usulü Toprak Çömlek Usulü Biberli Tavuk Göğsü",
+    "name": "Biberli Tavuk Göğsü",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -37501,7 +37501,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1294",
-    "name": "Malatya Usulü Közde Tandır Usulü Karnabaharli Satır Köftesi",
+    "name": "Karnabaharli Satır Köftesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -37530,7 +37530,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1295",
-    "name": "Malatya Usulü Ekşi Soslu Buğulama Pırasali Somon Balığı",
+    "name": "Pırasali Somon Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -37559,7 +37559,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1296",
-    "name": "Malatya Usulü Geleneksel Kavurma Taze Fasulyeli Levrek Buğulama",
+    "name": "Taze Fasulyeli Levrek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -37588,7 +37588,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1297",
-    "name": "Malatya Usulü Fırın Çıtır Pane Bamyali Dana Kıyma",
+    "name": "Bamyali Dana Kıyma",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -37617,7 +37617,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1298",
-    "name": "Malatya Usulü Glaze Şerbetli Buhar Enginarli Hindi Bonfile",
+    "name": "Enginarli Hindi Bonfile",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -37646,7 +37646,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1299",
-    "name": "Malatya Usulü Tava Kızartma Avokadoli Kuru Fasulye",
+    "name": "Avokadoli Kuru Fasulye",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -37675,7 +37675,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1300",
-    "name": "Malatya Usulü Düdüklü Lokum Brüksel Lahanasıli Kırmızı Mercimek",
+    "name": "Brüksel Lahanasıli Kırmızı Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -37704,7 +37704,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1301",
-    "name": "Malatya Usulü Fırın Graten Bezelyeli Nohut",
+    "name": "Bezelyeli Nohut",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -37733,7 +37733,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1302",
-    "name": "Malatya Usulü Fırında Taş Güveçte Arapsaçıli Kültür Mantarı",
+    "name": "Arapsaçıli Kültür Mantarı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -37762,7 +37762,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1303",
-    "name": "Malatya Usulü Odun Ateşinde Sac Tavada Deniz Börülcesili Deniz Karidesi",
+    "name": "Deniz Börülcesili Deniz Karidesi",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -37791,7 +37791,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1304",
-    "name": "Malatya Usulü Zeytinyağlı Kısık Ateşte Arpacık Soğanli Çipura Balığı",
+    "name": "Arpacık Soğanli Çipura Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -37820,7 +37820,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1305",
-    "name": "Malatya Usulü Közde Izgara Kabakli Kuzu Pirzola",
+    "name": "Kabakli Kuzu Pirzola",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -37849,7 +37849,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1306",
-    "name": "Malatya Usulü Kremalı Sarımsak Soslu Biberli Dana Antrikot",
+    "name": "Biberli Dana Antrikot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -37878,7 +37878,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1307",
-    "name": "Malatya Usulü Odun Ateşinde Közlenmiş Karnabaharli Tavuk Pirzola",
+    "name": "Közlenmiş Karnabaharli Tavuk Pirzola",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -37907,7 +37907,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1308",
-    "name": "Malatya Usulü Buharda Şifalı Pırasali Dana Ciğer",
+    "name": "Buharda Şifalı Pırasali Dana Ciğer",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -37936,7 +37936,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1309",
-    "name": "Malatya Usulü Tereyağlı Özel Sote Taze Fasulyeli Kuzu Böbrek",
+    "name": "Taze Fasulyeli Kuzu Böbrek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -37965,7 +37965,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1310",
-    "name": "Malatya Usulü Tepsi Buğulama Bamyali Sardalya Balığı",
+    "name": "Bamyali Sardalya Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -37994,7 +37994,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1311",
-    "name": "Malatya Usulü Toprak Çömlek Usulü Enginarli Hamsi Tava",
+    "name": "Enginarli Hamsi Tava",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -38023,7 +38023,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1312",
-    "name": "Malatya Usulü Közde Tandır Usulü Avokadoli Bıldırcın Eti",
+    "name": "Avokadoli Bıldırcın Eti",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -38052,7 +38052,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1313",
-    "name": "Malatya Usulü Ekşi Soslu Buğulama Brüksel Lahanasıli Deniz Kalamarı",
+    "name": "Brüksel Lahanasıli Deniz Kalamarı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -38081,7 +38081,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1314",
-    "name": "Malatya Usulü Geleneksel Kavurma Bezelyeli Ahtapot",
+    "name": "Bezelyeli Ahtapot",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -38110,7 +38110,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1315",
-    "name": "Malatya Usulü Fırın Çıtır Pane Arapsaçıli Yeşil Mercimek",
+    "name": "Arapsaçıli Yeşil Mercimek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -38139,7 +38139,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1316",
-    "name": "Malatya Usulü Glaze Şerbetli Buhar Deniz Börülcesili Barbunya",
+    "name": "Deniz Börülcesili Barbunya",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -38168,7 +38168,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1317",
-    "name": "Malatya Usulü Tava Kızartma Arpacık Soğanli Soya Et",
+    "name": "Arpacık Soğanli Soya Et",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -38197,7 +38197,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1318",
-    "name": "Malatya Usulü Düdüklü Lokum Kabakli Lor Peyniri",
+    "name": "Kabakli Lor Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -38226,7 +38226,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1319",
-    "name": "Malatya Usulü Fırın Graten Biberli Hellim Peyniri",
+    "name": "Biberli Hellim Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -38255,7 +38255,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1320",
-    "name": "Malatya Usulü Fırında Taş Güveçte Karnabaharli Kaşar Peyniri",
+    "name": "Karnabaharli Kaşar Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -38284,7 +38284,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1321",
-    "name": "Manisa Usulü Tepsi Buğulama Patatesli Dana Kuşbaşı",
+    "name": "Patatesli Dana Kuşbaşı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -38313,7 +38313,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1322",
-    "name": "Manisa Usulü Toprak Çömlek Usulü Brokolili Kuzu İncik",
+    "name": "Brokolili Kuzu İncik",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -38342,7 +38342,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1323",
-    "name": "Manisa Usulü Közde Tandır Usulü Ispanakli Tavuk Göğsü",
+    "name": "Ispanaklı Tavuk Göğsü",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -38371,7 +38371,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1324",
-    "name": "Manisa Usulü Ekşi Soslu Buğulama Kerevizli Satır Köftesi",
+    "name": "Kerevizli Satır Köftesi",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -38400,7 +38400,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1325",
-    "name": "Manisa Usulü Geleneksel Kavurma Barbunyali Somon Balığı",
+    "name": "Barbunyalı Somon Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -38429,7 +38429,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1326",
-    "name": "Manisa Usulü Fırın Çıtır Pane Mantarli Levrek Buğulama",
+    "name": "Mantarlı Levrek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -38458,7 +38458,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1327",
-    "name": "Manisa Usulü Glaze Şerbetli Buhar Kuşkonmazli Dana Kıyma",
+    "name": "Kuşkonmazlı Dana Kıyma",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -38487,7 +38487,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1328",
-    "name": "Manisa Usulü Tava Kızartma Tatlı Patatesli Hindi Bonfile",
+    "name": "Tatlı Patatesli Hindi Bonfile",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -38516,7 +38516,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1329",
-    "name": "Manisa Usulü Düdüklü Lokum Şalgamli Kuru Fasulye",
+    "name": "Şalgamli Kuru Fasulye",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -38545,7 +38545,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1330",
-    "name": "Manisa Usulü Fırın Graten Pazıli Kırmızı Mercimek",
+    "name": "Pazılı Kırmızı Mercimek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -38574,7 +38574,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1331",
-    "name": "Manisa Usulü Fırında Taş Güveçte Şevketi Bostanli Nohut",
+    "name": "Şevketi Bostanli Nohut",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -38603,7 +38603,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1332",
-    "name": "Manisa Usulü Odun Ateşinde Sac Tavada Sarımsakli Kültür Mantarı",
+    "name": "Sarımsaklı Kültür Mantarı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -38632,7 +38632,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1333",
-    "name": "Manisa Usulü Zeytinyağlı Kısık Ateşte Patlıcanli Deniz Karidesi",
+    "name": "Patlıcanlı Deniz Karidesi",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -38661,7 +38661,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1334",
-    "name": "Manisa Usulü Közde Izgara Patatesli Çipura Balığı",
+    "name": "Patatesli Çipura Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -38690,7 +38690,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1335",
-    "name": "Manisa Usulü Kremalı Sarımsak Soslu Brokolili Kuzu Pirzola",
+    "name": "Brokolili Kuzu Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -38719,7 +38719,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1336",
-    "name": "Manisa Usulü Odun Ateşinde Közlenmiş Ispanakli Dana Antrikot",
+    "name": "Közlenmiş Ispanaklı Dana Antrikot",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -38748,7 +38748,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1337",
-    "name": "Manisa Usulü Buharda Şifalı Kerevizli Tavuk Pirzola",
+    "name": "Buharda Şifalı Kerevizli Tavuk Pirzola",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -38777,7 +38777,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1338",
-    "name": "Manisa Usulü Tereyağlı Özel Sote Barbunyali Dana Ciğer",
+    "name": "Barbunyalı Dana Ciğer",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -38806,7 +38806,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1339",
-    "name": "Manisa Usulü Tepsi Buğulama Mantarli Kuzu Böbrek",
+    "name": "Mantarlı Kuzu Böbrek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -38835,7 +38835,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1340",
-    "name": "Manisa Usulü Toprak Çömlek Usulü Kuşkonmazli Sardalya Balığı",
+    "name": "Kuşkonmazlı Sardalya Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -38864,7 +38864,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1341",
-    "name": "Manisa Usulü Közde Tandır Usulü Tatlı Patatesli Hamsi Tava",
+    "name": "Tatlı Patatesli Hamsi Tava",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -38893,7 +38893,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1342",
-    "name": "Manisa Usulü Ekşi Soslu Buğulama Şalgamli Bıldırcın Eti",
+    "name": "Şalgamli Bıldırcın Eti",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -38922,7 +38922,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1343",
-    "name": "Manisa Usulü Geleneksel Kavurma Pazıli Deniz Kalamarı",
+    "name": "Pazılı Deniz Kalamarı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -38951,7 +38951,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1344",
-    "name": "Manisa Usulü Fırın Çıtır Pane Şevketi Bostanli Ahtapot",
+    "name": "Şevketi Bostanli Ahtapot",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -38980,7 +38980,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1345",
-    "name": "Manisa Usulü Glaze Şerbetli Buhar Sarımsakli Yeşil Mercimek",
+    "name": "Sarımsaklı Yeşil Mercimek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -39009,7 +39009,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1346",
-    "name": "Manisa Usulü Tava Kızartma Patlıcanli Barbunya",
+    "name": "Patlıcanlı Barbunya",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -39038,7 +39038,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1347",
-    "name": "Manisa Usulü Düdüklü Lokum Patatesli Soya Et",
+    "name": "Patatesli Soya Et",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -39067,7 +39067,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1348",
-    "name": "Manisa Usulü Fırın Graten Brokolili Lor Peyniri",
+    "name": "Brokolili Lor Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -39096,7 +39096,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1349",
-    "name": "Manisa Usulü Fırında Taş Güveçte Ispanakli Hellim Peyniri",
+    "name": "Ispanaklı Hellim Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -39125,7 +39125,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1350",
-    "name": "Manisa Usulü Odun Ateşinde Sac Tavada Kerevizli Kaşar Peyniri",
+    "name": "Kerevizli Kaşar Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -39154,7 +39154,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1351",
-    "name": "Kahramanmaraş Usulü Toprak Çömlek Usulü Karnabaharli Dana Kuşbaşı",
+    "name": "Kahramanmaraş Karnabaharli Dana Kuşbaşı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -39183,7 +39183,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1352",
-    "name": "Kahramanmaraş Usulü Közde Tandır Usulü Pırasali Kuzu İncik",
+    "name": "Kahramanmaraş Pırasali Kuzu İncik",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -39212,7 +39212,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1353",
-    "name": "Kahramanmaraş Usulü Ekşi Soslu Buğulama Taze Fasulyeli Tavuk Göğsü",
+    "name": "Kahramanmaraş Taze Fasulyeli Tavuk Göğsü",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -39241,7 +39241,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1354",
-    "name": "Kahramanmaraş Usulü Geleneksel Kavurma Bamyali Satır Köftesi",
+    "name": "Kahramanmaraş Bamyali Satır Köftesi",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -39270,7 +39270,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1355",
-    "name": "Kahramanmaraş Usulü Fırın Çıtır Pane Enginarli Somon Balığı",
+    "name": "Kahramanmaraş Enginarli Somon Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -39299,7 +39299,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1356",
-    "name": "Kahramanmaraş Usulü Glaze Şerbetli Buhar Avokadoli Levrek Buğulama",
+    "name": "Kahramanmaraş Avokadoli Levrek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -39328,7 +39328,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1357",
-    "name": "Kahramanmaraş Usulü Tava Kızartma Brüksel Lahanasıli Dana Kıyma",
+    "name": "Kahramanmaraş Brüksel Lahanasıli Dana Kıyma",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -39357,7 +39357,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1358",
-    "name": "Kahramanmaraş Usulü Düdüklü Lokum Bezelyeli Hindi Bonfile",
+    "name": "Kahramanmaraş Bezelyeli Hindi Bonfile",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -39386,7 +39386,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1359",
-    "name": "Kahramanmaraş Usulü Fırın Graten Arapsaçıli Kuru Fasulye",
+    "name": "Kahramanmaraş Arapsaçıli Kuru Fasulye",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -39415,7 +39415,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1360",
-    "name": "Kahramanmaraş Usulü Fırında Taş Güveçte Deniz Börülcesili Kırmızı Mercimek",
+    "name": "Kahramanmaraş Deniz Börülcesili Kırmızı Mercimek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -39444,7 +39444,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1361",
-    "name": "Kahramanmaraş Usulü Odun Ateşinde Sac Tavada Arpacık Soğanli Nohut",
+    "name": "Kahramanmaraş Arpacık Soğanli Nohut",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -39473,7 +39473,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1362",
-    "name": "Kahramanmaraş Usulü Zeytinyağlı Kısık Ateşte Kabakli Kültür Mantarı",
+    "name": "Kahramanmaraş Kabakli Kültür Mantarı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -39502,7 +39502,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1363",
-    "name": "Kahramanmaraş Usulü Közde Izgara Biberli Deniz Karidesi",
+    "name": "Kahramanmaraş Biberli Deniz Karidesi",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -39531,7 +39531,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1364",
-    "name": "Kahramanmaraş Usulü Kremalı Sarımsak Soslu Karnabaharli Çipura Balığı",
+    "name": "Kahramanmaraş Karnabaharli Çipura Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -39560,7 +39560,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1365",
-    "name": "Kahramanmaraş Usulü Odun Ateşinde Közlenmiş Pırasali Kuzu Pirzola",
+    "name": "Kahramanmaraş Közlenmiş Pırasali Kuzu Pirzola",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -39589,7 +39589,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1366",
-    "name": "Kahramanmaraş Usulü Buharda Şifalı Taze Fasulyeli Dana Antrikot",
+    "name": "Kahramanmaraş Buharda Şifalı Taze Fasulyeli Dana Antrikot",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -39618,7 +39618,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1367",
-    "name": "Kahramanmaraş Usulü Tereyağlı Özel Sote Bamyali Tavuk Pirzola",
+    "name": "Kahramanmaraş Bamyali Tavuk Pirzola",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -39647,7 +39647,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1368",
-    "name": "Kahramanmaraş Usulü Tepsi Buğulama Enginarli Dana Ciğer",
+    "name": "Kahramanmaraş Enginarli Dana Ciğer",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -39676,7 +39676,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1369",
-    "name": "Kahramanmaraş Usulü Toprak Çömlek Usulü Avokadoli Kuzu Böbrek",
+    "name": "Kahramanmaraş Avokadoli Kuzu Böbrek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -39705,7 +39705,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1370",
-    "name": "Kahramanmaraş Usulü Közde Tandır Usulü Brüksel Lahanasıli Sardalya Balığı",
+    "name": "Kahramanmaraş Brüksel Lahanasıli Sardalya Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -39734,7 +39734,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1371",
-    "name": "Kahramanmaraş Usulü Ekşi Soslu Buğulama Bezelyeli Hamsi Tava",
+    "name": "Kahramanmaraş Bezelyeli Hamsi Tava",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -39763,7 +39763,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1372",
-    "name": "Kahramanmaraş Usulü Geleneksel Kavurma Arapsaçıli Bıldırcın Eti",
+    "name": "Kahramanmaraş Arapsaçıli Bıldırcın Eti",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -39792,7 +39792,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1373",
-    "name": "Kahramanmaraş Usulü Fırın Çıtır Pane Deniz Börülcesili Deniz Kalamarı",
+    "name": "Kahramanmaraş Deniz Börülcesili Deniz Kalamarı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -39821,7 +39821,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1374",
-    "name": "Kahramanmaraş Usulü Glaze Şerbetli Buhar Arpacık Soğanli Ahtapot",
+    "name": "Kahramanmaraş Arpacık Soğanli Ahtapot",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -39850,7 +39850,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1375",
-    "name": "Kahramanmaraş Usulü Tava Kızartma Kabakli Yeşil Mercimek",
+    "name": "Kahramanmaraş Kabakli Yeşil Mercimek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -39879,7 +39879,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1376",
-    "name": "Kahramanmaraş Usulü Düdüklü Lokum Biberli Barbunya",
+    "name": "Kahramanmaraş Biberli Barbunya",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -39908,7 +39908,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1377",
-    "name": "Kahramanmaraş Usulü Fırın Graten Karnabaharli Soya Et",
+    "name": "Kahramanmaraş Karnabaharli Soya Et",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -39937,7 +39937,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1378",
-    "name": "Kahramanmaraş Usulü Fırında Taş Güveçte Pırasali Lor Peyniri",
+    "name": "Kahramanmaraş Pırasali Lor Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -39966,7 +39966,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1379",
-    "name": "Kahramanmaraş Usulü Odun Ateşinde Sac Tavada Taze Fasulyeli Hellim Peyniri",
+    "name": "Kahramanmaraş Taze Fasulyeli Hellim Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -39995,7 +39995,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1380",
-    "name": "Kahramanmaraş Usulü Zeytinyağlı Kısık Ateşte Bamyali Kaşar Peyniri",
+    "name": "Kahramanmaraş Bamyali Kaşar Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -40024,7 +40024,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1381",
-    "name": "Mardin Usulü Közde Tandır Usulü Kerevizli Dana Kuşbaşı",
+    "name": "Kerevizli Dana Kuşbaşı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -40053,7 +40053,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1382",
-    "name": "Mardin Usulü Ekşi Soslu Buğulama Barbunyali Kuzu İncik",
+    "name": "Barbunyalı Kuzu İncik",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -40082,7 +40082,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1383",
-    "name": "Mardin Usulü Geleneksel Kavurma Mantarli Tavuk Göğsü",
+    "name": "Mantarlı Tavuk Göğsü",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -40111,7 +40111,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1384",
-    "name": "Mardin Usulü Fırın Çıtır Pane Kuşkonmazli Satır Köftesi",
+    "name": "Kuşkonmazlı Satır Köftesi",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -40140,7 +40140,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1385",
-    "name": "Mardin Usulü Glaze Şerbetli Buhar Tatlı Patatesli Somon Balığı",
+    "name": "Tatlı Patatesli Somon Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -40169,7 +40169,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1386",
-    "name": "Mardin Usulü Tava Kızartma Şalgamli Levrek Buğulama",
+    "name": "Şalgamli Levrek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -40198,7 +40198,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1387",
-    "name": "Mardin Usulü Düdüklü Lokum Pazıli Dana Kıyma",
+    "name": "Pazılı Dana Kıyma",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -40227,7 +40227,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1388",
-    "name": "Mardin Usulü Fırın Graten Şevketi Bostanli Hindi Bonfile",
+    "name": "Şevketi Bostanli Hindi Bonfile",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -40256,7 +40256,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1389",
-    "name": "Mardin Usulü Fırında Taş Güveçte Sarımsakli Kuru Fasulye",
+    "name": "Sarımsaklı Kuru Fasulye",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -40285,7 +40285,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1390",
-    "name": "Mardin Usulü Odun Ateşinde Sac Tavada Patlıcanli Kırmızı Mercimek",
+    "name": "Patlıcanlı Kırmızı Mercimek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -40314,7 +40314,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1391",
-    "name": "Mardin Usulü Zeytinyağlı Kısık Ateşte Patatesli Nohut",
+    "name": "Patatesli Nohut",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -40343,7 +40343,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1392",
-    "name": "Mardin Usulü Közde Izgara Brokolili Kültür Mantarı",
+    "name": "Brokolili Kültür Mantarı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -40372,7 +40372,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1393",
-    "name": "Mardin Usulü Kremalı Sarımsak Soslu Ispanakli Deniz Karidesi",
+    "name": "Ispanaklı Deniz Karidesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -40401,7 +40401,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1394",
-    "name": "Mardin Usulü Odun Ateşinde Közlenmiş Kerevizli Çipura Balığı",
+    "name": "Közlenmiş Kerevizli Çipura Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -40430,7 +40430,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1395",
-    "name": "Mardin Usulü Buharda Şifalı Barbunyali Kuzu Pirzola",
+    "name": "Buharda Şifalı Barbunyalı Kuzu Pirzola",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -40459,7 +40459,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1396",
-    "name": "Mardin Usulü Tereyağlı Özel Sote Mantarli Dana Antrikot",
+    "name": "Mantarlı Dana Antrikot",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -40488,7 +40488,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1397",
-    "name": "Mardin Usulü Tepsi Buğulama Kuşkonmazli Tavuk Pirzola",
+    "name": "Kuşkonmazlı Tavuk Pirzola",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -40517,7 +40517,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1398",
-    "name": "Mardin Usulü Toprak Çömlek Usulü Tatlı Patatesli Dana Ciğer",
+    "name": "Tatlı Patatesli Dana Ciğer",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -40546,7 +40546,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1399",
-    "name": "Mardin Usulü Közde Tandır Usulü Şalgamli Kuzu Böbrek",
+    "name": "Şalgamli Kuzu Böbrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -40575,7 +40575,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1400",
-    "name": "Mardin Usulü Ekşi Soslu Buğulama Pazıli Sardalya Balığı",
+    "name": "Pazılı Sardalya Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -40604,7 +40604,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1401",
-    "name": "Mardin Usulü Geleneksel Kavurma Şevketi Bostanli Hamsi Tava",
+    "name": "Şevketi Bostanli Hamsi Tava",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -40633,7 +40633,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1402",
-    "name": "Mardin Usulü Fırın Çıtır Pane Sarımsakli Bıldırcın Eti",
+    "name": "Sarımsaklı Bıldırcın Eti",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -40662,7 +40662,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1403",
-    "name": "Mardin Usulü Glaze Şerbetli Buhar Patlıcanli Deniz Kalamarı",
+    "name": "Patlıcanlı Deniz Kalamarı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -40691,7 +40691,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1404",
-    "name": "Mardin Usulü Tava Kızartma Patatesli Ahtapot",
+    "name": "Patatesli Ahtapot",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -40720,7 +40720,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1405",
-    "name": "Mardin Usulü Düdüklü Lokum Brokolili Yeşil Mercimek",
+    "name": "Brokolili Yeşil Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -40749,7 +40749,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1406",
-    "name": "Mardin Usulü Fırın Graten Ispanakli Barbunya",
+    "name": "Ispanaklı Barbunya",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -40778,7 +40778,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1407",
-    "name": "Mardin Usulü Fırında Taş Güveçte Kerevizli Soya Et",
+    "name": "Kerevizli Soya Et",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -40807,7 +40807,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1408",
-    "name": "Mardin Usulü Odun Ateşinde Sac Tavada Barbunyali Lor Peyniri",
+    "name": "Barbunyalı Lor Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -40836,7 +40836,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1409",
-    "name": "Mardin Usulü Zeytinyağlı Kısık Ateşte Mantarli Hellim Peyniri",
+    "name": "Mantarlı Hellim Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -40865,7 +40865,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1410",
-    "name": "Mardin Usulü Közde Izgara Kuşkonmazli Kaşar Peyniri",
+    "name": "Kuşkonmazlı Kaşar Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -40894,7 +40894,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1411",
-    "name": "Muğla Usulü Ekşi Soslu Buğulama Bamyali Dana Kuşbaşı",
+    "name": "Bamyali Dana Kuşbaşı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -40923,7 +40923,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1412",
-    "name": "Muğla Usulü Geleneksel Kavurma Enginarli Kuzu İncik",
+    "name": "Enginarli Kuzu İncik",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -40952,7 +40952,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1413",
-    "name": "Muğla Usulü Fırın Çıtır Pane Avokadoli Tavuk Göğsü",
+    "name": "Avokadoli Tavuk Göğsü",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -40981,7 +40981,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1414",
-    "name": "Muğla Usulü Glaze Şerbetli Buhar Brüksel Lahanasıli Satır Köftesi",
+    "name": "Brüksel Lahanasıli Satır Köftesi",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -41010,7 +41010,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1415",
-    "name": "Muğla Usulü Tava Kızartma Bezelyeli Somon Balığı",
+    "name": "Bezelyeli Somon Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -41039,7 +41039,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1416",
-    "name": "Muğla Usulü Düdüklü Lokum Arapsaçıli Levrek Buğulama",
+    "name": "Arapsaçıli Levrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -41068,7 +41068,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1417",
-    "name": "Muğla Usulü Fırın Graten Deniz Börülcesili Dana Kıyma",
+    "name": "Deniz Börülcesili Dana Kıyma",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -41097,7 +41097,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1418",
-    "name": "Muğla Usulü Fırında Taş Güveçte Arpacık Soğanli Hindi Bonfile",
+    "name": "Arpacık Soğanli Hindi Bonfile",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -41126,7 +41126,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1419",
-    "name": "Muğla Usulü Odun Ateşinde Sac Tavada Kabakli Kuru Fasulye",
+    "name": "Kabakli Kuru Fasulye",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -41155,7 +41155,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1420",
-    "name": "Muğla Usulü Zeytinyağlı Kısık Ateşte Biberli Kırmızı Mercimek",
+    "name": "Biberli Kırmızı Mercimek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -41184,7 +41184,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1421",
-    "name": "Muğla Usulü Közde Izgara Karnabaharli Nohut",
+    "name": "Karnabaharli Nohut",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -41213,7 +41213,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1422",
-    "name": "Muğla Usulü Kremalı Sarımsak Soslu Pırasali Kültür Mantarı",
+    "name": "Pırasali Kültür Mantarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -41242,7 +41242,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1423",
-    "name": "Muğla Usulü Odun Ateşinde Közlenmiş Taze Fasulyeli Deniz Karidesi",
+    "name": "Közlenmiş Taze Fasulyeli Deniz Karidesi",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -41271,7 +41271,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1424",
-    "name": "Muğla Usulü Buharda Şifalı Bamyali Çipura Balığı",
+    "name": "Buharda Şifalı Bamyali Çipura Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -41300,7 +41300,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1425",
-    "name": "Muğla Usulü Tereyağlı Özel Sote Enginarli Kuzu Pirzola",
+    "name": "Enginarli Kuzu Pirzola",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -41329,7 +41329,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1426",
-    "name": "Muğla Usulü Tepsi Buğulama Avokadoli Dana Antrikot",
+    "name": "Avokadoli Dana Antrikot",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -41358,7 +41358,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1427",
-    "name": "Muğla Usulü Toprak Çömlek Usulü Brüksel Lahanasıli Tavuk Pirzola",
+    "name": "Brüksel Lahanasıli Tavuk Pirzola",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -41387,7 +41387,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1428",
-    "name": "Muğla Usulü Közde Tandır Usulü Bezelyeli Dana Ciğer",
+    "name": "Bezelyeli Dana Ciğer",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -41416,7 +41416,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1429",
-    "name": "Muğla Usulü Ekşi Soslu Buğulama Arapsaçıli Kuzu Böbrek",
+    "name": "Arapsaçıli Kuzu Böbrek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -41445,7 +41445,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1430",
-    "name": "Muğla Usulü Geleneksel Kavurma Deniz Börülcesili Sardalya Balığı",
+    "name": "Deniz Börülcesili Sardalya Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -41474,7 +41474,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1431",
-    "name": "Muğla Usulü Fırın Çıtır Pane Arpacık Soğanli Hamsi Tava",
+    "name": "Arpacık Soğanli Hamsi Tava",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -41503,7 +41503,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1432",
-    "name": "Muğla Usulü Glaze Şerbetli Buhar Kabakli Bıldırcın Eti",
+    "name": "Kabakli Bıldırcın Eti",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -41532,7 +41532,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1433",
-    "name": "Muğla Usulü Tava Kızartma Biberli Deniz Kalamarı",
+    "name": "Biberli Deniz Kalamarı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -41561,7 +41561,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1434",
-    "name": "Muğla Usulü Düdüklü Lokum Karnabaharli Ahtapot",
+    "name": "Karnabaharli Ahtapot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -41590,7 +41590,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1435",
-    "name": "Muğla Usulü Fırın Graten Pırasali Yeşil Mercimek",
+    "name": "Pırasali Yeşil Mercimek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -41619,7 +41619,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1436",
-    "name": "Muğla Usulü Fırında Taş Güveçte Taze Fasulyeli Barbunya",
+    "name": "Taze Fasulyeli Barbunya",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -41648,7 +41648,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1437",
-    "name": "Muğla Usulü Odun Ateşinde Sac Tavada Bamyali Soya Et",
+    "name": "Bamyali Soya Et",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -41677,7 +41677,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1438",
-    "name": "Muğla Usulü Zeytinyağlı Kısık Ateşte Enginarli Lor Peyniri",
+    "name": "Enginarli Lor Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -41706,7 +41706,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1439",
-    "name": "Muğla Usulü Közde Izgara Avokadoli Hellim Peyniri",
+    "name": "Avokadoli Hellim Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -41735,7 +41735,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1440",
-    "name": "Muğla Usulü Kremalı Sarımsak Soslu Brüksel Lahanasıli Kaşar Peyniri",
+    "name": "Brüksel Lahanasıli Kaşar Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -41764,7 +41764,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1441",
-    "name": "Muş Usulü Geleneksel Kavurma Kuşkonmazli Dana Kuşbaşı",
+    "name": "Muş Kuşkonmazlı Dana Kuşbaşı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -41793,7 +41793,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1442",
-    "name": "Muş Usulü Fırın Çıtır Pane Tatlı Patatesli Kuzu İncik",
+    "name": "Muş Tatlı Patatesli Kuzu İncik",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -41822,7 +41822,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1443",
-    "name": "Muş Usulü Glaze Şerbetli Buhar Şalgamli Tavuk Göğsü",
+    "name": "Muş Şalgamli Tavuk Göğsü",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -41851,7 +41851,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1444",
-    "name": "Muş Usulü Tava Kızartma Pazıli Satır Köftesi",
+    "name": "Muş Pazılı Satır Köftesi",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -41880,7 +41880,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1445",
-    "name": "Muş Usulü Düdüklü Lokum Şevketi Bostanli Somon Balığı",
+    "name": "Muş Şevketi Bostanli Somon Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -41909,7 +41909,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1446",
-    "name": "Muş Usulü Fırın Graten Sarımsakli Levrek Buğulama",
+    "name": "Muş Sarımsaklı Levrek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -41938,7 +41938,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1447",
-    "name": "Muş Usulü Fırında Taş Güveçte Patlıcanli Dana Kıyma",
+    "name": "Muş Patlıcanlı Dana Kıyma",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -41967,7 +41967,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1448",
-    "name": "Muş Usulü Odun Ateşinde Sac Tavada Patatesli Hindi Bonfile",
+    "name": "Muş Patatesli Hindi Bonfile",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -41996,7 +41996,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1449",
-    "name": "Muş Usulü Zeytinyağlı Kısık Ateşte Brokolili Kuru Fasulye",
+    "name": "Muş Brokolili Kuru Fasulye",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -42025,7 +42025,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1450",
-    "name": "Muş Usulü Közde Izgara Ispanakli Kırmızı Mercimek",
+    "name": "Muş Ispanaklı Kırmızı Mercimek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -42054,7 +42054,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1451",
-    "name": "Muş Usulü Kremalı Sarımsak Soslu Kerevizli Nohut",
+    "name": "Muş Kerevizli Nohut",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -42083,7 +42083,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1452",
-    "name": "Muş Usulü Odun Ateşinde Közlenmiş Barbunyali Kültür Mantarı",
+    "name": "Muş Közlenmiş Barbunyalı Kültür Mantarı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -42112,7 +42112,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1453",
-    "name": "Muş Usulü Buharda Şifalı Mantarli Deniz Karidesi",
+    "name": "Muş Buharda Şifalı Mantarlı Deniz Karidesi",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -42141,7 +42141,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1454",
-    "name": "Muş Usulü Tereyağlı Özel Sote Kuşkonmazli Çipura Balığı",
+    "name": "Muş Kuşkonmazlı Çipura Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -42170,7 +42170,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1455",
-    "name": "Muş Usulü Tepsi Buğulama Tatlı Patatesli Kuzu Pirzola",
+    "name": "Muş Tatlı Patatesli Kuzu Pirzola",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -42199,7 +42199,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1456",
-    "name": "Muş Usulü Toprak Çömlek Usulü Şalgamli Dana Antrikot",
+    "name": "Muş Şalgamli Dana Antrikot",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -42228,7 +42228,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1457",
-    "name": "Muş Usulü Közde Tandır Usulü Pazıli Tavuk Pirzola",
+    "name": "Muş Pazılı Tavuk Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -42257,7 +42257,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1458",
-    "name": "Muş Usulü Ekşi Soslu Buğulama Şevketi Bostanli Dana Ciğer",
+    "name": "Muş Şevketi Bostanli Dana Ciğer",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -42286,7 +42286,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1459",
-    "name": "Muş Usulü Geleneksel Kavurma Sarımsakli Kuzu Böbrek",
+    "name": "Muş Sarımsaklı Kuzu Böbrek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -42315,7 +42315,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1460",
-    "name": "Muş Usulü Fırın Çıtır Pane Patlıcanli Sardalya Balığı",
+    "name": "Muş Patlıcanlı Sardalya Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -42344,7 +42344,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1461",
-    "name": "Muş Usulü Glaze Şerbetli Buhar Patatesli Hamsi Tava",
+    "name": "Muş Patatesli Hamsi Tava",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -42373,7 +42373,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1462",
-    "name": "Muş Usulü Tava Kızartma Brokolili Bıldırcın Eti",
+    "name": "Muş Brokolili Bıldırcın Eti",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -42402,7 +42402,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1463",
-    "name": "Muş Usulü Düdüklü Lokum Ispanakli Deniz Kalamarı",
+    "name": "Muş Ispanaklı Deniz Kalamarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -42431,7 +42431,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1464",
-    "name": "Muş Usulü Fırın Graten Kerevizli Ahtapot",
+    "name": "Muş Kerevizli Ahtapot",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -42460,7 +42460,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1465",
-    "name": "Muş Usulü Fırında Taş Güveçte Barbunyali Yeşil Mercimek",
+    "name": "Muş Barbunyalı Yeşil Mercimek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -42489,7 +42489,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1466",
-    "name": "Muş Usulü Odun Ateşinde Sac Tavada Mantarli Barbunya",
+    "name": "Muş Mantarlı Barbunya",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -42518,7 +42518,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1467",
-    "name": "Muş Usulü Zeytinyağlı Kısık Ateşte Kuşkonmazli Soya Et",
+    "name": "Muş Kuşkonmazlı Soya Et",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -42547,7 +42547,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1468",
-    "name": "Muş Usulü Közde Izgara Tatlı Patatesli Lor Peyniri",
+    "name": "Muş Tatlı Patatesli Lor Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -42576,7 +42576,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1469",
-    "name": "Muş Usulü Kremalı Sarımsak Soslu Şalgamli Hellim Peyniri",
+    "name": "Muş Şalgamli Hellim Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -42605,7 +42605,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1470",
-    "name": "Muş Usulü Odun Ateşinde Közlenmiş Pazıli Kaşar Peyniri",
+    "name": "Muş Közlenmiş Pazılı Kaşar Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -42634,7 +42634,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1471",
-    "name": "Nevşehir Usulü Fırın Çıtır Pane Brüksel Lahanasıli Dana Kuşbaşı",
+    "name": "Brüksel Lahanasıli Dana Kuşbaşı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -42663,7 +42663,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1472",
-    "name": "Nevşehir Usulü Glaze Şerbetli Buhar Bezelyeli Kuzu İncik",
+    "name": "Bezelyeli Kuzu İncik",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -42692,7 +42692,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1473",
-    "name": "Nevşehir Usulü Tava Kızartma Arapsaçıli Tavuk Göğsü",
+    "name": "Arapsaçıli Tavuk Göğsü",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -42721,7 +42721,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1474",
-    "name": "Nevşehir Usulü Düdüklü Lokum Deniz Börülcesili Satır Köftesi",
+    "name": "Deniz Börülcesili Satır Köftesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -42750,7 +42750,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1475",
-    "name": "Nevşehir Usulü Fırın Graten Arpacık Soğanli Somon Balığı",
+    "name": "Arpacık Soğanli Somon Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -42779,7 +42779,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1476",
-    "name": "Nevşehir Usulü Fırında Taş Güveçte Kabakli Levrek Buğulama",
+    "name": "Kabakli Levrek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -42808,7 +42808,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1477",
-    "name": "Nevşehir Usulü Odun Ateşinde Sac Tavada Biberli Dana Kıyma",
+    "name": "Biberli Dana Kıyma",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -42837,7 +42837,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1478",
-    "name": "Nevşehir Usulü Zeytinyağlı Kısık Ateşte Karnabaharli Hindi Bonfile",
+    "name": "Karnabaharli Hindi Bonfile",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -42866,7 +42866,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1479",
-    "name": "Nevşehir Usulü Közde Izgara Pırasali Kuru Fasulye",
+    "name": "Pırasali Kuru Fasulye",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -42895,7 +42895,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1480",
-    "name": "Nevşehir Usulü Kremalı Sarımsak Soslu Taze Fasulyeli Kırmızı Mercimek",
+    "name": "Taze Fasulyeli Kırmızı Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -42924,7 +42924,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1481",
-    "name": "Nevşehir Usulü Odun Ateşinde Közlenmiş Bamyali Nohut",
+    "name": "Közlenmiş Bamyali Nohut",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -42953,7 +42953,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1482",
-    "name": "Nevşehir Usulü Buharda Şifalı Enginarli Kültür Mantarı",
+    "name": "Buharda Şifalı Enginarli Kültür Mantarı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -42982,7 +42982,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1483",
-    "name": "Nevşehir Usulü Tereyağlı Özel Sote Avokadoli Deniz Karidesi",
+    "name": "Avokadoli Deniz Karidesi",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -43011,7 +43011,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1484",
-    "name": "Nevşehir Usulü Tepsi Buğulama Brüksel Lahanasıli Çipura Balığı",
+    "name": "Brüksel Lahanasıli Çipura Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -43040,7 +43040,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1485",
-    "name": "Nevşehir Usulü Toprak Çömlek Usulü Bezelyeli Kuzu Pirzola",
+    "name": "Bezelyeli Kuzu Pirzola",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -43069,7 +43069,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1486",
-    "name": "Nevşehir Usulü Közde Tandır Usulü Arapsaçıli Dana Antrikot",
+    "name": "Arapsaçıli Dana Antrikot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -43098,7 +43098,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1487",
-    "name": "Nevşehir Usulü Ekşi Soslu Buğulama Deniz Börülcesili Tavuk Pirzola",
+    "name": "Deniz Börülcesili Tavuk Pirzola",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -43127,7 +43127,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1488",
-    "name": "Nevşehir Usulü Geleneksel Kavurma Arpacık Soğanli Dana Ciğer",
+    "name": "Arpacık Soğanli Dana Ciğer",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -43156,7 +43156,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1489",
-    "name": "Nevşehir Usulü Fırın Çıtır Pane Kabakli Kuzu Böbrek",
+    "name": "Kabakli Kuzu Böbrek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -43185,7 +43185,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1490",
-    "name": "Nevşehir Usulü Glaze Şerbetli Buhar Biberli Sardalya Balığı",
+    "name": "Biberli Sardalya Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -43214,7 +43214,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1491",
-    "name": "Nevşehir Usulü Tava Kızartma Karnabaharli Hamsi Tava",
+    "name": "Karnabaharli Hamsi Tava",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -43243,7 +43243,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1492",
-    "name": "Nevşehir Usulü Düdüklü Lokum Pırasali Bıldırcın Eti",
+    "name": "Pırasali Bıldırcın Eti",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -43272,7 +43272,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1493",
-    "name": "Nevşehir Usulü Fırın Graten Taze Fasulyeli Deniz Kalamarı",
+    "name": "Taze Fasulyeli Deniz Kalamarı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -43301,7 +43301,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1494",
-    "name": "Nevşehir Usulü Fırında Taş Güveçte Bamyali Ahtapot",
+    "name": "Bamyali Ahtapot",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -43330,7 +43330,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1495",
-    "name": "Nevşehir Usulü Odun Ateşinde Sac Tavada Enginarli Yeşil Mercimek",
+    "name": "Enginarli Yeşil Mercimek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -43359,7 +43359,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1496",
-    "name": "Nevşehir Usulü Zeytinyağlı Kısık Ateşte Avokadoli Barbunya",
+    "name": "Avokadoli Barbunya",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -43388,7 +43388,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1497",
-    "name": "Nevşehir Usulü Közde Izgara Brüksel Lahanasıli Soya Et",
+    "name": "Brüksel Lahanasıli Soya Et",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -43417,7 +43417,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1498",
-    "name": "Nevşehir Usulü Kremalı Sarımsak Soslu Bezelyeli Lor Peyniri",
+    "name": "Bezelyeli Lor Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -43446,7 +43446,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1499",
-    "name": "Nevşehir Usulü Odun Ateşinde Közlenmiş Arapsaçıli Hellim Peyniri",
+    "name": "Közlenmiş Arapsaçıli Hellim Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -43475,7 +43475,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1500",
-    "name": "Nevşehir Usulü Buharda Şifalı Deniz Börülcesili Kaşar Peyniri",
+    "name": "Buharda Şifalı Deniz Börülcesili Kaşar Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -43504,7 +43504,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1501",
-    "name": "Niğde Usulü Glaze Şerbetli Buhar Pazıli Dana Kuşbaşı",
+    "name": "Pazılı Dana Kuşbaşı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -43533,7 +43533,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1502",
-    "name": "Niğde Usulü Tava Kızartma Şevketi Bostanli Kuzu İncik",
+    "name": "Şevketi Bostanli Kuzu İncik",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -43562,7 +43562,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1503",
-    "name": "Niğde Usulü Düdüklü Lokum Sarımsakli Tavuk Göğsü",
+    "name": "Sarımsaklı Tavuk Göğsü",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -43591,7 +43591,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1504",
-    "name": "Niğde Usulü Fırın Graten Patlıcanli Satır Köftesi",
+    "name": "Patlıcanlı Satır Köftesi",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -43620,7 +43620,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1505",
-    "name": "Niğde Usulü Fırında Taş Güveçte Patatesli Somon Balığı",
+    "name": "Patatesli Somon Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -43649,7 +43649,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1506",
-    "name": "Niğde Usulü Odun Ateşinde Sac Tavada Brokolili Levrek Buğulama",
+    "name": "Brokolili Levrek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -43678,7 +43678,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1507",
-    "name": "Niğde Usulü Zeytinyağlı Kısık Ateşte Ispanakli Dana Kıyma",
+    "name": "Ispanaklı Dana Kıyma",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -43707,7 +43707,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1508",
-    "name": "Niğde Usulü Közde Izgara Kerevizli Hindi Bonfile",
+    "name": "Kerevizli Hindi Bonfile",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -43736,7 +43736,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1509",
-    "name": "Niğde Usulü Kremalı Sarımsak Soslu Barbunyali Kuru Fasulye",
+    "name": "Barbunyalı Kuru Fasulye",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -43765,7 +43765,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1510",
-    "name": "Niğde Usulü Odun Ateşinde Közlenmiş Mantarli Kırmızı Mercimek",
+    "name": "Közlenmiş Mantarlı Kırmızı Mercimek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -43794,7 +43794,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1511",
-    "name": "Niğde Usulü Buharda Şifalı Kuşkonmazli Nohut",
+    "name": "Buharda Şifalı Kuşkonmazlı Nohut",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -43823,7 +43823,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1512",
-    "name": "Niğde Usulü Tereyağlı Özel Sote Tatlı Patatesli Kültür Mantarı",
+    "name": "Tatlı Patatesli Kültür Mantarı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -43852,7 +43852,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1513",
-    "name": "Niğde Usulü Tepsi Buğulama Şalgamli Deniz Karidesi",
+    "name": "Şalgamli Deniz Karidesi",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -43881,7 +43881,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1514",
-    "name": "Niğde Usulü Toprak Çömlek Usulü Pazıli Çipura Balığı",
+    "name": "Pazılı Çipura Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -43910,7 +43910,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1515",
-    "name": "Niğde Usulü Közde Tandır Usulü Şevketi Bostanli Kuzu Pirzola",
+    "name": "Şevketi Bostanli Kuzu Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -43939,7 +43939,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1516",
-    "name": "Niğde Usulü Ekşi Soslu Buğulama Sarımsakli Dana Antrikot",
+    "name": "Sarımsaklı Dana Antrikot",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -43968,7 +43968,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1517",
-    "name": "Niğde Usulü Geleneksel Kavurma Patlıcanli Tavuk Pirzola",
+    "name": "Patlıcanlı Tavuk Pirzola",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -43997,7 +43997,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1518",
-    "name": "Niğde Usulü Fırın Çıtır Pane Patatesli Dana Ciğer",
+    "name": "Patatesli Dana Ciğer",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -44026,7 +44026,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1519",
-    "name": "Niğde Usulü Glaze Şerbetli Buhar Brokolili Kuzu Böbrek",
+    "name": "Brokolili Kuzu Böbrek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -44055,7 +44055,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1520",
-    "name": "Niğde Usulü Tava Kızartma Ispanakli Sardalya Balığı",
+    "name": "Ispanaklı Sardalya Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -44084,7 +44084,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1521",
-    "name": "Niğde Usulü Düdüklü Lokum Kerevizli Hamsi Tava",
+    "name": "Kerevizli Hamsi Tava",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -44113,7 +44113,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1522",
-    "name": "Niğde Usulü Fırın Graten Barbunyali Bıldırcın Eti",
+    "name": "Barbunyalı Bıldırcın Eti",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -44142,7 +44142,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1523",
-    "name": "Niğde Usulü Fırında Taş Güveçte Mantarli Deniz Kalamarı",
+    "name": "Mantarlı Deniz Kalamarı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -44171,7 +44171,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1524",
-    "name": "Niğde Usulü Odun Ateşinde Sac Tavada Kuşkonmazli Ahtapot",
+    "name": "Kuşkonmazlı Ahtapot",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -44200,7 +44200,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1525",
-    "name": "Niğde Usulü Zeytinyağlı Kısık Ateşte Tatlı Patatesli Yeşil Mercimek",
+    "name": "Tatlı Patatesli Yeşil Mercimek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -44229,7 +44229,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1526",
-    "name": "Niğde Usulü Közde Izgara Şalgamli Barbunya",
+    "name": "Şalgamli Barbunya",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -44258,7 +44258,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1527",
-    "name": "Niğde Usulü Kremalı Sarımsak Soslu Pazıli Soya Et",
+    "name": "Pazılı Soya Et",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -44287,7 +44287,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1528",
-    "name": "Niğde Usulü Odun Ateşinde Közlenmiş Şevketi Bostanli Lor Peyniri",
+    "name": "Közlenmiş Şevketi Bostanli Lor Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -44316,7 +44316,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1529",
-    "name": "Niğde Usulü Buharda Şifalı Sarımsakli Hellim Peyniri",
+    "name": "Buharda Şifalı Sarımsaklı Hellim Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -44345,7 +44345,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1530",
-    "name": "Niğde Usulü Tereyağlı Özel Sote Patlıcanli Kaşar Peyniri",
+    "name": "Patlıcanlı Kaşar Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -44374,7 +44374,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1531",
-    "name": "Ordu Usulü Tava Kızartma Deniz Börülcesili Dana Kuşbaşı",
+    "name": "Deniz Börülcesili Dana Kuşbaşı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -44403,7 +44403,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1532",
-    "name": "Ordu Usulü Düdüklü Lokum Arpacık Soğanli Kuzu İncik",
+    "name": "Arpacık Soğanli Kuzu İncik",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -44432,7 +44432,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1533",
-    "name": "Ordu Usulü Fırın Graten Kabakli Tavuk Göğsü",
+    "name": "Kabakli Tavuk Göğsü",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -44461,7 +44461,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1534",
-    "name": "Ordu Usulü Fırında Taş Güveçte Biberli Satır Köftesi",
+    "name": "Biberli Satır Köftesi",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -44490,7 +44490,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1535",
-    "name": "Ordu Usulü Odun Ateşinde Sac Tavada Karnabaharli Somon Balığı",
+    "name": "Karnabaharli Somon Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -44519,7 +44519,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1536",
-    "name": "Ordu Usulü Zeytinyağlı Kısık Ateşte Pırasali Levrek Buğulama",
+    "name": "Pırasali Levrek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -44548,7 +44548,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1537",
-    "name": "Ordu Usulü Közde Izgara Taze Fasulyeli Dana Kıyma",
+    "name": "Taze Fasulyeli Dana Kıyma",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -44577,7 +44577,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1538",
-    "name": "Ordu Usulü Kremalı Sarımsak Soslu Bamyali Hindi Bonfile",
+    "name": "Bamyali Hindi Bonfile",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -44606,7 +44606,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1539",
-    "name": "Ordu Usulü Odun Ateşinde Közlenmiş Enginarli Kuru Fasulye",
+    "name": "Közlenmiş Enginarli Kuru Fasulye",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -44635,7 +44635,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1540",
-    "name": "Ordu Usulü Buharda Şifalı Avokadoli Kırmızı Mercimek",
+    "name": "Buharda Şifalı Avokadoli Kırmızı Mercimek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -44664,7 +44664,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1541",
-    "name": "Ordu Usulü Tereyağlı Özel Sote Brüksel Lahanasıli Nohut",
+    "name": "Brüksel Lahanasıli Nohut",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -44693,7 +44693,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1542",
-    "name": "Ordu Usulü Tepsi Buğulama Bezelyeli Kültür Mantarı",
+    "name": "Bezelyeli Kültür Mantarı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -44722,7 +44722,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1543",
-    "name": "Ordu Usulü Toprak Çömlek Usulü Arapsaçıli Deniz Karidesi",
+    "name": "Arapsaçıli Deniz Karidesi",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -44751,7 +44751,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1544",
-    "name": "Ordu Usulü Közde Tandır Usulü Deniz Börülcesili Çipura Balığı",
+    "name": "Deniz Börülcesili Çipura Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -44780,7 +44780,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1545",
-    "name": "Ordu Usulü Ekşi Soslu Buğulama Arpacık Soğanli Kuzu Pirzola",
+    "name": "Arpacık Soğanli Kuzu Pirzola",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -44809,7 +44809,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1546",
-    "name": "Ordu Usulü Geleneksel Kavurma Kabakli Dana Antrikot",
+    "name": "Kabakli Dana Antrikot",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -44838,7 +44838,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1547",
-    "name": "Ordu Usulü Fırın Çıtır Pane Biberli Tavuk Pirzola",
+    "name": "Biberli Tavuk Pirzola",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -44867,7 +44867,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1548",
-    "name": "Ordu Usulü Glaze Şerbetli Buhar Karnabaharli Dana Ciğer",
+    "name": "Karnabaharli Dana Ciğer",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -44896,7 +44896,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1549",
-    "name": "Ordu Usulü Tava Kızartma Pırasali Kuzu Böbrek",
+    "name": "Pırasali Kuzu Böbrek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -44925,7 +44925,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1550",
-    "name": "Ordu Usulü Düdüklü Lokum Taze Fasulyeli Sardalya Balığı",
+    "name": "Taze Fasulyeli Sardalya Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -44954,7 +44954,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1551",
-    "name": "Ordu Usulü Fırın Graten Bamyali Hamsi Tava",
+    "name": "Bamyali Hamsi Tava",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -44983,7 +44983,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1552",
-    "name": "Ordu Usulü Fırında Taş Güveçte Enginarli Bıldırcın Eti",
+    "name": "Enginarli Bıldırcın Eti",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -45012,7 +45012,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1553",
-    "name": "Ordu Usulü Odun Ateşinde Sac Tavada Avokadoli Deniz Kalamarı",
+    "name": "Avokadoli Deniz Kalamarı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -45041,7 +45041,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1554",
-    "name": "Ordu Usulü Zeytinyağlı Kısık Ateşte Brüksel Lahanasıli Ahtapot",
+    "name": "Brüksel Lahanasıli Ahtapot",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -45070,7 +45070,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1555",
-    "name": "Ordu Usulü Közde Izgara Bezelyeli Yeşil Mercimek",
+    "name": "Bezelyeli Yeşil Mercimek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -45099,7 +45099,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1556",
-    "name": "Ordu Usulü Kremalı Sarımsak Soslu Arapsaçıli Barbunya",
+    "name": "Arapsaçıli Barbunya",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -45128,7 +45128,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1557",
-    "name": "Ordu Usulü Odun Ateşinde Közlenmiş Deniz Börülcesili Soya Et",
+    "name": "Közlenmiş Deniz Börülcesili Soya Et",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -45157,7 +45157,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1558",
-    "name": "Ordu Usulü Buharda Şifalı Arpacık Soğanli Lor Peyniri",
+    "name": "Buharda Şifalı Arpacık Soğanli Lor Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -45186,7 +45186,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1559",
-    "name": "Ordu Usulü Tereyağlı Özel Sote Kabakli Hellim Peyniri",
+    "name": "Kabakli Hellim Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -45215,7 +45215,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1560",
-    "name": "Ordu Usulü Tepsi Buğulama Biberli Kaşar Peyniri",
+    "name": "Biberli Kaşar Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -45244,7 +45244,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1561",
-    "name": "Rize Usulü Düdüklü Lokum Patlıcanli Dana Kuşbaşı",
+    "name": "Patlıcanlı Dana Kuşbaşı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -45273,7 +45273,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1562",
-    "name": "Rize Usulü Fırın Graten Patatesli Kuzu İncik",
+    "name": "Patatesli Kuzu İncik",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -45302,7 +45302,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1563",
-    "name": "Rize Usulü Fırında Taş Güveçte Brokolili Tavuk Göğsü",
+    "name": "Brokolili Tavuk Göğsü",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -45331,7 +45331,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1564",
-    "name": "Rize Usulü Odun Ateşinde Sac Tavada Ispanakli Satır Köftesi",
+    "name": "Ispanaklı Satır Köftesi",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -45360,7 +45360,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1565",
-    "name": "Rize Usulü Zeytinyağlı Kısık Ateşte Kerevizli Somon Balığı",
+    "name": "Kerevizli Somon Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -45389,7 +45389,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1566",
-    "name": "Rize Usulü Közde Izgara Barbunyali Levrek Buğulama",
+    "name": "Barbunyalı Levrek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -45418,7 +45418,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1567",
-    "name": "Rize Usulü Kremalı Sarımsak Soslu Mantarli Dana Kıyma",
+    "name": "Mantarlı Dana Kıyma",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -45447,7 +45447,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1568",
-    "name": "Rize Usulü Odun Ateşinde Közlenmiş Kuşkonmazli Hindi Bonfile",
+    "name": "Közlenmiş Kuşkonmazlı Hindi Bonfile",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -45476,7 +45476,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1569",
-    "name": "Rize Usulü Buharda Şifalı Tatlı Patatesli Kuru Fasulye",
+    "name": "Buharda Şifalı Tatlı Patatesli Kuru Fasulye",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -45505,7 +45505,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1570",
-    "name": "Rize Usulü Tereyağlı Özel Sote Şalgamli Kırmızı Mercimek",
+    "name": "Şalgamli Kırmızı Mercimek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -45534,7 +45534,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1571",
-    "name": "Rize Usulü Tepsi Buğulama Pazıli Nohut",
+    "name": "Pazılı Nohut",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -45563,7 +45563,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1572",
-    "name": "Rize Usulü Toprak Çömlek Usulü Şevketi Bostanli Kültür Mantarı",
+    "name": "Şevketi Bostanli Kültür Mantarı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -45592,7 +45592,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1573",
-    "name": "Rize Usulü Közde Tandır Usulü Sarımsakli Deniz Karidesi",
+    "name": "Sarımsaklı Deniz Karidesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -45621,7 +45621,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1574",
-    "name": "Rize Usulü Ekşi Soslu Buğulama Patlıcanli Çipura Balığı",
+    "name": "Patlıcanlı Çipura Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -45650,7 +45650,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1575",
-    "name": "Rize Usulü Geleneksel Kavurma Patatesli Kuzu Pirzola",
+    "name": "Patatesli Kuzu Pirzola",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -45679,7 +45679,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1576",
-    "name": "Rize Usulü Fırın Çıtır Pane Brokolili Dana Antrikot",
+    "name": "Brokolili Dana Antrikot",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -45708,7 +45708,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1577",
-    "name": "Rize Usulü Glaze Şerbetli Buhar Ispanakli Tavuk Pirzola",
+    "name": "Ispanaklı Tavuk Pirzola",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -45737,7 +45737,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1578",
-    "name": "Rize Usulü Tava Kızartma Kerevizli Dana Ciğer",
+    "name": "Kerevizli Dana Ciğer",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -45766,7 +45766,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1579",
-    "name": "Rize Usulü Düdüklü Lokum Barbunyali Kuzu Böbrek",
+    "name": "Barbunyalı Kuzu Böbrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -45795,7 +45795,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1580",
-    "name": "Rize Usulü Fırın Graten Mantarli Sardalya Balığı",
+    "name": "Mantarlı Sardalya Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -45824,7 +45824,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1581",
-    "name": "Rize Usulü Fırında Taş Güveçte Kuşkonmazli Hamsi Tava",
+    "name": "Kuşkonmazlı Hamsi Tava",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -45853,7 +45853,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1582",
-    "name": "Rize Usulü Odun Ateşinde Sac Tavada Tatlı Patatesli Bıldırcın Eti",
+    "name": "Tatlı Patatesli Bıldırcın Eti",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -45882,7 +45882,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1583",
-    "name": "Rize Usulü Zeytinyağlı Kısık Ateşte Şalgamli Deniz Kalamarı",
+    "name": "Şalgamli Deniz Kalamarı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -45911,7 +45911,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1584",
-    "name": "Rize Usulü Közde Izgara Pazıli Ahtapot",
+    "name": "Pazılı Ahtapot",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -45940,7 +45940,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1585",
-    "name": "Rize Usulü Kremalı Sarımsak Soslu Şevketi Bostanli Yeşil Mercimek",
+    "name": "Şevketi Bostanli Yeşil Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -45969,7 +45969,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1586",
-    "name": "Rize Usulü Odun Ateşinde Közlenmiş Sarımsakli Barbunya",
+    "name": "Közlenmiş Sarımsaklı Barbunya",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -45998,7 +45998,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1587",
-    "name": "Rize Usulü Buharda Şifalı Patlıcanli Soya Et",
+    "name": "Buharda Şifalı Patlıcanlı Soya Et",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -46027,7 +46027,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1588",
-    "name": "Rize Usulü Tereyağlı Özel Sote Patatesli Lor Peyniri",
+    "name": "Patatesli Lor Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -46056,7 +46056,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1589",
-    "name": "Rize Usulü Tepsi Buğulama Brokolili Hellim Peyniri",
+    "name": "Brokolili Hellim Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -46085,7 +46085,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1590",
-    "name": "Rize Usulü Toprak Çömlek Usulü Ispanakli Kaşar Peyniri",
+    "name": "Ispanaklı Kaşar Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -46114,7 +46114,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1591",
-    "name": "Sakarya Usulü Fırın Graten Biberli Dana Kuşbaşı",
+    "name": "Biberli Dana Kuşbaşı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -46143,7 +46143,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1592",
-    "name": "Sakarya Usulü Fırında Taş Güveçte Karnabaharli Kuzu İncik",
+    "name": "Karnabaharli Kuzu İncik",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -46172,7 +46172,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1593",
-    "name": "Sakarya Usulü Odun Ateşinde Sac Tavada Pırasali Tavuk Göğsü",
+    "name": "Pırasali Tavuk Göğsü",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -46201,7 +46201,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1594",
-    "name": "Sakarya Usulü Zeytinyağlı Kısık Ateşte Taze Fasulyeli Satır Köftesi",
+    "name": "Taze Fasulyeli Satır Köftesi",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -46230,7 +46230,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1595",
-    "name": "Sakarya Usulü Közde Izgara Bamyali Somon Balığı",
+    "name": "Bamyali Somon Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -46259,7 +46259,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1596",
-    "name": "Sakarya Usulü Kremalı Sarımsak Soslu Enginarli Levrek Buğulama",
+    "name": "Enginarli Levrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -46288,7 +46288,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1597",
-    "name": "Sakarya Usulü Odun Ateşinde Közlenmiş Avokadoli Dana Kıyma",
+    "name": "Közlenmiş Avokadoli Dana Kıyma",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -46317,7 +46317,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1598",
-    "name": "Sakarya Usulü Buharda Şifalı Brüksel Lahanasıli Hindi Bonfile",
+    "name": "Buharda Şifalı Brüksel Lahanasıli Hindi Bonfile",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -46346,7 +46346,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1599",
-    "name": "Sakarya Usulü Tereyağlı Özel Sote Bezelyeli Kuru Fasulye",
+    "name": "Bezelyeli Kuru Fasulye",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -46375,7 +46375,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1600",
-    "name": "Sakarya Usulü Tepsi Buğulama Arapsaçıli Kırmızı Mercimek",
+    "name": "Arapsaçıli Kırmızı Mercimek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -46404,7 +46404,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1601",
-    "name": "Sakarya Usulü Toprak Çömlek Usulü Deniz Börülcesili Nohut",
+    "name": "Deniz Börülcesili Nohut",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -46433,7 +46433,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1602",
-    "name": "Sakarya Usulü Közde Tandır Usulü Arpacık Soğanli Kültür Mantarı",
+    "name": "Arpacık Soğanli Kültür Mantarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -46462,7 +46462,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1603",
-    "name": "Sakarya Usulü Ekşi Soslu Buğulama Kabakli Deniz Karidesi",
+    "name": "Kabakli Deniz Karidesi",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -46491,7 +46491,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1604",
-    "name": "Sakarya Usulü Geleneksel Kavurma Biberli Çipura Balığı",
+    "name": "Biberli Çipura Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -46520,7 +46520,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1605",
-    "name": "Sakarya Usulü Fırın Çıtır Pane Karnabaharli Kuzu Pirzola",
+    "name": "Karnabaharli Kuzu Pirzola",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -46549,7 +46549,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1606",
-    "name": "Sakarya Usulü Glaze Şerbetli Buhar Pırasali Dana Antrikot",
+    "name": "Pırasali Dana Antrikot",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -46578,7 +46578,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1607",
-    "name": "Sakarya Usulü Tava Kızartma Taze Fasulyeli Tavuk Pirzola",
+    "name": "Taze Fasulyeli Tavuk Pirzola",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -46607,7 +46607,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1608",
-    "name": "Sakarya Usulü Düdüklü Lokum Bamyali Dana Ciğer",
+    "name": "Bamyali Dana Ciğer",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -46636,7 +46636,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1609",
-    "name": "Sakarya Usulü Fırın Graten Enginarli Kuzu Böbrek",
+    "name": "Enginarli Kuzu Böbrek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -46665,7 +46665,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1610",
-    "name": "Sakarya Usulü Fırında Taş Güveçte Avokadoli Sardalya Balığı",
+    "name": "Avokadoli Sardalya Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -46694,7 +46694,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1611",
-    "name": "Sakarya Usulü Odun Ateşinde Sac Tavada Brüksel Lahanasıli Hamsi Tava",
+    "name": "Brüksel Lahanasıli Hamsi Tava",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -46723,7 +46723,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1612",
-    "name": "Sakarya Usulü Zeytinyağlı Kısık Ateşte Bezelyeli Bıldırcın Eti",
+    "name": "Bezelyeli Bıldırcın Eti",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -46752,7 +46752,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1613",
-    "name": "Sakarya Usulü Közde Izgara Arapsaçıli Deniz Kalamarı",
+    "name": "Arapsaçıli Deniz Kalamarı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -46781,7 +46781,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1614",
-    "name": "Sakarya Usulü Kremalı Sarımsak Soslu Deniz Börülcesili Ahtapot",
+    "name": "Deniz Börülcesili Ahtapot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -46810,7 +46810,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1615",
-    "name": "Sakarya Usulü Odun Ateşinde Közlenmiş Arpacık Soğanli Yeşil Mercimek",
+    "name": "Közlenmiş Arpacık Soğanli Yeşil Mercimek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -46839,7 +46839,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1616",
-    "name": "Sakarya Usulü Buharda Şifalı Kabakli Barbunya",
+    "name": "Buharda Şifalı Kabakli Barbunya",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -46868,7 +46868,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1617",
-    "name": "Sakarya Usulü Tereyağlı Özel Sote Biberli Soya Et",
+    "name": "Biberli Soya Et",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -46897,7 +46897,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1618",
-    "name": "Sakarya Usulü Tepsi Buğulama Karnabaharli Lor Peyniri",
+    "name": "Karnabaharli Lor Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -46926,7 +46926,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1619",
-    "name": "Sakarya Usulü Toprak Çömlek Usulü Pırasali Hellim Peyniri",
+    "name": "Pırasali Hellim Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -46955,7 +46955,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1620",
-    "name": "Sakarya Usulü Közde Tandır Usulü Taze Fasulyeli Kaşar Peyniri",
+    "name": "Taze Fasulyeli Kaşar Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -46984,7 +46984,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1621",
-    "name": "Samsun Usulü Fırında Taş Güveçte Ispanakli Dana Kuşbaşı",
+    "name": "Ispanaklı Dana Kuşbaşı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -47013,7 +47013,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1622",
-    "name": "Samsun Usulü Odun Ateşinde Sac Tavada Kerevizli Kuzu İncik",
+    "name": "Kerevizli Kuzu İncik",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -47042,7 +47042,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1623",
-    "name": "Samsun Usulü Zeytinyağlı Kısık Ateşte Barbunyali Tavuk Göğsü",
+    "name": "Barbunyalı Tavuk Göğsü",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -47071,7 +47071,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1624",
-    "name": "Samsun Usulü Közde Izgara Mantarli Satır Köftesi",
+    "name": "Mantarlı Satır Köftesi",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -47100,7 +47100,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1625",
-    "name": "Samsun Usulü Kremalı Sarımsak Soslu Kuşkonmazli Somon Balığı",
+    "name": "Kuşkonmazlı Somon Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -47129,7 +47129,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1626",
-    "name": "Samsun Usulü Odun Ateşinde Közlenmiş Tatlı Patatesli Levrek Buğulama",
+    "name": "Közlenmiş Tatlı Patatesli Levrek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -47158,7 +47158,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1627",
-    "name": "Samsun Usulü Buharda Şifalı Şalgamli Dana Kıyma",
+    "name": "Buharda Şifalı Şalgamli Dana Kıyma",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -47187,7 +47187,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1628",
-    "name": "Samsun Usulü Tereyağlı Özel Sote Pazıli Hindi Bonfile",
+    "name": "Pazılı Hindi Bonfile",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -47216,7 +47216,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1629",
-    "name": "Samsun Usulü Tepsi Buğulama Şevketi Bostanli Kuru Fasulye",
+    "name": "Şevketi Bostanli Kuru Fasulye",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -47245,7 +47245,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1630",
-    "name": "Samsun Usulü Toprak Çömlek Usulü Sarımsakli Kırmızı Mercimek",
+    "name": "Sarımsaklı Kırmızı Mercimek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -47274,7 +47274,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1631",
-    "name": "Samsun Usulü Közde Tandır Usulü Patlıcanli Nohut",
+    "name": "Patlıcanlı Nohut",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -47303,7 +47303,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1632",
-    "name": "Samsun Usulü Ekşi Soslu Buğulama Patatesli Kültür Mantarı",
+    "name": "Patatesli Kültür Mantarı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -47332,7 +47332,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1633",
-    "name": "Samsun Usulü Geleneksel Kavurma Brokolili Deniz Karidesi",
+    "name": "Brokolili Deniz Karidesi",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -47361,7 +47361,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1634",
-    "name": "Samsun Usulü Fırın Çıtır Pane Ispanakli Çipura Balığı",
+    "name": "Ispanaklı Çipura Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -47390,7 +47390,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1635",
-    "name": "Samsun Usulü Glaze Şerbetli Buhar Kerevizli Kuzu Pirzola",
+    "name": "Kerevizli Kuzu Pirzola",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -47419,7 +47419,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1636",
-    "name": "Samsun Usulü Tava Kızartma Barbunyali Dana Antrikot",
+    "name": "Barbunyalı Dana Antrikot",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -47448,7 +47448,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1637",
-    "name": "Samsun Usulü Düdüklü Lokum Mantarli Tavuk Pirzola",
+    "name": "Mantarlı Tavuk Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -47477,7 +47477,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1638",
-    "name": "Samsun Usulü Fırın Graten Kuşkonmazli Dana Ciğer",
+    "name": "Kuşkonmazlı Dana Ciğer",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -47506,7 +47506,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1639",
-    "name": "Samsun Usulü Fırında Taş Güveçte Tatlı Patatesli Kuzu Böbrek",
+    "name": "Tatlı Patatesli Kuzu Böbrek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -47535,7 +47535,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1640",
-    "name": "Samsun Usulü Odun Ateşinde Sac Tavada Şalgamli Sardalya Balığı",
+    "name": "Şalgamli Sardalya Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -47564,7 +47564,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1641",
-    "name": "Samsun Usulü Zeytinyağlı Kısık Ateşte Pazıli Hamsi Tava",
+    "name": "Pazılı Hamsi Tava",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -47593,7 +47593,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1642",
-    "name": "Samsun Usulü Közde Izgara Şevketi Bostanli Bıldırcın Eti",
+    "name": "Şevketi Bostanli Bıldırcın Eti",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -47622,7 +47622,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1643",
-    "name": "Samsun Usulü Kremalı Sarımsak Soslu Sarımsakli Deniz Kalamarı",
+    "name": "Sarımsaklı Deniz Kalamarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -47651,7 +47651,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1644",
-    "name": "Samsun Usulü Odun Ateşinde Közlenmiş Patlıcanli Ahtapot",
+    "name": "Közlenmiş Patlıcanlı Ahtapot",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -47680,7 +47680,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1645",
-    "name": "Samsun Usulü Buharda Şifalı Patatesli Yeşil Mercimek",
+    "name": "Buharda Şifalı Patatesli Yeşil Mercimek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -47709,7 +47709,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1646",
-    "name": "Samsun Usulü Tereyağlı Özel Sote Brokolili Barbunya",
+    "name": "Brokolili Barbunya",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -47738,7 +47738,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1647",
-    "name": "Samsun Usulü Tepsi Buğulama Ispanakli Soya Et",
+    "name": "Ispanaklı Soya Et",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -47767,7 +47767,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1648",
-    "name": "Samsun Usulü Toprak Çömlek Usulü Kerevizli Lor Peyniri",
+    "name": "Kerevizli Lor Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -47796,7 +47796,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1649",
-    "name": "Samsun Usulü Közde Tandır Usulü Barbunyali Hellim Peyniri",
+    "name": "Barbunyalı Hellim Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -47825,7 +47825,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1650",
-    "name": "Samsun Usulü Ekşi Soslu Buğulama Mantarli Kaşar Peyniri",
+    "name": "Mantarlı Kaşar Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -47854,7 +47854,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1651",
-    "name": "Siirt Usulü Odun Ateşinde Sac Tavada Taze Fasulyeli Dana Kuşbaşı",
+    "name": "Taze Fasulyeli Dana Kuşbaşı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -47883,7 +47883,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1652",
-    "name": "Siirt Usulü Zeytinyağlı Kısık Ateşte Bamyali Kuzu İncik",
+    "name": "Bamyali Kuzu İncik",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -47912,7 +47912,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1653",
-    "name": "Siirt Usulü Közde Izgara Enginarli Tavuk Göğsü",
+    "name": "Enginarli Tavuk Göğsü",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -47941,7 +47941,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1654",
-    "name": "Siirt Usulü Kremalı Sarımsak Soslu Avokadoli Satır Köftesi",
+    "name": "Avokadoli Satır Köftesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -47970,7 +47970,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1655",
-    "name": "Siirt Usulü Odun Ateşinde Közlenmiş Brüksel Lahanasıli Somon Balığı",
+    "name": "Közlenmiş Brüksel Lahanasıli Somon Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -47999,7 +47999,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1656",
-    "name": "Siirt Usulü Buharda Şifalı Bezelyeli Levrek Buğulama",
+    "name": "Buharda Şifalı Bezelyeli Levrek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -48028,7 +48028,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1657",
-    "name": "Siirt Usulü Tereyağlı Özel Sote Arapsaçıli Dana Kıyma",
+    "name": "Arapsaçıli Dana Kıyma",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -48057,7 +48057,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1658",
-    "name": "Siirt Usulü Tepsi Buğulama Deniz Börülcesili Hindi Bonfile",
+    "name": "Deniz Börülcesili Hindi Bonfile",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -48086,7 +48086,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1659",
-    "name": "Siirt Usulü Toprak Çömlek Usulü Arpacık Soğanli Kuru Fasulye",
+    "name": "Arpacık Soğanli Kuru Fasulye",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -48115,7 +48115,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1660",
-    "name": "Siirt Usulü Közde Tandır Usulü Kabakli Kırmızı Mercimek",
+    "name": "Kabakli Kırmızı Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -48144,7 +48144,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1661",
-    "name": "Siirt Usulü Ekşi Soslu Buğulama Biberli Nohut",
+    "name": "Biberli Nohut",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -48173,7 +48173,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1662",
-    "name": "Siirt Usulü Geleneksel Kavurma Karnabaharli Kültür Mantarı",
+    "name": "Karnabaharli Kültür Mantarı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -48202,7 +48202,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1663",
-    "name": "Siirt Usulü Fırın Çıtır Pane Pırasali Deniz Karidesi",
+    "name": "Pırasali Deniz Karidesi",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -48231,7 +48231,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1664",
-    "name": "Siirt Usulü Glaze Şerbetli Buhar Taze Fasulyeli Çipura Balığı",
+    "name": "Taze Fasulyeli Çipura Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -48260,7 +48260,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1665",
-    "name": "Siirt Usulü Tava Kızartma Bamyali Kuzu Pirzola",
+    "name": "Bamyali Kuzu Pirzola",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -48289,7 +48289,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1666",
-    "name": "Siirt Usulü Düdüklü Lokum Enginarli Dana Antrikot",
+    "name": "Enginarli Dana Antrikot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -48318,7 +48318,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1667",
-    "name": "Siirt Usulü Fırın Graten Avokadoli Tavuk Pirzola",
+    "name": "Avokadoli Tavuk Pirzola",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -48347,7 +48347,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1668",
-    "name": "Siirt Usulü Fırında Taş Güveçte Brüksel Lahanasıli Dana Ciğer",
+    "name": "Brüksel Lahanasıli Dana Ciğer",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -48376,7 +48376,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1669",
-    "name": "Siirt Usulü Odun Ateşinde Sac Tavada Bezelyeli Kuzu Böbrek",
+    "name": "Bezelyeli Kuzu Böbrek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -48405,7 +48405,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1670",
-    "name": "Siirt Usulü Zeytinyağlı Kısık Ateşte Arapsaçıli Sardalya Balığı",
+    "name": "Arapsaçıli Sardalya Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -48434,7 +48434,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1671",
-    "name": "Siirt Usulü Közde Izgara Deniz Börülcesili Hamsi Tava",
+    "name": "Deniz Börülcesili Hamsi Tava",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -48463,7 +48463,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1672",
-    "name": "Siirt Usulü Kremalı Sarımsak Soslu Arpacık Soğanli Bıldırcın Eti",
+    "name": "Arpacık Soğanli Bıldırcın Eti",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -48492,7 +48492,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1673",
-    "name": "Siirt Usulü Odun Ateşinde Közlenmiş Kabakli Deniz Kalamarı",
+    "name": "Közlenmiş Kabakli Deniz Kalamarı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -48521,7 +48521,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1674",
-    "name": "Siirt Usulü Buharda Şifalı Biberli Ahtapot",
+    "name": "Buharda Şifalı Biberli Ahtapot",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -48550,7 +48550,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1675",
-    "name": "Siirt Usulü Tereyağlı Özel Sote Karnabaharli Yeşil Mercimek",
+    "name": "Karnabaharli Yeşil Mercimek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -48579,7 +48579,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1676",
-    "name": "Siirt Usulü Tepsi Buğulama Pırasali Barbunya",
+    "name": "Pırasali Barbunya",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -48608,7 +48608,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1677",
-    "name": "Siirt Usulü Toprak Çömlek Usulü Taze Fasulyeli Soya Et",
+    "name": "Taze Fasulyeli Soya Et",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -48637,7 +48637,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1678",
-    "name": "Siirt Usulü Közde Tandır Usulü Bamyali Lor Peyniri",
+    "name": "Bamyali Lor Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -48666,7 +48666,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1679",
-    "name": "Siirt Usulü Ekşi Soslu Buğulama Enginarli Hellim Peyniri",
+    "name": "Enginarli Hellim Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -48695,7 +48695,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1680",
-    "name": "Siirt Usulü Geleneksel Kavurma Avokadoli Kaşar Peyniri",
+    "name": "Avokadoli Kaşar Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -48724,7 +48724,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1681",
-    "name": "Sinop Usulü Zeytinyağlı Kısık Ateşte Mantarli Dana Kuşbaşı",
+    "name": "Mantarlı Dana Kuşbaşı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -48753,7 +48753,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1682",
-    "name": "Sinop Usulü Közde Izgara Kuşkonmazli Kuzu İncik",
+    "name": "Kuşkonmazlı Kuzu İncik",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -48782,7 +48782,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1683",
-    "name": "Sinop Usulü Kremalı Sarımsak Soslu Tatlı Patatesli Tavuk Göğsü",
+    "name": "Tatlı Patatesli Tavuk Göğsü",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -48811,7 +48811,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1684",
-    "name": "Sinop Usulü Odun Ateşinde Közlenmiş Şalgamli Satır Köftesi",
+    "name": "Közlenmiş Şalgamli Satır Köftesi",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -48840,7 +48840,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1685",
-    "name": "Sinop Usulü Buharda Şifalı Pazıli Somon Balığı",
+    "name": "Buharda Şifalı Pazılı Somon Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -48869,7 +48869,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1686",
-    "name": "Sinop Usulü Tereyağlı Özel Sote Şevketi Bostanli Levrek Buğulama",
+    "name": "Şevketi Bostanli Levrek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -48898,7 +48898,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1687",
-    "name": "Sinop Usulü Tepsi Buğulama Sarımsakli Dana Kıyma",
+    "name": "Sarımsaklı Dana Kıyma",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -48927,7 +48927,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1688",
-    "name": "Sinop Usulü Toprak Çömlek Usulü Patlıcanli Hindi Bonfile",
+    "name": "Patlıcanlı Hindi Bonfile",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -48956,7 +48956,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1689",
-    "name": "Sinop Usulü Közde Tandır Usulü Patatesli Kuru Fasulye",
+    "name": "Patatesli Kuru Fasulye",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -48985,7 +48985,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1690",
-    "name": "Sinop Usulü Ekşi Soslu Buğulama Brokolili Kırmızı Mercimek",
+    "name": "Brokolili Kırmızı Mercimek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -49014,7 +49014,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1691",
-    "name": "Sinop Usulü Geleneksel Kavurma Ispanakli Nohut",
+    "name": "Ispanaklı Nohut",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -49043,7 +49043,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1692",
-    "name": "Sinop Usulü Fırın Çıtır Pane Kerevizli Kültür Mantarı",
+    "name": "Kerevizli Kültür Mantarı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -49072,7 +49072,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1693",
-    "name": "Sinop Usulü Glaze Şerbetli Buhar Barbunyali Deniz Karidesi",
+    "name": "Barbunyalı Deniz Karidesi",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -49101,7 +49101,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1694",
-    "name": "Sinop Usulü Tava Kızartma Mantarli Çipura Balığı",
+    "name": "Mantarlı Çipura Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -49130,7 +49130,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1695",
-    "name": "Sinop Usulü Düdüklü Lokum Kuşkonmazli Kuzu Pirzola",
+    "name": "Kuşkonmazlı Kuzu Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -49159,7 +49159,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1696",
-    "name": "Sinop Usulü Fırın Graten Tatlı Patatesli Dana Antrikot",
+    "name": "Tatlı Patatesli Dana Antrikot",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -49188,7 +49188,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1697",
-    "name": "Sinop Usulü Fırında Taş Güveçte Şalgamli Tavuk Pirzola",
+    "name": "Şalgamli Tavuk Pirzola",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -49217,7 +49217,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1698",
-    "name": "Sinop Usulü Odun Ateşinde Sac Tavada Pazıli Dana Ciğer",
+    "name": "Pazılı Dana Ciğer",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -49246,7 +49246,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1699",
-    "name": "Sinop Usulü Zeytinyağlı Kısık Ateşte Şevketi Bostanli Kuzu Böbrek",
+    "name": "Şevketi Bostanli Kuzu Böbrek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -49275,7 +49275,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1700",
-    "name": "Sinop Usulü Közde Izgara Sarımsakli Sardalya Balığı",
+    "name": "Sarımsaklı Sardalya Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -49304,7 +49304,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1701",
-    "name": "Sinop Usulü Kremalı Sarımsak Soslu Patlıcanli Hamsi Tava",
+    "name": "Patlıcanlı Hamsi Tava",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -49333,7 +49333,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1702",
-    "name": "Sinop Usulü Odun Ateşinde Közlenmiş Patatesli Bıldırcın Eti",
+    "name": "Közlenmiş Patatesli Bıldırcın Eti",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -49362,7 +49362,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1703",
-    "name": "Sinop Usulü Buharda Şifalı Brokolili Deniz Kalamarı",
+    "name": "Buharda Şifalı Brokolili Deniz Kalamarı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -49391,7 +49391,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1704",
-    "name": "Sinop Usulü Tereyağlı Özel Sote Ispanakli Ahtapot",
+    "name": "Ispanaklı Ahtapot",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -49420,7 +49420,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1705",
-    "name": "Sinop Usulü Tepsi Buğulama Kerevizli Yeşil Mercimek",
+    "name": "Kerevizli Yeşil Mercimek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -49449,7 +49449,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1706",
-    "name": "Sinop Usulü Toprak Çömlek Usulü Barbunyali Barbunya",
+    "name": "Barbunyalı Barbunya",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -49478,7 +49478,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1707",
-    "name": "Sinop Usulü Közde Tandır Usulü Mantarli Soya Et",
+    "name": "Mantarlı Soya Et",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -49507,7 +49507,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1708",
-    "name": "Sinop Usulü Ekşi Soslu Buğulama Kuşkonmazli Lor Peyniri",
+    "name": "Kuşkonmazlı Lor Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -49536,7 +49536,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1709",
-    "name": "Sinop Usulü Geleneksel Kavurma Tatlı Patatesli Hellim Peyniri",
+    "name": "Tatlı Patatesli Hellim Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -49565,7 +49565,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1710",
-    "name": "Sinop Usulü Fırın Çıtır Pane Şalgamli Kaşar Peyniri",
+    "name": "Şalgamli Kaşar Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -49594,7 +49594,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1711",
-    "name": "Sivas Usulü Közde Izgara Avokadoli Dana Kuşbaşı",
+    "name": "Avokadoli Dana Kuşbaşı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -49623,7 +49623,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1712",
-    "name": "Sivas Usulü Kremalı Sarımsak Soslu Brüksel Lahanasıli Kuzu İncik",
+    "name": "Brüksel Lahanasıli Kuzu İncik",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -49652,7 +49652,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1713",
-    "name": "Sivas Usulü Odun Ateşinde Közlenmiş Bezelyeli Tavuk Göğsü",
+    "name": "Közlenmiş Bezelyeli Tavuk Göğsü",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -49681,7 +49681,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1714",
-    "name": "Sivas Usulü Buharda Şifalı Arapsaçıli Satır Köftesi",
+    "name": "Buharda Şifalı Arapsaçıli Satır Köftesi",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -49710,7 +49710,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1715",
-    "name": "Sivas Usulü Tereyağlı Özel Sote Deniz Börülcesili Somon Balığı",
+    "name": "Deniz Börülcesili Somon Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -49739,7 +49739,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1716",
-    "name": "Sivas Usulü Tepsi Buğulama Arpacık Soğanli Levrek Buğulama",
+    "name": "Arpacık Soğanli Levrek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -49768,7 +49768,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1717",
-    "name": "Sivas Usulü Toprak Çömlek Usulü Kabakli Dana Kıyma",
+    "name": "Kabakli Dana Kıyma",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -49797,7 +49797,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1718",
-    "name": "Sivas Usulü Közde Tandır Usulü Biberli Hindi Bonfile",
+    "name": "Biberli Hindi Bonfile",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -49826,7 +49826,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1719",
-    "name": "Sivas Usulü Ekşi Soslu Buğulama Karnabaharli Kuru Fasulye",
+    "name": "Karnabaharli Kuru Fasulye",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -49855,7 +49855,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1720",
-    "name": "Sivas Usulü Geleneksel Kavurma Pırasali Kırmızı Mercimek",
+    "name": "Pırasali Kırmızı Mercimek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -49884,7 +49884,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1721",
-    "name": "Sivas Usulü Fırın Çıtır Pane Taze Fasulyeli Nohut",
+    "name": "Taze Fasulyeli Nohut",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -49913,7 +49913,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1722",
-    "name": "Sivas Usulü Glaze Şerbetli Buhar Bamyali Kültür Mantarı",
+    "name": "Bamyali Kültür Mantarı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -49942,7 +49942,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1723",
-    "name": "Sivas Usulü Tava Kızartma Enginarli Deniz Karidesi",
+    "name": "Enginarli Deniz Karidesi",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -49971,7 +49971,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1724",
-    "name": "Sivas Usulü Düdüklü Lokum Avokadoli Çipura Balığı",
+    "name": "Avokadoli Çipura Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -50000,7 +50000,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1725",
-    "name": "Sivas Usulü Fırın Graten Brüksel Lahanasıli Kuzu Pirzola",
+    "name": "Brüksel Lahanasıli Kuzu Pirzola",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -50029,7 +50029,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1726",
-    "name": "Sivas Usulü Fırında Taş Güveçte Bezelyeli Dana Antrikot",
+    "name": "Bezelyeli Dana Antrikot",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -50058,7 +50058,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1727",
-    "name": "Sivas Usulü Odun Ateşinde Sac Tavada Arapsaçıli Tavuk Pirzola",
+    "name": "Arapsaçıli Tavuk Pirzola",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -50087,7 +50087,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1728",
-    "name": "Sivas Usulü Zeytinyağlı Kısık Ateşte Deniz Börülcesili Dana Ciğer",
+    "name": "Deniz Börülcesili Dana Ciğer",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -50116,7 +50116,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1729",
-    "name": "Sivas Usulü Közde Izgara Arpacık Soğanli Kuzu Böbrek",
+    "name": "Arpacık Soğanli Kuzu Böbrek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -50145,7 +50145,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1730",
-    "name": "Sivas Usulü Kremalı Sarımsak Soslu Kabakli Sardalya Balığı",
+    "name": "Kabakli Sardalya Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -50174,7 +50174,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1731",
-    "name": "Sivas Usulü Odun Ateşinde Közlenmiş Biberli Hamsi Tava",
+    "name": "Közlenmiş Biberli Hamsi Tava",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -50203,7 +50203,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1732",
-    "name": "Sivas Usulü Buharda Şifalı Karnabaharli Bıldırcın Eti",
+    "name": "Buharda Şifalı Karnabaharli Bıldırcın Eti",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -50232,7 +50232,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1733",
-    "name": "Sivas Usulü Tereyağlı Özel Sote Pırasali Deniz Kalamarı",
+    "name": "Pırasali Deniz Kalamarı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -50261,7 +50261,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1734",
-    "name": "Sivas Usulü Tepsi Buğulama Taze Fasulyeli Ahtapot",
+    "name": "Taze Fasulyeli Ahtapot",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -50290,7 +50290,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1735",
-    "name": "Sivas Usulü Toprak Çömlek Usulü Bamyali Yeşil Mercimek",
+    "name": "Bamyali Yeşil Mercimek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -50319,7 +50319,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1736",
-    "name": "Sivas Usulü Közde Tandır Usulü Enginarli Barbunya",
+    "name": "Enginarli Barbunya",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -50348,7 +50348,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1737",
-    "name": "Sivas Usulü Ekşi Soslu Buğulama Avokadoli Soya Et",
+    "name": "Avokadoli Soya Et",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -50377,7 +50377,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1738",
-    "name": "Sivas Usulü Geleneksel Kavurma Brüksel Lahanasıli Lor Peyniri",
+    "name": "Brüksel Lahanasıli Lor Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -50406,7 +50406,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1739",
-    "name": "Sivas Usulü Fırın Çıtır Pane Bezelyeli Hellim Peyniri",
+    "name": "Bezelyeli Hellim Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -50435,7 +50435,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1740",
-    "name": "Sivas Usulü Glaze Şerbetli Buhar Arapsaçıli Kaşar Peyniri",
+    "name": "Arapsaçıli Kaşar Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -50464,7 +50464,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1741",
-    "name": "Tekirdağ Usulü Kremalı Sarımsak Soslu Şalgamli Dana Kuşbaşı",
+    "name": "Tekirdağ Şalgamli Dana Kuşbaşı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -50493,7 +50493,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1742",
-    "name": "Tekirdağ Usulü Odun Ateşinde Közlenmiş Pazıli Kuzu İncik",
+    "name": "Tekirdağ Közlenmiş Pazılı Kuzu İncik",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -50522,7 +50522,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1743",
-    "name": "Tekirdağ Usulü Buharda Şifalı Şevketi Bostanli Tavuk Göğsü",
+    "name": "Tekirdağ Buharda Şifalı Şevketi Bostanli Tavuk Göğsü",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -50551,7 +50551,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1744",
-    "name": "Tekirdağ Usulü Tereyağlı Özel Sote Sarımsakli Satır Köftesi",
+    "name": "Tekirdağ Sarımsaklı Satır Köftesi",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -50580,7 +50580,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1745",
-    "name": "Tekirdağ Usulü Tepsi Buğulama Patlıcanli Somon Balığı",
+    "name": "Tekirdağ Patlıcanlı Somon Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -50609,7 +50609,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1746",
-    "name": "Tekirdağ Usulü Toprak Çömlek Usulü Patatesli Levrek Buğulama",
+    "name": "Tekirdağ Patatesli Levrek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -50638,7 +50638,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1747",
-    "name": "Tekirdağ Usulü Közde Tandır Usulü Brokolili Dana Kıyma",
+    "name": "Tekirdağ Brokolili Dana Kıyma",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -50667,7 +50667,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1748",
-    "name": "Tekirdağ Usulü Ekşi Soslu Buğulama Ispanakli Hindi Bonfile",
+    "name": "Tekirdağ Ispanaklı Hindi Bonfile",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -50696,7 +50696,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1749",
-    "name": "Tekirdağ Usulü Geleneksel Kavurma Kerevizli Kuru Fasulye",
+    "name": "Tekirdağ Kerevizli Kuru Fasulye",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -50725,7 +50725,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1750",
-    "name": "Tekirdağ Usulü Fırın Çıtır Pane Barbunyali Kırmızı Mercimek",
+    "name": "Tekirdağ Barbunyalı Kırmızı Mercimek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -50754,7 +50754,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1751",
-    "name": "Tekirdağ Usulü Glaze Şerbetli Buhar Mantarli Nohut",
+    "name": "Tekirdağ Mantarlı Nohut",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -50783,7 +50783,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1752",
-    "name": "Tekirdağ Usulü Tava Kızartma Kuşkonmazli Kültür Mantarı",
+    "name": "Tekirdağ Kuşkonmazlı Kültür Mantarı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -50812,7 +50812,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1753",
-    "name": "Tekirdağ Usulü Düdüklü Lokum Tatlı Patatesli Deniz Karidesi",
+    "name": "Tekirdağ Tatlı Patatesli Deniz Karidesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -50841,7 +50841,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1754",
-    "name": "Tekirdağ Usulü Fırın Graten Şalgamli Çipura Balığı",
+    "name": "Tekirdağ Şalgamli Çipura Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -50870,7 +50870,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1755",
-    "name": "Tekirdağ Usulü Fırında Taş Güveçte Pazıli Kuzu Pirzola",
+    "name": "Tekirdağ Pazılı Kuzu Pirzola",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -50899,7 +50899,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1756",
-    "name": "Tekirdağ Usulü Odun Ateşinde Sac Tavada Şevketi Bostanli Dana Antrikot",
+    "name": "Tekirdağ Şevketi Bostanli Dana Antrikot",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -50928,7 +50928,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1757",
-    "name": "Tekirdağ Usulü Zeytinyağlı Kısık Ateşte Sarımsakli Tavuk Pirzola",
+    "name": "Tekirdağ Sarımsaklı Tavuk Pirzola",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -50957,7 +50957,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1758",
-    "name": "Tekirdağ Usulü Közde Izgara Patlıcanli Dana Ciğer",
+    "name": "Tekirdağ Patlıcanlı Dana Ciğer",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -50986,7 +50986,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1759",
-    "name": "Tekirdağ Usulü Kremalı Sarımsak Soslu Patatesli Kuzu Böbrek",
+    "name": "Tekirdağ Patatesli Kuzu Böbrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -51015,7 +51015,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1760",
-    "name": "Tekirdağ Usulü Odun Ateşinde Közlenmiş Brokolili Sardalya Balığı",
+    "name": "Tekirdağ Közlenmiş Brokolili Sardalya Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -51044,7 +51044,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1761",
-    "name": "Tekirdağ Usulü Buharda Şifalı Ispanakli Hamsi Tava",
+    "name": "Tekirdağ Buharda Şifalı Ispanaklı Hamsi Tava",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -51073,7 +51073,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1762",
-    "name": "Tekirdağ Usulü Tereyağlı Özel Sote Kerevizli Bıldırcın Eti",
+    "name": "Tekirdağ Kerevizli Bıldırcın Eti",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -51102,7 +51102,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1763",
-    "name": "Tekirdağ Usulü Tepsi Buğulama Barbunyali Deniz Kalamarı",
+    "name": "Tekirdağ Barbunyalı Deniz Kalamarı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -51131,7 +51131,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1764",
-    "name": "Tekirdağ Usulü Toprak Çömlek Usulü Mantarli Ahtapot",
+    "name": "Tekirdağ Mantarlı Ahtapot",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -51160,7 +51160,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1765",
-    "name": "Tekirdağ Usulü Közde Tandır Usulü Kuşkonmazli Yeşil Mercimek",
+    "name": "Tekirdağ Kuşkonmazlı Yeşil Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -51189,7 +51189,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1766",
-    "name": "Tekirdağ Usulü Ekşi Soslu Buğulama Tatlı Patatesli Barbunya",
+    "name": "Tekirdağ Tatlı Patatesli Barbunya",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -51218,7 +51218,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1767",
-    "name": "Tekirdağ Usulü Geleneksel Kavurma Şalgamli Soya Et",
+    "name": "Tekirdağ Şalgamli Soya Et",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -51247,7 +51247,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1768",
-    "name": "Tekirdağ Usulü Fırın Çıtır Pane Pazıli Lor Peyniri",
+    "name": "Tekirdağ Pazılı Lor Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -51276,7 +51276,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1769",
-    "name": "Tekirdağ Usulü Glaze Şerbetli Buhar Şevketi Bostanli Hellim Peyniri",
+    "name": "Tekirdağ Şevketi Bostanli Hellim Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -51305,7 +51305,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1770",
-    "name": "Tekirdağ Usulü Tava Kızartma Sarımsakli Kaşar Peyniri",
+    "name": "Tekirdağ Sarımsaklı Kaşar Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -51334,7 +51334,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1771",
-    "name": "Tokat Usulü Odun Ateşinde Közlenmiş Arapsaçıli Dana Kuşbaşı",
+    "name": "Közlenmiş Arapsaçıli Dana Kuşbaşı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -51363,7 +51363,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1772",
-    "name": "Tokat Usulü Buharda Şifalı Deniz Börülcesili Kuzu İncik",
+    "name": "Buharda Şifalı Deniz Börülcesili Kuzu İncik",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -51392,7 +51392,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1773",
-    "name": "Tokat Usulü Tereyağlı Özel Sote Arpacık Soğanli Tavuk Göğsü",
+    "name": "Arpacık Soğanli Tavuk Göğsü",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -51421,7 +51421,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1774",
-    "name": "Tokat Usulü Tepsi Buğulama Kabakli Satır Köftesi",
+    "name": "Kabakli Satır Köftesi",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -51450,7 +51450,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1775",
-    "name": "Tokat Usulü Toprak Çömlek Usulü Biberli Somon Balığı",
+    "name": "Biberli Somon Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -51479,7 +51479,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1776",
-    "name": "Tokat Usulü Közde Tandır Usulü Karnabaharli Levrek Buğulama",
+    "name": "Karnabaharli Levrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -51508,7 +51508,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1777",
-    "name": "Tokat Usulü Ekşi Soslu Buğulama Pırasali Dana Kıyma",
+    "name": "Pırasali Dana Kıyma",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -51537,7 +51537,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1778",
-    "name": "Tokat Usulü Geleneksel Kavurma Taze Fasulyeli Hindi Bonfile",
+    "name": "Taze Fasulyeli Hindi Bonfile",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -51566,7 +51566,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1779",
-    "name": "Tokat Usulü Fırın Çıtır Pane Bamyali Kuru Fasulye",
+    "name": "Bamyali Kuru Fasulye",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -51595,7 +51595,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1780",
-    "name": "Tokat Usulü Glaze Şerbetli Buhar Enginarli Kırmızı Mercimek",
+    "name": "Enginarli Kırmızı Mercimek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -51624,7 +51624,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1781",
-    "name": "Tokat Usulü Tava Kızartma Avokadoli Nohut",
+    "name": "Avokadoli Nohut",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -51653,7 +51653,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1782",
-    "name": "Tokat Usulü Düdüklü Lokum Brüksel Lahanasıli Kültür Mantarı",
+    "name": "Brüksel Lahanasıli Kültür Mantarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -51682,7 +51682,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1783",
-    "name": "Tokat Usulü Fırın Graten Bezelyeli Deniz Karidesi",
+    "name": "Bezelyeli Deniz Karidesi",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -51711,7 +51711,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1784",
-    "name": "Tokat Usulü Fırında Taş Güveçte Arapsaçıli Çipura Balığı",
+    "name": "Arapsaçıli Çipura Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -51740,7 +51740,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1785",
-    "name": "Tokat Usulü Odun Ateşinde Sac Tavada Deniz Börülcesili Kuzu Pirzola",
+    "name": "Deniz Börülcesili Kuzu Pirzola",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -51769,7 +51769,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1786",
-    "name": "Tokat Usulü Zeytinyağlı Kısık Ateşte Arpacık Soğanli Dana Antrikot",
+    "name": "Arpacık Soğanli Dana Antrikot",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -51798,7 +51798,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1787",
-    "name": "Tokat Usulü Közde Izgara Kabakli Tavuk Pirzola",
+    "name": "Kabakli Tavuk Pirzola",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -51827,7 +51827,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1788",
-    "name": "Tokat Usulü Kremalı Sarımsak Soslu Biberli Dana Ciğer",
+    "name": "Biberli Dana Ciğer",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -51856,7 +51856,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1789",
-    "name": "Tokat Usulü Odun Ateşinde Közlenmiş Karnabaharli Kuzu Böbrek",
+    "name": "Közlenmiş Karnabaharli Kuzu Böbrek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -51885,7 +51885,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1790",
-    "name": "Tokat Usulü Buharda Şifalı Pırasali Sardalya Balığı",
+    "name": "Buharda Şifalı Pırasali Sardalya Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -51914,7 +51914,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1791",
-    "name": "Tokat Usulü Tereyağlı Özel Sote Taze Fasulyeli Hamsi Tava",
+    "name": "Taze Fasulyeli Hamsi Tava",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -51943,7 +51943,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1792",
-    "name": "Tokat Usulü Tepsi Buğulama Bamyali Bıldırcın Eti",
+    "name": "Bamyali Bıldırcın Eti",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -51972,7 +51972,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1793",
-    "name": "Tokat Usulü Toprak Çömlek Usulü Enginarli Deniz Kalamarı",
+    "name": "Enginarli Deniz Kalamarı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -52001,7 +52001,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1794",
-    "name": "Tokat Usulü Közde Tandır Usulü Avokadoli Ahtapot",
+    "name": "Avokadoli Ahtapot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -52030,7 +52030,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1795",
-    "name": "Tokat Usulü Ekşi Soslu Buğulama Brüksel Lahanasıli Yeşil Mercimek",
+    "name": "Brüksel Lahanasıli Yeşil Mercimek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -52059,7 +52059,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1796",
-    "name": "Tokat Usulü Geleneksel Kavurma Bezelyeli Barbunya",
+    "name": "Bezelyeli Barbunya",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -52088,7 +52088,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1797",
-    "name": "Tokat Usulü Fırın Çıtır Pane Arapsaçıli Soya Et",
+    "name": "Arapsaçıli Soya Et",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -52117,7 +52117,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1798",
-    "name": "Tokat Usulü Glaze Şerbetli Buhar Deniz Börülcesili Lor Peyniri",
+    "name": "Deniz Börülcesili Lor Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -52146,7 +52146,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1799",
-    "name": "Tokat Usulü Tava Kızartma Arpacık Soğanli Hellim Peyniri",
+    "name": "Arpacık Soğanli Hellim Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -52175,7 +52175,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1800",
-    "name": "Tokat Usulü Düdüklü Lokum Kabakli Kaşar Peyniri",
+    "name": "Kabakli Kaşar Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -52204,7 +52204,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1801",
-    "name": "Trabzon Usulü Buharda Şifalı Sarımsakli Dana Kuşbaşı",
+    "name": "Buharda Şifalı Sarımsaklı Dana Kuşbaşı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -52233,7 +52233,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1802",
-    "name": "Trabzon Usulü Tereyağlı Özel Sote Patlıcanli Kuzu İncik",
+    "name": "Patlıcanlı Kuzu İncik",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -52262,7 +52262,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1803",
-    "name": "Trabzon Usulü Tepsi Buğulama Patatesli Tavuk Göğsü",
+    "name": "Patatesli Tavuk Göğsü",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -52291,7 +52291,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1804",
-    "name": "Trabzon Usulü Toprak Çömlek Usulü Brokolili Satır Köftesi",
+    "name": "Brokolili Satır Köftesi",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -52320,7 +52320,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1805",
-    "name": "Trabzon Usulü Közde Tandır Usulü Ispanakli Somon Balığı",
+    "name": "Ispanaklı Somon Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -52349,7 +52349,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1806",
-    "name": "Trabzon Usulü Ekşi Soslu Buğulama Kerevizli Levrek Buğulama",
+    "name": "Kerevizli Levrek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -52378,7 +52378,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1807",
-    "name": "Trabzon Usulü Geleneksel Kavurma Barbunyali Dana Kıyma",
+    "name": "Barbunyalı Dana Kıyma",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -52407,7 +52407,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1808",
-    "name": "Trabzon Usulü Fırın Çıtır Pane Mantarli Hindi Bonfile",
+    "name": "Mantarlı Hindi Bonfile",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -52436,7 +52436,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1809",
-    "name": "Trabzon Usulü Glaze Şerbetli Buhar Kuşkonmazli Kuru Fasulye",
+    "name": "Kuşkonmazlı Kuru Fasulye",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -52465,7 +52465,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1810",
-    "name": "Trabzon Usulü Tava Kızartma Tatlı Patatesli Kırmızı Mercimek",
+    "name": "Tatlı Patatesli Kırmızı Mercimek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -52494,7 +52494,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1811",
-    "name": "Trabzon Usulü Düdüklü Lokum Şalgamli Nohut",
+    "name": "Şalgamli Nohut",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -52523,7 +52523,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1812",
-    "name": "Trabzon Usulü Fırın Graten Pazıli Kültür Mantarı",
+    "name": "Pazılı Kültür Mantarı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -52552,7 +52552,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1813",
-    "name": "Trabzon Usulü Fırında Taş Güveçte Şevketi Bostanli Deniz Karidesi",
+    "name": "Şevketi Bostanli Deniz Karidesi",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -52581,7 +52581,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1814",
-    "name": "Trabzon Usulü Odun Ateşinde Sac Tavada Sarımsakli Çipura Balığı",
+    "name": "Sarımsaklı Çipura Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -52610,7 +52610,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1815",
-    "name": "Trabzon Usulü Zeytinyağlı Kısık Ateşte Patlıcanli Kuzu Pirzola",
+    "name": "Patlıcanlı Kuzu Pirzola",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -52639,7 +52639,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1816",
-    "name": "Trabzon Usulü Közde Izgara Patatesli Dana Antrikot",
+    "name": "Patatesli Dana Antrikot",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -52668,7 +52668,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1817",
-    "name": "Trabzon Usulü Kremalı Sarımsak Soslu Brokolili Tavuk Pirzola",
+    "name": "Brokolili Tavuk Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -52697,7 +52697,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1818",
-    "name": "Trabzon Usulü Odun Ateşinde Közlenmiş Ispanakli Dana Ciğer",
+    "name": "Közlenmiş Ispanaklı Dana Ciğer",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -52726,7 +52726,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1819",
-    "name": "Trabzon Usulü Buharda Şifalı Kerevizli Kuzu Böbrek",
+    "name": "Buharda Şifalı Kerevizli Kuzu Böbrek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -52755,7 +52755,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1820",
-    "name": "Trabzon Usulü Tereyağlı Özel Sote Barbunyali Sardalya Balığı",
+    "name": "Barbunyalı Sardalya Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -52784,7 +52784,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1821",
-    "name": "Trabzon Usulü Tepsi Buğulama Mantarli Hamsi Tava",
+    "name": "Mantarlı Hamsi Tava",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -52813,7 +52813,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1822",
-    "name": "Trabzon Usulü Toprak Çömlek Usulü Kuşkonmazli Bıldırcın Eti",
+    "name": "Kuşkonmazlı Bıldırcın Eti",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -52842,7 +52842,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1823",
-    "name": "Trabzon Usulü Közde Tandır Usulü Tatlı Patatesli Deniz Kalamarı",
+    "name": "Tatlı Patatesli Deniz Kalamarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -52871,7 +52871,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1824",
-    "name": "Trabzon Usulü Ekşi Soslu Buğulama Şalgamli Ahtapot",
+    "name": "Şalgamli Ahtapot",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -52900,7 +52900,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1825",
-    "name": "Trabzon Usulü Geleneksel Kavurma Pazıli Yeşil Mercimek",
+    "name": "Pazılı Yeşil Mercimek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -52929,7 +52929,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1826",
-    "name": "Trabzon Usulü Fırın Çıtır Pane Şevketi Bostanli Barbunya",
+    "name": "Şevketi Bostanli Barbunya",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -52958,7 +52958,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1827",
-    "name": "Trabzon Usulü Glaze Şerbetli Buhar Sarımsakli Soya Et",
+    "name": "Sarımsaklı Soya Et",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -52987,7 +52987,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1828",
-    "name": "Trabzon Usulü Tava Kızartma Patlıcanli Lor Peyniri",
+    "name": "Patlıcanlı Lor Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -53016,7 +53016,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1829",
-    "name": "Trabzon Usulü Düdüklü Lokum Patatesli Hellim Peyniri",
+    "name": "Patatesli Hellim Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -53045,7 +53045,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1830",
-    "name": "Trabzon Usulü Fırın Graten Brokolili Kaşar Peyniri",
+    "name": "Brokolili Kaşar Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -53074,7 +53074,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1831",
-    "name": "Tunceli Usulü Tereyağlı Özel Sote Kabakli Dana Kuşbaşı",
+    "name": "Kabakli Dana Kuşbaşı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -53103,7 +53103,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1832",
-    "name": "Tunceli Usulü Tepsi Buğulama Biberli Kuzu İncik",
+    "name": "Biberli Kuzu İncik",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -53132,7 +53132,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1833",
-    "name": "Tunceli Usulü Toprak Çömlek Usulü Karnabaharli Tavuk Göğsü",
+    "name": "Karnabaharli Tavuk Göğsü",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -53161,7 +53161,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1834",
-    "name": "Tunceli Usulü Közde Tandır Usulü Pırasali Satır Köftesi",
+    "name": "Pırasali Satır Köftesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -53190,7 +53190,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1835",
-    "name": "Tunceli Usulü Ekşi Soslu Buğulama Taze Fasulyeli Somon Balığı",
+    "name": "Taze Fasulyeli Somon Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -53219,7 +53219,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1836",
-    "name": "Tunceli Usulü Geleneksel Kavurma Bamyali Levrek Buğulama",
+    "name": "Bamyali Levrek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -53248,7 +53248,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1837",
-    "name": "Tunceli Usulü Fırın Çıtır Pane Enginarli Dana Kıyma",
+    "name": "Enginarli Dana Kıyma",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -53277,7 +53277,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1838",
-    "name": "Tunceli Usulü Glaze Şerbetli Buhar Avokadoli Hindi Bonfile",
+    "name": "Avokadoli Hindi Bonfile",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -53306,7 +53306,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1839",
-    "name": "Tunceli Usulü Tava Kızartma Brüksel Lahanasıli Kuru Fasulye",
+    "name": "Brüksel Lahanasıli Kuru Fasulye",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -53335,7 +53335,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1840",
-    "name": "Tunceli Usulü Düdüklü Lokum Bezelyeli Kırmızı Mercimek",
+    "name": "Bezelyeli Kırmızı Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -53364,7 +53364,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1841",
-    "name": "Tunceli Usulü Fırın Graten Arapsaçıli Nohut",
+    "name": "Arapsaçıli Nohut",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -53393,7 +53393,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1842",
-    "name": "Tunceli Usulü Fırında Taş Güveçte Deniz Börülcesili Kültür Mantarı",
+    "name": "Deniz Börülcesili Kültür Mantarı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -53422,7 +53422,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1843",
-    "name": "Tunceli Usulü Odun Ateşinde Sac Tavada Arpacık Soğanli Deniz Karidesi",
+    "name": "Arpacık Soğanli Deniz Karidesi",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -53451,7 +53451,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1844",
-    "name": "Tunceli Usulü Zeytinyağlı Kısık Ateşte Kabakli Çipura Balığı",
+    "name": "Kabakli Çipura Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -53480,7 +53480,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1845",
-    "name": "Tunceli Usulü Közde Izgara Biberli Kuzu Pirzola",
+    "name": "Biberli Kuzu Pirzola",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -53509,7 +53509,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1846",
-    "name": "Tunceli Usulü Kremalı Sarımsak Soslu Karnabaharli Dana Antrikot",
+    "name": "Karnabaharli Dana Antrikot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -53538,7 +53538,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1847",
-    "name": "Tunceli Usulü Odun Ateşinde Közlenmiş Pırasali Tavuk Pirzola",
+    "name": "Közlenmiş Pırasali Tavuk Pirzola",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -53567,7 +53567,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1848",
-    "name": "Tunceli Usulü Buharda Şifalı Taze Fasulyeli Dana Ciğer",
+    "name": "Buharda Şifalı Taze Fasulyeli Dana Ciğer",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -53596,7 +53596,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1849",
-    "name": "Tunceli Usulü Tereyağlı Özel Sote Bamyali Kuzu Böbrek",
+    "name": "Bamyali Kuzu Böbrek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -53625,7 +53625,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1850",
-    "name": "Tunceli Usulü Tepsi Buğulama Enginarli Sardalya Balığı",
+    "name": "Enginarli Sardalya Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -53654,7 +53654,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1851",
-    "name": "Tunceli Usulü Toprak Çömlek Usulü Avokadoli Hamsi Tava",
+    "name": "Avokadoli Hamsi Tava",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -53683,7 +53683,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1852",
-    "name": "Tunceli Usulü Közde Tandır Usulü Brüksel Lahanasıli Bıldırcın Eti",
+    "name": "Brüksel Lahanasıli Bıldırcın Eti",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -53712,7 +53712,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1853",
-    "name": "Tunceli Usulü Ekşi Soslu Buğulama Bezelyeli Deniz Kalamarı",
+    "name": "Bezelyeli Deniz Kalamarı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -53741,7 +53741,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1854",
-    "name": "Tunceli Usulü Geleneksel Kavurma Arapsaçıli Ahtapot",
+    "name": "Arapsaçıli Ahtapot",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -53770,7 +53770,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1855",
-    "name": "Tunceli Usulü Fırın Çıtır Pane Deniz Börülcesili Yeşil Mercimek",
+    "name": "Deniz Börülcesili Yeşil Mercimek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -53799,7 +53799,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1856",
-    "name": "Tunceli Usulü Glaze Şerbetli Buhar Arpacık Soğanli Barbunya",
+    "name": "Arpacık Soğanli Barbunya",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -53828,7 +53828,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1857",
-    "name": "Tunceli Usulü Tava Kızartma Kabakli Soya Et",
+    "name": "Kabakli Soya Et",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -53857,7 +53857,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1858",
-    "name": "Tunceli Usulü Düdüklü Lokum Biberli Lor Peyniri",
+    "name": "Biberli Lor Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -53886,7 +53886,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1859",
-    "name": "Tunceli Usulü Fırın Graten Karnabaharli Hellim Peyniri",
+    "name": "Karnabaharli Hellim Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -53915,7 +53915,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1860",
-    "name": "Tunceli Usulü Fırında Taş Güveçte Pırasali Kaşar Peyniri",
+    "name": "Pırasali Kaşar Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -53944,7 +53944,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1861",
-    "name": "Şanlıurfa Usulü Tepsi Buğulama Brokolili Dana Kuşbaşı",
+    "name": "Şanlı Brokolili Dana Kuşbaşı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -53973,7 +53973,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1862",
-    "name": "Şanlıurfa Usulü Toprak Çömlek Usulü Ispanakli Kuzu İncik",
+    "name": "Şanlı Ispanaklı Kuzu İncik",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -54002,7 +54002,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1863",
-    "name": "Şanlıurfa Usulü Közde Tandır Usulü Kerevizli Tavuk Göğsü",
+    "name": "Şanlı Kerevizli Tavuk Göğsü",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -54031,7 +54031,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1864",
-    "name": "Şanlıurfa Usulü Ekşi Soslu Buğulama Barbunyali Satır Köftesi",
+    "name": "Şanlı Barbunyalı Satır Köftesi",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -54060,7 +54060,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1865",
-    "name": "Şanlıurfa Usulü Geleneksel Kavurma Mantarli Somon Balığı",
+    "name": "Şanlı Mantarlı Somon Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -54089,7 +54089,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1866",
-    "name": "Şanlıurfa Usulü Fırın Çıtır Pane Kuşkonmazli Levrek Buğulama",
+    "name": "Şanlı Kuşkonmazlı Levrek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -54118,7 +54118,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1867",
-    "name": "Şanlıurfa Usulü Glaze Şerbetli Buhar Tatlı Patatesli Dana Kıyma",
+    "name": "Şanlı Tatlı Patatesli Dana Kıyma",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -54147,7 +54147,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1868",
-    "name": "Şanlıurfa Usulü Tava Kızartma Şalgamli Hindi Bonfile",
+    "name": "Şanlı Şalgamli Hindi Bonfile",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -54176,7 +54176,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1869",
-    "name": "Şanlıurfa Usulü Düdüklü Lokum Pazıli Kuru Fasulye",
+    "name": "Şanlı Pazılı Kuru Fasulye",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -54205,7 +54205,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1870",
-    "name": "Şanlıurfa Usulü Fırın Graten Şevketi Bostanli Kırmızı Mercimek",
+    "name": "Şanlı Şevketi Bostanli Kırmızı Mercimek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -54234,7 +54234,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1871",
-    "name": "Şanlıurfa Usulü Fırında Taş Güveçte Sarımsakli Nohut",
+    "name": "Şanlı Sarımsaklı Nohut",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -54263,7 +54263,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1872",
-    "name": "Şanlıurfa Usulü Odun Ateşinde Sac Tavada Patlıcanli Kültür Mantarı",
+    "name": "Şanlı Patlıcanlı Kültür Mantarı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -54292,7 +54292,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1873",
-    "name": "Şanlıurfa Usulü Zeytinyağlı Kısık Ateşte Patatesli Deniz Karidesi",
+    "name": "Şanlı Patatesli Deniz Karidesi",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -54321,7 +54321,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1874",
-    "name": "Şanlıurfa Usulü Közde Izgara Brokolili Çipura Balığı",
+    "name": "Şanlı Brokolili Çipura Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -54350,7 +54350,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1875",
-    "name": "Şanlıurfa Usulü Kremalı Sarımsak Soslu Ispanakli Kuzu Pirzola",
+    "name": "Şanlı Ispanaklı Kuzu Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -54379,7 +54379,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1876",
-    "name": "Şanlıurfa Usulü Odun Ateşinde Közlenmiş Kerevizli Dana Antrikot",
+    "name": "Şanlı Közlenmiş Kerevizli Dana Antrikot",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -54408,7 +54408,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1877",
-    "name": "Şanlıurfa Usulü Buharda Şifalı Barbunyali Tavuk Pirzola",
+    "name": "Şanlı Buharda Şifalı Barbunyalı Tavuk Pirzola",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -54437,7 +54437,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1878",
-    "name": "Şanlıurfa Usulü Tereyağlı Özel Sote Mantarli Dana Ciğer",
+    "name": "Şanlı Mantarlı Dana Ciğer",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -54466,7 +54466,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1879",
-    "name": "Şanlıurfa Usulü Tepsi Buğulama Kuşkonmazli Kuzu Böbrek",
+    "name": "Şanlı Kuşkonmazlı Kuzu Böbrek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -54495,7 +54495,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1880",
-    "name": "Şanlıurfa Usulü Toprak Çömlek Usulü Tatlı Patatesli Sardalya Balığı",
+    "name": "Şanlı Tatlı Patatesli Sardalya Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -54524,7 +54524,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1881",
-    "name": "Şanlıurfa Usulü Közde Tandır Usulü Şalgamli Hamsi Tava",
+    "name": "Şanlı Şalgamli Hamsi Tava",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -54553,7 +54553,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1882",
-    "name": "Şanlıurfa Usulü Ekşi Soslu Buğulama Pazıli Bıldırcın Eti",
+    "name": "Şanlı Pazılı Bıldırcın Eti",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -54582,7 +54582,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1883",
-    "name": "Şanlıurfa Usulü Geleneksel Kavurma Şevketi Bostanli Deniz Kalamarı",
+    "name": "Şanlı Şevketi Bostanli Deniz Kalamarı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -54611,7 +54611,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1884",
-    "name": "Şanlıurfa Usulü Fırın Çıtır Pane Sarımsakli Ahtapot",
+    "name": "Şanlı Sarımsaklı Ahtapot",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -54640,7 +54640,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1885",
-    "name": "Şanlıurfa Usulü Glaze Şerbetli Buhar Patlıcanli Yeşil Mercimek",
+    "name": "Şanlı Patlıcanlı Yeşil Mercimek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -54669,7 +54669,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1886",
-    "name": "Şanlıurfa Usulü Tava Kızartma Patatesli Barbunya",
+    "name": "Şanlı Patatesli Barbunya",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -54698,7 +54698,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1887",
-    "name": "Şanlıurfa Usulü Düdüklü Lokum Brokolili Soya Et",
+    "name": "Şanlı Brokolili Soya Et",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -54727,7 +54727,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1888",
-    "name": "Şanlıurfa Usulü Fırın Graten Ispanakli Lor Peyniri",
+    "name": "Şanlı Ispanaklı Lor Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -54756,7 +54756,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1889",
-    "name": "Şanlıurfa Usulü Fırında Taş Güveçte Kerevizli Hellim Peyniri",
+    "name": "Şanlı Kerevizli Hellim Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -54785,7 +54785,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1890",
-    "name": "Şanlıurfa Usulü Odun Ateşinde Sac Tavada Barbunyali Kaşar Peyniri",
+    "name": "Şanlı Barbunyalı Kaşar Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -54814,7 +54814,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1891",
-    "name": "Uşak Usulü Toprak Çömlek Usulü Pırasali Dana Kuşbaşı",
+    "name": "Pırasali Dana Kuşbaşı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -54843,7 +54843,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1892",
-    "name": "Uşak Usulü Közde Tandır Usulü Taze Fasulyeli Kuzu İncik",
+    "name": "Taze Fasulyeli Kuzu İncik",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -54872,7 +54872,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1893",
-    "name": "Uşak Usulü Ekşi Soslu Buğulama Bamyali Tavuk Göğsü",
+    "name": "Bamyali Tavuk Göğsü",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -54901,7 +54901,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1894",
-    "name": "Uşak Usulü Geleneksel Kavurma Enginarli Satır Köftesi",
+    "name": "Enginarli Satır Köftesi",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -54930,7 +54930,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1895",
-    "name": "Uşak Usulü Fırın Çıtır Pane Avokadoli Somon Balığı",
+    "name": "Avokadoli Somon Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -54959,7 +54959,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1896",
-    "name": "Uşak Usulü Glaze Şerbetli Buhar Brüksel Lahanasıli Levrek Buğulama",
+    "name": "Brüksel Lahanasıli Levrek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -54988,7 +54988,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1897",
-    "name": "Uşak Usulü Tava Kızartma Bezelyeli Dana Kıyma",
+    "name": "Bezelyeli Dana Kıyma",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -55017,7 +55017,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1898",
-    "name": "Uşak Usulü Düdüklü Lokum Arapsaçıli Hindi Bonfile",
+    "name": "Arapsaçıli Hindi Bonfile",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -55046,7 +55046,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1899",
-    "name": "Uşak Usulü Fırın Graten Deniz Börülcesili Kuru Fasulye",
+    "name": "Deniz Börülcesili Kuru Fasulye",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -55075,7 +55075,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1900",
-    "name": "Uşak Usulü Fırında Taş Güveçte Arpacık Soğanli Kırmızı Mercimek",
+    "name": "Arpacık Soğanli Kırmızı Mercimek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -55104,7 +55104,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1901",
-    "name": "Uşak Usulü Odun Ateşinde Sac Tavada Kabakli Nohut",
+    "name": "Kabakli Nohut",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -55133,7 +55133,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1902",
-    "name": "Uşak Usulü Zeytinyağlı Kısık Ateşte Biberli Kültür Mantarı",
+    "name": "Biberli Kültür Mantarı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -55162,7 +55162,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1903",
-    "name": "Uşak Usulü Közde Izgara Karnabaharli Deniz Karidesi",
+    "name": "Karnabaharli Deniz Karidesi",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -55191,7 +55191,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1904",
-    "name": "Uşak Usulü Kremalı Sarımsak Soslu Pırasali Çipura Balığı",
+    "name": "Pırasali Çipura Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -55220,7 +55220,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1905",
-    "name": "Uşak Usulü Odun Ateşinde Közlenmiş Taze Fasulyeli Kuzu Pirzola",
+    "name": "Közlenmiş Taze Fasulyeli Kuzu Pirzola",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -55249,7 +55249,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1906",
-    "name": "Uşak Usulü Buharda Şifalı Bamyali Dana Antrikot",
+    "name": "Buharda Şifalı Bamyali Dana Antrikot",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -55278,7 +55278,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1907",
-    "name": "Uşak Usulü Tereyağlı Özel Sote Enginarli Tavuk Pirzola",
+    "name": "Enginarli Tavuk Pirzola",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -55307,7 +55307,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1908",
-    "name": "Uşak Usulü Tepsi Buğulama Avokadoli Dana Ciğer",
+    "name": "Avokadoli Dana Ciğer",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -55336,7 +55336,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1909",
-    "name": "Uşak Usulü Toprak Çömlek Usulü Brüksel Lahanasıli Kuzu Böbrek",
+    "name": "Brüksel Lahanasıli Kuzu Böbrek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -55365,7 +55365,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1910",
-    "name": "Uşak Usulü Közde Tandır Usulü Bezelyeli Sardalya Balığı",
+    "name": "Bezelyeli Sardalya Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -55394,7 +55394,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1911",
-    "name": "Uşak Usulü Ekşi Soslu Buğulama Arapsaçıli Hamsi Tava",
+    "name": "Arapsaçıli Hamsi Tava",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -55423,7 +55423,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1912",
-    "name": "Uşak Usulü Geleneksel Kavurma Deniz Börülcesili Bıldırcın Eti",
+    "name": "Deniz Börülcesili Bıldırcın Eti",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -55452,7 +55452,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1913",
-    "name": "Uşak Usulü Fırın Çıtır Pane Arpacık Soğanli Deniz Kalamarı",
+    "name": "Arpacık Soğanli Deniz Kalamarı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -55481,7 +55481,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1914",
-    "name": "Uşak Usulü Glaze Şerbetli Buhar Kabakli Ahtapot",
+    "name": "Kabakli Ahtapot",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -55510,7 +55510,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1915",
-    "name": "Uşak Usulü Tava Kızartma Biberli Yeşil Mercimek",
+    "name": "Biberli Yeşil Mercimek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -55539,7 +55539,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1916",
-    "name": "Uşak Usulü Düdüklü Lokum Karnabaharli Barbunya",
+    "name": "Karnabaharli Barbunya",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -55568,7 +55568,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1917",
-    "name": "Uşak Usulü Fırın Graten Pırasali Soya Et",
+    "name": "Pırasali Soya Et",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -55597,7 +55597,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1918",
-    "name": "Uşak Usulü Fırında Taş Güveçte Taze Fasulyeli Lor Peyniri",
+    "name": "Taze Fasulyeli Lor Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -55626,7 +55626,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1919",
-    "name": "Uşak Usulü Odun Ateşinde Sac Tavada Bamyali Hellim Peyniri",
+    "name": "Bamyali Hellim Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -55655,7 +55655,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1920",
-    "name": "Uşak Usulü Zeytinyağlı Kısık Ateşte Enginarli Kaşar Peyniri",
+    "name": "Enginarli Kaşar Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -55684,7 +55684,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1921",
-    "name": "Van Usulü Közde Tandır Usulü Barbunyali Dana Kuşbaşı",
+    "name": "Barbunyalı Dana Kuşbaşı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -55713,7 +55713,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1922",
-    "name": "Van Usulü Ekşi Soslu Buğulama Mantarli Kuzu İncik",
+    "name": "Mantarlı Kuzu İncik",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -55742,7 +55742,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1923",
-    "name": "Van Usulü Geleneksel Kavurma Kuşkonmazli Tavuk Göğsü",
+    "name": "Kuşkonmazlı Tavuk Göğsü",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -55771,7 +55771,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1924",
-    "name": "Van Usulü Fırın Çıtır Pane Tatlı Patatesli Satır Köftesi",
+    "name": "Tatlı Patatesli Satır Köftesi",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -55800,7 +55800,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1925",
-    "name": "Van Usulü Glaze Şerbetli Buhar Şalgamli Somon Balığı",
+    "name": "Şalgamli Somon Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -55829,7 +55829,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1926",
-    "name": "Van Usulü Tava Kızartma Pazıli Levrek Buğulama",
+    "name": "Pazılı Levrek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -55858,7 +55858,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1927",
-    "name": "Van Usulü Düdüklü Lokum Şevketi Bostanli Dana Kıyma",
+    "name": "Şevketi Bostanli Dana Kıyma",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -55887,7 +55887,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1928",
-    "name": "Van Usulü Fırın Graten Sarımsakli Hindi Bonfile",
+    "name": "Sarımsaklı Hindi Bonfile",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -55916,7 +55916,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1929",
-    "name": "Van Usulü Fırında Taş Güveçte Patlıcanli Kuru Fasulye",
+    "name": "Patlıcanlı Kuru Fasulye",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -55945,7 +55945,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1930",
-    "name": "Van Usulü Odun Ateşinde Sac Tavada Patatesli Kırmızı Mercimek",
+    "name": "Patatesli Kırmızı Mercimek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -55974,7 +55974,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1931",
-    "name": "Van Usulü Zeytinyağlı Kısık Ateşte Brokolili Nohut",
+    "name": "Brokolili Nohut",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -56003,7 +56003,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1932",
-    "name": "Van Usulü Közde Izgara Ispanakli Kültür Mantarı",
+    "name": "Ispanaklı Kültür Mantarı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -56032,7 +56032,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1933",
-    "name": "Van Usulü Kremalı Sarımsak Soslu Kerevizli Deniz Karidesi",
+    "name": "Kerevizli Deniz Karidesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -56061,7 +56061,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1934",
-    "name": "Van Usulü Odun Ateşinde Közlenmiş Barbunyali Çipura Balığı",
+    "name": "Közlenmiş Barbunyalı Çipura Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -56090,7 +56090,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1935",
-    "name": "Van Usulü Buharda Şifalı Mantarli Kuzu Pirzola",
+    "name": "Buharda Şifalı Mantarlı Kuzu Pirzola",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -56119,7 +56119,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1936",
-    "name": "Van Usulü Tereyağlı Özel Sote Kuşkonmazli Dana Antrikot",
+    "name": "Kuşkonmazlı Dana Antrikot",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -56148,7 +56148,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1937",
-    "name": "Van Usulü Tepsi Buğulama Tatlı Patatesli Tavuk Pirzola",
+    "name": "Tatlı Patatesli Tavuk Pirzola",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -56177,7 +56177,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1938",
-    "name": "Van Usulü Toprak Çömlek Usulü Şalgamli Dana Ciğer",
+    "name": "Şalgamli Dana Ciğer",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -56206,7 +56206,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1939",
-    "name": "Van Usulü Közde Tandır Usulü Pazıli Kuzu Böbrek",
+    "name": "Pazılı Kuzu Böbrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -56235,7 +56235,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1940",
-    "name": "Van Usulü Ekşi Soslu Buğulama Şevketi Bostanli Sardalya Balığı",
+    "name": "Şevketi Bostanli Sardalya Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -56264,7 +56264,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1941",
-    "name": "Van Usulü Geleneksel Kavurma Sarımsakli Hamsi Tava",
+    "name": "Sarımsaklı Hamsi Tava",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -56293,7 +56293,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1942",
-    "name": "Van Usulü Fırın Çıtır Pane Patlıcanli Bıldırcın Eti",
+    "name": "Patlıcanlı Bıldırcın Eti",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -56322,7 +56322,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1943",
-    "name": "Van Usulü Glaze Şerbetli Buhar Patatesli Deniz Kalamarı",
+    "name": "Patatesli Deniz Kalamarı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -56351,7 +56351,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1944",
-    "name": "Van Usulü Tava Kızartma Brokolili Ahtapot",
+    "name": "Brokolili Ahtapot",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -56380,7 +56380,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1945",
-    "name": "Van Usulü Düdüklü Lokum Ispanakli Yeşil Mercimek",
+    "name": "Ispanaklı Yeşil Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -56409,7 +56409,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1946",
-    "name": "Van Usulü Fırın Graten Kerevizli Barbunya",
+    "name": "Kerevizli Barbunya",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -56438,7 +56438,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1947",
-    "name": "Van Usulü Fırında Taş Güveçte Barbunyali Soya Et",
+    "name": "Barbunyalı Soya Et",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -56467,7 +56467,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1948",
-    "name": "Van Usulü Odun Ateşinde Sac Tavada Mantarli Lor Peyniri",
+    "name": "Mantarlı Lor Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -56496,7 +56496,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1949",
-    "name": "Van Usulü Zeytinyağlı Kısık Ateşte Kuşkonmazli Hellim Peyniri",
+    "name": "Kuşkonmazlı Hellim Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -56525,7 +56525,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1950",
-    "name": "Van Usulü Közde Izgara Tatlı Patatesli Kaşar Peyniri",
+    "name": "Tatlı Patatesli Kaşar Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -56554,7 +56554,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1951",
-    "name": "Yozgat Usulü Ekşi Soslu Buğulama Enginarli Dana Kuşbaşı",
+    "name": "Enginarli Dana Kuşbaşı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -56583,7 +56583,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1952",
-    "name": "Yozgat Usulü Geleneksel Kavurma Avokadoli Kuzu İncik",
+    "name": "Avokadoli Kuzu İncik",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -56612,7 +56612,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1953",
-    "name": "Yozgat Usulü Fırın Çıtır Pane Brüksel Lahanasıli Tavuk Göğsü",
+    "name": "Brüksel Lahanasıli Tavuk Göğsü",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -56641,7 +56641,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1954",
-    "name": "Yozgat Usulü Glaze Şerbetli Buhar Bezelyeli Satır Köftesi",
+    "name": "Bezelyeli Satır Köftesi",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -56670,7 +56670,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1955",
-    "name": "Yozgat Usulü Tava Kızartma Arapsaçıli Somon Balığı",
+    "name": "Arapsaçıli Somon Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -56699,7 +56699,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1956",
-    "name": "Yozgat Usulü Düdüklü Lokum Deniz Börülcesili Levrek Buğulama",
+    "name": "Deniz Börülcesili Levrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -56728,7 +56728,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1957",
-    "name": "Yozgat Usulü Fırın Graten Arpacık Soğanli Dana Kıyma",
+    "name": "Arpacık Soğanli Dana Kıyma",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -56757,7 +56757,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1958",
-    "name": "Yozgat Usulü Fırında Taş Güveçte Kabakli Hindi Bonfile",
+    "name": "Kabakli Hindi Bonfile",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -56786,7 +56786,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1959",
-    "name": "Yozgat Usulü Odun Ateşinde Sac Tavada Biberli Kuru Fasulye",
+    "name": "Biberli Kuru Fasulye",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -56815,7 +56815,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1960",
-    "name": "Yozgat Usulü Zeytinyağlı Kısık Ateşte Karnabaharli Kırmızı Mercimek",
+    "name": "Karnabaharli Kırmızı Mercimek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -56844,7 +56844,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1961",
-    "name": "Yozgat Usulü Közde Izgara Pırasali Nohut",
+    "name": "Pırasali Nohut",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -56873,7 +56873,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1962",
-    "name": "Yozgat Usulü Kremalı Sarımsak Soslu Taze Fasulyeli Kültür Mantarı",
+    "name": "Taze Fasulyeli Kültür Mantarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -56902,7 +56902,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1963",
-    "name": "Yozgat Usulü Odun Ateşinde Közlenmiş Bamyali Deniz Karidesi",
+    "name": "Közlenmiş Bamyali Deniz Karidesi",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -56931,7 +56931,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1964",
-    "name": "Yozgat Usulü Buharda Şifalı Enginarli Çipura Balığı",
+    "name": "Buharda Şifalı Enginarli Çipura Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -56960,7 +56960,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1965",
-    "name": "Yozgat Usulü Tereyağlı Özel Sote Avokadoli Kuzu Pirzola",
+    "name": "Avokadoli Kuzu Pirzola",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -56989,7 +56989,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1966",
-    "name": "Yozgat Usulü Tepsi Buğulama Brüksel Lahanasıli Dana Antrikot",
+    "name": "Brüksel Lahanasıli Dana Antrikot",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -57018,7 +57018,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1967",
-    "name": "Yozgat Usulü Toprak Çömlek Usulü Bezelyeli Tavuk Pirzola",
+    "name": "Bezelyeli Tavuk Pirzola",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -57047,7 +57047,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1968",
-    "name": "Yozgat Usulü Közde Tandır Usulü Arapsaçıli Dana Ciğer",
+    "name": "Arapsaçıli Dana Ciğer",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -57076,7 +57076,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1969",
-    "name": "Yozgat Usulü Ekşi Soslu Buğulama Deniz Börülcesili Kuzu Böbrek",
+    "name": "Deniz Börülcesili Kuzu Böbrek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -57105,7 +57105,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1970",
-    "name": "Yozgat Usulü Geleneksel Kavurma Arpacık Soğanli Sardalya Balığı",
+    "name": "Arpacık Soğanli Sardalya Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -57134,7 +57134,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1971",
-    "name": "Yozgat Usulü Fırın Çıtır Pane Kabakli Hamsi Tava",
+    "name": "Kabakli Hamsi Tava",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -57163,7 +57163,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1972",
-    "name": "Yozgat Usulü Glaze Şerbetli Buhar Biberli Bıldırcın Eti",
+    "name": "Biberli Bıldırcın Eti",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -57192,7 +57192,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1973",
-    "name": "Yozgat Usulü Tava Kızartma Karnabaharli Deniz Kalamarı",
+    "name": "Karnabaharli Deniz Kalamarı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -57221,7 +57221,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1974",
-    "name": "Yozgat Usulü Düdüklü Lokum Pırasali Ahtapot",
+    "name": "Pırasali Ahtapot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -57250,7 +57250,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1975",
-    "name": "Yozgat Usulü Fırın Graten Taze Fasulyeli Yeşil Mercimek",
+    "name": "Taze Fasulyeli Yeşil Mercimek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -57279,7 +57279,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1976",
-    "name": "Yozgat Usulü Fırında Taş Güveçte Bamyali Barbunya",
+    "name": "Bamyali Barbunya",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -57308,7 +57308,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1977",
-    "name": "Yozgat Usulü Odun Ateşinde Sac Tavada Enginarli Soya Et",
+    "name": "Enginarli Soya Et",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -57337,7 +57337,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1978",
-    "name": "Yozgat Usulü Zeytinyağlı Kısık Ateşte Avokadoli Lor Peyniri",
+    "name": "Avokadoli Lor Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -57366,7 +57366,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1979",
-    "name": "Yozgat Usulü Közde Izgara Brüksel Lahanasıli Hellim Peyniri",
+    "name": "Brüksel Lahanasıli Hellim Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -57395,7 +57395,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1980",
-    "name": "Yozgat Usulü Kremalı Sarımsak Soslu Bezelyeli Kaşar Peyniri",
+    "name": "Bezelyeli Kaşar Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -57424,7 +57424,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1981",
-    "name": "Zonguldak Usulü Geleneksel Kavurma Tatlı Patatesli Dana Kuşbaşı",
+    "name": "Tatlı Patatesli Dana Kuşbaşı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -57453,7 +57453,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1982",
-    "name": "Zonguldak Usulü Fırın Çıtır Pane Şalgamli Kuzu İncik",
+    "name": "Şalgamli Kuzu İncik",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -57482,7 +57482,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1983",
-    "name": "Zonguldak Usulü Glaze Şerbetli Buhar Pazıli Tavuk Göğsü",
+    "name": "Pazılı Tavuk Göğsü",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -57511,7 +57511,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1984",
-    "name": "Zonguldak Usulü Tava Kızartma Şevketi Bostanli Satır Köftesi",
+    "name": "Şevketi Bostanli Satır Köftesi",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -57540,7 +57540,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1985",
-    "name": "Zonguldak Usulü Düdüklü Lokum Sarımsakli Somon Balığı",
+    "name": "Sarımsaklı Somon Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -57569,7 +57569,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1986",
-    "name": "Zonguldak Usulü Fırın Graten Patlıcanli Levrek Buğulama",
+    "name": "Patlıcanlı Levrek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -57598,7 +57598,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1987",
-    "name": "Zonguldak Usulü Fırında Taş Güveçte Patatesli Dana Kıyma",
+    "name": "Patatesli Dana Kıyma",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -57627,7 +57627,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1988",
-    "name": "Zonguldak Usulü Odun Ateşinde Sac Tavada Brokolili Hindi Bonfile",
+    "name": "Brokolili Hindi Bonfile",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -57656,7 +57656,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1989",
-    "name": "Zonguldak Usulü Zeytinyağlı Kısık Ateşte Ispanakli Kuru Fasulye",
+    "name": "Ispanaklı Kuru Fasulye",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -57685,7 +57685,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1990",
-    "name": "Zonguldak Usulü Közde Izgara Kerevizli Kırmızı Mercimek",
+    "name": "Kerevizli Kırmızı Mercimek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -57714,7 +57714,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1991",
-    "name": "Zonguldak Usulü Kremalı Sarımsak Soslu Barbunyali Nohut",
+    "name": "Barbunyalı Nohut",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -57743,7 +57743,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1992",
-    "name": "Zonguldak Usulü Odun Ateşinde Közlenmiş Mantarli Kültür Mantarı",
+    "name": "Közlenmiş Mantarlı Kültür Mantarı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -57772,7 +57772,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1993",
-    "name": "Zonguldak Usulü Buharda Şifalı Kuşkonmazli Deniz Karidesi",
+    "name": "Buharda Şifalı Kuşkonmazlı Deniz Karidesi",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -57801,7 +57801,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1994",
-    "name": "Zonguldak Usulü Tereyağlı Özel Sote Tatlı Patatesli Çipura Balığı",
+    "name": "Tatlı Patatesli Çipura Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -57830,7 +57830,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1995",
-    "name": "Zonguldak Usulü Tepsi Buğulama Şalgamli Kuzu Pirzola",
+    "name": "Şalgamli Kuzu Pirzola",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -57859,7 +57859,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1996",
-    "name": "Zonguldak Usulü Toprak Çömlek Usulü Pazıli Dana Antrikot",
+    "name": "Pazılı Dana Antrikot",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -57888,7 +57888,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1997",
-    "name": "Zonguldak Usulü Közde Tandır Usulü Şevketi Bostanli Tavuk Pirzola",
+    "name": "Şevketi Bostanli Tavuk Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -57917,7 +57917,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1998",
-    "name": "Zonguldak Usulü Ekşi Soslu Buğulama Sarımsakli Dana Ciğer",
+    "name": "Sarımsaklı Dana Ciğer",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -57946,7 +57946,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_1999",
-    "name": "Zonguldak Usulü Geleneksel Kavurma Patlıcanli Kuzu Böbrek",
+    "name": "Patlıcanlı Kuzu Böbrek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -57975,7 +57975,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2000",
-    "name": "Zonguldak Usulü Fırın Çıtır Pane Patatesli Sardalya Balığı",
+    "name": "Patatesli Sardalya Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -58004,7 +58004,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2001",
-    "name": "Zonguldak Usulü Glaze Şerbetli Buhar Brokolili Hamsi Tava",
+    "name": "Brokolili Hamsi Tava",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -58033,7 +58033,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2002",
-    "name": "Zonguldak Usulü Tava Kızartma Ispanakli Bıldırcın Eti",
+    "name": "Ispanaklı Bıldırcın Eti",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -58062,7 +58062,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2003",
-    "name": "Zonguldak Usulü Düdüklü Lokum Kerevizli Deniz Kalamarı",
+    "name": "Kerevizli Deniz Kalamarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -58091,7 +58091,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2004",
-    "name": "Zonguldak Usulü Fırın Graten Barbunyali Ahtapot",
+    "name": "Barbunyalı Ahtapot",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -58120,7 +58120,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2005",
-    "name": "Zonguldak Usulü Fırında Taş Güveçte Mantarli Yeşil Mercimek",
+    "name": "Mantarlı Yeşil Mercimek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -58149,7 +58149,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2006",
-    "name": "Zonguldak Usulü Odun Ateşinde Sac Tavada Kuşkonmazli Barbunya",
+    "name": "Kuşkonmazlı Barbunya",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -58178,7 +58178,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2007",
-    "name": "Zonguldak Usulü Zeytinyağlı Kısık Ateşte Tatlı Patatesli Soya Et",
+    "name": "Tatlı Patatesli Soya Et",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -58207,7 +58207,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2008",
-    "name": "Zonguldak Usulü Közde Izgara Şalgamli Lor Peyniri",
+    "name": "Şalgamli Lor Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -58236,7 +58236,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2009",
-    "name": "Zonguldak Usulü Kremalı Sarımsak Soslu Pazıli Hellim Peyniri",
+    "name": "Pazılı Hellim Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -58265,7 +58265,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2010",
-    "name": "Zonguldak Usulü Odun Ateşinde Közlenmiş Şevketi Bostanli Kaşar Peyniri",
+    "name": "Közlenmiş Şevketi Bostanli Kaşar Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -58294,7 +58294,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2011",
-    "name": "Aksaray Usulü Fırın Çıtır Pane Bezelyeli Dana Kuşbaşı",
+    "name": "Bezelyeli Dana Kuşbaşı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -58323,7 +58323,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2012",
-    "name": "Aksaray Usulü Glaze Şerbetli Buhar Arapsaçıli Kuzu İncik",
+    "name": "Arapsaçıli Kuzu İncik",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -58352,7 +58352,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2013",
-    "name": "Aksaray Usulü Tava Kızartma Deniz Börülcesili Tavuk Göğsü",
+    "name": "Deniz Börülcesili Tavuk Göğsü",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -58381,7 +58381,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2014",
-    "name": "Aksaray Usulü Düdüklü Lokum Arpacık Soğanli Satır Köftesi",
+    "name": "Arpacık Soğanli Satır Köftesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -58410,7 +58410,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2015",
-    "name": "Aksaray Usulü Fırın Graten Kabakli Somon Balığı",
+    "name": "Kabakli Somon Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -58439,7 +58439,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2016",
-    "name": "Aksaray Usulü Fırında Taş Güveçte Biberli Levrek Buğulama",
+    "name": "Biberli Levrek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -58468,7 +58468,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2017",
-    "name": "Aksaray Usulü Odun Ateşinde Sac Tavada Karnabaharli Dana Kıyma",
+    "name": "Karnabaharli Dana Kıyma",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -58497,7 +58497,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2018",
-    "name": "Aksaray Usulü Zeytinyağlı Kısık Ateşte Pırasali Hindi Bonfile",
+    "name": "Pırasali Hindi Bonfile",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -58526,7 +58526,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2019",
-    "name": "Aksaray Usulü Közde Izgara Taze Fasulyeli Kuru Fasulye",
+    "name": "Taze Fasulyeli Kuru Fasulye",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -58555,7 +58555,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2020",
-    "name": "Aksaray Usulü Kremalı Sarımsak Soslu Bamyali Kırmızı Mercimek",
+    "name": "Bamyali Kırmızı Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -58584,7 +58584,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2021",
-    "name": "Aksaray Usulü Odun Ateşinde Közlenmiş Enginarli Nohut",
+    "name": "Közlenmiş Enginarli Nohut",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -58613,7 +58613,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2022",
-    "name": "Aksaray Usulü Buharda Şifalı Avokadoli Kültür Mantarı",
+    "name": "Buharda Şifalı Avokadoli Kültür Mantarı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -58642,7 +58642,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2023",
-    "name": "Aksaray Usulü Tereyağlı Özel Sote Brüksel Lahanasıli Deniz Karidesi",
+    "name": "Brüksel Lahanasıli Deniz Karidesi",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -58671,7 +58671,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2024",
-    "name": "Aksaray Usulü Tepsi Buğulama Bezelyeli Çipura Balığı",
+    "name": "Bezelyeli Çipura Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -58700,7 +58700,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2025",
-    "name": "Aksaray Usulü Toprak Çömlek Usulü Arapsaçıli Kuzu Pirzola",
+    "name": "Arapsaçıli Kuzu Pirzola",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -58729,7 +58729,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2026",
-    "name": "Aksaray Usulü Közde Tandır Usulü Deniz Börülcesili Dana Antrikot",
+    "name": "Deniz Börülcesili Dana Antrikot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -58758,7 +58758,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2027",
-    "name": "Aksaray Usulü Ekşi Soslu Buğulama Arpacık Soğanli Tavuk Pirzola",
+    "name": "Arpacık Soğanli Tavuk Pirzola",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -58787,7 +58787,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2028",
-    "name": "Aksaray Usulü Geleneksel Kavurma Kabakli Dana Ciğer",
+    "name": "Kabakli Dana Ciğer",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -58816,7 +58816,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2029",
-    "name": "Aksaray Usulü Fırın Çıtır Pane Biberli Kuzu Böbrek",
+    "name": "Biberli Kuzu Böbrek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -58845,7 +58845,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2030",
-    "name": "Aksaray Usulü Glaze Şerbetli Buhar Karnabaharli Sardalya Balığı",
+    "name": "Karnabaharli Sardalya Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -58874,7 +58874,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2031",
-    "name": "Aksaray Usulü Tava Kızartma Pırasali Hamsi Tava",
+    "name": "Pırasali Hamsi Tava",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -58903,7 +58903,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2032",
-    "name": "Aksaray Usulü Düdüklü Lokum Taze Fasulyeli Bıldırcın Eti",
+    "name": "Taze Fasulyeli Bıldırcın Eti",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -58932,7 +58932,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2033",
-    "name": "Aksaray Usulü Fırın Graten Bamyali Deniz Kalamarı",
+    "name": "Bamyali Deniz Kalamarı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -58961,7 +58961,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2034",
-    "name": "Aksaray Usulü Fırında Taş Güveçte Enginarli Ahtapot",
+    "name": "Enginarli Ahtapot",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -58990,7 +58990,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2035",
-    "name": "Aksaray Usulü Odun Ateşinde Sac Tavada Avokadoli Yeşil Mercimek",
+    "name": "Avokadoli Yeşil Mercimek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -59019,7 +59019,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2036",
-    "name": "Aksaray Usulü Zeytinyağlı Kısık Ateşte Brüksel Lahanasıli Barbunya",
+    "name": "Brüksel Lahanasıli Barbunya",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -59048,7 +59048,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2037",
-    "name": "Aksaray Usulü Közde Izgara Bezelyeli Soya Et",
+    "name": "Bezelyeli Soya Et",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -59077,7 +59077,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2038",
-    "name": "Aksaray Usulü Kremalı Sarımsak Soslu Arapsaçıli Lor Peyniri",
+    "name": "Arapsaçıli Lor Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -59106,7 +59106,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2039",
-    "name": "Aksaray Usulü Odun Ateşinde Közlenmiş Deniz Börülcesili Hellim Peyniri",
+    "name": "Közlenmiş Deniz Börülcesili Hellim Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -59135,7 +59135,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2040",
-    "name": "Aksaray Usulü Buharda Şifalı Arpacık Soğanli Kaşar Peyniri",
+    "name": "Buharda Şifalı Arpacık Soğanli Kaşar Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -59164,7 +59164,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2041",
-    "name": "Bayburt Usulü Glaze Şerbetli Buhar Şevketi Bostanli Dana Kuşbaşı",
+    "name": "Şevketi Bostanli Dana Kuşbaşı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -59193,7 +59193,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2042",
-    "name": "Bayburt Usulü Tava Kızartma Sarımsakli Kuzu İncik",
+    "name": "Sarımsaklı Kuzu İncik",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -59222,7 +59222,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2043",
-    "name": "Bayburt Usulü Düdüklü Lokum Patlıcanli Tavuk Göğsü",
+    "name": "Patlıcanlı Tavuk Göğsü",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -59251,7 +59251,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2044",
-    "name": "Bayburt Usulü Fırın Graten Patatesli Satır Köftesi",
+    "name": "Patatesli Satır Köftesi",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -59280,7 +59280,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2045",
-    "name": "Bayburt Usulü Fırında Taş Güveçte Brokolili Somon Balığı",
+    "name": "Brokolili Somon Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -59309,7 +59309,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2046",
-    "name": "Bayburt Usulü Odun Ateşinde Sac Tavada Ispanakli Levrek Buğulama",
+    "name": "Ispanaklı Levrek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -59338,7 +59338,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2047",
-    "name": "Bayburt Usulü Zeytinyağlı Kısık Ateşte Kerevizli Dana Kıyma",
+    "name": "Kerevizli Dana Kıyma",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -59367,7 +59367,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2048",
-    "name": "Bayburt Usulü Közde Izgara Barbunyali Hindi Bonfile",
+    "name": "Barbunyalı Hindi Bonfile",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -59396,7 +59396,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2049",
-    "name": "Bayburt Usulü Kremalı Sarımsak Soslu Mantarli Kuru Fasulye",
+    "name": "Mantarlı Kuru Fasulye",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -59425,7 +59425,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2050",
-    "name": "Bayburt Usulü Odun Ateşinde Közlenmiş Kuşkonmazli Kırmızı Mercimek",
+    "name": "Közlenmiş Kuşkonmazlı Kırmızı Mercimek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -59454,7 +59454,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2051",
-    "name": "Bayburt Usulü Buharda Şifalı Tatlı Patatesli Nohut",
+    "name": "Buharda Şifalı Tatlı Patatesli Nohut",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -59483,7 +59483,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2052",
-    "name": "Bayburt Usulü Tereyağlı Özel Sote Şalgamli Kültür Mantarı",
+    "name": "Şalgamli Kültür Mantarı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -59512,7 +59512,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2053",
-    "name": "Bayburt Usulü Tepsi Buğulama Pazıli Deniz Karidesi",
+    "name": "Pazılı Deniz Karidesi",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -59541,7 +59541,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2054",
-    "name": "Bayburt Usulü Toprak Çömlek Usulü Şevketi Bostanli Çipura Balığı",
+    "name": "Şevketi Bostanli Çipura Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -59570,7 +59570,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2055",
-    "name": "Bayburt Usulü Közde Tandır Usulü Sarımsakli Kuzu Pirzola",
+    "name": "Sarımsaklı Kuzu Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -59599,7 +59599,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2056",
-    "name": "Bayburt Usulü Ekşi Soslu Buğulama Patlıcanli Dana Antrikot",
+    "name": "Patlıcanlı Dana Antrikot",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -59628,7 +59628,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2057",
-    "name": "Bayburt Usulü Geleneksel Kavurma Patatesli Tavuk Pirzola",
+    "name": "Patatesli Tavuk Pirzola",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -59657,7 +59657,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2058",
-    "name": "Bayburt Usulü Fırın Çıtır Pane Brokolili Dana Ciğer",
+    "name": "Brokolili Dana Ciğer",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -59686,7 +59686,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2059",
-    "name": "Bayburt Usulü Glaze Şerbetli Buhar Ispanakli Kuzu Böbrek",
+    "name": "Ispanaklı Kuzu Böbrek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -59715,7 +59715,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2060",
-    "name": "Bayburt Usulü Tava Kızartma Kerevizli Sardalya Balığı",
+    "name": "Kerevizli Sardalya Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -59744,7 +59744,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2061",
-    "name": "Bayburt Usulü Düdüklü Lokum Barbunyali Hamsi Tava",
+    "name": "Barbunyalı Hamsi Tava",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -59773,7 +59773,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2062",
-    "name": "Bayburt Usulü Fırın Graten Mantarli Bıldırcın Eti",
+    "name": "Mantarlı Bıldırcın Eti",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -59802,7 +59802,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2063",
-    "name": "Bayburt Usulü Fırında Taş Güveçte Kuşkonmazli Deniz Kalamarı",
+    "name": "Kuşkonmazlı Deniz Kalamarı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -59831,7 +59831,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2064",
-    "name": "Bayburt Usulü Odun Ateşinde Sac Tavada Tatlı Patatesli Ahtapot",
+    "name": "Tatlı Patatesli Ahtapot",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -59860,7 +59860,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2065",
-    "name": "Bayburt Usulü Zeytinyağlı Kısık Ateşte Şalgamli Yeşil Mercimek",
+    "name": "Şalgamli Yeşil Mercimek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -59889,7 +59889,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2066",
-    "name": "Bayburt Usulü Közde Izgara Pazıli Barbunya",
+    "name": "Pazılı Barbunya",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -59918,7 +59918,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2067",
-    "name": "Bayburt Usulü Kremalı Sarımsak Soslu Şevketi Bostanli Soya Et",
+    "name": "Şevketi Bostanli Soya Et",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -59947,7 +59947,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2068",
-    "name": "Bayburt Usulü Odun Ateşinde Közlenmiş Sarımsakli Lor Peyniri",
+    "name": "Közlenmiş Sarımsaklı Lor Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -59976,7 +59976,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2069",
-    "name": "Bayburt Usulü Buharda Şifalı Patlıcanli Hellim Peyniri",
+    "name": "Buharda Şifalı Patlıcanlı Hellim Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -60005,7 +60005,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2070",
-    "name": "Bayburt Usulü Tereyağlı Özel Sote Patatesli Kaşar Peyniri",
+    "name": "Patatesli Kaşar Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -60034,7 +60034,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2071",
-    "name": "Karaman Usulü Tava Kızartma Arpacık Soğanli Dana Kuşbaşı",
+    "name": "Arpacık Soğanli Dana Kuşbaşı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -60063,7 +60063,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2072",
-    "name": "Karaman Usulü Düdüklü Lokum Kabakli Kuzu İncik",
+    "name": "Kabakli Kuzu İncik",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -60092,7 +60092,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2073",
-    "name": "Karaman Usulü Fırın Graten Biberli Tavuk Göğsü",
+    "name": "Biberli Tavuk Göğsü",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -60121,7 +60121,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2074",
-    "name": "Karaman Usulü Fırında Taş Güveçte Karnabaharli Satır Köftesi",
+    "name": "Karnabaharli Satır Köftesi",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -60150,7 +60150,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2075",
-    "name": "Karaman Usulü Odun Ateşinde Sac Tavada Pırasali Somon Balığı",
+    "name": "Pırasali Somon Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -60179,7 +60179,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2076",
-    "name": "Karaman Usulü Zeytinyağlı Kısık Ateşte Taze Fasulyeli Levrek Buğulama",
+    "name": "Taze Fasulyeli Levrek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -60208,7 +60208,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2077",
-    "name": "Karaman Usulü Közde Izgara Bamyali Dana Kıyma",
+    "name": "Bamyali Dana Kıyma",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -60237,7 +60237,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2078",
-    "name": "Karaman Usulü Kremalı Sarımsak Soslu Enginarli Hindi Bonfile",
+    "name": "Enginarli Hindi Bonfile",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -60266,7 +60266,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2079",
-    "name": "Karaman Usulü Odun Ateşinde Közlenmiş Avokadoli Kuru Fasulye",
+    "name": "Közlenmiş Avokadoli Kuru Fasulye",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -60295,7 +60295,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2080",
-    "name": "Karaman Usulü Buharda Şifalı Brüksel Lahanasıli Kırmızı Mercimek",
+    "name": "Buharda Şifalı Brüksel Lahanasıli Kırmızı Mercimek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -60324,7 +60324,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2081",
-    "name": "Karaman Usulü Tereyağlı Özel Sote Bezelyeli Nohut",
+    "name": "Bezelyeli Nohut",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -60353,7 +60353,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2082",
-    "name": "Karaman Usulü Tepsi Buğulama Arapsaçıli Kültür Mantarı",
+    "name": "Arapsaçıli Kültür Mantarı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -60382,7 +60382,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2083",
-    "name": "Karaman Usulü Toprak Çömlek Usulü Deniz Börülcesili Deniz Karidesi",
+    "name": "Deniz Börülcesili Deniz Karidesi",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -60411,7 +60411,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2084",
-    "name": "Karaman Usulü Közde Tandır Usulü Arpacık Soğanli Çipura Balığı",
+    "name": "Arpacık Soğanli Çipura Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -60440,7 +60440,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2085",
-    "name": "Karaman Usulü Ekşi Soslu Buğulama Kabakli Kuzu Pirzola",
+    "name": "Kabakli Kuzu Pirzola",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -60469,7 +60469,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2086",
-    "name": "Karaman Usulü Geleneksel Kavurma Biberli Dana Antrikot",
+    "name": "Biberli Dana Antrikot",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -60498,7 +60498,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2087",
-    "name": "Karaman Usulü Fırın Çıtır Pane Karnabaharli Tavuk Pirzola",
+    "name": "Karnabaharli Tavuk Pirzola",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -60527,7 +60527,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2088",
-    "name": "Karaman Usulü Glaze Şerbetli Buhar Pırasali Dana Ciğer",
+    "name": "Pırasali Dana Ciğer",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -60556,7 +60556,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2089",
-    "name": "Karaman Usulü Tava Kızartma Taze Fasulyeli Kuzu Böbrek",
+    "name": "Taze Fasulyeli Kuzu Böbrek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -60585,7 +60585,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2090",
-    "name": "Karaman Usulü Düdüklü Lokum Bamyali Sardalya Balığı",
+    "name": "Bamyali Sardalya Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -60614,7 +60614,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2091",
-    "name": "Karaman Usulü Fırın Graten Enginarli Hamsi Tava",
+    "name": "Enginarli Hamsi Tava",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -60643,7 +60643,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2092",
-    "name": "Karaman Usulü Fırında Taş Güveçte Avokadoli Bıldırcın Eti",
+    "name": "Avokadoli Bıldırcın Eti",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -60672,7 +60672,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2093",
-    "name": "Karaman Usulü Odun Ateşinde Sac Tavada Brüksel Lahanasıli Deniz Kalamarı",
+    "name": "Brüksel Lahanasıli Deniz Kalamarı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -60701,7 +60701,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2094",
-    "name": "Karaman Usulü Zeytinyağlı Kısık Ateşte Bezelyeli Ahtapot",
+    "name": "Bezelyeli Ahtapot",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -60730,7 +60730,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2095",
-    "name": "Karaman Usulü Közde Izgara Arapsaçıli Yeşil Mercimek",
+    "name": "Arapsaçıli Yeşil Mercimek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -60759,7 +60759,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2096",
-    "name": "Karaman Usulü Kremalı Sarımsak Soslu Deniz Börülcesili Barbunya",
+    "name": "Deniz Börülcesili Barbunya",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -60788,7 +60788,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2097",
-    "name": "Karaman Usulü Odun Ateşinde Közlenmiş Arpacık Soğanli Soya Et",
+    "name": "Közlenmiş Arpacık Soğanli Soya Et",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -60817,7 +60817,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2098",
-    "name": "Karaman Usulü Buharda Şifalı Kabakli Lor Peyniri",
+    "name": "Buharda Şifalı Kabakli Lor Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -60846,7 +60846,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2099",
-    "name": "Karaman Usulü Tereyağlı Özel Sote Biberli Hellim Peyniri",
+    "name": "Biberli Hellim Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -60875,7 +60875,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2100",
-    "name": "Karaman Usulü Tepsi Buğulama Karnabaharli Kaşar Peyniri",
+    "name": "Karnabaharli Kaşar Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -60904,7 +60904,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2101",
-    "name": "Kırıkkale Usulü Düdüklü Lokum Patatesli Dana Kuşbaşı",
+    "name": "Patatesli Dana Kuşbaşı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -60933,7 +60933,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2102",
-    "name": "Kırıkkale Usulü Fırın Graten Brokolili Kuzu İncik",
+    "name": "Brokolili Kuzu İncik",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -60962,7 +60962,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2103",
-    "name": "Kırıkkale Usulü Fırında Taş Güveçte Ispanakli Tavuk Göğsü",
+    "name": "Ispanaklı Tavuk Göğsü",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -60991,7 +60991,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2104",
-    "name": "Kırıkkale Usulü Odun Ateşinde Sac Tavada Kerevizli Satır Köftesi",
+    "name": "Kerevizli Satır Köftesi",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -61020,7 +61020,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2105",
-    "name": "Kırıkkale Usulü Zeytinyağlı Kısık Ateşte Barbunyali Somon Balığı",
+    "name": "Barbunyalı Somon Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -61049,7 +61049,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2106",
-    "name": "Kırıkkale Usulü Közde Izgara Mantarli Levrek Buğulama",
+    "name": "Mantarlı Levrek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -61078,7 +61078,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2107",
-    "name": "Kırıkkale Usulü Kremalı Sarımsak Soslu Kuşkonmazli Dana Kıyma",
+    "name": "Kuşkonmazlı Dana Kıyma",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -61107,7 +61107,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2108",
-    "name": "Kırıkkale Usulü Odun Ateşinde Közlenmiş Tatlı Patatesli Hindi Bonfile",
+    "name": "Közlenmiş Tatlı Patatesli Hindi Bonfile",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -61136,7 +61136,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2109",
-    "name": "Kırıkkale Usulü Buharda Şifalı Şalgamli Kuru Fasulye",
+    "name": "Buharda Şifalı Şalgamli Kuru Fasulye",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -61165,7 +61165,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2110",
-    "name": "Kırıkkale Usulü Tereyağlı Özel Sote Pazıli Kırmızı Mercimek",
+    "name": "Pazılı Kırmızı Mercimek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -61194,7 +61194,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2111",
-    "name": "Kırıkkale Usulü Tepsi Buğulama Şevketi Bostanli Nohut",
+    "name": "Şevketi Bostanli Nohut",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -61223,7 +61223,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2112",
-    "name": "Kırıkkale Usulü Toprak Çömlek Usulü Sarımsakli Kültür Mantarı",
+    "name": "Sarımsaklı Kültür Mantarı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -61252,7 +61252,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2113",
-    "name": "Kırıkkale Usulü Közde Tandır Usulü Patlıcanli Deniz Karidesi",
+    "name": "Patlıcanlı Deniz Karidesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -61281,7 +61281,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2114",
-    "name": "Kırıkkale Usulü Ekşi Soslu Buğulama Patatesli Çipura Balığı",
+    "name": "Patatesli Çipura Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -61310,7 +61310,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2115",
-    "name": "Kırıkkale Usulü Geleneksel Kavurma Brokolili Kuzu Pirzola",
+    "name": "Brokolili Kuzu Pirzola",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -61339,7 +61339,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2116",
-    "name": "Kırıkkale Usulü Fırın Çıtır Pane Ispanakli Dana Antrikot",
+    "name": "Ispanaklı Dana Antrikot",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -61368,7 +61368,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2117",
-    "name": "Kırıkkale Usulü Glaze Şerbetli Buhar Kerevizli Tavuk Pirzola",
+    "name": "Kerevizli Tavuk Pirzola",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -61397,7 +61397,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2118",
-    "name": "Kırıkkale Usulü Tava Kızartma Barbunyali Dana Ciğer",
+    "name": "Barbunyalı Dana Ciğer",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -61426,7 +61426,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2119",
-    "name": "Kırıkkale Usulü Düdüklü Lokum Mantarli Kuzu Böbrek",
+    "name": "Mantarlı Kuzu Böbrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -61455,7 +61455,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2120",
-    "name": "Kırıkkale Usulü Fırın Graten Kuşkonmazli Sardalya Balığı",
+    "name": "Kuşkonmazlı Sardalya Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -61484,7 +61484,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2121",
-    "name": "Kırıkkale Usulü Fırında Taş Güveçte Tatlı Patatesli Hamsi Tava",
+    "name": "Tatlı Patatesli Hamsi Tava",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -61513,7 +61513,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2122",
-    "name": "Kırıkkale Usulü Odun Ateşinde Sac Tavada Şalgamli Bıldırcın Eti",
+    "name": "Şalgamli Bıldırcın Eti",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -61542,7 +61542,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2123",
-    "name": "Kırıkkale Usulü Zeytinyağlı Kısık Ateşte Pazıli Deniz Kalamarı",
+    "name": "Pazılı Deniz Kalamarı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -61571,7 +61571,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2124",
-    "name": "Kırıkkale Usulü Közde Izgara Şevketi Bostanli Ahtapot",
+    "name": "Şevketi Bostanli Ahtapot",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -61600,7 +61600,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2125",
-    "name": "Kırıkkale Usulü Kremalı Sarımsak Soslu Sarımsakli Yeşil Mercimek",
+    "name": "Sarımsaklı Yeşil Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -61629,7 +61629,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2126",
-    "name": "Kırıkkale Usulü Odun Ateşinde Közlenmiş Patlıcanli Barbunya",
+    "name": "Közlenmiş Patlıcanlı Barbunya",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -61658,7 +61658,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2127",
-    "name": "Kırıkkale Usulü Buharda Şifalı Patatesli Soya Et",
+    "name": "Buharda Şifalı Patatesli Soya Et",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -61687,7 +61687,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2128",
-    "name": "Kırıkkale Usulü Tereyağlı Özel Sote Brokolili Lor Peyniri",
+    "name": "Brokolili Lor Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -61716,7 +61716,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2129",
-    "name": "Kırıkkale Usulü Tepsi Buğulama Ispanakli Hellim Peyniri",
+    "name": "Ispanaklı Hellim Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -61745,7 +61745,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2130",
-    "name": "Kırıkkale Usulü Toprak Çömlek Usulü Kerevizli Kaşar Peyniri",
+    "name": "Kerevizli Kaşar Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -61774,7 +61774,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2131",
-    "name": "Batman Usulü Fırın Graten Karnabaharli Dana Kuşbaşı",
+    "name": "Karnabaharli Dana Kuşbaşı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -61803,7 +61803,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2132",
-    "name": "Batman Usulü Fırında Taş Güveçte Pırasali Kuzu İncik",
+    "name": "Pırasali Kuzu İncik",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -61832,7 +61832,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2133",
-    "name": "Batman Usulü Odun Ateşinde Sac Tavada Taze Fasulyeli Tavuk Göğsü",
+    "name": "Taze Fasulyeli Tavuk Göğsü",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -61861,7 +61861,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2134",
-    "name": "Batman Usulü Zeytinyağlı Kısık Ateşte Bamyali Satır Köftesi",
+    "name": "Bamyali Satır Köftesi",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -61890,7 +61890,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2135",
-    "name": "Batman Usulü Közde Izgara Enginarli Somon Balığı",
+    "name": "Enginarli Somon Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -61919,7 +61919,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2136",
-    "name": "Batman Usulü Kremalı Sarımsak Soslu Avokadoli Levrek Buğulama",
+    "name": "Avokadoli Levrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -61948,7 +61948,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2137",
-    "name": "Batman Usulü Odun Ateşinde Közlenmiş Brüksel Lahanasıli Dana Kıyma",
+    "name": "Közlenmiş Brüksel Lahanasıli Dana Kıyma",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -61977,7 +61977,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2138",
-    "name": "Batman Usulü Buharda Şifalı Bezelyeli Hindi Bonfile",
+    "name": "Buharda Şifalı Bezelyeli Hindi Bonfile",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -62006,7 +62006,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2139",
-    "name": "Batman Usulü Tereyağlı Özel Sote Arapsaçıli Kuru Fasulye",
+    "name": "Arapsaçıli Kuru Fasulye",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -62035,7 +62035,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2140",
-    "name": "Batman Usulü Tepsi Buğulama Deniz Börülcesili Kırmızı Mercimek",
+    "name": "Deniz Börülcesili Kırmızı Mercimek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -62064,7 +62064,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2141",
-    "name": "Batman Usulü Toprak Çömlek Usulü Arpacık Soğanli Nohut",
+    "name": "Arpacık Soğanli Nohut",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -62093,7 +62093,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2142",
-    "name": "Batman Usulü Közde Tandır Usulü Kabakli Kültür Mantarı",
+    "name": "Kabakli Kültür Mantarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -62122,7 +62122,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2143",
-    "name": "Batman Usulü Ekşi Soslu Buğulama Biberli Deniz Karidesi",
+    "name": "Biberli Deniz Karidesi",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -62151,7 +62151,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2144",
-    "name": "Batman Usulü Geleneksel Kavurma Karnabaharli Çipura Balığı",
+    "name": "Karnabaharli Çipura Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -62180,7 +62180,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2145",
-    "name": "Batman Usulü Fırın Çıtır Pane Pırasali Kuzu Pirzola",
+    "name": "Pırasali Kuzu Pirzola",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -62209,7 +62209,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2146",
-    "name": "Batman Usulü Glaze Şerbetli Buhar Taze Fasulyeli Dana Antrikot",
+    "name": "Taze Fasulyeli Dana Antrikot",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -62238,7 +62238,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2147",
-    "name": "Batman Usulü Tava Kızartma Bamyali Tavuk Pirzola",
+    "name": "Bamyali Tavuk Pirzola",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -62267,7 +62267,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2148",
-    "name": "Batman Usulü Düdüklü Lokum Enginarli Dana Ciğer",
+    "name": "Enginarli Dana Ciğer",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -62296,7 +62296,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2149",
-    "name": "Batman Usulü Fırın Graten Avokadoli Kuzu Böbrek",
+    "name": "Avokadoli Kuzu Böbrek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -62325,7 +62325,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2150",
-    "name": "Batman Usulü Fırında Taş Güveçte Brüksel Lahanasıli Sardalya Balığı",
+    "name": "Brüksel Lahanasıli Sardalya Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -62354,7 +62354,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2151",
-    "name": "Batman Usulü Odun Ateşinde Sac Tavada Bezelyeli Hamsi Tava",
+    "name": "Bezelyeli Hamsi Tava",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -62383,7 +62383,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2152",
-    "name": "Batman Usulü Zeytinyağlı Kısık Ateşte Arapsaçıli Bıldırcın Eti",
+    "name": "Arapsaçıli Bıldırcın Eti",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -62412,7 +62412,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2153",
-    "name": "Batman Usulü Közde Izgara Deniz Börülcesili Deniz Kalamarı",
+    "name": "Deniz Börülcesili Deniz Kalamarı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -62441,7 +62441,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2154",
-    "name": "Batman Usulü Kremalı Sarımsak Soslu Arpacık Soğanli Ahtapot",
+    "name": "Arpacık Soğanli Ahtapot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -62470,7 +62470,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2155",
-    "name": "Batman Usulü Odun Ateşinde Közlenmiş Kabakli Yeşil Mercimek",
+    "name": "Közlenmiş Kabakli Yeşil Mercimek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -62499,7 +62499,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2156",
-    "name": "Batman Usulü Buharda Şifalı Biberli Barbunya",
+    "name": "Buharda Şifalı Biberli Barbunya",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -62528,7 +62528,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2157",
-    "name": "Batman Usulü Tereyağlı Özel Sote Karnabaharli Soya Et",
+    "name": "Karnabaharli Soya Et",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -62557,7 +62557,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2158",
-    "name": "Batman Usulü Tepsi Buğulama Pırasali Lor Peyniri",
+    "name": "Pırasali Lor Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -62586,7 +62586,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2159",
-    "name": "Batman Usulü Toprak Çömlek Usulü Taze Fasulyeli Hellim Peyniri",
+    "name": "Taze Fasulyeli Hellim Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -62615,7 +62615,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2160",
-    "name": "Batman Usulü Közde Tandır Usulü Bamyali Kaşar Peyniri",
+    "name": "Bamyali Kaşar Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -62644,7 +62644,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2161",
-    "name": "Şırnak Usulü Fırında Taş Güveçte Kerevizli Dana Kuşbaşı",
+    "name": "Şırnak Kerevizli Dana Kuşbaşı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -62673,7 +62673,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2162",
-    "name": "Şırnak Usulü Odun Ateşinde Sac Tavada Barbunyali Kuzu İncik",
+    "name": "Şırnak Barbunyalı Kuzu İncik",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -62702,7 +62702,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2163",
-    "name": "Şırnak Usulü Zeytinyağlı Kısık Ateşte Mantarli Tavuk Göğsü",
+    "name": "Şırnak Mantarlı Tavuk Göğsü",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -62731,7 +62731,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2164",
-    "name": "Şırnak Usulü Közde Izgara Kuşkonmazli Satır Köftesi",
+    "name": "Şırnak Kuşkonmazlı Satır Köftesi",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -62760,7 +62760,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2165",
-    "name": "Şırnak Usulü Kremalı Sarımsak Soslu Tatlı Patatesli Somon Balığı",
+    "name": "Şırnak Tatlı Patatesli Somon Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -62789,7 +62789,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2166",
-    "name": "Şırnak Usulü Odun Ateşinde Közlenmiş Şalgamli Levrek Buğulama",
+    "name": "Şırnak Közlenmiş Şalgamli Levrek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -62818,7 +62818,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2167",
-    "name": "Şırnak Usulü Buharda Şifalı Pazıli Dana Kıyma",
+    "name": "Şırnak Buharda Şifalı Pazılı Dana Kıyma",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -62847,7 +62847,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2168",
-    "name": "Şırnak Usulü Tereyağlı Özel Sote Şevketi Bostanli Hindi Bonfile",
+    "name": "Şırnak Şevketi Bostanli Hindi Bonfile",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -62876,7 +62876,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2169",
-    "name": "Şırnak Usulü Tepsi Buğulama Sarımsakli Kuru Fasulye",
+    "name": "Şırnak Sarımsaklı Kuru Fasulye",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -62905,7 +62905,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2170",
-    "name": "Şırnak Usulü Toprak Çömlek Usulü Patlıcanli Kırmızı Mercimek",
+    "name": "Şırnak Patlıcanlı Kırmızı Mercimek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -62934,7 +62934,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2171",
-    "name": "Şırnak Usulü Közde Tandır Usulü Patatesli Nohut",
+    "name": "Şırnak Patatesli Nohut",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -62963,7 +62963,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2172",
-    "name": "Şırnak Usulü Ekşi Soslu Buğulama Brokolili Kültür Mantarı",
+    "name": "Şırnak Brokolili Kültür Mantarı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -62992,7 +62992,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2173",
-    "name": "Şırnak Usulü Geleneksel Kavurma Ispanakli Deniz Karidesi",
+    "name": "Şırnak Ispanaklı Deniz Karidesi",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -63021,7 +63021,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2174",
-    "name": "Şırnak Usulü Fırın Çıtır Pane Kerevizli Çipura Balığı",
+    "name": "Şırnak Kerevizli Çipura Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -63050,7 +63050,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2175",
-    "name": "Şırnak Usulü Glaze Şerbetli Buhar Barbunyali Kuzu Pirzola",
+    "name": "Şırnak Barbunyalı Kuzu Pirzola",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -63079,7 +63079,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2176",
-    "name": "Şırnak Usulü Tava Kızartma Mantarli Dana Antrikot",
+    "name": "Şırnak Mantarlı Dana Antrikot",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -63108,7 +63108,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2177",
-    "name": "Şırnak Usulü Düdüklü Lokum Kuşkonmazli Tavuk Pirzola",
+    "name": "Şırnak Kuşkonmazlı Tavuk Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -63137,7 +63137,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2178",
-    "name": "Şırnak Usulü Fırın Graten Tatlı Patatesli Dana Ciğer",
+    "name": "Şırnak Tatlı Patatesli Dana Ciğer",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -63166,7 +63166,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2179",
-    "name": "Şırnak Usulü Fırında Taş Güveçte Şalgamli Kuzu Böbrek",
+    "name": "Şırnak Şalgamli Kuzu Böbrek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -63195,7 +63195,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2180",
-    "name": "Şırnak Usulü Odun Ateşinde Sac Tavada Pazıli Sardalya Balığı",
+    "name": "Şırnak Pazılı Sardalya Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -63224,7 +63224,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2181",
-    "name": "Şırnak Usulü Zeytinyağlı Kısık Ateşte Şevketi Bostanli Hamsi Tava",
+    "name": "Şırnak Şevketi Bostanli Hamsi Tava",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -63253,7 +63253,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2182",
-    "name": "Şırnak Usulü Közde Izgara Sarımsakli Bıldırcın Eti",
+    "name": "Şırnak Sarımsaklı Bıldırcın Eti",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -63282,7 +63282,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2183",
-    "name": "Şırnak Usulü Kremalı Sarımsak Soslu Patlıcanli Deniz Kalamarı",
+    "name": "Şırnak Patlıcanlı Deniz Kalamarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -63311,7 +63311,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2184",
-    "name": "Şırnak Usulü Odun Ateşinde Közlenmiş Patatesli Ahtapot",
+    "name": "Şırnak Közlenmiş Patatesli Ahtapot",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -63340,7 +63340,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2185",
-    "name": "Şırnak Usulü Buharda Şifalı Brokolili Yeşil Mercimek",
+    "name": "Şırnak Buharda Şifalı Brokolili Yeşil Mercimek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -63369,7 +63369,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2186",
-    "name": "Şırnak Usulü Tereyağlı Özel Sote Ispanakli Barbunya",
+    "name": "Şırnak Ispanaklı Barbunya",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -63398,7 +63398,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2187",
-    "name": "Şırnak Usulü Tepsi Buğulama Kerevizli Soya Et",
+    "name": "Şırnak Kerevizli Soya Et",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -63427,7 +63427,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2188",
-    "name": "Şırnak Usulü Toprak Çömlek Usulü Barbunyali Lor Peyniri",
+    "name": "Şırnak Barbunyalı Lor Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -63456,7 +63456,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2189",
-    "name": "Şırnak Usulü Közde Tandır Usulü Mantarli Hellim Peyniri",
+    "name": "Şırnak Mantarlı Hellim Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -63485,7 +63485,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2190",
-    "name": "Şırnak Usulü Ekşi Soslu Buğulama Kuşkonmazli Kaşar Peyniri",
+    "name": "Şırnak Kuşkonmazlı Kaşar Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -63514,7 +63514,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2191",
-    "name": "Bartın Usulü Odun Ateşinde Sac Tavada Bamyali Dana Kuşbaşı",
+    "name": "Bamyali Dana Kuşbaşı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -63543,7 +63543,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2192",
-    "name": "Bartın Usulü Zeytinyağlı Kısık Ateşte Enginarli Kuzu İncik",
+    "name": "Enginarli Kuzu İncik",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -63572,7 +63572,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2193",
-    "name": "Bartın Usulü Közde Izgara Avokadoli Tavuk Göğsü",
+    "name": "Avokadoli Tavuk Göğsü",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -63601,7 +63601,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2194",
-    "name": "Bartın Usulü Kremalı Sarımsak Soslu Brüksel Lahanasıli Satır Köftesi",
+    "name": "Brüksel Lahanasıli Satır Köftesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -63630,7 +63630,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2195",
-    "name": "Bartın Usulü Odun Ateşinde Közlenmiş Bezelyeli Somon Balığı",
+    "name": "Közlenmiş Bezelyeli Somon Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -63659,7 +63659,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2196",
-    "name": "Bartın Usulü Buharda Şifalı Arapsaçıli Levrek Buğulama",
+    "name": "Buharda Şifalı Arapsaçıli Levrek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -63688,7 +63688,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2197",
-    "name": "Bartın Usulü Tereyağlı Özel Sote Deniz Börülcesili Dana Kıyma",
+    "name": "Deniz Börülcesili Dana Kıyma",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -63717,7 +63717,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2198",
-    "name": "Bartın Usulü Tepsi Buğulama Arpacık Soğanli Hindi Bonfile",
+    "name": "Arpacık Soğanli Hindi Bonfile",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -63746,7 +63746,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2199",
-    "name": "Bartın Usulü Toprak Çömlek Usulü Kabakli Kuru Fasulye",
+    "name": "Kabakli Kuru Fasulye",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -63775,7 +63775,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2200",
-    "name": "Bartın Usulü Közde Tandır Usulü Biberli Kırmızı Mercimek",
+    "name": "Biberli Kırmızı Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -63804,7 +63804,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2201",
-    "name": "Bartın Usulü Ekşi Soslu Buğulama Karnabaharli Nohut",
+    "name": "Karnabaharli Nohut",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -63833,7 +63833,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2202",
-    "name": "Bartın Usulü Geleneksel Kavurma Pırasali Kültür Mantarı",
+    "name": "Pırasali Kültür Mantarı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -63862,7 +63862,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2203",
-    "name": "Bartın Usulü Fırın Çıtır Pane Taze Fasulyeli Deniz Karidesi",
+    "name": "Taze Fasulyeli Deniz Karidesi",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -63891,7 +63891,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2204",
-    "name": "Bartın Usulü Glaze Şerbetli Buhar Bamyali Çipura Balığı",
+    "name": "Bamyali Çipura Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -63920,7 +63920,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2205",
-    "name": "Bartın Usulü Tava Kızartma Enginarli Kuzu Pirzola",
+    "name": "Enginarli Kuzu Pirzola",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -63949,7 +63949,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2206",
-    "name": "Bartın Usulü Düdüklü Lokum Avokadoli Dana Antrikot",
+    "name": "Avokadoli Dana Antrikot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -63978,7 +63978,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2207",
-    "name": "Bartın Usulü Fırın Graten Brüksel Lahanasıli Tavuk Pirzola",
+    "name": "Brüksel Lahanasıli Tavuk Pirzola",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -64007,7 +64007,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2208",
-    "name": "Bartın Usulü Fırında Taş Güveçte Bezelyeli Dana Ciğer",
+    "name": "Bezelyeli Dana Ciğer",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -64036,7 +64036,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2209",
-    "name": "Bartın Usulü Odun Ateşinde Sac Tavada Arapsaçıli Kuzu Böbrek",
+    "name": "Arapsaçıli Kuzu Böbrek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -64065,7 +64065,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2210",
-    "name": "Bartın Usulü Zeytinyağlı Kısık Ateşte Deniz Börülcesili Sardalya Balığı",
+    "name": "Deniz Börülcesili Sardalya Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -64094,7 +64094,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2211",
-    "name": "Bartın Usulü Közde Izgara Arpacık Soğanli Hamsi Tava",
+    "name": "Arpacık Soğanli Hamsi Tava",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -64123,7 +64123,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2212",
-    "name": "Bartın Usulü Kremalı Sarımsak Soslu Kabakli Bıldırcın Eti",
+    "name": "Kabakli Bıldırcın Eti",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -64152,7 +64152,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2213",
-    "name": "Bartın Usulü Odun Ateşinde Közlenmiş Biberli Deniz Kalamarı",
+    "name": "Közlenmiş Biberli Deniz Kalamarı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -64181,7 +64181,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2214",
-    "name": "Bartın Usulü Buharda Şifalı Karnabaharli Ahtapot",
+    "name": "Buharda Şifalı Karnabaharli Ahtapot",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -64210,7 +64210,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2215",
-    "name": "Bartın Usulü Tereyağlı Özel Sote Pırasali Yeşil Mercimek",
+    "name": "Pırasali Yeşil Mercimek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -64239,7 +64239,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2216",
-    "name": "Bartın Usulü Tepsi Buğulama Taze Fasulyeli Barbunya",
+    "name": "Taze Fasulyeli Barbunya",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -64268,7 +64268,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2217",
-    "name": "Bartın Usulü Toprak Çömlek Usulü Bamyali Soya Et",
+    "name": "Bamyali Soya Et",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -64297,7 +64297,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2218",
-    "name": "Bartın Usulü Közde Tandır Usulü Enginarli Lor Peyniri",
+    "name": "Enginarli Lor Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -64326,7 +64326,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2219",
-    "name": "Bartın Usulü Ekşi Soslu Buğulama Avokadoli Hellim Peyniri",
+    "name": "Avokadoli Hellim Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -64355,7 +64355,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2220",
-    "name": "Bartın Usulü Geleneksel Kavurma Brüksel Lahanasıli Kaşar Peyniri",
+    "name": "Brüksel Lahanasıli Kaşar Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -64384,7 +64384,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2221",
-    "name": "Ardahan Usulü Zeytinyağlı Kısık Ateşte Kuşkonmazli Dana Kuşbaşı",
+    "name": "Kuşkonmazlı Dana Kuşbaşı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -64413,7 +64413,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2222",
-    "name": "Ardahan Usulü Közde Izgara Tatlı Patatesli Kuzu İncik",
+    "name": "Tatlı Patatesli Kuzu İncik",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -64442,7 +64442,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2223",
-    "name": "Ardahan Usulü Kremalı Sarımsak Soslu Şalgamli Tavuk Göğsü",
+    "name": "Şalgamli Tavuk Göğsü",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -64471,7 +64471,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2224",
-    "name": "Ardahan Usulü Odun Ateşinde Közlenmiş Pazıli Satır Köftesi",
+    "name": "Közlenmiş Pazılı Satır Köftesi",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -64500,7 +64500,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2225",
-    "name": "Ardahan Usulü Buharda Şifalı Şevketi Bostanli Somon Balığı",
+    "name": "Buharda Şifalı Şevketi Bostanli Somon Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -64529,7 +64529,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2226",
-    "name": "Ardahan Usulü Tereyağlı Özel Sote Sarımsakli Levrek Buğulama",
+    "name": "Sarımsaklı Levrek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -64558,7 +64558,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2227",
-    "name": "Ardahan Usulü Tepsi Buğulama Patlıcanli Dana Kıyma",
+    "name": "Patlıcanlı Dana Kıyma",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -64587,7 +64587,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2228",
-    "name": "Ardahan Usulü Toprak Çömlek Usulü Patatesli Hindi Bonfile",
+    "name": "Patatesli Hindi Bonfile",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -64616,7 +64616,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2229",
-    "name": "Ardahan Usulü Közde Tandır Usulü Brokolili Kuru Fasulye",
+    "name": "Brokolili Kuru Fasulye",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -64645,7 +64645,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2230",
-    "name": "Ardahan Usulü Ekşi Soslu Buğulama Ispanakli Kırmızı Mercimek",
+    "name": "Ispanaklı Kırmızı Mercimek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -64674,7 +64674,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2231",
-    "name": "Ardahan Usulü Geleneksel Kavurma Kerevizli Nohut",
+    "name": "Kerevizli Nohut",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -64703,7 +64703,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2232",
-    "name": "Ardahan Usulü Fırın Çıtır Pane Barbunyali Kültür Mantarı",
+    "name": "Barbunyalı Kültür Mantarı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -64732,7 +64732,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2233",
-    "name": "Ardahan Usulü Glaze Şerbetli Buhar Mantarli Deniz Karidesi",
+    "name": "Mantarlı Deniz Karidesi",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -64761,7 +64761,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2234",
-    "name": "Ardahan Usulü Tava Kızartma Kuşkonmazli Çipura Balığı",
+    "name": "Kuşkonmazlı Çipura Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -64790,7 +64790,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2235",
-    "name": "Ardahan Usulü Düdüklü Lokum Tatlı Patatesli Kuzu Pirzola",
+    "name": "Tatlı Patatesli Kuzu Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -64819,7 +64819,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2236",
-    "name": "Ardahan Usulü Fırın Graten Şalgamli Dana Antrikot",
+    "name": "Şalgamli Dana Antrikot",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -64848,7 +64848,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2237",
-    "name": "Ardahan Usulü Fırında Taş Güveçte Pazıli Tavuk Pirzola",
+    "name": "Pazılı Tavuk Pirzola",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -64877,7 +64877,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2238",
-    "name": "Ardahan Usulü Odun Ateşinde Sac Tavada Şevketi Bostanli Dana Ciğer",
+    "name": "Şevketi Bostanli Dana Ciğer",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -64906,7 +64906,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2239",
-    "name": "Ardahan Usulü Zeytinyağlı Kısık Ateşte Sarımsakli Kuzu Böbrek",
+    "name": "Sarımsaklı Kuzu Böbrek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -64935,7 +64935,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2240",
-    "name": "Ardahan Usulü Közde Izgara Patlıcanli Sardalya Balığı",
+    "name": "Patlıcanlı Sardalya Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -64964,7 +64964,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2241",
-    "name": "Ardahan Usulü Kremalı Sarımsak Soslu Patatesli Hamsi Tava",
+    "name": "Patatesli Hamsi Tava",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -64993,7 +64993,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2242",
-    "name": "Ardahan Usulü Odun Ateşinde Közlenmiş Brokolili Bıldırcın Eti",
+    "name": "Közlenmiş Brokolili Bıldırcın Eti",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -65022,7 +65022,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2243",
-    "name": "Ardahan Usulü Buharda Şifalı Ispanakli Deniz Kalamarı",
+    "name": "Buharda Şifalı Ispanaklı Deniz Kalamarı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -65051,7 +65051,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2244",
-    "name": "Ardahan Usulü Tereyağlı Özel Sote Kerevizli Ahtapot",
+    "name": "Kerevizli Ahtapot",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -65080,7 +65080,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2245",
-    "name": "Ardahan Usulü Tepsi Buğulama Barbunyali Yeşil Mercimek",
+    "name": "Barbunyalı Yeşil Mercimek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -65109,7 +65109,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2246",
-    "name": "Ardahan Usulü Toprak Çömlek Usulü Mantarli Barbunya",
+    "name": "Mantarlı Barbunya",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -65138,7 +65138,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2247",
-    "name": "Ardahan Usulü Közde Tandır Usulü Kuşkonmazli Soya Et",
+    "name": "Kuşkonmazlı Soya Et",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -65167,7 +65167,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2248",
-    "name": "Ardahan Usulü Ekşi Soslu Buğulama Tatlı Patatesli Lor Peyniri",
+    "name": "Tatlı Patatesli Lor Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -65196,7 +65196,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2249",
-    "name": "Ardahan Usulü Geleneksel Kavurma Şalgamli Hellim Peyniri",
+    "name": "Şalgamli Hellim Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -65225,7 +65225,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2250",
-    "name": "Ardahan Usulü Fırın Çıtır Pane Pazıli Kaşar Peyniri",
+    "name": "Pazılı Kaşar Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -65254,7 +65254,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2251",
-    "name": "Iğdır Usulü Közde Izgara Brüksel Lahanasıli Dana Kuşbaşı",
+    "name": "Brüksel Lahanasıli Dana Kuşbaşı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -65283,7 +65283,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2252",
-    "name": "Iğdır Usulü Kremalı Sarımsak Soslu Bezelyeli Kuzu İncik",
+    "name": "Bezelyeli Kuzu İncik",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -65312,7 +65312,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2253",
-    "name": "Iğdır Usulü Odun Ateşinde Közlenmiş Arapsaçıli Tavuk Göğsü",
+    "name": "Közlenmiş Arapsaçıli Tavuk Göğsü",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -65341,7 +65341,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2254",
-    "name": "Iğdır Usulü Buharda Şifalı Deniz Börülcesili Satır Köftesi",
+    "name": "Buharda Şifalı Deniz Börülcesili Satır Köftesi",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -65370,7 +65370,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2255",
-    "name": "Iğdır Usulü Tereyağlı Özel Sote Arpacık Soğanli Somon Balığı",
+    "name": "Arpacık Soğanli Somon Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -65399,7 +65399,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2256",
-    "name": "Iğdır Usulü Tepsi Buğulama Kabakli Levrek Buğulama",
+    "name": "Kabakli Levrek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -65428,7 +65428,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2257",
-    "name": "Iğdır Usulü Toprak Çömlek Usulü Biberli Dana Kıyma",
+    "name": "Biberli Dana Kıyma",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -65457,7 +65457,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2258",
-    "name": "Iğdır Usulü Közde Tandır Usulü Karnabaharli Hindi Bonfile",
+    "name": "Karnabaharli Hindi Bonfile",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -65486,7 +65486,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2259",
-    "name": "Iğdır Usulü Ekşi Soslu Buğulama Pırasali Kuru Fasulye",
+    "name": "Pırasali Kuru Fasulye",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -65515,7 +65515,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2260",
-    "name": "Iğdır Usulü Geleneksel Kavurma Taze Fasulyeli Kırmızı Mercimek",
+    "name": "Taze Fasulyeli Kırmızı Mercimek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -65544,7 +65544,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2261",
-    "name": "Iğdır Usulü Fırın Çıtır Pane Bamyali Nohut",
+    "name": "Bamyali Nohut",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -65573,7 +65573,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2262",
-    "name": "Iğdır Usulü Glaze Şerbetli Buhar Enginarli Kültür Mantarı",
+    "name": "Enginarli Kültür Mantarı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -65602,7 +65602,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2263",
-    "name": "Iğdır Usulü Tava Kızartma Avokadoli Deniz Karidesi",
+    "name": "Avokadoli Deniz Karidesi",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -65631,7 +65631,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2264",
-    "name": "Iğdır Usulü Düdüklü Lokum Brüksel Lahanasıli Çipura Balığı",
+    "name": "Brüksel Lahanasıli Çipura Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -65660,7 +65660,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2265",
-    "name": "Iğdır Usulü Fırın Graten Bezelyeli Kuzu Pirzola",
+    "name": "Bezelyeli Kuzu Pirzola",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -65689,7 +65689,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2266",
-    "name": "Iğdır Usulü Fırında Taş Güveçte Arapsaçıli Dana Antrikot",
+    "name": "Arapsaçıli Dana Antrikot",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -65718,7 +65718,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2267",
-    "name": "Iğdır Usulü Odun Ateşinde Sac Tavada Deniz Börülcesili Tavuk Pirzola",
+    "name": "Deniz Börülcesili Tavuk Pirzola",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -65747,7 +65747,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2268",
-    "name": "Iğdır Usulü Zeytinyağlı Kısık Ateşte Arpacık Soğanli Dana Ciğer",
+    "name": "Arpacık Soğanli Dana Ciğer",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -65776,7 +65776,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2269",
-    "name": "Iğdır Usulü Közde Izgara Kabakli Kuzu Böbrek",
+    "name": "Kabakli Kuzu Böbrek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -65805,7 +65805,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2270",
-    "name": "Iğdır Usulü Kremalı Sarımsak Soslu Biberli Sardalya Balığı",
+    "name": "Biberli Sardalya Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -65834,7 +65834,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2271",
-    "name": "Iğdır Usulü Odun Ateşinde Közlenmiş Karnabaharli Hamsi Tava",
+    "name": "Közlenmiş Karnabaharli Hamsi Tava",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -65863,7 +65863,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2272",
-    "name": "Iğdır Usulü Buharda Şifalı Pırasali Bıldırcın Eti",
+    "name": "Buharda Şifalı Pırasali Bıldırcın Eti",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -65892,7 +65892,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2273",
-    "name": "Iğdır Usulü Tereyağlı Özel Sote Taze Fasulyeli Deniz Kalamarı",
+    "name": "Taze Fasulyeli Deniz Kalamarı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -65921,7 +65921,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2274",
-    "name": "Iğdır Usulü Tepsi Buğulama Bamyali Ahtapot",
+    "name": "Bamyali Ahtapot",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -65950,7 +65950,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2275",
-    "name": "Iğdır Usulü Toprak Çömlek Usulü Enginarli Yeşil Mercimek",
+    "name": "Enginarli Yeşil Mercimek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -65979,7 +65979,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2276",
-    "name": "Iğdır Usulü Közde Tandır Usulü Avokadoli Barbunya",
+    "name": "Avokadoli Barbunya",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -66008,7 +66008,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2277",
-    "name": "Iğdır Usulü Ekşi Soslu Buğulama Brüksel Lahanasıli Soya Et",
+    "name": "Brüksel Lahanasıli Soya Et",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -66037,7 +66037,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2278",
-    "name": "Iğdır Usulü Geleneksel Kavurma Bezelyeli Lor Peyniri",
+    "name": "Bezelyeli Lor Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -66066,7 +66066,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2279",
-    "name": "Iğdır Usulü Fırın Çıtır Pane Arapsaçıli Hellim Peyniri",
+    "name": "Arapsaçıli Hellim Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -66095,7 +66095,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2280",
-    "name": "Iğdır Usulü Glaze Şerbetli Buhar Deniz Börülcesili Kaşar Peyniri",
+    "name": "Deniz Börülcesili Kaşar Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -66124,7 +66124,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2281",
-    "name": "Yalova Usulü Kremalı Sarımsak Soslu Pazıli Dana Kuşbaşı",
+    "name": "Pazılı Dana Kuşbaşı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -66153,7 +66153,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2282",
-    "name": "Yalova Usulü Odun Ateşinde Közlenmiş Şevketi Bostanli Kuzu İncik",
+    "name": "Közlenmiş Şevketi Bostanli Kuzu İncik",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -66182,7 +66182,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2283",
-    "name": "Yalova Usulü Buharda Şifalı Sarımsakli Tavuk Göğsü",
+    "name": "Buharda Şifalı Sarımsaklı Tavuk Göğsü",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -66211,7 +66211,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2284",
-    "name": "Yalova Usulü Tereyağlı Özel Sote Patlıcanli Satır Köftesi",
+    "name": "Patlıcanlı Satır Köftesi",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -66240,7 +66240,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2285",
-    "name": "Yalova Usulü Tepsi Buğulama Patatesli Somon Balığı",
+    "name": "Patatesli Somon Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -66269,7 +66269,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2286",
-    "name": "Yalova Usulü Toprak Çömlek Usulü Brokolili Levrek Buğulama",
+    "name": "Brokolili Levrek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -66298,7 +66298,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2287",
-    "name": "Yalova Usulü Közde Tandır Usulü Ispanakli Dana Kıyma",
+    "name": "Ispanaklı Dana Kıyma",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -66327,7 +66327,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2288",
-    "name": "Yalova Usulü Ekşi Soslu Buğulama Kerevizli Hindi Bonfile",
+    "name": "Kerevizli Hindi Bonfile",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -66356,7 +66356,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2289",
-    "name": "Yalova Usulü Geleneksel Kavurma Barbunyali Kuru Fasulye",
+    "name": "Barbunyalı Kuru Fasulye",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -66385,7 +66385,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2290",
-    "name": "Yalova Usulü Fırın Çıtır Pane Mantarli Kırmızı Mercimek",
+    "name": "Mantarlı Kırmızı Mercimek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -66414,7 +66414,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2291",
-    "name": "Yalova Usulü Glaze Şerbetli Buhar Kuşkonmazli Nohut",
+    "name": "Kuşkonmazlı Nohut",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -66443,7 +66443,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2292",
-    "name": "Yalova Usulü Tava Kızartma Tatlı Patatesli Kültür Mantarı",
+    "name": "Tatlı Patatesli Kültür Mantarı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -66472,7 +66472,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2293",
-    "name": "Yalova Usulü Düdüklü Lokum Şalgamli Deniz Karidesi",
+    "name": "Şalgamli Deniz Karidesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -66501,7 +66501,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2294",
-    "name": "Yalova Usulü Fırın Graten Pazıli Çipura Balığı",
+    "name": "Pazılı Çipura Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -66530,7 +66530,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2295",
-    "name": "Yalova Usulü Fırında Taş Güveçte Şevketi Bostanli Kuzu Pirzola",
+    "name": "Şevketi Bostanli Kuzu Pirzola",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -66559,7 +66559,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2296",
-    "name": "Yalova Usulü Odun Ateşinde Sac Tavada Sarımsakli Dana Antrikot",
+    "name": "Sarımsaklı Dana Antrikot",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -66588,7 +66588,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2297",
-    "name": "Yalova Usulü Zeytinyağlı Kısık Ateşte Patlıcanli Tavuk Pirzola",
+    "name": "Patlıcanlı Tavuk Pirzola",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -66617,7 +66617,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2298",
-    "name": "Yalova Usulü Közde Izgara Patatesli Dana Ciğer",
+    "name": "Patatesli Dana Ciğer",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -66646,7 +66646,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2299",
-    "name": "Yalova Usulü Kremalı Sarımsak Soslu Brokolili Kuzu Böbrek",
+    "name": "Brokolili Kuzu Böbrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -66675,7 +66675,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2300",
-    "name": "Yalova Usulü Odun Ateşinde Közlenmiş Ispanakli Sardalya Balığı",
+    "name": "Közlenmiş Ispanaklı Sardalya Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -66704,7 +66704,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2301",
-    "name": "Yalova Usulü Buharda Şifalı Kerevizli Hamsi Tava",
+    "name": "Buharda Şifalı Kerevizli Hamsi Tava",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -66733,7 +66733,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2302",
-    "name": "Yalova Usulü Tereyağlı Özel Sote Barbunyali Bıldırcın Eti",
+    "name": "Barbunyalı Bıldırcın Eti",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -66762,7 +66762,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2303",
-    "name": "Yalova Usulü Tepsi Buğulama Mantarli Deniz Kalamarı",
+    "name": "Mantarlı Deniz Kalamarı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -66791,7 +66791,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2304",
-    "name": "Yalova Usulü Toprak Çömlek Usulü Kuşkonmazli Ahtapot",
+    "name": "Kuşkonmazlı Ahtapot",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -66820,7 +66820,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2305",
-    "name": "Yalova Usulü Közde Tandır Usulü Tatlı Patatesli Yeşil Mercimek",
+    "name": "Tatlı Patatesli Yeşil Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -66849,7 +66849,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2306",
-    "name": "Yalova Usulü Ekşi Soslu Buğulama Şalgamli Barbunya",
+    "name": "Şalgamli Barbunya",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -66878,7 +66878,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2307",
-    "name": "Yalova Usulü Geleneksel Kavurma Pazıli Soya Et",
+    "name": "Pazılı Soya Et",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -66907,7 +66907,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2308",
-    "name": "Yalova Usulü Fırın Çıtır Pane Şevketi Bostanli Lor Peyniri",
+    "name": "Şevketi Bostanli Lor Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -66936,7 +66936,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2309",
-    "name": "Yalova Usulü Glaze Şerbetli Buhar Sarımsakli Hellim Peyniri",
+    "name": "Sarımsaklı Hellim Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -66965,7 +66965,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2310",
-    "name": "Yalova Usulü Tava Kızartma Patlıcanli Kaşar Peyniri",
+    "name": "Patlıcanlı Kaşar Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -66994,7 +66994,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2311",
-    "name": "Karabük Usulü Odun Ateşinde Közlenmiş Deniz Börülcesili Dana Kuşbaşı",
+    "name": "Közlenmiş Deniz Börülcesili Dana Kuşbaşı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -67023,7 +67023,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2312",
-    "name": "Karabük Usulü Buharda Şifalı Arpacık Soğanli Kuzu İncik",
+    "name": "Buharda Şifalı Arpacık Soğanli Kuzu İncik",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -67052,7 +67052,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2313",
-    "name": "Karabük Usulü Tereyağlı Özel Sote Kabakli Tavuk Göğsü",
+    "name": "Kabakli Tavuk Göğsü",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -67081,7 +67081,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2314",
-    "name": "Karabük Usulü Tepsi Buğulama Biberli Satır Köftesi",
+    "name": "Biberli Satır Köftesi",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -67110,7 +67110,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2315",
-    "name": "Karabük Usulü Toprak Çömlek Usulü Karnabaharli Somon Balığı",
+    "name": "Karnabaharli Somon Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -67139,7 +67139,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2316",
-    "name": "Karabük Usulü Közde Tandır Usulü Pırasali Levrek Buğulama",
+    "name": "Pırasali Levrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -67168,7 +67168,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2317",
-    "name": "Karabük Usulü Ekşi Soslu Buğulama Taze Fasulyeli Dana Kıyma",
+    "name": "Taze Fasulyeli Dana Kıyma",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -67197,7 +67197,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2318",
-    "name": "Karabük Usulü Geleneksel Kavurma Bamyali Hindi Bonfile",
+    "name": "Bamyali Hindi Bonfile",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -67226,7 +67226,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2319",
-    "name": "Karabük Usulü Fırın Çıtır Pane Enginarli Kuru Fasulye",
+    "name": "Enginarli Kuru Fasulye",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -67255,7 +67255,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2320",
-    "name": "Karabük Usulü Glaze Şerbetli Buhar Avokadoli Kırmızı Mercimek",
+    "name": "Avokadoli Kırmızı Mercimek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -67284,7 +67284,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2321",
-    "name": "Karabük Usulü Tava Kızartma Brüksel Lahanasıli Nohut",
+    "name": "Brüksel Lahanasıli Nohut",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -67313,7 +67313,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2322",
-    "name": "Karabük Usulü Düdüklü Lokum Bezelyeli Kültür Mantarı",
+    "name": "Bezelyeli Kültür Mantarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -67342,7 +67342,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2323",
-    "name": "Karabük Usulü Fırın Graten Arapsaçıli Deniz Karidesi",
+    "name": "Arapsaçıli Deniz Karidesi",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -67371,7 +67371,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2324",
-    "name": "Karabük Usulü Fırında Taş Güveçte Deniz Börülcesili Çipura Balığı",
+    "name": "Deniz Börülcesili Çipura Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -67400,7 +67400,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2325",
-    "name": "Karabük Usulü Odun Ateşinde Sac Tavada Arpacık Soğanli Kuzu Pirzola",
+    "name": "Arpacık Soğanli Kuzu Pirzola",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -67429,7 +67429,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2326",
-    "name": "Karabük Usulü Zeytinyağlı Kısık Ateşte Kabakli Dana Antrikot",
+    "name": "Kabakli Dana Antrikot",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -67458,7 +67458,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2327",
-    "name": "Karabük Usulü Közde Izgara Biberli Tavuk Pirzola",
+    "name": "Biberli Tavuk Pirzola",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -67487,7 +67487,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2328",
-    "name": "Karabük Usulü Kremalı Sarımsak Soslu Karnabaharli Dana Ciğer",
+    "name": "Karnabaharli Dana Ciğer",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -67516,7 +67516,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2329",
-    "name": "Karabük Usulü Odun Ateşinde Közlenmiş Pırasali Kuzu Böbrek",
+    "name": "Közlenmiş Pırasali Kuzu Böbrek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -67545,7 +67545,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2330",
-    "name": "Karabük Usulü Buharda Şifalı Taze Fasulyeli Sardalya Balığı",
+    "name": "Buharda Şifalı Taze Fasulyeli Sardalya Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -67574,7 +67574,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2331",
-    "name": "Karabük Usulü Tereyağlı Özel Sote Bamyali Hamsi Tava",
+    "name": "Bamyali Hamsi Tava",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -67603,7 +67603,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2332",
-    "name": "Karabük Usulü Tepsi Buğulama Enginarli Bıldırcın Eti",
+    "name": "Enginarli Bıldırcın Eti",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -67632,7 +67632,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2333",
-    "name": "Karabük Usulü Toprak Çömlek Usulü Avokadoli Deniz Kalamarı",
+    "name": "Avokadoli Deniz Kalamarı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -67661,7 +67661,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2334",
-    "name": "Karabük Usulü Közde Tandır Usulü Brüksel Lahanasıli Ahtapot",
+    "name": "Brüksel Lahanasıli Ahtapot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -67690,7 +67690,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2335",
-    "name": "Karabük Usulü Ekşi Soslu Buğulama Bezelyeli Yeşil Mercimek",
+    "name": "Bezelyeli Yeşil Mercimek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -67719,7 +67719,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2336",
-    "name": "Karabük Usulü Geleneksel Kavurma Arapsaçıli Barbunya",
+    "name": "Arapsaçıli Barbunya",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -67748,7 +67748,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2337",
-    "name": "Karabük Usulü Fırın Çıtır Pane Deniz Börülcesili Soya Et",
+    "name": "Deniz Börülcesili Soya Et",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -67777,7 +67777,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2338",
-    "name": "Karabük Usulü Glaze Şerbetli Buhar Arpacık Soğanli Lor Peyniri",
+    "name": "Arpacık Soğanli Lor Peyniri",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -67806,7 +67806,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2339",
-    "name": "Karabük Usulü Tava Kızartma Kabakli Hellim Peyniri",
+    "name": "Kabakli Hellim Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -67835,7 +67835,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2340",
-    "name": "Karabük Usulü Düdüklü Lokum Biberli Kaşar Peyniri",
+    "name": "Biberli Kaşar Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -67864,7 +67864,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2341",
-    "name": "Kilis Usulü Buharda Şifalı Patlıcanli Dana Kuşbaşı",
+    "name": "Buharda Şifalı Patlıcanlı Dana Kuşbaşı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -67893,7 +67893,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2342",
-    "name": "Kilis Usulü Tereyağlı Özel Sote Patatesli Kuzu İncik",
+    "name": "Patatesli Kuzu İncik",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -67922,7 +67922,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2343",
-    "name": "Kilis Usulü Tepsi Buğulama Brokolili Tavuk Göğsü",
+    "name": "Brokolili Tavuk Göğsü",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -67951,7 +67951,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2344",
-    "name": "Kilis Usulü Toprak Çömlek Usulü Ispanakli Satır Köftesi",
+    "name": "Ispanaklı Satır Köftesi",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -67980,7 +67980,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2345",
-    "name": "Kilis Usulü Közde Tandır Usulü Kerevizli Somon Balığı",
+    "name": "Kerevizli Somon Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -68009,7 +68009,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2346",
-    "name": "Kilis Usulü Ekşi Soslu Buğulama Barbunyali Levrek Buğulama",
+    "name": "Barbunyalı Levrek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -68038,7 +68038,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2347",
-    "name": "Kilis Usulü Geleneksel Kavurma Mantarli Dana Kıyma",
+    "name": "Mantarlı Dana Kıyma",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -68067,7 +68067,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2348",
-    "name": "Kilis Usulü Fırın Çıtır Pane Kuşkonmazli Hindi Bonfile",
+    "name": "Kuşkonmazlı Hindi Bonfile",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -68096,7 +68096,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2349",
-    "name": "Kilis Usulü Glaze Şerbetli Buhar Tatlı Patatesli Kuru Fasulye",
+    "name": "Tatlı Patatesli Kuru Fasulye",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -68125,7 +68125,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2350",
-    "name": "Kilis Usulü Tava Kızartma Şalgamli Kırmızı Mercimek",
+    "name": "Şalgamli Kırmızı Mercimek",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -68154,7 +68154,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2351",
-    "name": "Kilis Usulü Düdüklü Lokum Pazıli Nohut",
+    "name": "Pazılı Nohut",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -68183,7 +68183,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2352",
-    "name": "Kilis Usulü Fırın Graten Şevketi Bostanli Kültür Mantarı",
+    "name": "Şevketi Bostanli Kültür Mantarı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -68212,7 +68212,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2353",
-    "name": "Kilis Usulü Fırında Taş Güveçte Sarımsakli Deniz Karidesi",
+    "name": "Sarımsaklı Deniz Karidesi",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -68241,7 +68241,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2354",
-    "name": "Kilis Usulü Odun Ateşinde Sac Tavada Patlıcanli Çipura Balığı",
+    "name": "Patlıcanlı Çipura Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -68270,7 +68270,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2355",
-    "name": "Kilis Usulü Zeytinyağlı Kısık Ateşte Patatesli Kuzu Pirzola",
+    "name": "Patatesli Kuzu Pirzola",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -68299,7 +68299,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2356",
-    "name": "Kilis Usulü Közde Izgara Brokolili Dana Antrikot",
+    "name": "Brokolili Dana Antrikot",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -68328,7 +68328,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2357",
-    "name": "Kilis Usulü Kremalı Sarımsak Soslu Ispanakli Tavuk Pirzola",
+    "name": "Ispanaklı Tavuk Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -68357,7 +68357,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2358",
-    "name": "Kilis Usulü Odun Ateşinde Közlenmiş Kerevizli Dana Ciğer",
+    "name": "Közlenmiş Kerevizli Dana Ciğer",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -68386,7 +68386,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2359",
-    "name": "Kilis Usulü Buharda Şifalı Barbunyali Kuzu Böbrek",
+    "name": "Buharda Şifalı Barbunyalı Kuzu Böbrek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -68415,7 +68415,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2360",
-    "name": "Kilis Usulü Tereyağlı Özel Sote Mantarli Sardalya Balığı",
+    "name": "Mantarlı Sardalya Balığı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -68444,7 +68444,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2361",
-    "name": "Kilis Usulü Tepsi Buğulama Kuşkonmazli Hamsi Tava",
+    "name": "Kuşkonmazlı Hamsi Tava",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -68473,7 +68473,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2362",
-    "name": "Kilis Usulü Toprak Çömlek Usulü Tatlı Patatesli Bıldırcın Eti",
+    "name": "Tatlı Patatesli Bıldırcın Eti",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -68502,7 +68502,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2363",
-    "name": "Kilis Usulü Közde Tandır Usulü Şalgamli Deniz Kalamarı",
+    "name": "Şalgamli Deniz Kalamarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -68531,7 +68531,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2364",
-    "name": "Kilis Usulü Ekşi Soslu Buğulama Pazıli Ahtapot",
+    "name": "Pazılı Ahtapot",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -68560,7 +68560,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2365",
-    "name": "Kilis Usulü Geleneksel Kavurma Şevketi Bostanli Yeşil Mercimek",
+    "name": "Şevketi Bostanli Yeşil Mercimek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -68589,7 +68589,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2366",
-    "name": "Kilis Usulü Fırın Çıtır Pane Sarımsakli Barbunya",
+    "name": "Sarımsaklı Barbunya",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -68618,7 +68618,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2367",
-    "name": "Kilis Usulü Glaze Şerbetli Buhar Patlıcanli Soya Et",
+    "name": "Patlıcanlı Soya Et",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -68647,7 +68647,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2368",
-    "name": "Kilis Usulü Tava Kızartma Patatesli Lor Peyniri",
+    "name": "Patatesli Lor Peyniri",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -68676,7 +68676,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2369",
-    "name": "Kilis Usulü Düdüklü Lokum Brokolili Hellim Peyniri",
+    "name": "Brokolili Hellim Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -68705,7 +68705,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2370",
-    "name": "Kilis Usulü Fırın Graten Ispanakli Kaşar Peyniri",
+    "name": "Ispanaklı Kaşar Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -68734,7 +68734,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2371",
-    "name": "Osmaniye Usulü Tereyağlı Özel Sote Biberli Dana Kuşbaşı",
+    "name": "Biberli Dana Kuşbaşı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -68763,7 +68763,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2372",
-    "name": "Osmaniye Usulü Tepsi Buğulama Karnabaharli Kuzu İncik",
+    "name": "Karnabaharli Kuzu İncik",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -68792,7 +68792,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2373",
-    "name": "Osmaniye Usulü Toprak Çömlek Usulü Pırasali Tavuk Göğsü",
+    "name": "Pırasali Tavuk Göğsü",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -68821,7 +68821,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2374",
-    "name": "Osmaniye Usulü Közde Tandır Usulü Taze Fasulyeli Satır Köftesi",
+    "name": "Taze Fasulyeli Satır Köftesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -68850,7 +68850,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2375",
-    "name": "Osmaniye Usulü Ekşi Soslu Buğulama Bamyali Somon Balığı",
+    "name": "Bamyali Somon Balığı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -68879,7 +68879,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2376",
-    "name": "Osmaniye Usulü Geleneksel Kavurma Enginarli Levrek Buğulama",
+    "name": "Enginarli Levrek",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -68908,7 +68908,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2377",
-    "name": "Osmaniye Usulü Fırın Çıtır Pane Avokadoli Dana Kıyma",
+    "name": "Avokadoli Dana Kıyma",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -68937,7 +68937,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2378",
-    "name": "Osmaniye Usulü Glaze Şerbetli Buhar Brüksel Lahanasıli Hindi Bonfile",
+    "name": "Brüksel Lahanasıli Hindi Bonfile",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -68966,7 +68966,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2379",
-    "name": "Osmaniye Usulü Tava Kızartma Bezelyeli Kuru Fasulye",
+    "name": "Bezelyeli Kuru Fasulye",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -68995,7 +68995,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2380",
-    "name": "Osmaniye Usulü Düdüklü Lokum Arapsaçıli Kırmızı Mercimek",
+    "name": "Arapsaçıli Kırmızı Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -69024,7 +69024,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2381",
-    "name": "Osmaniye Usulü Fırın Graten Deniz Börülcesili Nohut",
+    "name": "Deniz Börülcesili Nohut",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -69053,7 +69053,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2382",
-    "name": "Osmaniye Usulü Fırında Taş Güveçte Arpacık Soğanli Kültür Mantarı",
+    "name": "Arpacık Soğanli Kültür Mantarı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -69082,7 +69082,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2383",
-    "name": "Osmaniye Usulü Odun Ateşinde Sac Tavada Kabakli Deniz Karidesi",
+    "name": "Kabakli Deniz Karidesi",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -69111,7 +69111,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2384",
-    "name": "Osmaniye Usulü Zeytinyağlı Kısık Ateşte Biberli Çipura Balığı",
+    "name": "Biberli Çipura Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -69140,7 +69140,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2385",
-    "name": "Osmaniye Usulü Közde Izgara Karnabaharli Kuzu Pirzola",
+    "name": "Karnabaharli Kuzu Pirzola",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -69169,7 +69169,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2386",
-    "name": "Osmaniye Usulü Kremalı Sarımsak Soslu Pırasali Dana Antrikot",
+    "name": "Pırasali Dana Antrikot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -69198,7 +69198,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2387",
-    "name": "Osmaniye Usulü Odun Ateşinde Közlenmiş Taze Fasulyeli Tavuk Pirzola",
+    "name": "Közlenmiş Taze Fasulyeli Tavuk Pirzola",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -69227,7 +69227,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2388",
-    "name": "Osmaniye Usulü Buharda Şifalı Bamyali Dana Ciğer",
+    "name": "Buharda Şifalı Bamyali Dana Ciğer",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -69256,7 +69256,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2389",
-    "name": "Osmaniye Usulü Tereyağlı Özel Sote Enginarli Kuzu Böbrek",
+    "name": "Enginarli Kuzu Böbrek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -69285,7 +69285,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2390",
-    "name": "Osmaniye Usulü Tepsi Buğulama Avokadoli Sardalya Balığı",
+    "name": "Avokadoli Sardalya Balığı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -69314,7 +69314,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2391",
-    "name": "Osmaniye Usulü Toprak Çömlek Usulü Brüksel Lahanasıli Hamsi Tava",
+    "name": "Brüksel Lahanasıli Hamsi Tava",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -69343,7 +69343,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2392",
-    "name": "Osmaniye Usulü Közde Tandır Usulü Bezelyeli Bıldırcın Eti",
+    "name": "Bezelyeli Bıldırcın Eti",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -69372,7 +69372,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2393",
-    "name": "Osmaniye Usulü Ekşi Soslu Buğulama Arapsaçıli Deniz Kalamarı",
+    "name": "Arapsaçıli Deniz Kalamarı",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -69401,7 +69401,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2394",
-    "name": "Osmaniye Usulü Geleneksel Kavurma Deniz Börülcesili Ahtapot",
+    "name": "Deniz Börülcesili Ahtapot",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -69430,7 +69430,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2395",
-    "name": "Osmaniye Usulü Fırın Çıtır Pane Arpacık Soğanli Yeşil Mercimek",
+    "name": "Arpacık Soğanli Yeşil Mercimek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -69459,7 +69459,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2396",
-    "name": "Osmaniye Usulü Glaze Şerbetli Buhar Kabakli Barbunya",
+    "name": "Kabakli Barbunya",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -69488,7 +69488,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2397",
-    "name": "Osmaniye Usulü Tava Kızartma Biberli Soya Et",
+    "name": "Biberli Soya Et",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -69517,7 +69517,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2398",
-    "name": "Osmaniye Usulü Düdüklü Lokum Karnabaharli Lor Peyniri",
+    "name": "Karnabaharli Lor Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -69546,7 +69546,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2399",
-    "name": "Osmaniye Usulü Fırın Graten Pırasali Hellim Peyniri",
+    "name": "Pırasali Hellim Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -69575,7 +69575,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2400",
-    "name": "Osmaniye Usulü Fırında Taş Güveçte Taze Fasulyeli Kaşar Peyniri",
+    "name": "Taze Fasulyeli Kaşar Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -69604,7 +69604,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2401",
-    "name": "Düzce Usulü Tepsi Buğulama Ispanakli Dana Kuşbaşı",
+    "name": "Ispanaklı Dana Kuşbaşı",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -69633,7 +69633,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2402",
-    "name": "Düzce Usulü Toprak Çömlek Usulü Kerevizli Kuzu İncik",
+    "name": "Kerevizli Kuzu İncik",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -69662,7 +69662,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2403",
-    "name": "Düzce Usulü Közde Tandır Usulü Barbunyali Tavuk Göğsü",
+    "name": "Barbunyalı Tavuk Göğsü",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -69691,7 +69691,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2404",
-    "name": "Düzce Usulü Ekşi Soslu Buğulama Mantarli Satır Köftesi",
+    "name": "Mantarlı Satır Köftesi",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -69720,7 +69720,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2405",
-    "name": "Düzce Usulü Geleneksel Kavurma Kuşkonmazli Somon Balığı",
+    "name": "Kuşkonmazlı Somon Balığı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -69749,7 +69749,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2406",
-    "name": "Düzce Usulü Fırın Çıtır Pane Tatlı Patatesli Levrek Buğulama",
+    "name": "Tatlı Patatesli Levrek",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -69778,7 +69778,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2407",
-    "name": "Düzce Usulü Glaze Şerbetli Buhar Şalgamli Dana Kıyma",
+    "name": "Şalgamli Dana Kıyma",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -69807,7 +69807,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2408",
-    "name": "Düzce Usulü Tava Kızartma Pazıli Hindi Bonfile",
+    "name": "Pazılı Hindi Bonfile",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -69836,7 +69836,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2409",
-    "name": "Düzce Usulü Düdüklü Lokum Şevketi Bostanli Kuru Fasulye",
+    "name": "Şevketi Bostanli Kuru Fasulye",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -69865,7 +69865,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2410",
-    "name": "Düzce Usulü Fırın Graten Sarımsakli Kırmızı Mercimek",
+    "name": "Sarımsaklı Kırmızı Mercimek",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -69894,7 +69894,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2411",
-    "name": "Düzce Usulü Fırında Taş Güveçte Patlıcanli Nohut",
+    "name": "Patlıcanlı Nohut",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -69923,7 +69923,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2412",
-    "name": "Düzce Usulü Odun Ateşinde Sac Tavada Patatesli Kültür Mantarı",
+    "name": "Patatesli Kültür Mantarı",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -69952,7 +69952,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2413",
-    "name": "Düzce Usulü Zeytinyağlı Kısık Ateşte Brokolili Deniz Karidesi",
+    "name": "Brokolili Deniz Karidesi",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -69981,7 +69981,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2414",
-    "name": "Düzce Usulü Közde Izgara Ispanakli Çipura Balığı",
+    "name": "Ispanaklı Çipura Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -70010,7 +70010,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2415",
-    "name": "Düzce Usulü Kremalı Sarımsak Soslu Kerevizli Kuzu Pirzola",
+    "name": "Kerevizli Kuzu Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -70039,7 +70039,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2416",
-    "name": "Düzce Usulü Odun Ateşinde Közlenmiş Barbunyali Dana Antrikot",
+    "name": "Közlenmiş Barbunyalı Dana Antrikot",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -70068,7 +70068,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2417",
-    "name": "Düzce Usulü Buharda Şifalı Mantarli Tavuk Pirzola",
+    "name": "Buharda Şifalı Mantarlı Tavuk Pirzola",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -70097,7 +70097,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2418",
-    "name": "Düzce Usulü Tereyağlı Özel Sote Kuşkonmazli Dana Ciğer",
+    "name": "Kuşkonmazlı Dana Ciğer",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -70126,7 +70126,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2419",
-    "name": "Düzce Usulü Tepsi Buğulama Tatlı Patatesli Kuzu Böbrek",
+    "name": "Tatlı Patatesli Kuzu Böbrek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -70155,7 +70155,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2420",
-    "name": "Düzce Usulü Toprak Çömlek Usulü Şalgamli Sardalya Balığı",
+    "name": "Şalgamli Sardalya Balığı",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -70184,7 +70184,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2421",
-    "name": "Düzce Usulü Közde Tandır Usulü Pazıli Hamsi Tava",
+    "name": "Pazılı Hamsi Tava",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -70213,7 +70213,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2422",
-    "name": "Düzce Usulü Ekşi Soslu Buğulama Şevketi Bostanli Bıldırcın Eti",
+    "name": "Şevketi Bostanli Bıldırcın Eti",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -70242,7 +70242,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2423",
-    "name": "Düzce Usulü Geleneksel Kavurma Sarımsakli Deniz Kalamarı",
+    "name": "Sarımsaklı Deniz Kalamarı",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -70271,7 +70271,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2424",
-    "name": "Düzce Usulü Fırın Çıtır Pane Patlıcanli Ahtapot",
+    "name": "Patlıcanlı Ahtapot",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -70300,7 +70300,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2425",
-    "name": "Düzce Usulü Glaze Şerbetli Buhar Patatesli Yeşil Mercimek",
+    "name": "Patatesli Yeşil Mercimek",
     "type": "BUDGET",
     "theme": [
       "FAMILY",
@@ -70329,7 +70329,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2426",
-    "name": "Düzce Usulü Tava Kızartma Brokolili Barbunya",
+    "name": "Brokolili Barbunya",
     "type": "FIT",
     "theme": [
       "FAMILY",
@@ -70358,7 +70358,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2427",
-    "name": "Düzce Usulü Düdüklü Lokum Ispanakli Soya Et",
+    "name": "Ispanaklı Soya Et",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -70387,7 +70387,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2428",
-    "name": "Düzce Usulü Fırın Graten Kerevizli Lor Peyniri",
+    "name": "Kerevizli Lor Peyniri",
     "type": "TRADITIONAL",
     "theme": [
       "FAMILY",
@@ -70416,7 +70416,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2429",
-    "name": "Düzce Usulü Fırında Taş Güveçte Barbunyali Hellim Peyniri",
+    "name": "Barbunyalı Hellim Peyniri",
     "type": "LOCAL",
     "theme": [
       "FAMILY",
@@ -70445,7 +70445,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2430",
-    "name": "Düzce Usulü Odun Ateşinde Sac Tavada Mantarli Kaşar Peyniri",
+    "name": "Mantarlı Kaşar Peyniri",
     "type": "CLASSIC",
     "theme": [
       "FAMILY",
@@ -70474,7 +70474,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2431",
-    "name": "İtalyan Usulü Kırmızı Soslu Patlıcanli Dana Kuşbaşı",
+    "name": "İtalyan Kırmızı Soslu Patlıcanlı Dana Kuşbaşı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -70501,7 +70501,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2432",
-    "name": "İtalyan Usulü Kırmızı Soslu Kabakli Kuzu İncik",
+    "name": "İtalyan Kırmızı Soslu Kabakli Kuzu İncik",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -70528,7 +70528,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2433",
-    "name": "İtalyan Usulü Kırmızı Soslu Patatesli Tavuk Göğsü",
+    "name": "İtalyan Kırmızı Soslu Patatesli Tavuk Göğsü",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -70555,7 +70555,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2434",
-    "name": "İtalyan Usulü Kırmızı Soslu Biberli Satır Köftesi",
+    "name": "İtalyan Kırmızı Soslu Biberli Satır Köftesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -70582,7 +70582,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2435",
-    "name": "İtalyan Usulü Kırmızı Soslu Brokolili Somon Balığı",
+    "name": "İtalyan Kırmızı Soslu Brokolili Somon Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -70609,7 +70609,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2436",
-    "name": "İtalyan Usulü Kırmızı Soslu Karnabaharli Levrek Buğulama",
+    "name": "İtalyan Kırmızı Soslu Karnabaharli Levrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -70636,7 +70636,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2437",
-    "name": "İtalyan Usulü Kırmızı Soslu Ispanakli Dana Kıyma",
+    "name": "İtalyan Kırmızı Soslu Ispanaklı Dana Kıyma",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -70663,7 +70663,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2438",
-    "name": "İtalyan Usulü Kırmızı Soslu Pırasali Hindi Bonfile",
+    "name": "İtalyan Kırmızı Soslu Pırasali Hindi Bonfile",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -70690,7 +70690,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2439",
-    "name": "İtalyan Usulü Kırmızı Soslu Kerevizli Kuru Fasulye",
+    "name": "İtalyan Kırmızı Soslu Kerevizli Kuru Fasulye",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -70717,7 +70717,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2440",
-    "name": "İtalyan Usulü Kırmızı Soslu Taze Fasulyeli Kırmızı Mercimek",
+    "name": "İtalyan Kırmızı Soslu Taze Fasulyeli Kırmızı Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -70744,7 +70744,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2441",
-    "name": "İtalyan Usulü Kırmızı Soslu Barbunyali Nohut",
+    "name": "İtalyan Kırmızı Soslu Barbunyalı Nohut",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -70771,7 +70771,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2442",
-    "name": "İtalyan Usulü Kırmızı Soslu Bamyali Kültür Mantarı",
+    "name": "İtalyan Kırmızı Soslu Bamyali Kültür Mantarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -70798,7 +70798,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2443",
-    "name": "İtalyan Usulü Kırmızı Soslu Mantarli Deniz Karidesi",
+    "name": "İtalyan Kırmızı Soslu Mantarlı Deniz Karidesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -70825,7 +70825,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2444",
-    "name": "İtalyan Usulü Kırmızı Soslu Enginarli Çipura Balığı",
+    "name": "İtalyan Kırmızı Soslu Enginarli Çipura Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -70852,7 +70852,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2445",
-    "name": "İtalyan Usulü Kırmızı Soslu Kuşkonmazli Kuzu Pirzola",
+    "name": "İtalyan Kırmızı Soslu Kuşkonmazlı Kuzu Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -70879,7 +70879,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2446",
-    "name": "İtalyan Usulü Kırmızı Soslu Avokadoli Dana Antrikot",
+    "name": "İtalyan Kırmızı Soslu Avokadoli Dana Antrikot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -70906,7 +70906,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2447",
-    "name": "İtalyan Usulü Kırmızı Soslu Tatlı Patatesli Tavuk Pirzola",
+    "name": "İtalyan Kırmızı Soslu Tatlı Patatesli Tavuk Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -70933,7 +70933,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2448",
-    "name": "İtalyan Usulü Kırmızı Soslu Brüksel Lahanasıli Dana Ciğer",
+    "name": "İtalyan Kırmızı Soslu Brüksel Lahanasıli Dana Ciğer",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -70960,7 +70960,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2449",
-    "name": "İtalyan Usulü Kırmızı Soslu Şalgamli Kuzu Böbrek",
+    "name": "İtalyan Kırmızı Soslu Şalgamli Kuzu Böbrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -70987,7 +70987,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2450",
-    "name": "İtalyan Usulü Kırmızı Soslu Bezelyeli Sardalya Balığı",
+    "name": "İtalyan Kırmızı Soslu Bezelyeli Sardalya Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71014,7 +71014,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2451",
-    "name": "İtalyan Usulü Kırmızı Soslu Pazıli Hamsi Tava",
+    "name": "İtalyan Kırmızı Soslu Pazılı Hamsi Tava",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71041,7 +71041,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2452",
-    "name": "İtalyan Usulü Kırmızı Soslu Arapsaçıli Bıldırcın Eti",
+    "name": "İtalyan Kırmızı Soslu Arapsaçıli Bıldırcın Eti",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71068,7 +71068,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2453",
-    "name": "İtalyan Usulü Kırmızı Soslu Şevketi Bostanli Deniz Kalamarı",
+    "name": "İtalyan Kırmızı Soslu Şevketi Bostanli Deniz Kalamarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71095,7 +71095,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2454",
-    "name": "İtalyan Usulü Kırmızı Soslu Deniz Börülcesili Ahtapot",
+    "name": "İtalyan Kırmızı Soslu Deniz Börülcesili Ahtapot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71122,7 +71122,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2455",
-    "name": "İtalyan Usulü Kırmızı Soslu Sarımsakli Yeşil Mercimek",
+    "name": "İtalyan Kırmızı Soslu Sarımsaklı Yeşil Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71149,7 +71149,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2456",
-    "name": "İtalyan Usulü Kırmızı Soslu Arpacık Soğanli Barbunya",
+    "name": "İtalyan Kırmızı Soslu Arpacık Soğanli Barbunya",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71176,7 +71176,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2457",
-    "name": "İtalyan Usulü Kırmızı Soslu Patlıcanli Soya Et",
+    "name": "İtalyan Kırmızı Soslu Patlıcanlı Soya Et",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71203,7 +71203,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2458",
-    "name": "İtalyan Usulü Kırmızı Soslu Kabakli Lor Peyniri",
+    "name": "İtalyan Kırmızı Soslu Kabakli Lor Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71230,7 +71230,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2459",
-    "name": "İtalyan Usulü Kırmızı Soslu Patatesli Hellim Peyniri",
+    "name": "İtalyan Kırmızı Soslu Patatesli Hellim Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71257,7 +71257,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2460",
-    "name": "İtalyan Usulü Kırmızı Soslu Biberli Kaşar Peyniri",
+    "name": "İtalyan Kırmızı Soslu Biberli Kaşar Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71284,7 +71284,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2461",
-    "name": "Fransız Usulü Kırmızı Soslu Kabakli Dana Kuşbaşı",
+    "name": "Fransız Kırmızı Soslu Kabakli Dana Kuşbaşı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71311,7 +71311,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2462",
-    "name": "Fransız Usulü Kırmızı Soslu Patatesli Kuzu İncik",
+    "name": "Fransız Kırmızı Soslu Patatesli Kuzu İncik",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71338,7 +71338,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2463",
-    "name": "Fransız Usulü Kırmızı Soslu Biberli Tavuk Göğsü",
+    "name": "Fransız Kırmızı Soslu Biberli Tavuk Göğsü",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71365,7 +71365,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2464",
-    "name": "Fransız Usulü Kırmızı Soslu Brokolili Satır Köftesi",
+    "name": "Fransız Kırmızı Soslu Brokolili Satır Köftesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71392,7 +71392,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2465",
-    "name": "Fransız Usulü Kırmızı Soslu Karnabaharli Somon Balığı",
+    "name": "Fransız Kırmızı Soslu Karnabaharli Somon Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71419,7 +71419,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2466",
-    "name": "Fransız Usulü Kırmızı Soslu Ispanakli Levrek Buğulama",
+    "name": "Fransız Kırmızı Soslu Ispanaklı Levrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71446,7 +71446,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2467",
-    "name": "Fransız Usulü Kırmızı Soslu Pırasali Dana Kıyma",
+    "name": "Fransız Kırmızı Soslu Pırasali Dana Kıyma",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71473,7 +71473,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2468",
-    "name": "Fransız Usulü Kırmızı Soslu Kerevizli Hindi Bonfile",
+    "name": "Fransız Kırmızı Soslu Kerevizli Hindi Bonfile",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71500,7 +71500,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2469",
-    "name": "Fransız Usulü Kırmızı Soslu Taze Fasulyeli Kuru Fasulye",
+    "name": "Fransız Kırmızı Soslu Taze Fasulyeli Kuru Fasulye",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71527,7 +71527,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2470",
-    "name": "Fransız Usulü Kırmızı Soslu Barbunyali Kırmızı Mercimek",
+    "name": "Fransız Kırmızı Soslu Barbunyalı Kırmızı Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71554,7 +71554,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2471",
-    "name": "Fransız Usulü Kırmızı Soslu Bamyali Nohut",
+    "name": "Fransız Kırmızı Soslu Bamyali Nohut",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71581,7 +71581,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2472",
-    "name": "Fransız Usulü Kırmızı Soslu Mantarli Kültür Mantarı",
+    "name": "Fransız Kırmızı Soslu Mantarlı Kültür Mantarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71608,7 +71608,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2473",
-    "name": "Fransız Usulü Kırmızı Soslu Enginarli Deniz Karidesi",
+    "name": "Fransız Kırmızı Soslu Enginarli Deniz Karidesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71635,7 +71635,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2474",
-    "name": "Fransız Usulü Kırmızı Soslu Kuşkonmazli Çipura Balığı",
+    "name": "Fransız Kırmızı Soslu Kuşkonmazlı Çipura Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71662,7 +71662,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2475",
-    "name": "Fransız Usulü Kırmızı Soslu Avokadoli Kuzu Pirzola",
+    "name": "Fransız Kırmızı Soslu Avokadoli Kuzu Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71689,7 +71689,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2476",
-    "name": "Fransız Usulü Kırmızı Soslu Tatlı Patatesli Dana Antrikot",
+    "name": "Fransız Kırmızı Soslu Tatlı Patatesli Dana Antrikot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71716,7 +71716,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2477",
-    "name": "Fransız Usulü Kırmızı Soslu Brüksel Lahanasıli Tavuk Pirzola",
+    "name": "Fransız Kırmızı Soslu Brüksel Lahanasıli Tavuk Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71743,7 +71743,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2478",
-    "name": "Fransız Usulü Kırmızı Soslu Şalgamli Dana Ciğer",
+    "name": "Fransız Kırmızı Soslu Şalgamli Dana Ciğer",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71770,7 +71770,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2479",
-    "name": "Fransız Usulü Kırmızı Soslu Bezelyeli Kuzu Böbrek",
+    "name": "Fransız Kırmızı Soslu Bezelyeli Kuzu Böbrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71797,7 +71797,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2480",
-    "name": "Fransız Usulü Kırmızı Soslu Pazıli Sardalya Balığı",
+    "name": "Fransız Kırmızı Soslu Pazılı Sardalya Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71824,7 +71824,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2481",
-    "name": "Fransız Usulü Kırmızı Soslu Arapsaçıli Hamsi Tava",
+    "name": "Fransız Kırmızı Soslu Arapsaçıli Hamsi Tava",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71851,7 +71851,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2482",
-    "name": "Fransız Usulü Kırmızı Soslu Şevketi Bostanli Bıldırcın Eti",
+    "name": "Fransız Kırmızı Soslu Şevketi Bostanli Bıldırcın Eti",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71878,7 +71878,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2483",
-    "name": "Fransız Usulü Kırmızı Soslu Deniz Börülcesili Deniz Kalamarı",
+    "name": "Fransız Kırmızı Soslu Deniz Börülcesili Deniz Kalamarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71905,7 +71905,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2484",
-    "name": "Fransız Usulü Kırmızı Soslu Sarımsakli Ahtapot",
+    "name": "Fransız Kırmızı Soslu Sarımsaklı Ahtapot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71932,7 +71932,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2485",
-    "name": "Fransız Usulü Kırmızı Soslu Arpacık Soğanli Yeşil Mercimek",
+    "name": "Fransız Kırmızı Soslu Arpacık Soğanli Yeşil Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71959,7 +71959,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2486",
-    "name": "Fransız Usulü Kırmızı Soslu Patlıcanli Barbunya",
+    "name": "Fransız Kırmızı Soslu Patlıcanlı Barbunya",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -71986,7 +71986,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2487",
-    "name": "Fransız Usulü Kırmızı Soslu Kabakli Soya Et",
+    "name": "Fransız Kırmızı Soslu Kabakli Soya Et",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72013,7 +72013,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2488",
-    "name": "Fransız Usulü Kırmızı Soslu Patatesli Lor Peyniri",
+    "name": "Fransız Kırmızı Soslu Patatesli Lor Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72040,7 +72040,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2489",
-    "name": "Fransız Usulü Kırmızı Soslu Biberli Hellim Peyniri",
+    "name": "Fransız Kırmızı Soslu Biberli Hellim Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72067,7 +72067,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2490",
-    "name": "Fransız Usulü Kırmızı Soslu Brokolili Kaşar Peyniri",
+    "name": "Fransız Kırmızı Soslu Brokolili Kaşar Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72094,7 +72094,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2491",
-    "name": "İspanyol Usulü Kırmızı Soslu Patatesli Dana Kuşbaşı",
+    "name": "İspanyol Kırmızı Soslu Patatesli Dana Kuşbaşı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72121,7 +72121,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2492",
-    "name": "İspanyol Usulü Kırmızı Soslu Biberli Kuzu İncik",
+    "name": "İspanyol Kırmızı Soslu Biberli Kuzu İncik",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72148,7 +72148,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2493",
-    "name": "İspanyol Usulü Kırmızı Soslu Brokolili Tavuk Göğsü",
+    "name": "İspanyol Kırmızı Soslu Brokolili Tavuk Göğsü",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72175,7 +72175,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2494",
-    "name": "İspanyol Usulü Kırmızı Soslu Karnabaharli Satır Köftesi",
+    "name": "İspanyol Kırmızı Soslu Karnabaharli Satır Köftesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72202,7 +72202,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2495",
-    "name": "İspanyol Usulü Kırmızı Soslu Ispanakli Somon Balığı",
+    "name": "İspanyol Kırmızı Soslu Ispanaklı Somon Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72229,7 +72229,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2496",
-    "name": "İspanyol Usulü Kırmızı Soslu Pırasali Levrek Buğulama",
+    "name": "İspanyol Kırmızı Soslu Pırasali Levrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72256,7 +72256,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2497",
-    "name": "İspanyol Usulü Kırmızı Soslu Kerevizli Dana Kıyma",
+    "name": "İspanyol Kırmızı Soslu Kerevizli Dana Kıyma",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72283,7 +72283,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2498",
-    "name": "İspanyol Usulü Kırmızı Soslu Taze Fasulyeli Hindi Bonfile",
+    "name": "İspanyol Kırmızı Soslu Taze Fasulyeli Hindi Bonfile",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72310,7 +72310,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2499",
-    "name": "İspanyol Usulü Kırmızı Soslu Barbunyali Kuru Fasulye",
+    "name": "İspanyol Kırmızı Soslu Barbunyalı Kuru Fasulye",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72337,7 +72337,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2500",
-    "name": "İspanyol Usulü Kırmızı Soslu Bamyali Kırmızı Mercimek",
+    "name": "İspanyol Kırmızı Soslu Bamyali Kırmızı Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72364,7 +72364,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2501",
-    "name": "İspanyol Usulü Kırmızı Soslu Mantarli Nohut",
+    "name": "İspanyol Kırmızı Soslu Mantarlı Nohut",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72391,7 +72391,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2502",
-    "name": "İspanyol Usulü Kırmızı Soslu Enginarli Kültür Mantarı",
+    "name": "İspanyol Kırmızı Soslu Enginarli Kültür Mantarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72418,7 +72418,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2503",
-    "name": "İspanyol Usulü Kırmızı Soslu Kuşkonmazli Deniz Karidesi",
+    "name": "İspanyol Kırmızı Soslu Kuşkonmazlı Deniz Karidesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72445,7 +72445,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2504",
-    "name": "İspanyol Usulü Kırmızı Soslu Avokadoli Çipura Balığı",
+    "name": "İspanyol Kırmızı Soslu Avokadoli Çipura Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72472,7 +72472,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2505",
-    "name": "İspanyol Usulü Kırmızı Soslu Tatlı Patatesli Kuzu Pirzola",
+    "name": "İspanyol Kırmızı Soslu Tatlı Patatesli Kuzu Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72499,7 +72499,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2506",
-    "name": "İspanyol Usulü Kırmızı Soslu Brüksel Lahanasıli Dana Antrikot",
+    "name": "İspanyol Kırmızı Soslu Brüksel Lahanasıli Dana Antrikot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72526,7 +72526,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2507",
-    "name": "İspanyol Usulü Kırmızı Soslu Şalgamli Tavuk Pirzola",
+    "name": "İspanyol Kırmızı Soslu Şalgamli Tavuk Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72553,7 +72553,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2508",
-    "name": "İspanyol Usulü Kırmızı Soslu Bezelyeli Dana Ciğer",
+    "name": "İspanyol Kırmızı Soslu Bezelyeli Dana Ciğer",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72580,7 +72580,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2509",
-    "name": "İspanyol Usulü Kırmızı Soslu Pazıli Kuzu Böbrek",
+    "name": "İspanyol Kırmızı Soslu Pazılı Kuzu Böbrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72607,7 +72607,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2510",
-    "name": "İspanyol Usulü Kırmızı Soslu Arapsaçıli Sardalya Balığı",
+    "name": "İspanyol Kırmızı Soslu Arapsaçıli Sardalya Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72634,7 +72634,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2511",
-    "name": "İspanyol Usulü Kırmızı Soslu Şevketi Bostanli Hamsi Tava",
+    "name": "İspanyol Kırmızı Soslu Şevketi Bostanli Hamsi Tava",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72661,7 +72661,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2512",
-    "name": "İspanyol Usulü Kırmızı Soslu Deniz Börülcesili Bıldırcın Eti",
+    "name": "İspanyol Kırmızı Soslu Deniz Börülcesili Bıldırcın Eti",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72688,7 +72688,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2513",
-    "name": "İspanyol Usulü Kırmızı Soslu Sarımsakli Deniz Kalamarı",
+    "name": "İspanyol Kırmızı Soslu Sarımsaklı Deniz Kalamarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72715,7 +72715,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2514",
-    "name": "İspanyol Usulü Kırmızı Soslu Arpacık Soğanli Ahtapot",
+    "name": "İspanyol Kırmızı Soslu Arpacık Soğanli Ahtapot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72742,7 +72742,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2515",
-    "name": "İspanyol Usulü Kırmızı Soslu Patlıcanli Yeşil Mercimek",
+    "name": "İspanyol Kırmızı Soslu Patlıcanlı Yeşil Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72769,7 +72769,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2516",
-    "name": "İspanyol Usulü Kırmızı Soslu Kabakli Barbunya",
+    "name": "İspanyol Kırmızı Soslu Kabakli Barbunya",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72796,7 +72796,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2517",
-    "name": "İspanyol Usulü Kırmızı Soslu Patatesli Soya Et",
+    "name": "İspanyol Kırmızı Soslu Patatesli Soya Et",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72823,7 +72823,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2518",
-    "name": "İspanyol Usulü Kırmızı Soslu Biberli Lor Peyniri",
+    "name": "İspanyol Kırmızı Soslu Biberli Lor Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72850,7 +72850,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2519",
-    "name": "İspanyol Usulü Kırmızı Soslu Brokolili Hellim Peyniri",
+    "name": "İspanyol Kırmızı Soslu Brokolili Hellim Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72877,7 +72877,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2520",
-    "name": "İspanyol Usulü Kırmızı Soslu Karnabaharli Kaşar Peyniri",
+    "name": "İspanyol Kırmızı Soslu Karnabaharli Kaşar Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72904,7 +72904,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2521",
-    "name": "Meksika Usulü Kırmızı Soslu Biberli Dana Kuşbaşı",
+    "name": "Kırmızı Soslu Biberli Dana Kuşbaşı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72931,7 +72931,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2522",
-    "name": "Meksika Usulü Kırmızı Soslu Brokolili Kuzu İncik",
+    "name": "Kırmızı Soslu Brokolili Kuzu İncik",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72958,7 +72958,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2523",
-    "name": "Meksika Usulü Kırmızı Soslu Karnabaharli Tavuk Göğsü",
+    "name": "Kırmızı Soslu Karnabaharli Tavuk Göğsü",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -72985,7 +72985,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2524",
-    "name": "Meksika Usulü Kırmızı Soslu Ispanakli Satır Köftesi",
+    "name": "Kırmızı Soslu Ispanaklı Satır Köftesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -73012,7 +73012,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2525",
-    "name": "Meksika Usulü Kırmızı Soslu Pırasali Somon Balığı",
+    "name": "Kırmızı Soslu Pırasali Somon Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -73039,7 +73039,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2526",
-    "name": "Meksika Usulü Kırmızı Soslu Kerevizli Levrek Buğulama",
+    "name": "Kırmızı Soslu Kerevizli Levrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -73066,7 +73066,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2527",
-    "name": "Meksika Usulü Kırmızı Soslu Taze Fasulyeli Dana Kıyma",
+    "name": "Kırmızı Soslu Taze Fasulyeli Dana Kıyma",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -73093,7 +73093,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2528",
-    "name": "Meksika Usulü Kırmızı Soslu Barbunyali Hindi Bonfile",
+    "name": "Kırmızı Soslu Barbunyalı Hindi Bonfile",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -73120,7 +73120,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2529",
-    "name": "Meksika Usulü Kırmızı Soslu Bamyali Kuru Fasulye",
+    "name": "Kırmızı Soslu Bamyali Kuru Fasulye",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -73147,7 +73147,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2530",
-    "name": "Meksika Usulü Kırmızı Soslu Mantarli Kırmızı Mercimek",
+    "name": "Kırmızı Soslu Mantarlı Kırmızı Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -73174,7 +73174,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2531",
-    "name": "Meksika Usulü Kırmızı Soslu Enginarli Nohut",
+    "name": "Kırmızı Soslu Enginarli Nohut",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -73201,7 +73201,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2532",
-    "name": "Meksika Usulü Kırmızı Soslu Kuşkonmazli Kültür Mantarı",
+    "name": "Kırmızı Soslu Kuşkonmazlı Kültür Mantarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -73228,7 +73228,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2533",
-    "name": "Meksika Usulü Kırmızı Soslu Avokadoli Deniz Karidesi",
+    "name": "Kırmızı Soslu Avokadoli Deniz Karidesi",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -73255,7 +73255,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2534",
-    "name": "Meksika Usulü Kırmızı Soslu Tatlı Patatesli Çipura Balığı",
+    "name": "Kırmızı Soslu Tatlı Patatesli Çipura Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -73282,7 +73282,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2535",
-    "name": "Meksika Usulü Kırmızı Soslu Brüksel Lahanasıli Kuzu Pirzola",
+    "name": "Kırmızı Soslu Brüksel Lahanasıli Kuzu Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -73309,7 +73309,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2536",
-    "name": "Meksika Usulü Kırmızı Soslu Şalgamli Dana Antrikot",
+    "name": "Kırmızı Soslu Şalgamli Dana Antrikot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -73336,7 +73336,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2537",
-    "name": "Meksika Usulü Kırmızı Soslu Bezelyeli Tavuk Pirzola",
+    "name": "Kırmızı Soslu Bezelyeli Tavuk Pirzola",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -73363,7 +73363,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2538",
-    "name": "Meksika Usulü Kırmızı Soslu Pazıli Dana Ciğer",
+    "name": "Kırmızı Soslu Pazılı Dana Ciğer",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -73390,7 +73390,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2539",
-    "name": "Meksika Usulü Kırmızı Soslu Arapsaçıli Kuzu Böbrek",
+    "name": "Kırmızı Soslu Arapsaçıli Kuzu Böbrek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -73417,7 +73417,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2540",
-    "name": "Meksika Usulü Kırmızı Soslu Şevketi Bostanli Sardalya Balığı",
+    "name": "Kırmızı Soslu Şevketi Bostanli Sardalya Balığı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -73444,7 +73444,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2541",
-    "name": "Meksika Usulü Kırmızı Soslu Deniz Börülcesili Hamsi Tava",
+    "name": "Kırmızı Soslu Deniz Börülcesili Hamsi Tava",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -73471,7 +73471,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2542",
-    "name": "Meksika Usulü Kırmızı Soslu Sarımsakli Bıldırcın Eti",
+    "name": "Kırmızı Soslu Sarımsaklı Bıldırcın Eti",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -73498,7 +73498,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2543",
-    "name": "Meksika Usulü Kırmızı Soslu Arpacık Soğanli Deniz Kalamarı",
+    "name": "Kırmızı Soslu Arpacık Soğanli Deniz Kalamarı",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -73525,7 +73525,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2544",
-    "name": "Meksika Usulü Kırmızı Soslu Patlıcanli Ahtapot",
+    "name": "Kırmızı Soslu Patlıcanlı Ahtapot",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -73552,7 +73552,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2545",
-    "name": "Meksika Usulü Kırmızı Soslu Kabakli Yeşil Mercimek",
+    "name": "Kırmızı Soslu Kabakli Yeşil Mercimek",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -73579,7 +73579,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2546",
-    "name": "Meksika Usulü Kırmızı Soslu Patatesli Barbunya",
+    "name": "Kırmızı Soslu Patatesli Barbunya",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -73606,7 +73606,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2547",
-    "name": "Meksika Usulü Kırmızı Soslu Biberli Soya Et",
+    "name": "Kırmızı Soslu Biberli Soya Et",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -73633,7 +73633,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2548",
-    "name": "Meksika Usulü Kırmızı Soslu Brokolili Lor Peyniri",
+    "name": "Kırmızı Soslu Brokolili Lor Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -73660,7 +73660,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2549",
-    "name": "Meksika Usulü Kırmızı Soslu Karnabaharli Hellim Peyniri",
+    "name": "Kırmızı Soslu Karnabaharli Hellim Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
@@ -73687,7 +73687,7 @@ export const DB_MAINS_HUGE = [
   },
   {
     "id": "recipe_auth_2550",
-    "name": "Meksika Usulü Kırmızı Soslu Ispanakli Kaşar Peyniri",
+    "name": "Kırmızı Soslu Ispanaklı Kaşar Peyniri",
     "type": "WORLD",
     "theme": [
       "FAMILY",
