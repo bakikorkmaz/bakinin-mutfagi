@@ -52,51 +52,43 @@ export default function VisualScannerModal({ onAddDetectedIngredients, onClose }
             
             const imageData = ctx.getImageData(0, 0, 100, 100).data;
             let skinToneCount = 0;
-            let darkMonochromeCount = 0;
-            let foodVibrancyCount = 0;
             let totalPixels = 10000;
+            let organicColorCount = 0;
 
             for (let i = 0; i < imageData.length; i += 4) {
                 const r = imageData[i];
                 const g = imageData[i + 1];
                 const b = imageData[i + 2];
 
-                // 1. Skin tone detection (legs, arms, skin)
-                const isSkin = (r > 95 && g > 40 && b > 20 && 
+                // 1. Explicit Skin tone detection (legs, arms, bare skin)
+                const isSkin = (r > 120 && g > 70 && b > 40 && 
                                 Math.max(r, g, b) - Math.min(r, g, b) > 15 && 
-                                Math.abs(r - g) > 15 && r > g && r > b);
+                                r > g && g > b && (r - g) > 15);
                 if (isSkin) skinToneCount++;
 
-                // 2. Dark/Monochrome/Leather/Shoe/Floor/Wall pixel detection (saturation < 0.18 or very dark/grey)
-                const maxC = Math.max(r, g, b);
-                const minC = Math.min(r, g, b);
-                const sat = maxC === 0 ? 0 : (maxC - minC) / maxC;
-                const isMonochromeOrDark = (sat < 0.18 || maxC < 45);
-                if (isMonochromeOrDark) darkMonochromeCount++;
+                // 2. Organic Food & Kitchen Spectrum (Greens, Reds, Oranges, Yellows, Purples, Whites, Cooked Browns, Golden Crusts)
+                const isGreen = (g > r && g > b && g > 45); // Vegetables, greens
+                const isRedOrange = (r > g + 15 && r > b + 15 && r > 70); // Tomatoes, peppers, meats, carrots, sauces
+                const isYellowGold = (r > 100 && g > 90 && b < 130); // Cheese, lemon, potatoes, fried foods, pastries
+                const isPurple = (r > 50 && b > 50 && g < 40); // Eggplant, red cabbage
+                const isWhiteCream = (r > 180 && g > 180 && b > 160); // Milk, yogurt, rice, eggs, plates
+                const isCookedBrown = (r > 80 && g > 50 && b < r && (r - b) > 20); // Roasted meats, bread crusts, stews
 
-                // 3. Organic Food Spectrum Detection (Vibrant Green, Red, Yellow, Orange, Purple/Eggplant, Dairy White)
-                const isGreenFood = (g > r + 15 && g > b + 15 && g > 50); // Vegetables, herbs
-                const isRedOrangeFood = (r > g + 25 && r > b + 25 && r > 90); // Tomatoes, peppers, meats, carrots
-                const isYellowFood = (r > 130 && g > 130 && b < 110); // Cheese, lemons, potatoes
-                const isEggplantPurple = (r > 60 && b > 60 && g < 40); // Eggplant
-                const isDairyWhite = (r > 200 && g > 200 && b > 200); // Milk, yogurt, eggs
-
-                if (isGreenFood || isRedOrangeFood || isYellowFood || isEggplantPurple || isDairyWhite) {
-                    foodVibrancyCount++;
+                if (isGreen || isRedOrange || isYellowGold || isPurple || isWhiteCream || isCookedBrown) {
+                    organicColorCount++;
                 }
             }
 
             const skinRatio = skinToneCount / totalPixels;
-            const darkMonoRatio = darkMonochromeCount / totalPixels;
-            const foodRatio = foodVibrancyCount / totalPixels;
+            const organicRatio = organicColorCount / totalPixels;
             const fileNameLower = (file.name || '').toLowerCase();
 
             const isNonFoodKeyword = fileNameLower.includes('shoe') || fileNameLower.includes('ayakkabi') ||
                                      fileNameLower.includes('boot') || fileNameLower.includes('bacak') ||
                                      fileNameLower.includes('leg') || fileNameLower.includes('pantolon');
 
-            // REJECT NON-FOOD IMAGES: Shoes, dark leather, clothes, body parts, rooms
-            if (skinRatio > 0.28 || darkMonoRatio > 0.65 || foodRatio < 0.12 || isNonFoodKeyword) {
+            // STRICT NON-FOOD REJECTION: Only reject if explicit non-food keyword, dominant body skin (> 45%), or completely zero organic colors
+            if (skinRatio > 0.45 || (organicRatio < 0.05 && skinRatio > 0.3) || isNonFoodKeyword) {
                 setInvalidImageError("❌ YÜKLEDİĞİNİZ GÖRSEL BİR YİYECEK VEYA BUZDOLABI MALZEMESİ DEĞİL! Lütfen sadece gerçek bir buzdolabı veya yiyecek fotoğrafı çekip yükleyin.");
                 setSelectedImage(null);
                 setDetectedList([]);

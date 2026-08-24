@@ -1181,14 +1181,16 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
                        {[...fridgeItems].sort((a, b) => (b.daysInFridge || 1) - (a.daysInFridge || 1)).map((item) => {
                           const days = item.daysInFridge || 2;
                           const isUrgent = days >= 4;
-                          const isSelected = wasteSelectedIng === item.name;
+                          const itemKey = (typeof item === 'object' ? (item.name || item.label) : item) || '';
+                          const displayLabel = (typeof item === 'object' ? (item.label || item.name) : item) || '';
+                          const isSelected = wasteSelectedIng === itemKey;
                           return (
                              <button
-                                key={item.name}
+                                key={itemKey}
                                 onClick={() => {
-                                   setWasteSelectedIng(isSelected ? null : item.name);
-                                   if (!fridgeIngs.includes(item.name)) {
-                                      setFridgeIngs(prev => [...prev, item.name]);
+                                   setWasteSelectedIng(isSelected ? null : itemKey);
+                                   if (!fridgeIngs.includes(itemKey)) {
+                                      setFridgeIngs(prev => [...prev, itemKey]);
                                    }
                                 }}
                                 style={{
@@ -1196,11 +1198,12 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
                                    border: isSelected ? '2px solid #DC2626' : (isUrgent ? '1.5px solid #FCA5A5' : '1px solid #FECACA'),
                                    background: isSelected ? '#DC2626' : (isUrgent ? '#FEE2E2' : 'white'),
                                    color: isSelected ? 'white' : (isUrgent ? '#991B1B' : '#7F1D1D'),
-                                   display: 'flex', alignItems: 'center', gap: '6px', transition: '0.2s'
+                                   display: 'flex', alignItems: 'center', gap: '6px', transition: '0.2s',
+                                   boxShadow: isSelected ? '0 4px 12px rgba(220, 38, 38, 0.3)' : 'none'
                                 }}
                              >
                                 <span>{isUrgent ? '⚠️' : '⏳'}</span>
-                                <span>{item.label || item.name}</span>
+                                <span>{displayLabel}</span>
                                 <span style={{ fontSize: '10px', background: isSelected ? 'rgba(255,255,255,0.25)' : '#FCA5A5', padding: '2px 6px', borderRadius: '6px', color: isSelected ? 'white' : '#7F1D1D' }}>
                                    {days} gündür dolapta
                                 </span>
@@ -1214,7 +1217,7 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
                        <div style={{ marginTop: '16px', background: 'white', padding: '16px', borderRadius: '18px', border: '1px solid #FECACA', boxShadow: '0 6px 15px rgba(0,0,0,0.05)' }}>
                           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
                              <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 900, color: '#991B1B' }}>
-                                💡 "{wasteSelectedIng.toUpperCase()}" İçeren Alternatif Kurtarma Tarifleri:
+                                💡 "{String(wasteSelectedIng).replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F1E0}-\u{1F1FF}]/gu, '').trim().toUpperCase()}" İçeren Kurtarma Tarifleri:
                              </h4>
                              <button onClick={() => setWasteSelectedIng(null)} style={{ background: 'none', border: 'none', color: '#64748B', cursor: 'pointer', fontSize: '16px', fontWeight: 800 }}>✕</button>
                           </div>
@@ -1224,11 +1227,14 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
                              const matching = allMains.filter(r => {
                                 const name = (r.name || '').toLowerCase();
                                 const ingList = (r.ingredients || []).map(i => i.toLowerCase()).join(' ');
-                                return name.includes(wasteSelectedIng.toLowerCase()) || ingList.includes(wasteSelectedIng.toLowerCase());
+                                const targetStr = String(wasteSelectedIng || '').toLowerCase().replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F1E0}-\u{1F1FF}]/gu, '').trim();
+                                const tokens = targetStr.split(' ').filter(t => t.length > 2);
+                                if (targetStr && (name.includes(targetStr) || ingList.includes(targetStr))) return true;
+                                return tokens.some(token => name.includes(token) || ingList.includes(token));
                              }).slice(0, 8);
 
                              if (matching.length === 0) {
-                                return <div style={{ fontSize: '12px', color: '#64748B' }}>Bu malzeme için özel tarif bulunamadı.</div>;
+                                return <div style={{ fontSize: '12px', color: '#64748B' }}>Bu malzeme için özel alternatif tarif bulunamadı.</div>;
                              }
 
                              return (
