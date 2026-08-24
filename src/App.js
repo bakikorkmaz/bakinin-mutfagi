@@ -684,6 +684,38 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
   const [selectedDish, setSelectedDish] = useState(null);
   const [shoppingCart, setShoppingCart] = useState(null);
 
+  // Dolap (Fridge) State & İsraf Modu Day Tracking
+  const [fridgeItems, setFridgeItems] = useState(() => {
+    try {
+      const saved = localStorage.getItem('baki_fridge_inventory_items');
+      return saved ? JSON.parse(saved) : [];
+    } catch(e) { return []; }
+  });
+  const [wasteSelectedIng, setWasteSelectedIng] = useState(null);
+
+  const addFridgeItemsFromScan = (scannedList) => {
+    setFridgeItems(prev => {
+      const newMap = new Map(prev.map(item => [item.name, item]));
+      scannedList.forEach(item => {
+        const name = typeof item === 'string' ? item : item.name;
+        const label = typeof item === 'object' ? item.label : (name.charAt(0).toUpperCase() + name.slice(1));
+        const daysInFridge = typeof item === 'object' ? (item.daysInFridge || 3) : 2;
+        newMap.set(name, { name, label, daysInFridge, addedAt: Date.now() });
+      });
+      const updated = Array.from(newMap.values());
+      localStorage.setItem('baki_fridge_inventory_items', JSON.stringify(updated));
+      setFridgeIngs(updated.map(i => i.name));
+      return updated;
+    });
+  };
+
+  const removeFridgeItem = (nameToRemove) => {
+    const updated = fridgeItems.filter(i => i.name !== nameToRemove);
+    setFridgeItems(updated);
+    localStorage.setItem('baki_fridge_inventory_items', JSON.stringify(updated));
+    setFridgeIngs(updated.map(i => i.name));
+  };
+
   const [fridgeMains, setFridgeMains] = useState([]);
   const fridgeResultsRef = React.useRef(null);
   const [fridgeFilter, setFridgeFilter] = useState('ALL');
@@ -691,7 +723,12 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
   const [fridgeMaxCost, setFridgeMaxCost] = useState(9999);
 
   // Dolap (Fridge) State
-  const [fridgeIngs, setFridgeIngs] = useState([]);
+  const [fridgeIngs, setFridgeIngs] = useState(() => {
+    try {
+      const saved = localStorage.getItem('baki_fridge_inventory_items');
+      return saved ? JSON.parse(saved).map(i => i.name) : [];
+    } catch(e) { return []; }
+  });
   const [fridgeCustomStr, setFridgeCustomStr] = useState("");
 
   const [weeklyDays, setWeeklyDays] = useState(7);
@@ -1121,38 +1158,145 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
              </button>
           </div>
 
-           <div style={{marginBottom: '20px', padding: '12px 16px', background: '#FEF2F2', borderRadius: '12px', borderLeft: '4px solid #EF4444', display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
-              <div>
-                 <div style={{fontWeight: 900, color: '#991B1B', fontSize: '13px', display: 'flex', alignItems: 'center', gap: '6px'}}>
-                   🚨 SKT & İsraf Alarmı (Bozulmaya Yakın Malzemeler)
+           {/* 🚨 SKT & İSRÂF ÖNLEME MODU (Dolaptaki Malzemeler & İsraf Alarmı) */}
+           <div style={{ marginBottom: '25px', padding: '18px', background: '#FEF2F2', borderRadius: '20px', borderLeft: '5px solid #EF4444', boxShadow: '0 4px 15px rgba(239,68,68,0.1)' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+                 <div style={{ fontWeight: 900, color: '#991B1B', fontSize: '15px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    🚨 SKT & İsraf Alarmı (Dolaptaki Bekleme Süreleri)
                  </div>
-                 <div style={{fontSize: '11px', color: '#7F1D1D', marginTop: '2px'}}>
-                   Dolabınızdaki <b>Süt, Yoğurt ve Biber</b> için son 2 gün! Bozulmadan lezzetli yemeğe dönüştürün.
-                 </div>
+                 {fridgeItems.length > 0 && (
+                    <span style={{ fontSize: '11px', background: '#FEE2E2', color: '#991B1B', padding: '4px 10px', borderRadius: '10px', fontWeight: 900 }}>
+                       {fridgeItems.length} Malzeme Taranmış
+                    </span>
+                 )}
               </div>
-              <button 
-                 onClick={() => {
-                   setFridgeIngs(prev => Array.from(new Set([...prev, 'süt', 'yoğurt', 'biber', 'domates'])));
-                   alert("🚨 Bozulmaya yakın 4 malzeme sepetinize eklendi! Şimdi aşağıdan tarif üretebilirsiniz.");
-                 }}
-                 style={{background: '#EF4444', color: 'white', border: 'none', padding: '8px 14px', borderRadius: '8px', fontWeight: 800, fontSize: '12px', cursor: 'pointer', flexShrink: 0}}
-              >
-                 Kurtar & Tarif Yap 🍳
-              </button>
+
+              {fridgeItems.length === 0 ? (
+                 <div style={{ textAlign: 'center', padding: '14px 8px' }}>
+                    <p style={{ fontSize: '13px', color: '#7F1D1D', marginBottom: '14px', lineHeight: '1.5', margin: '0 0 14px 0' }}>
+                       📸 <b>İsraf modunu aktif olarak kullanabilmek için</b> lütfen buzdolabınızın fotoğrafını çekip yukarıdaki <b>"Fotoğraf İle Malzeme Tara"</b> butonundan taratın.
+                    </p>
+                    <button 
+                       onClick={() => setShowVisualScanner(true)}
+                       style={{ background: 'linear-gradient(135deg, #EF4444, #B91C1C)', color: 'white', border: 'none', padding: '11px 20px', borderRadius: '14px', fontWeight: 900, fontSize: '13px', cursor: 'pointer', boxShadow: '0 4px 12px rgba(239, 68, 68, 0.3)' }}
+                    >
+                       📸 Buzdolabımın Fotoğrafını Çek / Tara
+                    </button>
+                 </div>
+              ) : (
+                 <div>
+                    <div style={{ fontSize: '12px', color: '#7F1D1D', marginBottom: '10px', fontWeight: 700 }}>
+                       Aşağıdaki taranmış malzemelerden birine tıklayarak alternatif kurtarma tariflerini anında listeleyin:
+                    </div>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                       {[...fridgeItems].sort((a, b) => (b.daysInFridge || 1) - (a.daysInFridge || 1)).map((item) => {
+                          const days = item.daysInFridge || 2;
+                          const isUrgent = days >= 4;
+                          const isSelected = wasteSelectedIng === item.name;
+                          return (
+                             <button
+                                key={item.name}
+                                onClick={() => {
+                                   setWasteSelectedIng(isSelected ? null : item.name);
+                                   if (!fridgeIngs.includes(item.name)) {
+                                      setFridgeIngs(prev => [...prev, item.name]);
+                                   }
+                                }}
+                                style={{
+                                   padding: '8px 14px', borderRadius: '14px', fontSize: '12px', fontWeight: 800, cursor: 'pointer',
+                                   border: isSelected ? '2px solid #DC2626' : (isUrgent ? '1.5px solid #FCA5A5' : '1px solid #FECACA'),
+                                   background: isSelected ? '#DC2626' : (isUrgent ? '#FEE2E2' : 'white'),
+                                   color: isSelected ? 'white' : (isUrgent ? '#991B1B' : '#7F1D1D'),
+                                   display: 'flex', alignItems: 'center', gap: '6px', transition: '0.2s'
+                                }}
+                             >
+                                <span>{isUrgent ? '⚠️' : '⏳'}</span>
+                                <span>{item.label || item.name}</span>
+                                <span style={{ fontSize: '10px', background: isSelected ? 'rgba(255,255,255,0.25)' : '#FCA5A5', padding: '2px 6px', borderRadius: '6px', color: isSelected ? 'white' : '#7F1D1D' }}>
+                                   {days} gündür dolapta
+                                </span>
+                             </button>
+                          );
+                       })}
+                    </div>
+
+                    {/* İsraf Modunda Seçilen Malzemeye Özel Alternatif Tarifler */}
+                    {wasteSelectedIng && (
+                       <div style={{ marginTop: '16px', background: 'white', padding: '16px', borderRadius: '18px', border: '1px solid #FECACA', boxShadow: '0 6px 15px rgba(0,0,0,0.05)' }}>
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+                             <h4 style={{ margin: 0, fontSize: '14px', fontWeight: 900, color: '#991B1B' }}>
+                                💡 "{wasteSelectedIng.toUpperCase()}" İçeren Alternatif Kurtarma Tarifleri:
+                             </h4>
+                             <button onClick={() => setWasteSelectedIng(null)} style={{ background: 'none', border: 'none', color: '#64748B', cursor: 'pointer', fontSize: '16px', fontWeight: 800 }}>✕</button>
+                          </div>
+
+                          {(() => {
+                             const allMains = [...DB_MAINS, ...DB_MAINS_HUGE];
+                             const matching = allMains.filter(r => {
+                                const name = (r.name || '').toLowerCase();
+                                const ingList = (r.ingredients || []).map(i => i.toLowerCase()).join(' ');
+                                return name.includes(wasteSelectedIng.toLowerCase()) || ingList.includes(wasteSelectedIng.toLowerCase());
+                             }).slice(0, 8);
+
+                             if (matching.length === 0) {
+                                return <div style={{ fontSize: '12px', color: '#64748B' }}>Bu malzeme için özel tarif bulunamadı.</div>;
+                             }
+
+                             return (
+                                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '12px' }}>
+                                   {matching.map((recipe, idx) => (
+                                      <div key={idx} style={{ background: '#FFF5F5', border: '1px solid #FCA5A5', padding: '12px', borderRadius: '14px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                                         <div>
+                                            <div style={{ fontWeight: 900, color: '#991B1B', fontSize: '13px', marginBottom: '6px' }}>{recipe.name}</div>
+                                            <div style={{ display: 'flex', gap: '6px', fontSize: '10px', color: '#7F1D1D', marginBottom: '10px', flexWrap: 'wrap' }}>
+                                               <span>⏱️ {recipe.prepTime || recipe.time || 20} dk</span>
+                                               <span>•</span>
+                                               <span>💰 ₺{recipe.totalCost || recipe.cost || 45}</span>
+                                               <span>•</span>
+                                               <span>🔥 {recipe.calories} kcal</span>
+                                            </div>
+                                         </div>
+                                         <div style={{ display: 'flex', gap: '6px', marginTop: '8px' }}>
+                                            <button
+                                               onClick={() => setShowFocusModeDish(recipe)}
+                                               style={{ flex: 1, padding: '7px', background: '#991B1B', color: 'white', border: 'none', borderRadius: '8px', fontWeight: 800, fontSize: '11px', cursor: 'pointer' }}
+                                            >
+                                               👨‍🍳 Pişir
+                                            </button>
+                                            <button
+                                               onClick={() => openShopping(recipe)}
+                                               style={{ padding: '7px 10px', background: '#FEF2F2', border: '1px solid #FCA5A5', color: '#991B1B', borderRadius: '8px', fontWeight: 800, fontSize: '11px', cursor: 'pointer' }}
+                                            >
+                                               🛒 Eksikler
+                                            </button>
+                                         </div>
+                                      </div>
+                                   ))}
+                                </div>
+                             );
+                          })()}
+                       </div>
+                    )}
+                 </div>
+              )}
            </div>
 
-          <input type="text" placeholder="Farklı bir malzeme yaz ve Enter'a bas..." 
-             value={fridgeCustomStr} onChange={e=>setFridgeCustomStr(e.target.value)} onKeyDown={handleCustomIngDown} 
-             style={{width: '100%', padding: '14px', borderRadius: '12px', border: '1px solid #CBD5E1', marginBottom: '20px', outline: 'none', background: '#F8FAFC'}} />
-          
-          <div style={{marginBottom: '20px', padding: '10px', background: '#F1F5F9', borderRadius: '12px'}}>
-             <h4 style={{fontSize: '14px', color: '#10B981', marginBottom: '8px'}}>Seçili Sepetiniz:</h4>
-             {fridgeIngs.length === 0 ? <span style={{fontSize: '13px', color: '#94A3B8'}}>Henüz bir malzeme seçilmedi.</span> : fridgeIngs.map(ing => (
-                  <span key={ing} onClick={() => toggleFridgeIng(ing)} style={{display: 'inline-block', padding: '6px 12px', background: '#DEF7EC', color: '#046C4E', borderRadius: '20px', fontSize: '13px', marginRight: '6px', marginBottom: '6px', cursor: 'pointer', fontWeight: 600}}>
-                    {ing} ✕
-                  </span>
-             ))}
-          </div>
+           <input type="text" placeholder="Farklı bir malzeme yaz ve Enter'a bas..." 
+              value={fridgeCustomStr} onChange={e=>setFridgeCustomStr(e.target.value)} onKeyDown={handleCustomIngDown} 
+              style={{width: '100%', padding: '14px', borderRadius: '12px', border: '1px solid #CBD5E1', marginBottom: '20px', outline: 'none', background: '#F8FAFC'}} />
+           
+           <div style={{marginBottom: '20px', padding: '10px', background: '#F1F5F9', borderRadius: '12px'}}>
+              <h4 style={{fontSize: '14px', color: '#10B981', marginBottom: '8px'}}>Seçili Sepetiniz:</h4>
+              {fridgeIngs.length === 0 ? <span style={{fontSize: '13px', color: '#94A3B8'}}>Henüz bir malzeme seçilmedi.</span> : fridgeIngs.map(ing => {
+                   const itemObj = fridgeItems.find(i => i.name === ing);
+                   const daysStr = itemObj ? ` (${itemObj.daysInFridge || 2} gündür)` : '';
+                   return (
+                      <span key={ing} onClick={() => removeFridgeItem(ing)} style={{display: 'inline-block', padding: '6px 12px', background: '#DEF7EC', color: '#046C4E', borderRadius: '20px', fontSize: '13px', marginRight: '6px', marginBottom: '6px', cursor: 'pointer', fontWeight: 600}}>
+                        {ing}{daysStr} ✕
+                      </span>
+                   );
+              })}
+           </div>
 
           <div style={{maxHeight: '400px', overflowY: 'auto', paddingRight: '10px', marginBottom: '20px'}}>
              {Object.entries(CATEGORIZED_INGREDIENTS).map(([catName, items]) => {
@@ -1940,8 +2084,8 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
        {showVisualScanner && (
           <VisualScannerModal
              onAddDetectedIngredients={(ings) => {
-                setFridgeIngs(prev => Array.from(new Set([...prev, ...ings])));
-                alert(`🎯 ${ings.length} Malzeme dolabınıza başarıyla eklendi!`);
+                addFridgeItemsFromScan(ings);
+                alert(`🎯 ${ings.length} Malzeme dolap hafızanıza gün bilgisiyle başarıyla eklendi!`);
              }}
              onClose={() => setShowVisualScanner(false)}
           />
