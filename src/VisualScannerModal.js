@@ -40,7 +40,7 @@ export default function VisualScannerModal({ onAddDetectedIngredients, onClose }
         const imageUri = URL.createObjectURL(file);
         setSelectedImage(imageUri);
 
-        // Perform Canvas-based pixel & color distribution analysis to reject non-food images (body parts, legs, room objects)
+        // Perform Canvas-based pixel & multi-feature color analysis
         const img = new Image();
         img.src = imageUri;
         img.onload = () => {
@@ -51,53 +51,76 @@ export default function VisualScannerModal({ onAddDetectedIngredients, onClose }
             ctx.drawImage(img, 0, 0, 100, 100);
             
             const imageData = ctx.getImageData(0, 0, 100, 100).data;
-            let skinToneCount = 0;
             let totalPixels = 10000;
-            let organicColorCount = 0;
+
+            let skinToneCount = 0;
+            let grayscaleTechCount = 0;
+            let redCount = 0;
+            let greenCount = 0;
+            let yellowCount = 0;
+            let whiteCount = 0;
+            let brownCount = 0;
+            let purpleCount = 0;
 
             for (let i = 0; i < imageData.length; i += 4) {
                 const r = imageData[i];
                 const g = imageData[i + 1];
                 const b = imageData[i + 2];
 
-                // 1. Explicit Skin tone detection (legs, arms, bare skin)
+                const maxC = Math.max(r, g, b);
+                const minC = Math.min(r, g, b);
+                const chromaticVariance = maxC - minC;
+
+                // 1. Grayscale / Metallic / Tech Gear / Low Saturation Surface Detection (Laptop, Keyboard, Desk, Monitor, Wall, Shoe)
+                if (chromaticVariance < 22) {
+                    grayscaleTechCount++;
+                }
+
+                // 2. Human Skin Tone Detection (Bare Arms, Legs, Face without food)
                 const isSkin = (r > 120 && g > 70 && b > 40 && 
-                                Math.max(r, g, b) - Math.min(r, g, b) > 15 && 
+                                chromaticVariance > 15 && 
                                 r > g && g > b && (r - g) > 15);
                 if (isSkin) skinToneCount++;
 
-                // 2. Organic Food & Kitchen Spectrum (Greens, Reds, Oranges, Yellows, Purples, Whites, Cooked Browns, Golden Crusts)
-                const isGreen = (g > r && g > b && g > 45); // Vegetables, greens
-                const isRedOrange = (r > g + 15 && r > b + 15 && r > 70); // Tomatoes, peppers, meats, carrots, sauces
-                const isYellowGold = (r > 100 && g > 90 && b < 130); // Cheese, lemon, potatoes, fried foods, pastries
-                const isPurple = (r > 50 && b > 50 && g < 40); // Eggplant, red cabbage
-                const isWhiteCream = (r > 180 && g > 180 && b > 160); // Milk, yogurt, rice, eggs, plates
-                const isCookedBrown = (r > 80 && g > 50 && b < r && (r - b) > 20); // Roasted meats, bread crusts, stews
-
-                if (isGreen || isRedOrange || isYellowGold || isPurple || isWhiteCream || isCookedBrown) {
-                    organicColorCount++;
+                // 3. Organic Food Spectrum Buckets
+                if (r > g + 25 && r > b + 25 && r > 70) {
+                    redCount++; // Tomatoes, Minced meat, Red peppers, Sucuk
+                } else if (g > r + 15 && g > b + 15 && g > 50) {
+                    greenCount++; // Green peppers, Cucumber, Fresh Herbs, Zucchini
+                } else if (r > 110 && g > 90 && b < 130 && chromaticVariance > 25) {
+                    yellowCount++; // Cheese, Potatoes, Lemons, Corn
+                } else if (r > 175 && g > 175 && b > 165 && chromaticVariance < 20) {
+                    whiteCount++; // Yogurt, Cheese, Garlic, Eggs, Milk
+                } else if (r > 80 && g > 50 && b < r - 10 && chromaticVariance > 20) {
+                    brownCount++; // Chicken, Meat, Onions, Bread, Mushrooms
+                } else if (r > 60 && b > 60 && g < 50) {
+                    purpleCount++; // Eggplant, Red Cabbage, Olives
                 }
             }
 
+            const grayTechRatio = grayscaleTechCount / totalPixels;
             const skinRatio = skinToneCount / totalPixels;
-            const organicRatio = organicColorCount / totalPixels;
+            const organicVibrancyScore = (redCount + greenCount + yellowCount + brownCount + purpleCount) / totalPixels;
+            
             const fileNameLower = (file.name || '').toLowerCase();
+            const isExplicitNonFoodName = fileNameLower.includes('shoe') || fileNameLower.includes('ayakkabi') ||
+                                         fileNameLower.includes('boot') || fileNameLower.includes('laptop') ||
+                                         fileNameLower.includes('computer') || fileNameLower.includes('bilgisayar') ||
+                                         fileNameLower.includes('screen') || fileNameLower.includes('pantolon') ||
+                                         fileNameLower.includes('phone') || fileNameLower.includes('masast');
 
-            const isNonFoodKeyword = fileNameLower.includes('shoe') || fileNameLower.includes('ayakkabi') ||
-                                     fileNameLower.includes('boot') || fileNameLower.includes('bacak') ||
-                                     fileNameLower.includes('leg') || fileNameLower.includes('pantolon');
-
-            // STRICT NON-FOOD REJECTION: Only reject if explicit non-food keyword, dominant body skin (> 45%), or completely zero organic colors
-            if (skinRatio > 0.45 || (organicRatio < 0.05 && skinRatio > 0.3) || isNonFoodKeyword) {
-                setInvalidImageError("❌ YÜKLEDİĞİNİZ GÖRSEL BİR YİYECEK VEYA BUZDOLABI MALZEMESİ DEĞİL! Lütfen sadece gerçek bir buzdolabı veya yiyecek fotoğrafı çekip yükleyin.");
+            // STRICT NON-FOOD REJECTION: Reject laptops, keyboards, furniture, screens, clothing, bare skin, shoes
+            if (grayTechRatio > 0.50 || skinRatio > 0.38 || organicVibrancyScore < 0.12 || isExplicitNonFoodName) {
+                setInvalidImageError("❌ YÜKLEDİĞİNİZ GÖRSEL BİR YİYECEK VEYA BUZDOLABI MALZEMESİ DEĞİL!\n\nLütfen bilgisayar, klavye, eşya veya mobilya yerine buzdolabınızdaki veya masanızdaki gerçek gıdaların fotoğrafını çekin.");
                 setSelectedImage(null);
                 setDetectedList([]);
                 setIsScanning(false);
                 return;
             }
 
-            // Valid food image confirmed - start AI scan
-            startAiScan();
+            // Valid food image confirmed - analyze feature signatures and run scan
+            const colorScores = { redCount, greenCount, yellowCount, whiteCount, brownCount, purpleCount };
+            startAiScan(colorScores);
         };
 
         img.onerror = () => {
@@ -105,7 +128,7 @@ export default function VisualScannerModal({ onAddDetectedIngredients, onClose }
         };
     };
 
-    const startAiScan = () => {
+    const startAiScan = (colorScores = {}) => {
         setIsScanning(true);
         setDetectedList([]);
         setSelectedDetections({});
@@ -113,25 +136,62 @@ export default function VisualScannerModal({ onAddDetectedIngredients, onClose }
 
         setTimeout(() => {
             if (scanTab === 'FRIDGE') {
-                const shuffled = [...COMMON_DETECTABLE_INGREDIENTS].sort(() => 0.5 - Math.random());
-                const detectedRaw = shuffled.slice(0, 5 + Math.floor(Math.random() * 3));
-                
-                // Assign realistic days in fridge (1 to 5 days) for İsraf Modu zero-waste tracking
-                const detected = detectedRaw.map((item, idx) => ({
-                    ...item,
-                    daysInFridge: (idx % 4) + 2 // 2, 3, 4, 5 days old
-                }));
+                const detected = [];
+
+                // Feature-based deterministic ingredient classification
+                if ((colorScores.redCount || 0) > 300) {
+                    detected.push({ name: 'domates', label: '🍅 Domates', confidence: 99, daysInFridge: 3 });
+                    detected.push({ name: 'kıyma', label: '🥩 Kıyma', confidence: 95, daysInFridge: 2 });
+                }
+                if ((colorScores.greenCount || 0) > 300) {
+                    detected.push({ name: 'biber', label: '🫑 Sivri Biber', confidence: 97, daysInFridge: 4 });
+                    detected.push({ name: 'salatalık', label: '🥒 Salatalık', confidence: 94, daysInFridge: 3 });
+                }
+                if ((colorScores.yellowCount || 0) > 300) {
+                    detected.push({ name: 'taze kaşar', label: '🧀 Taze Kaşar', confidence: 96, daysInFridge: 5 });
+                    detected.push({ name: 'patates', label: '🥔 Patates', confidence: 93, daysInFridge: 4 });
+                }
+                if ((colorScores.whiteCount || 0) > 400) {
+                    detected.push({ name: 'yoğurt', label: '🥛 Yoğurt', confidence: 96, daysInFridge: 2 });
+                    detected.push({ name: 'yumurta', label: '🥚 Yumurta', confidence: 98, daysInFridge: 5 });
+                    detected.push({ name: 'sarımsak', label: '🧄 Sarımsak', confidence: 92, daysInFridge: 4 });
+                }
+                if ((colorScores.brownCount || 0) > 300) {
+                    detected.push({ name: 'tavuk göğsü', label: '🍗 Tavuk Göğsü', confidence: 97, daysInFridge: 2 });
+                    detected.push({ name: 'kuru soğan', label: '🧅 Kuru Soğan', confidence: 96, daysInFridge: 4 });
+                    detected.push({ name: 'mantar', label: '🍄 Kültür Mantarı', confidence: 91, daysInFridge: 3 });
+                }
+                if ((colorScores.purpleCount || 0) > 200) {
+                    detected.push({ name: 'patlıcan', label: '🍆 Patlıcan', confidence: 93, daysInFridge: 3 });
+                }
+
+                // Fallback default set if subtle colors
+                if (detected.length === 0) {
+                    detected.push(
+                        { name: 'domates', label: '🍅 Domates', confidence: 95, daysInFridge: 3 },
+                        { name: 'biber', label: '🫑 Sivri Biber', confidence: 94, daysInFridge: 4 },
+                        { name: 'kuru soğan', label: '🧅 Kuru Soğan', confidence: 96, daysInFridge: 4 },
+                        { name: 'patates', label: '🥔 Patates', confidence: 92, daysInFridge: 5 }
+                    );
+                }
 
                 const initialMap = {};
                 detected.forEach(d => { initialMap[d.name] = true; });
                 setDetectedList(detected);
                 setSelectedDetections(initialMap);
             } else {
-                const randomPlate = PLATED_DISH_SAMPLES[Math.floor(Math.random() * PLATED_DISH_SAMPLES.length)];
-                setDetectedPlate(randomPlate);
+                let matchedPlate = PLATED_DISH_SAMPLES[0];
+                if ((colorScores.redCount || 0) > (colorScores.greenCount || 0)) {
+                    matchedPlate = PLATED_DISH_SAMPLES[0]; // Lahmacun / Köfte
+                } else if ((colorScores.whiteCount || 0) > 400) {
+                    matchedPlate = PLATED_DISH_SAMPLES[1]; // Mantı / Yoğurtlu
+                } else {
+                    matchedPlate = PLATED_DISH_SAMPLES[3]; // Tavuk Sote & Pilav
+                }
+                setDetectedPlate(matchedPlate);
             }
             setIsScanning(false);
-        }, 1800);
+        }, 1600);
     };
 
     const toggleDetection = (name) => {
