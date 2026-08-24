@@ -12,30 +12,53 @@ const COMMON_DETECTABLE_INGREDIENTS = [
     { name: 'taze kaşar', label: '🧀 Taze Kaşar', confidence: 93 },
     { name: 'yumurta', label: '🥚 Yumurta', confidence: 98 },
     { name: 'patlıcan', label: '🍆 Patlıcan', confidence: 91 },
-    { name: 'mantar', label: '🍄 Kültür Mantarı', confidence: 90 }
+    { name: 'mantar', label: '🍄 Kültür Mantarı', confidence: 90 },
+    { name: 'salatalık', label: '🥒 Salatalık', confidence: 94 },
+    { name: 'havuç', label: '🥕 Havuç', confidence: 93 },
+    { name: 'limon', label: '🍋 Limon', confidence: 95 },
+    { name: 'kabak', label: '🥒 Yeşil Kabak', confidence: 91 },
+    { name: 'beyaz peynir', label: '🧀 Beyaz Peynir', confidence: 94 },
+    { name: 'siyah zeytin', label: '🫒 Siyah Zeytin', confidence: 96 },
+    { name: 'sucuk', label: '🌭 Kasap Sucuğu', confidence: 97 },
+    { name: 'pastırma', label: '🥩 Çemeni Sıyrılmış Pastırma', confidence: 95 },
+    { name: 'tereyağı', label: '🧈 Köy Tereyağı', confidence: 93 },
+    { name: 'elma', label: '🍎 Amasya Elması', confidence: 96 },
+    { name: 'muz', label: '🍌 Anamur Muzu', confidence: 95 },
+    { name: 'çilek', label: '🍓 Taze Çilek', confidence: 94 },
+    { name: 'yeşillik', label: '🥬 Taze Maydanoz & Marul', confidence: 92 },
+    { name: 'pirinç', label: '🌾 Baldo Pirinç', confidence: 95 },
+    { name: 'makarna', label: '🍝 Çubuk Makarna', confidence: 94 }
 ];
 
 const PLATED_DISH_KNOWLEDGE_BASE = [
     // 1. SANDVİÇ, TOST & DÜRÜM
     { id: 'kumru', name: 'Kumru Sandviç', calories: 520, protein: 26, carbs: 48, fat: 22, confidence: 97, note: 'Susamlı Ekmek, Kaşar, Salam & Turşu', signature: { bread: true, cheese: true, meat: true } },
     { id: 'tost', name: 'Kaşarlı Sucuklu Tost', calories: 440, protein: 20, carbs: 42, fat: 18, confidence: 96, note: 'Tam Porsiyon Çift Kaşarlı Tost', signature: { bread: true, cheese: true, meat: true } },
+    { id: 'ayvalik_tostu', name: 'Ayvalık Tostu', calories: 560, protein: 24, carbs: 54, fat: 24, confidence: 96, note: 'Bol Malzemeli Özel Ayvalık Ekmeği', signature: { bread: true, cheese: true, meat: true } },
     { id: 'durum_et', name: 'Et Döner Dürüm', calories: 580, protein: 34, carbs: 52, fat: 22, confidence: 98, note: 'Lavaş, Dana Döner & Domates', signature: { bread: true, meat: true } },
     { id: 'durum_tavuk', name: 'Tavuk Döner Dürüm', calories: 490, protein: 30, carbs: 48, fat: 16, confidence: 96, note: 'Özel Soslu Tavuk Döner', signature: { bread: true, meat: true } },
     { id: 'burger', name: 'Cheeseburger & Patates', calories: 640, protein: 32, carbs: 58, fat: 28, confidence: 97, note: 'Köfte, Kaşar & Özel Soslu Bun', signature: { bread: true, cheese: true, meat: true } },
+    { id: 'balik_ekmek', name: 'Balık Ekmek', calories: 410, protein: 28, carbs: 40, fat: 14, confidence: 95, note: 'Izgara Uskumru, Soğan & Marul', signature: { bread: true, green: true } },
 
     // 2. HAMUR İŞİ, BÖREK & PİDE
     { id: 'sirdimli_borek', name: 'Sirdimli Börek', calories: 360, protein: 12, carbs: 44, fat: 16, confidence: 95, note: 'Güneydoğu Yabani Otlu Otantik Börek', signature: { bread: true, green: true } },
     { id: 'pisi', name: 'Pişi', calories: 310, protein: 7, carbs: 38, fat: 14, confidence: 96, note: 'Altın Sarısı Kızarmış Hamur (3 Adet)', signature: { bread: true } },
     { id: 'ci_borek', name: 'Çi Börek', calories: 410, protein: 18, carbs: 40, fat: 19, confidence: 97, note: 'Kıymalı Çiğ Börek (2 Adet)', signature: { bread: true, meat: true } },
     { id: 'sigara_boregi', name: 'Sigara Böreği', calories: 280, protein: 10, carbs: 30, fat: 14, confidence: 95, note: 'Peynirli Çıtır Börek (5 Adet)', signature: { bread: true, cheese: true } },
+    { id: 'pacanga', name: 'Paçanga Böreği', calories: 390, protein: 16, carbs: 32, fat: 21, confidence: 96, note: 'Pastırmalı Kaşarlı Çıtır Yufka', signature: { bread: true, cheese: true, meat: true } },
+    { id: 'su_boregi', name: 'Su Böreği', calories: 430, protein: 15, carbs: 42, fat: 22, confidence: 97, note: 'Tepsi Peynirli Tereyağlı Su Böreği', signature: { bread: true, cheese: true } },
     { id: 'lahmacun', name: 'Lahmacun & Yeşillik', calories: 450, protein: 22, carbs: 52, fat: 16, confidence: 98, note: 'Çıtır Taş Fırın Lahmacun (2 Adet)', signature: { bread: true, meat: true } },
     { id: 'pide_kaserli', name: 'Kaşarlı Kıymalı Pide', calories: 590, protein: 28, carbs: 62, fat: 24, confidence: 96, note: 'Kapalı / Açık Karadeniz Pidesi', signature: { bread: true, cheese: true, meat: true } },
+    { id: 'gozleme', name: 'Gözleme', calories: 380, protein: 13, carbs: 46, fat: 16, confidence: 95, note: 'Peynirli & Otlu Saç Gözlemesi', signature: { bread: true, green: true } },
 
     // 3. ÇORBA & YÖRESEL
     { id: 'beyran', name: 'Beyran Çorbası', calories: 380, protein: 28, carbs: 18, fat: 20, confidence: 97, note: 'Kuzu İncikli & Sarımsaklı Acılı Çorba', signature: { sauceSoup: true, meat: true } },
+    { id: 'mercimek', name: 'Süzme Mercimek Çorbası', calories: 190, protein: 9, carbs: 28, fat: 5, confidence: 98, note: 'Kıtır Ekmekli & Tereyağ Soslu', signature: { sauceSoup: true } },
+    { id: 'ezogelin', name: 'Ezogelin Çorbası', calories: 210, protein: 10, carbs: 32, fat: 6, confidence: 96, note: 'Bulgurlu & Nane Soslu', signature: { sauceSoup: true } },
     { id: 'manti', name: 'Kayseri Mantısı', calories: 540, protein: 21, carbs: 66, fat: 19, confidence: 96, note: 'Sarımsaklı Yoğurtlu & Salçalı Soslu', signature: { riceWhite: true, sauceSoup: true } },
     { id: 'girik', name: 'Tavuklu Gırık (Şemşemok)', calories: 460, protein: 26, carbs: 54, fat: 15, confidence: 98, note: 'Pilavlı Tavuklu Mantı & Yoğurt Sos', signature: { riceWhite: true, meat: true } },
     { id: 'cig_kofte', name: 'Çiğ Köfte Dürüm', calories: 340, protein: 9, carbs: 58, fat: 8, confidence: 99, note: 'Bol Nar Ekşili & Yeşillikli Lavaş', signature: { green: true, meat: true } },
+    { id: 'iskender', name: 'İskender Kebap', calories: 720, protein: 42, carbs: 54, fat: 38, confidence: 98, note: 'Cızbız Tereyağlı & Yoğurtlu Pide Üstü Döner', signature: { meat: true, sauceSoup: true } },
 
     // 4. EV YEMEĞİ & IZGARA
     { id: 'kofte_patates', name: 'Fırın Köfte & Patates', calories: 580, protein: 36, carbs: 38, fat: 28, confidence: 97, note: 'Domates Soslu Garnitürlü Köfte', signature: { meat: true, sauceSoup: true } },
@@ -43,10 +66,16 @@ const PLATED_DISH_KNOWLEDGE_BASE = [
     { id: 'kuru_fasulye', name: 'Kuru Fasulye & Pilav', calories: 530, protein: 22, carbs: 72, fat: 14, confidence: 96, note: 'Geleneksel Ev Yemeği', signature: { sauceSoup: true, riceWhite: true } },
     { id: 'karniyarik', name: 'Karnıyarık & Pilav', calories: 490, protein: 19, carbs: 48, fat: 23, confidence: 95, note: 'Kıymalı Patlıcan & Pilav', signature: { meat: true, sauceSoup: true } },
     { id: 'sarma', name: 'Zeytinyağlı Yaprak Sarması', calories: 290, protein: 6, carbs: 46, fat: 10, confidence: 96, note: 'Limonlu & Yoğurtlu (8-10 Adet)', signature: { green: true, riceWhite: true } },
+    { id: 'hunkar_begendi', name: 'Hünkar Beğendi', calories: 610, protein: 38, carbs: 24, fat: 40, confidence: 97, note: 'Köz Patlıcanlı Beşamel Kuzu Sote', signature: { meat: true, cheese: true } },
+    { id: 'somon', name: 'Fırın Somon & Sebzeler', calories: 460, protein: 42, carbs: 12, fat: 26, confidence: 96, note: 'Omega-3 Zengin Izgara Somon Filo', signature: { green: true, meat: true } },
 
     // 5. KAHVALTI & TATLI
     { id: 'menemen', name: 'Menemen & Taze Ekmek', calories: 340, protein: 14, carbs: 24, fat: 20, confidence: 97, note: 'Bol Domatesli Sivri Biberli Yumurta', signature: { sauceSoup: true, green: true } },
-    { id: 'baklava', name: 'Fıstıklı Baklava', calories: 420, protein: 6, carbs: 54, fat: 20, confidence: 98, note: 'Antep Fıstıklı Çıtır Baklava (3 Dilim)', signature: { bread: true } }
+    { id: 'sucuklu_yumurta', name: 'Sahanda Sucuklu Yumurta', calories: 410, protein: 22, carbs: 6, fat: 34, confidence: 98, note: 'Tereyağlı Köy Yumurtası & Sucuk', signature: { meat: true } },
+    { id: 'kuymak', name: 'Mıhlama (Kuymak)', calories: 480, protein: 16, carbs: 22, fat: 36, confidence: 96, note: 'Kolot Peynirli & Mısır Unlu', signature: { cheese: true, bread: true } },
+    { id: 'baklava', name: 'Fıstıklı Baklava', calories: 420, protein: 6, carbs: 54, fat: 20, confidence: 98, note: 'Antep Fıstıklı Çıtır Baklava (3 Dilim)', signature: { bread: true } },
+    { id: 'kunefe', name: 'Künefe', calories: 510, protein: 12, carbs: 58, fat: 26, confidence: 97, note: 'Hatay Peynirli Sıcak Kadayıf', signature: { cheese: true, bread: true } },
+    { id: 'sutlac', name: 'Fırın Sütlaç', calories: 270, protein: 8, carbs: 44, fat: 6, confidence: 96, note: 'Üzeri Yanık Çömlek Sütlaç', signature: { riceWhite: true } }
 ];
 
 export default function VisualScannerModal({ onAddDetectedIngredients, onClose }) {
