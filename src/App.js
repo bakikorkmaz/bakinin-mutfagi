@@ -1010,102 +1010,32 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
         </div>
       </div>
 
-      {/* TASARRUF RAPORU BİLGİLENDİRME VE AKILLI ANALİTİK MODALI */}
+      {/* TASARRUF RAPORU BİLGİLENDİRME MODALI */}
       {showSavingsInfoModal && (
-        <div style={{position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(15,23,42,0.75)', backdropFilter: 'blur(8px)', zIndex: 99999, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px'}} onClick={() => setShowSavingsInfoModal(false)}>
-           <div style={{background: 'white', borderRadius: '28px', padding: '24px', maxWidth: '460px', width: '100%', maxHeight: '90vh', overflowY: 'auto', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.25)', animation: 'fadeIn 0.2s ease-out'}} onClick={e => e.stopPropagation()}>
-              
-              {/* Header */}
-              <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '18px', borderBottom: '1px solid #F1F5F9', paddingBottom: '14px'}}>
-                 <div style={{fontSize: '20px', fontWeight: 900, color: '#0F172A', display: 'flex', alignItems: 'center', gap: '10px'}}>
-                    <span style={{fontSize: '24px', background: '#ECFDF5', padding: '6px', borderRadius: '12px'}}>📊</span>
-                    <div>
-                       <div>Tasarruf & Mutfak Karnesi</div>
-                       <div style={{fontSize: '11px', color: '#64748B', fontWeight: 600}}>Akıllı Mutfak Ekonomisi Analitiği</div>
-                    </div>
+        <div style={{position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(15,23,42,0.75)', backdropFilter: 'blur(6px)', zIndex: 99999, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px'}} onClick={() => setShowSavingsInfoModal(false)}>
+           <div style={{background: 'white', borderRadius: '24px', padding: '25px', maxWidth: '420px', width: '100%', boxShadow: '0 20px 40px rgba(0,0,0,0.25)', animation: 'fadeIn 0.2s ease-out'}} onClick={e => e.stopPropagation()}>
+              <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px'}}>
+                 <div style={{fontSize: '20px', fontWeight: 900, color: '#0F172A', display: 'flex', alignItems: 'center', gap: '8px'}}>
+                    💡 Tasarruf Raporu Nedir?
                  </div>
                  <button onClick={() => setShowSavingsInfoModal(false)} style={{background: '#F1F5F9', border: 'none', width: '36px', height: '36px', borderRadius: '50%', fontSize: '18px', cursor: 'pointer', color: '#64748B', fontWeight: 800}}>✕</button>
               </div>
 
-              <div style={{display: 'flex', flexDirection: 'column', gap: '14px'}}>
-                 
-                 {/* 1. Finansal Öngörü Kartı */}
-                 <div style={{background: 'linear-gradient(135deg, #059669 0%, #10B981 100%)', color: 'white', padding: '18px', borderRadius: '20px', boxShadow: '0 10px 20px rgba(16,185,129,0.2)'}}>
-                    <div style={{fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.5px', opacity: 0.9, fontWeight: 800}}>Mevcut Haftalık Tasarruf</div>
-                    <div style={{fontSize: '32px', fontWeight: 900, margin: '4px 0'}}>₺{weeklySavings || 0}</div>
-                    
-                    <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginTop: '12px', paddingTop: '12px', borderTop: '1px solid rgba(255,255,255,0.25)'}}>
-                       <div>
-                          <div style={{fontSize: '10px', opacity: 0.85, fontWeight: 700}}>Aylık Tahmin</div>
-                          <div style={{fontSize: '15px', fontWeight: 900}}>₺{((weeklySavings || 0) * 4).toLocaleString('tr-TR')}</div>
-                       </div>
-                       <div>
-                          <div style={{fontSize: '10px', opacity: 0.85, fontWeight: 700}}>Yıllık Tahmin</div>
-                          <div style={{fontSize: '15px', fontWeight: 900}}>₺{((weeklySavings || 0) * 52).toLocaleString('tr-TR')}</div>
-                       </div>
-                    </div>
+              <div style={{fontSize: '14px', color: '#334155', lineHeight: '1.6', display: 'flex', flexDirection: 'column', gap: '12px'}}>
+                 <div style={{background: '#ECFDF5', borderLeft: '4px solid #10B981', padding: '12px', borderRadius: '8px', color: '#047857', fontWeight: 600}}>
+                    🍳 <strong>Ev Mutfak Tasarrufu Matematiği:</strong><br/>
+                    Dışarıdan yemek söylemek yerine evde kendi malzemelerinizle yemek yaptığınızda ortalama <strong>%30 net tasarruf</strong> sağlarsınız.
                  </div>
 
-                 {/* 2. Dışarı vs Evde Yemek Oranı */}
-                 <div style={{background: '#F8FAFC', border: '1px solid #E2E8F0', padding: '14px', borderRadius: '18px'}}>
-                    <div style={{fontSize: '12px', fontWeight: 800, color: '#1E293B', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '6px'}}>
-                       <span>⚖️</span> Dışarı vs. Evde Pişirme Dengesi
-                    </div>
-                    <div style={{display: 'flex', justifyContent: 'space-between', fontSize: '11px', color: '#64748B', fontWeight: 700, marginBottom: '6px'}}>
-                       <span>Restoran Porsiyon: ~₺350</span>
-                       <span style={{color: '#059669', fontWeight: 800}}>Ev Porsiyon: ~₺95 (%73 Net Kazanç)</span>
-                    </div>
-                    <div style={{height: '8px', background: '#E2E8F0', borderRadius: '10px', overflow: 'hidden', display: 'flex'}}>
-                       <div style={{width: '73%', background: '#10B981', height: '100%'}} title="Ev Tasarrufu"></div>
-                       <div style={{width: '27%', background: '#F59E0B', height: '100%'}} title="Ortalama Malzeme Maliyeti"></div>
-                    </div>
-                 </div>
+                 <p>Uygulamada bir tarif çıkarttığınızda altında çıkan <strong>"Yapmaya Karar Verdim"</strong> butonuna her bastığınızda cebinizde kalan miktar kümülatif olarak tasarruf sayacınıza eklenir.</p>
 
-                 {/* 3. Çevre & Gıda İsrafı Etkisi */}
-                 <div style={{background: '#F0FDF4', border: '1px solid #BBF7D0', padding: '14px', borderRadius: '18px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px'}}>
-                    <div style={{display: 'flex', alignItems: 'center', gap: '10px'}}>
-                       <span style={{fontSize: '24px'}}>🌱</span>
-                       <div>
-                          <div style={{fontSize: '10px', color: '#166534', fontWeight: 700}}>Önlenen Gıda İsrafı</div>
-                          <div style={{fontSize: '14px', fontWeight: 900, color: '#14532D'}}>~{(((weeklySavings || 0) / 150) * 0.4).toFixed(1)} kg</div>
-                       </div>
-                    </div>
-                    <div style={{display: 'flex', alignItems: 'center', gap: '10px'}}>
-                       <span style={{fontSize: '24px'}}>🌍</span>
-                       <div>
-                          <div style={{fontSize: '10px', color: '#166534', fontWeight: 700}}>Karbon Ayak İzi Azaltımı</div>
-                          <div style={{fontSize: '14px', fontWeight: 900, color: '#14532D'}}>~{(((weeklySavings || 0) / 150) * 1.1).toFixed(1)} kg CO₂</div>
-                       </div>
-                    </div>
+                 <div style={{background: '#FFFBEB', border: '1px solid #FCD34D', padding: '10px 12px', borderRadius: '10px', fontSize: '12px', color: '#92400E', fontWeight: 600}}>
+                    ⚠️ Tasarruf sayacınız, dışarıdan yemek yeme alışkanlığınızı haftalık ölçüp yönetebilmeniz için her hafta başı otonom sıfırlanır.
                  </div>
-
-                 {/* 4. Mutfak Ekonomi Seviyesi */}
-                 <div style={{background: '#FFFBEB', border: '1px solid #FCD34D', padding: '14px', borderRadius: '18px'}}>
-                    <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px'}}>
-                       <div style={{fontSize: '12px', fontWeight: 900, color: '#92400E'}}>
-                          🏆 Ekonomi Seviyesi: {
-                             (weeklySavings || 0) > 3000 ? '💎 Baki\'nin Gurmesi' :
-                             (weeklySavings || 0) > 1500 ? '🥇 Ekonomi Ustası' :
-                             (weeklySavings || 0) > 500 ? '🥈 İsraf Avcısı' : '🥉 Mutfak Çırağı'
-                          }
-                       </div>
-                       <span style={{fontSize: '11px', fontWeight: 800, color: '#B45309'}}>
-                          {Math.min(100, Math.round(((weeklySavings || 0) / 3000) * 100))}%
-                       </span>
-                    </div>
-                    <div style={{height: '6px', background: '#FDE68A', borderRadius: '10px', overflow: 'hidden'}}>
-                       <div style={{width: `${Math.min(100, Math.round(((weeklySavings || 0) / 3000) * 100))}%`, background: '#D97706', height: '100%', transition: 'width 0.3s ease'}}></div>
-                    </div>
-                 </div>
-
-                 <div style={{fontSize: '11px', color: '#64748B', lineHeight: '1.4', background: '#F8FAFC', padding: '10px', borderRadius: '12px'}}>
-                    💡 <strong>Nasıl Hesaplaşır?</strong> Tarif kartlarındaki <strong>"Yapmaya Karar Verdim"</strong> butonuna bastığınızda ev üretimi tasarruf tutarınız buraya otonom eklenir ve her hafta başı yenilenir.
-                 </div>
-
               </div>
 
-              <button onClick={() => setShowSavingsInfoModal(false)} style={{marginTop: '18px', width: '100%', padding: '14px', background: '#059669', color: 'white', border: 'none', borderRadius: '16px', fontWeight: 800, fontSize: '15px', cursor: 'pointer', boxShadow: '0 4px 12px rgba(5,150,105,0.3)'}}>
-                 Harika, Devam Et 👍
+              <button onClick={() => setShowSavingsInfoModal(false)} style={{marginTop: '20px', width: '100%', padding: '14px', background: '#10B981', color: 'white', border: 'none', borderRadius: '14px', fontWeight: 800, fontSize: '15px', cursor: 'pointer', boxShadow: '0 4px 12px rgba(16,185,129,0.3)'}}>
+                 Anladım 👍
               </button>
            </div>
         </div>
