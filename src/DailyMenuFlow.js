@@ -841,31 +841,6 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction, 
                             <div style={{ fontSize: '12px', color: '#065F46', fontWeight: 700 }}>Baki'nin Mutfağı Ev Tasarruf Bonusu 🚀</div>
                         </div>
 
-                        {/* --- 👨‍🍳 ŞEFİN ŞIMARTMA TAVSİYESİ (DÖNEN OKLAR İLE) --- */}
-                        <div style={{ background: 'linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%)', border: '2px solid #F59E0B', borderRadius: '20px', padding: '16px', marginBottom: '20px', textAlign: 'left', position: 'relative', boxShadow: '0 4px 12px rgba(245,158,11,0.15)' }}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                                <div style={{ fontSize: '13px', fontWeight: 900, color: '#92400E', display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
-                                    👨‍🍳 Şef Demet'ten Şımartma Tavsiyesi <span style={{ fontSize: '11px', background: 'rgba(245, 158, 11, 0.25)', color: '#78350F', padding: '2px 8px', borderRadius: '10px', fontWeight: 800 }}>Alternatif {pamperingIndex + 1}/{PAMPERING_TIPS.length}</span>
-                                </div>
-                                <button 
-                                    onClick={nextPamperingTip} 
-                                    title="Farklı Bir Şımartma Tavsiyesi Değiştir"
-                                    style={{ 
-                                        background: 'linear-gradient(135deg, #F59E0B, #D97706)', color: 'white', border: 'none', 
-                                        borderRadius: '50%', width: '38px', height: '38px', display: 'flex', alignItems: 'center', 
-                                        justifyContent: 'center', cursor: 'pointer', fontSize: '20px', boxShadow: '0 3px 8px rgba(245,158,11,0.4)',
-                                        transform: isRotating ? 'rotate(360deg)' : 'rotate(0deg)',
-                                        transition: 'transform 0.4s ease-in-out'
-                                    }}
-                                >
-                                    🔄
-                                </button>
-                            </div>
-                            <div style={{ fontSize: '13px', color: '#78350F', fontWeight: 700, lineHeight: '1.5' }}>
-                                {PAMPERING_TIPS[pamperingIndex]}
-                            </div>
-                        </div>
-
                         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '25px', textTransform: 'none' }}>
                             <div style={{ background: '#F8FAFC', padding: '14px', borderRadius: '16px', border: '1px solid #E2E8F0' }}>
                                 <div style={{ fontSize: '11px', color: '#64748B', fontWeight: 700 }}>Dışarıda / Restoranda</div>
