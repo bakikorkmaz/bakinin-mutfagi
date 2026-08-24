@@ -770,33 +770,7 @@ export default function DailyMenuFlow({ onBack, openShopping, acceptMenuAction, 
                         <div style={{ background: '#F8FAFC', padding: '16px', borderRadius: '14px', fontSize: '13px', lineHeight: '1.7', color: '#334155', whiteSpace: 'pre-line', borderLeft: '4px solid #3B82F6' }}>
                             {selectedRecipeModal.recipeDesc || "1. Malzemeleri taze şekilde hazırlayın ve yıkayın.\n2. Tencerede uygun ısıda soteleyerek pişirme adımlarını tamamlayın.\n3. Sıcak olarak taze baharatlarla servis edin."}
                         </div>
-
                         <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                            {openFocusMode && (
-                                <button
-                                    onClick={() => {
-                                        const recipeForFocus = {
-                                            name: dishDetails.cleanName,
-                                            region: dishDetails.region,
-                                            prepTime: selectedRecipeModal.details?.time || 30,
-                                            calories: selectedRecipeModal.details?.calories || 300,
-                                            cost: selectedRecipeModal.details?.cost || 50,
-                                            recipe: selectedRecipeModal.recipeDesc || "1. Malzemeleri taze şekilde hazırlayın ve yıkayın.\n2. Tencerede uygun ısıda soteleyerek pişirme adımlarını tamamlayın.\n3. Sıcak olarak taze baharatlarla servis edin."
-                                        };
-                                        setSelectedRecipeModal(null);
-                                        openFocusMode(recipeForFocus);
-                                    }}
-                                    style={{
-                                        width: '100%', padding: '14px', borderRadius: '14px', border: 'none',
-                                        background: '#10B981', color: 'white', fontWeight: 900, fontSize: '14px', cursor: 'pointer',
-                                        display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
-                                        boxShadow: '0 4px 12px rgba(16,185,129,0.3)'
-                                    }}
-                                >
-                                    👁️ Mutfak Odak Modu (Ekran Kapanmaz)
-                                </button>
-                            )}
-
                             <button
                                 onClick={() => {
                                     const cost = selectedRecipeModal.details?.cost || 80;

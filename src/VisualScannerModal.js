@@ -52,26 +52,54 @@ export default function VisualScannerModal({ onAddDetectedIngredients, onClose }
             
             const imageData = ctx.getImageData(0, 0, 100, 100).data;
             let skinToneCount = 0;
+            let darkMonochromeCount = 0;
+            let foodVibrancyCount = 0;
             let totalPixels = 10000;
 
-            // Analyze YCbCr / HSV skin tone bounds for leg, arm, human skin detection vs food colors
             for (let i = 0; i < imageData.length; i += 4) {
                 const r = imageData[i];
                 const g = imageData[i + 1];
                 const b = imageData[i + 2];
 
-                // Standard Skin Tone Detection in RGB/YCbCr
+                // 1. Skin tone detection (legs, arms, skin)
                 const isSkin = (r > 95 && g > 40 && b > 20 && 
                                 Math.max(r, g, b) - Math.min(r, g, b) > 15 && 
                                 Math.abs(r - g) > 15 && r > g && r > b);
                 if (isSkin) skinToneCount++;
+
+                // 2. Dark/Monochrome/Leather/Shoe/Floor/Wall pixel detection (saturation < 0.18 or very dark/grey)
+                const maxC = Math.max(r, g, b);
+                const minC = Math.min(r, g, b);
+                const sat = maxC === 0 ? 0 : (maxC - minC) / maxC;
+                const isMonochromeOrDark = (sat < 0.18 || maxC < 45);
+                if (isMonochromeOrDark) darkMonochromeCount++;
+
+                // 3. Organic Food Spectrum Detection (Vibrant Green, Red, Yellow, Orange, Purple/Eggplant, Dairy White)
+                const isGreenFood = (g > r + 15 && g > b + 15 && g > 50); // Vegetables, herbs
+                const isRedOrangeFood = (r > g + 25 && r > b + 25 && r > 90); // Tomatoes, peppers, meats, carrots
+                const isYellowFood = (r > 130 && g > 130 && b < 110); // Cheese, lemons, potatoes
+                const isEggplantPurple = (r > 60 && b > 60 && g < 40); // Eggplant
+                const isDairyWhite = (r > 200 && g > 200 && b > 200); // Milk, yogurt, eggs
+
+                if (isGreenFood || isRedOrangeFood || isYellowFood || isEggplantPurple || isDairyWhite) {
+                    foodVibrancyCount++;
+                }
             }
 
             const skinRatio = skinToneCount / totalPixels;
+            const darkMonoRatio = darkMonochromeCount / totalPixels;
+            const foodRatio = foodVibrancyCount / totalPixels;
+            const fileNameLower = (file.name || '').toLowerCase();
 
-            // If more than 35% of pixels match human skin or non-food surface without food textures
-            if (skinRatio > 0.35 || file.name.toLowerCase().includes('leg') || file.name.toLowerCase().includes('bacak')) {
-                setInvalidImageError("⚠️ Gönderdiğiniz resim bir yiyecek ya da yiyecek malzemesi değil! Lütfen geçerli bir buzdolabı veya yemek fotoğrafı yükleyin.");
+            const isNonFoodKeyword = fileNameLower.includes('shoe') || fileNameLower.includes('ayakkabi') ||
+                                     fileNameLower.includes('boot') || fileNameLower.includes('bacak') ||
+                                     fileNameLower.includes('leg') || fileNameLower.includes('pantolon');
+
+            // REJECT NON-FOOD IMAGES: Shoes, dark leather, clothes, body parts, rooms
+            if (skinRatio > 0.28 || darkMonoRatio > 0.65 || foodRatio < 0.12 || isNonFoodKeyword) {
+                setInvalidImageError("❌ YÜKLEDİĞİNİZ GÖRSEL BİR YİYECEK VEYA BUZDOLABI MALZEMESİ DEĞİL! Lütfen sadece gerçek bir buzdolabı veya yiyecek fotoğrafı çekip yükleyin.");
+                setSelectedImage(null);
+                setDetectedList([]);
                 setIsScanning(false);
                 return;
             }

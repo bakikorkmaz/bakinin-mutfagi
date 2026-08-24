@@ -9,7 +9,6 @@ import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import SocialFlow from './SocialFlow';
 import DailyMenuFlow from './DailyMenuFlow';
 import VisualScannerModal from './VisualScannerModal';
-import FocusModeModal from './FocusModeModal';
 import { getCleanDishDetails } from './dishUtils';
 import { REWARDS } from './rewardsDb';
 import { validateUsername } from './utils/usernameValidation';
@@ -1890,9 +1889,7 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
                     </div>
                  )}
 
-                  <button onClick={() => setShowFocusModeDish(selectedDish)} style={{background: '#10B981', color: 'white', padding: '6px 14px', border: 'none', borderRadius: '8px', fontWeight: 800, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '5px', boxShadow: '0 2px 8px rgba(16,185,129,0.3)'}}>
-                      👁️ Mutfak Odak Modu
-                  </button>
+
 
                  <button onClick={() => {
                      let favs = JSON.parse(localStorage.getItem(favKey) || '[]');
@@ -2091,13 +2088,6 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
           />
        )}
 
-       {showFocusModeDish && (
-          <FocusModeModal
-             dish={showFocusModeDish}
-             onClose={() => setShowFocusModeDish(null)}
-             setActiveTimerMinutes={(mins) => setActiveTimerMinutes(mins)}
-          />
-       )}
     </>
   );
 }
