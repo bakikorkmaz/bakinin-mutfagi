@@ -1134,26 +1134,16 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
           <h3 className="budget-title">🛒 Dolabımdaki Malzemeler</h3>
           <p style={{fontSize: '13px', color: '#8D99AE', marginBottom: '15px'}}>Kategorilerden seçin veya aklınıza gelen herhangi bir malzemeyi kutuya yazıp Enter'a basın (Sınırsız Malzeme Üretimi).</p>
           
-          <div style={{display: 'flex', gap: '10px', marginBottom: '15px'}}>
+          <div style={{marginBottom: '15px'}}>
              <button
                 onClick={() => setShowVisualScanner(true)}
                 style={{
-                   flex: 1, padding: '12px', background: 'linear-gradient(135deg, #8B5CF6, #6D28D9)', color: 'white',
+                   width: '100%', padding: '12px', background: 'linear-gradient(135deg, #8B5CF6, #6D28D9)', color: 'white',
                    border: 'none', borderRadius: '12px', fontWeight: 900, fontSize: '13px', cursor: 'pointer',
                    display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', boxShadow: '0 4px 12px rgba(139,92,246,0.25)'
                 }}
              >
                 <span>📸 Fotoğraf İle Malzeme Tara (AI Kamera)</span>
-             </button>
-             <button
-                onClick={() => setActiveTimerMinutes(15)}
-                style={{
-                   padding: '12px 16px', background: '#F59E0B', color: 'white',
-                   border: 'none', borderRadius: '12px', fontWeight: 900, fontSize: '13px', cursor: 'pointer',
-                   display: 'flex', alignItems: 'center', gap: '6px'
-                }}
-             >
-                <span>⏱️ Mutfak Sayacı</span>
              </button>
           </div>
 
