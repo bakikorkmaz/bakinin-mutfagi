@@ -1245,8 +1245,8 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
                                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '12px' }}>
                                    {matching.map((recipe, idx) => (
                                       <div key={idx} style={{ background: '#FFF5F5', border: '1px solid #FCA5A5', padding: '12px', borderRadius: '14px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                                         <div>
-                                            <div style={{ fontWeight: 900, color: '#991B1B', fontSize: '13px', marginBottom: '6px' }}>{recipe.name}</div>
+                                         <div onClick={() => setSelectedDish(recipe)} style={{ cursor: 'pointer' }}>
+                                            <div style={{ fontWeight: 900, color: '#991B1B', fontSize: '13px', marginBottom: '6px', textDecoration: 'underline' }}>{recipe.name}</div>
                                             <div style={{ display: 'flex', gap: '6px', fontSize: '10px', color: '#7F1D1D', marginBottom: '10px', flexWrap: 'wrap' }}>
                                                <span>⏱️ {recipe.prepTime || recipe.time || 20} dk</span>
                                                <span>•</span>
@@ -1257,10 +1257,10 @@ function MainAppFlow({ handleTitleClick, setActiveTab, activeUser, appLang, stap
                                          </div>
                                          <div style={{ display: 'flex', gap: '6px', marginTop: '8px' }}>
                                             <button
-                                               onClick={() => setShowFocusModeDish(recipe)}
+                                               onClick={() => setSelectedDish(recipe)}
                                                style={{ flex: 1, padding: '7px', background: '#991B1B', color: 'white', border: 'none', borderRadius: '8px', fontWeight: 800, fontSize: '11px', cursor: 'pointer' }}
                                             >
-                                               👨‍🍳 Pişir
+                                               📖 Tarifi Gör / Pişir
                                             </button>
                                             <button
                                                onClick={() => openShopping(recipe)}
