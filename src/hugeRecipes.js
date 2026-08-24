@@ -4,33 +4,18 @@
 export const DB_MAINS_HUGE = [
   {
     "id": "recipe_real_1",
-    "name": "Gırık",
-    "type": "LOCAL",
-    "theme": ["FAMILY", "FIT", "TRADITIONAL"],
-    "cost": 75,
-    "totalCost": 75,
-    "time": 40,
-    "prepTime": 40,
-    "calories": 420,
-    "heaviness": 4,
-    "ingredients": ["un", "tereyağı", "yoğurt", "sarımsak", "nane", "pul biber", "tuz"],
-    "recipe": "1. El açması hamuru erişte şeklinde kesip bol suda haşlayın.\n2. Süzülen sıcak hamurun üzerine bol sarımsaklı yoğurt dökün.\n3. Köpürtülmüş pul biberli nane tereyağını gezdirerek taze servis edin.",
-    "macros": "14g Protein, 55g Karbonhidrat, 16g Yağ"
-  },
-  {
-    "id": "recipe_real_1_b",
-    "name": "Tavuklu Gırık",
+    "name": "Gırık (Şemşemok)",
     "type": "LOCAL",
     "theme": ["FAMILY", "GUEST", "TRADITIONAL"],
-    "cost": 115,
-    "totalCost": 115,
+    "cost": 110,
+    "totalCost": 110,
     "time": 55,
     "prepTime": 55,
-    "calories": 610,
+    "calories": 620,
     "heaviness": 6,
-    "ingredients": ["tavuk göğsü", "pirinç", "un", "tereyağı", "yoğurt", "sarımsak", "tavuk suyu", "nane", "pul biber"],
-    "recipe": "1. Didiklenmiş tavuk etlerini tavuk suyunda lezzetlendirin.\n2. Tereyağlı tane tane pirinç pilavını pişirip tepsinin tabanına yayın.\n3. Üzerine haşlanmış gırık hamurlarını ve didiklenmiş tavuk etlerini dizin.\n4. Bol sarımsaklı yoğurt ve kızgın nane-tereyağ sosunu gezdirerek servis edin.",
-    "macros": "34g Protein, 68g Karbonhidrat, 22g Yağ"
+    "ingredients": ["tavuk göğsü", "pirinç", "un", "tereyağı", "biber salçası", "domates salçası", "kuru soğan", "taze soğan", "maydanoz", "yoğurt", "sarımsak", "tavuk suyu", "nane", "pul biber", "karabiber"],
+    "recipe": "1. Hamuru Yoğurun: Un, su ve tuzu yoğurup sertçe bir mantı hamuru elde edin ve dinlenmeye bırakın.\n2. İç Harcı Hazırlayın: Tavuk göğsünü haşlayıp suyunu pilav için ayırın, etini didikleyin. Tereyağında soğan ve salçayı kavurun. Yıkanmış pirinci ekleyip tavuk suyu ile pilav gibi pişirin. Soğuyunca didiklenmiş tavuk, yeşillik ve baharatları ekleyin.\n3. Şekillendirin: Hamurdan bezeler açıp mantı hamurundan biraz büyük kestiğiniz hamurların ortasına tavuklu-pirinçli harç koyarak büzgülü poğaça/yarım ay şeklinde kapatın.\n4. Pişirin & Servis Edin: Kaynayan tuzlu suda 12-13 dakika haşlayın. Tabana sarımsaklı yoğurt dökün, üzerine haşlanan gırıkları dizip kızdırılmış tereyağlı salçalı sos gezdirin.",
+    "macros": "35g Protein, 72g Karbonhidrat, 22g Yağ"
   },
   {
     "id": "recipe_real_2",

@@ -223,29 +223,16 @@ export const DB_MAINS = [
   },
   {
     "id": "m3_girik",
-    "name": "Gırık",
-    "type": "LOCAL",
-    "theme": ["FAMILY", "TRADITIONAL"],
-    "cost": 75,
-    "totalCost": 75,
-    "time": 40,
-    "prepTime": 40,
-    "calories": 420,
-    "heaviness": 4,
-    "ingredients": ["un", "tereyağı", "yoğurt", "sarımsak", "nane", "pul biber", "tuz"]
-  },
-  {
-    "id": "m3_tavuklu_girik",
-    "name": "Tavuklu Gırık",
+    "name": "Gırık (Şemşemok)",
     "type": "LOCAL",
     "theme": ["FAMILY", "GUEST", "TRADITIONAL"],
-    "cost": 115,
-    "totalCost": 115,
+    "cost": 110,
+    "totalCost": 110,
     "time": 55,
     "prepTime": 55,
-    "calories": 610,
+    "calories": 620,
     "heaviness": 6,
-    "ingredients": ["tavuk göğsü", "pirinç", "un", "tereyağı", "yoğurt", "sarımsak", "tavuk suyu", "nane", "pul biber"]
+    "ingredients": ["tavuk göğsü", "pirinç", "un", "tereyağı", "biber salçası", "domates salçası", "kuru soğan", "taze soğan", "maydanoz", "yoğurt", "sarımsak", "tavuk suyu", "nane", "pul biber", "karabiber"]
   },
   {
     "id": "m3_tantuni",
