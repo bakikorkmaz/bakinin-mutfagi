@@ -15,12 +15,38 @@ const COMMON_DETECTABLE_INGREDIENTS = [
     { name: 'mantar', label: '🍄 Kültür Mantarı', confidence: 90 }
 ];
 
-const PLATED_DISH_SAMPLES = [
-    { name: 'Antep Usulü Lahmacun & Yeşillik', calories: 480, protein: 24, carbs: 54, fat: 18, confidence: 98, note: 'Tam Porsiyon (2 Adet)' },
-    { name: "Kayseri Mantısı (Sarımsaklı Yoğurtlu)", calories: 560, protein: 22, carbs: 68, fat: 20, confidence: 96, note: '1 Büyük Tabak (~350g)' },
-    { name: "Fırın Kaşarlı Köfte & Patates", calories: 620, protein: 38, carbs: 42, fat: 30, confidence: 97, note: '1 Porsiyon (4 Köfte + Garnitür)' },
-    { name: "Tavuk Sote & Şehriyeli Pilav", calories: 510, protein: 36, carbs: 50, fat: 16, confidence: 95, note: 'Dengeli Tabak' },
-    { name: "Zeytinyağlı Enginar & Garnitür", calories: 240, protein: 6, carbs: 28, fat: 12, confidence: 94, note: 'Hafif & Diyet Tabak' }
+const PLATED_DISH_KNOWLEDGE_BASE = [
+    // 1. SANDVİÇ, TOST & DÜRÜM
+    { id: 'kumru', name: 'Kumru Sandviç', calories: 520, protein: 26, carbs: 48, fat: 22, confidence: 97, note: 'Susamlı Ekmek, Kaşar, Salam & Turşu', signature: { bread: true, cheese: true, meat: true } },
+    { id: 'tost', name: 'Kaşarlı Sucuklu Tost', calories: 440, protein: 20, carbs: 42, fat: 18, confidence: 96, note: 'Tam Porsiyon Çift Kaşarlı Tost', signature: { bread: true, cheese: true, meat: true } },
+    { id: 'durum_et', name: 'Et Döner Dürüm', calories: 580, protein: 34, carbs: 52, fat: 22, confidence: 98, note: 'Lavaş, Dana Döner & Domates', signature: { bread: true, meat: true } },
+    { id: 'durum_tavuk', name: 'Tavuk Döner Dürüm', calories: 490, protein: 30, carbs: 48, fat: 16, confidence: 96, note: 'Özel Soslu Tavuk Döner', signature: { bread: true, meat: true } },
+    { id: 'burger', name: 'Cheeseburger & Patates', calories: 640, protein: 32, carbs: 58, fat: 28, confidence: 97, note: 'Köfte, Kaşar & Özel Soslu Bun', signature: { bread: true, cheese: true, meat: true } },
+
+    // 2. HAMUR İŞİ, BÖREK & PİDE
+    { id: 'sirdimli_borek', name: 'Sirdimli Börek', calories: 360, protein: 12, carbs: 44, fat: 16, confidence: 95, note: 'Güneydoğu Yabani Otlu Otantik Börek', signature: { bread: true, green: true } },
+    { id: 'pisi', name: 'Pişi', calories: 310, protein: 7, carbs: 38, fat: 14, confidence: 96, note: 'Altın Sarısı Kızarmış Hamur (3 Adet)', signature: { bread: true } },
+    { id: 'ci_borek', name: 'Çi Börek', calories: 410, protein: 18, carbs: 40, fat: 19, confidence: 97, note: 'Kıymalı Çiğ Börek (2 Adet)', signature: { bread: true, meat: true } },
+    { id: 'sigara_boregi', name: 'Sigara Böreği', calories: 280, protein: 10, carbs: 30, fat: 14, confidence: 95, note: 'Peynirli Çıtır Börek (5 Adet)', signature: { bread: true, cheese: true } },
+    { id: 'lahmacun', name: 'Lahmacun & Yeşillik', calories: 450, protein: 22, carbs: 52, fat: 16, confidence: 98, note: 'Çıtır Taş Fırın Lahmacun (2 Adet)', signature: { bread: true, meat: true } },
+    { id: 'pide_kaserli', name: 'Kaşarlı Kıymalı Pide', calories: 590, protein: 28, carbs: 62, fat: 24, confidence: 96, note: 'Kapalı / Açık Karadeniz Pidesi', signature: { bread: true, cheese: true, meat: true } },
+
+    // 3. ÇORBA & YÖRESEL
+    { id: 'beyran', name: 'Beyran Çorbası', calories: 380, protein: 28, carbs: 18, fat: 20, confidence: 97, note: 'Kuzu İncikli & Sarımsaklı Acılı Çorba', signature: { sauceSoup: true, meat: true } },
+    { id: 'manti', name: 'Kayseri Mantısı', calories: 540, protein: 21, carbs: 66, fat: 19, confidence: 96, note: 'Sarımsaklı Yoğurtlu & Salçalı Soslu', signature: { riceWhite: true, sauceSoup: true } },
+    { id: 'girik', name: 'Tavuklu Gırık (Şemşemok)', calories: 460, protein: 26, carbs: 54, fat: 15, confidence: 98, note: 'Pilavlı Tavuklu Mantı & Yoğurt Sos', signature: { riceWhite: true, meat: true } },
+    { id: 'cig_kofte', name: 'Çiğ Köfte Dürüm', calories: 340, protein: 9, carbs: 58, fat: 8, confidence: 99, note: 'Bol Nar Ekşili & Yeşillikli Lavaş', signature: { green: true, meat: true } },
+
+    // 4. EV YEMEĞİ & IZGARA
+    { id: 'kofte_patates', name: 'Fırın Köfte & Patates', calories: 580, protein: 36, carbs: 38, fat: 28, confidence: 97, note: 'Domates Soslu Garnitürlü Köfte', signature: { meat: true, sauceSoup: true } },
+    { id: 'tavuk_pilav', name: 'Tavuk Sote & Şehriyeli Pilav', calories: 510, protein: 34, carbs: 50, fat: 15, confidence: 95, note: 'Tereyağlı Pilav & Tavuk Sote', signature: { riceWhite: true, meat: true } },
+    { id: 'kuru_fasulye', name: 'Kuru Fasulye & Pilav', calories: 530, protein: 22, carbs: 72, fat: 14, confidence: 96, note: 'Geleneksel Ev Yemeği', signature: { sauceSoup: true, riceWhite: true } },
+    { id: 'karniyarik', name: 'Karnıyarık & Pilav', calories: 490, protein: 19, carbs: 48, fat: 23, confidence: 95, note: 'Kıymalı Patlıcan & Pilav', signature: { meat: true, sauceSoup: true } },
+    { id: 'sarma', name: 'Zeytinyağlı Yaprak Sarması', calories: 290, protein: 6, carbs: 46, fat: 10, confidence: 96, note: 'Limonlu & Yoğurtlu (8-10 Adet)', signature: { green: true, riceWhite: true } },
+
+    // 5. KAHVALTI & TATLI
+    { id: 'menemen', name: 'Menemen & Taze Ekmek', calories: 340, protein: 14, carbs: 24, fat: 20, confidence: 97, note: 'Bol Domatesli Sivri Biberli Yumurta', signature: { sauceSoup: true, green: true } },
+    { id: 'baklava', name: 'Fıstıklı Baklava', calories: 420, protein: 6, carbs: 54, fat: 20, confidence: 98, note: 'Antep Fıstıklı Çıtır Baklava (3 Dilim)', signature: { bread: true } }
 ];
 
 export default function VisualScannerModal({ onAddDetectedIngredients, onClose }) {
@@ -180,14 +206,54 @@ export default function VisualScannerModal({ onAddDetectedIngredients, onClose }
                 setDetectedList(detected);
                 setSelectedDetections(initialMap);
             } else {
-                let matchedPlate = PLATED_DISH_SAMPLES[0];
-                if ((colorScores.redCount || 0) > (colorScores.greenCount || 0)) {
-                    matchedPlate = PLATED_DISH_SAMPLES[0]; // Lahmacun / Köfte
-                } else if ((colorScores.whiteCount || 0) > 400) {
-                    matchedPlate = PLATED_DISH_SAMPLES[1]; // Mantı / Yoğurtlu
-                } else {
-                    matchedPlate = PLATED_DISH_SAMPLES[3]; // Tavuk Sote & Pilav
+                // Multi-dimensional visual signature matcher for dish recognition
+                const red = colorScores.redCount || 0;
+                const green = colorScores.greenCount || 0;
+                const yellow = colorScores.yellowCount || 0;
+                const white = colorScores.whiteCount || 0;
+                const brown = colorScores.brownCount || 0;
+
+                let matchedPlate = PLATED_DISH_KNOWLEDGE_BASE[0]; // Kumru Sandviç default fallback
+
+                // 1. Sandwich, Tost & Burger Signature: Golden toasted bread/bun + melted yellow cheese + red cured meat/pastrami + pickles
+                if ((yellow > 200 || brown > 200) && red > 120 && (yellow + brown > 400)) {
+                    if (yellow > 300 && red > 250) {
+                        matchedPlate = PLATED_DISH_KNOWLEDGE_BASE.find(d => d.id === 'kumru') || PLATED_DISH_KNOWLEDGE_BASE[0];
+                    } else if (yellow > 350) {
+                        matchedPlate = PLATED_DISH_KNOWLEDGE_BASE.find(d => d.id === 'tost') || PLATED_DISH_KNOWLEDGE_BASE[1];
+                    } else {
+                        matchedPlate = PLATED_DISH_KNOWLEDGE_BASE.find(d => d.id === 'burger') || PLATED_DISH_KNOWLEDGE_BASE[4];
+                    }
+                } 
+                // 2. White / Yoğurt / Mantı / Pilav Signature: Dominant white/cream color profile
+                else if (white > 350) {
+                    if (red > 200) {
+                        matchedPlate = PLATED_DISH_KNOWLEDGE_BASE.find(d => d.id === 'manti') || PLATED_DISH_KNOWLEDGE_BASE[11];
+                    } else if (brown > 200) {
+                        matchedPlate = PLATED_DISH_KNOWLEDGE_BASE.find(d => d.id === 'girik') || PLATED_DISH_KNOWLEDGE_BASE[12];
+                    } else {
+                        matchedPlate = PLATED_DISH_KNOWLEDGE_BASE.find(d => d.id === 'tavuk_pilav') || PLATED_DISH_KNOWLEDGE_BASE[15];
+                    }
                 }
+                // 3. Soup / Sauce / Beyran Signature: Dominant red/orange liquid broth texture
+                else if (red > 350 && yellow > 150) {
+                    matchedPlate = PLATED_DISH_KNOWLEDGE_BASE.find(d => d.id === 'beyran') || PLATED_DISH_KNOWLEDGE_BASE[10];
+                }
+                // 4. Pastry / Börek / Pide / Lahmacun Signature: Golden brown baked crust
+                else if (brown > 350) {
+                    if (green > 200) {
+                        matchedPlate = PLATED_DISH_KNOWLEDGE_BASE.find(d => d.id === 'sirdimli_borek') || PLATED_DISH_KNOWLEDGE_BASE[5];
+                    } else if (red > 200) {
+                        matchedPlate = PLATED_DISH_KNOWLEDGE_BASE.find(d => d.id === 'lahmacun') || PLATED_DISH_KNOWLEDGE_BASE[9];
+                    } else {
+                        matchedPlate = PLATED_DISH_KNOWLEDGE_BASE.find(d => d.id === 'pisi') || PLATED_DISH_KNOWLEDGE_BASE[6];
+                    }
+                }
+                // 5. Green / Salad / Çiğ Köfte Signature
+                else if (green > 250) {
+                    matchedPlate = PLATED_DISH_KNOWLEDGE_BASE.find(d => d.id === 'cig_kofte') || PLATED_DISH_KNOWLEDGE_BASE[13];
+                }
+
                 setDetectedPlate(matchedPlate);
             }
             setIsScanning(false);
